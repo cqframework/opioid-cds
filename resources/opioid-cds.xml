@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir">
 	<id value="opioid-cds"/>
-	<url value="http://hl7.org/fhir/ig/us/opioid-cds"/>
+	<url value="http://hl7.org/fhir/ig/opioid-cds"/>
 	<version value="1"/>
 	<name value="Opioid Prescribing Support Implementation Guide"/>
 	<status value="draft"/>
