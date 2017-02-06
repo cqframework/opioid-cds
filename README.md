@@ -1,4 +1,4 @@
-# igtemplate
+# opioid-cds
 Opioid Prescribing Support Implementation Guide (FHIR 1.8-STU3)
 
 This project provides the source for the Opioid Prescribing Support Implementation Guide.
