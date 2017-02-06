@@ -1,0 +1,101 @@
+<PlanDefinition xmlns="http://hl7.org/fhir">
+	<id value="example-rule"/>
+	<text>
+		<status value="generated"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">Example Event-Condition-Action Rule</div>
+	</text>
+	<contained>
+		<ActivityDefinition>
+			<id value="example-alert"/>
+			<status value="active"/>
+			<category value="communication"/>
+			<dynamicValue>
+				<path value="sender"/>
+				<expression value="CDS System"/>
+			</dynamicValue>
+			<dynamicValue>
+				<path value="recipient"/>
+				<expression value="Primary Provider"/>
+			</dynamicValue>
+			<dynamicValue>
+				<path value="payload.content"/>
+				<expression value="'Example message to be communicated to the recipient.'"/>
+			</dynamicValue>
+			<dynamicValue>
+				<path value="status"/>
+				<expression value="'proposed'"/>
+			</dynamicValue>
+			<dynamicValue>
+				<path value="encounter"/>
+				<expression value="Encounter"/>
+			</dynamicValue>
+			<dynamicValue>
+				<path value="scheduled"/>
+				<expression value="Now()"/>
+			</dynamicValue>
+			<dynamicValue>
+				<path value="reason"/>
+				<expression value="Example Condition Triggered"/>
+			</dynamicValue>
+			<dynamicValue>
+				<path value="requestedOn"/>
+				<expression value="Now()"/>
+			</dynamicValue>
+			<dynamicValue>
+				<path value="subject"/>
+				<expression value="Patient"/>
+			</dynamicValue>
+			<dynamicValue>
+				<path value="priority"/>
+				<expression value="Code 'routine' from DiagnosticPriority display 'Routine'"/>
+			</dynamicValue>
+		</ActivityDefinition>
+	</contained>
+	<identifier>
+		<use value="official"/>
+		<value value="example-rule"/>
+	</identifier>
+	<version value="1.0.0"/>
+	<title value="Example Event-Condition-Action Rule"/>
+	<status value="active"/>
+	<description value="Example Event-Condition-Action Rule"/>
+	<publicationDate value="2016-09-08"/>
+	<topic>
+		<text value="Example Event-Condition-Action Rule"/>
+	</topic>
+	<library>
+		<reference value="Library/example-logic"/>
+	</library>
+	<actionDefinition>
+		<title value="Example Communication"/>
+		<textEquivalent value="The Patient has triggered the example condition."/>
+		<triggerDefinition>
+			<type value="data-added"/>
+			<eventData>
+				<type value="MedicationOrder"/>
+				<!-- <profile value="http://hl7.org/fhir/StructureDefinition/MedicationOrder"/> -->
+				<codeFilter>
+					<path value="code"/>
+					<valueCodeableConcept>
+						<coding>
+							<system value="http://snomed.org/sct"/>
+							<code value="387005008"/>
+						</coding>
+						<text value="Abacavir (substance)"/>
+					</valueCodeableConcept>
+				</codeFilter>
+			</eventData>
+		</triggerDefinition>
+		<condition>
+			<language value="text/cql"/>
+			<expression value="Should Notify Provider"/>
+		</condition>
+		<participantType value="practitioner"/>
+		<type>
+			<code value="create"/>
+		</type>
+		<activityDefinition>
+			<reference value="#example-alert"/>
+		</activityDefinition>
+	</actionDefinition>
+</PlanDefinition>

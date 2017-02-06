@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+	<id value="opioid-cds"/>
+	<url value="http://hl7.org/fhir/ig/us/opioid-cds"/>
+	<version value="1"/>
+	<name value="Opioid Prescribing Support Implementation Guide"/>
+	<status value="draft"/>
+	<experimental value="false"/>
+	<publisher value="CDC"/>
+	<date value="2017-02-06"/>
+	<description value="Opioid Prescribing Support Implementation Guide"/>
+	<fhirVersion value="1.8"/>
+	<package>
+		<name value="Opioid Prescribing Support Implementation Guide Package"/>
+		<resource>
+			<example value="true"/>
+			<name value="Library - Example Logic"/>
+			<description value="Example logic library"/>
+			<sourceReference>
+				<reference value="Library/library-example-logic"/>
+			</sourceReference>
+			<!--sourceUri value="library-example.xml"/-->
+			<!--exampleFor>
+				<reference value="StructureDefinition/Library"/>
+			</exampleFor-->
+		</resource>
+		<resource>
+			<example value="true"/>
+			<name value="PlanDefinition - Example Rule"/>
+			<description value="Example ECA Rule"/>
+			<sourceReference>
+				<reference value="PlanDefinition/plandefinition-example-rule"/>
+			</sourceReference>
+			<!--sourceUri value="plandefinition-example.xml"/-->
+			<!--exampleFor>
+				<reference value="StructureDefinition/PlanDefinition"/>
+			</exampleFor-->
+		</resource>
+	</package>
+	<binary value="ExampleLogicLibrary.cql"/>
+	<page>
+		<source value="index.html"/>
+		<title value="Opioid Prescribing Support Implementation Guide"/>
+		<kind value="page"/>
+		<format value="html"/>
+	</page>
+</ImplementationGuide>

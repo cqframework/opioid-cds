@@ -1,0 +1,27 @@
+{
+	"tool": "jekyll",
+	"paths": {
+		"resources": "resources",
+		"pages": "pages",
+		"temp": "temp",
+		"output": "output",
+		"qa": "qa",
+		"specification": "http://hl7.org/fhir/2017Jan/"
+	},
+  	"defaults": {
+		"Any": {
+			"template-format": "instance-template-format.html",
+			"template-base": "instance-template-base.html"
+		},
+		"StructureDefinition" : {
+				"template-base": "instance-template-sd.html"
+		}
+	},
+	"sct-edition" : "http://snomed.info/sct/731000124108",
+	"canonicalBase": "http://hl7.org/fhir/ig/us/opioid-cds",
+	"source": "opioid-cds.xml",
+	"resources": {
+		"Library/library-example": { "source": "library-example" },
+		"PlanDefinition/plandefinition-example": { "source": "plandefinition-example" }
+	}
+}
