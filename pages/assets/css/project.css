@@ -175,7 +175,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .navbar .nav > li > a {
-  padding: 10px 12px;
+  padding: 0;
   text-shadow: none;
 }
 .navbar .nav > li > a,
@@ -187,6 +187,17 @@ body {
 }
 .navbar-inverse {
   background-color: #105EAB;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: #0c23da;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #0c23da;
 }
 .dropdown-menu {
   border-top-right-radius: 0;
