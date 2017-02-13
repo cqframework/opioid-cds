@@ -175,7 +175,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .navbar .nav > li > a {
-  padding: 0;
+  padding: 10px 12px;
   text-shadow: none;
 }
 .navbar .nav > li > a,
