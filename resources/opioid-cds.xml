@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir">
 	<id value="opioid-cds"/>
-	<url value="http://hl7.org/fhir/ig/opioid-cds"/>
-	<version value="1"/>
+	<url value="http://hl7.org/fhir/ig/opioid-cds/ImplementationGuide/opioid-cds"/>
+	<version value="0.1.0"/>
 	<name value="Opioid Prescribing Support Implementation Guide"/>
 	<status value="draft"/>
 	<experimental value="false"/>
 	<publisher value="CDC"/>
 	<date value="2017-02-06"/>
 	<description value="Opioid Prescribing Support Implementation Guide"/>
-	<fhirVersion value="1.8"/>
+	<fhirVersion value="3.0.1"/>
 	<package>
 		<name value="Opioid Prescribing Support Implementation Guide Package"/>
 		<resource>

@@ -6,7 +6,7 @@
 		"temp": "temp",
 		"output": "output",
 		"qa": "qa",
-		"specification": "http://hl7.org/fhir/2017Jan/"
+		"specification": "http://hl7.org/fhir/STU3/"
 	},
   	"defaults": {
 		"Any": {
@@ -17,6 +17,7 @@
 				"template-base": "instance-template-sd.html"
 		}
 	},
+	"version" : "3.0.1",
 	"sct-edition" : "http://snomed.info/sct/731000124108",
 	"canonicalBase": "http://hl7.org/fhir/ig/opioid-cds",
 	"source": "opioid-cds.xml",
