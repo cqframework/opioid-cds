@@ -3,6 +3,7 @@ library OpioidCDS_DSTU2 version '0.1.0'
 using FHIR version '1.0.2'
 
 include FHIRHelpers version '1.0.2' called FHIRHelpers
+include OMTKLogic version '0.1.0' called OMTKLogic
 
 parameter UserID String
 parameter Orders List<MedicationOrder>
@@ -22,7 +23,20 @@ define HasMetastaticCancer: false
 define TotalMME: 60 'mg/d'
 
 // MME - Milligram Morphine Equivalents as a list of tuples:
-// List<Tuple { Prescription String, DailyDose String, ConversionFactor Decimal, MME Quantity }>
+// List<Tuple { IsDraft Boolean, Prescription String, DailyDose String, ConversionFactor Decimal, MME Quantity }>
+//define function CalculateMMEs(medications List<Tuple { rxNormCode Code, quantity Integer, daysSupply Integer }>):
+define MME:
+  CalculateMMEs(
+    Orders O 
+      return { 
+        isDraft: O.status = 'draft',
+        rxNormCode: O.medicationCodeableConcept.code, // NOTE: Assuming this comes back as a CodeableConcept, NOT a Medication w/ a Code
+        quantity: O.dosage[0].quantityQuantity.value, // NOTE: Assuming always and only one dosage element with a quantityQuantity element
+        daysSupply: O.dosage[0].
+        
+  )
+  
+/*
 define MME: {
   {
     Prescription: 'Oxycodone-acetaminophen 5-325mg (percocet) PO Tablet 2 tabs qid PRN pain',
@@ -31,6 +45,11 @@ define MME: {
     MME: 60 'mg/d'
   }
 }
+*/
+
+define Medications:
+  ["MedicationStatement"] M
+    where M.status = 'active'
 
 /*
 Argonaut profiles only support MedicationOrder and MedicationStatement

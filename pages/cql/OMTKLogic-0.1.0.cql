@@ -2,6 +2,8 @@ library OMTKLogic version '0.1.0'
 
 using OMTK version '0.1.0'
 
+codesystem RxNorm: 'http://www.nlm.nih.gov/research/umls/rxnorm'
+
 //define MED_DOSE_FORMS: [MED_DOSE_FORM]
 
 // Given an RxNorm Code:
@@ -82,6 +84,12 @@ define function ToUCUM(unit String):
   end
 
 /*
+  Returns true if the given dose form is a patch (transdermal system)
+*/
+define function IsPatch(doseFormCode Code):
+  ToInteger(doseFormCode.code) = 316987
+
+/*
   Returns the conversion factor for the given ingredient
 
 Opioid (strength in mg except where noted)	MME Conversion Factor*
@@ -114,15 +122,15 @@ Tapentadol	0.4
 Tramadol	0.1
 
 */
-define function GetConversionFactor(ingredientCode Integer, dailyDose Decimal, doseFormCode Integer):
-  case ingredientCode
+define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, doseFormCode Code):
+  case ToInteger(ingredientCode.code)
     when 161 then 0 //	Acetaminophen
     when 1191 then 0 //	Aspirin
     when 1223 then 0 //	Atropine
     when 1767 then 0 //	Brompheniramine
     when 1819 then ( //	Buprenorphine
       case 
-        when doseFormCode = 316987 then 12.6 // Transdermal system
+        when ToInteger(doseFormCode.code) = 316987 then 12.6 // Transdermal system
         else 30 // Tablet or Film (or Film in MCG)
       end
     ) 
@@ -136,10 +144,10 @@ define function GetConversionFactor(ingredientCode Integer, dailyDose Decimal, d
     when 3498 then 0 //	Diphenhydramine
     when 4337 then ( //	Fentanyl
       case
-        when doseFormCode in { 970789, 317007, 316992 } then 0.13 // Buccal Tablet, Sublingual Tablet, Oral Lozenge
-        when doseFormCode = 346163 then 0.18 // Buccal Film
-        when doseFormCode in { 126542, 346163 } then 0.16 // Nasal Spray, Mucosal Spray
-        when doseFormCode = 316987 then 7.2 // Transdermal system
+        when ToInteger(doseFormCode.code) in { 970789, 317007, 316992 } then 0.13 // Buccal Tablet, Sublingual Tablet, Oral Lozenge
+        when ToInteger(doseFormCode.code) = 346163 then 0.18 // Buccal Film
+        when ToInteger(doseFormCode.code) in { 126542, 346163 } then 0.16 // Nasal Spray, Mucosal Spray
+        when IsPatch(doseFormCode) then 7.2 // Transdermal system
         else 1000 // Really ought to be an error because it represents a previously unencountered dose form....
       end
     )
@@ -151,10 +159,10 @@ define function GetConversionFactor(ingredientCode Integer, dailyDose Decimal, d
     when 6754 then 0.1 //	Meperidine
     when 6813 then ( //	Methadone
       case
-        when dailyDose between 1 and 20 then 4
-        when dailyDose between 21 and 40 then 8
-        when dailyDose between 41 and 60 then 10
-        when dailyDose >= 61 then 12
+        when dailyDose.value between 1 and 20 then 4
+        when dailyDose.value between 21 and 40 then 8
+        when dailyDose.value between 41 and 60 then 10
+        when dailyDose.value >= 61 then 12
         else 1000 // Really ought to be an error because it represents an unexpected dose range...
       end
     )
@@ -184,19 +192,29 @@ define function GetConversionFactor(ingredientCode Integer, dailyDose Decimal, d
     else 0
   end
 
+define function EnsureMicrogramQuantity(strength Quantity):
+  if strength.value < 0.1 and (PositionOf('mg', strength.unit) = 0) then
+    Quantity {
+      value: strength.value * 1000,
+      unit: 'mcg' + Substring(strength.unit, 2)
+    }
+  else
+    strength
+
 /*
-  Returns the non-surgical opioid ingredients and their strengths that 
+  Returns the non-surgical opioid ingredients and their strengths that
   make up the drug identified by the given rxNormCode as a list of tuples:
 
   List<Tuple {
-    rxNormCode Integer,
-    doseFormCode Integer,
-    ingredientCode Integer,
+    rxNormCode Code,
+    doseFormCode Code,
+    doseFormName String,
+    ingredientCode Code,
     ingredientName String,
     strength Quantity
   }>
 */
-define function GetIngredients(rxNormCode Integer):
+define function GetIngredients(rxNormCode Code):
   (
     [MED_SCDC_FOR_DRUG: DRUG_RXCUI in rxNormCode] SD
       where exists ([NON_SURGICAL_OPIOID_TO_INCLUDE: DRUG_RXCUI in SD.DRUG_RXCUI])
@@ -207,61 +225,121 @@ define function GetIngredients(rxNormCode Integer):
         doseFormCode: SingletonFrom([MED_DRUG_DOSE_FORM: DRUG_RXCUI in SD.DRUG_RXCUI]).DOSE_FORM_RXCUI // Could potentially look this up only once...
       }
   ) C
-    let ingredient: SingletonFrom([MED_INGREDIENT: INGREDIENT_RXCUI in C.ingredientCode])
+    let
+      ingredient: SingletonFrom([MED_INGREDIENT: INGREDIENT_RXCUI in C.ingredientCode]),
+      doseForm: SingletonFrom([MED_DOSE_FORM: DOSE_FORM_RXCUI in C.doseFormCode])
     where exists (
-      [MED_INGREDIENT_TYPE: INGREDIENT_RXCUI in C.ingredientCode] IT 
+      [MED_INGREDIENT_TYPE: INGREDIENT_RXCUI in C.ingredientCode] IT
         where IT.INGREDIENT_TYPE = 'NonSurgicalOpioid'
     )
     return {
       rxNormCode: rxNormCode,
       doseFormCode: C.doseFormCode,
+      doseFormName: doseForm.DOSE_FORM_NAME,
       ingredientCode: C.ingredientCode,
       ingredientName: ingredient.INGREDIENT_NAME,
-      strength: Quantity {
-        value: ToDecimal(C.component.STRENGTH),
-        unit: ToUCUM(C.component.STRENGTH_UNIT)
-      }
+      strength:
+        EnsureMicrogramQuantity(
+          Quantity {
+            value: ToDecimal(C.component.STRENGTH),
+            unit: ToUCUM(C.component.STRENGTH_UNIT)
+          }
+        )
     }
-    
+
+/*
+  Calculates daily dose for a specific ingredient based on the ingredient strength, dose form, dose quantity, and daily frequency
+*/
+define function GetDailyDose(ingredientCode Code, strength Quantity, doseFormCode Code, doseQuantity Quantity, dosesPerDay Decimal):
+  case
+	  // if patch --> daily dose = dose value (e.g, number patches with doseQuantity unit = "patch") * per-hour strength
+    when IsPatch(doseFormCode) then
+      // buprenorphine or fentanyl patch
+      if ToInteger(ingredientCode.code) in { 1819, 4337 } then
+        Quantity { value: doseQuantity.value * strength.value, unit: strength.unit }
+      else
+        null
+
+    // if dose unit in actual mass units (mg or mcg -- when it's a single med) --> daily dose = numTimesPerDay * dose
+    when doseQuantity.unit in { 'mg', 'mcg' } then
+      Quantity { value: dosesPerDay * doseQuantity.value, unit: doseQuantity.unit }
+
+    // if doseQuantity is in actual volume units (mL) --> daily dose = numTimesPerDay * dose * strength
+    when doseQuantity.unit = 'mL' and (PositionOf('/mL', strength.unit) = Length(strength.unit) - 3) then
+      Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: Substring(strength.unit, 0, PositionOf('/', strength.unit)) }
+
+		// if doseQuantity is not in actual units (e.g., 1 tab, 1 spray -- when it's a combo med with a unit of tablet, or it's mg/actuat) --> daily dose = numTimesPerDay * dose value * strength value
+    else
+      Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: Substring(strength.unit, 0, PositionOf('/', strength.unit)) }
+  end
+
+/*
+  Builds a description for the daily dose for an ingredient
+*/
+define function GetDailyDoseDescription(ingredientCode Code, ingredientName String, strength Quantity, doseFormCode Code, doseFormName String, doseQuantity Quantity, dosesPerDay Decimal, dailyDose Quantity):
+  case
+    // if patch
+    when IsPatch(doseFormCode) then
+      // buprenorphine or fentanyl patch
+      if ToInteger(ingredientCode.code) in { 1819, 4337 } then
+        ingredientName + ' patch: ' + ToString(doseQuantity.value) + ' * ' + ToString(strength) + ' = ' + ToString(dailyDose)
+      else
+        null
+
+    // if dose unit in actual mass units (mg or mcg -- when it's a single med)
+    when doseQuantity.unit in { 'mg', 'mcg' } then
+      ingredientName + ' ' + doseFormName + ': ' + ToString(dosesPerDay) + '/d * ' + ToString(doseQuantity) + ' = ' + ToString(dailyDose)
+
+    // if doseQuantity in actual volume units (mL) or not in actual units (e.g. 1 tab, 1 spray)
+    else
+      ingredientName + ' ' + doseFormName + ': ' + ToString(dosesPerDay) + '/d * ' + ToString(doseQuantity) + ' * ' + ToString(strength) + ' = ' + ToString(dailyDose)
+  end
+
 /*
   Calculates MMEs for the given input prescription information and returns it
   as a list of tuples:
 
-  List<Tuple { 
-    rxNormCode Integer, 
-    doseFormCode Integer,
-    quantity Integer, 
-    daysSupply Integer, 
-    ingredientCode Integer, 
-    ingredientName String, 
+  List<Tuple {
+    rxNormCode Code,
+    doseFormCode Code,
+    doseQuantity Quantity,
+    dosesPerDay Decimal,
+    ingredientCode Code,
+    ingredientName String,
     strength Quantity,
+    dailyDose Quantity,
+    dailyDoseDescription String,
     conversionFactor Decimal,
     mme Quantity
   }>
 */
-define function CalculateMMEs(medications List<Tuple { rxNormCode Integer, quantity Integer, daysSupply Integer }>):
+define function CalculateMMEs(medications List<Tuple { rxNormCode Code, doseQuantity Quantity, dosesPerDay Decimal }>):
   Flatten(
     medications M
       let Ingredients: GetIngredients(M.rxNormCode)
       return
         Ingredients I
-          let factor: GetConversionFactor(I.ingredientCode, I.strength.value, I.doseFormCode)
+          let
+            adjustedDoseQuantity: EnsureMicrogramQuantity(M.doseQuantity),
+            dailyDose: GetDailyDose(I.ingredientCode, I.strength, I.doseFormCode, adjustedDoseQuantity, M.dosesPerDay),
+            factor: GetConversionFactor(I.ingredientCode, dailyDose, I.doseFormCode)
           return {
             rxNormCode: M.rxNormCode,
             doseFormCode: I.doseFormCode,
-            quantity: M.quantity,
-            daysSupply: M.daysSupply,
+            doseQuantity: adjustedDoseQuantity,
+            dosesPerDay: M.dosesPerDay,
             ingredientCode: I.ingredientCode,
             ingredientName: I.ingredientName,
             strength: I.strength,
+            dailyDose: dailyDose,
+            dailyDoseDescription: GetDailyDoseDescription(I.ingredientCode, I.ingredientName, I.strength, I.doseFormCode, I.doseFormName, adjustedDoseQuantity, M.dosesPerDay, dailyDose),
             conversionFactor: factor,
-            mme: Quantity { 
-              value: I.strength.value * M.quantity / M.daysSupply * factor, 
-              unit: I.strength.unit + '/d'
+            mme: Quantity {
+              value: dailyDose.value * factor,
+              unit: dailyDose.unit + '/d'
             }
           }
   )
-  
+
 define TestCalculateMMEs:
-  CalculateMMEs({ { rxNormCode: 197696, quantity: 30, daysSupply: 30 } })
-  
+  CalculateMMEs({ { rxNormCode: Code '388508' from RxNorm, doseQuantity: Quantity { value: 1, unit: 'patch' }, dosesPerDay: 0.33 } })
