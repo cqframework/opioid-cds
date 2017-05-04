@@ -241,7 +241,7 @@ define function GetIngredients(rxNormCode Code):
       strength:
         EnsureMicrogramQuantity(
           Quantity {
-            value: ToDecimal(C.component.STRENGTH),
+            value: C.component.STRENGTH_VALUE,
             unit: ToUCUM(C.component.STRENGTH_UNIT)
           }
         )
@@ -272,6 +272,9 @@ define function GetDailyDose(ingredientCode Code, strength Quantity, doseFormCod
     else
       Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: Substring(strength.unit, 0, PositionOf('/', strength.unit)) }
   end
+  
+define function GetMedicationName(rxNormCode Code):
+  SingletonFrom([MED_DRUG: DRUG_RXCUI in rxNormCode]).DRUG_NAME
 
 /*
   Builds a description for the daily dose for an ingredient

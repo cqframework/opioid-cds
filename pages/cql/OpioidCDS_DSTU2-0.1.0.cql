@@ -18,23 +18,73 @@ define IsForChronicPain: true
 // TODO: Capture process decisions for metastatic cancer
 define HasMetastaticCancer: false
 
-// TODO: Capture process decisions for MME calculation
-// TotalMME - Sum of all MME for currently and about-to-be prescribed opioid medications
-define TotalMME: 60 'mg/d'
+/*
+  Calculates daily frequency given frequency within a period
+*/
+define function ToDaily(frequency Integer, period System.Quantity):
+  case period.unit
+    when 'h' then frequency * (24.0 / period.value)
+    when 'min' then frequency * (24.0 / period.value) * 60
+    when 's' then frequency * (24.0 / period.value) * 60 * 60
+    when 'd' then frequency * (24.0 / period.value) / 24
+    when 'wk' then frequency * (24.0 / period.value) / (24 * 7)
+    when 'mo' then frequency * (24.0 / period.value) / (24 * 30) // assuming 30 days in month
+    when 'a' then frequency * (24.0 / period.value) / (24 * 365) // assuming 365 days in year
+    else null
+  end
 
+// Prescriptions: rxNormCode, isDraft, isPRN, prescription String, dose Quantity, dosesPerDay Decimal
+define Prescriptions:
+  Orders O
+    let 
+      rxNormCode: FHIRHelpers.ToCode(O.medicationCodeableConcept.coding[0]), // NOTE: Assuming medication is specified as a CodeableConcept with a single RxNorm code
+      medicationName: OMTKLogic.GetMedicationName(rxNormCode),
+      dosageInstruction: O.dosageInstruction[0], // NOTE: Assuming a single dosage instruction element
+      repeat: dosageInstruction.timing.repeat,
+      frequency: Coalesce(repeat.frequencyMax, repeat.frequency),
+      period: System.Quantity { value: repeat.period, unit: repeat.periodUnits },
+      doseDescription: 
+        Coalesce(
+          ToString(FHIRHelpers.ToQuantity(dosageInstruction.doseQuantity)), // There should be a conversion from FHIR.SimpleQuantity to System.Quantity
+          ToString(dosageInstruction.doseRange.low.value) 
+            + '-' + ToString(dosageInstruction.doseRange.high.value)
+            + dosageInstruction.doseRange.high.unit
+        ),
+      frequencyDescription:
+        ToString(dosageInstruction.timing.repeat.frequency) +
+          Coalesce(
+            '-' + ToString(dosageInstruction.timing.repeat.frequencyMax),
+            ''
+          )
+    return {
+      rxNormCode: rxNormCode,
+      isDraft: O.status = 'draft',
+      isPRN: dosageInstruction.asNeededBoolean, // NOTE: Assuming asNeeded is expressed as a boolean
+      prescription: 
+        if dosageInstruction.text is not null then
+          medicationName + ' ' + dosageInstruction.text
+        else
+          medicationName + ' ' + doseDescription + ' q' + frequencyDescription + (if dosageInstruction.asNeededBoolean.value then ' PRN' else ''), // TODO: Shouldn't need the .value here on asNeededBoolean
+      dose: FHIRHelpers.ToQuantity(Coalesce(dosageInstruction.doseQuantity, dosageInstruction.doseRange.high)), // TODO: Shouldn't need the ToQuantity here...
+      dosesPerDay: Coalesce(ToDaily(frequency, period), 1.0)
+    }
+    
 // MME - Milligram Morphine Equivalents as a list of tuples:
-// List<Tuple { IsDraft Boolean, Prescription String, DailyDose String, ConversionFactor Decimal, MME Quantity }>
-//define function CalculateMMEs(medications List<Tuple { rxNormCode Code, quantity Integer, daysSupply Integer }>):
+// List<Tuple { rxNormCode: Code, isDraft Boolean, isPRN Boolean, prescription String, dailyDose String, conversionFactor Decimal, mme System.Quantity }>
+// function CalculateMMEs(medications List<Tuple { rxNormCode Code, doseQuantity System.Quantity, dosesPerDay Decimal }>):
 define MME:
-  CalculateMMEs(
-    Orders O 
-      return { 
-        isDraft: O.status = 'draft',
-        rxNormCode: O.medicationCodeableConcept.code, // NOTE: Assuming this comes back as a CodeableConcept, NOT a Medication w/ a Code
-        quantity: O.dosage[0].quantityQuantity.value, // NOTE: Assuming always and only one dosage element with a quantityQuantity element
-        daysSupply: O.dosage[0].
-        
-  )
+  Prescriptions P
+    let mme: SingletonFrom(OMTKLogic.CalculateMMEs({ { rxNormCode: P.rxNormCode, doseQuantity: P.dose, dosesPerDay: P.dosesPerDay } }))
+    return {
+      rxNormCode: P.rxNormCode,
+      isDraft: P.isDraft,
+      isPRN: P.isPRN,
+      prescription: P.prescription,
+      dailyDose: mme.dailyDoseDescription,
+      conversionFactor: mme.conversionFactor,
+      mme: mme.mme 
+    }
+    sort by if isDraft then 0 else 1, rxNormCode.code
   
 /*
 define MME: {
@@ -47,9 +97,11 @@ define MME: {
 }
 */
 
-define Medications:
-  ["MedicationStatement"] M
-    where M.status = 'active'
+// TODO: Capture process decisions for MME calculation
+// TotalMME - Sum of all MME for currently and about-to-be prescribed opioid medications
+define TotalMME: System.Quantity { value: Sum(MME M return M.mme.value), unit: 'mg/d' }
+
+define IsMME50OrMore: TotalMME >= 50 'mg/d'
 
 /*
 Argonaut profiles only support MedicationOrder and MedicationStatement
