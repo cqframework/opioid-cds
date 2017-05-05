@@ -10,9 +10,15 @@ tcode: {{[type]}}
 
   <!-- CONTENT CONTENT -->
 
-<ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="{{page.id}}-definitions.html">Detailed Descriptions</a></li><li><a href="{{page.id}}-mappings.html">Mappings</a></li><li><a href="StructureDefinition-{{page.id}}.xml.html">XML</a></li><li><a href="StructureDefinition-{{page.id}}.json.html">JSON</a></li></ul>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#">Content</a></li>
+  <li><a href="StructureDefinition-{{page.id}}-definitions.html">Detailed Descriptions</a></li>
+  <li><a href="StructureDefinition-{{page.id}}-mappings.html">Mappings</a></li>
+  <li><a href="StructureDefinition-{{page.id}}.xml.html">XML</a></li>
+  <li><a href="StructureDefinition-{{page.id}}.json.html">JSON</a></li>
+</ul>
 
-<h3><span class="sectioncount">D.4.1<a name="D.4.1"> </a></span> StructureDefinition: {{page.id}} <a title="link to here" class="self-link" href="{{page.id}}.html#D.4.1"><img src="target.png"/></a></h3>
+<h3><span class="sectioncount">D.4.1<a name="D.4.1"> </a></span> StructureDefinition: {{page.id}} <a title="link to here" class="self-link" href="StructureDefinition-{{page.id}}.html#D.4.1"><img src="target.png"/></a></h3>
 
 
 <!-- introductiontext here-->
@@ -126,10 +132,10 @@ Formal Views of Profile Content
 <p>&nbsp;</p>
 
 <a name="tx"> </a>
-<h4><span class="sectioncount">D.4.1.2</span> Terminology Bindings <a title="link to here" class="self-link" href="{{page.id}}.html#tx"><img src="target.png"/></a></h4>
+<h4><span class="sectioncount">D.4.1.2</span> Terminology Bindings <a title="link to here" class="self-link" href="StructureDefinition-{{page.id}}.html#tx"><img src="target.png"/></a></h4>
    {%include StructureDefinition-{{page.id}}-tx.xhtml%}
 
-<h4><span class="sectioncount">D.4.1.3<a name="D.4.1.3"> </a></span> Constraints <a title="link to here" class="self-link" href="{{page.id}}.html#D.4.1.3"><img src="target.png"/></a></h4>
+<h4><span class="sectioncount">D.4.1.3<a name="D.4.1.3"> </a></span> Constraints <a title="link to here" class="self-link" href="StructureDefinition-{{page.id}}.html#D.4.1.3"><img src="target.png"/></a></h4>
    {%include StructureDefinition-{{page.id}}-inv.xhtml%}
 
 .
@@ -164,3 +170,4 @@ $( '#tabs' ).tabs({
 </script>
 
 {% include footer.html %}
+s
