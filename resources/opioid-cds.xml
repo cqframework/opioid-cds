@@ -6,7 +6,7 @@
 	<name value="Opioid Prescribing Support Implementation Guide"/>
 	<status value="draft"/>
 	<experimental value="false"/>
-	<publisher value="CDC"/>
+	<publisher value="Centers for Disease Control and Prevention (CDC)"/>
 	<date value="2017-02-06"/>
 	<description value="Opioid Prescribing Support Implementation Guide"/>
 	<fhirVersion value="3.0.1"/>
@@ -14,34 +14,68 @@
 		<name value="Opioid Prescribing Support Implementation Guide Package"/>
 		<resource>
 			<example value="true"/>
-			<name value="Library - Example Logic"/>
-			<description value="Example logic library"/>
+			<name value="Library - OMTK Model Info"/>
+			<description value="Opioid Management Terminology Knowledge Base Model Information"/>
 			<sourceReference>
-				<reference value="Library/library-example-logic"/>
+				<reference value="Library/omtk-modelinfo"/>
 			</sourceReference>
-			<!--sourceUri value="library-example.xml"/-->
-			<!--exampleFor>
-				<reference value="StructureDefinition/Library"/>
-			</exampleFor-->
 		</resource>
 		<resource>
 			<example value="true"/>
-			<name value="PlanDefinition - Example Rule"/>
-			<description value="Example ECA Rule"/>
+			<name value="Library - OMTK Logic"/>
+			<description value="Opioid Management Terminology Knowledge Base Logic"/>
 			<sourceReference>
-				<reference value="PlanDefinition/plandefinition-example-rule"/>
+				<reference value="Library/omtklogic"/>
 			</sourceReference>
-			<!--sourceUri value="plandefinition-example.xml"/-->
-			<!--exampleFor>
-				<reference value="StructureDefinition/PlanDefinition"/>
-			</exampleFor-->
+		</resource>
+		<resource>
+			<example value="true"/>
+			<name value="Library - Opioid CDS (DSTU2)"/>
+			<description value="Opioid Management Decision Support Logic (for FHIR DSTU2)"/>
+			<sourceReference>
+				<reference value="Library/opioidcds-dstu2"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="true"/>
+			<name value="Library - Opioid CDS (STU3)"/>
+			<description value="Opioid Management Decision Support Logic (for FHIR STU3)"/>
+			<sourceReference>
+				<reference value="Library/opioidcds-stu3"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="true"/>
+			<name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5"/>
+			<description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #5"/>
+			<sourceReference>
+				<reference value="PlanDefinition/cdc-opioid-05"/>
+			</sourceReference>
 		</resource>
 	</package>
-	<binary value="ExampleLogicLibrary.cql"/>
+	<binary value="cql/OMTKLogic-0.1.0.cql"/>
+	<binary value="cql/OpioidCDS_DSTU2-0.1.0.cql"/>
+	<binary value="cql/OpioidCDS_STU3-0.1.0.cql"/>
+	<binary value="elm/OMTKLogic-0.1.0.xml"/>
+	<binary value="elm/OpioidCDS_DSUT2-0.1.0.xml"/>
+	<binary value="elm/OpioidCDS_STU3-0.1.0.xml"/>
+	<binary value="modelinfo/OMTK-modelinfo-0.1.0.xml"/>
 	<page>
 		<source value="index.html"/>
 		<title value="Opioid Prescribing Support Implementation Guide"/>
 		<kind value="page"/>
 		<format value="html"/>
+    <page>
+      <source value="medicationrequest-opioidcds.html"/>
+      <title value="Medication Request"/>
+      <kind value="page"/>
+      <format value="generated"/>
+      <page>
+        <source value="opioidcds-medicationrequest.html"/>
+        <title value="Medication Request Details"/>
+        <kind value="resource"/>
+        <format value="generated"/>
+      </page>
+    </page>
 	</page>
 </ImplementationGuide>

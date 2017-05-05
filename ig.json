@@ -21,8 +21,16 @@
 	"sct-edition" : "http://snomed.info/sct/731000124108",
 	"canonicalBase": "http://hl7.org/fhir/ig/opioid-cds",
 	"source": "opioid-cds.xml",
+	"spreadsheets": [
+		"medicationrequest-profile-spreadsheet.xml"
+	],
 	"resources": {
 		"Library/library-example": { "source": "library-example" },
-		"PlanDefinition/plandefinition-example": { "source": "plandefinition-example" }
+		"PlanDefinition/plandefinition-example": { "source": "plandefinition-example" },
+		"StructureDefinition/qicore-medicationrequest": {
+			"defns": "cdc-medicationrequest-definitions.html",
+			"base": "cdc-medicationrequest.html"
+		}
+
 	}
 }

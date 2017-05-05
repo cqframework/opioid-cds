@@ -11,6 +11,7 @@
 	</identifier>
 	<version value="0.1.0"/>
 	<name value="cdc-opioid-05"/>
+	<title value="CDC Opioid Prescribing Guideline Recommendation #5"/>
 	<type>
 		<coding>
 			<system value="http://hl7.org/fhir/plan-definition-type"/>
@@ -18,7 +19,6 @@
 			<display value="ECA Rule"/>
 		</coding>
 	</type>
-	<title value="CDC Opioid Prescribing Guideline Recommendation #5"/>
 	<status value="draft"/>
 	<date value="2017-04-23"/>
 	<publisher value="Centers for Disease Control and Prevention (CDC)"/>
@@ -38,6 +38,9 @@
 		<display value="MME Conversion Tables"/>
 		<url value="https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf"/>
 	</relatedArtifact>
+	<library>
+		<reference value="Library/opioidcds-stu3"/>
+	</library>
 	<action>
 		<!-- We can use the example code systems from the FHIR CLinical Reasoning Module, or we can define GRADE specific code systems and use those here -->
 		<extension url="http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation">
@@ -64,9 +67,9 @@
 			</extension>
 		</title>
 		<!-- TODO: This description needs to include the table for MME? -->
-		<description value="Total morphine milligram equivalent (MME) exceeds recommended amount. Taper to < 50.">
+		<description value="Total morphine milligram equivalent (MME) exceeds recommended amount. Taper to &lt; 50.">
 			<extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-				<valueString value="'Total morphine milligram equivalent (MME) is ' + ToString(MME) + '. Taper to < 50.'"/>
+				<valueString value="'Total morphine milligram equivalent (MME) is ' + ToString(MME) + '. Taper to &lt; 50.'"/>
 			</extension>
 		</description>
 		<documentation>

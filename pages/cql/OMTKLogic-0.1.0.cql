@@ -84,6 +84,21 @@ define function ToUCUM(unit String):
   end
 
 /*
+  Calculates daily frequency given frequency within a period
+*/
+define function ToDaily(frequency Integer, period System.Quantity):
+  case period.unit
+    when 'h' then frequency * (24.0 / period.value)
+    when 'min' then frequency * (24.0 / period.value) * 60
+    when 's' then frequency * (24.0 / period.value) * 60 * 60
+    when 'd' then frequency * (24.0 / period.value) / 24
+    when 'wk' then frequency * (24.0 / period.value) / (24 * 7)
+    when 'mo' then frequency * (24.0 / period.value) / (24 * 30) // assuming 30 days in month
+    when 'a' then frequency * (24.0 / period.value) / (24 * 365) // assuming 365 days in year
+    else null
+  end
+
+/*
   Returns true if the given dose form is a patch (transdermal system)
 */
 define function IsPatch(doseFormCode Code):

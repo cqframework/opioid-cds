@@ -1,12 +1,12 @@
-library OpioidCDS_DSTU2 version '0.1.0'
+library OpioidCDS_STU3 version '0.1.0'
 
-using FHIR version '1.0.2'
+using FHIR version '3.0.0'
 
-include FHIRHelpers version '1.0.2' called FHIRHelpers
+include FHIRHelpers version '3.0.0' called FHIRHelpers
 include OMTKLogic version '0.1.0' called OMTKLogic
 
 parameter UserID String
-parameter Orders List<MedicationOrder>
+parameter Orders List<MedicationRequest>
 
 context Patient
 
@@ -27,7 +27,7 @@ define Prescriptions:
       dosageInstruction: O.dosageInstruction[0], // NOTE: Assuming a single dosage instruction element
       repeat: dosageInstruction.timing.repeat,
       frequency: Coalesce(repeat.frequencyMax, repeat.frequency),
-      period: System.Quantity { value: repeat.period, unit: repeat.periodUnits },
+      period: System.Quantity { value: repeat.period, unit: repeat.periodUnit },
       doseDescription: 
         Coalesce(
           ToString(FHIRHelpers.ToQuantity(dosageInstruction.doseQuantity)), // There should be a conversion from FHIR.SimpleQuantity to System.Quantity
@@ -71,17 +71,6 @@ define MME:
     }
     sort by if isDraft then 0 else 1, rxNormCode.code
   
-/*
-define MME: {
-  {
-    Prescription: 'Oxycodone-acetaminophen 5-325mg (percocet) PO Tablet 2 tabs qid PRN pain',
-    DailyDose: 'Oxycodone PO: 10mg * 4 = 40mg',
-    ConversionFactor: 1.5,
-    MME: 60 'mg/d'
-  }
-}
-*/
-
 // TODO: Capture process decisions for MME calculation
 // TotalMME - Sum of all MME for currently and about-to-be prescribed opioid medications
 define TotalMME: System.Quantity { value: Sum(MME M return M.mme.value), unit: 'mg/d' }
@@ -89,78 +78,11 @@ define TotalMME: System.Quantity { value: Sum(MME M return M.mme.value), unit: '
 define IsMME50OrMore: TotalMME >= 50 'mg/d'
 
 /*
-Argonaut profiles only support MedicationOrder and MedicationStatement
-Epic's fhir documentation indicates the same... https://open.epic.com/Interface/FHIR
-Cener's fhir documentation indicates the same... http://fhir.cerner.com/millenium/dstu2
+USCore profiles only support MedicationRequest and MedicationStatement, same as Argonaut Data Query
+See the DSTU2 Library for more information
 
-Argonaut's Medication Code is bound to:
-http://build.fhir.org/ig/argonautproject/data-query/ValueSet-medication-codes.html
-The Argonaut MedicationOrder profile does not require any dosage information
-The Argonaut MedicationStatement profile does not require any dosage information
+USCore's Medication Code is bound to:
+http://www.hl7.org/fhir/us/core/ValueSet-us-core-medication-codes.html
+The USCore MedicationRequest and MedicationStatement profiles do not require any dosage or frequency information
 */
 
-/*
-MedicationOrder
-  dosageInstruction
-    text
-    timing
-      code
-      repeat
-        count
-        frequency
-        period
-        when
-    asNeeded
-    dose
-    rate
-    maxDosePerPeriod
-  dispenseRequest
-    numberOfRepeatsAllowed
-    quantity
-    expectedSupplyDuration
-    
-*/
-
-/*
-MedicationDispense
-  quantity
-  daysSupply
-  dosageInstruction
-    text
-    timing
-      code
-      repeat
-        count
-        frequency
-        period
-        when
-    asNeeded
-    dose
-    rate
-    maxDosePerPeriod
-    
-*/
-
-/*
-MedicationAdministration
-  dosage
-    quantity
-    rate
-*/
-
-/*
-MedicationStatement
-  dosage
-    text
-    timing
-      code
-      repeat
-        count
-        frequency
-        period
-        when
-    asNeeded
-    quantity
-    rate
-    maxDosePerPeriod
-*/
