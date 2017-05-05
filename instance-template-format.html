@@ -2,39 +2,15 @@
 # jekyll header
 ---
 
-
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<!-- instance template base -->
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Opioid Prescribing Support Implementation Guide</title>
-
-
 {% include header.html %}
 
-</head>
-<body>
-
-{% include navbar.html %}
-
- <div id="segment-content" class="segment">  <!-- segment-content -->
- <div class="container">  <!-- container -->
-            <div class="row">
-             <div class="inner-wrapper">
-  <!-- CONTENT CONTENT -->
+{% include container-start.html %}
 
 <h2>{{[title]}}</h2>
 
 {% include {{[type]}}-{{[name]}}.xhtml %}
 
+{% include container-end.html %}
 
- </div>  <!-- /inner-wrapper -->
-            </div>  <!-- /row -->
-        </div>  <!-- /container -->
+{% include footer.html %}
 
-    </div>  <!-- /segment-content -->
-
-    {% include footer.html %}
-
-</body>
-</html>

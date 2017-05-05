@@ -4,34 +4,11 @@ title: {{[title]}}
 tcode: {{[type]}}
 ---
 
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-   <meta charset="UTF-8"/>
-  <title>Profile: {{page.title}}</title>
-
   {% include header.html %}
 
-</head>
-<body>
-{% include navbar.html %}
+{% include container-start.html %}
 
- <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
-  <div class="container">  <!-- container -->
-   <ul class="breadcrumb">
-        <li title="IG Template"><a href="index.html"><b>IG Template</b></a></li>
-        <li><b>{{page.title}} Details</b></li>
-
-   </ul>
-  </div>  <!-- /container -->
- </div>  <!-- /segment-breadcrumb -->
-
- <div id="segment-content" class="segment">  <!-- segment-content -->
- <div class="container">  <!-- container -->
-            <div class="row">
-             <div class="inner-wrapper">
   <!-- CONTENT CONTENT -->
-
-<div class="col-9">
 
 <ul class="nav nav-tabs"><li class="active"><a href="#">Content</a></li><li><a href="{{page.id}}-definitions.html">Detailed Descriptions</a></li><li><a href="{{page.id}}-mappings.html">Mappings</a></li><li><a href="StructureDefinition-{{page.id}}.xml.html">XML</a></li><li><a href="StructureDefinition-{{page.id}}.json.html">JSON</a></li></ul>
 
@@ -157,13 +134,7 @@ Formal Views of Profile Content
 
 .
 
-</div>
-
-    </div>  <!-- /inner-wrapper -->
-            </div>  <!-- /row -->
-        </div>  <!-- /container -->
-
-    </div>  <!-- /segment-content -->
+{% include container-end.html %}
 
 <script src="jquery.js"> </script>
 <script src="jquery-ui.min.js"> </script>
@@ -193,5 +164,3 @@ $( '#tabs' ).tabs({
 </script>
 
 {% include footer.html %}
-</body>
-</html>
