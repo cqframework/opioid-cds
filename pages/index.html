@@ -12,12 +12,31 @@
   <a name="introduction"> </a>
   <h3>Introduction</h3>
 
-  <p>Lorem ipsum dolor...</p>
-
+  <p>This implementation guide provides resources and discussion in support of applying the Centers for Disease Control and Prevention (CDC) Opioid Prescribing Guidelines:</p>
+  
+  <a href="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420">CDC guideline for prescribing opioids for chronic pain</a>
+  
+  <p>This implementation guide was developed as part of the Clinical Quality Framework Initiative, a public-private public-private partnership sponsored by the Centers for Medicare &amp; Medicaid Services (CMS) and the U.S. Office of the National Coordinator for Health Information Technology (ONC) to identify, develop, and harmonize standards for clinical decision support and electronic clinical quality measurement.</p>
+  
+  <p>This project is a joint effort by the Centers for Disease Control and Prevention (CDC) and the Office of the National Coordinator for Health IT (ONC) focused on improving processes for the development of standardized, shareable, computable decision support artifacts using the CDC Opioid Prescribing Guideline as a model case.</p>
+  
   <a name="scope"> </a>
   <h3>Scope</h3>
-
-  <p>Lorem ipsum dolor...</p>
+  
+  <p>The initial target recommendations for the project are:</p>
+  
+  <h4>Recommendation #5</h4>
+  
+  <p>When opioids are started, providers should prescribe the lowest effective dosage. <b>Providers should use caution when prescribing opioids at any dosage, should carefully reassess evidence of individual benefits and risks when considering increasing dosage to ≥50 morphine milligram equivalents (MME)/day, and should avoid increasing dosage to ≥90 MME/day or carefully justify a decision to titrate dosage to >90 MME/day</b> (recommendation category: A, evidence type: 3).</p>
+  
+  <h4>Recommendation #11</h4>
+  
+  <p><b>When prescribing opioids for chronic pain, providers should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs.</b></p>
+  
+  <h4>Rationale for initial focus</h4>
+  
+  <p>Prior review by Yale Center for Medical Informatics had identified these recommendations as the most implementable using the Guideline Implementability Appraisal (GLIA) form.  MME will be quite challenging to implement, but also is expected to provide significant value to healthcare organizations due to the complexity of the logic which would make it difficult to re-implement on an institution-by-institution basis.</p>
+  <p>Recommendation #4 (starting on short-acting opioids) is difficult to implement because identifying new opioid prescriptions for chronic pain is challenging (specifically, such therapy often starts out with an intention to treat acute pain).  Recommendation #11 (opioid-benzo interaction checking) is difficult to implement due to overlap with existing drug-drug interaction checking software and the lack of further specificity in the guidelines (e.g., for specific drug combinations over a certain dosage and for specific populations such as the elderly).</p>
 
   <a name="content-index"> </a>
   <h3>Content Index</h3>
@@ -29,9 +48,13 @@
 		  <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
 	  </thead>
 	  <tbody>
-		  <tr><td><a href="PlanDefinition-example-rule.html">CDC Opioid Prescribing Guideline Recommendation #5</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #5</td></tr>
-		  <tr><td><a href="Library-example-logic.html">Example Logic Library</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>Example of a library for distributing CQL logic.</td></tr>
-		  <tr><td><a href="ExampleLogicLibrary.cql">Example Logic Library</a></td><td>CQL Source</td><td>For reference, the complete CQL content of the Example Library</td></tr>
+		  <tr><td><a href="PlanDefinition-cdc-opioid-05.html">CDC Opioid Prescribing Guideline Recommendation #5</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #5</td></tr>
+		  <tr><td><a href="Library-omtklogic.html">Opioid Terminology Management Knowledgdebase Logic Library</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for implementation of opioid management functionality including Milligram Morphine Equivalents.</td></tr>
+		  <tr><td><a href="cql/OMTKLogic-0.1.0.cql">Opioid Terminology Management Knowledgebase Logic</a></td><td>CQL Source</td><td>For reference, the CQL source for the OMTK Logic Library.</td></tr>
+		  <tr><td><a href="Library-opioidcds-dstu2.html">Opioid Decision Support Logic (for FHIR DSTU2)</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for implementation of opioid management decision support.</td></tr>
+		  <tr><td><a href="cql/OpioidCDS_DSTU2-0.1.0.cql">Opioid Decision Support Logic (for FHIR DSTU2)</a></td><td>CQL Source</td><td>For reference, the CQL source for the OMTK Logic Library.</td></tr>
+		  <tr><td><a href="Library-opioidcds-stu3.html">Opioid Decision Support Logic (for FHIR STU3)</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for implementation of opioid management decision support.</td></tr>
+		  <tr><td><a href="cql/OpioidCDS_STU3-0.1.0.cql">Opioid Decision Support Logic (for FHIR STU3)</a></td><td>CQL Source</td><td>For reference, the CQL source for the OMTK Logic Library.</td></tr>
 	  </tbody>
   </table>
 
