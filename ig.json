@@ -19,7 +19,7 @@
 	},
 	"version" : "3.0.1",
 	"sct-edition" : "http://snomed.info/sct/731000124108",
-	"canonicalBase": "http://hl7.org/fhir/ig/opioid-cds",
+	"canonicalBase": "http://hl7.org/fhir/ig/opioid-cds/",
 	"source": "opioid-cds.xml",
 	"spreadsheets": [
 		"medicationrequest-profile-spreadsheet.xml"
