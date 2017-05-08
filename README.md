@@ -5,7 +5,7 @@ This project provides the source for the Opioid Prescribing Support Implementati
 
 Commits to this repository will automatically trigger a new build of the IG, which will then be published to the following location:
 
-[http://build.fhir.org/ig/cqframework/opioid-cds/](http://build.fhir.org/ig/cqframework/opioid-cds)
+[http://build.fhir.org/ig/cqframework/opioid-cds/](http://build.fhir.org/ig/cqframework/opioid-cds/)
 
 Build log is available here:
 
