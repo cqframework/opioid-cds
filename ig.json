@@ -8,17 +8,22 @@
 		"qa": "qa",
 		"specification": "http://hl7.org/fhir/STU3/"
 	},
-  	"defaults": {
+	"defaults": {
 		"Any": {
 			"template-format": "instance-template-format.html",
 			"template-base": "instance-template-base.html"
 		},
 		"StructureDefinition" : {
-				"template-base": "instance-template-sd.html"
+				"template-base": "instance-template-sd.html",
+				"template-mappings": "instance-template-mappings.html",
+				"template-defns": "instance-template-definitions.html"
 		}
 	},
 	"version" : "3.0.1",
 	"sct-edition" : "http://snomed.info/sct/731000124108",
+	"extraTemplates": [
+		"mappings"
+	],
 	"canonicalBase": "http://hl7.org/fhir/ig/opioid-cds",
 	"source": "opioid-cds.xml",
 	"spreadsheets": [
