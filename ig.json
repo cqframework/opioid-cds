@@ -19,11 +19,12 @@
 				"template-defns": "instance-template-definitions.html"
 		}
 	},
-	"version" : "3.0.1",
+	"version" : "3.1.0",
 	"sct-edition" : "http://snomed.info/sct/731000124108",
 	"extraTemplates": [
 		"mappings"
 	],
+	"logging": ["init", "progress", "context", "html", "tx"],
 	"canonicalBase": "http://hl7.org/fhir/ig/opioid-cds",
 	"source": "opioid-cds.xml",
 	"spreadsheets": [
