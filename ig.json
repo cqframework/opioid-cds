@@ -19,7 +19,7 @@
 				"template-defns": "instance-template-definitions.html"
 		}
 	},
-	"version" : "3.1.0",
+	"version" : "3.0.1",
 	"sct-edition" : "http://snomed.info/sct/731000124108",
 	"extraTemplates": [
 		"mappings"
