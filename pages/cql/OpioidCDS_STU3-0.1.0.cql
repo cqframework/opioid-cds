@@ -28,6 +28,12 @@ define Prescriptions:
       repeat: dosageInstruction.timing.repeat,
       frequency: Coalesce(repeat.frequencyMax, repeat.frequency),
       period: System.Quantity { value: repeat.period, unit: repeat.periodUnit },
+      periodDescription:
+        ToString(repeat.period) +
+          Coalesce(
+            '-' + ToString(repeat.periodMax),
+            ''
+          ) + repeat.periodUnit,
       doseDescription: 
         Coalesce(
           ToString(FHIRHelpers.ToQuantity(dosageInstruction.doseQuantity)), // There should be a conversion from FHIR.SimpleQuantity to System.Quantity
@@ -49,7 +55,7 @@ define Prescriptions:
         if dosageInstruction.text is not null then
           medicationName + ' ' + dosageInstruction.text
         else
-          medicationName + ' ' + doseDescription + ' q' + frequencyDescription + (if dosageInstruction.asNeededBoolean.value then ' PRN' else ''), // TODO: Shouldn't need the .value here on asNeededBoolean
+          medicationName + ' ' + doseDescription + ' q' + periodDescription + (if dosageInstruction.asNeededBoolean.value then ' PRN' else ''), // TODO: Shouldn't need the .value here on asNeededBoolean
       dose: FHIRHelpers.ToQuantity(Coalesce(dosageInstruction.doseQuantity, dosageInstruction.doseRange.high)), // TODO: Shouldn't need the ToQuantity here...
       dosesPerDay: Coalesce(OMTKLogic.ToDaily(frequency, period), 1.0)
     }
