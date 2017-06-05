@@ -1,0 +1,245 @@
+---
+# jekyll header
+---
+{% include header.html %}
+
+<!-- ============BreadCrumb=============== -->
+
+{% include container-start.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
+
+<h2>
+CDC Opioid Prescribing Guidelines - Process Documentation
+</h2>
+
+<p>This section describes the functional behavior of the recommendations as implemented for 
+the chosen pilot sites, and documents the process that was used to establish the functional 
+behavior once the target recommendations were chosen.</p>
+
+<h3>Assumptions</h3>
+
+<p>Assumptions made in this process were based on team understanding of Epic and Cerner 
+  EHR capabilities, as well as team experience with clinical decision support (CDS) 
+  implementation in general, and opioid CDS specifically.</p>
+  
+<h4>Clinical Assumptions</h4>
+
+<p>Opioids for chronic pain management are often not started with an intent for chronic use; such
+  prescriptions often transition from intended acute paitn management. Therefore, it is very difficult 
+  to identify a new opioid prescription a prior as for chronic pain management.</p>
+  
+<p>Indications and associated diagnoses for opioid prescriptions are often not available within the EHR.</p>
+
+<p>End dates for opioid prescriptions are often not reliable.</p>
+
+<h4>Technical Assumptions</h4>
+
+<p>The initial focus is on Epic and Cerner EHR platforms.</p>
+<p>The technical framework to be used for EHR integration is CDS Hooks, with the FHIR
+  Clinical Reasoning Module to represent the behavioral artifacts.</p>
+<p>Widely scaling this type of CDS is still belleding-edge clinical informatics work, so 
+  an iterative and agile approach is recommended.</p>
+<p>Both Epic and Cerner will be capable of supporting the provision of the following information:</p>
+<ul>
+  <li>Opioid medications about to be prescribed</li>
+  <li>Problem list, including for cancer</li>
+  <li>Prior uring drug testing results</li>
+</ul>
+<p>The degree to which standard vocabularies are used by Epic and Cerner to provide this
+  information must be verified at each implementation site, and to the extent that they are 
+  not uniform, terminology mappings will need to be established.</p>
+  
+<h3>Decision Points</h3>
+
+<h4>Opioid Determination</h4>
+
+<p>The first issue to establish is how to determine what constitutes an opioid. The CDC guideline
+  uses NDC codes derived from SAS calculations intended for use against prescription data. Prescription 
+  data can included ordered medication and/or dispensed medication, depending on availability at the local site.</p>
+  
+<p>To avoid excess alerting, the algorithm uses the following exclusions:</p>
+
+<ol>
+  <li>Oral liquid medications, assuming the greatest majority of prescriptions for liquid oral
+    formulations are intended for patients unable to swallow pills or tablets due to late stage terminal illness.</li>
+  <li>In some cases, EHR vendors have developed approaches to identify MME equivalents. In such situations, the
+    implementation should attempt to match the vendor's approach so that end users receive consistent advice.
+</ol>
+
+<p>For geographic locations with pharmacies that participate in Surescripts, implementation sites have
+  the optio to use dispense data to perform the MME calculation. However, coverage varies by region,
+  and even for regions with coverage, licensing costs may be required and must be considered as a factor
+  when determining whether to use dispense data.</p>
+  
+<h4>Calculation of Daily Dosage</h4>
+
+<p>Calculation of daily dosage is based on the prescribed (order) or dispensed data based on expected use
+  at the implementation site. The patient may be taking medication less often than prescribed or expected. For
+  example, medication ordered every 4 hours as needed (PRN) leads to a calculation of six doses with a 24 hour
+  period.</p>
+  
+<p>The daily dosage calculation is different based on whether dispsensed data is used:</p>
+
+<p><b>Order Data (total daily dose based on the sig)</b></p>
+
+<p>Expected use: Total daily dose = quantity per use * strength * daily frequency</p>
+
+<p>Example: Order for two 24 mg tabs every 4 hours = 2 * 24 mg * 6 = 300 mg per day</p>
+
+<p><b>Dispensed Data (dose not use sig)</b></p>
+
+<p>Expected use: Total daily dose = (number dispensed * strength) / duration (days)</p>
+
+<p>Example: Dispensed 60 pills, 25 mg each, for 30 days = (60 * 25) / 30, or 50 mg per day</p>
+
+<p>Actual use may be less per day for a longer time period for either calculation, but the MME calculation addresses 
+  the prescribed or dispensed data. It is also possible that patients received dispensed medication and failed to
+  ingest some or all of it. The extent to which differences exist between actual use and ordered or dispensed data requires
+  access to reconciled medication data and may be confounded by trust issues.</p>
+  
+<p>The National Comittee for Quality Assurance (NCQA) Healthcare Effectiveness Data and Information Set (HEDIS)
+  took a similar approach to determining cumulative medication use over time. The related electronice clinical quality
+  measure (eCQM) CMS 128 addresses continuous use of anti-depressant medication management as 84 to 114 days (short term) and
+  180 to 231 days (long term) based on active medication and can use prescribed or dispensed data as they are available.
+  The eCQM assumes the medication is dispensed and used as written.</p>
+  
+<h4>Determining Opioid Usage</h4>
+
+<p>Active medications in an EHR may have a start date and indicate the number of doses written; however,
+  if not discontinued, the algorithm assumes the ordered medication remains active.</p>
+  
+<p>The logic assumes the prescription is filled on the day of the order.</p>
+
+<p>If the prescription includes refills, the system assumes the patient requested all refills of the medication.</p>
+
+<h4>Information to assist with Non-Medication Terminology Decisions</h4>
+
+<ul>
+  <li>Value sets provided include concepts from standardized code systems (e.g., SNOMED-CT, ICD-10-CM, RxNorm) to
+    indicate inclusion criteria for a given data element. However, clinicians often document using natural language 
+    and/or local codes. In addition, some sources only capture billing codes. The implementation site must have a 
+    mechanism to map such clinician-entered data to the content of the value set to determine if a patient's data
+    represents the information required for processing the clinical decision support. Vendors and implementation sites
+    may use third party vendors and tools to perform such mappings. The result is a need to create the mappings for 
+    each guideline valueset based on locally available information. To assure consistency of such translations across
+    settings and vendor products requires careful study and analysis. The process also requires effort on the part of
+    the EHR, local implementation site, or third party vendor; new value sets must be analyzed and individually 
+    configured in the system, and existing value sets must be updated regularly to support newly available codes, and
+    reviewed for accuracy.</li>
+  <li>Some concepts seem relatively straigthforward when included in a clinical guideline for consumption by a 
+    clinician. However, when setting up queries to retrieve data from EHR or other clinical software data storage, the
+    concepts needed may be difficult to encode using available code systems. Value sets can help with problem only in
+    so far as the concepts are clearly defined without ambiguity. A good example is the definition of end-stage,
+    stage 4 or terminal cancer, for exclusion from opiate usage calculation. One approach is to develop a value set 
+    indicating metastatic cancer and pancreatic cancer. This has the potential of covering the vast majority of cancers
+    and secondary malignant neoplastic disease. Avoiding primary neoplastic and non-neoplastic disease seems prudent
+    as these diagnoses are less likely to identify patients for whom the opportunity for additional treatment and 
+    quality of life has passed. However, successfully identifying patients for whom opiate medications should be ignored
+    might better be managed by using encounter location or type to identify patients assigned to hospice care, e.g.
+      <ul>
+        <li>Procedures
+          <ol>
+            <li>Referral to hospice (procedure) SCTID : 306205009</li>
+            <li>Admission to hospice (procedure) SCTID: 305336008</li>
+	          <li>Urgent admission to hospice (procedure) SCTID: 183919006</li>
+            <li>Discharge to healthcare facility for hospice care (procedure) SCTID: 428371000124100</li>
+          </ol>
+        </li>
+        <li>Findings
+          <ol>
+            <li>Full care by hospice (finding) SCTID: 170935008</li>
+            <li>Transition from self-care to hospice (finding) SCTID: 448451000124101</li>
+	          <li>Transition from acute care to hospice (finding) SCTID: 1891000124102</li>
+            <li>Transition from long-term care to hospice (finding) SCTID: 1951000124104</li>
+            <li>Transition from long-term care to hospice (finding) SCTID: 1951000124104</li>
+          </ol>
+        </li>
+        <li>Regime/therapy:
+          <ol>
+            <li>Dying care (regime/therapy) SCTID: 385736008</li>
+          </ol>
+        </li>
+      </ul>
+    Because it is so difficult to identify individual patients who are appropriately receiving high opioid doses,
+    it is important to allow the physician to override the alert with a reason, e.g., to indicate end-of-life care. 
+    Since the override option has the potential of over alerting, a mechanism to determine end-of-life care as provided 
+    using hospice care seem preferable.
+  </li>
+</ul>
+
+<h3>Functional Description</h3>
+
+<h4>Recommendation #5 - Morphine Milligram Equivalence</h4>
+
+<p><b>Patient is being prescribed opioids for chronic pain</b></p>
+
+<p>Patient is being prescribed non-surgical opioids that cover 80 days or more in the previous 90 days</p>
+
+<p>To be generalizable to areas where dispense information is not available, base the calculation
+  on prescriptions, and assume all prescribed medications were taken, including for PRN (as needed)
+  medications. Assume PRN medications are taken at the maximum frequency.</p>
+  
+<p><b>Patient does not appear to be at end of life</b></p>
+
+<p>An active problem list entry for metastatic cancer or pancreatic cancer, or a liquid form
+   opioid other than codeine cough syrups.</p>
+   
+<p><b>Calculate the MME for the opioid being prescribed plus any other active opioid prescriptions.</b></p>
+
+<p><b>if MME >= 50 and < 90, provide a recommendation to taper:</b></p>
+
+<p><b>High risk for opioid overdose - consider tapering.</b></p>
+
+<p>Total morphine milligram equivalent (MME) is 60 mg/day. Taper to < 50.</p>
+
+<p><b>if MME >= 90, provide a recommendation to taper now:</b></p>
+
+<p><b>High risk for opioid overdose - taper now.</b></p>
+
+<p>Total morphine milligram equivalent (MME) is 100 mg/day. Taper to < 50.</p>
+
+<p>For both recommendations, provide the information used to calculate the MME as a table of results to provide 
+  the clinician with sufficient information to understand how the equivalence was calculated, as well as the source
+  of the data used in the calculation.</p>
+  
+<p>In addition, provide links to the CDC Guidance, as well as the MME conversion table.</p>
+
+<p>For both recommendations, one of the following responses should be required:</p>
+
+<ul>
+  <li>Will reduce dosage</li>
+  <li>Risk of overdose carefully considered and outweight by benefit; snooze 3 months.</li>
+  <li>Acute pain; snooze 1 month.</li>
+  <li>N/A-see comment (will be reviewed by medical directory); snooze 3 months.</li>
+</ul>
+
+<img src="assets/images/Recommendation05-Flow.png"/>
+
+<h4>Recommendation #11 - Urine Drug Testing</h4>
+
+<p><b>Patient is being prescribed opioids for chronic pain.</b></p>
+
+<p><b>Patient has not had a urine drug screening within the last 12 months</b></p>
+
+<p>Display a message indicating that urine drug testing results are not available within the last 12 months. Patient
+  should have a urine drug test performed.</p>
+  
+<p>One of the following responses should be required:</p>
+
+<ul>
+  <li>Will perform urine screening</li>
+  <li>N/A - not for chronic pain management; snooze 3 months</li>
+</ul>
+
+<p><b>Patient has a urine drug screening but does test not positive for opioids, or tests positive for other drugs</b></p>
+
+<p>Display a message indicating that uring drug testing results are inconsistent with the patient's medication regimen.</p>
+
+<img src="assets/images/Recommendation11-Flow.png"/>
+
+<!-- ==============END CONTENT END CONTENT=================== -->
+
+{% include container-end.html %}
+
+{% include footer.html %}

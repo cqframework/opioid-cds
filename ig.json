@@ -24,12 +24,10 @@
 	"extraTemplates": [
 		"mappings"
 	],
-	"logging": ["init", "progress", "context", "html", "tx"],
 	"canonicalBase": "http://hl7.org/fhir/ig/opioid-cds",
 	"source": "opioid-cds.xml",
 	"spreadsheets": [
-		"medicationrequest-profile-spreadsheet.xml",
-		"plandefinition-profile-spreadsheet.xml"
+		"medicationrequest-profile-spreadsheet.xml"
 	],
 	"resources": {
 		"Library/library-example": { "source": "library-example" },
