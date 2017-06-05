@@ -13,22 +13,22 @@
 CDC Opioid Prescribing Guidelines - Process Documentation
 </h2>
 
-<p>This section describes the functional behavior of the recommendations as implemented for 
-the chosen pilot sites, and documents the process that was used to establish the functional 
+<p>This section describes the functional behavior of the recommendations as implemented for
+the chosen pilot sites, and documents the process that was used to establish the functional
 behavior once the target recommendations were chosen.</p>
 
 <h3>Assumptions</h3>
 
-<p>Assumptions made in this process were based on team understanding of Epic and Cerner 
-  EHR capabilities, as well as team experience with clinical decision support (CDS) 
+<p>Assumptions made in this process were based on team understanding of Epic and Cerner
+  EHR capabilities, as well as team experience with clinical decision support (CDS)
   implementation in general, and opioid CDS specifically.</p>
-  
+
 <h4>Clinical Assumptions</h4>
 
 <p>Opioids for chronic pain management are often not started with an intent for chronic use; such
-  prescriptions often transition from intended acute paitn management. Therefore, it is very difficult 
+  prescriptions often transition from intended acute paitn management. Therefore, it is very difficult
   to identify a new opioid prescription a prior as for chronic pain management.</p>
-  
+
 <p>Indications and associated diagnoses for opioid prescriptions are often not available within the EHR.</p>
 
 <p>End dates for opioid prescriptions are often not reliable.</p>
@@ -38,7 +38,7 @@ behavior once the target recommendations were chosen.</p>
 <p>The initial focus is on Epic and Cerner EHR platforms.</p>
 <p>The technical framework to be used for EHR integration is CDS Hooks, with the FHIR
   Clinical Reasoning Module to represent the behavioral artifacts.</p>
-<p>Widely scaling this type of CDS is still belleding-edge clinical informatics work, so 
+<p>Widely scaling this type of CDS is still belleding-edge clinical informatics work, so
   an iterative and agile approach is recommended.</p>
 <p>Both Epic and Cerner will be capable of supporting the provision of the following information:</p>
 <ul>
@@ -47,17 +47,17 @@ behavior once the target recommendations were chosen.</p>
   <li>Prior uring drug testing results</li>
 </ul>
 <p>The degree to which standard vocabularies are used by Epic and Cerner to provide this
-  information must be verified at each implementation site, and to the extent that they are 
+  information must be verified at each implementation site, and to the extent that they are
   not uniform, terminology mappings will need to be established.</p>
-  
+
 <h3>Decision Points</h3>
 
 <h4>Opioid Determination</h4>
 
 <p>The first issue to establish is how to determine what constitutes an opioid. The CDC guideline
-  uses NDC codes derived from SAS calculations intended for use against prescription data. Prescription 
+  uses NDC codes derived from SAS calculations intended for use against prescription data. Prescription
   data can included ordered medication and/or dispensed medication, depending on availability at the local site.</p>
-  
+
 <p>To avoid excess alerting, the algorithm uses the following exclusions:</p>
 
 <ol>
@@ -71,14 +71,14 @@ behavior once the target recommendations were chosen.</p>
   the optio to use dispense data to perform the MME calculation. However, coverage varies by region,
   and even for regions with coverage, licensing costs may be required and must be considered as a factor
   when determining whether to use dispense data.</p>
-  
+
 <h4>Calculation of Daily Dosage</h4>
 
 <p>Calculation of daily dosage is based on the prescribed (order) or dispensed data based on expected use
   at the implementation site. The patient may be taking medication less often than prescribed or expected. For
   example, medication ordered every 4 hours as needed (PRN) leads to a calculation of six doses with a 24 hour
   period.</p>
-  
+
 <p>The daily dosage calculation is different based on whether dispsensed data is used:</p>
 
 <p><b>Order Data (total daily dose based on the sig)</b></p>
@@ -93,22 +93,22 @@ behavior once the target recommendations were chosen.</p>
 
 <p>Example: Dispensed 60 pills, 25 mg each, for 30 days = (60 * 25) / 30, or 50 mg per day</p>
 
-<p>Actual use may be less per day for a longer time period for either calculation, but the MME calculation addresses 
+<p>Actual use may be less per day for a longer time period for either calculation, but the MME calculation addresses
   the prescribed or dispensed data. It is also possible that patients received dispensed medication and failed to
   ingest some or all of it. The extent to which differences exist between actual use and ordered or dispensed data requires
   access to reconciled medication data and may be confounded by trust issues.</p>
-  
+
 <p>The National Comittee for Quality Assurance (NCQA) Healthcare Effectiveness Data and Information Set (HEDIS)
   took a similar approach to determining cumulative medication use over time. The related electronice clinical quality
   measure (eCQM) CMS 128 addresses continuous use of anti-depressant medication management as 84 to 114 days (short term) and
   180 to 231 days (long term) based on active medication and can use prescribed or dispensed data as they are available.
   The eCQM assumes the medication is dispensed and used as written.</p>
-  
+
 <h4>Determining Opioid Usage</h4>
 
 <p>Active medications in an EHR may have a start date and indicate the number of doses written; however,
   if not discontinued, the algorithm assumes the ordered medication remains active.</p>
-  
+
 <p>The logic assumes the prescription is filled on the day of the order.</p>
 
 <p>If the prescription includes refills, the system assumes the patient requested all refills of the medication.</p>
@@ -117,24 +117,24 @@ behavior once the target recommendations were chosen.</p>
 
 <ul>
   <li>Value sets provided include concepts from standardized code systems (e.g., SNOMED-CT, ICD-10-CM, RxNorm) to
-    indicate inclusion criteria for a given data element. However, clinicians often document using natural language 
-    and/or local codes. In addition, some sources only capture billing codes. The implementation site must have a 
+    indicate inclusion criteria for a given data element. However, clinicians often document using natural language
+    and/or local codes. In addition, some sources only capture billing codes. The implementation site must have a
     mechanism to map such clinician-entered data to the content of the value set to determine if a patient's data
     represents the information required for processing the clinical decision support. Vendors and implementation sites
-    may use third party vendors and tools to perform such mappings. The result is a need to create the mappings for 
+    may use third party vendors and tools to perform such mappings. The result is a need to create the mappings for
     each guideline valueset based on locally available information. To assure consistency of such translations across
     settings and vendor products requires careful study and analysis. The process also requires effort on the part of
-    the EHR, local implementation site, or third party vendor; new value sets must be analyzed and individually 
+    the EHR, local implementation site, or third party vendor; new value sets must be analyzed and individually
     configured in the system, and existing value sets must be updated regularly to support newly available codes, and
     reviewed for accuracy.</li>
-  <li>Some concepts seem relatively straigthforward when included in a clinical guideline for consumption by a 
+  <li>Some concepts seem relatively straigthforward when included in a clinical guideline for consumption by a
     clinician. However, when setting up queries to retrieve data from EHR or other clinical software data storage, the
     concepts needed may be difficult to encode using available code systems. Value sets can help with problem only in
     so far as the concepts are clearly defined without ambiguity. A good example is the definition of end-stage,
-    stage 4 or terminal cancer, for exclusion from opiate usage calculation. One approach is to develop a value set 
+    stage 4 or terminal cancer, for exclusion from opiate usage calculation. One approach is to develop a value set
     indicating metastatic cancer and pancreatic cancer. This has the potential of covering the vast majority of cancers
     and secondary malignant neoplastic disease. Avoiding primary neoplastic and non-neoplastic disease seems prudent
-    as these diagnoses are less likely to identify patients for whom the opportunity for additional treatment and 
+    as these diagnoses are less likely to identify patients for whom the opportunity for additional treatment and
     quality of life has passed. However, successfully identifying patients for whom opiate medications should be ignored
     might better be managed by using encounter location or type to identify patients assigned to hospice care, e.g.
       <ul>
@@ -162,8 +162,8 @@ behavior once the target recommendations were chosen.</p>
         </li>
       </ul>
     Because it is so difficult to identify individual patients who are appropriately receiving high opioid doses,
-    it is important to allow the physician to override the alert with a reason, e.g., to indicate end-of-life care. 
-    Since the override option has the potential of over alerting, a mechanism to determine end-of-life care as provided 
+    it is important to allow the physician to override the alert with a reason, e.g., to indicate end-of-life care.
+    Since the override option has the potential of over alerting, a mechanism to determine end-of-life care as provided
     using hospice care seem preferable.
   </li>
 </ul>
@@ -179,30 +179,30 @@ behavior once the target recommendations were chosen.</p>
 <p>To be generalizable to areas where dispense information is not available, base the calculation
   on prescriptions, and assume all prescribed medications were taken, including for PRN (as needed)
   medications. Assume PRN medications are taken at the maximum frequency.</p>
-  
+
 <p><b>Patient does not appear to be at end of life</b></p>
 
 <p>An active problem list entry for metastatic cancer or pancreatic cancer, or a liquid form
    opioid other than codeine cough syrups.</p>
-   
+
 <p><b>Calculate the MME for the opioid being prescribed plus any other active opioid prescriptions.</b></p>
 
-<p><b>if MME >= 50 and < 90, provide a recommendation to taper:</b></p>
+<p><b>if MME &gt;= 50 and &lt; 90, provide a recommendation to taper:</b></p>
 
 <p><b>High risk for opioid overdose - consider tapering.</b></p>
 
-<p>Total morphine milligram equivalent (MME) is 60 mg/day. Taper to < 50.</p>
+<p>Total morphine milligram equivalent (MME) is 60 mg/day. Taper to &lt; 50.</p>
 
-<p><b>if MME >= 90, provide a recommendation to taper now:</b></p>
+<p><b>if MME &gt;= 90, provide a recommendation to taper now:</b></p>
 
 <p><b>High risk for opioid overdose - taper now.</b></p>
 
-<p>Total morphine milligram equivalent (MME) is 100 mg/day. Taper to < 50.</p>
+<p>Total morphine milligram equivalent (MME) is 100 mg/day. Taper to &lt; 50.</p>
 
-<p>For both recommendations, provide the information used to calculate the MME as a table of results to provide 
+<p>For both recommendations, provide the information used to calculate the MME as a table of results to provide
   the clinician with sufficient information to understand how the equivalence was calculated, as well as the source
   of the data used in the calculation.</p>
-  
+
 <p>In addition, provide links to the CDC Guidance, as well as the MME conversion table.</p>
 
 <p>For both recommendations, one of the following responses should be required:</p>
@@ -224,7 +224,7 @@ behavior once the target recommendations were chosen.</p>
 
 <p>Display a message indicating that urine drug testing results are not available within the last 12 months. Patient
   should have a urine drug test performed.</p>
-  
+
 <p>One of the following responses should be required:</p>
 
 <ul>

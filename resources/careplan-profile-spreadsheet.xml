@@ -1074,11 +1074,11 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s72"><Data ss:Type="String">id</Data></Cell>
-    <Cell ss:StyleID="s73"><Data ss:Type="String">PlanDefinition-opioidcds</Data></Cell>
+    <Cell ss:StyleID="s73"><Data ss:Type="String">CarePlan-opioidcds</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">name</Data></Cell>
-    <Cell ss:StyleID="s75"><Data ss:Type="String">OpioidCDS-PlanDefinition</Data></Cell>
+    <Cell ss:StyleID="s75"><Data ss:Type="String">OpioidCDS-CarePlan</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">author.name</Data></Cell>
@@ -1094,7 +1094,7 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="69">
     <Cell ss:StyleID="s74"><Data ss:Type="String">description</Data></Cell>
-    <Cell ss:StyleID="s78"><Data ss:Type="String">Profile of PlanDefinition for use with CDC Opioid Prescribing Guidelines</Data></Cell>
+    <Cell ss:StyleID="s78"><Data ss:Type="String">Profile of CarePlan for use with CDC Opioid Prescribing Guidelines</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">status</Data></Cell>
@@ -1106,7 +1106,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
-    <Cell ss:StyleID="s75"><Data ss:Type="String">OpioidCDS-PlanDefinition</Data></Cell>
+    <Cell ss:StyleID="s75"><Data ss:Type="String">OpioidCDS-CarePlan</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">version</Data></Cell>
@@ -1114,8 +1114,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension.uri</Data></Cell>
-    <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/PlanDefinition-"><Data
-      ss:Type="String">http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/PlanDefinition-</Data></Cell>
+    <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/CarePlan-"><Data
+      ss:Type="String">http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/CarePlan-</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s81"><Data ss:Type="String">introduction</Data></Cell>
@@ -1169,10 +1169,10 @@
    <x:PageLayoutZoom>0</x:PageLayoutZoom>
   </WorksheetOptions>
  </Worksheet>
- <Worksheet ss:Name="OpioidCDS-PlanDefinition">
+ <Worksheet ss:Name="OpioidCDS-CarePlan">
   <Names>
    <NamedRange ss:Name="_FilterDatabase"
-    ss:RefersTo="='OpioidCDS-PlanDefinition'!R1C1:R72C25" ss:Hidden="1"/>
+    ss:RefersTo="='OpioidCDS-CarePlan'!R1C1:R72C25" ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="25" ss:ExpandedRowCount="59" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s190" ss:DefaultColumnWidth="65.25"
@@ -1301,11 +1301,11 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="120">
-    <Cell ss:StyleID="s181"><Data ss:Type="String">CDC-PlanDefinition</Data><NamedCell
+    <Cell ss:StyleID="s181"><Data ss:Type="String">CDC-CarePlan</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s182"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s182"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s183"><Data ss:Type="String">PlanDefinition</Data><NamedCell
+    <Cell ss:StyleID="s183"><Data ss:Type="String">CarePlan</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s184"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s182"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1319,7 +1319,7 @@
     <Cell ss:StyleID="s182"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s182"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s184"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s98"><Data ss:Type="String">Profile of plan definition, indicating which elements must be supported for use in CDC Opioid Prescribing Guideline recommendations</Data><NamedCell
+    <Cell ss:StyleID="s98"><Data ss:Type="String">Profile of care plan, indicating which elements must be supported for use in CDC Opioid Prescribing Guideline recommendations</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s99"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s98"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1335,37 +1335,7 @@
     <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.type</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">0..1</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">CodeableConcept</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><Data ss:Type="String">PlanDefinitionType</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s198"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16.3125">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.status</Data><NamedCell
+    <Cell ss:StyleID="s193"><Data ss:Type="String">CarePlan.status</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell
@@ -1374,7 +1344,7 @@
     <Cell ss:StyleID="s192"><Data ss:Type="String">code</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><Data ss:Type="String">PlanDefinitionPublicationStatus</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><Data ss:Type="String">CarePlanStatus</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1395,14 +1365,44 @@
     <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.effectivePeriod</Data><NamedCell
+    <Cell ss:StyleID="s193"><Data ss:Type="String">CarePlan.intent</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">0..1</Data><NamedCell
+    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Period</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">N</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">code</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><Data ss:Type="String">CarePlanIntent</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s198"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="16.3125">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><Data ss:Type="String">CarePlan.title</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">string</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1424,13 +1424,42 @@
     <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.relatedArtifact</Data><NamedCell
+    <Cell ss:StyleID="s193"><Data ss:Type="String">CarePlan.description</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">string</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s198"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="16.3125">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><Data ss:Type="String">CarePlan.activity</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><Data ss:Type="String">0..*</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">RelatedArtifact</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">BackboneElement</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><Data ss:Type="String">N</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1453,406 +1482,19 @@
     <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.relatedArtifact.type</Data><NamedCell
+    <Cell ss:StyleID="s193"><Data ss:Type="String">CarePlan.activity.detail</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">code</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><Data ss:Type="String">PlanDefinitionDocumentationType</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s198"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16.3125">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.relatedArtifact.display</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">string</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s198"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="16.3125">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.relatedArtifact.url</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">uri</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s198"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.library</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Reference(Library)</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s200"><Data ss:Type="String">PlanDefinition.action</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..*</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">BackboneElement</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell
-      ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.title</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">string</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.description</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">string</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.documentation</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">0..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">RelatedArtifact</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">N</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.documentation.type</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">code</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">PlanDefinitionDocumentationType</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.documentation.display</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">string</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.documentation.url</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">uri</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.triggerDefinition</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">0..*</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">TriggerDefinition</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">N</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.triggerDefinition.type</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">code</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">PlanDefinitionTriggerType</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.triggerDefinition.eventName</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">string</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.condition</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..*</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><Data ss:Type="String">BackboneElement</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1862,24 +1504,27 @@
     <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s198"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0">
+   <Row ss:AutoFitHeight="0" ss:Height="16.3125">
     <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.condition.kind</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><Data ss:Type="String">CarePlan.activity.detail.statusReason</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">code</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">string</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">PlanDefinitionConditionKind</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s194"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1889,154 +1534,505 @@
     <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s198"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.condition.language</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">string</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.condition.expression</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">string</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.condition.description</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">0..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">string</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">N</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.groupingBehavior</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">0..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">code</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">N</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">PlanDefinitionGroupingBehavior</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.selectionBehavior</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">0..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">code</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">N</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">PlanDefinitionSelectionBehavior</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s193"><Data ss:Type="String">PlanDefinition.action.action</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><Data ss:Type="String">CarePlan.note</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><Data ss:Type="String">0..*</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s192"><Data ss:Type="String">BackboneElement</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">Annotation</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><Data ss:Type="String">N</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><Data ss:Type="String">CarePlan.note.text</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">1..1</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">string</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s112"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s199"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s191"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s193"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s192"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -5521,13 +5517,13 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
     <Row ss:AutoFitHeight="0">
-      <Cell ss:StyleID="s104"><Data ss:Type="String">PlanDefinitionType</Data></Cell>
-      <Cell ss:StyleID="s107"><Data ss:Type="String">The type of asset the plan definition represents</Data></Cell>
+      <Cell ss:StyleID="s104"><Data ss:Type="String">CarePlanStatus</Data></Cell>
+      <Cell ss:StyleID="s107"><Data ss:Type="String">The status of the care plan</Data></Cell>
       <Cell ss:StyleID="s140"><Data ss:Type="String">value set</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Extensible</Data></Cell>
-      <Cell ss:StyleID="s179" ss:HRef="http://hl7.org/fhir/ValueSet/plan-definition-type">
-        <Data ss:Type="String">http://hl7.org/fhir/ValueSet/plan-definition-type</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Value set for plan definition type</Data></Cell>
+      <Cell ss:StyleID="s140"><Data ss:Type="String">Required</Data></Cell>
+      <Cell ss:StyleID="s179" ss:HRef="http://hl7.org/fhir/ValueSet/care-plan-status">
+        <Data ss:Type="String">http://hl7.org/fhir/ValueSet/care-plan-status</Data></Cell>
+      <Cell ss:StyleID="s140"><Data ss:Type="String">Value set for care plan status</Data></Cell>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
@@ -5537,13 +5533,13 @@
       <Cell ss:StyleID="s141"/>
     </Row>
     <Row ss:AutoFitHeight="0">
-      <Cell ss:StyleID="s104"><Data ss:Type="String">PlanDefinitionPublicationStatus</Data></Cell>
-      <Cell ss:StyleID="s107"><Data ss:Type="String">The status of the plan definition</Data></Cell>
+      <Cell ss:StyleID="s104"><Data ss:Type="String">CarePlanIntent</Data></Cell>
+      <Cell ss:StyleID="s107"><Data ss:Type="String">The intent of the care plan</Data></Cell>
       <Cell ss:StyleID="s140"><Data ss:Type="String">value set</Data></Cell>
       <Cell ss:StyleID="s140"><Data ss:Type="String">Required</Data></Cell>
-      <Cell ss:StyleID="s179" ss:HRef="http://hl7.org/fhir/ValueSet/publication-status">
-        <Data ss:Type="String">http://hl7.org/fhir/ValueSet/publication-status</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Value set for plan definition status</Data></Cell>
+      <Cell ss:StyleID="s179" ss:HRef="http://hl7.org/fhir/ValueSet/care-plan-intent">
+        <Data ss:Type="String">http://hl7.org/fhir/ValueSet/care-plan-intent</Data></Cell>
+      <Cell ss:StyleID="s140"><Data ss:Type="String">Value set for care plan intent</Data></Cell>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
@@ -5553,29 +5549,12 @@
       <Cell ss:StyleID="s141"/>
     </Row>
     <Row ss:AutoFitHeight="0">
-      <Cell ss:StyleID="s104"><Data ss:Type="String">PlanDefinitionDocumentationType</Data></Cell>
-      <Cell ss:StyleID="s107"><Data ss:Type="String">The type of the plan definition documentation</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">value set</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Required</Data></Cell>
-      <Cell ss:StyleID="s179" ss:HRef="http://hl7.org/fhir/ValueSet/related-artifact-type">
-        <Data ss:Type="String">http://hl7.org/fhir/ValueSet/related-artifact-type</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Value set for plan definition documentation type</Data></Cell>
+      <Cell ss:StyleID="s104"/>
+      <Cell ss:StyleID="s107"/>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
-      <Cell ss:StyleID="s140"/>
-      <Cell ss:StyleID="s140"/>
-      <Cell ss:StyleID="s141"/>
-    </Row>
-    <Row ss:AutoFitHeight="0">
-      <Cell ss:StyleID="s104"><Data ss:Type="String">PlanDefinitionTriggerType</Data></Cell>
-      <Cell ss:StyleID="s107"><Data ss:Type="String">The type of the plan definition action triggering event</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">value set</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Required</Data></Cell>
-      <Cell ss:StyleID="s179" ss:HRef="http://hl7.org/fhir/ValueSet/trigger-type">
-        <Data ss:Type="String">http://hl7.org/fhir/ValueSet/trigger-type</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Value set for plan definition action trigger event type</Data></Cell>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
@@ -5585,29 +5564,12 @@
       <Cell ss:StyleID="s141"/>
     </Row>
     <Row ss:AutoFitHeight="0">
-      <Cell ss:StyleID="s104"><Data ss:Type="String">PlanDefinitionConditionKind</Data></Cell>
-      <Cell ss:StyleID="s107"><Data ss:Type="String">The kind of action condition</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">value set</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Required</Data></Cell>
-      <Cell ss:StyleID="s179" ss:HRef="http://hl7.org/fhir/ValueSet/action-condition-kind">
-        <Data ss:Type="String">http://hl7.org/fhir/ValueSet/action-condition-kind</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Value set for the kind of condition</Data></Cell>
+      <Cell ss:StyleID="s104"/>
+      <Cell ss:StyleID="s107"/>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
-      <Cell ss:StyleID="s140"/>
-      <Cell ss:StyleID="s140"/>
-      <Cell ss:StyleID="s141"/>
-    </Row>
-    <Row ss:AutoFitHeight="0">
-      <Cell ss:StyleID="s104"><Data ss:Type="String">PlanDefinitionGroupingBehavior</Data></Cell>
-      <Cell ss:StyleID="s107"><Data ss:Type="String">The grouping behavior for the action</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">value set</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Required</Data></Cell>
-      <Cell ss:StyleID="s179" ss:HRef="http://hl7.org/fhir/ValueSet/action-grouping-behavior">
-        <Data ss:Type="String">http://hl7.org/fhir/ValueSet/action-grouping-behavior</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Value set for the action grouping behavior</Data></Cell>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
@@ -5617,13 +5579,42 @@
       <Cell ss:StyleID="s141"/>
     </Row>
     <Row ss:AutoFitHeight="0">
-      <Cell ss:StyleID="s104"><Data ss:Type="String">PlanDefinitionSelectionBehavior</Data></Cell>
-      <Cell ss:StyleID="s107"><Data ss:Type="String">The selection behavior for the action</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">value set</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Required</Data></Cell>
-      <Cell ss:StyleID="s140" ss:HRef="http://hl7.org/fhir/ValueSet/action-selection-behavior">
-        <Data ss:Type="String">http://hl7.org/fhir/ValueSet/action-selection-behavior</Data></Cell>
-      <Cell ss:StyleID="s140"><Data ss:Type="String">Value set for the action selection behavior</Data></Cell>
+      <Cell ss:StyleID="s104"/>
+      <Cell ss:StyleID="s107"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s141"/>
+    </Row>
+    <Row ss:AutoFitHeight="0">
+      <Cell ss:StyleID="s104"/>
+      <Cell ss:StyleID="s107"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s141"/>
+    </Row>
+    <Row ss:AutoFitHeight="0">
+      <Cell ss:StyleID="s104"/>
+      <Cell ss:StyleID="s107"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
+      <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>
       <Cell ss:StyleID="s140"/>

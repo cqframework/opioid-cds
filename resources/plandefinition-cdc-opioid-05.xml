@@ -43,7 +43,8 @@
 	</library>
 	<action>
 		<!-- We can use the example code systems from the FHIR CLinical Reasoning Module, or we can define GRADE specific code systems and use those here -->
-		<extension url="http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation">
+		<!-- TODO: what is the stu3 equivalent for these extensions? -->
+		<!-- <extension url="http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation">
 			<valueCodeableConcept>
 				<coding>
 					<system value="http://hl7.org/fhir/recommendation-strength"/>
@@ -60,7 +61,7 @@
 					<display value="Low quality"/>
 				</coding>
 			</valueCodeableConcept>
-		</extension>
+		</extension> -->
 		<title value="High risk for opioid overdose.">
 			<extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
 				<valueString value="'High risk for opioid overdose - ' + case when MME >= 90 then 'taper now' else 'consider tapering' end"/>
