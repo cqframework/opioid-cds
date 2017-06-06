@@ -9,21 +9,22 @@
 
 <!-- ============CONTENT CONTENT=============== -->
 
-<h2>
-CDC Opioid Prescribing Guidelines - Process Documentation
-</h2>
+<a name="process"> </a>
+<h2><span class="sectioncount">2.1.0</span> CDC Opioid Prescribing Guidelines - Process Documentation <a href="process-documentation.html#process" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h2>
 
 <p>This section describes the functional behavior of the recommendations as implemented for
 the chosen pilot sites, and documents the process that was used to establish the functional
 behavior once the target recommendations were chosen.</p>
 
-<h3>Assumptions</h3>
+<a name="assumptions"> </a>
+<h3><span class="sectioncount">2.1.1</span> Assumptions <a href="process-documentation.html#assumptions" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h3>
 
 <p>Assumptions made in this process were based on team understanding of Epic and Cerner
   EHR capabilities, as well as team experience with clinical decision support (CDS)
   implementation in general, and opioid CDS specifically.</p>
 
-<h4>Clinical Assumptions</h4>
+<a name="clinical"> </a>
+<h4><span class="sectioncount">2.1.1.1</span> Clinical Assumptions <a href="process-documentation.html#clinical" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h4>
 
 <p>Opioids for chronic pain management are often not started with an intent for chronic use; such
   prescriptions often transition from intended acute paitn management. Therefore, it is very difficult
@@ -33,7 +34,8 @@ behavior once the target recommendations were chosen.</p>
 
 <p>End dates for opioid prescriptions are often not reliable.</p>
 
-<h4>Technical Assumptions</h4>
+<a name="tech"> </a>
+<h4><span class="sectioncount">2.1.1.2</span> Technical Assumptions <a href="process-documentation.html#tech" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h4>
 
 <p>The initial focus is on Epic and Cerner EHR platforms.</p>
 <p>The technical framework to be used for EHR integration is CDS Hooks, with the FHIR
@@ -50,9 +52,11 @@ behavior once the target recommendations were chosen.</p>
   information must be verified at each implementation site, and to the extent that they are
   not uniform, terminology mappings will need to be established.</p>
 
-<h3>Decision Points</h3>
+<a name="decision"> </a>
+<h3><span class="sectioncount">2.1.2</span> Decision Points <a href="process-documentation.html#decision" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h3>
 
-<h4>Opioid Determination</h4>
+<a name="determination"> </a>
+<h4><span class="sectioncount">2.1.2.1</span> Opioid Determination <a href="process-documentation.html#determination" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h4>
 
 <p>The first issue to establish is how to determine what constitutes an opioid. The CDC guideline
   uses NDC codes derived from SAS calculations intended for use against prescription data. Prescription
@@ -64,7 +68,7 @@ behavior once the target recommendations were chosen.</p>
   <li>Oral liquid medications, assuming the greatest majority of prescriptions for liquid oral
     formulations are intended for patients unable to swallow pills or tablets due to late stage terminal illness.</li>
   <li>In some cases, EHR vendors have developed approaches to identify MME equivalents. In such situations, the
-    implementation should attempt to match the vendor's approach so that end users receive consistent advice.
+    implementation should attempt to match the vendor's approach so that end users receive consistent advice.</li>
 </ol>
 
 <p>For geographic locations with pharmacies that participate in Surescripts, implementation sites have
@@ -72,7 +76,8 @@ behavior once the target recommendations were chosen.</p>
   and even for regions with coverage, licensing costs may be required and must be considered as a factor
   when determining whether to use dispense data.</p>
 
-<h4>Calculation of Daily Dosage</h4>
+<a name="calc"> </a>
+<h4><span class="sectioncount">2.1.2.2</span> Calculation of Daily Dosage <a href="process-documentation.html#calc" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h4>
 
 <p>Calculation of daily dosage is based on the prescribed (order) or dispensed data based on expected use
   at the implementation site. The patient may be taking medication less often than prescribed or expected. For
@@ -104,7 +109,8 @@ behavior once the target recommendations were chosen.</p>
   180 to 231 days (long term) based on active medication and can use prescribed or dispensed data as they are available.
   The eCQM assumes the medication is dispensed and used as written.</p>
 
-<h4>Determining Opioid Usage</h4>
+<a name="usage"> </a>
+<h4><span class="sectioncount">2.1.2.3</span> Determining Opioid Usage <a href="process-documentation.html#usage" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h4>
 
 <p>Active medications in an EHR may have a start date and indicate the number of doses written; however,
   if not discontinued, the algorithm assumes the ordered medication remains active.</p>
@@ -113,7 +119,8 @@ behavior once the target recommendations were chosen.</p>
 
 <p>If the prescription includes refills, the system assumes the patient requested all refills of the medication.</p>
 
-<h4>Information to assist with Non-Medication Terminology Decisions</h4>
+<a name="nonmedication"> </a>
+<h4><span class="sectioncount">2.1.2.4</span> Information to assist with Non-Medication Terminology Decisions <a href="process-documentation.html#nonmedication" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h4>
 
 <ul>
   <li>Value sets provided include concepts from standardized code systems (e.g., SNOMED-CT, ICD-10-CM, RxNorm) to
@@ -168,9 +175,11 @@ behavior once the target recommendations were chosen.</p>
   </li>
 </ul>
 
-<h3>Functional Description</h3>
+<a name="funcdesc"> </a>
+<h3><span class="sectioncount">2.1.3</span> Functional Description <a href="process-documentation.html#funcdesc" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h3>
 
-<h4>Recommendation #5 - Morphine Milligram Equivalence</h4>
+<a name="recommendation5"> </a>
+<h4><span class="sectioncount">2.1.3.1</span> Recommendation #5 - Morphine Milligram Equivalence <a href="process-documentation.html#recommendation5" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h4>
 
 <p><b>Patient is being prescribed opioids for chronic pain</b></p>
 
@@ -216,7 +225,8 @@ behavior once the target recommendations were chosen.</p>
 
 <img src="assets/images/Recommendation05-Flow.png"/>
 
-<h4>Recommendation #11 - Urine Drug Testing</h4>
+<a name="recommendation11"> </a>
+<h4><span class="sectioncount">2.1.3.2</span> Recommendation #11 - Urine Drug Testing <a href="process-documentation.html#recommendation11" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h4>
 
 <p><b>Patient is being prescribed opioids for chronic pain.</b></p>
 
