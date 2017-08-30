@@ -1,5 +1,5 @@
 {
-	"tool": "jekyll",
+	"tool" : "jekyll",
 	"paths": {
 		"resources": "resources",
 		"pages": "pages",
