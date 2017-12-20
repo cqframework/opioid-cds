@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd520673-e98d-441f-9fab-895333f31eef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cql/OpioidCDS_STU3-0.1.0.cql" afterPath="$PROJECT_DIR$/pages/cql/OpioidCDS_STU3-0.1.0.cql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml" afterPath="$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/library-opioidcds-stu3.xml" afterPath="$PROJECT_DIR$/resources/library-opioidcds-stu3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/plandefinition-cdc-opioid-05.xml" afterPath="$PROJECT_DIR$/resources/plandefinition-cdc-opioid-05.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,22 +20,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding>
-                <element signature="e#1130#1135#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ig.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ig.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="182">
               <caret line="28" column="21" lean-forward="false" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
               <folding />
             </state>
@@ -42,38 +33,48 @@
       <file leaf-file-name="opioid-cds.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/opioid-cds.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-167">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="233">
+              <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plandefinition-cdc-opioid-05.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="plandefinition-cdc-opioid-05.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/plandefinition-cdc-opioid-05.xml">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="45" column="48" lean-forward="false" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OpioidCDS_STU3-0.1.0.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="OpioidCDS_STU3-0.1.0.cql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/cql/OpioidCDS_STU3-0.1.0.cql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            <state relative-caret-position="1845">
+              <caret line="123" column="18" lean-forward="false" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="instance-template-sd.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instance-template-sd.html">
+      <file leaf-file-name="library-opioidcds-stu3.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/library-opioidcds-stu3.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            <state relative-caret-position="-8">
+              <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -113,6 +114,11 @@
         <option value="$PROJECT_DIR$/pages/artifacts.html" />
         <option value="$PROJECT_DIR$/instance-template-sd.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/pages/cql/OpioidCDS_STU3-0.1.0.cql" />
+        <option value="$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml" />
+        <option value="$PROJECT_DIR$/resources/opioid-cds.xml" />
+        <option value="$PROJECT_DIR$/resources/library-opioidcds-stu3.xml" />
+        <option value="$PROJECT_DIR$/resources/plandefinition-cdc-opioid-05.xml" />
       </list>
     </option>
   </component>
@@ -154,17 +160,6 @@
             <path>
               <item name="opioid-cds" type="b2602c69:ProjectViewProjectNode" />
               <item name="opioid-cds" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="opioid-cds" type="b2602c69:ProjectViewProjectNode" />
-              <item name="opioid-cds" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="_includes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="opioid-cds" type="b2602c69:ProjectViewProjectNode" />
-              <item name="opioid-cds" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -201,16 +196,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1513722626514</updated>
-      <workItem from="1513722628115" duration="3326000" />
+      <workItem from="1513722628115" duration="4983000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3326000" />
+    <option name="totallyTimeSpent" value="4983000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="324" y="65" width="1322" height="911" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -218,7 +212,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32965687" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32965687" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -233,6 +227,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.cql" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -246,16 +243,6 @@
         <state relative-caret-position="309">
           <caret line="21" column="309" lean-forward="false" selection-start-line="21" selection-start-column="309" selection-end-line="21" selection-end-column="309" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/implementation-documentation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding>
-            <element signature="e#9692#9697#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -280,103 +267,6 @@
         <state relative-caret-position="356">
           <caret line="24" column="89" lean-forward="true" selection-start-line="24" selection-start-column="89" selection-end-line="24" selection-end-column="89" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/integration-documentation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#4375#4379#0" expanded="false" />
-            <element signature="e#4396#4400#0" expanded="false" />
-            <element signature="e#4402#4406#0" expanded="false" />
-            <element signature="e#4431#4435#0" expanded="false" />
-            <element signature="e#4437#4441#0" expanded="false" />
-            <element signature="e#4480#4484#0" expanded="false" />
-            <element signature="e#4485#4489#0" expanded="false" />
-            <element signature="e#4507#4511#0" expanded="false" />
-            <element signature="e#5042#5046#0" expanded="false" />
-            <element signature="e#5055#5059#0" expanded="false" />
-            <element signature="e#5061#5065#0" expanded="false" />
-            <element signature="e#5092#5096#0" expanded="false" />
-            <element signature="e#5098#5102#0" expanded="false" />
-            <element signature="e#5134#5138#0" expanded="false" />
-            <element signature="e#5145#5149#0" expanded="false" />
-            <element signature="e#5151#5155#0" expanded="false" />
-            <element signature="e#5181#5185#0" expanded="false" />
-            <element signature="e#5187#5191#0" expanded="false" />
-            <element signature="e#5224#5228#0" expanded="false" />
-            <element signature="e#5229#5233#0" expanded="false" />
-            <element signature="e#5420#5424#0" expanded="false" />
-            <element signature="e#5431#5435#0" expanded="false" />
-            <element signature="e#5437#5441#0" expanded="false" />
-            <element signature="e#5482#5486#0" expanded="false" />
-            <element signature="e#5487#5491#0" expanded="false" />
-            <element signature="e#5499#5503#0" expanded="false" />
-            <element signature="e#6089#6093#0" expanded="false" />
-            <element signature="e#6131#6135#0" expanded="false" />
-            <element signature="e#6136#6140#0" expanded="false" />
-            <element signature="e#6146#6150#0" expanded="false" />
-            <element signature="e#6152#6156#0" expanded="false" />
-            <element signature="e#6195#6199#0" expanded="false" />
-            <element signature="e#6200#6204#0" expanded="false" />
-            <element signature="e#6211#6215#0" expanded="false" />
-            <element signature="e#6216#6220#0" expanded="false" />
-            <element signature="e#6226#6230#0" expanded="false" />
-            <element signature="e#6232#6236#0" expanded="false" />
-            <element signature="e#6333#6337#0" expanded="false" />
-            <element signature="e#6338#6342#0" expanded="false" />
-            <element signature="e#6349#6353#0" expanded="false" />
-            <element signature="e#6354#6358#0" expanded="false" />
-            <element signature="e#6364#6368#0" expanded="false" />
-            <element signature="e#6370#6374#0" expanded="false" />
-            <element signature="e#6418#6422#0" expanded="false" />
-            <element signature="e#6423#6427#0" expanded="false" />
-            <element signature="e#6434#6438#0" expanded="false" />
-            <element signature="e#6439#6443#0" expanded="false" />
-            <element signature="e#6449#6453#0" expanded="false" />
-            <element signature="e#6455#6459#0" expanded="false" />
-            <element signature="e#6549#6553#0" expanded="false" />
-            <element signature="e#6554#6558#0" expanded="false" />
-            <element signature="e#6565#6569#0" expanded="false" />
-            <element signature="e#7551#7555#0" expanded="false" />
-            <element signature="e#7640#7644#0" expanded="false" />
-            <element signature="e#7646#7650#0" expanded="false" />
-            <element signature="e#7670#7674#0" expanded="false" />
-            <element signature="e#7677#7681#0" expanded="false" />
-            <element signature="e#7687#7691#0" expanded="false" />
-            <element signature="e#7695#7699#0" expanded="false" />
-            <element signature="e#7758#7762#0" expanded="false" />
-            <element signature="e#7766#7770#0" expanded="false" />
-            <element signature="e#7790#7794#0" expanded="false" />
-            <element signature="e#7798#7802#0" expanded="false" />
-            <element signature="e#7825#7829#0" expanded="false" />
-            <element signature="e#7832#7836#0" expanded="false" />
-            <element signature="e#7843#7847#0" expanded="false" />
-            <element signature="e#7849#7853#0" expanded="false" />
-            <element signature="e#7874#7878#0" expanded="false" />
-            <element signature="e#7879#7883#0" expanded="false" />
-            <element signature="e#7893#7897#0" expanded="false" />
-            <element signature="e#7898#7902#0" expanded="false" />
-            <element signature="e#7980#7984#0" expanded="false" />
-            <element signature="e#7986#7990#0" expanded="false" />
-            <element signature="e#8010#8014#0" expanded="false" />
-            <element signature="e#8017#8021#0" expanded="false" />
-            <element signature="e#8027#8031#0" expanded="false" />
-            <element signature="e#8035#8039#0" expanded="false" />
-            <element signature="e#8091#8095#0" expanded="false" />
-            <element signature="e#8099#8103#0" expanded="false" />
-            <element signature="e#8120#8124#0" expanded="false" />
-            <element signature="e#8128#8132#0" expanded="false" />
-            <element signature="e#8160#8164#0" expanded="false" />
-            <element signature="e#8167#8171#0" expanded="false" />
-            <element signature="e#8178#8182#0" expanded="false" />
-            <element signature="e#8184#8188#0" expanded="false" />
-            <element signature="e#8209#8213#0" expanded="false" />
-            <element signature="e#8214#8218#0" expanded="false" />
-            <element signature="e#8228#8232#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -450,7 +340,7 @@
         <state relative-caret-position="160">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#1130#1135#0" expanded="true" />
+            <element signature="e#1130#1135#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -471,9 +361,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/integration-documentation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/implementation-documentation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/cql/OpioidCDS_STU3-0.1.0.cql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1845">
+          <caret line="123" column="18" lean-forward="false" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/plandefinition-example-opioidcds.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ig.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="182">
           <caret line="28" column="21" lean-forward="false" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
           <folding />
         </state>
@@ -481,24 +419,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/opioid-cds.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-167">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="233">
+          <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/library-opioidcds-stu3.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/plandefinition-cdc-opioid-05.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        <state relative-caret-position="675">
+          <caret line="45" column="48" lean-forward="false" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
           <folding />
         </state>
       </provider>

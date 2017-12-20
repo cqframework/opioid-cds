@@ -34,26 +34,21 @@ define Prescriptions:
   Orders O
     let
       // NOTE: Assuming medication is specified as a CodeableConcept with a single RxNorm code
-      rxNormCode: ToCode(O.medicationCodeableConcept.coding[0]),
+      rxNormCode: ToCode(O.medication.coding[0]),
       medicationName: OMTKLogic.GetMedicationName(rxNormCode),
       // NOTE: Assuming a single dosage instruction element
       dosageInstruction: O.dosageInstruction[0],
       repeat: dosageInstruction.timing.repeat,
-      frequency: Coalesce(repeat.frequencyMax, repeat.frequency),
-      period: System.Quantity { value: repeat.period, unit: repeat.periodUnit },
-      periodDescription:
-        ToString(repeat.period) +
-          Coalesce(
-            '-' + ToString(repeat.periodMax),
-            ''
-          ) + repeat.periodUnit,
-      doseDescription: 
+      frequency: Coalesce(repeat.frequencyMax.value, repeat.frequency.value),
+      period: System.Quantity { value: repeat.period.value, unit: repeat.periodUnit.value },
+      doseDescription:
         Coalesce(
           // There should be a conversion from FHIR.SimpleQuantity to System.Quantity
-          ToString(ToQuantity(dosageInstruction.doseQuantity)),
-          ToString(ToQuantity(dosageInstruction.doseRange.low))
-            + '-' + ToString(ToQuantity(dosageInstruction.doseRange.high))
-            + dosageInstruction.doseRange.high.unit.value
+          if dosageInstruction.dose is FHIR.Range
+            then ToString(ToQuantity(dosageInstruction.dose.low))
+                          + '-' + ToString(ToQuantity(dosageInstruction.dose.high))
+                          + dosageInstruction.dose.high.unit.value
+            else ToString(ToQuantity(dosageInstruction.dose))
         ),
       frequencyDescription:
         ToString(dosageInstruction.timing.repeat.frequency.value) +
@@ -65,15 +60,17 @@ define Prescriptions:
       rxNormCode: rxNormCode,
       isDraft: O.status.value = 'draft',
       // NOTE: Assuming asNeeded is expressed as a boolean
-      isPRN: dosageInstruction.asNeededBoolean.value,
+      isPRN: dosageInstruction.asNeeded.value,
       prescription:
         if dosageInstruction.text is not null then
           medicationName + ' ' + dosageInstruction.text.value
         else
           // TODO: Shouldn't need the .value here on asNeededBoolean
-          medicationName + ' ' + doseDescription + ' q' + frequencyDescription + (if dosageInstruction.asNeededBoolean.value then ' PRN' else ''),
+          medicationName + ' ' + doseDescription + ' q' + frequencyDescription + (if dosageInstruction.asNeeded.value then ' PRN' else ''),
       // TODO: Shouldn't need the ToQuantity here...
-      dose: ToQuantity(Coalesce(dosageInstruction.doseQuantity, dosageInstruction.doseRange.high)),
+      dose: if dosageInstruction.dose is FHIR.Range
+                then ToQuantity(dosageInstruction.dose.high)
+                else ToQuantity(dosageInstruction.dose),
       dosesPerDay: Coalesce(OMTKLogic.ToDaily(frequency, period), 1.0)
     }
 
@@ -100,12 +97,31 @@ define TotalMME: System.Quantity { value: Sum(MME M return M.mme.value), unit: '
 
 define IsMME50OrMore: TotalMME >= 50 'mg/d'
 
+define getIndicator:
+    if IsMME50OrMore
+        then 'warning'
+    else 'success'
+
+define getSummary:
+    if IsMME50OrMore
+        then 'High risk for opioid overdose - '
+                 + case when TotalMME.value >= 90
+                     then 'taper now'
+                     else 'consider tapering'
+                   end
+    else 'MME is within the recommended range.'
+
+define getDetail:
+    if IsMME50OrMore
+        then 'Total morphine milligram equivalent (MME) is ' + ToString(TotalMME) + '. Taper to less than 50.'
+    else 'Total morphine milligram equivalent (MME) is ' + ToString(TotalMME) + '. This falls within the accepted range.'
+
 define Results:
-  IsMME50OrMore M
+  IsMME50OrMore MMEOver50
   return {
-    mmeOver50: M,
+    mmeOver50: MMEOver50,
     title:
-      if M
+      if MMEOver50
       then 'High risk for opioid overdose - '
             + case when TotalMME.value >= 90
                 then 'taper now'
@@ -113,7 +129,7 @@ define Results:
               end
       else 'MME is within the recommended range.',
       description:
-        if M
+        if MMEOver50
         then 'Total morphine milligram equivalent (MME) is ' + ToString(TotalMME) + '. Taper to less than 50.'
         else 'Total morphine milligram equivalent (MME) is ' + ToString(TotalMME) + '. This falls within the accepted range.'
   }
