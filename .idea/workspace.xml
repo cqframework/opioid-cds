@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd520673-e98d-441f-9fab-895333f31eef" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/assets/images/Recommendation11-Flow.png" afterPath="$PROJECT_DIR$/pages/assets/images/Recommendation10-Flow.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/org.hl7.fhir.igpublisher.jar" afterPath="$PROJECT_DIR$/org.hl7.fhir.igpublisher.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instance-template-sd.html" afterPath="$PROJECT_DIR$/instance-template-sd.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/artifacts.html" afterPath="$PROJECT_DIR$/pages/artifacts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/contents.html" afterPath="$PROJECT_DIR$/pages/contents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/documentation.html" afterPath="$PROJECT_DIR$/pages/documentation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/downloads.html" afterPath="$PROJECT_DIR$/pages/downloads.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/extensions.html" afterPath="$PROJECT_DIR$/pages/extensions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/implementation-documentation.html" afterPath="$PROJECT_DIR$/pages/implementation-documentation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index.html" afterPath="$PROJECT_DIR$/pages/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/integration-documentation.html" afterPath="$PROJECT_DIR$/pages/integration-documentation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/operations.html" afterPath="$PROJECT_DIR$/pages/operations.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/process-documentation.html" afterPath="$PROJECT_DIR$/pages/process-documentation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/profiles.html" afterPath="$PROJECT_DIR$/pages/profiles.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/registry.html" afterPath="$PROJECT_DIR$/pages/registry.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/service-documentation.html" afterPath="$PROJECT_DIR$/pages/service-documentation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/services.html" afterPath="$PROJECT_DIR$/pages/services.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/medicationrequest-profile-spreadsheet.xml" afterPath="$PROJECT_DIR$/resources/medicationrequest-profile-spreadsheet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,11 +39,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="opioid-cds.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="opioid-cds.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/opioid-cds.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-167">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plandefinition-cdc-opioid-05.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/plandefinition-cdc-opioid-05.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -108,6 +112,7 @@
         <option value="$PROJECT_DIR$/pages/services.html" />
         <option value="$PROJECT_DIR$/pages/artifacts.html" />
         <option value="$PROJECT_DIR$/instance-template-sd.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -196,12 +201,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1513722626514</updated>
-      <workItem from="1513722628115" duration="2998000" />
+      <workItem from="1513722628115" duration="3326000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2998000" />
+    <option name="totallyTimeSpent" value="3326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="324" y="65" width="1322" height="911" extended-state="0" />
@@ -478,6 +483,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-167">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/plandefinition-cdc-opioid-05.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
           <folding />
         </state>
       </provider>
