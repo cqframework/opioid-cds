@@ -10,14 +10,14 @@
 <!-- ============CONTENT CONTENT=============== -->
 
 <a name="integration"> </a>
-<h2><span class="sectioncount">2.2.0</span> CDC Opioid Prescribing Guidelines - Integration Documentation <a href="integration-documentation.html#integration" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h2>
+<h2><span class="sectioncount">2.2.0</span> CDC Opioid Prescribing Guidelines - Integration Documentation <a href="integration-documentation.html#integration" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
 
 <p>This section describes how recommendation #5 is implemented in terms of FHIR Clinical
   Reasoning Module resources and CQL libraries, as well as how those resources can be
   implemented within a FHIR server for integration with an EHR via CDS Hooks.</p>
 
 <a name="approach"> </a>
-<h3><span class="sectioncount">2.2.1</span> Overall Approach <a href="integration-documentation.html#integration" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h3>
+<h3><span class="sectioncount">2.2.1</span> Overall Approach <a href="integration-documentation.html#integration" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>Once the flow has been established for a recommendation, it can be represented in
   Clinical Reasoning resources, typically using a PlanDefinition resource to build
@@ -45,7 +45,7 @@
   a response as a CarePlan/RequestGroup if the criteria evaluate to true.</p>
 
 <a name="resources"> </a>
-<h3><span class="sectioncount">2.2.2</span> Clinical Reasoning Resources <a href="integration-documentation.html#resources" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h3>
+<h3><span class="sectioncount">2.2.2</span> Clinical Reasoning Resources <a href="integration-documentation.html#resources" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>As described in the previous section, recommendation #5 is represented in Clnical Reasoning
   resources using a PlanDefinition and several Library resources:</p>
@@ -58,14 +58,14 @@
 </ul>
 
 <a name="plandefinition"> </a>
-<h4><span class="sectioncount">2.2.2.1</span> PlanDefinition <a href="integration-documentation.html#plandefinition" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h4>
+<h4><span class="sectioncount">2.2.2.1</span> PlanDefinition <a href="integration-documentation.html#plandefinition" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>The PlanDefinition is the starting point for the representation of the recommendation and defines the
   triggering event in the EHR, the condition that must evaluate to true for the guidance to be returned, as
   well as the actual guidance to be returned.</p>
 
 <a name="event"> </a>
-<h5><span class="sectioncount">2.2.2.1.1</span> Event <a href="integration-documentation.html#event" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h5>
+<h5><span class="sectioncount">2.2.2.1.1</span> Event <a href="integration-documentation.html#event" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h5>
 
 <p>The <i>event</i> is represented using the triggerDefinition element of the PlanDefinition:</p>
 
@@ -81,7 +81,7 @@
 <p>The name "medication-prescribe" defines the "hook" to be used from the EHR.</p>
 
 <a name="condition"> </a>
-<h5><span class="sectioncount">2.2.2.1.2</span> Condition <a href="integration-documentation.html#condition" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h5>
+<h5><span class="sectioncount">2.2.2.1.2</span> Condition <a href="integration-documentation.html#condition" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h5>
 
 <p>The <i>condition</i> is specified with the condition element and identifies a named
    expression defined within the CQL library:</p>
@@ -108,7 +108,7 @@
 </div>
 
 <a name="action"> </a>
-<h5><span class="sectioncount">2.2.2.1.3</span> Action <a href="integration-documentation.html#action" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h5>
+<h5><span class="sectioncount">2.2.2.1.3</span> Action <a href="integration-documentation.html#action" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h5>
 
 <p>The expression returns a true or false, indicating whether the condition is satisfied. If the
   condition is satisfied, the <i>actions</i> are defined as a group with a behavior of "exactly-one",
@@ -138,7 +138,7 @@
   this functionality.</p>
 
 <a name="grades"> </a>
-<h5><span class="sectioncount">2.2.2.1.4</span> Representing GRADEs for the Recommendation <a href="integration-documentation.html#grades" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h5>
+<h5><span class="sectioncount">2.2.2.1.4</span> Representing GRADEs for the Recommendation <a href="integration-documentation.html#grades" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h5>
 
 <p>The Opioid Management Guideline uses the GRADE approach to describing the quality of evidence and
   strength of the resulting recommendations. Within the Clinical Reasoning module, this information is
@@ -172,13 +172,13 @@
   be defined and used instead with the same extensions.</p>
 
 <a name="stu3lib"> </a>
-<h4><span class="sectioncount">2.2.2.2</span> Opioid CDS STU3 Library <a href="integration-documentation.html#stu3lib" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h4>
+<h4><span class="sectioncount">2.2.2.2</span> Opioid CDS STU3 Library <a href="integration-documentation.html#stu3lib" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>This library contains the STU3 logic used by the PlanDefinition to establish the condition, as well
   as to dynamically construct the guidance so that it reflects the data for the current patient.</p>
 
 <a name="omtklib"> </a>
-<h4><span class="sectioncount">2.2.2.3</span> Opioid Management Terminology Knowledge (OMTK) Library <a href="integration-documentation.html#omtklib" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h4>
+<h4><span class="sectioncount">2.2.2.3</span> Opioid Management Terminology Knowledge (OMTK) Library <a href="integration-documentation.html#omtklib" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>This library contains the Opioid Management Terminology Knowledge (OMTK) logic that performs the
   actual MME calculation. This logic is built in a separate library to enable to be reused from different
@@ -189,7 +189,7 @@
   standardized terminologies. Use of this component is described in more detail in the implementation documentation.</p>
 
 <a name="omtkmodel"> </a>
-<h4><span class="sectioncount">2.2.2.4</span> Opioid Management Terminology Knowledge (OMTK) Model Info <a href="integration-documentation.html#omtkmodel" title="link to here" class="self-link"><img src="assets/images/link.svg" width="20" class="self-link" height="20"/></a></h4>
+<h4><span class="sectioncount">2.2.2.4</span> Opioid Management Terminology Knowledge (OMTK) Model Info <a href="integration-documentation.html#omtkmodel" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>This library defines the structure of the OMTK solution component so that it can be used within CQL.</p>
 
