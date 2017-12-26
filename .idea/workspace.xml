@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="dd520673-e98d-441f-9fab-895333f31eef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cql/OMTKLogic-0.1.0.cql" afterPath="$PROJECT_DIR$/pages/cql/OMTKLogic-0.1.0.cql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/cql/OpioidCDS_STU3-0.1.0.cql" afterPath="$PROJECT_DIR$/pages/cql/OpioidCDS_STU3-0.1.0.cql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/elm/OMTKLogic-0.1.0.xml" afterPath="$PROJECT_DIR$/pages/elm/OMTKLogic-0.1.0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml" afterPath="$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/library-opioidcds-stu3.xml" afterPath="$PROJECT_DIR$/resources/library-opioidcds-stu3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/plandefinition-cdc-opioid-05.xml" afterPath="$PROJECT_DIR$/resources/plandefinition-cdc-opioid-05.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,14 +34,34 @@
       <file leaf-file-name="opioid-cds.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/opioid-cds.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
+            <state relative-caret-position="134">
               <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plandefinition-cdc-opioid-05.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="plandefinition-example-opioidcds.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/plandefinition-example-opioidcds.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1003">
+              <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plandefinition-cdc-opioid-05.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/plandefinition-cdc-opioid-05.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="675">
@@ -53,18 +74,18 @@
       <file leaf-file-name="OpioidCDS_STU3-0.1.0.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="38" />
+            <state relative-caret-position="60">
+              <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpioidCDS_STU3-0.1.0.cql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/cql/OpioidCDS_STU3-0.1.0.cql">
+      <file leaf-file-name="OMTKLogic-0.1.0.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/elm/OMTKLogic-0.1.0.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1845">
-              <caret line="123" column="18" lean-forward="false" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
+            <state relative-caret-position="195">
+              <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -87,6 +108,11 @@
       <find>recommendation11</find>
       <find>recommendation10</find>
       <find>assets/images/link.svg</find>
+      <find>toDaily</find>
+      <find>GetIngredients</find>
+      <find>EnsureMicrogramQuantity</find>
+      <find>medicationName</find>
+      <find>GetDailyDose</find>
     </findStrings>
     <replaceStrings>
       <replace>target.png</replace>
@@ -114,11 +140,14 @@
         <option value="$PROJECT_DIR$/pages/artifacts.html" />
         <option value="$PROJECT_DIR$/instance-template-sd.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/pages/cql/OpioidCDS_STU3-0.1.0.cql" />
-        <option value="$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml" />
         <option value="$PROJECT_DIR$/resources/opioid-cds.xml" />
         <option value="$PROJECT_DIR$/resources/library-opioidcds-stu3.xml" />
         <option value="$PROJECT_DIR$/resources/plandefinition-cdc-opioid-05.xml" />
+        <option value="$PROJECT_DIR$/pages/cql/OpioidCDS_STU3-0.1.0.cql" />
+        <option value="$PROJECT_DIR$/pages/cql/OMTKLogic-0.1.0.cql" />
+        <option value="$PROJECT_DIR$/pages/elm/OMTKLogic-0.1.0.xml" />
+        <option value="$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -129,8 +158,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="324" />
-    <option name="y" value="65" />
+    <option name="x" value="322" />
+    <option name="y" value="64" />
     <option name="width" value="1322" />
     <option name="height" value="911" />
   </component>
@@ -160,7 +189,7 @@
             <path>
               <item name="opioid-cds" type="b2602c69:ProjectViewProjectNode" />
               <item name="opioid-cds" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -196,23 +225,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1513722626514</updated>
-      <workItem from="1513722628115" duration="4983000" />
+      <workItem from="1513722628115" duration="10635000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4983000" />
+    <option name="totallyTimeSpent" value="10635000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="324" y="65" width="1322" height="911" extended-state="0" />
+    <frame x="322" y="64" width="1322" height="911" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32965687" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32965687" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -385,42 +414,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/cql/OpioidCDS_STU3-0.1.0.cql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1845">
-          <caret line="123" column="18" lean-forward="false" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/plandefinition-example-opioidcds.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ig.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="28" column="21" lean-forward="false" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/opioid-cds.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -433,10 +430,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/cql/OMTKLogic-0.1.0.cql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="267" column="52" lean-forward="true" selection-start-line="267" selection-start-column="52" selection-end-line="267" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/cql/OpioidCDS_STU3-0.1.0.cql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="21" column="78" lean-forward="true" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/elm/OMTKLogic-0.1.0.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/plandefinition-cdc-opioid-05.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="45" column="48" lean-forward="false" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/opioid-cds.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/plandefinition-example-opioidcds.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1003">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="56" />
           <folding />
         </state>
       </provider>

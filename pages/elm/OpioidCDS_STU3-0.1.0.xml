@@ -521,72 +521,20 @@
             </else>
          </expression>
       </def>
-      <def name="Results" context="Patient" accessLevel="Public">
-         <expression xsi:type="Query">
-            <source alias="MMEOver50">
-               <expression name="IsMME50OrMore" xsi:type="ExpressionRef"/>
-            </source>
-            <return>
-               <expression xsi:type="Tuple">
-                  <element name="mmeOver50">
-                     <value name="MMEOver50" xsi:type="AliasRef"/>
-                  </element>
-                  <element name="title">
-                     <value xsi:type="If">
-                        <condition asType="t:Boolean" xsi:type="As">
-                           <operand name="MMEOver50" xsi:type="AliasRef"/>
-                           <asTypeSpecifier name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
-                        </condition>
-                        <then xsi:type="Concatenate">
-                           <operand valueType="t:String" value="High risk for opioid overdose - " xsi:type="Literal"/>
-                           <operand xsi:type="Case">
-                              <caseItem>
-                                 <when xsi:type="GreaterOrEqual">
-                                    <operand path="value" xsi:type="Property">
-                                       <source name="TotalMME" xsi:type="ExpressionRef"/>
-                                    </operand>
-                                    <operand xsi:type="ToDecimal">
-                                       <operand valueType="t:Integer" value="90" xsi:type="Literal"/>
-                                    </operand>
-                                 </when>
-                                 <then valueType="t:String" value="taper now" xsi:type="Literal"/>
-                              </caseItem>
-                              <else valueType="t:String" value="consider tapering" xsi:type="Literal"/>
-                           </operand>
-                        </then>
-                        <else valueType="t:String" value="MME is within the recommended range." xsi:type="Literal"/>
-                     </value>
-                  </element>
-                  <element name="description">
-                     <value xsi:type="If">
-                        <condition asType="t:Boolean" xsi:type="As">
-                           <operand name="MMEOver50" xsi:type="AliasRef"/>
-                           <asTypeSpecifier name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
-                        </condition>
-                        <then xsi:type="Concatenate">
-                           <operand xsi:type="Concatenate">
-                              <operand valueType="t:String" value="Total morphine milligram equivalent (MME) is " xsi:type="Literal"/>
-                              <operand xsi:type="ToString">
-                                 <operand name="TotalMME" xsi:type="ExpressionRef"/>
-                              </operand>
-                           </operand>
-                           <operand valueType="t:String" value=". Taper to less than 50." xsi:type="Literal"/>
-                        </then>
-                        <else xsi:type="Concatenate">
-                           <operand xsi:type="Concatenate">
-                              <operand valueType="t:String" value="Total morphine milligram equivalent (MME) is " xsi:type="Literal"/>
-                              <operand xsi:type="ToString">
-                                 <operand name="TotalMME" xsi:type="ExpressionRef"/>
-                              </operand>
-                           </operand>
-                           <operand valueType="t:String" value=". This falls within the accepted range." xsi:type="Literal"/>
-                        </else>
-                     </value>
-                  </element>
-               </expression>
-            </return>
+      <def name="theCode" context="Patient" accessLevel="Public">
+         <expression classType="t:Code" xsi:type="Instance">
+            <element name="system">
+               <value valueType="t:String" value="http://www.nlm.nih.gov/research/umls/rxnorm" xsi:type="Literal"/>
+            </element>
+            <element name="code">
+               <value valueType="t:String" value="197696" xsi:type="Literal"/>
+            </element>
+         </expression>
+      </def>
+      <def name="getIngredients" context="Patient" accessLevel="Public">
+         <expression name="GetIngredients" libraryName="OMTKLogic" xsi:type="FunctionRef">
+            <operand name="theCode" xsi:type="ExpressionRef"/>
          </expression>
       </def>
    </statements>
 </library>
-

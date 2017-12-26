@@ -271,7 +271,7 @@ define function GetDailyDose(ingredientCode Code, strength Quantity, doseFormCod
     when IsPatch(doseFormCode) then
       // buprenorphine or fentanyl patch
       if ToInteger(ingredientCode.code) in { 1819, 4337 } then
-        Quantity { value: doseQuantity.value * strength.value, unit: strength.unit }
+        Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: strength.unit }
       else
         null
 
@@ -287,7 +287,7 @@ define function GetDailyDose(ingredientCode Code, strength Quantity, doseFormCod
     else
       Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: Substring(strength.unit, 0, PositionOf('/', strength.unit)) }
   end
-  
+
 define function GetMedicationName(rxNormCode Code):
   SingletonFrom([MED_DRUG: DRUG_RXCUI in rxNormCode]).DRUG_NAME
 

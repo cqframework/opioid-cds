@@ -116,28 +116,17 @@ define getDetail:
         then 'Total morphine milligram equivalent (MME) is ' + ToString(TotalMME) + '. Taper to less than 50.'
     else 'Total morphine milligram equivalent (MME) is ' + ToString(TotalMME) + '. This falls within the accepted range.'
 
-define Results:
-  IsMME50OrMore MMEOver50
-  return {
-    mmeOver50: MMEOver50,
-    title:
-      if MMEOver50
-      then 'High risk for opioid overdose - '
-            + case when TotalMME.value >= 90
-                then 'taper now'
-                else 'consider tapering'
-              end
-      else 'MME is within the recommended range.',
-      description:
-        if MMEOver50
-        then 'Total morphine milligram equivalent (MME) is ' + ToString(TotalMME) + '. Taper to less than 50.'
-        else 'Total morphine milligram equivalent (MME) is ' + ToString(TotalMME) + '. This falls within the accepted range.'
-  }
+define getIngredients:
+    OMTKLogic.GetIngredients(theCode)
 
+define theCode:
+    System.Code {
+        system: 'http://www.nlm.nih.gov/research/umls/rxnorm',
+        code: '197696'
+    }
 /*
 USCore profiles only support MedicationRequest and MedicationStatement, same as Argonaut Data Query
 See the DSTU2 Library for more information
-
 USCore's Medication Code is bound to:
 http://www.hl7.org/fhir/us/core/ValueSet-us-core-medication-codes.html
 The USCore MedicationRequest and MedicationStatement profiles do not require any dosage or frequency information
