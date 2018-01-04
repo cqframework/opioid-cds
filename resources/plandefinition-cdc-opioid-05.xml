@@ -73,4 +73,81 @@
 			<expression value="getIndicator"/>
 		</dynamicValue>
 	</action>
+	<action>
+		<title value="Patient has not had a urine screening in the past 12 months"/>
+		<description value="When prescribing opioids for chronic pain, clinicians should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs"/>
+		<triggerDefinition>
+			<type value="named-event"/>
+			<eventName value="medication-prescribe"/>
+		</triggerDefinition>
+		<condition>
+			<kind value="applicability"/>
+			<description value="Patient has not had a urine screening in the past 12 months"/>
+			<language value="text/cql"/>
+			<expression value="No Screenings in Past Year"/>
+		</condition>
+		<dynamicValue>
+			<path value="activity.extension"/>
+			<expression value="Get Indicator"/>
+		</dynamicValue>
+	</action>
+	<action>
+		<condition>
+			<kind value="applicability"/>
+			<description value="Patient has a positive urine screening in the past 12 months"/>
+			<language value="text/cql"/>
+			<expression value="Has Positive Screening?"/>
+		</condition>
+		<action>
+			<title value="Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed"/>
+			<condition>
+				<kind value="applicability"/>
+				<description value="Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed"/>
+				<language value="text/cql"/>
+				<expression value="Found Unprescribed Opioid in Screening"/>
+			</condition>
+			<dynamicValue>
+				<path value="activity.extension"/>
+				<expression value="Get Indicator"/>
+			</dynamicValue>
+			<dynamicValue>
+				<path value="action.description"/>
+				<expression value="Inconsistent Unprescribed Opioids"/>
+			</dynamicValue>
+		</action>
+		<action>
+			<title value="Patient has a positive urine screening in the past 12 months, which does not include prescribed opioids"/>
+			<condition>
+				<kind value="applicability"/>
+				<description value="Patient has a positive urine screening in the past 12 months, which does not include prescribed opioids"/>
+				<language value="text/cql"/>
+				<expression value="Has Missing Opioids?"/>
+			</condition>
+			<dynamicValue>
+				<path value="activity.extension"/>
+				<expression value="Get Indicator"/>
+			</dynamicValue>
+			<dynamicValue>
+				<path value="action.description"/>
+				<expression value="Inconsistent Missing Opioids"/>
+			</dynamicValue>
+		</action>
+		<action>
+			<title value="Patient has a positive urine screening in the past 12 months for illicit drugs"/>
+			<condition>
+				<kind value="applicability"/>
+				<description value="Patient has a positive urine screening in the past 12 months for illicit drugs"/>
+				<language value="text/cql"/>
+				<expression value="Has Illicit Drugs in Screening?"/>
+			</condition>
+			<dynamicValue>
+				<path value="activity.extension"/>
+				<expression value="Get Indicator"/>
+			</dynamicValue>
+			<dynamicValue>
+				<path value="action.description"/>
+				<expression value="Inconsistent Illicit Drugs"/>
+			</dynamicValue>
+		</action>
+	</action>
 </PlanDefinition>
