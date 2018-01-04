@@ -1,0 +1,39 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="illicit-drug-urine-screening"/>
+    <status value="active"/>
+    <compose>
+        <include>
+            <system value="http://loinc.org"/>
+            <concept>
+                <code value="3397-7"/>
+            </concept>
+            <concept>
+                <code value="14267-9"/>
+            </concept>
+            <concept>
+                <code value="29868-7"/>
+            </concept>
+            <concept>
+                <code value="12327-3"/>
+            </concept>
+            <concept>
+                <code value="3732-5"/>
+            </concept>
+            <concept>
+                <code value="3779-6"/>
+            </concept>
+            <concept>
+                <code value="17504-2"/>
+            </concept>
+            <concept>
+                <code value="41020-9"/>
+            </concept>
+            <concept>
+                <code value="3426-4"/>
+            </concept>
+            <concept>
+                <code value="12286-1"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>

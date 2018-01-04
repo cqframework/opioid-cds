@@ -1,0 +1,24 @@
+<Observation xmlns="http://hl7.org/fhir">
+    <id value="cdc-opioid-10"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2018-01-04T12:33:29.706-07:00"/>
+    </meta>
+    <status value="final"/>
+    <code>
+        <coding>
+            <system value="http://loinc.org"/>
+            <code value="3779-6"/>
+        </coding>
+    </code>
+    <subject>
+        <reference value="Patient/cdc-opioid"/>
+    </subject>
+    <effectiveDateTime value="2017-12-12"/>
+    <interpretation>
+        <coding>
+            <system value="https://www.hl7.org/fhir/v2/0078/index.html"/>
+            <code value="POS"/>
+        </coding>
+    </interpretation>
+</Observation>

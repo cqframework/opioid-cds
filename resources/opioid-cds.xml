@@ -46,10 +46,42 @@
 		</resource>
 		<resource>
 			<example value="true"/>
-			<name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5"/>
-			<description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #5"/>
+			<name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5 and #10"/>
+			<description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #5 and #10"/>
 			<sourceReference>
 				<reference value="PlanDefinition/cdc-opioid-05"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="true"/>
+			<name value="Observation - CDC Opioid Prescribing Guideline Recommendation #10"/>
+			<description value="Observation for illicit drugs"/>
+			<sourceReference>
+				<reference value="Observation/cdc-opioid-10"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="true"/>
+			<name value="Patient - CDC Opioid Prescribing Guidelines"/>
+			<description value="Basic test patient"/>
+			<sourceReference>
+				<reference value="Patient/cdc-opioid"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="true"/>
+			<name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Urine Screening"/>
+			<description value="Urine analysis for opioids"/>
+			<sourceReference>
+				<reference value="ValueSet/opioid-urine-screening"/>
+			</sourceReference>
+		</resource>
+		<resource>
+			<example value="true"/>
+			<name value="ValueSet - CDC Opioid Prescribing Guidelines Illicit Drugs Urine Screening"/>
+			<description value="Urine analysis for illicit drugs"/>
+			<sourceReference>
+				<reference value="ValueSet/illicit-drug-urine-screening"/>
 			</sourceReference>
 		</resource>
 	</package>

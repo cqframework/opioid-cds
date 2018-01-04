@@ -1,0 +1,114 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="opioid-urine-screening"/>
+    <status value="active"/>
+    <compose>
+        <include>
+            <system value="http://loinc.org"/>
+            <concept>
+                <code value="3299-5"/>
+            </concept>
+            <concept>
+                <code value="14184-6"/>
+            </concept>
+            <concept>
+                <code value="16485-5"/>
+            </concept>
+            <concept>
+                <code value="3408-2"/>
+            </concept>
+            <concept>
+                <code value="3414-0"/>
+            </concept>
+            <concept>
+                <code value="3421-5"/>
+            </concept>
+            <concept>
+                <code value="12333-1"/>
+            </concept>
+            <concept>
+                <code value="3423-1"/>
+            </concept>
+            <concept>
+                <code value="21142-5"/>
+            </concept>
+            <concept>
+                <code value="16605-8"/>
+            </concept>
+            <concept>
+                <code value="3467-8"/>
+            </concept>
+            <concept>
+                <code value="3507-1"/>
+            </concept>
+            <concept>
+                <code value="14066-5"/>
+            </concept>
+            <concept>
+                <code value="3571-7"/>
+            </concept>
+            <concept>
+                <code value="11235-9"/>
+            </concept>
+            <concept>
+                <code value="12308-3"/>
+            </concept>
+            <concept>
+                <code value="9834-3"/>
+            </concept>
+            <concept>
+                <code value="14071-5"/>
+            </concept>
+            <concept>
+                <code value="3711-9"/>
+            </concept>
+            <concept>
+                <code value="3746-5"/>
+            </concept>
+            <concept>
+                <code value="3773-9"/>
+            </concept>
+            <concept>
+                <code value="3830-7"/>
+            </concept>
+            <concept>
+                <code value="42618-9"/>
+            </concept>
+            <concept>
+                <code value="12309-1"/>
+            </concept>
+            <concept>
+                <code value="10998-3"/>
+            </concept>
+            <concept>
+                <code value="11247-4"/>
+            </concept>
+            <concept>
+                <code value="3917-2"/>
+            </concept>
+            <concept>
+                <code value="3962-8"/>
+            </concept>
+            <concept>
+                <code value="3965-1"/>
+            </concept>
+            <concept>
+                <code value="11000-7"/>
+            </concept>
+            <concept>
+                <code value="4003-0"/>
+            </concept>
+            <concept>
+                <code value="4009-7"/>
+            </concept>
+            <concept>
+                <code value="65807-0"/>
+            </concept>
+            <concept>
+                <code value="43219-5"/>
+            </concept>
+            <concept>
+                <code value="19295-5"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>
