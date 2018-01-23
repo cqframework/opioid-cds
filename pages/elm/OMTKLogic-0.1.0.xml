@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:a="urn:hl7-org:cql-annotations:r1">
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
    <identifier id="OMTKLogic" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
@@ -190,7 +190,6 @@
             </caseItem>
             <else asType="t:Decimal" xsi:type="As">
                <operand xsi:type="Null"/>
-               <asTypeSpecifier name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
             </else>
          </expression>
          <operand name="frequency">
@@ -641,7 +640,6 @@
                      <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
                   </operand>
                </operand>
-               <asTypeSpecifier name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
             </condition>
             <then classType="t:Quantity" xsi:type="Instance">
                <element name="value">
@@ -684,7 +682,7 @@
                      </expression>
                   </source>
                   <where xsi:type="Exists">
-                     <operand xmlns:ns1="http://org.opencds/opioid-cds" dataType="ns1:NON_SURGICAL_OPIOID_TO_INCLUDE" codeProperty="DRUG_RXCUI" xsi:type="Retrieve">
+                     <operand xmlns:ns1="http://org.opencds/opioid-cds" dataType="ns1:MED_DRUG_VALUE_SET" codeProperty="DRUG_RXCUI" xsi:type="Retrieve">
                         <codes xsi:type="ToList">
                            <operand path="DRUG_RXCUI" scope="SD" xsi:type="Property"/>
                         </codes>
@@ -707,7 +705,7 @@
                         <element name="ingredientCode">
                            <value path="INGREDIENT_RXCUI" xsi:type="Property">
                               <source xsi:type="SingletonFrom">
-                                 <operand xmlns:ns3="http://org.opencds/opioid-cds" dataType="ns3:MED_INGREDIENT_FOR_SCDC" codeProperty="SCDC_RXCUI" xsi:type="Retrieve">
+                                 <operand xmlns:ns3="http://org.opencds/opioid-cds" dataType="ns3:MED_SCDC" codeProperty="SCDC_RXCUI" xsi:type="Retrieve">
                                     <codes xsi:type="ToList">
                                        <operand path="SCDC_RXCUI" scope="SD" xsi:type="Property"/>
                                     </codes>
@@ -718,7 +716,7 @@
                         <element name="doseFormCode">
                            <value path="DOSE_FORM_RXCUI" xsi:type="Property">
                               <source xsi:type="SingletonFrom">
-                                 <operand xmlns:ns4="http://org.opencds/opioid-cds" dataType="ns4:MED_DRUG_DOSE_FORM" codeProperty="DRUG_RXCUI" xsi:type="Retrieve">
+                                 <operand xmlns:ns4="http://org.opencds/opioid-cds" dataType="ns4:MED_DRUG" codeProperty="DRUG_RXCUI" xsi:type="Retrieve">
                                     <codes xsi:type="ToList">
                                        <operand path="DRUG_RXCUI" scope="SD" xsi:type="Property"/>
                                     </codes>
@@ -759,7 +757,7 @@
                   </source>
                   <where xsi:type="Equal">
                      <operand path="INGREDIENT_TYPE" scope="IT" xsi:type="Property"/>
-                     <operand valueType="t:String" value="NonSurgicalOpioid" xsi:type="Literal"/>
+                     <operand valueType="t:String" value="Opioid_NonSurgical" xsi:type="Literal"/>
                   </where>
                </operand>
             </where>
@@ -828,7 +826,6 @@
                            <element valueType="t:Integer" value="4337" xsi:type="Literal"/>
                         </operand>
                      </operand>
-                     <asTypeSpecifier name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
                   </condition>
                   <then classType="t:Quantity" xsi:type="Instance">
                      <element name="value">
@@ -852,7 +849,6 @@
                   </then>
                   <else asType="t:Quantity" xsi:type="As">
                      <operand xsi:type="Null"/>
-                     <asTypeSpecifier name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
                   </else>
                </then>
             </caseItem>
@@ -1016,7 +1012,6 @@
                            <element valueType="t:Integer" value="4337" xsi:type="Literal"/>
                         </operand>
                      </operand>
-                     <asTypeSpecifier name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
                   </condition>
                   <then xsi:type="Concatenate">
                      <operand xsi:type="Concatenate">
@@ -1047,7 +1042,6 @@
                   </then>
                   <else asType="t:String" xsi:type="As">
                      <operand xsi:type="Null"/>
-                     <asTypeSpecifier name="t:String" xsi:type="NamedTypeSpecifier"/>
                   </else>
                </then>
             </caseItem>
@@ -1308,3 +1302,4 @@
       </def>
    </statements>
 </library>
+

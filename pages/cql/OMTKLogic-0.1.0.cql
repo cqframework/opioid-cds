@@ -232,12 +232,12 @@ define function EnsureMicrogramQuantity(strength Quantity):
 define function GetIngredients(rxNormCode Code):
   (
     [MED_SCDC_FOR_DRUG: DRUG_RXCUI in rxNormCode] SD
-      where exists ([NON_SURGICAL_OPIOID_TO_INCLUDE: DRUG_RXCUI in SD.DRUG_RXCUI])
+      where exists ([MED_DRUG_VALUE_SET: DRUG_RXCUI in SD.DRUG_RXCUI])
       return {
         rxNormCode: rxNormCode,
         component: SingletonFrom([MED_SCDC: SCDC_RXCUI in SD.SCDC_RXCUI]),
-        ingredientCode: SingletonFrom([MED_INGREDIENT_FOR_SCDC: SCDC_RXCUI in SD.SCDC_RXCUI]).INGREDIENT_RXCUI,
-        doseFormCode: SingletonFrom([MED_DRUG_DOSE_FORM: DRUG_RXCUI in SD.DRUG_RXCUI]).DOSE_FORM_RXCUI // Could potentially look this up only once...
+        ingredientCode: SingletonFrom([MED_SCDC: SCDC_RXCUI in SD.SCDC_RXCUI]).INGREDIENT_RXCUI,
+        doseFormCode: SingletonFrom([MED_DRUG: DRUG_RXCUI in SD.DRUG_RXCUI]).DOSE_FORM_RXCUI // Could potentially look this up only once...
       }
   ) C
     let
@@ -245,7 +245,7 @@ define function GetIngredients(rxNormCode Code):
       doseForm: SingletonFrom([MED_DOSE_FORM: DOSE_FORM_RXCUI in C.doseFormCode])
     where exists (
       [MED_INGREDIENT_TYPE: INGREDIENT_RXCUI in C.ingredientCode] IT
-        where IT.INGREDIENT_TYPE = 'NonSurgicalOpioid'
+        where IT.INGREDIENT_TYPE = 'Opioid_NonSurgical'
     )
     return {
       rxNormCode: rxNormCode,
