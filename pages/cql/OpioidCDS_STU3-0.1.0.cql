@@ -230,9 +230,12 @@ define "Inconsistent Unprescribed Opioids":
     'Found the following unprescribed opioid(s): ' + "Unprescribed Opioids"
 
 define "Missing Opioids":
-    "Prescribed Opioids" Prescriptions
-        except
-            Lower(GetOpioid("Opioid Drug Screening in Past 12 Months".code.coding[0].code.value))
+    if "Opioid Drug Screening in Past 12 Months" is not null
+    then
+        "Prescribed Opioids" Prescriptions
+            except
+                Lower(GetOpioid("Opioid Drug Screening in Past 12 Months".code.coding[0].code.value))
+    else null
 
 define "Has Missing Opioids?":
     exists ("Missing Opioids")

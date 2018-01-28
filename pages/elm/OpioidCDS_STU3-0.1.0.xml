@@ -3,7 +3,7 @@
    <annotation startLine="161" startChar="44" endLine="161" endChar="49" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <annotation startLine="217" startChar="70" endLine="217" endChar="75" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <annotation startLine="217" startChar="79" endLine="217" endChar="92" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="241" startChar="64" endLine="241" endChar="80" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="244" startChar="64" endLine="244" endChar="80" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <identifier id="OpioidCDS_STU3" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
@@ -1100,30 +1100,45 @@
          </expression>
       </def>
       <def name="Missing Opioids" context="Patient" accessLevel="Public">
-         <expression xsi:type="Except">
-            <operand xsi:type="Query">
-               <source alias="Prescriptions">
-                  <expression name="Prescribed Opioids" xsi:type="ExpressionRef"/>
-               </source>
-            </operand>
-            <operand xsi:type="ToList">
-               <operand xsi:type="Lower">
-                  <operand name="GetOpioid" xsi:type="FunctionRef">
-                     <operand path="value" xsi:type="Property">
-                        <source path="code" xsi:type="Property">
-                           <source xsi:type="Indexer">
-                              <operand path="coding" xsi:type="Property">
-                                 <source path="code" xsi:type="Property">
-                                    <source name="Opioid Drug Screening in Past 12 Months" xsi:type="ExpressionRef"/>
-                                 </source>
-                              </operand>
-                              <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+         <expression xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand xsi:type="Not">
+                  <operand xsi:type="IsNull">
+                     <operand name="Opioid Drug Screening in Past 12 Months" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+            </condition>
+            <then xsi:type="Except">
+               <operand xsi:type="Query">
+                  <source alias="Prescriptions">
+                     <expression name="Prescribed Opioids" xsi:type="ExpressionRef"/>
+                  </source>
+               </operand>
+               <operand xsi:type="ToList">
+                  <operand xsi:type="Lower">
+                     <operand name="GetOpioid" xsi:type="FunctionRef">
+                        <operand path="value" xsi:type="Property">
+                           <source path="code" xsi:type="Property">
+                              <source xsi:type="Indexer">
+                                 <operand path="coding" xsi:type="Property">
+                                    <source path="code" xsi:type="Property">
+                                       <source name="Opioid Drug Screening in Past 12 Months" xsi:type="ExpressionRef"/>
+                                    </source>
+                                 </operand>
+                                 <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                              </source>
                            </source>
-                        </source>
+                        </operand>
                      </operand>
                   </operand>
                </operand>
-            </operand>
+            </then>
+            <else xsi:type="As">
+               <operand xsi:type="Null"/>
+               <asTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="t:String" xsi:type="NamedTypeSpecifier"/>
+               </asTypeSpecifier>
+            </else>
          </expression>
       </def>
       <def name="Has Missing Opioids?" context="Patient" accessLevel="Public">
