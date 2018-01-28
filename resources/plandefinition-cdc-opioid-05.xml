@@ -104,7 +104,7 @@
 				<kind value="applicability"/>
 				<description value="Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed"/>
 				<language value="text/cql"/>
-				<expression value="Found Unprescribed Opioid in Screening"/>
+				<expression value="Has Unprescribed Opioids?"/>
 			</condition>
 			<dynamicValue>
 				<path value="activity.extension"/>
