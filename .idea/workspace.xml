@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359a1c8f-991b-46e8-9acd-dadb2d7c3b9a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/assets/ico/favicon.ico" afterPath="$PROJECT_DIR$/pages/assets/ico/favicon.ico" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/_includes/footer.html" afterPath="$PROJECT_DIR$/pages/_includes/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/_includes/navbar.html" afterPath="$PROJECT_DIR$/pages/_includes/navbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/contents.html" afterPath="$PROJECT_DIR$/pages/contents.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index.html" afterPath="$PROJECT_DIR$/pages/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE.md" afterPath="$PROJECT_DIR$/LICENSE.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/_includes/header.html" afterPath="$PROJECT_DIR$/pages/_includes/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/license.html" afterPath="$PROJECT_DIR$/pages/license.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/library-omtklogic.xml" afterPath="$PROJECT_DIR$/resources/library-omtklogic.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,21 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ig.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ig.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LICENSE.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LICENSE.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="447">
+              <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -43,100 +34,44 @@
       <file leaf-file-name="license.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/license.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#li#1;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#2;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#3;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#4;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#0;n#ol#0;n#div#0;n#li#4;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#1;n#ol#0;n#div#0;n#li#4;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#5;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ol#4;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/_includes/navbar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="24" column="61" lean-forward="false" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/_includes/footer.html">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contents.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/contents.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="86" column="437" lean-forward="false" selection-start-line="86" selection-start-column="437" selection-end-line="86" selection-end-column="437" />
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#tr#54;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#54;n#table#0;n#!!top" expanded="true" />
-                <marker date="1518727585000" expanded="false" signature="47037:47122" ph="..." />
-                <marker date="1518727585000" expanded="false" signature="47135:47263" ph="..." />
-                <marker date="1518727585000" expanded="false" signature="47552:47637" ph="..." />
-                <marker date="1518727585000" expanded="false" signature="47650:47778" ph="..." />
-                <marker date="1518727585000" expanded="false" signature="48073:48158" ph="..." />
-                <marker date="1518727585000" expanded="false" signature="48171:48299" ph="..." />
-                <marker date="1518727585000" expanded="false" signature="48592:48677" ph="..." />
-                <marker date="1518727585000" expanded="false" signature="48690:48818" ph="..." />
-                <marker date="1518727585000" expanded="false" signature="49106:49191" ph="..." />
-                <marker date="1518727585000" expanded="false" signature="49204:49332" ph="..." />
+                <element signature="e#1079#1085#0" expanded="true" />
+                <element signature="e#1103#1109#0" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#p#1;n#!!top" expanded="true" />
+                <element signature="e#1612#1618#0" expanded="true" />
+                <element signature="e#1632#1638#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profiles.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/profiles.html">
+      <file leaf-file-name="library-omtklogic.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/library-omtklogic.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="660">
+              <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="container-start.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/_includes/container-start.html">
+      <file leaf-file-name="library-opioidcds-dstu2.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/library-opioidcds-dstu2.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-41">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="instance-template-sd.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instance-template-sd.html">
+      <file leaf-file-name="library-opioidcds-stu3.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/library-opioidcds-stu3.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="opioid-cds.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/opioid-cds.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="59" column="59" lean-forward="false" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="59" />
+            <state relative-caret-position="448">
+              <caret line="34" column="80269" lean-forward="false" selection-start-line="34" selection-start-column="80269" selection-end-line="34" selection-end-column="80269" />
               <folding />
             </state>
           </provider>
@@ -169,10 +104,13 @@
         <option value="$PROJECT_DIR$/resources/library-opioidcds-stu3.xml" />
         <option value="$PROJECT_DIR$/pages/index.html" />
         <option value="$PROJECT_DIR$/LICENSE" />
-        <option value="$PROJECT_DIR$/pages/license.html" />
         <option value="$PROJECT_DIR$/pages/_includes/navbar.html" />
         <option value="$PROJECT_DIR$/pages/_includes/footer.html" />
         <option value="$PROJECT_DIR$/pages/contents.html" />
+        <option value="$PROJECT_DIR$/pages/_includes/header.html" />
+        <option value="$PROJECT_DIR$/pages/license.html" />
+        <option value="$PROJECT_DIR$/LICENSE.md" />
+        <option value="$PROJECT_DIR$/resources/library-omtklogic.xml" />
       </list>
     </option>
   </component>
@@ -183,9 +121,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="140" />
-    <option name="y" value="58" />
-    <option name="width" value="1062" />
+    <option name="x" value="132" />
+    <option name="y" value="94" />
+    <option name="width" value="1438" />
     <option name="height" value="911" />
   </component>
   <component name="ProjectView">
@@ -221,6 +159,31 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="_includes" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="opioid-cds" type="b2602c69:ProjectViewProjectNode" />
+              <item name="opioid-cds" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="opioid-cds" type="b2602c69:ProjectViewProjectNode" />
+              <item name="opioid-cds" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="ico" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="opioid-cds" type="b2602c69:ProjectViewProjectNode" />
+              <item name="opioid-cds" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="opioid-cds" type="b2602c69:ProjectViewProjectNode" />
+              <item name="opioid-cds" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -232,6 +195,12 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages/assets/ico" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -259,17 +228,17 @@
       <workItem from="1517529238564" duration="21000" />
       <workItem from="1517855093072" duration="9360000" />
       <workItem from="1518163585843" duration="598000" />
-      <workItem from="1518724515332" duration="2634000" />
+      <workItem from="1518724515332" duration="11966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13509000" />
+    <option name="totallyTimeSpent" value="22841000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="140" y="58" width="1062" height="911" extended-state="0" />
+    <frame x="132" y="94" width="1438" height="911" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26224783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19266056" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -298,54 +267,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/implementation-documentation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="61" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/profiles.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="266" lean-forward="false" selection-start-line="64" selection-start-column="209" selection-end-line="64" selection-end-column="266" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/_includes/container-start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instance-template-sd.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -516,14 +437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/library-opioidcds-stu3.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="34" column="80269" lean-forward="false" selection-start-line="34" selection-start-column="80269" selection-end-line="34" selection-end-column="80269" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/elm/OpioidCDS_STU3-0.1.0.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
@@ -554,14 +467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/library-omtklogic.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/opioid-cds.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
@@ -574,14 +479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/_includes/container-start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,31 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/license.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="3" lean-forward="false" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#li#1;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#2;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#3;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#4;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#0;n#ol#0;n#div#0;n#li#4;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#1;n#ol#0;n#div#0;n#li#4;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#5;n#ol#0;n#li#0;n#ol#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ol#4;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/contents.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -720,10 +592,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/artifacts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/_includes/container-start.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/assets/ico/favicon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/assets/ico/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/_includes/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="24" column="61" lean-forward="false" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+        <state relative-caret-position="30">
+          <caret line="2" column="130" lean-forward="false" selection-start-line="2" selection-start-column="95" selection-end-line="2" selection-end-column="130" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/assets/images/cdc-banner-header.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/cc0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/_includes/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="30" column="56" lean-forward="false" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/license.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#1079#1085#0" expanded="true" />
+            <element signature="e#1103#1109#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#p#1;n#!!top" expanded="true" />
+            <element signature="e#1612#1618#0" expanded="true" />
+            <element signature="e#1632#1638#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/library-opioidcds-dstu2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-41">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/library-opioidcds-stu3.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="34" column="80269" lean-forward="false" selection-start-line="34" selection-start-column="80269" selection-end-line="34" selection-end-column="80269" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/library-omtklogic.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
           <folding />
         </state>
       </provider>
