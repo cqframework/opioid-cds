@@ -1,5 +1,5 @@
 <Patient xmlns="http://hl7.org/fhir">
-    <id value="cdc-opioid"/>
+    <id value="example-opioidcds"/>
     <meta>
         <versionId value="1"/>
         <lastUpdated value="2017-11-25T17:26:27.040-07:00"/>

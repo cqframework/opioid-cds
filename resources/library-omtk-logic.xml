@@ -1,5 +1,5 @@
 <Library xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../schema/library.xsd">
-    <id value="omtklogic"/>
+    <id value="omtk-logic"/>
     <identifier>
         <use value="official"/>
         <value value="OMTKLogic"/>
@@ -43,7 +43,7 @@
         <coding>
             <system value="urn:iso:std:iso:3166"/>
             <code value="US"/>
-            <display value="United States of America (the)"/>
+            <display value="United States of America"/>
         </coding>
     </jurisdiction>
     <topic>
@@ -65,7 +65,7 @@
         <type value="author" />
         <name value="Robert McClure, MD, MPH"/>
     </contributor>
-    <copyright value="© Copyright 2018 by OpenCDS.org"/>
+    <copyright value="© CDC 2016+."/>
     <relatedArtifact>
         <type value="depends-on"/>
         <resource>
@@ -73,8 +73,14 @@
         </resource>
     </relatedArtifact>
     <relatedArtifact>
-        <type value="justification"/>
+        <type value="documentation"/>
+        <display value="CDC guideline for prescribing opioids for chronic pain"/>
         <url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
+    </relatedArtifact>
+    <relatedArtifact>
+        <type value="documentation"/>
+        <display value="MME Conversion Tables"/>
+        <url value="https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf"/>
     </relatedArtifact>
     <content>
         <contentType value="text/cql"/>

@@ -1,113 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-	<id value="opioid-cds"/>
-	<url value="http://hl7.org/fhir/ig/opioid-cds/ImplementationGuide/opioid-cds"/>
-	<version value="0.1.0"/>
-	<name value="Opioid Prescribing Support Implementation Guide"/>
-	<status value="draft"/>
-	<experimental value="false"/>
-	<publisher value="Centers for Disease Control and Prevention (CDC)"/>
-	<date value="2017-02-06"/>
-	<description value="Opioid Prescribing Support Implementation Guide"/>
-	<fhirVersion value="3.0.1"/>
-	<package>
-		<name value="Opioid Prescribing Support Implementation Guide Package"/>
-		<resource>
-			<example value="true"/>
-			<name value="Library - OMTK Model Info"/>
-			<description value="Opioid Management Terminology Knowledge Base Model Information"/>
-			<sourceReference>
-				<reference value="Library/omtk-modelinfo"/>
-			</sourceReference>
-		</resource>
-		<resource>
-			<example value="true"/>
-			<name value="Library - OMTK Logic"/>
-			<description value="Opioid Management Terminology Knowledge Base Logic"/>
-			<sourceReference>
-				<reference value="Library/omtklogic"/>
-			</sourceReference>
-		</resource>
-		<resource>
-			<example value="true"/>
-			<name value="Library - Opioid CDS (DSTU2)"/>
-			<description value="Opioid Management Decision Support Logic (for FHIR DSTU2)"/>
-			<sourceReference>
-				<reference value="Library/opioidcds-dstu2"/>
-			</sourceReference>
-		</resource>
-		<resource>
-			<example value="true"/>
-			<name value="Library - Opioid CDS (STU3)"/>
-			<description value="Opioid Management Decision Support Logic (for FHIR STU3)"/>
-			<sourceReference>
-				<reference value="Library/opioidcds-stu3"/>
-			</sourceReference>
-		</resource>
-		<resource>
-			<example value="true"/>
-			<name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5 and #10"/>
-			<description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #5 and #10"/>
-			<sourceReference>
-				<reference value="PlanDefinition/cdc-opioid-05"/>
-			</sourceReference>
-		</resource>
-		<resource>
-			<example value="true"/>
-			<name value="Observation - CDC Opioid Prescribing Guideline Recommendation #10"/>
-			<description value="Observation for illicit drugs"/>
-			<sourceReference>
-				<reference value="Observation/cdc-opioid-10"/>
-			</sourceReference>
-		</resource>
-		<resource>
-			<example value="true"/>
-			<name value="Patient - CDC Opioid Prescribing Guidelines"/>
-			<description value="Basic test patient"/>
-			<sourceReference>
-				<reference value="Patient/cdc-opioid"/>
-			</sourceReference>
-		</resource>
-		<resource>
-			<example value="true"/>
-			<name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Urine Screening"/>
-			<description value="Urine analysis for opioids"/>
-			<sourceReference>
-				<reference value="ValueSet/opioid-urine-screening"/>
-			</sourceReference>
-		</resource>
-		<resource>
-			<example value="true"/>
-			<name value="ValueSet - CDC Opioid Prescribing Guidelines Illicit Drugs Urine Screening"/>
-			<description value="Urine analysis for illicit drugs"/>
-			<sourceReference>
-				<reference value="ValueSet/illicit-drug-urine-screening"/>
-			</sourceReference>
-		</resource>
-	</package>
-	<binary value="cql/OMTKLogic-0.1.0.cql"/>
-	<binary value="cql/OpioidCDS_DSTU2-0.1.0.cql"/>
-	<binary value="cql/OpioidCDS_STU3-0.1.0.cql"/>
-	<binary value="elm/OMTKLogic-0.1.0.xml"/>
-	<binary value="elm/OpioidCDS_DSUT2-0.1.0.xml"/>
-	<binary value="elm/OpioidCDS_STU3-0.1.0.xml"/>
-	<binary value="modelinfo/OMTK-modelinfo-0.1.0.xml"/>
-	<page>
-		<source value="index.html"/>
-		<title value="Opioid Prescribing Support Implementation Guide"/>
-		<kind value="page"/>
-		<format value="html"/>
+    <id value="opioid-cds"/>
+    <url value="http://hl7.org/fhir/ig/opioid-cds/ImplementationGuide/opioid-cds"/>
+    <version value="0.1.0"/>
+    <name value="Opioid Prescribing Support Implementation Guide"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <date value="2017-02-06"/>
+    <description value="Opioid Prescribing Support Implementation Guide"/>
+    <fhirVersion value="3.0.1"/>
+    <package>
+        <name value="Opioid Prescribing Support Implementation Guide Package"/>
+        <resource>
+            <example value="true"/>
+            <name value="CarePlan - Example result of recommendation #5"/>
+            <description value="Example result of applying the PlanDefinition for recommendation #5"/>
+            <sourceReference>
+                <reference value="CarePlan/example-opioidcds"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - CDC Opioid Prescribing Guidelines Indicator"/>
+            <description value="System of codes that indicate the urgency/importance of the action"/>
+            <sourceReference>
+                <reference value="CodeSystem/opioidcds-indicator"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - OMTK Model Info"/>
+            <description value="Opioid Management Terminology Knowledge Base Model Information"/>
+            <sourceReference>
+                <reference value="Library/omtk-modelinfo"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - OMTK Logic"/>
+            <description value="Opioid Management Terminology Knowledge Base Logic"/>
+            <sourceReference>
+                <reference value="Library/omtk-logic"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS (DSTU2)"/>
+            <description value="Opioid Management Decision Support Logic (for FHIR DSTU2)"/>
+            <sourceReference>
+                <reference value="Library/opioidcds-dstu2"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS (STU3)"/>
+            <description value="Opioid Management Decision Support Logic (for FHIR STU3)"/>
+            <sourceReference>
+                <reference value="Library/opioidcds-stu3"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="MedicationRequest - CDC Opioid Prescribing Guideline Recommendation #5"/>
+            <description value="Fentanyl transdermal patch prescription"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-opioidcds"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Observation - CDC Opioid Prescribing Guideline Recommendation #10"/>
+            <description value="Observation for illicit drugs"/>
+            <sourceReference>
+                <reference value="Observation/example-opioidcds"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Patient - CDC Opioid Prescribing Guidelines"/>
+            <description value="Basic test patient"/>
+            <sourceReference>
+                <reference value="Patient/example-opioidcds"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #5"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-05"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-10"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="RequestGroup - CDC Opioid Prescribing Guideline Example for Recommendation #5"/>
+            <description value="RequestGroup referenced by CarePlan with information necessary to construct CDS Cards"/>
+            <sourceReference>
+                <reference value="RequestGroup/example-opioidcds"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Urine Screening"/>
+            <description value="Urine analysis for opioids"/>
+            <sourceReference>
+                <reference value="ValueSet/opioid-urine-screening"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Illicit Drugs Urine Screening"/>
+            <description value="Urine analysis for illicit drugs"/>
+            <sourceReference>
+                <reference value="ValueSet/illicit-drug-urine-screening"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Indicator"/>
+            <description value="Indicates urgency/importance of the action"/>
+            <sourceReference>
+                <reference value="ValueSet/opioidcds-indicator"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="StructureDefinition/cdc-requestgroup-action-indicator"/>
+            </sourceReference>
+        </resource>
+    </package>
+    <binary value="cql/OMTKLogic-0.1.0.cql"/>
+    <binary value="cql/OpioidCDS_DSTU2-0.1.0.cql"/>
+    <binary value="cql/OpioidCDS_STU3-0.1.0.cql"/>
+    <binary value="elm/OMTKLogic-0.1.0.xml"/>
+    <binary value="elm/OpioidCDS_DSUT2-0.1.0.xml"/>
+    <binary value="elm/OpioidCDS_STU3-0.1.0.xml"/>
+    <binary value="modelinfo/OMTK-modelinfo-0.1.0.xml"/>
     <page>
-      <source value="medicationrequest-opioidcds.html"/>
-      <title value="Medication Request"/>
-      <kind value="page"/>
-      <format value="generated"/>
-      <page>
-        <source value="opioidcds-medicationrequest.html"/>
-        <title value="Medication Request Details"/>
-        <kind value="resource"/>
-        <format value="generated"/>
-      </page>
+        <source value="index.html"/>
+        <title value="Opioid Prescribing Support Implementation Guide"/>
+        <kind value="page"/>
+        <format value="html"/>
+        <page>
+            <source value="medicationrequest-opioidcds.html"/>
+            <title value="Medication Request"/>
+            <kind value="page"/>
+            <format value="generated"/>
+            <page>
+                <source value="opioidcds-medicationrequest.html"/>
+                <title value="Medication Request Details"/>
+                <kind value="resource"/>
+                <format value="generated"/>
+            </page>
+        </page>
     </page>
-	</page>
 </ImplementationGuide>

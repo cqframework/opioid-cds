@@ -1,43 +1,120 @@
 {
-	"tool" : "jekyll",
-	"paths": {
-		"resources": "resources",
-		"pages": "pages",
-		"temp": "temp",
-		"output": "output",
-		"qa": "qa",
-		"specification": "http://hl7.org/fhir/STU3/"
-	},
-	"defaults": {
-		"Any": {
-			"template-format": "instance-template-format.html",
-			"template-base": "instance-template-base.html"
-		},
-		"StructureDefinition" : {
-				"template-base": "instance-template-sd.html",
-				"template-mappings": "instance-template-mappings.html",
-				"template-defns": "instance-template-definitions.html"
-		}
-	},
-	"version" : "3.0.1",
-	"sct-edition" : "http://snomed.info/sct/731000124108",
-	"extraTemplates": [
-		"mappings"
-	],
-	"canonicalBase": "http://hl7.org/fhir/ig/opioid-cds",
-	"source": "opioid-cds.xml",
-	"spreadsheets": [
-		"careplan-profile-spreadsheet.xml",
-		"medicationrequest-profile-spreadsheet.xml",
-		"plandefinition-profile-spreadsheet.xml"
-	],
-	"resources": {
-		"CarePlan/careplan-example": { "source": "careplan-example" },
-		"Library/library-example": { "source": "library-example" },
-		"PlanDefinition/plandefinition-example": { "source": "plandefinition-example" },
-		"StructureDefinition/qicore-medicationrequest": {
-			"defns": "cdc-medicationrequest-definitions.html",
-			"base": "cdc-medicationrequest.html"
-		}
-	}
+  "tool" : "jekyll",
+  "paths": {
+    "resources": "resources",
+    "pages": "pages",
+    "temp": "temp",
+    "output": "output",
+    "qa": "qa",
+    "specification": "http://hl7.org/fhir/STU3/"
+  },
+  "defaults": {
+    "Any": {
+      "template-format": "instance-template-format.html",
+      "template-base": "instance-template-base.html"
+    },
+    "StructureDefinition" : {
+      "template-base": "instance-template-sd.html",
+      "template-mappings": "instance-template-mappings.html",
+      "template-defns": "instance-template-definitions.html"
+    }
+  },
+  "version" : "3.0.1",
+  "sct-edition" : "http://snomed.info/sct/731000124108",
+  "extraTemplates": [
+    "mappings"
+  ],
+  "canonicalBase": "http://hl7.org/fhir/ig/opioid-cds",
+  "source": "opioid-cds.xml",
+  "spreadsheets": [
+    "careplan-profile-spreadsheet.xml",
+    "medicationrequest-profile-spreadsheet.xml",
+    "plandefinition-profile-spreadsheet.xml",
+    "requestgroup-profile-spreadsheet.xml"
+  ],
+  "resources": {
+    "CarePlan/example-opioidcds": {
+      "source": "careplan-example-opioidcds.xml",
+      "base": "CarePlan-example-opioidcds.html"
+    },
+    "CodeSystem/opioidcds-indicator": {
+      "source": "codesystem-opioidcds-indicator.xml",
+      "base": "CodeSystem-opioidcds-indicator.html"
+    },
+    "Library/omtk-logic": {
+      "source": "library-omtk-logic.xml",
+      "base": "Library-omtk-logic.html"
+    },
+    "Library/omtk-modelinfo": {
+      "source": "library-omtk-modelinfo.xml",
+      "base": "Library-omtk-modelinfo.html"
+    },
+    "Library/opioidcds-dstu2": {
+      "source": "library-opioidcds-dstu2.xml",
+      "base": "Library-opioidcds-dstu2.html"
+    },
+    "Library/opioidcds-stu3": {
+      "source": "library-opioidcds-stu3.xml",
+      "base": "Library-opioidcds-stu3.html"
+    },
+    "MedicationRequest/example-opioidcds": {
+      "source": "medicationrequest-example-opioidcds.xml",
+      "base": "MedicationRequest-example-opioidcds.html"
+    },
+    "Observation/example-opioidcds": {
+      "source": "observation-example-opioidcds.xml",
+      "base": "Observation-example-opioidcds.html"
+    },
+    "Patient/example-opioidcds": {
+      "source": "patient-example-opioidcds.xml",
+      "base": "Patient-example-opioidcds.html"
+    },
+    "PlanDefinition/opioidcds-05": {
+      "source": "plandefinition-opioidcds-05.xml",
+      "base": "PlanDefinition-opioidcds-05.html"
+    },
+    "PlanDefinition/opioidcds-10": {
+      "source": "plandefinition-opioidcds-10.xml",
+      "base": "PlanDefinition-opioidcds-10.html"
+    },
+    "RequestGroup/example-opioidcds": {
+      "source": "requestgroup-example-opioidcds.xml",
+      "base": "RequestGroup-example-opioidcds.html"
+    },
+    "ValueSet/illicit-drug-urine-screening": {
+      "source": "valueset-illicit-drug-urine-screening.xml",
+      "base": "ValueSet-illicit-drug-urine-screening.html"
+    },
+    "ValueSet/opioid-urine-screening": {
+      "source": "valueset-opioid-urine-screening.xml",
+      "base": "ValueSet-opioid-urine-screening.html"
+    },
+    "ValueSet/opioidcds-indicator": {
+      "source": "valueset-opioidcds-indicator.xml",
+      "base": "ValueSet-opioidcds-indicator.html"
+    },
+
+    "StructureDefinition/cdc-careplan": {
+      "defns": "cdc-careplan-definitions.html",
+      "base": "cdc-careplan.html"
+    },
+    "StructureDefinition/cdc-medicationrequest": {
+      "defns": "cdc-medicationrequest-definitions.html",
+      "base": "cdc-medicationrequest.html"
+    },
+    "StructureDefinition/cdc-plandefinition": {
+      "defns": "cdc-plandefinition-definitions.html",
+      "base": "cdc-plandefinition.html"
+    },
+    "StructureDefinition/cdc-requestgroup": {
+      "defns": "cdc-requestgroup-definitions.html",
+      "base": "cdc-requestgroup.html"
+    },
+
+    "StructureDefinition/cdc-requestgroup-action-indicator": {
+      "defns": "cdc-requestgroup-action-indicator-definitions.html",
+      "base": "cdc-requestgroup-action-indicator.html",
+      "source": "structuredefinition-cdc-requestgroup-action-indicator.xml"
+    }
+  }
 }

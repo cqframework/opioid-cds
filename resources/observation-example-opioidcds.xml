@@ -1,9 +1,5 @@
 <Observation xmlns="http://hl7.org/fhir">
-    <id value="cdc-opioid-10"/>
-    <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2018-01-04T12:33:29.706-07:00"/>
-    </meta>
+    <id value="example-opioidcds"/>
     <status value="final"/>
     <code>
         <coding>
@@ -12,12 +8,12 @@
         </coding>
     </code>
     <subject>
-        <reference value="Patient/cdc-opioid"/>
+        <reference value="Patient/example-opioidcds"/>
     </subject>
     <effectiveDateTime value="2017-12-12"/>
     <interpretation>
         <coding>
-            <system value="https://www.hl7.org/fhir/v2/0078/index.html"/>
+            <system value="https://www.hl7.org/fhir/v2/0078"/>
             <code value="POS"/>
         </coding>
     </interpretation>

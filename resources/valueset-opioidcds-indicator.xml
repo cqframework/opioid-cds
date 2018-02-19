@@ -1,0 +1,22 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="opioidcds-indicator"/>
+    <name value="RequestGroupActionIndicator"/>
+    <status value="active"/>
+    <compose>
+        <include>
+            <system value="http://hl7.org/fhir/ig/opioid-cds/CodeSystem/opioidcds-indicator"/>
+            <concept>
+                <code value="info"/>
+                <display value="Information"/>
+            </concept>
+            <concept>
+                <code value="warning"/>
+                <display value="Warning"/>
+            </concept>
+            <concept>
+                <code value="hard-stop"/>
+                <display value="Hard Stop"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>

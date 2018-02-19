@@ -1,27 +1,13 @@
 <CarePlan xmlns="http://hl7.org/fhir">
-  <id value="example"/>
-  <text>
-    <status value="additional"/>
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <p>  A simple example of a care plan response for cdc opioid guidelines.</p>
-    </div>
-  </text>
+  <id value="example-opioidcds"/>
   <status value="active"/>
-  <intent value="order"/>
-  <title value="High risk for opioid overdose - taper now" />
-  <description value="Total morphine milligram equivalent (MME) is 20200.700mg/d. Taper to less than 50."/>
+  <intent value="proposal"/>
+  <subject>
+    <reference value="Patient/example-opioidcds"/>
+  </subject>
   <activity>
-    <detail>
-      <status value="in-progress"/>
-      <statusReason value="warning"/>
-    </detail>
+    <reference>
+      <reference value="RequestGroup/example-opioidcds"/>
+    </reference>
   </activity>
-  <note>
-    <id value="CDC guideline for prescribing opioids for chronic pain" />
-    <text value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420" />
-  </note>
-  <note>
-    <id value="MME Conversion Tables" />
-    <text value="https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf" />
-  </note>
 </CarePlan>

@@ -1,13 +1,9 @@
 <PlanDefinition xmlns="http://hl7.org/fhir">
-	<id value="cdc-opioid-05"/>
+	<id value="opioidcds-05"/>
 	<meta>
 		<versionId value="3"/>
 		<lastUpdated value="2017-11-30T12:58:02.574-07:00"/>
 	</meta>
-	<text>
-		<status value="generated"/>
-		<div xmlns="http://www.w3.org/1999/xhtml">CDC Opioid Prescribing Guideline Recommendation #5</div>
-	</text>
 	<url value="http://hl7.org/fhir/ig/opioid-cds/PlanDefinition/cdc-opioid-05"/>
 	<identifier>
 		<use value="official"/>
@@ -29,9 +25,52 @@
 	<description value="When opioids are started, providers should prescribe the lowest effective dosage."/>
 	<purpose value="CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care."/>
 	<usage value="Providers should use caution when prescribing opioids at any dosage, should carefully reassess evidence of individual benefits and risks when considering increasing dosage to ≥50 morphine milligram equivalents (MME)/day, and should avoid increasing dosage to ≥90 MME/day or carefully justify a decision to titrate dosage to >90 MME/day"/>
+	<useContext>
+		<code>
+			<system value="http://hl7.org/fhir/usage-context-type"/>
+			<code value="focus"/>
+			<display value="Clinical Focus"/>
+		</code>
+		<valueCodeableConcept>
+			<coding>
+				<system value="http://snomed.info/sct"/>
+				<code value="182888003"/>
+				<display value="Medication requested (situation)"/>
+			</coding>
+			<coding>
+				<system value="http://snomed.info/sct"/>
+				<code value="82423001"/>
+				<display value="Chronic pain (finding)"/>
+			</coding>
+		</valueCodeableConcept>
+	</useContext>
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="US"/>
+			<display value="United States of America"/>
+		</coding>
+	</jurisdiction>
 	<topic>
 		<text value="Opioid Prescribing"/>
 	</topic>
+	<contributor>
+		<type value="author" />
+		<name value="Kensaku Kawamoto, MD, PhD, MHS"/>
+	</contributor>
+	<contributor>
+		<type value="author" />
+		<name value="Bryn Rhodes"/>
+	</contributor>
+	<contributor>
+		<type value="author" />
+		<name value="Floyd Eisenberg, MD, MPH"/>
+	</contributor>
+	<contributor>
+		<type value="author" />
+		<name value="Robert McClure, MD, MPH"/>
+	</contributor>
+	<copyright value="© CDC 2016+."/>
 	<relatedArtifact>
 		<type value="documentation"/>
 		<display value="CDC guideline for prescribing opioids for chronic pain"/>
@@ -48,6 +87,30 @@
 	<action>
 		<title value="High risk for opioid overdose."/>
 		<description value="Total morphine milligram equivalent (MME) exceeds recommended amount. Taper to less than 50."/>
+		<documentation>
+			<type value="documentation"/>
+			<document>
+				<!-- We can use the example code systems from the FHIR CLinical Reasoning Module, or we can define GRADE specific code systems and use those here -->
+				<extension url="http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation">
+					<valueCodeableConcept>
+						<coding>
+							<system value="http://hl7.org/fhir/recommendation-strength"/>
+							<code value="strong"/>
+							<display value="Strong"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<extension url="http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence">
+					<valueCodeableConcept>
+						<coding>
+							<system value="http://hl7.org/fhir/evidence-quality"/>
+							<code value="low"/>
+							<display value="Low quality"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+			</document>
+		</documentation>
 		<triggerDefinition>
 			<type value="named-event"/>
 			<eventName value="medication-prescribe"/>
@@ -72,82 +135,24 @@
 			<path value="activity.extension"/>
 			<expression value="getIndicator"/>
 		</dynamicValue>
-	</action>
-	<action>
-		<title value="Patient has not had a urine screening in the past 12 months"/>
-		<description value="When prescribing opioids for chronic pain, clinicians should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs"/>
-		<triggerDefinition>
-			<type value="named-event"/>
-			<eventName value="medication-prescribe"/>
-		</triggerDefinition>
-		<condition>
-			<kind value="applicability"/>
-			<description value="Patient has not had a urine screening in the past 12 months"/>
-			<language value="text/cql"/>
-			<expression value="No Screenings in Past Year"/>
-		</condition>
-		<dynamicValue>
-			<path value="activity.extension"/>
-			<expression value="Get Indicator"/>
-		</dynamicValue>
-	</action>
-	<action>
-		<condition>
-			<kind value="applicability"/>
-			<description value="Patient has a positive urine screening in the past 12 months"/>
-			<language value="text/cql"/>
-			<expression value="Has Positive Screening?"/>
-		</condition>
+		<!-- Will reduce dosage -->
 		<action>
-			<title value="Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed"/>
-			<condition>
-				<kind value="applicability"/>
-				<description value="Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed"/>
-				<language value="text/cql"/>
-				<expression value="Has Unprescribed Opioids?"/>
-			</condition>
-			<dynamicValue>
-				<path value="activity.extension"/>
-				<expression value="Get Indicator"/>
-			</dynamicValue>
-			<dynamicValue>
-				<path value="action.description"/>
-				<expression value="Inconsistent Unprescribed Opioids"/>
-			</dynamicValue>
+			<description value="Will reduce dosage"/>
+			<!-- Open Order Set, where available -->
 		</action>
+		<!-- Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo -->
 		<action>
-			<title value="Patient has a positive urine screening in the past 12 months, which does not include prescribed opioids"/>
-			<condition>
-				<kind value="applicability"/>
-				<description value="Patient has a positive urine screening in the past 12 months, which does not include prescribed opioids"/>
-				<language value="text/cql"/>
-				<expression value="Has Missing Opioids?"/>
-			</condition>
-			<dynamicValue>
-				<path value="activity.extension"/>
-				<expression value="Get Indicator"/>
-			</dynamicValue>
-			<dynamicValue>
-				<path value="action.description"/>
-				<expression value="Inconsistent Missing Opioids"/>
-			</dynamicValue>
+			<description value="Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo"/>
 		</action>
+		<!-- Acute pain; snooze 1 mo -->
 		<action>
-			<title value="Patient has a positive urine screening in the past 12 months for illicit drugs"/>
-			<condition>
-				<kind value="applicability"/>
-				<description value="Patient has a positive urine screening in the past 12 months for illicit drugs"/>
-				<language value="text/cql"/>
-				<expression value="Has Illicit Drugs in Screening?"/>
-			</condition>
-			<dynamicValue>
-				<path value="activity.extension"/>
-				<expression value="Get Indicator"/>
-			</dynamicValue>
-			<dynamicValue>
-				<path value="action.description"/>
-				<expression value="Inconsistent Illicit Drugs"/>
-			</dynamicValue>
+			<description value="Acute pain; snooze 1 mo"/>
+		</action>
+		<!-- N/A - see comment (will be reviewed by medical director); snooze 3 mo -->
+		<action>
+			<!-- TODO: How do we indicate through the response that a comment must be captured? -->
+			<!-- TODO: How do we communicate the response back to the CDS service for persistence? -->
+			<description value="N/A - see comment (will be reviewed by medical director); snooze 3 mo"/>
 		</action>
 	</action>
 </PlanDefinition>
