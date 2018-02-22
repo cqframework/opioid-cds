@@ -134,6 +134,70 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Benzodiazepine Medication"/>
+            <description value="Benzodiazepine medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/benzodiazepines"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Long Acting Opioid Medication"/>
+            <description value="Long acting opioid medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/long-acting-opioids"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Naloxone Medication"/>
+            <description value="Naloxone medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/naloxone"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Medication"/>
+            <description value="Opioid medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/opioids"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioids Abused in Ambulatory Care Medication"/>
+            <description value="Opioids abused in ambulatory care medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/opioids-abused-in-ambulatory-care"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Codeine Cough Medication"/>
+            <description value="Opioid codeine cough medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/opioids-codeine-cough-meds"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioids Indicating End Of Life Medication"/>
+            <description value="Opioids indicating end of life medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/opioids-indicating-end-of-life"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Short Acting Opioids Medication"/>
+            <description value="Short acting opioids medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/short-acting-opioids"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <sourceReference>
                 <reference value="StructureDefinition/cdc-requestgroup-action-indicator"/>
             </sourceReference>
@@ -151,17 +215,5 @@
         <title value="Opioid Prescribing Support Implementation Guide"/>
         <kind value="page"/>
         <format value="html"/>
-        <page>
-            <source value="medicationrequest-opioidcds.html"/>
-            <title value="Medication Request"/>
-            <kind value="page"/>
-            <format value="generated"/>
-            <page>
-                <source value="opioidcds-medicationrequest.html"/>
-                <title value="Medication Request Details"/>
-                <kind value="resource"/>
-                <format value="generated"/>
-            </page>
-        </page>
     </page>
 </ImplementationGuide>

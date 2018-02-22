@@ -1,0 +1,70 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+   <id value="naloxone"/>
+   <status value="draft"/>
+   <compose>
+      <include>
+         <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+         <concept>
+            <code value="1191212"/>
+            <display value="Naloxone Hydrochloride 0.02 MG/ML Injectable Solution"/>
+         </concept>
+         <concept>
+            <code value="1191222"/>
+            <display value="Naloxone Hydrochloride 0.4 MG/ML Injectable Solution"/>
+         </concept>
+         <concept>
+            <code value="1191228"/>
+            <display value="Naloxone Hydrochloride 1 MG/ML Injectable Solution"/>
+         </concept>
+         <concept>
+            <code value="1191234"/>
+            <display value="1 ML Naloxone Hydrochloride 0.4 MG/ML Cartridge"/>
+         </concept>
+         <concept>
+            <code value="1191245"/>
+            <display value="2 ML Naloxone Hydrochloride 0.4 MG/ML Prefilled Syringe"/>
+         </concept>
+         <concept>
+            <code value="1191250"/>
+            <display value="2 ML Naloxone Hydrochloride 1 MG/ML Prefilled Syringe"/>
+         </concept>
+         <concept>
+            <code value="1495293"/>
+            <display value="0.4 ML Naloxone Hydrochloride 1 MG/ML Auto-Injector"/>
+         </concept>
+         <concept>
+            <code value="1495298"/>
+            <display value="0.4 ML Naloxone Hydrochloride 1 MG/ML Auto-Injector [Evzio]"/>
+         </concept>
+         <concept>
+            <code value="1659929"/>
+            <display value="1 ML Naloxone Hydrochloride 0.4 MG/ML Injection"/>
+         </concept>
+         <concept>
+            <code value="1725059"/>
+            <display value="Naloxone Hydrochloride 40 MG/ML Nasal Spray"/>
+         </concept>
+         <concept>
+            <code value="1725064"/>
+            <display value="Naloxone Hydrochloride 40 MG/ML Nasal Spray [Narcan]"/>
+         </concept>
+         <concept>
+            <code value="1855730"/>
+            <display value="0.4 ML Naloxone Hydrochloride 5 MG/ML Auto-Injector"/>
+         </concept>
+         <concept>
+            <code value="1855732"/>
+            <display value="0.4 ML Naloxone Hydrochloride 5 MG/ML Auto-Injector [Evzio]"/>
+         </concept>
+         <concept>
+            <code value="1870933"/>
+            <display value="Naloxone Hydrochloride 20 MG/ML Nasal Spray"/>
+         </concept>
+         <concept>
+            <code value="1870935"/>
+            <display value="Naloxone Hydrochloride 20 MG/ML Nasal Spray [Narcan]"/>
+         </concept>
+      </include>
+   </compose>
+</ValueSet>
+

@@ -93,6 +93,38 @@
       "source": "valueset-opioidcds-indicator.xml",
       "base": "ValueSet-opioidcds-indicator.html"
     },
+    "ValueSet/benzodiazepines": {
+      "source": "valueset-benzodiazepines.xml",
+      "base": "ValueSet-benzodiazepines.html"
+    },
+    "ValueSet/long-acting-opioids": {
+      "source": "valueset-long-acting-opioids.xml",
+      "base": "ValueSet-long-acting-opioids.html"
+    },
+    "ValueSet/naloxone": {
+      "source": "valueset-naloxone.xml",
+      "base": "ValueSet-naloxone.html"
+    },
+    "ValueSet/opioids": {
+      "source": "valueset-opioids.xml",
+      "base": "ValueSet-opioids.html"
+    },
+    "ValueSet/opioids-abused-in-ambulatory-care": {
+      "source": "valueset-opioids-abused-in-ambulatory-care.xml",
+      "base": "ValueSet-opioids-abused-in-ambulatory-care.html"
+    },
+    "ValueSet/opioids-codeine-cough-meds": {
+      "source": "valueset-opioids-codeine-cough-meds.xml",
+      "base": "ValueSet-opioids-codeine-cough-meds.html"
+    },
+    "ValueSet/opioids-indicating-end-of-life": {
+      "source": "valueset-opioids-indicating-end-of-life.xml",
+      "base": "ValueSet-opioids-indicating-end-of-life.html"
+    },
+    "ValueSet/short-acting-opioids": {
+      "source": "valueset-short-acting-opioids.xml",
+      "base": "ValueSet-short-acting-opioids.html"
+    },
 
     "StructureDefinition/cdc-careplan": {
       "defns": "cdc-careplan-definitions.html",
