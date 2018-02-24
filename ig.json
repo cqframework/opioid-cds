@@ -41,6 +41,10 @@
       "source": "codesystem-opioidcds-indicator.xml",
       "base": "CodeSystem-opioidcds-indicator.html"
     },
+    "CodeSystem/opioidcds-rxnorm-codes": {
+      "source": "codesystem-opioidcds-rxnorm-codes.xml",
+      "base": "CodeSystem-opioidcds-rxnorm-codes.html"
+    },
     "Library/omtk-logic": {
       "source": "library-omtk-logic.xml",
       "base": "Library-omtk-logic.html"

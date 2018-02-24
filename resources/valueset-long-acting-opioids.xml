@@ -3,7 +3,7 @@
    <status value="draft"/>
    <compose>
       <include>
-         <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+         <system value="http://hl7.org/fhir/ig/opioid-cds/CodeSystem/opioidcds-rxnorm-codes"/>
          <concept>
             <code value="1049502"/>
             <display value="12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>

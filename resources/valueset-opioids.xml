@@ -3,7 +3,7 @@
    <status value="draft"/>
    <compose>
       <include>
-         <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+         <system value="http://hl7.org/fhir/ig/opioid-cds/CodeSystem/opioidcds-rxnorm-codes"/>
          <concept>
             <code value="1010600"/>
             <display value="Buprenorphine 2 MG / Naloxone 0.5 MG Oral Strip"/>
