@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <identifier id="OpioidCDS_STU3_REC_08" version="0.1.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localIdentifier="FHIR" uri="http://hl7.org/fhir" version="3.0.0"/>
+   </usings>
+   <includes>
+      <def localIdentifier="Common" path="OpioidCDS_STU3_Common" version="0.1.0"/>
+   </includes>
+   <parameters>
+      <def name="ContextPrescription" accessLevel="Public">
+         <parameterTypeSpecifier name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+      </def>
+      <def name="Orders" accessLevel="Public">
+         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
+      </def>
+      <def name="SubstanceAbuseHistory" accessLevel="Public">
+         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
+      </def>
+   </parameters>
+   <statements>
+      <def name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand dataType="fhir:Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def name="Validate Trigger Event" context="Patient" accessLevel="Public">
+         <expression xsi:type="Exists">
+            <operand xsi:type="ToList">
+               <operand xsi:type="Query">
+                  <source alias="triggerScript">
+                     <expression name="ContextPrescription" xsi:type="ParameterRef"/>
+                  </source>
+                  <where name="IsOpioidWithAmbulatoryAbusePotential" libraryName="Common" xsi:type="FunctionRef">
+                     <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                        <operand xsi:type="Indexer">
+                           <operand path="coding" xsi:type="Property">
+                              <source path="medication" scope="triggerScript" xsi:type="Property"/>
+                           </operand>
+                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                        </operand>
+                     </operand>
+                  </where>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def name="Exclusion Criteria" context="Patient" accessLevel="Public">
+         <expression xsi:type="Exists">
+            <operand xsi:type="Query">
+               <source alias="orders">
+                  <expression name="Orders" xsi:type="ParameterRef"/>
+               </source>
+               <where name="IsNaloxone" libraryName="Common" xsi:type="FunctionRef">
+                  <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                     <operand xsi:type="Indexer">
+                        <operand path="coding" xsi:type="Property">
+                           <source path="medication" scope="orders" xsi:type="Property"/>
+                        </operand>
+                        <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                     </operand>
+                  </operand>
+               </where>
+            </operand>
+         </expression>
+      </def>
+      <def name="Average MME" context="Patient" accessLevel="Public">
+         <expression name="TotalMME" libraryName="Common" xsi:type="FunctionRef">
+            <operand name="Orders" xsi:type="ParameterRef"/>
+         </expression>
+      </def>
+      <def name="MME >= 50 mg/d?" context="Patient" accessLevel="Public">
+         <expression xsi:type="GreaterOrEqual">
+            <operand name="Average MME" xsi:type="ExpressionRef"/>
+            <operand value="50" unit="mg/d" xsi:type="Quantity"/>
+         </expression>
+      </def>
+      <def name="On Benzodiazepine" context="Patient" accessLevel="Public">
+         <expression xsi:type="Exists">
+            <operand xsi:type="Query">
+               <source alias="orders">
+                  <expression name="Orders" xsi:type="ParameterRef"/>
+               </source>
+               <where name="IsBenzodiazepine" libraryName="Common" xsi:type="FunctionRef">
+                  <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                     <operand xsi:type="Indexer">
+                        <operand path="coding" xsi:type="Property">
+                           <source path="medication" scope="orders" xsi:type="Property"/>
+                        </operand>
+                        <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                     </operand>
+                  </operand>
+               </where>
+            </operand>
+         </expression>
+      </def>
+      <def name="Inclusion Criteria" context="Patient" accessLevel="Public">
+         <expression xsi:type="And">
+            <operand xsi:type="And">
+               <operand name="Validate Trigger Event" xsi:type="ExpressionRef"/>
+               <operand xsi:type="Not">
+                  <operand name="Exclusion Criteria" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+            <operand xsi:type="Or">
+               <operand xsi:type="Or">
+                  <operand name="MME >= 50 mg/d?" xsi:type="ExpressionRef"/>
+                  <operand name="On Benzodiazepine" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand xsi:type="Exists">
+                  <operand name="SubstanceAbuseHistory" xsi:type="ParameterRef"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def name="Get Notification" context="Patient" accessLevel="Public">
+         <expression xsi:type="Concatenate">
+            <operand valueType="t:String" value="Consider offering naloxone given following risk factor(s) for opioid overdose: " xsi:type="Literal"/>
+            <operand xsi:type="If">
+               <condition asType="t:Boolean" xsi:type="As">
+                  <operand name="MME >= 50 mg/d?" xsi:type="ExpressionRef"/>
+               </condition>
+               <then xsi:type="Concatenate">
+                  <operand xsi:type="Concatenate">
+                     <operand valueType="t:String" value="Average MME (" xsi:type="Literal"/>
+                     <operand xsi:type="ToString">
+                        <operand name="Average MME" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+                  <operand valueType="t:String" value=") >= 50 mg/day, " xsi:type="Literal"/>
+               </then>
+               <else xsi:type="Concatenate">
+                  <operand valueType="t:String" value="" xsi:type="Literal"/>
+                  <operand xsi:type="If">
+                     <condition asType="t:Boolean" xsi:type="As">
+                        <operand name="On Benzodiazepine" xsi:type="ExpressionRef"/>
+                     </condition>
+                     <then valueType="t:String" value="concurrent use of benzodiazepine, " xsi:type="Literal"/>
+                     <else xsi:type="Concatenate">
+                        <operand valueType="t:String" value="" xsi:type="Literal"/>
+                        <operand xsi:type="If">
+                           <condition asType="t:Boolean" xsi:type="As">
+                              <operand xsi:type="Exists">
+                                 <operand name="SubstanceAbuseHistory" xsi:type="ParameterRef"/>
+                              </operand>
+                           </condition>
+                           <then valueType="t:String" value="history of alcohol or drug abuse." xsi:type="Literal"/>
+                           <else valueType="t:String" value="" xsi:type="Literal"/>
+                        </operand>
+                     </else>
+                  </operand>
+               </else>
+            </operand>
+         </expression>
+      </def>
+   </statements>
+</library>
+

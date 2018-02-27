@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <identifier id="OpioidCDS_STU3" version="0.1.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localIdentifier="FHIR" uri="http://hl7.org/fhir" version="3.0.0"/>
+   </usings>
+   <includes>
+      <def localIdentifier="MMECommon" path="OpioidCDS_STU3_Common" version="0.1.0"/>
+   </includes>
+   <parameters>
+      <def name="UserID" accessLevel="Public">
+         <parameterTypeSpecifier name="t:String" xsi:type="NamedTypeSpecifier"/>
+      </def>
+      <def name="Orders" accessLevel="Public">
+         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
+      </def>
+   </parameters>
+   <statements>
+      <def name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand dataType="fhir:Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def name="IsForChronicPain" context="Patient" accessLevel="Public">
+         <expression valueType="t:Boolean" value="true" xsi:type="Literal"/>
+      </def>
+      <def name="HasMetastaticCancer" context="Patient" accessLevel="Public">
+         <expression valueType="t:Boolean" value="false" xsi:type="Literal"/>
+      </def>
+      <def name="MMETotal" context="Patient" accessLevel="Public">
+         <expression name="TotalMME" libraryName="MMECommon" xsi:type="FunctionRef">
+            <operand name="Orders" xsi:type="ParameterRef"/>
+         </expression>
+      </def>
+      <def name="IsMME50OrMore" context="Patient" accessLevel="Public">
+         <expression xsi:type="GreaterOrEqual">
+            <operand name="MMETotal" xsi:type="ExpressionRef"/>
+            <operand value="50" unit="mg/d" xsi:type="Quantity"/>
+         </expression>
+      </def>
+      <def name="getIndicator" context="Patient" accessLevel="Public">
+         <expression valueType="t:String" value="warning" xsi:type="Literal"/>
+      </def>
+      <def name="getSummary" context="Patient" accessLevel="Public">
+         <expression xsi:type="Concatenate">
+            <operand valueType="t:String" value="High risk for opioid overdose - " xsi:type="Literal"/>
+            <operand xsi:type="Case">
+               <caseItem>
+                  <when xsi:type="GreaterOrEqual">
+                     <operand path="value" xsi:type="Property">
+                        <source name="MMETotal" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand xsi:type="ToDecimal">
+                        <operand valueType="t:Integer" value="90" xsi:type="Literal"/>
+                     </operand>
+                  </when>
+                  <then valueType="t:String" value="taper now" xsi:type="Literal"/>
+               </caseItem>
+               <else valueType="t:String" value="consider tapering" xsi:type="Literal"/>
+            </operand>
+         </expression>
+      </def>
+      <def name="getDetail" context="Patient" accessLevel="Public">
+         <expression xsi:type="Concatenate">
+            <operand xsi:type="Concatenate">
+               <operand valueType="t:String" value="Total morphine milligram equivalent (MME) is " xsi:type="Literal"/>
+               <operand xsi:type="ToString">
+                  <operand name="MMETotal" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+            <operand valueType="t:String" value=". Taper to less than 50." xsi:type="Literal"/>
+         </expression>
+      </def>
+   </statements>
+</library>
+

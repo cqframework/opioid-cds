@@ -82,7 +82,7 @@
 		<url value="https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf"/>
 	</relatedArtifact>
 	<library>
-		<reference value="Library/opioidcds-stu3"/>
+		<reference value="Library/opioidcds-recommendation-05"/>
 	</library>
 	<action>
 		<title value="High risk for opioid overdose."/>

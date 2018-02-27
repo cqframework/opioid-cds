@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <identifier id="OpioidCDS_STU3_REC_07" version="0.1.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localIdentifier="FHIR" uri="http://hl7.org/fhir" version="3.0.0"/>
+   </usings>
+   <includes>
+      <def localIdentifier="Common" path="OpioidCDS_STU3_Common" version="0.1.0"/>
+   </includes>
+   <parameters>
+      <def name="ContextPrescription" accessLevel="Public">
+         <parameterTypeSpecifier name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+      </def>
+      <def name="Orders" accessLevel="Public">
+         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
+      </def>
+      <def name="Encounters" accessLevel="Public">
+         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
+      </def>
+      <def name="OpioidRiskAssessment" accessLevel="Public">
+         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:Procedure" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
+      </def>
+      <def name="EndOfLifeConditions" accessLevel="Public">
+         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
+      </def>
+   </parameters>
+   <statements>
+      <def name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand dataType="fhir:Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def name="Validate Trigger Event" context="Patient" accessLevel="Public">
+         <expression xsi:type="Exists">
+            <operand xsi:type="ToList">
+               <operand xsi:type="Query">
+                  <source alias="triggerScript">
+                     <expression name="ContextPrescription" xsi:type="ParameterRef"/>
+                  </source>
+                  <where name="IsOpioidWithAmbulatoryAbusePotential" libraryName="Common" xsi:type="FunctionRef">
+                     <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                        <operand xsi:type="Indexer">
+                           <operand path="coding" xsi:type="Property">
+                              <source path="medication" scope="triggerScript" xsi:type="Property"/>
+                           </operand>
+                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                        </operand>
+                     </operand>
+                  </where>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def name="Exclusion Criteria" context="Patient" accessLevel="Public">
+         <expression xsi:type="Or">
+            <operand xsi:type="Exists">
+               <operand xsi:type="Query">
+                  <source alias="orders">
+                     <expression name="Orders" xsi:type="ParameterRef"/>
+                  </source>
+                  <where name="IsEndOfLifeOpioid" libraryName="Common" xsi:type="FunctionRef">
+                     <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                        <operand xsi:type="Indexer">
+                           <operand path="coding" xsi:type="Property">
+                              <source path="medication" scope="orders" xsi:type="Property"/>
+                           </operand>
+                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                        </operand>
+                     </operand>
+                  </where>
+               </operand>
+            </operand>
+            <operand xsi:type="Exists">
+               <operand name="EndOfLifeConditions" xsi:type="ParameterRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def name="Risk Assessment Interval" context="Patient" accessLevel="Public">
+         <expression lowClosed="true" highClosed="true" xsi:type="Interval">
+            <low xsi:type="Subtract">
+               <operand xsi:type="Today"/>
+               <operand value="90" unit="days" xsi:type="Quantity"/>
+            </low>
+            <high xsi:type="Subtract">
+               <operand xsi:type="Today"/>
+               <operand value="1" unit="day" xsi:type="Quantity"/>
+            </high>
+         </expression>
+      </def>
+      <def name="Opioid Risk Assessment in Past 90 Days" context="Patient" accessLevel="Public">
+         <expression xsi:type="Query">
+            <source alias="riskAssessment">
+               <expression name="OpioidRiskAssessment" xsi:type="ParameterRef"/>
+            </source>
+            <where xsi:type="In">
+               <operand path="value" xsi:type="Property">
+                  <source path="start" xsi:type="Property">
+                     <source path="performed" scope="riskAssessment" xsi:type="Property"/>
+                  </source>
+               </operand>
+               <operand name="Risk Assessment Interval" xsi:type="ExpressionRef"/>
+            </where>
+         </expression>
+      </def>
+      <def name="GetPeriodDays" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression xsi:type="Case">
+            <caseItem>
+               <when xsi:type="StartsWith">
+                  <operand name="value" xsi:type="OperandRef"/>
+                  <operand valueType="t:String" value="year" xsi:type="Literal"/>
+               </when>
+               <then valueType="t:Decimal" value="365.0" xsi:type="Literal"/>
+            </caseItem>
+            <caseItem>
+               <when xsi:type="StartsWith">
+                  <operand name="value" xsi:type="OperandRef"/>
+                  <operand valueType="t:String" value="month" xsi:type="Literal"/>
+               </when>
+               <then valueType="t:Decimal" value="30.0" xsi:type="Literal"/>
+            </caseItem>
+            <caseItem>
+               <when xsi:type="StartsWith">
+                  <operand name="value" xsi:type="OperandRef"/>
+                  <operand valueType="t:String" value="hour" xsi:type="Literal"/>
+               </when>
+               <then xsi:type="Divide">
+                  <operand valueType="t:Decimal" value="1.0" xsi:type="Literal"/>
+                  <operand valueType="t:Decimal" value="24.0" xsi:type="Literal"/>
+               </then>
+            </caseItem>
+            <caseItem>
+               <when xsi:type="StartsWith">
+                  <operand name="value" xsi:type="OperandRef"/>
+                  <operand valueType="t:String" value="minute" xsi:type="Literal"/>
+               </when>
+               <then xsi:type="Multiply">
+                  <operand xsi:type="Divide">
+                     <operand valueType="t:Decimal" value="1.0" xsi:type="Literal"/>
+                     <operand valueType="t:Decimal" value="24.0" xsi:type="Literal"/>
+                  </operand>
+                  <operand valueType="t:Decimal" value="60.0" xsi:type="Literal"/>
+               </then>
+            </caseItem>
+            <else valueType="t:Decimal" value="1.0" xsi:type="Literal"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier name="t:String" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def name="GetDurationInDays" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression xsi:type="Case">
+            <caseItem>
+               <when xsi:type="StartsWith">
+                  <operand path="value" xsi:type="Property">
+                     <source path="unit" xsi:type="Property">
+                        <source name="value" xsi:type="OperandRef"/>
+                     </source>
+                  </operand>
+                  <operand valueType="t:String" value="year" xsi:type="Literal"/>
+               </when>
+               <then xsi:type="Multiply">
+                  <operand path="value" xsi:type="Property">
+                     <source path="value" xsi:type="Property">
+                        <source name="value" xsi:type="OperandRef"/>
+                     </source>
+                  </operand>
+                  <operand valueType="t:Decimal" value="365.0" xsi:type="Literal"/>
+               </then>
+            </caseItem>
+            <caseItem>
+               <when xsi:type="StartsWith">
+                  <operand path="value" xsi:type="Property">
+                     <source path="unit" xsi:type="Property">
+                        <source name="value" xsi:type="OperandRef"/>
+                     </source>
+                  </operand>
+                  <operand valueType="t:String" value="month" xsi:type="Literal"/>
+               </when>
+               <then xsi:type="Multiply">
+                  <operand path="value" xsi:type="Property">
+                     <source path="value" xsi:type="Property">
+                        <source name="value" xsi:type="OperandRef"/>
+                     </source>
+                  </operand>
+                  <operand valueType="t:Decimal" value="30.0" xsi:type="Literal"/>
+               </then>
+            </caseItem>
+            <else path="value" xsi:type="Property">
+               <source path="value" xsi:type="Property">
+                  <source name="value" xsi:type="OperandRef"/>
+               </source>
+            </else>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier name="fhir:Duration" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def name="Probable Days Triggers" context="Patient" accessLevel="Public">
+         <expression xsi:type="Query">
+            <source alias="orders">
+               <expression name="Orders" xsi:type="ParameterRef"/>
+            </source>
+            <let identifier="frequency">
+               <expression path="value" xsi:type="Property">
+                  <source path="frequency" xsi:type="Property">
+                     <source path="repeat" xsi:type="Property">
+                        <source path="timing" xsi:type="Property">
+                           <source xsi:type="Indexer">
+                              <operand path="dosageInstruction" scope="orders" xsi:type="Property"/>
+                              <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                           </source>
+                        </source>
+                     </source>
+                  </source>
+               </expression>
+            </let>
+            <let identifier="period">
+               <expression path="value" xsi:type="Property">
+                  <source path="period" xsi:type="Property">
+                     <source path="repeat" xsi:type="Property">
+                        <source path="timing" xsi:type="Property">
+                           <source xsi:type="Indexer">
+                              <operand path="dosageInstruction" scope="orders" xsi:type="Property"/>
+                              <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                           </source>
+                        </source>
+                     </source>
+                  </source>
+               </expression>
+            </let>
+            <let identifier="periodDays">
+               <expression name="GetPeriodDays" xsi:type="FunctionRef">
+                  <operand path="value" xsi:type="Property">
+                     <source path="periodUnit" xsi:type="Property">
+                        <source path="repeat" xsi:type="Property">
+                           <source path="timing" xsi:type="Property">
+                              <source xsi:type="Indexer">
+                                 <operand path="dosageInstruction" scope="orders" xsi:type="Property"/>
+                                 <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                              </source>
+                           </source>
+                        </source>
+                     </source>
+                  </operand>
+               </expression>
+            </let>
+            <let identifier="dosesPerDay">
+               <expression xsi:type="If">
+                  <condition asType="t:Boolean" xsi:type="As">
+                     <operand xsi:type="GreaterOrEqual">
+                        <operand xsi:type="Divide">
+                           <operand xsi:type="ToDecimal">
+                              <operand name="frequency" xsi:type="QueryLetRef"/>
+                           </operand>
+                           <operand xsi:type="Multiply">
+                              <operand name="period" xsi:type="QueryLetRef"/>
+                              <operand name="periodDays" xsi:type="QueryLetRef"/>
+                           </operand>
+                        </operand>
+                        <operand valueType="t:Decimal" value="1.0" xsi:type="Literal"/>
+                     </operand>
+                  </condition>
+                  <then valueType="t:Decimal" value="1.0" xsi:type="Literal"/>
+                  <else xsi:type="Divide">
+                     <operand xsi:type="ToDecimal">
+                        <operand name="frequency" xsi:type="QueryLetRef"/>
+                     </operand>
+                     <operand xsi:type="Multiply">
+                        <operand name="period" xsi:type="QueryLetRef"/>
+                        <operand name="periodDays" xsi:type="QueryLetRef"/>
+                     </operand>
+                  </else>
+               </expression>
+            </let>
+            <let identifier="repeat">
+               <expression path="value" xsi:type="Property">
+                  <source path="numberOfRepeatsAllowed" xsi:type="Property">
+                     <source path="dispenseRequest" scope="orders" xsi:type="Property"/>
+                  </source>
+               </expression>
+            </let>
+            <let identifier="supplyDuration">
+               <expression name="GetDurationInDays" xsi:type="FunctionRef">
+                  <operand path="expectedSupplyDuration" xsi:type="Property">
+                     <source path="dispenseRequest" scope="orders" xsi:type="Property"/>
+                  </operand>
+               </expression>
+            </let>
+            <let identifier="validityPeriod">
+               <expression precision="Day" xsi:type="DurationBetween">
+                  <operand path="value" xsi:type="Property">
+                     <source path="start" xsi:type="Property">
+                        <source path="validityPeriod" xsi:type="Property">
+                           <source path="dispenseRequest" scope="orders" xsi:type="Property"/>
+                        </source>
+                     </source>
+                  </operand>
+                  <operand xsi:type="Today"/>
+               </expression>
+            </let>
+            <let identifier="endDifference">
+               <expression xsi:type="If">
+                  <condition asType="t:Boolean" xsi:type="As">
+                     <operand xsi:type="Less">
+                        <operand path="value" xsi:type="Property">
+                           <source path="end" xsi:type="Property">
+                              <source path="validityPeriod" xsi:type="Property">
+                                 <source path="dispenseRequest" scope="orders" xsi:type="Property"/>
+                              </source>
+                           </source>
+                        </operand>
+                        <operand xsi:type="Today"/>
+                     </operand>
+                  </condition>
+                  <then precision="Day" xsi:type="DurationBetween">
+                     <operand path="value" xsi:type="Property">
+                        <source path="end" xsi:type="Property">
+                           <source path="validityPeriod" xsi:type="Property">
+                              <source path="dispenseRequest" scope="orders" xsi:type="Property"/>
+                           </source>
+                        </source>
+                     </operand>
+                     <operand xsi:type="Today"/>
+                  </then>
+                  <else valueType="t:Integer" value="0" xsi:type="Literal"/>
+               </expression>
+            </let>
+            <where xsi:type="And">
+               <operand name="IsOpioid" libraryName="Common" xsi:type="FunctionRef">
+                  <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                     <operand xsi:type="Indexer">
+                        <operand path="coding" xsi:type="Property">
+                           <source path="medication" scope="orders" xsi:type="Property"/>
+                        </operand>
+                        <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand xsi:type="Equal">
+                  <operand path="value" xsi:type="Property">
+                     <source path="code" xsi:type="Property">
+                        <source xsi:type="Indexer">
+                           <operand path="coding" xsi:type="Property">
+                              <source path="category" scope="orders" xsi:type="Property"/>
+                           </operand>
+                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                        </source>
+                     </source>
+                  </operand>
+                  <operand valueType="t:String" value="outpatient" xsi:type="Literal"/>
+               </operand>
+            </where>
+            <return>
+               <expression xsi:type="Tuple">
+                  <element name="trigger7InPast10">
+                     <value xsi:type="GreaterOrEqual">
+                        <operand xsi:type="Multiply">
+                           <operand xsi:type="Multiply">
+                              <operand name="dosesPerDay" xsi:type="QueryLetRef"/>
+                              <operand xsi:type="Divide">
+                                 <operand xsi:type="Multiply">
+                                    <operand xsi:type="ToDecimal">
+                                       <operand name="repeat" xsi:type="QueryLetRef"/>
+                                    </operand>
+                                    <operand name="supplyDuration" xsi:type="QueryLetRef"/>
+                                 </operand>
+                                 <operand xsi:type="ToDecimal">
+                                    <operand name="validityPeriod" xsi:type="QueryLetRef"/>
+                                 </operand>
+                              </operand>
+                           </operand>
+                           <operand xsi:type="ToDecimal">
+                              <operand xsi:type="Subtract">
+                                 <operand valueType="t:Integer" value="10" xsi:type="Literal"/>
+                                 <operand name="endDifference" xsi:type="QueryLetRef"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand xsi:type="ToDecimal">
+                           <operand valueType="t:Integer" value="7" xsi:type="Literal"/>
+                        </operand>
+                     </value>
+                  </element>
+                  <element name="trigger63InPast90">
+                     <value xsi:type="GreaterOrEqual">
+                        <operand xsi:type="Multiply">
+                           <operand xsi:type="Multiply">
+                              <operand name="dosesPerDay" xsi:type="QueryLetRef"/>
+                              <operand xsi:type="Divide">
+                                 <operand xsi:type="Multiply">
+                                    <operand xsi:type="ToDecimal">
+                                       <operand name="repeat" xsi:type="QueryLetRef"/>
+                                    </operand>
+                                    <operand name="supplyDuration" xsi:type="QueryLetRef"/>
+                                 </operand>
+                                 <operand xsi:type="ToDecimal">
+                                    <operand name="validityPeriod" xsi:type="QueryLetRef"/>
+                                 </operand>
+                              </operand>
+                           </operand>
+                           <operand xsi:type="ToDecimal">
+                              <operand xsi:type="Subtract">
+                                 <operand valueType="t:Integer" value="90" xsi:type="Literal"/>
+                                 <operand name="endDifference" xsi:type="QueryLetRef"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand xsi:type="ToDecimal">
+                           <operand valueType="t:Integer" value="63" xsi:type="Literal"/>
+                        </operand>
+                     </value>
+                  </element>
+               </expression>
+            </return>
+         </expression>
+      </def>
+      <def name="Encounter Interval" context="Patient" accessLevel="Public">
+         <expression lowClosed="true" highClosed="true" xsi:type="Interval">
+            <low xsi:type="Subtract">
+               <operand xsi:type="Today"/>
+               <operand value="1" unit="year" xsi:type="Quantity"/>
+            </low>
+            <high xsi:type="Subtract">
+               <operand xsi:type="Today"/>
+               <operand value="1" unit="day" xsi:type="Quantity"/>
+            </high>
+         </expression>
+      </def>
+      <def name="Encounter in past 12 months" context="Patient" accessLevel="Public">
+         <expression xsi:type="Query">
+            <source alias="E">
+               <expression name="Encounters" xsi:type="ParameterRef"/>
+            </source>
+            <where xsi:type="In">
+               <operand path="value" xsi:type="Property">
+                  <source path="start" xsi:type="Property">
+                     <source path="period" scope="E" xsi:type="Property"/>
+                  </source>
+               </operand>
+               <operand name="Encounter Interval" xsi:type="ExpressionRef"/>
+            </where>
+         </expression>
+      </def>
+      <def name="Inclusion Criteria" context="Patient" accessLevel="Public">
+         <expression xsi:type="And">
+            <operand xsi:type="And">
+               <operand xsi:type="And">
+                  <operand name="Validate Trigger Event" xsi:type="ExpressionRef"/>
+                  <operand xsi:type="Not">
+                     <operand name="Exclusion Criteria" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+               <operand xsi:type="Not">
+                  <operand xsi:type="Exists">
+                     <operand name="Opioid Risk Assessment in Past 90 Days" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+            </operand>
+            <operand xsi:type="Exists">
+               <operand xsi:type="Query">
+                  <source alias="inputs">
+                     <expression name="Probable Days Triggers" xsi:type="ExpressionRef"/>
+                  </source>
+                  <where xsi:type="Or">
+                     <operand xsi:type="And">
+                        <operand path="trigger7InPast10" scope="inputs" xsi:type="Property"/>
+                        <operand xsi:type="Exists">
+                           <operand name="Encounter in past 12 months" xsi:type="ExpressionRef"/>
+                        </operand>
+                     </operand>
+                     <operand path="trigger63InPast90" scope="inputs" xsi:type="Property"/>
+                  </where>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def name="Get Notification" context="Patient" accessLevel="Public">
+         <expression valueType="t:String" value="Patients on opioid therapy should be evaluated for benefits and harms within 1 to 4 weeks of starting opioid therapy and every 3 months or more subsequently." xsi:type="Literal"/>
+      </def>
+   </statements>
+</library>
+

@@ -72,9 +72,9 @@
 		<display value="CDC guideline for prescribing opioids for chronic pain"/>
 		<url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
 	</relatedArtifact>
-	<library>
-		<reference value="Library/opioidcds-stu3"/>
-	</library>
+	<!--<library>-->
+		<!--<reference value="Library/opioidcds-recommendation-10"/>-->
+	<!--</library>-->
 	<action>
 		<title value="Annual Urine Screening Check"/>
 		<description value="Patient has not had a urine screening in the past 12 months"/>

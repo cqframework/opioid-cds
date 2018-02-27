@@ -55,20 +55,29 @@
   <a name="index"> </a>
   <h3><span class="sectioncount">1.4.0</span> Content Index <a href="index.html#index" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
-  <p>The following resources formalize the description of the logic and behavior defined by this implementation guide.</p>
+  <p>The following STU3 artifacts formalize the description of the logic and behavior defined by this implementation guide. Note that DSTU2 resources will be converted to STU3 in the execution environment (<a href="https://github.com/DBCG/cqf-ruler">CQF-Ruler</a>) when applying the PlanDefinitions</p>
 
   <table class="list">
 	  <thead>
 		  <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
 	  </thead>
 	  <tbody>
-              <tr><td><a href="PlanDefinition-opioidcds-05.html">CDC Opioid Prescribing Guideline Recommendation #5</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #5</td></tr>
-		  <tr><td><a href="Library-omtk-logic.html">Opioid Terminology Management Knowledgdebase Logic Library</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for implementation of opioid management functionality including Milligram Morphine Equivalents.</td></tr>
+          <tr><td><a href="PlanDefinition-opioidcds-05.html">CDC Opioid Prescribing Guideline Recommendation #5</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #5</td></tr>
+          <tr><td><a href="PlanDefinition-opioidcds-10.html">CDC Opioid Prescribing Guideline Recommendation #10</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #10</td></tr>
+          <tr><td><a href="Library-omtk-logic.html">Opioid Terminology Management Knowledgdebase Logic Library</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for implementation of opioid management functionality including Milligram Morphine Equivalents (MME).</td></tr>
 		  <tr><td><a href="cql/OMTKLogic-0.1.0.cql">Opioid Terminology Management Knowledgebase Logic</a></td><td>CQL Source</td><td>For reference, the CQL source for the OMTK Logic Library.</td></tr>
-		  <tr><td><a href="Library-opioidcds-dstu2.html">Opioid Decision Support Logic (for FHIR DSTU2)</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for implementation of opioid management decision support.</td></tr>
-		  <tr><td><a href="cql/OpioidCDS_DSTU2-0.1.0.cql">Opioid Decision Support Logic (for FHIR DSTU2)</a></td><td>CQL Source</td><td>For reference, the CQL source for the OMTK Logic Library.</td></tr>
-		  <tr><td><a href="Library-opioidcds-stu3.html">Opioid Decision Support Logic (for FHIR STU3)</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for implementation of opioid management decision support.</td></tr>
-		  <tr><td><a href="cql/OpioidCDS_STU3-0.1.0.cql">Opioid Decision Support Logic (for FHIR STU3)</a></td><td>CQL Source</td><td>For reference, the CQL source for the OMTK Logic Library.</td></tr>
+		  <tr><td><a href="Library-opioidcds-common.html">Common Opioid Decision Support Logic</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common logic for the recommendations</td></tr>
+          <tr><td><a href="cql/OpioidCDS_STU3_Common.cql">Common Opioid Decision Support Logic</a></td><td>CQL Source</td><td>For reference, the CQL source for the common logic.</td></tr>
+          <tr><td><a href="Library-opioidcds-recommendation-04.html">Opioid Decision Support Logic for recommendation #4</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for evaluating whether immediate-release opioids are recommended instead of extended-release/long-acting (ER/LA) opioids</td></tr>
+          <tr><td><a href="cql/OpioidCDS_STU3_REC_04.cql">Opioid Decision Support Logic for recommendation #4</a></td><td>CQL Source</td><td>For reference, the CQL source for the recommendation #4.</td></tr>
+		  <tr><td><a href="Library-opioidcds-recommendation-05.html">Opioid Decision Support Logic for recommendation #5</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for evaluating whether a prescription exceeds the MME of 50 mg/day.</td></tr>
+		  <tr><td><a href="cql/OpioidCDS_STU3_REC_05.cql">Opioid Decision Support Logic for recommendation #5</a></td><td>CQL Source</td><td>For reference, the CQL source for the recommendation #5.</td></tr>
+          <tr><td><a href="Library-opioidcds-recommendation-07.html">Opioid Decision Support Logic for recommendation #7</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for evaluating benefits and harms with patients within 1 to 4 weeks of starting opioid therapy and continued therapy with patients every 3 months or more frequently.</td></tr>
+          <tr><td><a href="cql/OpioidCDS_STU3_REC_07.cql">Opioid Decision Support Logic for recommendation #7</a></td><td>CQL Source</td><td>For reference, the CQL source for recommendation #7.</td></tr>
+          <tr><td><a href="Library-opioidcds-recommendation-08.html">Opioid Decision Support Logic for recommendation #8</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for considering offering naloxone when factors that increase risk for opioid overdose are present.</td></tr>
+          <tr><td><a href="cql/OpioidCDS_STU3_REC_08.cql">Opioid Decision Support Logic for recommendation #8</a></td><td>CQL Source</td><td>For reference, the CQL source for recommendation #8.</td></tr>
+          <tr><td><a href="Library-opioidcds-recommendation-11.html">Opioid Decision Support Logic for recommendation #11</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for avoiding prescribing opioid pain medication and benzodiazepines concurrently whenever possible.</td></tr>
+          <tr><td><a href="cql/OpioidCDS_STU3_REC_11.cql">Opioid Decision Support Logic for recommendation #11</a></td><td>CQL Source</td><td>For reference, the CQL source for recommendation #11.</td></tr>
 	  </tbody>
   </table>
 
