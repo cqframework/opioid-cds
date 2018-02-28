@@ -15,12 +15,6 @@ parameter Orders List<MedicationRequest>
 
 context Patient
 
-// TODO: Capture process decisions for long-term opioid use
-define IsForChronicPain: true
-
-// TODO: Capture process decisions for metastatic cancer
-define HasMetastaticCancer: false
-
 define MMETotal:
   MMECommon.TotalMME(Orders)
 

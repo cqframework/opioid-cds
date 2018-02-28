@@ -58,12 +58,8 @@ define "Inclusion Criteria":
     and not "Exclusion Criteria"
     and not exists ("Opioid Risk Assessment in Past 90 Days")
     and
-      exists (
-        "Probable Days Triggers" inputs
-          where
-            (inputs.trigger7InPast10 and exists("Encounter in past 12 months"))
-              or inputs.trigger63InPast90
-      )
+      ((Common.ProbableDaysInRange(Orders, 10, 7) and exists("Encounter in past 12 months"))
+        or Common.ProbableDaysInRange(Orders, 90, 63))
 
 define "Exclusion Criteria":
   exists (
@@ -71,33 +67,6 @@ define "Exclusion Criteria":
           where Common.IsEndOfLifeOpioid(Common.ToCode(orders.medication.coding[0]))
   )
   or exists(EndOfLifeConditions)
-
-define "Probable Days Triggers":
-  Orders orders
-    let
-      frequency: orders.dosageInstruction[0].timing.repeat.frequency.value,
-      period: orders.dosageInstruction[0].timing.repeat.period.value,
-      periodDays: GetPeriodDays(orders.dosageInstruction[0].timing.repeat.periodUnit.value),
-      dosesPerDay:
-        if (frequency / (period * periodDays)) >= 1.0
-        then 1.0
-        else frequency / (period * periodDays),
-      repeat: orders.dispenseRequest.numberOfRepeatsAllowed.value,
-      supplyDuration: GetDurationInDays(orders.dispenseRequest.expectedSupplyDuration),
-      validityPeriod: days between orders.dispenseRequest.validityPeriod."start".value and Today(),
-      endDifference:
-        if orders.dispenseRequest.validityPeriod."end".value < Today()
-        then days between orders.dispenseRequest.validityPeriod."end".value and Today()
-        else 0
-    where
-      // TODO - Checking for opioid here... Perhaps should only check for opioid with abuse potential?
-      Common.IsOpioid(Common.ToCode(orders.medication.coding[0]))
-      // and orders.status.value = 'completed'
-      and orders.category.coding[0].code.value = 'outpatient'
-    return {
-      trigger7InPast10: (dosesPerDay * ((repeat * supplyDuration) / validityPeriod) * (10 - endDifference)) >= 7,
-      trigger63InPast90: (dosesPerDay * ((repeat * supplyDuration) / validityPeriod) * (90 - endDifference)) >= 63
-    }
 
 define "Risk Assessment Interval":
   Interval[Today() - 90 days, Today() - 1 day]
@@ -112,22 +81,6 @@ define "Encounter Interval":
 define "Encounter in past 12 months":
   Encounters E
     where E.period."start".value in "Encounter Interval"
-
-define function GetPeriodDays(value System.String):
-  case
-    when StartsWith(value, 'year') then 365.0
-    when StartsWith(value, 'month') then 30.0
-    when StartsWith(value, 'hour') then 1.0/24.0
-    when StartsWith(value, 'minute') then 1.0/24.0*60.0
-    else 1.0
-  end
-
-define function GetDurationInDays(value FHIR.Duration):
-  case
-    when StartsWith(value.unit.value, 'year') then value.value.value * 365.0
-    when StartsWith(value.unit.value, 'month') then value.value.value * 30.0
-    else value.value.value
-  end
 
 define "Get Notification":
   'Patients on opioid therapy should be evaluated for benefits and harms within 1 to 4 weeks of starting opioid therapy and every 3 months or more subsequently.'

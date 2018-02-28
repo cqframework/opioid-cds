@@ -2,7 +2,7 @@ library OpioidCDS_STU3_REC_10 version '0.1.0'
 
 using FHIR version '3.0.0'
 
-include OMTKLogic version '0.1.0' called OMTKLogic
+include OpioidCDS_STU3_Common version '0.1.0' called Common
 
 /*
 **
@@ -10,92 +10,157 @@ include OMTKLogic version '0.1.0' called OMTKLogic
 **
 */
 
-codesystem "SNOMED": 'http://snomed.info/sct'
+/*
+  Trigger context:
+    Primary care/ambulatory care
+  Trigger event:
+    Prescription of opioid with ambulatory care abuse potential
+  Assumptions:
+    Count only ambulatory prescriptions
+  Inclusion criteria:
+    Opioid Rx for at least 80 of the past 90 days
+      AND
+        (No Urine Screening in last 12 months
+          OR Expected opioids not present
+          OR Unexpected drugs present)
+  Exclusion criteria (optional):
+    Meds indicating end of life
+    Conditions indicating end of life
+  Notification:
+    No Urine Screening in last 12 months - Patients on opioid therapy should have a urine drug test performed every 12 months.
+    Expected opioids not present - Expected opioid x not present in urine screening
+    Unexpected drugs present - Unexpected drug x present in urine screening
+    Ref: CDC Recommendation #10.
+  EHR expectations:
+    Have availability to snooze for 3 months
+*/
 
-valueset "Illicit Drug Screening": 'illicit-drug-urine-screening'
-valueset "Opioid Drug Screening": 'opioid-urine-screening'
-
-code "Positive": '10828004' from "SNOMED"
-code "Chronic Pain": '82423001' from "SNOMED" display 'Chronic pain'
-
-parameter Orders List<MedicationRequest>
-parameter Screenings List<Observation>
+parameter ContextPrescription MedicationRequest // Current prescription
+// Orders includes the ContextPrescription
+parameter Orders List<MedicationRequest> // {base}MedicationOrder?patient={{Patient.id}}&status=active
+parameter ObservationsInPastYear List<Observation> // {base}Observation?patient={{Patient.id}}&date=gt{Today() - 1 year}
 
 context Patient
 
-// the medication being prescribed
-define "Context Prescription":
-  First(Orders)
-
-// TODO - make this more robust - maybe put all chronic pain codes in a valueset?
-define "Is Medication Prescribed for Chronic Pain?":
+define "Validate Trigger Event":
   exists (
-    "Context Prescription" Rx
-      where Rx.reasonCode is not null
-      and CodingToCode(Rx.reasonCode.coding) ~ "Chronic Pain"
+    ContextPrescription triggerScript
+      where Common.IsOpioidWithAmbulatoryAbusePotential(Common.ToCode(triggerScript.medication.coding[0]))
   )
 
-// Most recent drug screening in past year
-define "Illicit Drug Screening in Past 12 Months":
-  First(
-    Screenings IllicitDrugScreening
-      where ToConcept(IllicitDrugScreening.code) in "Illicit Drug Screening"
-      and IllicitDrugScreening.effective.value same day or after Today() - 1 year
+define "Inclusion Criteria":
+  "Validate Trigger Event"
+      and not "Exclusion Criteria"
+      and AnyTrue(Common.ProbableDaysInRange(Orders, 90, 80))
+      and
+        ("No Urine Screening In Last 12 Months"
+          or "Has Missing Opioids?"
+          or "Has Unprescribed Opioids?"
+          or "Has Illicit Drugs in Screening?")
+
+define "Exclusion Criteria":
+  exists (
+    Orders orders
+      where Common.IsEndOfLifeOpioid(Common.ToCode(orders.medication.coding[0]))
+  )
+  or Common.HasMetastaticCancer
+
+define "Most Recent Illicit Drug Urine Screenings in Last 12 Months":
+  Last(
+    ObservationsInPastYear observations
+      where Common.IsIllicitDrugScreen(Common.ToCode(observations.code.coding[0]))
+        // TODO - assuming a max of 1 component until bug fix (see TODO below)
+        or
+          (if observations.component[0] is not null
+            then Common.IsIllicitDrugScreen(Common.ToCode(observations.component[0].code.coding[0]))
+          else false)
+        // or exists(CheckObservationComponentCodes(observations.component))
         sort by effective.value
   )
 
-// Most recent opioid screening in past year
-define "Opioid Drug Screening in Past 12 Months":
-  First(
-    Screenings OpioidDrugScreening
-      where ToConcept(OpioidDrugScreening.code) in "Opioid Drug Screening"
-      and OpioidDrugScreening.effective.value same day or after Today() - 1 year
+define "Most Recent Opioid Drug Urine Screenings in Last 12 Months":
+  Last(
+    ObservationsInPastYear observations
+      where Common.IsOpioidDrugScreen(Common.ToCode(observations.code.coding[0]))
+        // TODO - assuming a max of 1 component until bug fix (see TODO below)
+        or
+          (if observations.component[0] is not null
+            then Common.IsOpioidDrugScreen(Common.ToCode(observations.component[0].code.coding[0]))
+          else false)
+        // or exists(CheckObservationComponentCodes(observations.component))
         sort by effective.value
   )
 
-define "Drug Screenings":
-  "Illicit Drug Screening in Past 12 Months" union "Opioid Drug Screening in Past 12 Months"
+// TODO - this is a translator bug: https://github.com/cqframework/clinical_quality_language/issues/266
+/*
+define function CheckObservationComponentCodes(Component List<FHIR.Observation.Component>):
+  Component component
+    where Common.IsOpioidDrugScreen(Common.ToCode(component.code.coding[0]))
+*/
 
-// If true, suggest urine screening test - STOP
-define "No Screenings in Past Year":
-  not exists (
-    "Drug Screenings"
-  )
+define "No Urine Screening In Last 12 Months":
+  "Most Recent Illicit Drug Urine Screenings in Last 12 Months" is null
+    and "Most Recent Opioid Drug Urine Screenings in Last 12 Months" is null
 
-// TODO - Account for component Observations
-// If true, determine if the screening is consistent, which consists of the following:
-//     - Opioids are found: check if the opioid is prescribed
-//     - Illicit drugs are found: warn the user
-define "Has Positive Screening?":
-  exists (
-    "Drug Screenings" Screenings
-      where
-        Screenings.interpretation is not null
-        and Screenings.interpretation.coding[0].code.value = 'POS'
-  )
+define "Positive Illicit Drug Screening":
+  "Most Recent Illicit Drug Urine Screenings in Last 12 Months" mostRecentScreening
+    where mostRecentScreening.interpretation.coding[0].code.value = 'POS'
+      or
+        (if mostRecentScreening.component[0] is not null
+          then mostRecentScreening.component[0].interpretation.coding[0].code.value = 'POS'
+        else false)
 
 define "Has Illicit Drugs in Screening?":
-  exists ("Illicit Drug Screening in Past 12 Months")
+  exists ("Positive Illicit Drug Screening")
 
 // Assuming only one code
 define "Inconsistent Illicit Drugs":
-  'Found the following illicit drug(s) in urine drug screen: '
-      + GetIllicitDrug("Illicit Drug Screening in Past 12 Months".code.coding[0].code.value)
+  'Found the following illicit drug(s) in urine drug screen: ' +
+    (
+      if GetIllicitDrug("Positive Illicit Drug Screening".code.coding[0].code.value) is null
+        then GetIllicitDrug("Positive Illicit Drug Screening".interpretation.coding[0].code.value)
+      else GetIllicitDrug("Positive Illicit Drug Screening".code.coding[0].code.value)
+    )
+
+define "Positive Opioid Drug Screening":
+  "Most Recent Opioid Drug Urine Screenings in Last 12 Months" mostRecentScreening
+    where mostRecentScreening.interpretation.coding[0].code.value = 'POS'
+      or
+        (if mostRecentScreening.component[0] is not null
+          then mostRecentScreening.component[0].interpretation.coding[0].code.value = 'POS'
+        else false)
 
 define "Has Opioids in Screening?":
-  exists ("Opioid Drug Screening in Past 12 Months")
+  exists ("Positive Opioid Drug Screening")
+
+define "Orders Before Most Recent Opioid Screening":
+  Orders orders
+      with "Positive Opioid Drug Screening" mostRecentScreening
+        such that orders.authoredOn.value < mostRecentScreening.effective.value
+      return
+        orders
 
 define "Prescribed Opioids":
-  Orders O
+  "Orders Before Most Recent Opioid Screening" orders
     return
-      Lower(OMTKLogic.GetIngredients(CodingToCode(O.medication.coding)).ingredientName)
+      Lower(Common.GetIngredient(Common.ToCode(orders.medication.coding[0])))
+
+define "Get Opioids From Most Recent Screening":
+  "Positive Opioid Drug Screening" mostRecentScreening
+    return
+      Lower(GetOpioid(mostRecentScreening.code.coding[0].code.value))
+        union (
+          if mostRecentScreening.component[0] is not null
+            then Lower(GetOpioid(mostRecentScreening.component[0].code.coding[0].code.value))
+          else {}
+        )
 
 define "Unprescribed Opioids":
-  "Opioid Drug Screening in Past 12 Months" OpioidScreening
-    with "Prescribed Opioids" Prescriptions
+  "Get Opioids From Most Recent Screening" mostRecentScreeningOpioids
+    with "Prescribed Opioids" ingredients
       such that
-        not (Lower(GetOpioid(OpioidScreening.code.coding[0].code.value)) in Prescriptions)
-        return GetOpioid(OpioidScreening.code.coding[0].code.value)
+        not (mostRecentScreeningOpioids in ingredients)
+    return mostRecentScreeningOpioids
 
 define "Has Unprescribed Opioids?":
   exists ("Unprescribed Opioids")
@@ -104,11 +169,11 @@ define "Inconsistent Unprescribed Opioids":
   'Found the following unprescribed opioid(s): ' + "Unprescribed Opioids"
 
 define "Missing Opioids":
-  if "Opioid Drug Screening in Past 12 Months" is not null
+  if "Positive Opioid Drug Screening" is not null
   then
     "Prescribed Opioids" Prescriptions
       except
-        Lower(GetOpioid("Opioid Drug Screening in Past 12 Months".code.coding[0].code.value))
+        Lower(GetOpioid("Positive Opioid Drug Screening".code.coding[0].code.value))
   else null
 
 define "Has Missing Opioids?":
@@ -173,17 +238,3 @@ define function GetOpioid(value String):
     when '43219-5' then 'Tramadol'
     else 'Unknown code: ' + value
   end
-
-define function CodingToCode(coding FHIR.Coding):
-  System.Code {
-    code: coding.code.value,
-    system: coding.system.value,
-    version: coding.version.value,
-    display: coding.display.value
-  }
-
-define function ToConcept(concept FHIR.CodeableConcept):
-  System.Concept {
-    codes: concept.coding C return CodingToCode(C),
-    display: concept.text.value
-  }

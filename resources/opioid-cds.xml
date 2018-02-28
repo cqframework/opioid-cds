@@ -94,6 +94,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #10"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #10"/>
+            <sourceReference>
+                <reference value="Library/opioidcds-recommendation-10"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="Library - Opioid CDS Recommendation #11"/>
             <description value="Opioid Management Decision Support Logic for recommendation #11"/>
             <sourceReference>

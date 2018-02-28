@@ -12,6 +12,14 @@ valueset "Codeine Cough Meds": 'opioids-codeine-cough-meds'
 valueset "End Of Life Opioids": 'opioids-indicating-end-of-life'
 valueset "Short Acting Opioids": 'short-acting-opioids'
 valueset "Long Acting Opioids": 'long-acting-opioids'
+valueset "Illicit Drug Screening": 'illicit-drug-urine-screening'
+valueset "Opioid Drug Screening": 'opioid-urine-screening'
+
+// TODO: Capture process decisions for long-term opioid use
+define IsForChronicPain: true
+
+// TODO: Capture process decisions for metastatic cancer
+define HasMetastaticCancer: false
 
 define function GetOpioidsWithAmbulatoryAbusePotential (Orders List<MedicationRequest>):
   Orders orders
@@ -81,6 +89,42 @@ define function TotalMME(prescriptions List<MedicationRequest>):
     unit: 'mg/d'
   }
 
+define function ProbableDaysInRange(Orders List<MedicationRequest>, daysPast Integer, numDaysInDaysPast Integer):
+  Orders orders
+    let
+      frequency: orders.dosageInstruction[0].timing.repeat.frequency.value,
+      period: orders.dosageInstruction[0].timing.repeat.period.value,
+      periodDays: GetPeriodDays(orders.dosageInstruction[0].timing.repeat.periodUnit.value),
+      dosesPerDay:
+        if (frequency / (period * periodDays)) >= 1.0
+        then 1.0
+        else frequency / (period * periodDays),
+      repeat: orders.dispenseRequest.numberOfRepeatsAllowed.value,
+      supplyDuration: GetDurationInDays(orders.dispenseRequest.expectedSupplyDuration),
+      validityPeriod: days between orders.dispenseRequest.validityPeriod."start".value and Today(),
+      endDifference:
+        if orders.dispenseRequest.validityPeriod."end".value < Today()
+        then days between orders.dispenseRequest.validityPeriod."end".value and Today()
+        else 0
+    return
+      (dosesPerDay * ((repeat * supplyDuration) / validityPeriod) * (daysPast - endDifference)) >= numDaysInDaysPast
+
+define function GetPeriodDays(value System.String):
+  case
+    when StartsWith(value, 'year') then 365.0
+    when StartsWith(value, 'month') then 30.0
+    when StartsWith(value, 'hour') then 1.0/24.0
+    when StartsWith(value, 'minute') then 1.0/24.0*60.0
+    else 1.0
+  end
+
+define function GetDurationInDays(value FHIR.Duration):
+  case
+    when StartsWith(value.unit.value, 'year') then value.value.value * 365.0
+    when StartsWith(value.unit.value, 'month') then value.value.value * 30.0
+    else value.value.value
+  end
+
 define function ToCode(coding FHIR.Coding):
   System.Code {
     code: coding.code.value,
@@ -109,3 +153,12 @@ define function IsOpioid(rxNormCode Code):
 
 define function IsEndOfLifeOpioid(rxNormCode Code):
   rxNormCode in "End Of Life Opioids"
+
+define function IsOpioidDrugScreen(observationCode Code):
+  observationCode in "Opioid Drug Screening"
+
+define function IsIllicitDrugScreen(observationCode Code):
+  observationCode in "Illicit Drug Screening"
+
+define function GetIngredient(rxNormCode Code):
+  OMTKLogic.GetIngredients(rxNormCode).ingredientName

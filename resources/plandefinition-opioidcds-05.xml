@@ -37,6 +37,15 @@
 				<code value="182888003"/>
 				<display value="Medication requested (situation)"/>
 			</coding>
+		</valueCodeableConcept>
+	</useContext>
+	<useContext>
+		<code>
+			<system value="http://hl7.org/fhir/usage-context-type"/>
+			<code value="focus"/>
+			<display value="Clinical Focus"/>
+		</code>
+		<valueCodeableConcept>
 			<coding>
 				<system value="http://snomed.info/sct"/>
 				<code value="82423001"/>

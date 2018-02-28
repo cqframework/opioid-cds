@@ -287,7 +287,7 @@ define function GetDailyDose(ingredientCode Code, strength Quantity, doseFormCod
     else
       Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: Substring(strength.unit, 0, PositionOf('/', strength.unit)) }
   end
-
+  
 define function GetMedicationName(rxNormCode Code):
   SingletonFrom([MED_DRUG: DRUG_RXCUI in rxNormCode]).DRUG_NAME
 

@@ -73,6 +73,11 @@
       "source": "library-opioidcds-recommendation-08.xml",
       "base": "Library-opioidcds-recommendation-08.html"
     },
+
+    "Library/opioidcds-recommendation-10": {
+      "source": "library-opioidcds-recommendation-10.xml",
+      "base": "Library-opioidcds-recommendation-10.html"
+    },
     "Library/opioidcds-recommendation-11": {
       "source": "library-opioidcds-recommendation-11.xml",
       "base": "Library-opioidcds-recommendation-11.html"

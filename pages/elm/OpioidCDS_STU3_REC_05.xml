@@ -25,12 +25,6 @@
             <operand dataType="fhir:Patient" xsi:type="Retrieve"/>
          </expression>
       </def>
-      <def name="IsForChronicPain" context="Patient" accessLevel="Public">
-         <expression valueType="t:Boolean" value="true" xsi:type="Literal"/>
-      </def>
-      <def name="HasMetastaticCancer" context="Patient" accessLevel="Public">
-         <expression valueType="t:Boolean" value="false" xsi:type="Literal"/>
-      </def>
       <def name="MMETotal" context="Patient" accessLevel="Public">
          <expression name="TotalMME" libraryName="MMECommon" xsi:type="FunctionRef">
             <operand name="Orders" xsi:type="ParameterRef"/>
