@@ -3,7 +3,7 @@
    <status value="draft"/>
    <compose>
       <include>
-         <system value="http://hl7.org/fhir/ig/opioid-cds/CodeSystem/opioidcds-rxnorm-codes"/>
+         <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
          <concept>
             <code value="1012727"/>
             <display value="Carbinoxamine maleate 0.4 MG/ML / Hydrocodone Bitartrate 1 MG/ML / Pseudoephedrine Hydrochloride 6 MG/ML Oral Solution"/>

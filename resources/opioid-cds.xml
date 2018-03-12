@@ -30,14 +30,6 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="CodeSystem - CDC Opioid Prescribing Guidelines RxNorm Codes"/>
-            <description value="System of codes for medications included in the opioid management guidance"/>
-            <sourceReference>
-                <reference value="CodeSystem/opioidcds-rxnorm-codes"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
             <name value="Library - OMTK Model Info"/>
             <description value="Opioid Management Terminology Knowledge Base Model Information"/>
             <sourceReference>

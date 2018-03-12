@@ -3,7 +3,7 @@
    <status value="draft"/>
    <compose>
       <include>
-         <system value="http://hl7.org/fhir/ig/opioid-cds/CodeSystem/opioidcds-rxnorm-codes"/>
+         <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
          <concept>
             <code value="104693"/>
             <display value="Temazepam 20 MG Oral Tablet"/>
