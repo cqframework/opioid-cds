@@ -18,7 +18,7 @@
     </type>
     <date value="2018-02-28"/>
     <publisher value="Centers for Disease Control and Prevention (CDC)"/>
-    <description value="TODO"/>
+    <description value="This library contains common logic for parsing free-text SIGs featuring the function ParsedFreeTextSIG() that takes a SIG String and results in a Tuple of data parsed from it."/>
     <purpose value="This library contains common logic for parsing free-text SIGs featuring the function ParsedFreeTextSIG() that takes a SIG String and results in a Tuple of data parsed from it."/>
     <usage value="TODO"/>
     <topic>
