@@ -62,6 +62,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #4 (CDS Hooks)"/>
+            <description value="Opioid Management CDS Hooks Logic for recommendation #4"/>
+            <sourceReference>
+                <reference value="Library/opioidcds-recommendation-04-CDSHooks"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="Library - Opioid CDS Recommendation #5"/>
             <description value="Opioid Management Decision Support Logic for recommendation #5"/>
             <sourceReference>
@@ -78,10 +86,26 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #7 (CDS Hooks)"/>
+            <description value="Opioid Management CDS Hooks Logic for recommendation #7"/>
+            <sourceReference>
+                <reference value="Library/opioidcds-recommendation-07-CDSHooks"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="Library - Opioid CDS Recommendation #8"/>
             <description value="Opioid Management Decision Support Logic for recommendation #8"/>
             <sourceReference>
                 <reference value="Library/opioidcds-recommendation-08"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #8 (CDS Hooks)"/>
+            <description value="Opioid Management CDS Hooks Logic for recommendation #8"/>
+            <sourceReference>
+                <reference value="Library/opioidcds-recommendation-08-CDSHooks"/>
             </sourceReference>
         </resource>
         <resource>
@@ -94,10 +118,26 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #10 (CDS Hooks)"/>
+            <description value="Opioid Management CDS Hooks Logic for recommendation #10"/>
+            <sourceReference>
+                <reference value="Library/opioidcds-recommendation-10-CDSHooks"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="Library - Opioid CDS Recommendation #11"/>
             <description value="Opioid Management Decision Support Logic for recommendation #11"/>
             <sourceReference>
                 <reference value="Library/opioidcds-recommendation-11"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #11 (CDS Hooks)"/>
+            <description value="Opioid Management CDS Hooks Logic for recommendation #11"/>
+            <sourceReference>
+                <reference value="Library/opioidcds-recommendation-11-CDSHooks"/>
             </sourceReference>
         </resource>
         <resource>

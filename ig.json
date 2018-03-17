@@ -57,6 +57,10 @@
       "source": "library-opioidcds-recommendation-04.xml",
       "base": "Library-opioidcds-recommendation-04.html"
     },
+    "Library/opioidcds-recommendation-04-CDSHooks": {
+      "source": "library-opioidcds-recommendation-04-CDSHooks.xml",
+      "base": "Library-opioidcds-recommendation-04-CDSHooks.html"
+    },
     "Library/opioidcds-recommendation-05": {
       "source": "library-opioidcds-recommendation-05.xml",
       "base": "Library-opioidcds-recommendation-05.html"
@@ -65,17 +69,33 @@
       "source": "library-opioidcds-recommendation-07.xml",
       "base": "Library-opioidcds-recommendation-07.html"
     },
+    "Library/opioidcds-recommendation-07-CDSHooks": {
+      "source": "library-opioidcds-recommendation-07-CDSHooks.xml",
+      "base": "Library-opioidcds-recommendation-07-CDSHooks.html"
+    },
     "Library/opioidcds-recommendation-08": {
       "source": "library-opioidcds-recommendation-08.xml",
       "base": "Library-opioidcds-recommendation-08.html"
+    },
+    "Library/opioidcds-recommendation-08-CDSHooks": {
+      "source": "library-opioidcds-recommendation-08-CDSHooks.xml",
+      "base": "Library-opioidcds-recommendation-08-CDSHooks.html"
     },
     "Library/opioidcds-recommendation-10": {
       "source": "library-opioidcds-recommendation-10.xml",
       "base": "Library-opioidcds-recommendation-10.html"
     },
+    "Library/opioidcds-recommendation-10-CDSHooks": {
+      "source": "library-opioidcds-recommendation-10-CDSHooks.xml",
+      "base": "Library-opioidcds-recommendation-10-CDSHooks.html"
+    },
     "Library/opioidcds-recommendation-11": {
       "source": "library-opioidcds-recommendation-11.xml",
       "base": "Library-opioidcds-recommendation-11.html"
+    },
+    "Library/opioidcds-recommendation-11-CDSHooks": {
+      "source": "library-opioidcds-recommendation-11-CDSHooks.xml",
+      "base": "Library-opioidcds-recommendation-11-CDSHooks.html"
     },
     "MedicationRequest/example-opioidcds": {
       "source": "medicationrequest-example-opioidcds.xml",
