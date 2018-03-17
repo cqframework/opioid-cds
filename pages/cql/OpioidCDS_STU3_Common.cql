@@ -6,24 +6,22 @@ include OMTKLogic version '0.1.0' called OMTKLogic
 
 valueset "Benzodiazepines": 'benzodiazepines'
 valueset "Naloxone": 'naloxone'
-valueset "Opioids": 'opioids'
 valueset "Ambulatory Abuse Potential Opioids": 'opioids-abused-in-ambulatory-care'
-valueset "Codeine Cough Meds": 'opioids-codeine-cough-meds'
 valueset "End Of Life Opioids": 'opioids-indicating-end-of-life'
-valueset "Short Acting Opioids": 'short-acting-opioids'
 valueset "Long Acting Opioids": 'long-acting-opioids'
 valueset "Illicit Drug Screening": 'illicit-drug-urine-screening'
 valueset "Opioid Drug Screening": 'opioid-urine-screening'
+
+// The following ValueSets are not currently used for any of the recommendations (4, 5, 7, 8, 10, and 11)
+valueset "Opioids": 'opioids'
+valueset "Codeine Cough Meds": 'opioids-codeine-cough-meds'
+valueset "Short Acting Opioids": 'short-acting-opioids'
 
 // TODO: Capture process decisions for long-term opioid use
 define IsForChronicPain: true
 
 // TODO: Capture process decisions for metastatic cancer
 define HasMetastaticCancer: false
-
-define function GetOpioidsWithAmbulatoryAbusePotential (Orders List<MedicationRequest>):
-  Orders orders
-    where ToCode(orders.medication.coding[0]) in "Ambulatory Abuse Potential Opioids"
 
 define function Prescriptions(Orders List<MedicationRequest>):
   Orders O
@@ -147,9 +145,6 @@ define function IsOpioidWithAmbulatoryAbusePotential(rxNormCode Code):
 
 define function IsLongActingOpioid(rxNormCode Code):
   rxNormCode in "Long Acting Opioids"
-
-define function IsOpioid(rxNormCode Code):
-  rxNormCode in "Opioids"
 
 define function IsEndOfLifeOpioid(rxNormCode Code):
   rxNormCode in "End Of Life Opioids"

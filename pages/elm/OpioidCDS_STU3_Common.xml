@@ -12,14 +12,14 @@
    <valueSets>
       <def name="Benzodiazepines" id="benzodiazepines" accessLevel="Public"/>
       <def name="Naloxone" id="naloxone" accessLevel="Public"/>
-      <def name="Opioids" id="opioids" accessLevel="Public"/>
       <def name="Ambulatory Abuse Potential Opioids" id="opioids-abused-in-ambulatory-care" accessLevel="Public"/>
-      <def name="Codeine Cough Meds" id="opioids-codeine-cough-meds" accessLevel="Public"/>
       <def name="End Of Life Opioids" id="opioids-indicating-end-of-life" accessLevel="Public"/>
-      <def name="Short Acting Opioids" id="short-acting-opioids" accessLevel="Public"/>
       <def name="Long Acting Opioids" id="long-acting-opioids" accessLevel="Public"/>
       <def name="Illicit Drug Screening" id="illicit-drug-urine-screening" accessLevel="Public"/>
       <def name="Opioid Drug Screening" id="opioid-urine-screening" accessLevel="Public"/>
+      <def name="Opioids" id="opioids" accessLevel="Public"/>
+      <def name="Codeine Cough Meds" id="opioids-codeine-cough-meds" accessLevel="Public"/>
+      <def name="Short Acting Opioids" id="short-acting-opioids" accessLevel="Public"/>
    </valueSets>
    <statements>
       <def name="IsForChronicPain" context="Patient" accessLevel="Public">
@@ -61,29 +61,6 @@
          </expression>
          <operand name="coding">
             <operandTypeSpecifier name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
-         </operand>
-      </def>
-      <def name="GetOpioidsWithAmbulatoryAbusePotential" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression xsi:type="Query">
-            <source alias="orders">
-               <expression name="Orders" xsi:type="OperandRef"/>
-            </source>
-            <where xsi:type="InValueSet">
-               <code name="ToCode" xsi:type="FunctionRef">
-                  <operand xsi:type="Indexer">
-                     <operand path="coding" xsi:type="Property">
-                        <source path="medication" scope="orders" xsi:type="Property"/>
-                     </operand>
-                     <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
-                  </operand>
-               </code>
-               <valueset name="Ambulatory Abuse Potential Opioids"/>
-            </where>
-         </expression>
-         <operand name="Orders">
-            <operandTypeSpecifier xsi:type="ListTypeSpecifier">
-               <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
-            </operandTypeSpecifier>
          </operand>
       </def>
       <def name="ToQuantity" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
@@ -765,15 +742,6 @@
          <expression xsi:type="InValueSet">
             <code name="rxNormCode" xsi:type="OperandRef"/>
             <valueset name="Long Acting Opioids"/>
-         </expression>
-         <operand name="rxNormCode">
-            <operandTypeSpecifier name="t:Code" xsi:type="NamedTypeSpecifier"/>
-         </operand>
-      </def>
-      <def name="IsOpioid" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression xsi:type="InValueSet">
-            <code name="rxNormCode" xsi:type="OperandRef"/>
-            <valueset name="Opioids"/>
          </expression>
          <operand name="rxNormCode">
             <operandTypeSpecifier name="t:Code" xsi:type="NamedTypeSpecifier"/>

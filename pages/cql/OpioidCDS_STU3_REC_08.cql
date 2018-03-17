@@ -37,9 +37,9 @@ include OpioidCDS_STU3_Common version '0.1.0' called Common
 
 */
 
+valueset "Substance Abuse": 'TODO'
+
 parameter ContextPrescription MedicationRequest
-parameter Orders List<MedicationRequest> // includes the ContextPrescription
-parameter SubstanceAbuseHistory List<Condition>
 
 context Patient
 
@@ -55,26 +55,40 @@ define "Inclusion Criteria":
   and (
     "MME >= 50 mg/d?"
       or "On Benzodiazepine"
-      or exists(SubstanceAbuseHistory)
+      // TODO - uncomment once valueset is provided
+      //or "Has Substance Abuse History"
   )
 
 define "Exclusion Criteria":
   exists(
-    Orders orders
-      where Common.IsNaloxone(Common.ToCode(orders.medication.coding[0]))
+    [MedicationRequest: Common."Naloxone"]
   )
 
 define "Average MME":
-  Common.TotalMME(Orders)
+  Common.TotalMME("Get Active Ambulatory Opioid Rx")
 
 define "MME >= 50 mg/d?":
-  "Average MME" >= 50 'mg/d'
+  if "Average MME" is null
+    then false
+  else "Average MME" >= 50 'mg/d'
 
 define "On Benzodiazepine":
   exists(
-    Orders orders
-      where Common.IsBenzodiazepine(Common.ToCode(orders.medication.coding[0]))
+    [MedicationRequest: Common."Benzodiazepines"]
   )
+
+define "Has Substance Abuse History":
+  exists ( [Condition: "Substance Abuse"] )
+
+define "Get Active Ambulatory Opioid Rx":
+  (
+    [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] Rx
+      where Rx.status.value = 'active'
+        and Rx.category.coding[0].code.value = 'outpatient'
+        //and
+        //  (Rx.dosageInstruction.asNeeded is null
+        //    or not Rx.dosageInstruction.asNeeded.value
+  ) union ContextPrescription
 
 define "Get Notification":
   'Consider offering naloxone given following risk factor(s) for opioid overdose: '
@@ -84,6 +98,7 @@ define "Get Notification":
       + if "On Benzodiazepine"
           then 'concurrent use of benzodiazepine, '
         else ''
-      + if exists(SubstanceAbuseHistory)
-          then 'history of alcohol or drug abuse.'
-        else ''
+      // TODO - uncomment once valueset is provided
+      //+ if "Has Substance Abuse History"
+      //    then 'history of alcohol or drug abuse.'
+      //  else ''

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
-   <identifier id="OpioidCDS_STU3_REC_08" version="0.1.0"/>
+   <annotation startLine="60" startChar="7" endLine="60" endChar="70" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="60" startChar="7" endLine="60" endChar="70" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <identifier id="OpioidCDS_STU3_REC_04" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
       <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
@@ -12,16 +14,6 @@
    <parameters>
       <def name="ContextPrescription" accessLevel="Public">
          <parameterTypeSpecifier name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
-      </def>
-      <def name="Orders" accessLevel="Public">
-         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
-            <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
-         </parameterTypeSpecifier>
-      </def>
-      <def name="Encounters" accessLevel="Public">
-         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
-            <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
-         </parameterTypeSpecifier>
       </def>
    </parameters>
    <statements>
@@ -90,25 +82,15 @@
          <expression xsi:type="Exists">
             <operand xsi:type="Query">
                <source alias="orders">
-                  <expression name="Orders" xsi:type="ParameterRef"/>
+                  <expression dataType="fhir:MedicationRequest" codeProperty="medicationCodeableConcept" xsi:type="Retrieve">
+                     <codes name="Ambulatory Abuse Potential Opioids" libraryName="Common" xsi:type="ValueSetRef"/>
+                  </expression>
                </source>
-               <where xsi:type="And">
-                  <operand name="IsOpioidWithAmbulatoryAbusePotential" libraryName="Common" xsi:type="FunctionRef">
-                     <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
-                        <operand xsi:type="Indexer">
-                           <operand path="coding" xsi:type="Property">
-                              <source path="medication" scope="orders" xsi:type="Property"/>
-                           </operand>
-                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
-                        </operand>
-                     </operand>
+               <where xsi:type="In">
+                  <operand path="value" xsi:type="Property">
+                     <source path="authoredOn" scope="orders" xsi:type="Property"/>
                   </operand>
-                  <operand xsi:type="In">
-                     <operand path="value" xsi:type="Property">
-                        <source path="authoredOn" scope="orders" xsi:type="Property"/>
-                     </operand>
-                     <operand name="Inclusion Period" xsi:type="ExpressionRef"/>
-                  </operand>
+                  <operand name="Inclusion Period" xsi:type="ExpressionRef"/>
                </where>
             </operand>
          </expression>
@@ -124,7 +106,7 @@
             <operand xsi:type="Exists">
                <operand xsi:type="Query">
                   <source alias="encounters">
-                     <expression name="Encounters" xsi:type="ParameterRef"/>
+                     <expression dataType="fhir:Encounter" xsi:type="Retrieve"/>
                   </source>
                   <where xsi:type="In">
                      <operand path="value" xsi:type="Property">

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <identifier id="OpioidCDS_STU3_REC_04_CDSHooks" version="0.1.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localIdentifier="FHIR" uri="http://hl7.org/fhir" version="3.0.0"/>
+   </usings>
+   <includes>
+      <def localIdentifier="Common" path="OpioidCDS_STU3_Common" version="0.1.0"/>
+   </includes>
+   <parameters>
+      <def name="ContextPrescription" accessLevel="Public">
+         <parameterTypeSpecifier name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+      </def>
+      <def name="Orders" accessLevel="Public">
+         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
+      </def>
+      <def name="Encounters" accessLevel="Public">
+         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
+      </def>
+   </parameters>
+   <statements>
+      <def name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand dataType="fhir:Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def name="Inclusion Period" context="Patient" accessLevel="Public">
+         <expression lowClosed="true" highClosed="true" xsi:type="Interval">
+            <low xsi:type="Subtract">
+               <operand xsi:type="Today"/>
+               <operand value="91" unit="days" xsi:type="Quantity"/>
+            </low>
+            <high xsi:type="Subtract">
+               <operand xsi:type="Today"/>
+               <operand value="1" unit="days" xsi:type="Quantity"/>
+            </high>
+         </expression>
+      </def>
+      <def name="Encounter Period" context="Patient" accessLevel="Public">
+         <expression lowClosed="true" highClosed="true" xsi:type="Interval">
+            <low xsi:type="Subtract">
+               <operand xsi:type="Subtract">
+                  <operand xsi:type="Today"/>
+                  <operand value="1" unit="years" xsi:type="Quantity"/>
+               </operand>
+               <operand value="1" unit="days" xsi:type="Quantity"/>
+            </low>
+            <high xsi:type="Subtract">
+               <operand xsi:type="Today"/>
+               <operand value="1" unit="days" xsi:type="Quantity"/>
+            </high>
+         </expression>
+      </def>
+      <def name="Validate Trigger Event" context="Patient" accessLevel="Public">
+         <expression xsi:type="Exists">
+            <operand xsi:type="ToList">
+               <operand xsi:type="Query">
+                  <source alias="triggerScript">
+                     <expression name="ContextPrescription" xsi:type="ParameterRef"/>
+                  </source>
+                  <let identifier="rxNormCode">
+                     <expression name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                        <operand xsi:type="Indexer">
+                           <operand path="coding" xsi:type="Property">
+                              <source path="medication" scope="triggerScript" xsi:type="Property"/>
+                           </operand>
+                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                        </operand>
+                     </expression>
+                  </let>
+                  <where xsi:type="And">
+                     <operand name="IsOpioidWithAmbulatoryAbusePotential" libraryName="Common" xsi:type="FunctionRef">
+                        <operand name="rxNormCode" xsi:type="QueryLetRef"/>
+                     </operand>
+                     <operand name="IsLongActingOpioid" libraryName="Common" xsi:type="FunctionRef">
+                        <operand name="rxNormCode" xsi:type="QueryLetRef"/>
+                     </operand>
+                  </where>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def name="Opioid with Ambulatory Care Abuse Potential in Past 90 Days" context="Patient" accessLevel="Public">
+         <expression xsi:type="Exists">
+            <operand xsi:type="Query">
+               <source alias="orders">
+                  <expression name="Orders" xsi:type="ParameterRef"/>
+               </source>
+               <where xsi:type="And">
+                  <operand name="IsOpioidWithAmbulatoryAbusePotential" libraryName="Common" xsi:type="FunctionRef">
+                     <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                        <operand xsi:type="Indexer">
+                           <operand path="coding" xsi:type="Property">
+                              <source path="medication" scope="orders" xsi:type="Property"/>
+                           </operand>
+                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand xsi:type="In">
+                     <operand path="value" xsi:type="Property">
+                        <source path="authoredOn" scope="orders" xsi:type="Property"/>
+                     </operand>
+                     <operand name="Inclusion Period" xsi:type="ExpressionRef"/>
+                  </operand>
+               </where>
+            </operand>
+         </expression>
+      </def>
+      <def name="Inclusion Criteria" context="Patient" accessLevel="Public">
+         <expression xsi:type="And">
+            <operand xsi:type="And">
+               <operand name="Validate Trigger Event" xsi:type="ExpressionRef"/>
+               <operand xsi:type="Not">
+                  <operand name="Opioid with Ambulatory Care Abuse Potential in Past 90 Days" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+            <operand xsi:type="Exists">
+               <operand xsi:type="Query">
+                  <source alias="encounters">
+                     <expression name="Encounters" xsi:type="ParameterRef"/>
+                  </source>
+                  <where xsi:type="In">
+                     <operand path="value" xsi:type="Property">
+                        <source path="start" xsi:type="Property">
+                           <source path="period" scope="encounters" xsi:type="Property"/>
+                        </source>
+                     </operand>
+                     <operand name="Encounter Period" xsi:type="ExpressionRef"/>
+                  </where>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def name="Get Notification" context="Patient" accessLevel="Public">
+         <expression valueType="t:String" value="Recommend use of immediate-release opioids instead of extended release/long acting opioids when starting patient on opioids." xsi:type="Literal"/>
+      </def>
+   </statements>
+</library>
+

@@ -69,7 +69,6 @@
       "source": "library-opioidcds-recommendation-08.xml",
       "base": "Library-opioidcds-recommendation-08.html"
     },
-
     "Library/opioidcds-recommendation-10": {
       "source": "library-opioidcds-recommendation-10.xml",
       "base": "Library-opioidcds-recommendation-10.html"
@@ -163,7 +162,6 @@
       "defns": "cdc-requestgroup-definitions.html",
       "base": "cdc-requestgroup.html"
     },
-
     "StructureDefinition/cdc-requestgroup-action-indicator": {
       "defns": "cdc-requestgroup-action-indicator-definitions.html",
       "base": "cdc-requestgroup-action-indicator.html",

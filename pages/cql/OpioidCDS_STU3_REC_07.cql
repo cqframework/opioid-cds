@@ -39,11 +39,14 @@ include OpioidCDS_STU3_Common version '0.1.0' called Common
     then use EHR snoozing functionality to allow "Have assessed/will assess. Snooze 3 months."
 */
 
+codesystem "SNOMED": 'http://snomed.info/sct'
+
+// valueset "End Of Life Conditions": 'TODO'
+
+code "Assessment of risk for opioid abuse": '454281000124100' from "SNOMED"
+code "High risk drug monitoring": '268525008' from "SNOMED"
+
 parameter ContextPrescription MedicationRequest
-parameter Orders List<MedicationRequest> // includes the ContextPrescription
-parameter Encounters List<Encounter>
-parameter OpioidRiskAssessment List<Procedure>
-parameter EndOfLifeConditions List<Condition>
 
 context Patient
 
@@ -56,31 +59,47 @@ define "Validate Trigger Event":
 define "Inclusion Criteria":
   "Validate Trigger Event"
     and not "Exclusion Criteria"
-    and not exists ("Opioid Risk Assessment in Past 90 Days")
+    and not exists ( "Opioid Risk Assessment in Past 90 Days" )
     and
-      ((Common.ProbableDaysInRange(Orders, 10, 7) and exists("Encounter in past 12 months"))
-        or Common.ProbableDaysInRange(Orders, 90, 63))
+      ((Common.ProbableDaysInRange("Get Active Ambulatory Opioid Rx", 10, 7) and exists("Encounter in past 12 months"))
+        or Common.ProbableDaysInRange("Get Active Ambulatory Opioid Rx", 90, 63))
 
 define "Exclusion Criteria":
-  exists (
-    Orders orders
-          where Common.IsEndOfLifeOpioid(Common.ToCode(orders.medication.coding[0]))
-  )
-  or exists(EndOfLifeConditions)
+  exists ( "Medications Indicating End Of Life" )
+  // or exists( "Conditions Indicating End Of Life )
+
+define "Medications Indicating End Of Life":
+  [MedicationRequest: Common."End Of Life Opioids"] endOfLifeRx
+    where endOfLifeRx.status.value = 'active'
+
+// TODO - need valueset for this
+// define "Conditions Indicating End Of Life":
+//   [Condition: "End Of Life Conditions"] endOfLifeConditions
+//     where endOfLifeConditions.clinicalStatus.value = 'active'
 
 define "Risk Assessment Interval":
   Interval[Today() - 90 days, Today() - 1 day]
 
 define "Opioid Risk Assessment in Past 90 Days":
-  OpioidRiskAssessment riskAssessment
-    where riskAssessment.performed."start".value in "Risk Assessment Interval"
+  ([Procedure: "Assessment of risk for opioid abuse"]
+      union [Procedure: "High risk drug monitoring"]) riskAssessment
+    where
+      riskAssessment.performed."start".value in "Risk Assessment Interval"
 
 define "Encounter Interval":
   Interval[Today() - 1 year, Today() - 1 day]
 
 define "Encounter in past 12 months":
-  Encounters E
+  [Encounter] E
     where E.period."start".value in "Encounter Interval"
+
+define "Get Active Ambulatory Opioid Rx":
+  [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] Rx
+    where Rx.status.value = 'active'
+      and Rx.category.coding[0].code.value = 'outpatient'
+      //and
+      //  (Rx.dosageInstruction.asNeeded is null
+      //    or not Rx.dosageInstruction.asNeeded.value)
 
 define "Get Notification":
   'Patients on opioid therapy should be evaluated for benefits and harms within 1 to 4 weeks of starting opioid therapy and every 3 months or more subsequently.'

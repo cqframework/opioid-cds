@@ -35,10 +35,7 @@ include OpioidCDS_STU3_Common version '0.1.0' called Common
     Have availability to snooze for 3 months
 */
 
-parameter ContextPrescription MedicationRequest // Current prescription
-// Orders includes the ContextPrescription
-parameter Orders List<MedicationRequest> // {base}MedicationOrder?patient={{Patient.id}}&status=active
-parameter ObservationsInPastYear List<Observation> // {base}Observation?patient={{Patient.id}}&date=gt{Today() - 1 year}
+parameter ContextPrescription MedicationRequest
 
 context Patient
 
@@ -51,7 +48,7 @@ define "Validate Trigger Event":
 define "Inclusion Criteria":
   "Validate Trigger Event"
       and not "Exclusion Criteria"
-      and AnyTrue(Common.ProbableDaysInRange(Orders, 90, 80))
+      and AnyTrue(Common.ProbableDaysInRange("Get Active Ambulatory Opioid Rx", 90, 80))
       and
         ("No Urine Screening In Last 12 Months"
           or "Has Missing Opioids?"
@@ -60,43 +57,36 @@ define "Inclusion Criteria":
 
 define "Exclusion Criteria":
   exists (
-    Orders orders
-      where Common.IsEndOfLifeOpioid(Common.ToCode(orders.medication.coding[0]))
+    [MedicationRequest: Common."End Of Life Opioids"]
   )
   or Common.HasMetastaticCancer
 
+define "Get Active Ambulatory Opioid Rx":
+  [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] Rx
+    where Rx.status.value = 'active'
+      and Rx.category.coding[0].code.value = 'outpatient'
+      //and
+      //  (Rx.dosageInstruction.asNeeded is null
+      //    or not Rx.dosageInstruction.asNeeded.value)
+
+define "Lookback Year":
+  Interval[Today() - 1 year - 1 day, Today() - 1 day]
+
+define "Get Illicit Drug Urine Screenings in Last 12 Months":
+  [Observation: "combo-code" in Common."Illicit Drug Screening"] observation
+    where observation.effective.value in "Lookback Year"
+      sort by effective.value
+
+define "Get Opioid Drug Urine Screenings in Last 12 Months":
+  [Observation: "combo-code" in Common."Opioid Drug Screening"] observation
+    where observation.effective.value in "Lookback Year"
+      sort by effective.value
+
 define "Most Recent Illicit Drug Urine Screenings in Last 12 Months":
-  Last(
-    ObservationsInPastYear observations
-      where Common.IsIllicitDrugScreen(Common.ToCode(observations.code.coding[0]))
-        // TODO - assuming a max of 1 component until bug fix (see TODO below)
-        or
-          (if observations.component[0] is not null
-            then Common.IsIllicitDrugScreen(Common.ToCode(observations.component[0].code.coding[0]))
-          else false)
-        // or exists(CheckObservationComponentCodes(observations.component))
-        sort by effective.value
-  )
+  Last( "Get Illicit Drug Urine Screenings in Last 12 Months" )
 
 define "Most Recent Opioid Drug Urine Screenings in Last 12 Months":
-  Last(
-    ObservationsInPastYear observations
-      where Common.IsOpioidDrugScreen(Common.ToCode(observations.code.coding[0]))
-        // TODO - assuming a max of 1 component until bug fix (see TODO below)
-        or
-          (if observations.component[0] is not null
-            then Common.IsOpioidDrugScreen(Common.ToCode(observations.component[0].code.coding[0]))
-          else false)
-        // or exists(CheckObservationComponentCodes(observations.component))
-        sort by effective.value
-  )
-
-// TODO - this is a translator bug: https://github.com/cqframework/clinical_quality_language/issues/266
-/*
-define function CheckObservationComponentCodes(Component List<FHIR.Observation.Component>):
-  Component component
-    where Common.IsOpioidDrugScreen(Common.ToCode(component.code.coding[0]))
-*/
+  Last( "Get Opioid Drug Urine Screenings in Last 12 Months" )
 
 define "No Urine Screening In Last 12 Months":
   "Most Recent Illicit Drug Urine Screenings in Last 12 Months" is null
@@ -134,7 +124,7 @@ define "Has Opioids in Screening?":
   exists ("Positive Opioid Drug Screening")
 
 define "Orders Before Most Recent Opioid Screening":
-  Orders orders
+  "Get Active Ambulatory Opioid Rx" orders
       with "Positive Opioid Drug Screening" mostRecentScreening
         such that orders.authoredOn.value < mostRecentScreening.effective.value
       return

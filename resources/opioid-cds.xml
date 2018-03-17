@@ -251,6 +251,11 @@
     <binary value="cql/OpioidCDS_STU3_REC_08.cql"/>
     <binary value="cql/OpioidCDS_STU3_REC_10.cql"/>
     <binary value="cql/OpioidCDS_STU3_REC_11.cql"/>
+    <binary value="cql/OpioidCDS_STU3_REC_04_CDSHooks.cql"/>
+    <binary value="cql/OpioidCDS_STU3_REC_07_CDSHooks.cql"/>
+    <binary value="cql/OpioidCDS_STU3_REC_08_CDSHooks.cql"/>
+    <binary value="cql/OpioidCDS_STU3_REC_10_CDSHooks.cql"/>
+    <binary value="cql/OpioidCDS_STU3_REC_11_CDSHooks.cql"/>
     <binary value="elm/OMTKLogic-0.1.0.xml"/>
     <binary value="elm/OpioidCDS_STU3_Common.xml"/>
     <binary value="elm/OpioidCDS_STU3_REC_04.xml"/>
@@ -259,6 +264,11 @@
     <binary value="elm/OpioidCDS_STU3_REC_08.xml"/>
     <binary value="elm/OpioidCDS_STU3_REC_10.xml"/>
     <binary value="elm/OpioidCDS_STU3_REC_11.xml"/>
+    <binary value="elm/OpioidCDS_STU3_REC_04_CDSHooks.xml"/>
+    <binary value="elm/OpioidCDS_STU3_REC_07_CDSHooks.xml"/>
+    <binary value="elm/OpioidCDS_STU3_REC_08_CDSHooks.xml"/>
+    <binary value="elm/OpioidCDS_STU3_REC_10_CDSHooks.xml"/>
+    <binary value="elm/OpioidCDS_STU3_REC_11_CDSHooks.xml"/>
     <binary value="modelinfo/OMTK-modelinfo-0.1.0.xml"/>
     <page>
         <source value="index.html"/>
