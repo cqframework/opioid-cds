@@ -1,0 +1,95 @@
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="example-rec-05-mme-less-than-fifty"/>
+    <type value="transaction"/>
+    <entry>
+        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Patient/example-rec-05-mme-less-than-fifty"/>
+        <resource>
+            <Patient xmlns="http://hl7.org/fhir">
+                <id value="example-rec-05-mme-less-than-fifty"/>
+                <gender value="female"/>
+                <birthDate value="1982-01-07"/>
+            </Patient>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Patient/example-rec-05-mme-less-than-fifty"/>
+        </request>
+    </entry>
+    <entry>
+        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-05-mme-less-than-fifty"/>
+        <resource>
+            <MedicationRequest xmlns="http://hl7.org/fhir">
+                <id value="example-rec-05-mme-less-than-fifty"/>
+                <intent value="order"/>
+                <category>
+                    <coding>
+                        <code value="outpatient"/>
+                    </coding>
+                </category>
+                <medicationCodeableConcept>
+                    <coding>
+                        <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+                        <code value="197696"/>
+                        <display value="72 HR Fentanyl 0.075 MG/HR Transdermal System"/>
+                    </coding>
+                </medicationCodeableConcept>
+                <subject>
+                    <reference value="Patient/example-rec-05-mme-less-than-fifty"/>
+                </subject>
+                <context>
+                    <reference value="Encounter/example-rec-05-mme-less-than-fifty"/>
+                </context>
+                <authoredOn value="2018-03-18T17:29:57-06:00"/>
+                <dosageInstruction>
+                    <timing>
+                        <repeat>
+                            <frequency value="1"/>
+                            <period value="12.0"/>
+                            <periodUnit value="d"/>
+                        </repeat>
+                    </timing>
+                    <asNeededBoolean value="false"/>
+                    <doseQuantity>
+                        <value value="1.0"/>
+                        <unit value="patch"/>
+                    </doseQuantity>
+                </dosageInstruction>
+                <dispenseRequest>
+                    <validityPeriod>
+                        <start value="2017-09-18T00:00:00-06:00"/>
+                        <end value="2018-09-18T00:00:00-06:00"/>
+                    </validityPeriod>
+                    <numberOfRepeatsAllowed value="3"/>
+                    <expectedSupplyDuration>
+                        <value value="30.0"/>
+                        <unit value="d"/>
+                    </expectedSupplyDuration>
+                </dispenseRequest>
+            </MedicationRequest>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-05-mme-less-than-fifty"/>
+        </request>
+    </entry>
+    <entry>
+        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-05-mme-less-than-fifty"/>
+        <resource>
+            <Encounter xmlns="http://hl7.org/fhir">
+                <id value="example-rec-05-mme-less-than-fifty"/>
+                <status value="finished"/>
+                <subject>
+                    <reference value="Patient/example-rec-05-mme-less-than-fifty"/>
+                </subject>
+                <period>
+                    <start value="2018-03-04T00:00:00-07:00"/>
+                    <end value="2018-03-04T00:00:00-07:00"/>
+                </period>
+            </Encounter>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-05-mme-less-than-fifty"/>
+        </request>
+    </entry>
+</Bundle>
