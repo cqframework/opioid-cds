@@ -12,5 +12,8 @@
     <subject>
         <reference value="Patient/example-rec-04-long-acting-opioid"/>
     </subject>
+    <context>
+        <reference value="Encounter/example-rec-04-long-acting-opioid-old"/>
+    </context>
     <authoredOn value="2017-11-18T00:00:00-07:00"/>
 </MedicationRequest>

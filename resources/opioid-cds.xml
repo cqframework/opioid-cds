@@ -88,6 +88,43 @@
 
         <resource>
             <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-04-opioid-with-abuse-potential"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-04-opioid-with-abuse-potential"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-04-opioid-with-abuse-potential-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-04-opioid-with-abuse-potential-oxycodone"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-new"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-old"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
             <name value="CarePlan - Example result of recommendation #5"/>
             <description value="Example result of applying the PlanDefinition for recommendation #5"/>
             <sourceReference>

@@ -1,5 +1,5 @@
 <MedicationRequest xmlns="http://hl7.org/fhir">
-    <id value="example-rec-04-not-long-acting-opioid-oxycodone"/>
+    <id value="example-rec-04-opioid-with-abuse-potential-oxycodone"/>
     <status value="active"/>
     <intent value="order"/>
     <medicationCodeableConcept>
@@ -10,10 +10,10 @@
         </coding>
     </medicationCodeableConcept>
     <subject>
-        <reference value="Patient/example-rec-04-not-long-acting-opioid"/>
+        <reference value="Patient/example-rec-04-opioid-with-abuse-potential"/>
     </subject>
     <context>
-        <reference value="Encounter/example-rec-04-not-long-acting-opioid-old"/>
+        <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-old"/>
     </context>
-    <authoredOn value="2017-11-18T00:00:00-07:00"/>
+    <authoredOn value="2018-03-04T00:00:00-07:00"/>
 </MedicationRequest>

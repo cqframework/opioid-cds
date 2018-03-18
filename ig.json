@@ -84,6 +84,31 @@
       "base": "Encounter-example-rec-04-not-long-acting-opioid-old.html"
     },
 
+    "Bundle/example-rec-04-opioid-with-abuse-potential": {
+      "source": "bundle-example-rec-04-opioid-with-abuse-potential.xml",
+      "base": "Bundle-example-rec-04-opioid-with-abuse-potential.html"
+    },
+    "Patient/example-rec-04-opioid-with-abuse-potential": {
+      "source": "patient-example-rec-04-opioid-with-abuse-potential.xml",
+      "base": "Patient-example-rec-04-opioid-with-abuse-potential.html"
+    },
+    "MedicationRequest/example-rec-04-opioid-with-abuse-potential-oxycodone": {
+      "source": "medicationrequest-example-rec-04-opioid-with-abuse-potential-oxycodone.xml",
+      "base": "MedicationRequest-example-rec-04-opioid-with-abuse-potential-oxycodone.html"
+    },
+    "MedicationRequest/example-rec-04-opioid-with-abuse-potential-context": {
+      "source": "medicationrequest-example-rec-04-opioid-with-abuse-potential-context.xml",
+      "base": "MedicationRequest-example-rec-04-opioid-with-abuse-potential-context.html"
+    },
+    "Encounter/example-rec-04-opioid-with-abuse-potential-new": {
+      "source": "encounter-example-rec-04-opioid-with-abuse-potential-new.xml",
+      "base": "Encounter-example-rec-04-opioid-with-abuse-potential-new.html"
+    },
+    "Encounter/example-rec-04-opioid-with-abuse-potential-old": {
+      "source": "encounter-example-rec-04-opioid-with-abuse-potential-old.xml",
+      "base": "Encounter-example-rec-04-opioid-with-abuse-potential-old.html"
+    },
+
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"
