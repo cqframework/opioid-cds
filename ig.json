@@ -109,6 +109,23 @@
       "base": "Encounter-example-rec-04-opioid-with-abuse-potential-old.html"
     },
 
+    "Bundle/example-rec-05-mme-greater-than-fifty": {
+      "source": "bundle-example-rec-05-mme-greater-than-fifty.xml",
+      "base": "Bundle-example-rec-05-mme-greater-than-fifty.html"
+    },
+    "Patient/example-rec-05-mme-greater-than-fifty": {
+      "source": "patient-example-rec-05-mme-greater-than-fifty.xml",
+      "base": "Patient-example-rec-05-mme-greater-than-fifty.html"
+    },
+    "MedicationRequest/example-rec-05-mme-greater-than-fifty": {
+      "source": "medicationrequest-example-rec-05-mme-greater-than-fifty.xml",
+      "base": "MedicationRequest-example-rec-05-mme-greater-than-fifty.html"
+    },
+    "Encounter/example-rec-05-mme-greater-than-fifty": {
+      "source": "encounter-example-rec-05-mme-greater-than-fifty.xml",
+      "base": "Encounter-example-rec-05-mme-greater-than-fifty.html"
+    },
+
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"
