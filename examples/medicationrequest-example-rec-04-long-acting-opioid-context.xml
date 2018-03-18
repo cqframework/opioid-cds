@@ -1,0 +1,16 @@
+<MedicationRequest xmlns="http://hl7.org/fhir">
+    <id value="example-rec-04-long-acting-opioid-context"/>
+    <status value="active"/>
+    <intent value="order"/>
+    <medicationCodeableConcept>
+        <coding>
+            <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+            <code value="1049502"/>
+            <display value="12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
+        </coding>
+    </medicationCodeableConcept>
+    <subject>
+        <reference value="Patient/example-rec-04-long-acting-opioid"/>
+    </subject>
+    <authoredOn value="2018-03-18T12:07:25-06:00"/>
+</MedicationRequest>

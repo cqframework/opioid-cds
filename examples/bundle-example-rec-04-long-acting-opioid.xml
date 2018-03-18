@@ -1,0 +1,108 @@
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="example-rec-04-long-acting-opioid"/>
+    <type value="transaction"/>
+    <entry>
+        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Patient/example-rec-04-long-acting-opioid"/>
+        <resource>
+            <Patient xmlns="http://hl7.org/fhir">
+                <id value="example-rec-04-long-acting-opioid"/>
+                <gender value="male"/>
+                <birthDate value="1982-01-07"/>
+            </Patient>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Patient/example-rec-04-long-acting-opioid"/>
+        </request>
+    </entry>
+    <entry>
+        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-04-long-acting-opioid-context"/>
+        <resource>
+            <MedicationRequest xmlns="http://hl7.org/fhir">
+                <id value="example-rec-04-long-acting-opioid-context"/>
+                <status value="active"/>
+                <intent value="order"/>
+                <medicationCodeableConcept>
+                    <coding>
+                        <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+                        <code value="1049502"/>
+                        <display value="12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
+                    </coding>
+                </medicationCodeableConcept>
+                <subject>
+                    <reference value="Patient/example-rec-04-long-acting-opioid"/>
+                </subject>
+                <authoredOn value="2018-03-18T12:07:25-06:00"/>
+            </MedicationRequest>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-04-long-acting-opioid-context"/>
+        </request>
+    </entry>
+    <entry>
+        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-04-long-acting-opioid-oxycodone"/>
+        <resource>
+            <MedicationRequest xmlns="http://hl7.org/fhir">
+                <id value="example-rec-04-long-acting-opioid-oxycodone"/>
+                <status value="active"/>
+                <intent value="order"/>
+                <medicationCodeableConcept>
+                    <coding>
+                        <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+                        <code value="1049502"/>
+                        <display value="12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
+                    </coding>
+                </medicationCodeableConcept>
+                <subject>
+                    <reference value="Patient/example-rec-04-long-acting-opioid"/>
+                </subject>
+                <authoredOn value="2017-11-18T00:00:00-07:00"/>
+            </MedicationRequest>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-04-long-acting-opioid-oxycodone"/>
+        </request>
+    </entry>
+    <entry>
+        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-04-long-acting-opioid-new"/>
+        <resource>
+            <Encounter xmlns="http://hl7.org/fhir">
+                <id value="example-rec-04-long-acting-opioid-new"/>
+                <status value="finished"/>
+                <subject>
+                    <reference value="Patient/example-rec-04-long-acting-opioid"/>
+                </subject>
+                <period>
+                    <start value="2018-03-18T12:07:24-06:00"/>
+                    <end value="2018-03-18T12:07:24-06:00"/>
+                </period>
+            </Encounter>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-04-long-acting-opioid-new"/>
+        </request>
+    </entry>
+    <entry>
+        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-04-long-acting-opioid-old"/>
+        <resource>
+            <Encounter xmlns="http://hl7.org/fhir">
+                <id value="example-rec-04-long-acting-opioid-old"/>
+                <status value="finished"/>
+                <subject>
+                    <reference value="Patient/example-rec-04-long-acting-opioid"/>
+                </subject>
+                <period>
+                    <start value="2017-11-18T00:00:00-07:00"/>
+                    <end value="2017-11-18T00:00:00-07:00"/>
+                </period>
+            </Encounter>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-04-long-acting-opioid-old"/>
+        </request>
+    </entry>
+</Bundle>
