@@ -59,6 +59,31 @@
       "base": "Encounter-example-rec-04-long-acting-opioid-old.html"
     },
 
+    "Bundle/example-rec-04-not-long-acting-opioid": {
+      "source": "bundle-example-rec-04-not-long-acting-opioid.xml",
+      "base": "Bundle-example-rec-04-not-long-acting-opioid.html"
+    },
+    "Patient/example-rec-04-not-long-acting-opioid": {
+      "source": "patient-example-rec-04-not-long-acting-opioid.xml",
+      "base": "Patient-example-rec-04-not-long-acting-opioid.html"
+    },
+    "MedicationRequest/example-rec-04-not-long-acting-opioid-oxycodone": {
+      "source": "medicationrequest-example-rec-04-not-long-acting-opioid-oxycodone.xml",
+      "base": "MedicationRequest-example-rec-04-not-long-acting-opioid-oxycodone.html"
+    },
+    "MedicationRequest/example-rec-04-not-long-acting-opioid-context": {
+      "source": "medicationrequest-example-rec-04-not-long-acting-opioid-context.xml",
+      "base": "MedicationRequest-example-rec-04-not-long-acting-opioid-context.html"
+    },
+    "Encounter/example-rec-04-not-long-acting-opioid-new": {
+      "source": "encounter-example-rec-04-not-long-acting-opioid-new.xml",
+      "base": "Encounter-example-rec-04-not-long-acting-opioid-new.html"
+    },
+    "Encounter/example-rec-04-not-long-acting-opioid-old": {
+      "source": "encounter-example-rec-04-not-long-acting-opioid-old.xml",
+      "base": "Encounter-example-rec-04-not-long-acting-opioid-old.html"
+    },
+
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"

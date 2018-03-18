@@ -1,0 +1,16 @@
+<MedicationRequest xmlns="http://hl7.org/fhir">
+    <id value="example-rec-04-not-long-acting-opioid-context"/>
+    <status value="active"/>
+    <intent value="order"/>
+    <medicationCodeableConcept>
+        <coding>
+            <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+            <code value="1010600"/>
+            <display value="Buprenorphine 2 MG / Naloxone 0.5 MG Oral Strip"/>
+        </coding>
+    </medicationCodeableConcept>
+    <subject>
+        <reference value="Patient/example-rec-04-not-long-acting-opioid"/>
+    </subject>
+    <authoredOn value="2018-03-18T15:37:24-06:00"/>
+</MedicationRequest>

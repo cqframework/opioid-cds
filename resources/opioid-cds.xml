@@ -51,6 +51,43 @@
 
         <resource>
             <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-04-not-long-acting-opioid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-04-not-long-acting-opioid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-04-not-long-acting-opioid-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-04-not-long-acting-opioid-oxycodone"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-not-long-acting-opioid-new"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-not-long-acting-opioid-old"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
             <name value="CarePlan - Example result of recommendation #5"/>
             <description value="Example result of applying the PlanDefinition for recommendation #5"/>
             <sourceReference>
