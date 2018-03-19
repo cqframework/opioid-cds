@@ -193,6 +193,31 @@
       "base": "Encounter-example-rec-07-six-of-past-ten-days-old.html"
     },
 
+    "Bundle/example-rec-07-sixtythree-of-past-ninety-days": {
+      "source": "bundle-example-rec-07-sixtythree-of-past-ninety-days.xml",
+      "base": "Bundle-example-rec-07-sixtythree-of-past-ninety-days.html"
+    },
+    "Patient/example-rec-07-sixtythree-of-past-ninety-days": {
+      "source": "patient-example-rec-07-sixtythree-of-past-ninety-days.xml",
+      "base": "Patient-example-rec-07-sixtythree-of-past-ninety-days.html"
+    },
+    "MedicationRequest/example-rec-07-sixtythree-of-past-ninety-days-oxycodone": {
+      "source": "medicationrequest-example-rec-07-sixtythree-of-past-ninety-days-oxycodone.xml",
+      "base": "MedicationRequest-example-rec-07-sixtythree-of-past-ninety-days-oxycodone.html"
+    },
+    "MedicationRequest/example-rec-07-sixtythree-of-past-ninety-days-context": {
+      "source": "medicationrequest-example-rec-07-sixtythree-of-past-ninety-days-context.xml",
+      "base": "MedicationRequest-example-rec-07-sixtythree-of-past-ninety-days-context.html"
+    },
+    "Encounter/example-rec-07-sixtythree-of-past-ninety-days-new": {
+      "source": "encounter-example-rec-07-sixtythree-of-past-ninety-days-new.xml",
+      "base": "Encounter-example-rec-07-sixtythree-of-past-ninety-days-new.html"
+    },
+    "Encounter/example-rec-07-sixtythree-of-past-ninety-days-old": {
+      "source": "encounter-example-rec-07-sixtythree-of-past-ninety-days-old.xml",
+      "base": "Encounter-example-rec-07-sixtythree-of-past-ninety-days-old.html"
+    },
+
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"
