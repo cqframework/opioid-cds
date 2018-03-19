@@ -168,6 +168,31 @@
       "base": "Encounter-example-rec-07-seven-of-past-ten-days-old.html"
     },
 
+    "Bundle/example-rec-07-six-of-past-ten-days": {
+      "source": "bundle-example-rec-07-six-of-past-ten-days.xml",
+      "base": "Bundle-example-rec-07-six-of-past-ten-days.html"
+    },
+    "Patient/example-rec-07-six-of-past-ten-days": {
+      "source": "patient-example-rec-07-six-of-past-ten-days.xml",
+      "base": "Patient-example-rec-07-six-of-past-ten-days.html"
+    },
+    "MedicationRequest/example-rec-07-six-of-past-ten-days-oxycodone": {
+      "source": "medicationrequest-example-rec-07-six-of-past-ten-days-oxycodone.xml",
+      "base": "MedicationRequest-example-rec-07-six-of-past-ten-days-oxycodone.html"
+    },
+    "MedicationRequest/example-rec-07-six-of-past-ten-days-context": {
+      "source": "medicationrequest-example-rec-07-six-of-past-ten-days-context.xml",
+      "base": "MedicationRequest-example-rec-07-six-of-past-ten-days-context.html"
+    },
+    "Encounter/example-rec-07-six-of-past-ten-days-new": {
+      "source": "encounter-example-rec-07-six-of-past-ten-days-new.xml",
+      "base": "Encounter-example-rec-07-six-of-past-ten-days-new.html"
+    },
+    "Encounter/example-rec-07-six-of-past-ten-days-old": {
+      "source": "encounter-example-rec-07-six-of-past-ten-days-old.xml",
+      "base": "Encounter-example-rec-07-six-of-past-ten-days-old.html"
+    },
+
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"

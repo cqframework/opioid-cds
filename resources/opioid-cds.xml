@@ -212,6 +212,43 @@
 
         <resource>
             <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-07-six-of-past-ten-days"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-07-six-of-past-ten-days"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-07-six-of-past-ten-days-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-07-six-of-past-ten-days-oxycodone"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-07-six-of-past-ten-days-new"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-07-six-of-past-ten-days-old"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
             <name value="CarePlan - Example result of recommendation #5"/>
             <description value="Example result of applying the PlanDefinition for recommendation #5"/>
             <sourceReference>
