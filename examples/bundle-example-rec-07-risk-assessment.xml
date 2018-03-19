@@ -1,0 +1,115 @@
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="example-rec-07-risk-assessment"/>
+    <type value="transaction"/>
+    <entry>
+        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Patient/example-rec-07-risk-assessment"/>
+        <resource>
+            <Patient xmlns="http://hl7.org/fhir">
+                <id value="example-rec-07-risk-assessment"/>
+                <gender value="male"/>
+                <birthDate value="1982-01-07"/>
+            </Patient>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Patient/example-rec-07-risk-assessment"/>
+        </request>
+    </entry>
+    <entry>
+        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-07-risk-assessment-context"/>
+        <resource>
+            <MedicationRequest xmlns="http://hl7.org/fhir">
+                <id value="example-rec-07-risk-assessment-context"/>
+                <status value="active"/>
+                <intent value="order"/>
+                <category>
+                    <coding>
+                        <code value="outpatient"/>
+                    </coding>
+                </category>
+                <medicationCodeableConcept>
+                    <coding>
+                        <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+                        <code value="1049502"/>
+                        <display value="12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
+                    </coding>
+                </medicationCodeableConcept>
+                <subject>
+                    <reference value="Patient/example-rec-07-risk-assessment"/>
+                </subject>
+                <authoredOn value="2018-03-18T19:42:30-06:00"/>
+                <dosageInstruction>
+                    <timing>
+                        <repeat>
+                            <frequency value="1"/>
+                            <period value="1.0"/>
+                            <periodUnit value="d"/>
+                        </repeat>
+                    </timing>
+                </dosageInstruction>
+                <dispenseRequest>
+                    <validityPeriod>
+                        <start value="2018-03-18T19:42:30-06:00"/>
+                        <end value="2018-06-18T00:00:00-06:00"/>
+                    </validityPeriod>
+                    <numberOfRepeatsAllowed value="1"/>
+                    <expectedSupplyDuration>
+                        <value value="30.0"/>
+                        <unit value="d"/>
+                    </expectedSupplyDuration>
+                </dispenseRequest>
+            </MedicationRequest>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-07-risk-assessment-context"/>
+        </request>
+    </entry>
+    <entry>
+        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Procedure/example-rec-07-risk-assessment-procedure"/>
+        <resource>
+            <Procedure xmlns="http://hl7.org/fhir">
+                <id value="example-rec-07-risk-assessment-procedure"/>
+                <status value="completed"/>
+                <code>
+                    <coding>
+                        <system value="http://snomed.info/sct"/>
+                        <code value="454281000124100"/>
+                        <display value="Assessment of risk for opioid abuse (procedure)"/>
+                    </coding>
+                </code>
+                <subject>
+                    <reference value="Patient/example-rec-07-risk-assessment"/>
+                </subject>
+                <performedPeriod>
+                    <start value="2018-03-04T00:00:00-07:00"/>
+                    <end value="2018-03-04T00:00:00-07:00"/>
+                </performedPeriod>
+            </Procedure>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Procedure/example-rec-07-risk-assessment-procedure"/>
+        </request>
+    </entry>
+    <entry>
+        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-07-risk-assessment"/>
+        <resource>
+            <Encounter xmlns="http://hl7.org/fhir">
+                <id value="example-rec-07-risk-assessment"/>
+                <status value="finished"/>
+                <subject>
+                    <reference value="Patient/example-rec-07-risk-assessment"/>
+                </subject>
+                <period>
+                    <start value="2018-03-18T19:42:30-06:00"/>
+                    <end value="2018-03-18T19:42:30-06:00"/>
+                </period>
+            </Encounter>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-07-risk-assessment"/>
+        </request>
+    </entry>
+</Bundle>

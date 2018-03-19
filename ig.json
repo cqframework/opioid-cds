@@ -247,6 +247,27 @@
       "base": "Encounter-example-rec-07-end-of-life-exclusion-old.html"
     },
 
+    "Bundle/example-rec-07-risk-assessment": {
+      "source": "bundle-example-rec-07-risk-assessment.xml",
+      "base": "Bundle-example-rec-07-risk-assessment.html"
+    },
+    "Patient/example-rec-07-risk-assessment": {
+      "source": "patient-example-rec-07-risk-assessment.xml",
+      "base": "Patient-example-rec-07-risk-assessment.html"
+    },
+    "Procedure/example-rec-07-risk-assessment-procedure": {
+      "source": "procedure-example-rec-07-risk-assessment-procedure.xml",
+      "base": "Procedure-example-rec-07-risk-assessment-procedure.html"
+    },
+    "MedicationRequest/example-rec-07-risk-assessment-context": {
+      "source": "medicationrequest-example-rec-07-risk-assessment-context.xml",
+      "base": "MedicationRequest-example-rec-07-risk-assessment-context.html"
+    },
+    "Encounter/example-rec-07-risk-assessment": {
+      "source": "encounter-example-rec-07-risk-assessment.xml",
+      "base": "Encounter-example-rec-07-risk-assessment.html"
+    },
+
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"

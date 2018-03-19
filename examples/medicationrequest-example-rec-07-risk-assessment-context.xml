@@ -1,0 +1,41 @@
+<MedicationRequest xmlns="http://hl7.org/fhir">
+    <id value="example-rec-07-risk-assessment-context"/>
+    <status value="active"/>
+    <intent value="order"/>
+    <category>
+        <coding>
+            <code value="outpatient"/>
+        </coding>
+    </category>
+    <medicationCodeableConcept>
+        <coding>
+            <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+            <code value="1049502"/>
+            <display value="12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
+        </coding>
+    </medicationCodeableConcept>
+    <subject>
+        <reference value="Patient/example-rec-07-risk-assessment"/>
+    </subject>
+    <authoredOn value="2018-03-18T19:42:30-06:00"/>
+    <dosageInstruction>
+        <timing>
+            <repeat>
+                <frequency value="1"/>
+                <period value="1.0"/>
+                <periodUnit value="d"/>
+            </repeat>
+        </timing>
+    </dosageInstruction>
+    <dispenseRequest>
+        <validityPeriod>
+            <start value="2018-03-18T19:42:30-06:00"/>
+            <end value="2018-06-18T00:00:00-06:00"/>
+        </validityPeriod>
+        <numberOfRepeatsAllowed value="1"/>
+        <expectedSupplyDuration>
+            <value value="30.0"/>
+            <unit value="d"/>
+        </expectedSupplyDuration>
+    </dispenseRequest>
+</MedicationRequest>
