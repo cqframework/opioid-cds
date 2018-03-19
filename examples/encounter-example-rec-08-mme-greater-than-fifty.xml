@@ -1,0 +1,11 @@
+<Encounter xmlns="http://hl7.org/fhir">
+    <id value="example-rec-08-mme-greater-than-fifty"/>
+    <status value="finished"/>
+    <subject>
+        <reference value="Patient/example-rec-08-mme-greater-than-fifty"/>
+    </subject>
+    <period>
+        <start value="2018-03-18T23:24:59-06:00"/>
+        <end value="2018-03-18T23:24:59-06:00"/>
+    </period>
+</Encounter>

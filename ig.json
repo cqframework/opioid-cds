@@ -268,6 +268,23 @@
       "base": "Encounter-example-rec-07-risk-assessment.html"
     },
 
+    "Bundle/example-rec-08-mme-greater-than-fifty": {
+      "source": "bundle-example-rec-08-mme-greater-than-fifty.xml",
+      "base": "Bundle-example-rec-08-mme-greater-than-fifty.html"
+    },
+    "Patient/example-rec-08-mme-greater-than-fifty": {
+      "source": "patient-example-rec-08-mme-greater-than-fifty.xml",
+      "base": "Patient-example-rec-08-mme-greater-than-fifty.html"
+    },
+    "MedicationRequest/example-rec-08-mme-greater-than-fifty": {
+      "source": "medicationrequest-example-rec-08-mme-greater-than-fifty.xml",
+      "base": "MedicationRequest-example-rec-08-mme-greater-than-fifty.html"
+    },
+    "Encounter/example-rec-08-mme-greater-than-fifty": {
+      "source": "encounter-example-rec-08-mme-greater-than-fifty.xml",
+      "base": "Encounter-example-rec-08-mme-greater-than-fifty.html"
+    },
+
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"
