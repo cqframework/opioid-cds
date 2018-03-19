@@ -1,5 +1,5 @@
 <MedicationRequest xmlns="http://hl7.org/fhir">
-    <id value="example-rec-07-risk-assessment-context"/>
+    <id value="example-rec-08-on-benzodiazepine-context"/>
     <status value="active"/>
     <intent value="order"/>
     <category>
@@ -10,17 +10,17 @@
     <medicationCodeableConcept>
         <coding>
             <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
-            <code value="1049502"/>
-            <display value="12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
+            <code value="197696"/>
+            <display value="72 HR Fentanyl 0.075 MG/HR Transdermal System"/>
         </coding>
     </medicationCodeableConcept>
     <subject>
-        <reference value="Patient/example-rec-07-risk-assessment"/>
+        <reference value="Patient/example-rec-08-on-benzodiazepine"/>
     </subject>
     <context>
-        <reference value="Encounter/example-rec-07-risk-assessment"/>
+        <reference value="Encounter/example-rec-08-on-benzodiazepine-context"/>
     </context>
-    <authoredOn value="2018-03-18T19:42:30-06:00"/>
+    <authoredOn value="2018-03-18T23:22:49-06:00"/>
     <dosageInstruction>
         <timing>
             <repeat>
@@ -29,13 +29,18 @@
                 <periodUnit value="d"/>
             </repeat>
         </timing>
+        <asNeededBoolean value="false"/>
+        <doseQuantity>
+            <value value="1.0"/>
+            <unit value="tablet"/>
+        </doseQuantity>
     </dosageInstruction>
     <dispenseRequest>
         <validityPeriod>
-            <start value="2018-03-18T19:42:30-06:00"/>
-            <end value="2018-06-18T00:00:00-06:00"/>
+            <start value="2018-03-18T23:22:49-06:00"/>
+            <end value="2018-09-18T00:00:00-06:00"/>
         </validityPeriod>
-        <numberOfRepeatsAllowed value="1"/>
+        <numberOfRepeatsAllowed value="3"/>
         <expectedSupplyDuration>
             <value value="30.0"/>
             <unit value="d"/>

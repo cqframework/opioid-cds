@@ -285,6 +285,31 @@
       "base": "Encounter-example-rec-08-mme-greater-than-fifty.html"
     },
 
+    "Bundle/example-rec-08-on-benzodiazepine": {
+      "source": "bundle-example-rec-08-on-benzodiazepine.xml",
+      "base": "Bundle-example-rec-08-on-benzodiazepine.html"
+    },
+    "Patient/example-rec-08-on-benzodiazepine": {
+      "source": "patient-example-rec-08-on-benzodiazepine.xml",
+      "base": "Patient-example-rec-08-on-benzodiazepine.html"
+    },
+    "MedicationRequest/example-rec-08-on-benzodiazepine-context": {
+      "source": "medicationrequest-example-rec-08-on-benzodiazepine-context.xml",
+      "base": "MedicationRequest-example-rec-08-on-benzodiazepine-context.html"
+    },
+    "MedicationRequest/example-rec-08-on-benzodiazepine-temazepam": {
+      "source": "medicationrequest-example-rec-08-on-benzodiazepine-temazepam.xml",
+      "base": "MedicationRequest-example-rec-08-on-benzodiazepine-temazepam.html"
+    },
+    "Encounter/example-rec-08-on-benzodiazepine-context": {
+      "source": "encounter-example-rec-08-on-benzodiazepine-context.xml",
+      "base": "Encounter-example-rec-08-on-benzodiazepine-context.html"
+    },
+    "Encounter/example-rec-08-on-benzodiazepine-temazepam": {
+      "source": "encounter-example-rec-08-on-benzodiazepine-temazepam.xml",
+      "base": "Encounter-example-rec-08-on-benzodiazepine-temazepam.html"
+    },
+
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"
