@@ -20,7 +20,7 @@
     <context>
         <reference value="Encounter/example-rec-07-sixtythree-of-past-ninety-days-old"/>
     </context>
-    <authoredOn value="2018-03-08T00:00:00-07:00"/>
+    <authoredOn value="2017-12-18T00:00:00-07:00"/>
     <dosageInstruction>
         <timing>
             <repeat>

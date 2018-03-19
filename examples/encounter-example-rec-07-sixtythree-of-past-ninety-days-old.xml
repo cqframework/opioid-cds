@@ -5,7 +5,7 @@
         <reference value="Patient/example-rec-07-sixtythree-of-past-ninety-days"/>
     </subject>
     <period>
-        <start value="2018-03-04T00:00:00-07:00"/>
-        <end value="2018-03-04T00:00:00-07:00"/>
+        <start value="2017-12-18T00:00:00-07:00"/>
+        <end value="2017-12-18T00:00:00-07:00"/>
     </period>
 </Encounter>
