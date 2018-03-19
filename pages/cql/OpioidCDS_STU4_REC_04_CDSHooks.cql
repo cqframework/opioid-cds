@@ -1,8 +1,8 @@
-library OpioidCDS_STU3_REC_04 version '0.1.0'
+library OpioidCDS_STU4_REC_04_CDSHooks version '0.1.0'
 
-using FHIR version '3.0.0'
+using FHIR version '3.2.0'
 
-include OpioidCDS_STU3_Common version '0.1.0' called Common
+include OpioidCDS_STU4_Common version '0.1.0' called Common
 
 /*
 **
@@ -28,8 +28,9 @@ include OpioidCDS_STU3_Common version '0.1.0' called Common
     Have availability to snooze if benefits outweigh risks or if not applicable
 */
 
-// Trigger Event Rx
 parameter ContextPrescription MedicationRequest
+parameter Orders List<MedicationRequest> // includes the ContextPrescription
+parameter Encounters List<Encounter>
 
 context Patient
 
@@ -51,14 +52,15 @@ define "Inclusion Criteria":
   "Validate Trigger Event"
   and not "Opioid with Ambulatory Care Abuse Potential in Past 90 Days"
   and exists(
-    [Encounter] encounters
-      where date from encounters.period."start".value in "Encounter Period"
+    Encounters encounters
+      where encounters.period."start".value in "Encounter Period"
   )
 
 define "Opioid with Ambulatory Care Abuse Potential in Past 90 Days":
   exists(
-      [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] orders
-        where date from orders.authoredOn.value in "Inclusion Period"
+      Orders orders
+        where Common.IsOpioidWithAmbulatoryAbusePotential(Common.ToCode(orders.medication.coding[0]))
+          and orders.authoredOn.value in "Inclusion Period"
     )
 
 define "Get Notification":

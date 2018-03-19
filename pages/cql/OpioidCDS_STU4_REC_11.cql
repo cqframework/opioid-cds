@@ -1,8 +1,8 @@
-library OpioidCDS_STU3_REC_11_CDSHooks version '0.1.0'
+library OpioidCDS_STU4_REC_11 version '0.1.0'
 
-using FHIR version '3.0.0'
+using FHIR version '3.2.0'
 
-include OpioidCDS_STU3_Common version '0.1.0' called Common
+include OpioidCDS_STU4_Common version '0.1.0' called Common
 
 /*
 **
@@ -28,7 +28,6 @@ include OpioidCDS_STU3_Common version '0.1.0' called Common
 */
 
 parameter ContextPrescription MedicationRequest
-parameter Orders List<MedicationRequest>
 
 context Patient
 
@@ -52,17 +51,11 @@ define "Inclusion Criteria":
 
 define "On Benzodiazepine":
  "Validate Trigger Event For Benzodiazepine"
- or exists(
-   Orders orders
-     where Common.IsBenzodiazepine(Common.ToCode(orders.medication.coding[0]))
- )
+ or exists( [MedicationRequest: Common."Benzodiazepines"] )
 
 define "Opioid with Ambulatory Care Abuse Potential":
   "Validate Trigger Event For Ambulatory Care Abuse Potential"
-  or exists(
-    Orders orders
-      where Common.IsOpioidWithAmbulatoryAbusePotential(Common.ToCode(orders.medication.coding[0]))
-  )
+  or exists( [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] )
 
 define "Get Notification":
   'Avoid prescribing opioid pain medication and benzodiazepine concurrently whenever possible.'

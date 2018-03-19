@@ -99,7 +99,7 @@
          </expression>
       </def>
       <def name="Get Notification" context="Patient" accessLevel="Public">
-         <expression valueType="t:String" value="Avoid prescribing opioid pain mediation and benzodiazepine concurrently whenever possible." xsi:type="Literal"/>
+         <expression valueType="t:String" value="Avoid prescribing opioid pain medication and benzodiazepine concurrently whenever possible." xsi:type="Literal"/>
       </def>
    </statements>
 </library>

@@ -1,6 +1,5 @@
 <PlanDefinition xmlns="http://hl7.org/fhir">
 	<id value="opioidcds-10-stu4"/>
-	<url value="http://hl7.org/fhir/ig/opioid-cds/PlanDefinition/opioidcds-10"/>
 	<identifier>
 		<use value="official"/>
 		<value value="cdc-opioid-guidance"/>
@@ -19,8 +18,6 @@
 	<date value="2017-04-23"/>
 	<publisher value="Centers for Disease Control and Prevention (CDC)"/>
 	<description value="When prescribing opioids for chronic pain, providers should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs."/>
-	<purpose value="CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care."/>
-	<usage value="Providers should be aware if patients are taking other prescription drugs or illicit drugs that might increase their risk of an overdose"/>
 	<useContext>
 		<code>
 			<system value="http://hl7.org/fhir/usage-context-type"/>
@@ -56,6 +53,8 @@
 			<display value="United States of America"/>
 		</coding>
 	</jurisdiction>
+	<purpose value="CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care."/>
+	<usage value="Providers should be aware if patients are taking other prescription drugs or illicit drugs that might increase their risk of an overdose"/>
 	<topic>
 		<text value="Opioid Prescribing"/>
 	</topic>

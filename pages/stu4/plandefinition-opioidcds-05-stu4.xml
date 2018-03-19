@@ -18,8 +18,6 @@
 	<date value="2017-04-23"/>
 	<publisher value="Centers for Disease Control and Prevention (CDC)"/>
 	<description value="When opioids are started, providers should prescribe the lowest effective dosage."/>
-	<purpose value="CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care."/>
-	<usage value="Providers should use caution when prescribing opioids at any dosage, should carefully reassess evidence of individual benefits and risks when considering increasing dosage to ≥50 morphine milligram equivalents (MME)/day, and should avoid increasing dosage to ≥90 MME/day or carefully justify a decision to titrate dosage to >90 MME/day"/>
 	<useContext>
 		<code>
 			<system value="http://hl7.org/fhir/usage-context-type"/>
@@ -55,6 +53,8 @@
 			<display value="United States of America"/>
 		</coding>
 	</jurisdiction>
+	<purpose value="CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care."/>
+	<usage value="Providers should use caution when prescribing opioids at any dosage, should carefully reassess evidence of individual benefits and risks when considering increasing dosage to ≥50 morphine milligram equivalents (MME)/day, and should avoid increasing dosage to ≥90 MME/day or carefully justify a decision to titrate dosage to >90 MME/day"/>
 	<topic>
 		<text value="Opioid Prescribing"/>
 	</topic>
