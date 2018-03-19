@@ -218,6 +218,35 @@
       "base": "Encounter-example-rec-07-sixtythree-of-past-ninety-days-old.html"
     },
 
+    "Bundle/example-rec-07-end-of-life-exclusion": {
+      "source": "bundle-example-rec-07-end-of-life-exclusion.xml",
+      "base": "Bundle-example-rec-07-end-of-life-exclusion.html"
+    },
+    "Patient/example-rec-07-end-of-life-exclusion": {
+      "source": "patient-example-rec-07-end-of-life-exclusion.xml",
+      "base": "Patient-example-rec-07-end-of-life-exclusion.html"
+    },
+    "MedicationRequest/example-rec-07-end-of-life-exclusion-oxycodone": {
+      "source": "medicationrequest-example-rec-07-end-of-life-exclusion-oxycodone.xml",
+      "base": "MedicationRequest-example-rec-07-end-of-life-exclusion-oxycodone.html"
+    },
+    "MedicationRequest/example-rec-07-end-of-life-exclusion-context": {
+      "source": "medicationrequest-example-rec-07-end-of-life-exclusion-context.xml",
+      "base": "MedicationRequest-example-rec-07-end-of-life-exclusion-context.html"
+    },
+    "MedicationRequest/example-rec-07-end-of-life-exclusion-eol": {
+      "source": "medicationrequest-example-rec-07-end-of-life-exclusion-eol.xml",
+      "base": "MedicationRequest-example-rec-07-end-of-life-exclusion-eol.html"
+    },
+    "Encounter/example-rec-07-end-of-life-exclusion-new": {
+      "source": "encounter-example-rec-07-end-of-life-exclusion-new.xml",
+      "base": "Encounter-example-rec-07-end-of-life-exclusion-new.html"
+    },
+    "Encounter/example-rec-07-end-of-life-exclusion-old": {
+      "source": "encounter-example-rec-07-end-of-life-exclusion-old.xml",
+      "base": "Encounter-example-rec-07-end-of-life-exclusion-old.html"
+    },
+
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"

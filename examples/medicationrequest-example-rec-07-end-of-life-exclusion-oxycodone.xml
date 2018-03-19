@@ -1,0 +1,44 @@
+<MedicationRequest xmlns="http://hl7.org/fhir">
+    <id value="example-rec-07-end-of-life-exclusion-oxycodone"/>
+    <status value="active"/>
+    <intent value="order"/>
+    <category>
+        <coding>
+            <code value="outpatient"/>
+        </coding>
+    </category>
+    <medicationCodeableConcept>
+        <coding>
+            <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+            <code value="1049502"/>
+            <display value="12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
+        </coding>
+    </medicationCodeableConcept>
+    <subject>
+        <reference value="Patient/example-rec-07-end-of-life-exclusion"/>
+    </subject>
+    <context>
+        <reference value="Encounter/example-rec-07-end-of-life-exclusion-old"/>
+    </context>
+    <authoredOn value="2018-02-04T00:00:00-07:00"/>
+    <dosageInstruction>
+        <timing>
+            <repeat>
+                <frequency value="1"/>
+                <period value="1.0"/>
+                <periodUnit value="d"/>
+            </repeat>
+        </timing>
+    </dosageInstruction>
+    <dispenseRequest>
+        <validityPeriod>
+            <start value="2018-02-04T00:00:00-07:00"/>
+            <end value="2018-04-29T00:00:00-06:00"/>
+        </validityPeriod>
+        <numberOfRepeatsAllowed value="1"/>
+        <expectedSupplyDuration>
+            <value value="63.0"/>
+            <unit value="d"/>
+        </expectedSupplyDuration>
+    </dispenseRequest>
+</MedicationRequest>
