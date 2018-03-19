@@ -440,13 +440,29 @@
       "source": "patient-example-opioidcds.xml",
       "base": "Patient-example-opioidcds.html"
     },
+    "PlanDefinition/opioidcds-04": {
+      "source": "plandefinition-opioidcds-04.xml",
+      "base": "PlanDefinition-opioidcds-04.html"
+    },
     "PlanDefinition/opioidcds-05": {
       "source": "plandefinition-opioidcds-05.xml",
       "base": "PlanDefinition-opioidcds-05.html"
     },
+    "PlanDefinition/opioidcds-07": {
+      "source": "plandefinition-opioidcds-07.xml",
+      "base": "PlanDefinition-opioidcds-07.html"
+    },
+    "PlanDefinition/opioidcds-08": {
+      "source": "plandefinition-opioidcds-08.xml",
+      "base": "PlanDefinition-opioidcds-08.html"
+    },
     "PlanDefinition/opioidcds-10": {
       "source": "plandefinition-opioidcds-10.xml",
       "base": "PlanDefinition-opioidcds-10.html"
+    },
+    "PlanDefinition/opioidcds-11": {
+      "source": "plandefinition-opioidcds-11.xml",
+      "base": "PlanDefinition-opioidcds-11.html"
     },
     "RequestGroup/example-opioidcds": {
       "source": "requestgroup-example-opioidcds.xml",

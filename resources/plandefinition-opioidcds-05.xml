@@ -1,9 +1,5 @@
 <PlanDefinition xmlns="http://hl7.org/fhir">
 	<id value="opioidcds-05"/>
-	<meta>
-		<versionId value="3"/>
-		<lastUpdated value="2017-11-30T12:58:02.574-07:00"/>
-	</meta>
 	<url value="http://hl7.org/fhir/ig/opioid-cds/PlanDefinition/cdc-opioid-05"/>
 	<identifier>
 		<use value="official"/>
@@ -93,6 +89,9 @@
 	<library>
 		<reference value="Library/opioidcds-recommendation-05"/>
 	</library>
+	<!--<library>-->
+	<!--<reference value="Library/opioidcds-recommendation-05-CDSHooks"/>-->
+	<!--</library>-->
 	<action>
 		<title value="High risk for opioid overdose."/>
 		<description value="Total morphine milligram equivalent (MME) exceeds recommended amount. Taper to less than 50."/>

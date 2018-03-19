@@ -58,4 +58,4 @@ define "Opioid with Ambulatory Care Abuse Potential":
   or exists( [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] )
 
 define "Get Notification":
-  'Avoid prescribing opioid pain mediation and benzodiazepine concurrently whenever possible.'
+  'Avoid prescribing opioid pain medication and benzodiazepine concurrently whenever possible.'

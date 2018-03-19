@@ -654,6 +654,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #4"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-04"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #5"/>
             <sourceReference>
@@ -662,10 +670,34 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #7"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #7"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-07"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #8"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #8"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-08"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-10"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #11"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-11"/>
             </sourceReference>
         </resource>
         <resource>

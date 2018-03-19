@@ -84,6 +84,9 @@
 	<library>
 		<reference value="Library/opioidcds-recommendation-10"/>
 	</library>
+	<!--<library>-->
+	<!--<reference value="Library/opioidcds-recommendation-10-CDSHooks"/>-->
+	<!--</library>-->
 	<action>
 		<title value="Annual Urine Screening Check"/>
 		<description value="Patient has not had a urine screening in the past 12 months"/>
