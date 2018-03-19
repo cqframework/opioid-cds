@@ -310,6 +310,35 @@
       "base": "Encounter-example-rec-08-on-benzodiazepine-temazepam.html"
     },
 
+    "Bundle/example-rec-10-missing-prescribed-opioids": {
+      "source": "bundle-example-rec-10-missing-prescribed-opioids.xml",
+      "base": "Bundle-example-rec-10-missing-prescribed-opioids.html"
+    },
+    "Patient/example-rec-10-missing-prescribed-opioids": {
+      "source": "patient-example-rec-10-missing-prescribed-opioids.xml",
+      "base": "Patient-example-rec-10-missing-prescribed-opioids.html"
+    },
+    "Observation/example-rec-10-missing-prescribed-opioids": {
+      "source": "observation-example-rec-10-missing-prescribed-opioids.xml",
+      "base": "Observation-example-rec-10-missing-prescribed-opioids.html"
+    },
+    "MedicationRequest/example-rec-10-missing-prescribed-opioids-context": {
+      "source": "medicationrequest-example-rec-10-missing-prescribed-opioids-context.xml",
+      "base": "MedicationRequest-example-rec-10-missing-prescribed-opioids-context.html"
+    },
+    "MedicationRequest/example-rec-10-missing-prescribed-opioids-inclusion": {
+      "source": "medicationrequest-example-rec-10-missing-prescribed-opioids-inclusion.xml",
+      "base": "MedicationRequest-example-rec-10-missing-prescribed-opioids-inclusion.html"
+    },
+    "Encounter/example-rec-10-missing-prescribed-opioids-context": {
+      "source": "encounter-example-rec-10-missing-prescribed-opioids-context.xml",
+      "base": "Encounter-example-rec-10-missing-prescribed-opioids-context.html"
+    },
+    "Encounter/example-rec-10-missing-prescribed-opioids-inclusion": {
+      "source": "encounter-example-rec-10-missing-prescribed-opioids-inclusion.xml",
+      "base": "Encounter-example-rec-10-missing-prescribed-opioids-inclusion.html"
+    },
+
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"
