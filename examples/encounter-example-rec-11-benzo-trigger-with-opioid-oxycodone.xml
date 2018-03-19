@@ -1,0 +1,11 @@
+<Encounter xmlns="http://hl7.org/fhir">
+    <id value="example-rec-11-benzo-trigger-with-opioid-oxycodone"/>
+    <status value="finished"/>
+    <subject>
+        <reference value="Patient/example-rec-11-benzo-trigger-with-opioid"/>
+    </subject>
+    <period>
+        <start value="2018-02-19T00:00:00-07:00"/>
+        <end value="2018-02-19T00:00:00-07:00"/>
+    </period>
+</Encounter>

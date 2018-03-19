@@ -339,6 +339,31 @@
       "base": "Encounter-example-rec-10-missing-prescribed-opioids-inclusion.html"
     },
 
+    "Bundle/example-rec-11-benzo-trigger-with-opioid": {
+      "source": "bundle-example-rec-11-benzo-trigger-with-opioid.xml",
+      "base": "Bundle-example-rec-11-benzo-trigger-with-opioid.html"
+    },
+    "Patient/example-rec-11-benzo-trigger-with-opioid": {
+      "source": "patient-example-rec-11-benzo-trigger-with-opioid.xml",
+      "base": "Patient-example-rec-11-benzo-trigger-with-opioid.html"
+    },
+    "MedicationRequest/example-rec-11-benzo-trigger-with-opioid-context": {
+      "source": "medicationrequest-example-rec-11-benzo-trigger-with-opioid-context.xml",
+      "base": "MedicationRequest-example-rec-11-benzo-trigger-with-opioid-context.html"
+    },
+    "MedicationRequest/example-rec-11-benzo-trigger-with-opioid-oxycodone": {
+      "source": "medicationrequest-example-rec-11-benzo-trigger-with-opioid-oxycodone.xml",
+      "base": "MedicationRequest-example-rec-11-benzo-trigger-with-opioid-oxycodone.html"
+    },
+    "Encounter/example-rec-11-benzo-trigger-with-opioid-context": {
+      "source": "encounter-example-rec-11-benzo-trigger-with-opioid-context.xml",
+      "base": "Encounter-example-rec-11-benzo-trigger-with-opioid-context.html"
+    },
+    "Encounter/example-rec-11-benzo-trigger-with-opioid-oxycodone": {
+      "source": "encounter-example-rec-11-benzo-trigger-with-opioid-oxycodone.xml",
+      "base": "Encounter-example-rec-11-benzo-trigger-with-opioid-oxycodone.html"
+    },
+
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"
