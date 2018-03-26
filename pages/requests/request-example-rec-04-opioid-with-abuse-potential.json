@@ -1,0 +1,160 @@
+{
+  "hookInstance": "2f18db83-4d60-4a5b-9396-ab4a6d4761ce",
+  "fhirServer": "http://measure.eval.kanvix.com/cqf-ruler/baseDstu3",
+  "hook": "medication-prescribe",
+  "user": "Practitioner/example",
+  "context": {
+    "patientId": "Patient/example-rec-04-opioid-with-abuse-potential",
+    "encounterId": "Encounter/example-rec-04-opioid-with-abuse-potential-context",
+    "medications": [
+      {
+        "resourceType": "MedicationRequest",
+        "id": "example-rec-04-opioid-with-abuse-potential-context",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049502",
+              "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-04-opioid-with-abuse-potential"
+        },
+        "context": {
+          "reference": "Encounter/example-rec-04-opioid-with-abuse-potential-context"
+        },
+        "_authoredOn": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today()"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 3.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseQuantity": {
+              "value": 1.0,
+              "unit": "patch"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "validityPeriod": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
+              }
+            ]
+          },
+          "numberOfRepeatsAllowed": 3,
+          "expectedSupplyDuration": {
+            "value": 30.0,
+            "unit": "d"
+          }
+        }
+      }
+    ]
+  },
+  "prefetch": {
+    "encounters": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-rec-04-opioid-with-abuse-potential-prefetch",
+        "status": "finished",
+        "subject": {
+          "reference": "Patient/example-rec-04-opioid-with-abuse-potential"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 2 weeks }, end: FHIR.dateTime { value: Today() - 2 weeks } }"
+            }
+          ]
+        }
+      }
+    },
+    "medications": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-rec-04-opioid-with-abuse-potential-prefetch",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049502",
+              "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-04-opioid-with-abuse-potential"
+        },
+        "context": {
+          "reference": "Encounter/example-rec-04-opioid-with-abuse-potential-prefetch"
+        },
+        "_authoredOn": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today() - 2 weeks"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 3.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseQuantity": {
+              "value": 1.0,
+              "unit": "patch"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "validityPeriod": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 2 weeks }, end: FHIR.dateTime { value: Today() + 3 months } }"
+              }
+            ]
+          },
+          "numberOfRepeatsAllowed": 3,
+          "expectedSupplyDuration": {
+            "value": 30.0,
+            "unit": "d"
+          }
+        }
+      }
+    }
+  }
+}

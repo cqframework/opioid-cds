@@ -1,0 +1,143 @@
+{
+  "hookInstance": "b31adb6f-edc6-4d8b-8f00-515c8cc06612",
+  "fhirServer": "http://measure.eval.kanvix.com/cqf-ruler/baseDstu3",
+  "hook": "medication-prescribe",
+  "user": "Practitioner/example",
+  "context": {
+    "patientId": "Patient/example-rec-07-risk-assessment",
+    "encounterId": "Encounter/example-rec-07-risk-assessment-context",
+    "medications": [
+      {
+        "resourceType": "MedicationRequest",
+        "id": "example-rec-07-risk-assessment-context",
+        "status": "active",
+        "intent": "order",
+        "category": {
+          "coding": [
+            {
+              "code": "outpatient"
+            }
+          ]
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049502",
+              "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-07-risk-assessment"
+        },
+        "context": {
+          "reference": "Encounter/example-rec-07-risk-assessment-context"
+        },
+        "_authoredOn": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today()"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseQuantity": {
+              "value": 1.0,
+              "unit": "tablet"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "validityPeriod": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
+              }
+            ]
+          },
+          "numberOfRepeatsAllowed": 1,
+          "expectedSupplyDuration": {
+            "value": 30.0,
+            "unit": "d"
+          }
+        }
+      }
+    ]
+  },
+  "prefetch": {
+    "encounters": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-rec-07-risk-assessment-prefetch",
+        "status": "finished",
+        "subject": {
+          "reference": "Patient/example-rec-07-risk-assessment"
+        },
+        "period": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 2 weeks }, end: FHIR.dateTime { value: Today() - 2 weeks } }"
+            }
+          ]
+        }
+      }
+    },
+    "medications": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {}
+    },
+    "procedures": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-rec-07-risk-assessment-prefetch",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "454281000124100",
+              "display": "Assessment of risk for opioid abuse (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-07-risk-assessment"
+        },
+        "context": {
+          "reference": "Encounter/example-rec-07-risk-assessment-prefetch"
+        },
+        "performedPeriod": {
+          "_start": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 2 weeks }, end: FHIR.dateTime { value: Today() - 2 weeks } }"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

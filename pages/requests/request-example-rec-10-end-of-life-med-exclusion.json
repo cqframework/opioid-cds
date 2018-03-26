@@ -1,0 +1,99 @@
+{
+  "hookInstance": "6daa3381-f99b-481d-836c-128f64659b1b",
+  "fhirServer": "http://measure.eval.kanvix.com/cqf-ruler/baseDstu3",
+  "hook": "medication-prescribe",
+  "user": "Practitioner/example",
+  "context": {
+    "patientId": "Patient/example-rec-10-end-of-life-med-exclusion",
+    "encounterId": "Encounter/example-rec-10-end-of-life-med-exclusion-context",
+    "medications": [
+      {
+        "resourceType": "MedicationRequest",
+        "id": "example-rec-10-end-of-life-med-exclusion-context",
+        "status": "active",
+        "intent": "order",
+        "category": {
+          "coding": [
+            {
+              "code": "outpatient"
+            }
+          ]
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1012727",
+              "display": "Carbinoxamine maleate 0.4 MG/ML / Hydrocodone Bitartrate 1 MG/ML / Pseudoephedrine Hydrochloride 6 MG/ML Oral Solution"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-10-end-of-life-med-exclusion"
+        },
+        "context": {
+          "reference": "Encounter/example-rec-10-end-of-life-med-exclusion-context"
+        },
+        "_authoredOn": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today()"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 12.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseQuantity": {
+              "value": 5.0,
+              "unit": "mL"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "validityPeriod": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
+              }
+            ]
+          },
+          "numberOfRepeatsAllowed": 3,
+          "expectedSupplyDuration": {
+            "value": 30.0,
+            "unit": "d"
+          }
+        }
+      }
+    ]
+  },
+  "prefetch": {
+    "encounters": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {}
+    },
+    "screenings": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {}
+    },
+    "medications": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {}
+    }
+  }
+}

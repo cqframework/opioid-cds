@@ -393,6 +393,27 @@
       "base": "Encounter-example-rec-10-missing-prescribed-opioids-prefetch.html"
     },
 
+    "Bundle/example-rec-10-no-screenings": {
+      "source": "bundle-example-rec-10-no-screenings.xml",
+      "base": "Bundle-example-rec-10-no-screenings.html"
+    },
+    "Patient/example-rec-10-no-screenings": {
+      "source": "patient-example-rec-10-no-screenings.xml",
+      "base": "Patient-example-rec-10-no-screenings.html"
+    },
+    "MedicationRequest/example-rec-10-no-screenings-prefetch": {
+      "source": "medicationrequest-example-rec-10-no-screenings-prefetch.xml",
+      "base": "MedicationRequest-example-rec-10-no-screenings-prefetch.html"
+    },
+    "Encounter/example-rec-10-no-screenings-context": {
+      "source": "encounter-example-rec-10-no-screenings-context.xml",
+      "base": "Encounter-example-rec-10-no-screenings-context.html"
+    },
+    "Encounter/example-rec-10-no-screenings-prefetch": {
+      "source": "encounter-example-rec-10-no-screenings-prefetch.xml",
+      "base": "Encounter-example-rec-10-no-screenings-prefetch.html"
+    },
+
     "Bundle/example-rec-10-not-missing-prescribed-opioids": {
       "source": "bundle-example-rec-10-not-missing-prescribed-opioids.xml",
       "base": "Bundle-example-rec-10-not-missing-prescribed-opioids.html"

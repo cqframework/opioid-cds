@@ -544,6 +544,37 @@
         <resource>
             <example value="true"/>
             <sourceReference>
+                <reference value="Bundle/example-rec-10-no-screenings"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-10-no-screenings"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-10-no-screenings-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-no-screenings-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-no-screenings-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
                 <reference value="Bundle/example-rec-10-not-missing-prescribed-opioids"/>
             </sourceReference>
         </resource>
