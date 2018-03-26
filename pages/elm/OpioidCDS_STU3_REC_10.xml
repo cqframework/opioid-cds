@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
-   <annotation startLine="60" startChar="5" endLine="60" endChar="53" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="60" startChar="5" endLine="60" endChar="53" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="65" startChar="3" endLine="65" endChar="66" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="65" startChar="3" endLine="65" endChar="66" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="76" startChar="3" endLine="76" endChar="64" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="76" startChar="3" endLine="76" endChar="64" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="81" startChar="3" endLine="81" endChar="63" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="81" startChar="3" endLine="81" endChar="63" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="136" startChar="20" endLine="136" endChar="76" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="145" startChar="16" endLine="145" endChar="17" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="159" startChar="52" endLine="159" endChar="73" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="173" startChar="62" endLine="173" endChar="78" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="62" startChar="12" endLine="62" endChar="60" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="62" startChar="12" endLine="62" endChar="60" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="66" startChar="3" endLine="66" endChar="66" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="66" startChar="3" endLine="66" endChar="66" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="74" startChar="3" endLine="74" endChar="64" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="74" startChar="3" endLine="74" endChar="64" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="79" startChar="3" endLine="79" endChar="63" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="79" startChar="3" endLine="79" endChar="63" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="134" startChar="20" endLine="134" endChar="76" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="143" startChar="16" endLine="143" endChar="17" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="157" startChar="52" endLine="157" endChar="73" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="171" startChar="62" endLine="171" endChar="78" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <identifier id="OpioidCDS_STU3_REC_10" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
@@ -22,8 +22,10 @@
       <def localIdentifier="Common" path="OpioidCDS_STU3_Common" version="0.1.0"/>
    </includes>
    <parameters>
-      <def name="ContextPrescription" accessLevel="Public">
-         <parameterTypeSpecifier name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+      <def name="ContextPrescriptions" accessLevel="Public">
+         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
       </def>
    </parameters>
    <statements>
@@ -32,24 +34,37 @@
             <operand dataType="fhir:Patient" xsi:type="Retrieve"/>
          </expression>
       </def>
+      <def name="Lookback Year" context="Patient" accessLevel="Public">
+         <expression lowClosed="true" highClosed="true" xsi:type="Interval">
+            <low xsi:type="Subtract">
+               <operand xsi:type="Subtract">
+                  <operand xsi:type="Today"/>
+                  <operand value="12" unit="months" xsi:type="Quantity"/>
+               </operand>
+               <operand value="1" unit="days" xsi:type="Quantity"/>
+            </low>
+            <high xsi:type="Subtract">
+               <operand xsi:type="Today"/>
+               <operand value="1" unit="day" xsi:type="Quantity"/>
+            </high>
+         </expression>
+      </def>
       <def name="Validate Trigger Event" context="Patient" accessLevel="Public">
          <expression xsi:type="Exists">
-            <operand xsi:type="ToList">
-               <operand xsi:type="Query">
-                  <source alias="triggerScript">
-                     <expression name="ContextPrescription" xsi:type="ParameterRef"/>
-                  </source>
-                  <where name="IsOpioidWithAmbulatoryAbusePotential" libraryName="Common" xsi:type="FunctionRef">
-                     <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
-                        <operand xsi:type="Indexer">
-                           <operand path="coding" xsi:type="Property">
-                              <source path="medication" scope="triggerScript" xsi:type="Property"/>
-                           </operand>
-                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+            <operand xsi:type="Query">
+               <source alias="triggerScript">
+                  <expression name="ContextPrescriptions" xsi:type="ParameterRef"/>
+               </source>
+               <where name="IsOpioidWithAmbulatoryAbusePotential" libraryName="Common" xsi:type="FunctionRef">
+                  <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                     <operand xsi:type="Indexer">
+                        <operand path="coding" xsi:type="Property">
+                           <source path="medication" scope="triggerScript" xsi:type="Property"/>
                         </operand>
+                        <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
                      </operand>
-                  </where>
-               </operand>
+                  </operand>
+               </where>
             </operand>
          </expression>
       </def>
@@ -91,21 +106,6 @@
                   <operand valueType="t:String" value="outpatient" xsi:type="Literal"/>
                </operand>
             </where>
-         </expression>
-      </def>
-      <def name="Lookback Year" context="Patient" accessLevel="Public">
-         <expression lowClosed="true" highClosed="true" xsi:type="Interval">
-            <low xsi:type="Subtract">
-               <operand xsi:type="Subtract">
-                  <operand xsi:type="Today"/>
-                  <operand value="1" unit="year" xsi:type="Quantity"/>
-               </operand>
-               <operand value="1" unit="day" xsi:type="Quantity"/>
-            </low>
-            <high xsi:type="Subtract">
-               <operand xsi:type="Today"/>
-               <operand value="1" unit="day" xsi:type="Quantity"/>
-            </high>
          </expression>
       </def>
       <def name="Get Illicit Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">

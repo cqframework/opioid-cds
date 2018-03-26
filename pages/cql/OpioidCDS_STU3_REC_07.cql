@@ -46,13 +46,19 @@ codesystem "SNOMED": 'http://snomed.info/sct'
 code "Assessment of risk for opioid abuse": '454281000124100' from "SNOMED"
 code "High risk drug monitoring": '268525008' from "SNOMED"
 
-parameter ContextPrescription MedicationRequest
+parameter ContextPrescriptions List<MedicationRequest>
 
 context Patient
 
+define "Risk Assessment Interval":
+  Interval[Today() - 91 days, Today() - 1 day]
+
+define "Encounter Interval":
+  Interval[Today() - 12 months - 1 days, Today() - 1 day]
+
 define "Validate Trigger Event":
   exists(
-    ContextPrescription triggerScript
+    ContextPrescriptions triggerScript
       where Common.IsOpioidWithAmbulatoryAbusePotential(Common.ToCode(triggerScript.medication.coding[0]))
   )
 
@@ -60,9 +66,7 @@ define "Inclusion Criteria":
   "Validate Trigger Event"
     and not "Exclusion Criteria"
     and not exists ( "Opioid Risk Assessment in Past 90 Days" )
-    and
-      ((Common.ProbableDaysInRange("Get Active Ambulatory Opioid Rx", 10, 7) and exists("Encounter in past 12 months"))
-        or Common.ProbableDaysInRange("Get Active Ambulatory Opioid Rx", 90, 63))
+    and ( "Rx Active 7 of Past 10 Days With Encounter" or "Rx Active 63 of Past 90 Days" )
 
 define "Exclusion Criteria":
   exists ( "Medications Indicating End Of Life" )
@@ -77,17 +81,11 @@ define "Medications Indicating End Of Life":
 //   [Condition: "End Of Life Conditions"] endOfLifeConditions
 //     where endOfLifeConditions.clinicalStatus.value = 'active'
 
-define "Risk Assessment Interval":
-  Interval[Today() - 90 days, Today() - 1 day]
-
 define "Opioid Risk Assessment in Past 90 Days":
   ([Procedure: "Assessment of risk for opioid abuse"]
       union [Procedure: "High risk drug monitoring"]) riskAssessment
     where
       riskAssessment.performed."start".value in "Risk Assessment Interval"
-
-define "Encounter Interval":
-  Interval[Today() - 1 year, Today() - 1 day]
 
 define "Encounter in past 12 months":
   [Encounter] E
@@ -101,5 +99,19 @@ define "Get Active Ambulatory Opioid Rx":
       //  (Rx.dosageInstruction.asNeeded is null
       //    or not Rx.dosageInstruction.asNeeded.value)
 
-define "Get Notification":
+define "Rx Active 7 of Past 10 Days With Encounter":
+  AnyTrue(Common.ProbableDaysInRange("Get Active Ambulatory Opioid Rx", 10, 7)) and exists("Encounter in past 12 months")
+
+define "Rx Active 63 of Past 90 Days":
+  AnyTrue(Common.ProbableDaysInRange("Get Active Ambulatory Opioid Rx", 90, 63))
+
+define "Get Indicator":
+  'warning'
+
+define "Get Summary":
   'Patients on opioid therapy should be evaluated for benefits and harms within 1 to 4 weeks of starting opioid therapy and every 3 months or more subsequently.'
+
+define "Get Detail":
+  if "Rx Active 63 of Past 90 Days"
+    then 'No evaluation for benefits and harms associated with opioid therapy has been performed for the patient in the past 3 months'
+  else 'No evaluation for benefits and harms has been performed for the patient starting opioid therapy'

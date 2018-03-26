@@ -35,13 +35,16 @@ include OpioidCDS_STU4_Common version '0.1.0' called Common
     Have availability to snooze for 3 months
 */
 
-parameter ContextPrescription MedicationRequest
+parameter ContextPrescriptions List<MedicationRequest>
 
 context Patient
 
+define "Lookback Year":
+  Interval[Today() - 12 months - 1 days, Today() - 1 day]
+
 define "Validate Trigger Event":
   exists (
-    ContextPrescription triggerScript
+    ContextPrescriptions triggerScript
       where Common.IsOpioidWithAmbulatoryAbusePotential(Common.ToCode(triggerScript.medication.coding[0]))
   )
 
@@ -56,9 +59,7 @@ define "Inclusion Criteria":
           or "Has Illicit Drugs in Screening?")
 
 define "Exclusion Criteria":
-  exists (
-    [MedicationRequest: Common."End Of Life Opioids"]
-  )
+  exists ( [MedicationRequest: Common."End Of Life Opioids"] )
   or Common.HasMetastaticCancer
 
 define "Get Active Ambulatory Opioid Rx":
@@ -68,9 +69,6 @@ define "Get Active Ambulatory Opioid Rx":
       //and
       //  (Rx.dosageInstruction.asNeeded is null
       //    or not Rx.dosageInstruction.asNeeded.value)
-
-define "Lookback Year":
-  Interval[Today() - 1 year - 1 day, Today() - 1 day]
 
 define "Get Illicit Drug Urine Screenings in Last 12 Months":
   [Observation: "combo-code" in Common."Illicit Drug Screening"] observation
@@ -101,7 +99,7 @@ define "Positive Illicit Drug Screening":
         else false)
 
 define "Has Illicit Drugs in Screening?":
-  exists ("Positive Illicit Drug Screening")
+  exists ( "Positive Illicit Drug Screening" )
 
 // Assuming only one code
 define "Inconsistent Illicit Drugs":
@@ -121,7 +119,7 @@ define "Positive Opioid Drug Screening":
         else false)
 
 define "Has Opioids in Screening?":
-  exists ("Positive Opioid Drug Screening")
+  exists ( "Positive Opioid Drug Screening" )
 
 define "Orders Before Most Recent Opioid Screening":
   "Get Active Ambulatory Opioid Rx" orders

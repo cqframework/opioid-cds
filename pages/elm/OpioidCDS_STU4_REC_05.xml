@@ -13,7 +13,7 @@
       <def name="UserID" accessLevel="Public">
          <parameterTypeSpecifier name="t:String" xsi:type="NamedTypeSpecifier"/>
       </def>
-      <def name="Orders" accessLevel="Public">
+      <def name="ContextPrescriptions" accessLevel="Public">
          <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
             <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
          </parameterTypeSpecifier>
@@ -25,28 +25,75 @@
             <operand dataType="fhir:Patient" xsi:type="Retrieve"/>
          </expression>
       </def>
-      <def name="MMETotal" context="Patient" accessLevel="Public">
-         <expression name="TotalMME" libraryName="MMECommon" xsi:type="FunctionRef">
-            <operand name="Orders" xsi:type="ParameterRef"/>
+      <def name="Get Active Prescriptions" context="Patient" accessLevel="Public">
+         <expression xsi:type="Query">
+            <source alias="activeRx">
+               <expression dataType="fhir:MedicationRequest" xsi:type="Retrieve"/>
+            </source>
+            <where xsi:type="And">
+               <operand xsi:type="Equal">
+                  <operand path="value" xsi:type="Property">
+                     <source path="status" scope="activeRx" xsi:type="Property"/>
+                  </operand>
+                  <operand valueType="t:String" value="active" xsi:type="Literal"/>
+               </operand>
+               <operand xsi:type="Equal">
+                  <operand path="value" xsi:type="Property">
+                     <source path="code" xsi:type="Property">
+                        <source xsi:type="Indexer">
+                           <operand xsi:type="Flatten">
+                              <operand xsi:type="Query">
+                                 <source alias="$this">
+                                    <expression path="category" scope="activeRx" xsi:type="Property"/>
+                                 </source>
+                                 <where xsi:type="Not">
+                                    <operand xsi:type="IsNull">
+                                       <operand path="coding" xsi:type="Property">
+                                          <source name="$this" xsi:type="AliasRef"/>
+                                       </operand>
+                                    </operand>
+                                 </where>
+                                 <return>
+                                    <expression path="coding" xsi:type="Property">
+                                       <source name="$this" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </operand>
+                           </operand>
+                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                        </source>
+                     </source>
+                  </operand>
+                  <operand valueType="t:String" value="outpatient" xsi:type="Literal"/>
+               </operand>
+            </where>
          </expression>
       </def>
-      <def name="IsMME50OrMore" context="Patient" accessLevel="Public">
+      <def name="Total MME" context="Patient" accessLevel="Public">
+         <expression name="TotalMME" libraryName="MMECommon" xsi:type="FunctionRef">
+            <operand xsi:type="Union">
+               <operand name="ContextPrescriptions" xsi:type="ParameterRef"/>
+               <operand name="Get Active Prescriptions" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def name="Is MME 50 Or More?" context="Patient" accessLevel="Public">
          <expression xsi:type="GreaterOrEqual">
-            <operand name="MMETotal" xsi:type="ExpressionRef"/>
+            <operand name="Total MME" xsi:type="ExpressionRef"/>
             <operand value="50" unit="mg/d" xsi:type="Quantity"/>
          </expression>
       </def>
-      <def name="getIndicator" context="Patient" accessLevel="Public">
+      <def name="Get Indicator" context="Patient" accessLevel="Public">
          <expression valueType="t:String" value="warning" xsi:type="Literal"/>
       </def>
-      <def name="getSummary" context="Patient" accessLevel="Public">
+      <def name="Get Summary" context="Patient" accessLevel="Public">
          <expression xsi:type="Concatenate">
             <operand valueType="t:String" value="High risk for opioid overdose - " xsi:type="Literal"/>
             <operand xsi:type="Case">
                <caseItem>
                   <when xsi:type="GreaterOrEqual">
                      <operand path="value" xsi:type="Property">
-                        <source name="MMETotal" xsi:type="ExpressionRef"/>
+                        <source name="Total MME" xsi:type="ExpressionRef"/>
                      </operand>
                      <operand xsi:type="ToDecimal">
                         <operand valueType="t:Integer" value="90" xsi:type="Literal"/>
@@ -58,12 +105,12 @@
             </operand>
          </expression>
       </def>
-      <def name="getDetail" context="Patient" accessLevel="Public">
+      <def name="Get Detail" context="Patient" accessLevel="Public">
          <expression xsi:type="Concatenate">
             <operand xsi:type="Concatenate">
                <operand valueType="t:String" value="Total morphine milligram equivalent (MME) is " xsi:type="Literal"/>
                <operand xsi:type="ToString">
-                  <operand name="MMETotal" xsi:type="ExpressionRef"/>
+                  <operand name="Total MME" xsi:type="ExpressionRef"/>
                </operand>
             </operand>
             <operand valueType="t:String" value=". Taper to less than 50." xsi:type="Literal"/>

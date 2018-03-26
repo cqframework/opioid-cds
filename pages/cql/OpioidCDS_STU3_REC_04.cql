@@ -29,7 +29,7 @@ include OpioidCDS_STU3_Common version '0.1.0' called Common
 */
 
 // Trigger Event Rx
-parameter ContextPrescription MedicationRequest
+parameter ContextPrescriptions List<MedicationRequest>
 
 context Patient
 
@@ -37,15 +37,22 @@ define "Inclusion Period":
   Interval[Today() - 91 days, Today() - 1 days]
 
 define "Encounter Period":
-  Interval[Today() - 1 years - 1 days, Today() - 1 days]
+  Interval[Today() - 12 months - 1 days, Today() - 1 days]
+
+define "Get Trigger Trigger Event Prescription Ids":
+  "Get Trigger Event Prescriptions" triggerScripts
+    let codeString: ''
+    return
+      codeString + triggerScripts.id.value + ' '
+
+define "Get Trigger Event Prescriptions":
+  ContextPrescriptions triggerScripts
+    let rxNormCode: Common.ToCode(triggerScripts.medication.coding[0])
+      where Common.IsOpioidWithAmbulatoryAbusePotential(rxNormCode)
+        and Common.IsLongActingOpioid(rxNormCode)
 
 define "Validate Trigger Event":
-  exists(
-    ContextPrescription triggerScript
-      let rxNormCode: Common.ToCode(triggerScript.medication.coding[0])
-        where Common.IsOpioidWithAmbulatoryAbusePotential(rxNormCode)
-          and Common.IsLongActingOpioid(rxNormCode)
-  )
+  exists( "Get Trigger Event Prescriptions" )
 
 define "Inclusion Criteria":
   "Validate Trigger Event"
@@ -57,9 +64,17 @@ define "Inclusion Criteria":
 
 define "Opioid with Ambulatory Care Abuse Potential in Past 90 Days":
   exists(
-      [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] orders
-        where date from orders.authoredOn.value in "Inclusion Period"
-    )
+    [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] orders
+      where date from orders.authoredOn.value in "Inclusion Period"
+  )
 
-define "Get Notification":
+define "Get Indicator":
+  'warning'
+
+define "Get Summary":
   'Recommend use of immediate-release opioids instead of extended release/long acting opioids when starting patient on opioids.'
+
+define "Get Detail":
+  'The following medication requests(s) release rates should be re-evaluated: ' + "Get Trigger Trigger Event Prescription Ids"
+
+// TODO - I would like to be able to offer the medication's immediate release form as a suggestions

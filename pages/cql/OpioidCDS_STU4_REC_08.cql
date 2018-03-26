@@ -39,13 +39,13 @@ include OpioidCDS_STU4_Common version '0.1.0' called Common
 
 valueset "Substance Abuse": 'TODO'
 
-parameter ContextPrescription MedicationRequest
+parameter ContextPrescriptions List<MedicationRequest>
 
 context Patient
 
 define "Validate Trigger Event":
   exists(
-    ContextPrescription triggerScript
+    ContextPrescriptions triggerScript
       where Common.IsOpioidWithAmbulatoryAbusePotential(Common.ToCode(triggerScript.medication.coding[0]))
   )
 
@@ -60,9 +60,7 @@ define "Inclusion Criteria":
   )
 
 define "Exclusion Criteria":
-  exists(
-    [MedicationRequest: Common."Naloxone"]
-  )
+  exists( [MedicationRequest: Common."Naloxone"] )
 
 define "Average MME":
   Common.TotalMME("Get Active Ambulatory Opioid Rx")
@@ -73,9 +71,7 @@ define "MME >= 50 mg/d?":
   else "Average MME" >= 50 'mg/d'
 
 define "On Benzodiazepine":
-  exists(
-    [MedicationRequest: Common."Benzodiazepines"]
-  )
+  exists( [MedicationRequest: Common."Benzodiazepines"] )
 
 define "Has Substance Abuse History":
   exists ( [Condition: "Substance Abuse"] )
@@ -88,7 +84,13 @@ define "Get Active Ambulatory Opioid Rx":
         //and
         //  (Rx.dosageInstruction.asNeeded is null
         //    or not Rx.dosageInstruction.asNeeded.value
-  ) union ContextPrescription
+  ) union ContextPrescriptions
+
+define "Get Indicator":
+  'warning'
+
+define "Get Summary":
+  'Incorporate into the management plan strategies to mitigate risk; including considering offering naloxone when factors that increase risk for opioid overdose are present'
 
 define "Get Notification":
   'Consider offering naloxone given following risk factor(s) for opioid overdose: '

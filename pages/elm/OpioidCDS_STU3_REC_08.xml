@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
-   <annotation startLine="64" startChar="5" endLine="64" endChar="42" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="64" startChar="5" endLine="64" endChar="42" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="85" startChar="5" endLine="85" endChar="68" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="85" startChar="5" endLine="85" endChar="68" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="77" startChar="5" endLine="77" endChar="49" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="77" startChar="5" endLine="77" endChar="49" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="81" startChar="12" endLine="81" endChar="41" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="63" startChar="11" endLine="63" endChar="48" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="63" startChar="11" endLine="63" endChar="48" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="81" startChar="5" endLine="81" endChar="68" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="81" startChar="5" endLine="81" endChar="68" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="74" startChar="11" endLine="74" endChar="55" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="74" startChar="11" endLine="74" endChar="55" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="77" startChar="12" endLine="77" endChar="41" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <identifier id="OpioidCDS_STU3_REC_08" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
@@ -17,8 +17,10 @@
       <def localIdentifier="Common" path="OpioidCDS_STU3_Common" version="0.1.0"/>
    </includes>
    <parameters>
-      <def name="ContextPrescription" accessLevel="Public">
-         <parameterTypeSpecifier name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+      <def name="ContextPrescriptions" accessLevel="Public">
+         <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
       </def>
    </parameters>
    <valueSets>
@@ -32,22 +34,20 @@
       </def>
       <def name="Validate Trigger Event" context="Patient" accessLevel="Public">
          <expression xsi:type="Exists">
-            <operand xsi:type="ToList">
-               <operand xsi:type="Query">
-                  <source alias="triggerScript">
-                     <expression name="ContextPrescription" xsi:type="ParameterRef"/>
-                  </source>
-                  <where name="IsOpioidWithAmbulatoryAbusePotential" libraryName="Common" xsi:type="FunctionRef">
-                     <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
-                        <operand xsi:type="Indexer">
-                           <operand path="coding" xsi:type="Property">
-                              <source path="medication" scope="triggerScript" xsi:type="Property"/>
-                           </operand>
-                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+            <operand xsi:type="Query">
+               <source alias="triggerScript">
+                  <expression name="ContextPrescriptions" xsi:type="ParameterRef"/>
+               </source>
+               <where name="IsOpioidWithAmbulatoryAbusePotential" libraryName="Common" xsi:type="FunctionRef">
+                  <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                     <operand xsi:type="Indexer">
+                        <operand path="coding" xsi:type="Property">
+                           <source path="medication" scope="triggerScript" xsi:type="Property"/>
                         </operand>
+                        <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
                      </operand>
-                  </where>
-               </operand>
+                  </operand>
+               </where>
             </operand>
          </expression>
       </def>
@@ -88,9 +88,7 @@
                   </operand>
                </where>
             </operand>
-            <operand xsi:type="ToList">
-               <operand name="ContextPrescription" xsi:type="ParameterRef"/>
-            </operand>
+            <operand name="ContextPrescriptions" xsi:type="ParameterRef"/>
          </expression>
       </def>
       <def name="Average MME" context="Patient" accessLevel="Public">
@@ -139,6 +137,12 @@
                <codes name="Substance Abuse" xsi:type="ValueSetRef"/>
             </operand>
          </expression>
+      </def>
+      <def name="Get Indicator" context="Patient" accessLevel="Public">
+         <expression valueType="t:String" value="warning" xsi:type="Literal"/>
+      </def>
+      <def name="Get Summary" context="Patient" accessLevel="Public">
+         <expression valueType="t:String" value="Incorporate into the management plan strategies to mitigate risk; including considering offering naloxone when factors that increase risk for opioid overdose are present" xsi:type="Literal"/>
       </def>
       <def name="Get Notification" context="Patient" accessLevel="Public">
          <expression xsi:type="Concatenate">

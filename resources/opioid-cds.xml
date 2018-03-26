@@ -27,25 +27,38 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-04-long-acting-opioid-context"/>
+                <reference value="MedicationRequest/example-rec-04-long-acting-opioid-prefetch"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-04-long-acting-opioid-oxycodone"/>
+                <reference value="Encounter/example-rec-04-long-acting-opioid-context"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Encounter/example-rec-04-long-acting-opioid-new"/>
+                <reference value="Encounter/example-rec-04-long-acting-opioid-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-04-new-patient"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Encounter/example-rec-04-long-acting-opioid-old"/>
+                <reference value="Patient/example-rec-04-new-patient"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-new-patient-context"/>
             </sourceReference>
         </resource>
 
@@ -64,25 +77,19 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-04-not-long-acting-opioid-context"/>
+                <reference value="MedicationRequest/example-rec-04-not-long-acting-opioid-prefetch"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-04-not-long-acting-opioid-oxycodone"/>
+                <reference value="Encounter/example-rec-04-not-long-acting-opioid-context"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Encounter/example-rec-04-not-long-acting-opioid-new"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-04-not-long-acting-opioid-old"/>
+                <reference value="Encounter/example-rec-04-not-long-acting-opioid-prefetch"/>
             </sourceReference>
         </resource>
 
@@ -101,25 +108,19 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-04-opioid-with-abuse-potential-context"/>
+                <reference value="MedicationRequest/example-rec-04-opioid-with-abuse-potential-prefetch"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-04-opioid-with-abuse-potential-oxycodone"/>
+                <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-context"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-new"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-old"/>
+                <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-prefetch"/>
             </sourceReference>
         </resource>
 
@@ -138,13 +139,7 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-05-mme-greater-than-fifty"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-05-mme-greater-than-fifty"/>
+                <reference value="Encounter/example-rec-05-mme-greater-than-fifty-context"/>
             </sourceReference>
         </resource>
 
@@ -163,124 +158,7 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-05-mme-less-than-fifty"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-05-mme-less-than-fifty"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Bundle/example-rec-07-seven-of-past-ten-days"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-07-seven-of-past-ten-days"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-07-seven-of-past-ten-days-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-07-seven-of-past-ten-days-oxycodone"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-07-seven-of-past-ten-days-new"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-07-seven-of-past-ten-days-old"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Bundle/example-rec-07-six-of-past-ten-days"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-07-six-of-past-ten-days"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-07-six-of-past-ten-days-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-07-six-of-past-ten-days-oxycodone"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-07-six-of-past-ten-days-new"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-07-six-of-past-ten-days-old"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Bundle/example-rec-07-sixtythree-of-past-ninety-days"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-07-sixtythree-of-past-ninety-days"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-07-sixtythree-of-past-ninety-days-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-07-sixtythree-of-past-ninety-days-oxycodone"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-07-sixtythree-of-past-ninety-days-new"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-07-sixtythree-of-past-ninety-days-old"/>
+                <reference value="Encounter/example-rec-05-mme-less-than-fifty-context"/>
             </sourceReference>
         </resource>
 
@@ -299,31 +177,19 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-07-end-of-life-exclusion-context"/>
+                <reference value="MedicationRequest/example-rec-07-end-of-life-exclusion-prefetch"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-07-end-of-life-exclusion-oxycodone"/>
+                <reference value="Encounter/example-rec-07-end-of-life-exclusion-context"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-07-end-of-life-exclusion-eol"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-07-end-of-life-exclusion-new"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-07-end-of-life-exclusion-old"/>
+                <reference value="Encounter/example-rec-07-end-of-life-exclusion-prefetch"/>
             </sourceReference>
         </resource>
 
@@ -342,19 +208,143 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-07-risk-assessment-context"/>
+                <reference value="Procedure/example-rec-07-risk-assessment-prefetch"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Procedure/example-rec-07-risk-assessment-procedure"/>
+                <reference value="Encounter/example-rec-07-risk-assessment-context"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Encounter/example-rec-07-risk-assessment"/>
+                <reference value="Encounter/example-rec-07-risk-assessment-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-07-seven-of-past-ten-days"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-07-seven-of-past-ten-days"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-07-seven-of-past-ten-days-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-07-seven-of-past-ten-days-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-07-seven-of-past-ten-days-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-07-six-of-past-ten-days"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-07-six-of-past-ten-days"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-07-six-of-past-ten-days-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-07-six-of-past-ten-days-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-07-six-of-past-ten-days-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-07-sixtythree-of-past-ninety-days"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-07-sixtythree-of-past-ninety-days"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-07-sixtythree-of-past-ninety-days-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-07-sixtythree-of-past-ninety-days-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-07-sixtythree-of-past-ninety-days-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-07-sixtytwo-of-past-ninety-days"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-07-sixtytwo-of-past-ninety-days"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-07-sixtytwo-of-past-ninety-days-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-07-sixtytwo-of-past-ninety-days-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-07-sixtytwo-of-past-ninety-days-prefetch"/>
             </sourceReference>
         </resource>
 
@@ -373,13 +363,26 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-08-mme-greater-than-fifty"/>
+                <reference value="Encounter/example-rec-08-mme-greater-than-fifty-context"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-08-mme-less-than-fifty"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Encounter/example-rec-08-mme-greater-than-fifty"/>
+                <reference value="Patient/example-rec-08-mme-less-than-fifty"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-08-mme-less-than-fifty-context"/>
             </sourceReference>
         </resource>
 
@@ -398,13 +401,7 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-08-on-benzodiazepine-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-08-on-benzodiazepine-temazepam"/>
+                <reference value="MedicationRequest/example-rec-08-on-benzodiazepine-prefetch"/>
             </sourceReference>
         </resource>
         <resource>
@@ -416,7 +413,94 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Encounter/example-rec-08-on-benzodiazepine-temazepam"/>
+                <reference value="Encounter/example-rec-08-on-benzodiazepine-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-08-on-naloxone"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-08-on-naloxone"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-08-on-naloxone-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-08-on-naloxone-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-08-on-naloxone-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-10-end-of-life-med-exclusion"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-10-end-of-life-med-exclusion"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-end-of-life-med-exclusion-context"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-10-illicit-drugs"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-10-illicit-drugs"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Observation/example-rec-10-illicit-drugs-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-10-illicit-drugs-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-illicit-drugs-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-illicit-drugs-prefetch"/>
             </sourceReference>
         </resource>
 
@@ -435,19 +519,13 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Observation/example-rec-10-missing-prescribed-opioids"/>
+                <reference value="Observation/example-rec-10-missing-prescribed-opioids-prefetch"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-10-missing-prescribed-opioids-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-10-missing-prescribed-opioids-inclusion"/>
+                <reference value="MedicationRequest/example-rec-10-missing-prescribed-opioids-prefetch"/>
             </sourceReference>
         </resource>
         <resource>
@@ -459,7 +537,87 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Encounter/example-rec-10-missing-prescribed-opioids-inclusion"/>
+                <reference value="Encounter/example-rec-10-missing-prescribed-opioids-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-10-not-missing-prescribed-opioids"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-10-not-missing-prescribed-opioids"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Observation/example-rec-10-not-missing-prescribed-opioids-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-10-not-missing-prescribed-opioids-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-not-missing-prescribed-opioids-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-not-missing-prescribed-opioids-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-10-unprescribed-opioids"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-10-unprescribed-opioids"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Observation/example-rec-10-unprescribed-opioids-prefetch-oxycodone"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Observation/example-rec-10-unprescribed-opioids-prefetch-codeine"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-10-unprescribed-opioids-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-unprescribed-opioids-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-unprescribed-opioids-prefetch"/>
             </sourceReference>
         </resource>
 
@@ -478,13 +636,7 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="MedicationRequest/example-rec-11-benzo-trigger-with-opioid-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-11-benzo-trigger-with-opioid-oxycodone"/>
+                <reference value="MedicationRequest/example-rec-11-benzo-trigger-with-opioid-prefetch"/>
             </sourceReference>
         </resource>
         <resource>
@@ -496,7 +648,76 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Encounter/example-rec-11-benzo-trigger-with-opioid-oxycodone"/>
+                <reference value="Encounter/example-rec-11-benzo-trigger-with-opioid-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-11-benzo-trigger-without-opioid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-11-benzo-trigger-without-opioid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-11-benzo-trigger-without-opioid-context"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-11-opioid-trigger-with-benzo"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-11-opioid-trigger-with-benzo"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-11-opioid-trigger-with-benzo-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-11-opioid-trigger-with-benzo-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-11-opioid-trigger-with-benzo-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-11-opioid-trigger-without-benzo"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-11-opioid-trigger-without-benzo"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-11-opioid-trigger-without-benzo-context"/>
             </sourceReference>
         </resource>
 
@@ -550,14 +771,6 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="Library - Opioid CDS Recommendation #4 (CDS Hooks)"/>
-            <description value="Opioid Management CDS Hooks Logic for recommendation #4"/>
-            <sourceReference>
-                <reference value="Library/opioidcds-recommendation-04-CDSHooks"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
             <name value="Library - Opioid CDS Recommendation #5"/>
             <description value="Opioid Management Decision Support Logic for recommendation #5"/>
             <sourceReference>
@@ -574,26 +787,10 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="Library - Opioid CDS Recommendation #7 (CDS Hooks)"/>
-            <description value="Opioid Management CDS Hooks Logic for recommendation #7"/>
-            <sourceReference>
-                <reference value="Library/opioidcds-recommendation-07-CDSHooks"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
             <name value="Library - Opioid CDS Recommendation #8"/>
             <description value="Opioid Management Decision Support Logic for recommendation #8"/>
             <sourceReference>
                 <reference value="Library/opioidcds-recommendation-08"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="Library - Opioid CDS Recommendation #8 (CDS Hooks)"/>
-            <description value="Opioid Management CDS Hooks Logic for recommendation #8"/>
-            <sourceReference>
-                <reference value="Library/opioidcds-recommendation-08-CDSHooks"/>
             </sourceReference>
         </resource>
         <resource>
@@ -606,26 +803,10 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="Library - Opioid CDS Recommendation #10 (CDS Hooks)"/>
-            <description value="Opioid Management CDS Hooks Logic for recommendation #10"/>
-            <sourceReference>
-                <reference value="Library/opioidcds-recommendation-10-CDSHooks"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
             <name value="Library - Opioid CDS Recommendation #11"/>
             <description value="Opioid Management Decision Support Logic for recommendation #11"/>
             <sourceReference>
                 <reference value="Library/opioidcds-recommendation-11"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="Library - Opioid CDS Recommendation #11 (CDS Hooks)"/>
-            <description value="Opioid Management CDS Hooks Logic for recommendation #11"/>
-            <sourceReference>
-                <reference value="Library/opioidcds-recommendation-11-CDSHooks"/>
             </sourceReference>
         </resource>
         <resource>
@@ -811,11 +992,6 @@
     <binary value="cql/OpioidCDS_STU3_REC_08.cql"/>
     <binary value="cql/OpioidCDS_STU3_REC_10.cql"/>
     <binary value="cql/OpioidCDS_STU3_REC_11.cql"/>
-    <binary value="cql/OpioidCDS_STU3_REC_04_CDSHooks.cql"/>
-    <binary value="cql/OpioidCDS_STU3_REC_07_CDSHooks.cql"/>
-    <binary value="cql/OpioidCDS_STU3_REC_08_CDSHooks.cql"/>
-    <binary value="cql/OpioidCDS_STU3_REC_10_CDSHooks.cql"/>
-    <binary value="cql/OpioidCDS_STU3_REC_11_CDSHooks.cql"/>
     <binary value="elm/OMTKLogic-0.1.0.xml"/>
     <binary value="elm/OpioidCDS_STU3_Common.xml"/>
     <binary value="elm/OpioidCDS_STU3_REC_04.xml"/>
@@ -824,11 +1000,6 @@
     <binary value="elm/OpioidCDS_STU3_REC_08.xml"/>
     <binary value="elm/OpioidCDS_STU3_REC_10.xml"/>
     <binary value="elm/OpioidCDS_STU3_REC_11.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_04_CDSHooks.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_07_CDSHooks.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_08_CDSHooks.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_10_CDSHooks.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_11_CDSHooks.xml"/>
     <binary value="modelinfo/OMTK-modelinfo-0.1.0.xml"/>
     <page>
         <source value="index.html"/>

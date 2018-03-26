@@ -1,114 +1,118 @@
 <Bundle xmlns="http://hl7.org/fhir">
-    <id value="example-rec-04-opioid-with-abuse-potential"/>
-    <type value="transaction"/>
-    <entry>
-        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Patient/example-rec-04-opioid-with-abuse-potential"/>
-        <resource>
-            <Patient xmlns="http://hl7.org/fhir">
-                <id value="example-rec-04-opioid-with-abuse-potential"/>
-                <gender value="male"/>
-                <birthDate value="1982-01-07"/>
-            </Patient>
-        </resource>
-        <request>
-            <method value="PUT"/>
-            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Patient/example-rec-04-opioid-with-abuse-potential"/>
-        </request>
-    </entry>
-    <entry>
-        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-04-opioid-with-abuse-potential-context"/>
-        <resource>
-            <MedicationRequest xmlns="http://hl7.org/fhir">
-                <id value="example-rec-04-opioid-with-abuse-potential-context"/>
-                <status value="active"/>
-                <intent value="order"/>
-                <medicationCodeableConcept>
-                    <coding>
-                        <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
-                        <code value="1049502"/>
-                        <display value="12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
-                    </coding>
-                </medicationCodeableConcept>
-                <subject>
-                    <reference value="Patient/example-rec-04-opioid-with-abuse-potential"/>
-                </subject>
-                <context>
-                    <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-new"/>
-                </context>
-                <authoredOn value="2018-03-18T16:11:31-06:00"/>
-            </MedicationRequest>
-        </resource>
-        <request>
-            <method value="PUT"/>
-            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-04-opioid-with-abuse-potential-context"/>
-        </request>
-    </entry>
-    <entry>
-        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-04-opioid-with-abuse-potential-oxycodone"/>
-        <resource>
-            <MedicationRequest xmlns="http://hl7.org/fhir">
-                <id value="example-rec-04-opioid-with-abuse-potential-oxycodone"/>
-                <status value="active"/>
-                <intent value="order"/>
-                <medicationCodeableConcept>
-                    <coding>
-                        <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
-                        <code value="1049502"/>
-                        <display value="12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
-                    </coding>
-                </medicationCodeableConcept>
-                <subject>
-                    <reference value="Patient/example-rec-04-opioid-with-abuse-potential"/>
-                </subject>
-                <context>
-                    <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-old"/>
-                </context>
-                <authoredOn value="2018-03-04T00:00:00-07:00"/>
-            </MedicationRequest>
-        </resource>
-        <request>
-            <method value="PUT"/>
-            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-04-opioid-with-abuse-potential-oxycodone"/>
-        </request>
-    </entry>
-    <entry>
-        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-04-opioid-with-abuse-potential-new"/>
-        <resource>
-            <Encounter xmlns="http://hl7.org/fhir">
-                <id value="example-rec-04-opioid-with-abuse-potential-new"/>
-                <status value="finished"/>
-                <subject>
-                    <reference value="Patient/example-rec-04-opioid-with-abuse-potential"/>
-                </subject>
-                <period>
-                    <start value="2018-03-18T16:11:30-06:00"/>
-                    <end value="2018-03-18T16:11:30-06:00"/>
-                </period>
-            </Encounter>
-        </resource>
-        <request>
-            <method value="PUT"/>
-            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-04-opioid-with-abuse-potential-new"/>
-        </request>
-    </entry>
-    <entry>
-        <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-04-opioid-with-abuse-potential-old"/>
-        <resource>
-            <Encounter xmlns="http://hl7.org/fhir">
-                <id value="example-rec-04-opioid-with-abuse-potential-old"/>
-                <status value="finished"/>
-                <subject>
-                    <reference value="Patient/example-rec-04-opioid-with-abuse-potential"/>
-                </subject>
-                <period>
-                    <start value="2018-03-04T00:00:00-07:00"/>
-                    <end value="2018-03-04T00:00:00-07:00"/>
-                </period>
-            </Encounter>
-        </resource>
-        <request>
-            <method value="PUT"/>
-            <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-04-opioid-with-abuse-potential-old"/>
-        </request>
-    </entry>
+   <id value="example-rec-04-opioid-with-abuse-potential"/>
+   <type value="transaction"/>
+   <entry>
+      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Patient/example-rec-04-opioid-with-abuse-potential"/>
+      <resource>
+         <Patient xmlns="http://hl7.org/fhir">
+            <id value="example-rec-04-opioid-with-abuse-potential"/>
+            <gender value="male"/>
+            <birthDate value="1982-01-07"/>
+         </Patient>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Patient/example-rec-04-opioid-with-abuse-potential"/>
+      </request>
+   </entry>
+   <entry>
+      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-04-opioid-with-abuse-potential-prefetch"/>
+      <resource>
+         <MedicationRequest xmlns="http://hl7.org/fhir">
+            <id value="example-rec-04-opioid-with-abuse-potential-prefetch"/>
+            <status value="active"/>
+            <intent value="order"/>
+            <medicationCodeableConcept>
+               <coding>
+                  <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+                  <code value="1049502"/>
+                  <display value="12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
+               </coding>
+            </medicationCodeableConcept>
+            <subject>
+               <reference value="Patient/example-rec-04-opioid-with-abuse-potential"/>
+            </subject>
+            <context>
+               <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-prefetch"/>
+            </context>
+            <authoredOn>
+               <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
+                  <valueString value="Today() - 2 weeks"/>
+               </extension>
+            </authoredOn>
+            <dosageInstruction>
+               <timing>
+                  <repeat>
+                     <frequency value="1"/>
+                     <period value="3.0"/>
+                     <periodUnit value="d"/>
+                  </repeat>
+               </timing>
+               <asNeededBoolean value="false"/>
+               <doseQuantity>
+                  <value value="1.0"/>
+                  <unit value="patch"/>
+               </doseQuantity>
+            </dosageInstruction>
+            <dispenseRequest>
+               <validityPeriod>
+                  <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
+                     <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 2 weeks }, end: FHIR.dateTime { value: Today() + 3 months } }"/>
+                  </extension>
+               </validityPeriod>
+               <numberOfRepeatsAllowed value="3"/>
+               <expectedSupplyDuration>
+                  <value value="30.0"/>
+                  <unit value="d"/>
+               </expectedSupplyDuration>
+            </dispenseRequest>
+         </MedicationRequest>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/MedicationRequest/example-rec-04-opioid-with-abuse-potential-prefetch"/>
+      </request>
+   </entry>
+   <entry>
+      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-04-opioid-with-abuse-potential-context"/>
+      <resource>
+         <Encounter xmlns="http://hl7.org/fhir">
+            <id value="example-rec-04-opioid-with-abuse-potential-context"/>
+            <status value="finished"/>
+            <subject>
+               <reference value="Patient/example-rec-04-opioid-with-abuse-potential"/>
+            </subject>
+            <period>
+               <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
+                  <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() } }"/>
+               </extension>
+            </period>
+         </Encounter>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-04-opioid-with-abuse-potential-context"/>
+      </request>
+   </entry>
+   <entry>
+      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-04-opioid-with-abuse-potential-prefetch"/>
+      <resource>
+         <Encounter xmlns="http://hl7.org/fhir">
+            <id value="example-rec-04-opioid-with-abuse-potential-prefetch"/>
+            <status value="finished"/>
+            <subject>
+               <reference value="Patient/example-rec-04-opioid-with-abuse-potential"/>
+            </subject>
+            <period>
+               <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
+                  <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 2 weeks }, end: FHIR.dateTime { value: Today() - 2 weeks } }"/>
+               </extension>
+            </period>
+         </Encounter>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-04-opioid-with-abuse-potential-prefetch"/>
+      </request>
+   </entry>
 </Bundle>

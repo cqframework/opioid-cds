@@ -27,19 +27,19 @@ include OpioidCDS_STU3_Common version '0.1.0' called Common
     Have availability to snooze if benefits outweigh risks
 */
 
-parameter ContextPrescription MedicationRequest
+parameter ContextPrescriptions List<MedicationRequest>
 
 context Patient
 
 define "Validate Trigger Event For Benzodiazepine":
   exists(
-    ContextPrescription triggerScript
+    ContextPrescriptions triggerScript
       where Common.IsBenzodiazepine(Common.ToCode(triggerScript.medication.coding[0]))
   )
 
 define "Validate Trigger Event For Ambulatory Care Abuse Potential":
   exists(
-    ContextPrescription triggerScript
+    ContextPrescriptions triggerScript
       where Common.IsOpioidWithAmbulatoryAbusePotential(Common.ToCode(triggerScript.medication.coding[0]))
   )
 
@@ -57,5 +57,13 @@ define "Opioid with Ambulatory Care Abuse Potential":
   "Validate Trigger Event For Ambulatory Care Abuse Potential"
   or exists( [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] )
 
-define "Get Notification":
+define "Get Indicator":
+  'warning'
+
+define "Get Summary":
   'Avoid prescribing opioid pain medication and benzodiazepine concurrently whenever possible.'
+
+define "Get Detail":
+  if "Validate Trigger Event For Benzodiazepine"
+    then 'The benzodiazepine prescription request is concurrent with an active opioid prescription'
+  else 'The opioid prescription request is concurrent with an active benzodiazepine prescription'

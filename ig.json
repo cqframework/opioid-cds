@@ -42,21 +42,30 @@
       "source": "patient-example-rec-04-long-acting-opioid.xml",
       "base": "Patient-example-rec-04-long-acting-opioid.html"
     },
-    "MedicationRequest/example-rec-04-long-acting-opioid-oxycodone": {
-      "source": "medicationrequest-example-rec-04-long-acting-opioid-oxycodone.xml",
-      "base": "MedicationRequest-example-rec-04-long-acting-opioid-oxycodone.html"
+    "MedicationRequest/example-rec-04-long-acting-opioid-prefetch": {
+      "source": "medicationrequest-example-rec-04-long-acting-opioid-prefetch.xml",
+      "base": "MedicationRequest-example-rec-04-long-acting-opioid-prefetch.html"
     },
-    "MedicationRequest/example-rec-04-long-acting-opioid-context": {
-      "source": "medicationrequest-example-rec-04-long-acting-opioid-context.xml",
-      "base": "MedicationRequest-example-rec-04-long-acting-opioid-context.html"
+    "Encounter/example-rec-04-long-acting-opioid-context": {
+      "source": "encounter-example-rec-04-long-acting-opioid-context.xml",
+      "base": "Encounter-example-rec-04-long-acting-opioid-context.html"
     },
-    "Encounter/example-rec-04-long-acting-opioid-new": {
-      "source": "encounter-example-rec-04-long-acting-opioid-new.xml",
-      "base": "Encounter-example-rec-04-long-acting-opioid-new.html"
+    "Encounter/example-rec-04-long-acting-opioid-prefetch": {
+      "source": "encounter-example-rec-04-long-acting-opioid-prefetch.xml",
+      "base": "Encounter-example-rec-04-long-acting-opioid-prefetch.html"
     },
-    "Encounter/example-rec-04-long-acting-opioid-old": {
-      "source": "encounter-example-rec-04-long-acting-opioid-old.xml",
-      "base": "Encounter-example-rec-04-long-acting-opioid-old.html"
+
+    "Bundle/example-rec-04-new-patient": {
+      "source": "bundle-example-rec-04-new-patient.xml",
+      "base": "Bundle-example-rec-04-new-patient.html"
+    },
+    "Patient/example-rec-04-new-patient": {
+      "source": "patient-example-rec-04-new-patient.xml",
+      "base": "Patient-example-rec-04-new-patient.html"
+    },
+    "Encounter/example-rec-04-new-patient-context": {
+      "source": "encounter-example-rec-04-new-patient-context.xml",
+      "base": "Encounter-example-rec-04-new-patient-context.html"
     },
 
     "Bundle/example-rec-04-not-long-acting-opioid": {
@@ -67,21 +76,17 @@
       "source": "patient-example-rec-04-not-long-acting-opioid.xml",
       "base": "Patient-example-rec-04-not-long-acting-opioid.html"
     },
-    "MedicationRequest/example-rec-04-not-long-acting-opioid-oxycodone": {
-      "source": "medicationrequest-example-rec-04-not-long-acting-opioid-oxycodone.xml",
-      "base": "MedicationRequest-example-rec-04-not-long-acting-opioid-oxycodone.html"
+    "MedicationRequest/example-rec-04-not-long-acting-opioid-prefetch": {
+      "source": "medicationrequest-example-rec-04-not-long-acting-opioid-prefetch.xml",
+      "base": "MedicationRequest-example-rec-04-not-long-acting-opioid-prefetch.html"
     },
-    "MedicationRequest/example-rec-04-not-long-acting-opioid-context": {
-      "source": "medicationrequest-example-rec-04-not-long-acting-opioid-context.xml",
-      "base": "MedicationRequest-example-rec-04-not-long-acting-opioid-context.html"
+    "Encounter/example-rec-04-not-long-acting-opioid-context": {
+      "source": "encounter-example-rec-04-not-long-acting-opioid-context.xml",
+      "base": "Encounter-example-rec-04-not-long-acting-opioid-context.html"
     },
-    "Encounter/example-rec-04-not-long-acting-opioid-new": {
-      "source": "encounter-example-rec-04-not-long-acting-opioid-new.xml",
-      "base": "Encounter-example-rec-04-not-long-acting-opioid-new.html"
-    },
-    "Encounter/example-rec-04-not-long-acting-opioid-old": {
-      "source": "encounter-example-rec-04-not-long-acting-opioid-old.xml",
-      "base": "Encounter-example-rec-04-not-long-acting-opioid-old.html"
+    "Encounter/example-rec-04-not-long-acting-opioid-prefetch": {
+      "source": "encounter-example-rec-04-not-long-acting-opioid-prefetch.xml",
+      "base": "Encounter-example-rec-04-not-long-acting-opioid-prefetch.html"
     },
 
     "Bundle/example-rec-04-opioid-with-abuse-potential": {
@@ -92,21 +97,17 @@
       "source": "patient-example-rec-04-opioid-with-abuse-potential.xml",
       "base": "Patient-example-rec-04-opioid-with-abuse-potential.html"
     },
-    "MedicationRequest/example-rec-04-opioid-with-abuse-potential-oxycodone": {
-      "source": "medicationrequest-example-rec-04-opioid-with-abuse-potential-oxycodone.xml",
-      "base": "MedicationRequest-example-rec-04-opioid-with-abuse-potential-oxycodone.html"
+    "MedicationRequest/example-rec-04-opioid-with-abuse-potential-prefetch": {
+      "source": "medicationrequest-example-rec-04-opioid-with-abuse-potential-prefetch.xml",
+      "base": "MedicationRequest-example-rec-04-opioid-with-abuse-potential-prefetch.html"
     },
-    "MedicationRequest/example-rec-04-opioid-with-abuse-potential-context": {
-      "source": "medicationrequest-example-rec-04-opioid-with-abuse-potential-context.xml",
-      "base": "MedicationRequest-example-rec-04-opioid-with-abuse-potential-context.html"
+    "Encounter/example-rec-04-opioid-with-abuse-potential-context": {
+      "source": "encounter-example-rec-04-opioid-with-abuse-potential-context.xml",
+      "base": "Encounter-example-rec-04-opioid-with-abuse-potential-context.html"
     },
-    "Encounter/example-rec-04-opioid-with-abuse-potential-new": {
-      "source": "encounter-example-rec-04-opioid-with-abuse-potential-new.xml",
-      "base": "Encounter-example-rec-04-opioid-with-abuse-potential-new.html"
-    },
-    "Encounter/example-rec-04-opioid-with-abuse-potential-old": {
-      "source": "encounter-example-rec-04-opioid-with-abuse-potential-old.xml",
-      "base": "Encounter-example-rec-04-opioid-with-abuse-potential-old.html"
+    "Encounter/example-rec-04-opioid-with-abuse-potential-prefetch": {
+      "source": "encounter-example-rec-04-opioid-with-abuse-potential-prefetch.xml",
+      "base": "Encounter-example-rec-04-opioid-with-abuse-potential-prefetch.html"
     },
 
     "Bundle/example-rec-05-mme-greater-than-fifty": {
@@ -117,13 +118,9 @@
       "source": "patient-example-rec-05-mme-greater-than-fifty.xml",
       "base": "Patient-example-rec-05-mme-greater-than-fifty.html"
     },
-    "MedicationRequest/example-rec-05-mme-greater-than-fifty": {
-      "source": "medicationrequest-example-rec-05-mme-greater-than-fifty.xml",
-      "base": "MedicationRequest-example-rec-05-mme-greater-than-fifty.html"
-    },
-    "Encounter/example-rec-05-mme-greater-than-fifty": {
-      "source": "encounter-example-rec-05-mme-greater-than-fifty.xml",
-      "base": "Encounter-example-rec-05-mme-greater-than-fifty.html"
+    "Encounter/example-rec-05-mme-greater-than-fifty-context": {
+      "source": "encounter-example-rec-05-mme-greater-than-fifty-context.xml",
+      "base": "Encounter-example-rec-05-mme-greater-than-fifty-context.html"
     },
 
     "Bundle/example-rec-05-mme-less-than-fifty": {
@@ -134,88 +131,9 @@
       "source": "patient-example-rec-05-mme-less-than-fifty.xml",
       "base": "Patient-example-rec-05-mme-less-than-fifty.html"
     },
-    "MedicationRequest/example-rec-05-mme-less-than-fifty": {
-      "source": "medicationrequest-example-rec-05-mme-less-than-fifty.xml",
-      "base": "MedicationRequest-example-rec-05-mme-less-than-fifty.html"
-    },
-    "Encounter/example-rec-05-mme-less-than-fifty": {
-      "source": "encounter-example-rec-05-mme-less-than-fifty.xml",
-      "base": "Encounter-example-rec-05-mme-less-than-fifty.html"
-    },
-
-    "Bundle/example-rec-07-seven-of-past-ten-days": {
-      "source": "bundle-example-rec-07-seven-of-past-ten-days.xml",
-      "base": "Bundle-example-rec-07-seven-of-past-ten-days.html"
-    },
-    "Patient/example-rec-07-seven-of-past-ten-days": {
-      "source": "patient-example-rec-07-seven-of-past-ten-days.xml",
-      "base": "Patient-example-rec-07-seven-of-past-ten-days.html"
-    },
-    "MedicationRequest/example-rec-07-seven-of-past-ten-days-oxycodone": {
-      "source": "medicationrequest-example-rec-07-seven-of-past-ten-days-oxycodone.xml",
-      "base": "MedicationRequest-example-rec-07-seven-of-past-ten-days-oxycodone.html"
-    },
-    "MedicationRequest/example-rec-07-seven-of-past-ten-days-context": {
-      "source": "medicationrequest-example-rec-07-seven-of-past-ten-days-context.xml",
-      "base": "MedicationRequest-example-rec-07-seven-of-past-ten-days-context.html"
-    },
-    "Encounter/example-rec-07-seven-of-past-ten-days-new": {
-      "source": "encounter-example-rec-07-seven-of-past-ten-days-new.xml",
-      "base": "Encounter-example-rec-07-seven-of-past-ten-days-new.html"
-    },
-    "Encounter/example-rec-07-seven-of-past-ten-days-old": {
-      "source": "encounter-example-rec-07-seven-of-past-ten-days-old.xml",
-      "base": "Encounter-example-rec-07-seven-of-past-ten-days-old.html"
-    },
-
-    "Bundle/example-rec-07-six-of-past-ten-days": {
-      "source": "bundle-example-rec-07-six-of-past-ten-days.xml",
-      "base": "Bundle-example-rec-07-six-of-past-ten-days.html"
-    },
-    "Patient/example-rec-07-six-of-past-ten-days": {
-      "source": "patient-example-rec-07-six-of-past-ten-days.xml",
-      "base": "Patient-example-rec-07-six-of-past-ten-days.html"
-    },
-    "MedicationRequest/example-rec-07-six-of-past-ten-days-oxycodone": {
-      "source": "medicationrequest-example-rec-07-six-of-past-ten-days-oxycodone.xml",
-      "base": "MedicationRequest-example-rec-07-six-of-past-ten-days-oxycodone.html"
-    },
-    "MedicationRequest/example-rec-07-six-of-past-ten-days-context": {
-      "source": "medicationrequest-example-rec-07-six-of-past-ten-days-context.xml",
-      "base": "MedicationRequest-example-rec-07-six-of-past-ten-days-context.html"
-    },
-    "Encounter/example-rec-07-six-of-past-ten-days-new": {
-      "source": "encounter-example-rec-07-six-of-past-ten-days-new.xml",
-      "base": "Encounter-example-rec-07-six-of-past-ten-days-new.html"
-    },
-    "Encounter/example-rec-07-six-of-past-ten-days-old": {
-      "source": "encounter-example-rec-07-six-of-past-ten-days-old.xml",
-      "base": "Encounter-example-rec-07-six-of-past-ten-days-old.html"
-    },
-
-    "Bundle/example-rec-07-sixtythree-of-past-ninety-days": {
-      "source": "bundle-example-rec-07-sixtythree-of-past-ninety-days.xml",
-      "base": "Bundle-example-rec-07-sixtythree-of-past-ninety-days.html"
-    },
-    "Patient/example-rec-07-sixtythree-of-past-ninety-days": {
-      "source": "patient-example-rec-07-sixtythree-of-past-ninety-days.xml",
-      "base": "Patient-example-rec-07-sixtythree-of-past-ninety-days.html"
-    },
-    "MedicationRequest/example-rec-07-sixtythree-of-past-ninety-days-oxycodone": {
-      "source": "medicationrequest-example-rec-07-sixtythree-of-past-ninety-days-oxycodone.xml",
-      "base": "MedicationRequest-example-rec-07-sixtythree-of-past-ninety-days-oxycodone.html"
-    },
-    "MedicationRequest/example-rec-07-sixtythree-of-past-ninety-days-context": {
-      "source": "medicationrequest-example-rec-07-sixtythree-of-past-ninety-days-context.xml",
-      "base": "MedicationRequest-example-rec-07-sixtythree-of-past-ninety-days-context.html"
-    },
-    "Encounter/example-rec-07-sixtythree-of-past-ninety-days-new": {
-      "source": "encounter-example-rec-07-sixtythree-of-past-ninety-days-new.xml",
-      "base": "Encounter-example-rec-07-sixtythree-of-past-ninety-days-new.html"
-    },
-    "Encounter/example-rec-07-sixtythree-of-past-ninety-days-old": {
-      "source": "encounter-example-rec-07-sixtythree-of-past-ninety-days-old.xml",
-      "base": "Encounter-example-rec-07-sixtythree-of-past-ninety-days-old.html"
+    "Encounter/example-rec-05-mme-less-than-fifty-context": {
+      "source": "encounter-example-rec-05-mme-less-than-fifty-context.xml",
+      "base": "Encounter-example-rec-05-mme-less-than-fifty-context.html"
     },
 
     "Bundle/example-rec-07-end-of-life-exclusion": {
@@ -226,25 +144,17 @@
       "source": "patient-example-rec-07-end-of-life-exclusion.xml",
       "base": "Patient-example-rec-07-end-of-life-exclusion.html"
     },
-    "MedicationRequest/example-rec-07-end-of-life-exclusion-oxycodone": {
-      "source": "medicationrequest-example-rec-07-end-of-life-exclusion-oxycodone.xml",
-      "base": "MedicationRequest-example-rec-07-end-of-life-exclusion-oxycodone.html"
+    "MedicationRequest/example-rec-07-end-of-life-exclusion-prefetch": {
+      "source": "medicationrequest-example-rec-07-end-of-life-exclusion-prefetch.xml",
+      "base": "MedicationRequest-example-rec-07-end-of-life-exclusion-prefetch.html"
     },
-    "MedicationRequest/example-rec-07-end-of-life-exclusion-context": {
-      "source": "medicationrequest-example-rec-07-end-of-life-exclusion-context.xml",
-      "base": "MedicationRequest-example-rec-07-end-of-life-exclusion-context.html"
+    "Encounter/example-rec-07-end-of-life-exclusion-context": {
+      "source": "encounter-example-rec-07-end-of-life-exclusion-context.xml",
+      "base": "Encounter-example-rec-07-end-of-life-exclusion-context.html"
     },
-    "MedicationRequest/example-rec-07-end-of-life-exclusion-eol": {
-      "source": "medicationrequest-example-rec-07-end-of-life-exclusion-eol.xml",
-      "base": "MedicationRequest-example-rec-07-end-of-life-exclusion-eol.html"
-    },
-    "Encounter/example-rec-07-end-of-life-exclusion-new": {
-      "source": "encounter-example-rec-07-end-of-life-exclusion-new.xml",
-      "base": "Encounter-example-rec-07-end-of-life-exclusion-new.html"
-    },
-    "Encounter/example-rec-07-end-of-life-exclusion-old": {
-      "source": "encounter-example-rec-07-end-of-life-exclusion-old.xml",
-      "base": "Encounter-example-rec-07-end-of-life-exclusion-old.html"
+    "Encounter/example-rec-07-end-of-life-exclusion-prefetch": {
+      "source": "encounter-example-rec-07-end-of-life-exclusion-prefetch.xml",
+      "base": "Encounter-example-rec-07-end-of-life-exclusion-prefetch.html"
     },
 
     "Bundle/example-rec-07-risk-assessment": {
@@ -255,17 +165,101 @@
       "source": "patient-example-rec-07-risk-assessment.xml",
       "base": "Patient-example-rec-07-risk-assessment.html"
     },
-    "Procedure/example-rec-07-risk-assessment-procedure": {
-      "source": "procedure-example-rec-07-risk-assessment-procedure.xml",
-      "base": "Procedure-example-rec-07-risk-assessment-procedure.html"
+    "Procedure/example-rec-07-risk-assessment-prefetch": {
+      "source": "procedure-example-rec-07-risk-assessment-prefetch.xml",
+      "base": "Procedure-example-rec-07-risk-assessment-prefetch.html"
     },
-    "MedicationRequest/example-rec-07-risk-assessment-context": {
-      "source": "medicationrequest-example-rec-07-risk-assessment-context.xml",
-      "base": "MedicationRequest-example-rec-07-risk-assessment-context.html"
+    "Encounter/example-rec-07-risk-assessment-context": {
+      "source": "encounter-example-rec-07-risk-assessment-context.xml",
+      "base": "Encounter-example-rec-07-risk-assessment-context.html"
     },
-    "Encounter/example-rec-07-risk-assessment": {
-      "source": "encounter-example-rec-07-risk-assessment.xml",
-      "base": "Encounter-example-rec-07-risk-assessment.html"
+    "Encounter/example-rec-07-risk-assessment-prefetch": {
+      "source": "encounter-example-rec-07-risk-assessment-prefetch.xml",
+      "base": "Encounter-example-rec-07-risk-assessment-prefetch.html"
+    },
+
+    "Bundle/example-rec-07-seven-of-past-ten-days": {
+      "source": "bundle-example-rec-07-seven-of-past-ten-days.xml",
+      "base": "Bundle-example-rec-07-seven-of-past-ten-days.html"
+    },
+    "Patient/example-rec-07-seven-of-past-ten-days": {
+      "source": "patient-example-rec-07-seven-of-past-ten-days.xml",
+      "base": "Patient-example-rec-07-seven-of-past-ten-days.html"
+    },
+    "MedicationRequest/example-rec-07-seven-of-past-ten-days-prefetch": {
+      "source": "medicationrequest-example-rec-07-seven-of-past-ten-days-prefetch.xml",
+      "base": "MedicationRequest-example-rec-07-seven-of-past-ten-days-prefetch.html"
+    },
+    "Encounter/example-rec-07-seven-of-past-ten-days-context": {
+      "source": "encounter-example-rec-07-seven-of-past-ten-days-context.xml",
+      "base": "Encounter-example-rec-07-seven-of-past-ten-days-context.html"
+    },
+    "Encounter/example-rec-07-seven-of-past-ten-days-prefetch": {
+      "source": "encounter-example-rec-07-seven-of-past-ten-days-prefetch.xml",
+      "base": "Encounter-example-rec-07-seven-of-past-ten-days-prefetch.html"
+    },
+
+    "Bundle/example-rec-07-six-of-past-ten-days": {
+      "source": "bundle-example-rec-07-six-of-past-ten-days.xml",
+      "base": "Bundle-example-rec-07-six-of-past-ten-days.html"
+    },
+    "Patient/example-rec-07-six-of-past-ten-days": {
+      "source": "patient-example-rec-07-six-of-past-ten-days.xml",
+      "base": "Patient-example-rec-07-six-of-past-ten-days.html"
+    },
+    "MedicationRequest/example-rec-07-six-of-past-ten-days-prefetch": {
+      "source": "medicationrequest-example-rec-07-six-of-past-ten-days-prefetch.xml",
+      "base": "MedicationRequest-example-rec-07-six-of-past-ten-days-prefetch.html"
+    },
+    "Encounter/example-rec-07-six-of-past-ten-days-context": {
+      "source": "encounter-example-rec-07-six-of-past-ten-days-context.xml",
+      "base": "Encounter-example-rec-07-six-of-past-ten-days-context.html"
+    },
+    "Encounter/example-rec-07-six-of-past-ten-days-prefetch": {
+      "source": "encounter-example-rec-07-six-of-past-ten-days-prefetch.xml",
+      "base": "Encounter-example-rec-07-six-of-past-ten-days-prefetch.html"
+    },
+
+    "Bundle/example-rec-07-sixtythree-of-past-ninety-days": {
+      "source": "bundle-example-rec-07-sixtythree-of-past-ninety-days.xml",
+      "base": "Bundle-example-rec-07-sixtythree-of-past-ninety-days.html"
+    },
+    "Patient/example-rec-07-sixtythree-of-past-ninety-days": {
+      "source": "patient-example-rec-07-sixtythree-of-past-ninety-days.xml",
+      "base": "Patient-example-rec-07-sixtythree-of-past-ninety-days.html"
+    },
+    "MedicationRequest/example-rec-07-sixtythree-of-past-ninety-days-prefetch": {
+      "source": "medicationrequest-example-rec-07-sixtythree-of-past-ninety-days-prefetch.xml",
+      "base": "MedicationRequest-example-rec-07-sixtythree-of-past-ninety-days-prefetch.html"
+    },
+    "Encounter/example-rec-07-sixtythree-of-past-ninety-days-context": {
+      "source": "encounter-example-rec-07-sixtythree-of-past-ninety-days-context.xml",
+      "base": "Encounter-example-rec-07-sixtythree-of-past-ninety-days-context.html"
+    },
+    "Encounter/example-rec-07-sixtythree-of-past-ninety-days-prefetch": {
+      "source": "encounter-example-rec-07-sixtythree-of-past-ninety-days-prefetch.xml",
+      "base": "Encounter-example-rec-07-sixtythree-of-past-ninety-days-prefetch.html"
+    },
+
+    "Bundle/example-rec-07-sixtytwo-of-past-ninety-days": {
+      "source": "bundle-example-rec-07-sixtytwo-of-past-ninety-days.xml",
+      "base": "Bundle-example-rec-07-sixtytwo-of-past-ninety-days.html"
+    },
+    "Patient/example-rec-07-sixtytwo-of-past-ninety-days": {
+      "source": "patient-example-rec-07-sixtytwo-of-past-ninety-days.xml",
+      "base": "Patient-example-rec-07-sixtytwo-of-past-ninety-days.html"
+    },
+    "MedicationRequest/example-rec-07-sixtytwo-of-past-ninety-days-prefetch": {
+      "source": "medicationrequest-example-rec-07-sixtytwo-of-past-ninety-days-prefetch.xml",
+      "base": "MedicationRequest-example-rec-07-sixtytwo-of-past-ninety-days-prefetch.html"
+    },
+    "Encounter/example-rec-07-sixtytwo-of-past-ninety-days-context": {
+      "source": "encounter-example-rec-07-sixtytwo-of-past-ninety-days-context.xml",
+      "base": "Encounter-example-rec-07-sixtytwo-of-past-ninety-days-context.html"
+    },
+    "Encounter/example-rec-07-sixtytwo-of-past-ninety-days-prefetch": {
+      "source": "encounter-example-rec-07-sixtytwo-of-past-ninety-days-prefetch.xml",
+      "base": "Encounter-example-rec-07-sixtytwo-of-past-ninety-days-prefetch.html"
     },
 
     "Bundle/example-rec-08-mme-greater-than-fifty": {
@@ -276,13 +270,22 @@
       "source": "patient-example-rec-08-mme-greater-than-fifty.xml",
       "base": "Patient-example-rec-08-mme-greater-than-fifty.html"
     },
-    "MedicationRequest/example-rec-08-mme-greater-than-fifty": {
-      "source": "medicationrequest-example-rec-08-mme-greater-than-fifty.xml",
-      "base": "MedicationRequest-example-rec-08-mme-greater-than-fifty.html"
+    "Encounter/example-rec-08-mme-greater-than-fifty-context": {
+      "source": "encounter-example-rec-08-mme-greater-than-fifty-context.xml",
+      "base": "Encounter-example-rec-08-mme-greater-than-fifty-context.html"
     },
-    "Encounter/example-rec-08-mme-greater-than-fifty": {
-      "source": "encounter-example-rec-08-mme-greater-than-fifty.xml",
-      "base": "Encounter-example-rec-08-mme-greater-than-fifty.html"
+
+    "Bundle/example-rec-08-mme-less-than-fifty": {
+      "source": "bundle-example-rec-08-mme-less-than-fifty.xml",
+      "base": "Bundle-example-rec-08-mme-less-than-fifty.html"
+    },
+    "Patient/example-rec-08-mme-less-than-fifty": {
+      "source": "patient-example-rec-08-mme-less-than-fifty.xml",
+      "base": "Patient-example-rec-08-mme-less-than-fifty.html"
+    },
+    "Encounter/example-rec-08-mme-less-than-fifty-context": {
+      "source": "encounter-example-rec-08-mme-less-than-fifty-context.xml",
+      "base": "Encounter-example-rec-08-mme-less-than-fifty-context.html"
     },
 
     "Bundle/example-rec-08-on-benzodiazepine": {
@@ -293,21 +296,76 @@
       "source": "patient-example-rec-08-on-benzodiazepine.xml",
       "base": "Patient-example-rec-08-on-benzodiazepine.html"
     },
-    "MedicationRequest/example-rec-08-on-benzodiazepine-context": {
-      "source": "medicationrequest-example-rec-08-on-benzodiazepine-context.xml",
-      "base": "MedicationRequest-example-rec-08-on-benzodiazepine-context.html"
-    },
-    "MedicationRequest/example-rec-08-on-benzodiazepine-temazepam": {
-      "source": "medicationrequest-example-rec-08-on-benzodiazepine-temazepam.xml",
-      "base": "MedicationRequest-example-rec-08-on-benzodiazepine-temazepam.html"
+    "MedicationRequest/example-rec-08-on-benzodiazepine-prefetch": {
+      "source": "medicationrequest-example-rec-08-on-benzodiazepine-prefetch.xml",
+      "base": "MedicationRequest-example-rec-08-on-benzodiazepine-prefetch.html"
     },
     "Encounter/example-rec-08-on-benzodiazepine-context": {
       "source": "encounter-example-rec-08-on-benzodiazepine-context.xml",
       "base": "Encounter-example-rec-08-on-benzodiazepine-context.html"
     },
-    "Encounter/example-rec-08-on-benzodiazepine-temazepam": {
-      "source": "encounter-example-rec-08-on-benzodiazepine-temazepam.xml",
-      "base": "Encounter-example-rec-08-on-benzodiazepine-temazepam.html"
+    "Encounter/example-rec-08-on-benzodiazepine-prefetch": {
+      "source": "encounter-example-rec-08-on-benzodiazepine-prefetch.xml",
+      "base": "Encounter-example-rec-08-on-benzodiazepine-prefetch.html"
+    },
+
+    "Bundle/example-rec-08-on-naloxone": {
+      "source": "bundle-example-rec-08-on-naloxone.xml",
+      "base": "Bundle-example-rec-08-on-naloxone.html"
+    },
+    "Patient/example-rec-08-on-naloxone": {
+      "source": "patient-example-rec-08-on-naloxone.xml",
+      "base": "Patient-example-rec-08-on-naloxone.html"
+    },
+    "MedicationRequest/example-rec-08-on-naloxone-prefetch": {
+      "source": "medicationrequest-example-rec-08-on-naloxone-prefetch.xml",
+      "base": "MedicationRequest-example-rec-08-on-naloxone-prefetch.html"
+    },
+    "Encounter/example-rec-08-on-naloxone-context": {
+      "source": "encounter-example-rec-08-on-naloxone-context.xml",
+      "base": "Encounter-example-rec-08-on-naloxone-context.html"
+    },
+    "Encounter/example-rec-08-on-naloxone-prefetch": {
+      "source": "encounter-example-rec-08-on-naloxone-prefetch.xml",
+      "base": "Encounter-example-rec-08-on-naloxone-prefetch.html"
+    },
+
+    "Bundle/example-rec-10-end-of-life-med-exclusion": {
+      "source": "bundle-example-rec-10-end-of-life-med-exclusion.xml",
+      "base": "Bundle-example-rec-10-end-of-life-med-exclusion.html"
+    },
+    "Patient/example-rec-10-end-of-life-med-exclusion": {
+      "source": "patient-example-rec-10-end-of-life-med-exclusion.xml",
+      "base": "Patient-example-rec-10-end-of-life-med-exclusion.html"
+    },
+    "Encounter/example-rec-10-end-of-life-med-exclusion-context": {
+      "source": "encounter-example-rec-10-end-of-life-med-exclusion-context.xml",
+      "base": "Encounter-example-rec-10-end-of-life-med-exclusion-context.html"
+    },
+
+    "Bundle/example-rec-10-illicit-drugs": {
+      "source": "bundle-example-rec-10-illicit-drugs.xml",
+      "base": "Bundle-example-rec-10-illicit-drugs.html"
+    },
+    "Patient/example-rec-10-illicit-drugs": {
+      "source": "patient-example-rec-10-illicit-drugs.xml",
+      "base": "Patient-example-rec-10-illicit-drugs.html"
+    },
+    "Encounter/example-rec-10-illicit-drugs-context": {
+      "source": "encounter-example-rec-10-illicit-drugs-context.xml",
+      "base": "Encounter-example-rec-10-illicit-drugs-context.html"
+    },
+    "Encounter/example-rec-10-illicit-drugs-prefetch": {
+      "source": "encounter-example-rec-10-illicit-drugs-prefetch.xml",
+      "base": "Encounter-example-rec-10-illicit-drugs-prefetch.html"
+    },
+    "MedicationRequest/example-rec-10-illicit-drugs-prefetch": {
+      "source": "medicationrequest-example-rec-10-illicit-drugs-prefetch.xml",
+      "base": "MedicationRequest-example-rec-10-illicit-drugs-prefetch.html"
+    },
+    "Observation/example-rec-10-illicit-drugs-prefetch": {
+      "source": "observation-example-rec-10-illicit-drugs-prefetch.xml",
+      "base": "Observation-example-rec-10-illicit-drugs-prefetch.html"
     },
 
     "Bundle/example-rec-10-missing-prescribed-opioids": {
@@ -318,25 +376,75 @@
       "source": "patient-example-rec-10-missing-prescribed-opioids.xml",
       "base": "Patient-example-rec-10-missing-prescribed-opioids.html"
     },
-    "Observation/example-rec-10-missing-prescribed-opioids": {
-      "source": "observation-example-rec-10-missing-prescribed-opioids.xml",
-      "base": "Observation-example-rec-10-missing-prescribed-opioids.html"
+    "Observation/example-rec-10-missing-prescribed-opioids-prefetch": {
+      "source": "observation-example-rec-10-missing-prescribed-opioids-prefetch.xml",
+      "base": "Observation-example-rec-10-missing-prescribed-opioids-prefetch.html"
     },
-    "MedicationRequest/example-rec-10-missing-prescribed-opioids-context": {
-      "source": "medicationrequest-example-rec-10-missing-prescribed-opioids-context.xml",
-      "base": "MedicationRequest-example-rec-10-missing-prescribed-opioids-context.html"
-    },
-    "MedicationRequest/example-rec-10-missing-prescribed-opioids-inclusion": {
-      "source": "medicationrequest-example-rec-10-missing-prescribed-opioids-inclusion.xml",
-      "base": "MedicationRequest-example-rec-10-missing-prescribed-opioids-inclusion.html"
+    "MedicationRequest/example-rec-10-missing-prescribed-opioids-prefetch": {
+      "source": "medicationrequest-example-rec-10-missing-prescribed-opioids-prefetch.xml",
+      "base": "MedicationRequest-example-rec-10-missing-prescribed-opioids-prefetch.html"
     },
     "Encounter/example-rec-10-missing-prescribed-opioids-context": {
       "source": "encounter-example-rec-10-missing-prescribed-opioids-context.xml",
       "base": "Encounter-example-rec-10-missing-prescribed-opioids-context.html"
     },
-    "Encounter/example-rec-10-missing-prescribed-opioids-inclusion": {
-      "source": "encounter-example-rec-10-missing-prescribed-opioids-inclusion.xml",
-      "base": "Encounter-example-rec-10-missing-prescribed-opioids-inclusion.html"
+    "Encounter/example-rec-10-missing-prescribed-opioids-prefetch": {
+      "source": "encounter-example-rec-10-missing-prescribed-opioids-prefetch.xml",
+      "base": "Encounter-example-rec-10-missing-prescribed-opioids-prefetch.html"
+    },
+
+    "Bundle/example-rec-10-not-missing-prescribed-opioids": {
+      "source": "bundle-example-rec-10-not-missing-prescribed-opioids.xml",
+      "base": "Bundle-example-rec-10-not-missing-prescribed-opioids.html"
+    },
+    "Patient/example-rec-10-not-missing-prescribed-opioids": {
+      "source": "patient-example-rec-10-not-missing-prescribed-opioids.xml",
+      "base": "Patient-example-rec-10-not-missing-prescribed-opioids.html"
+    },
+    "Observation/example-rec-10-not-missing-prescribed-opioids-prefetch": {
+      "source": "observation-example-rec-10-not-missing-prescribed-opioids-prefetch.xml",
+      "base": "Observation-example-rec-10-not-missing-prescribed-opioids-prefetch.html"
+    },
+    "MedicationRequest/example-rec-10-not-missing-prescribed-opioids-prefetch": {
+      "source": "medicationrequest-example-rec-10-not-missing-prescribed-opioids-prefetch.xml",
+      "base": "MedicationRequest-example-rec-10-not-missing-prescribed-opioids-prefetch.html"
+    },
+    "Encounter/example-rec-10-not-missing-prescribed-opioids-context": {
+      "source": "encounter-example-rec-10-not-missing-prescribed-opioids-context.xml",
+      "base": "Encounter-example-rec-10-not-missing-prescribed-opioids-context.html"
+    },
+    "Encounter/example-rec-10-not-missing-prescribed-opioids-prefetch": {
+      "source": "encounter-example-rec-10-not-missing-prescribed-opioids-prefetch.xml",
+      "base": "Encounter-example-rec-10-not-missing-prescribed-opioids-prefetch.html"
+    },
+
+    "Bundle/example-rec-10-unprescribed-opioids": {
+      "source": "bundle-example-rec-10-unprescribed-opioids.xml",
+      "base": "Bundle-example-rec-10-unprescribed-opioids.html"
+    },
+    "Patient/example-rec-10-unprescribed-opioids": {
+      "source": "patient-example-rec-10-unprescribed-opioids.xml",
+      "base": "Patient-example-rec-10-unprescribed-opioids.html"
+    },
+    "Observation/example-rec-10-unprescribed-opioids-prefetch-codeine": {
+      "source": "observation-example-rec-10-unprescribed-opioids-prefetch-codeine.xml",
+      "base": "Observation-example-rec-10-unprescribed-opioids-prefetch-codeine.html"
+    },
+    "Observation/example-rec-10-unprescribed-opioids-prefetch-oxycodone": {
+      "source": "observation-example-rec-10-unprescribed-opioids-prefetch-oxycodone.xml",
+      "base": "Observation-example-rec-10-unprescribed-opioids-prefetch-oxycodone.html"
+    },
+    "MedicationRequest/example-rec-10-unprescribed-opioids-prefetch": {
+      "source": "medicationrequest-example-rec-10-unprescribed-opioids-prefetch.xml",
+      "base": "MedicationRequest-example-rec-10-unprescribed-opioids-prefetch.html"
+    },
+    "Encounter/example-rec-10-unprescribed-opioids-context": {
+      "source": "encounter-example-rec-10-unprescribed-opioids-context.xml",
+      "base": "Encounter-example-rec-10-unprescribed-opioids-context.html"
+    },
+    "Encounter/example-rec-10-unprescribed-opioids-prefetch": {
+      "source": "encounter-example-rec-10-unprescribed-opioids-prefetch.xml",
+      "base": "Encounter-example-rec-10-unprescribed-opioids-prefetch.html"
     },
 
     "Bundle/example-rec-11-benzo-trigger-with-opioid": {
@@ -347,21 +455,64 @@
       "source": "patient-example-rec-11-benzo-trigger-with-opioid.xml",
       "base": "Patient-example-rec-11-benzo-trigger-with-opioid.html"
     },
-    "MedicationRequest/example-rec-11-benzo-trigger-with-opioid-context": {
-      "source": "medicationrequest-example-rec-11-benzo-trigger-with-opioid-context.xml",
-      "base": "MedicationRequest-example-rec-11-benzo-trigger-with-opioid-context.html"
-    },
-    "MedicationRequest/example-rec-11-benzo-trigger-with-opioid-oxycodone": {
-      "source": "medicationrequest-example-rec-11-benzo-trigger-with-opioid-oxycodone.xml",
-      "base": "MedicationRequest-example-rec-11-benzo-trigger-with-opioid-oxycodone.html"
+    "MedicationRequest/example-rec-11-benzo-trigger-with-opioid-prefetch": {
+      "source": "medicationrequest-example-rec-11-benzo-trigger-with-opioid-prefetch.xml",
+      "base": "MedicationRequest-example-rec-11-benzo-trigger-with-opioid-prefetch.html"
     },
     "Encounter/example-rec-11-benzo-trigger-with-opioid-context": {
       "source": "encounter-example-rec-11-benzo-trigger-with-opioid-context.xml",
       "base": "Encounter-example-rec-11-benzo-trigger-with-opioid-context.html"
     },
-    "Encounter/example-rec-11-benzo-trigger-with-opioid-oxycodone": {
-      "source": "encounter-example-rec-11-benzo-trigger-with-opioid-oxycodone.xml",
-      "base": "Encounter-example-rec-11-benzo-trigger-with-opioid-oxycodone.html"
+    "Encounter/example-rec-11-benzo-trigger-with-opioid-prefetch": {
+      "source": "encounter-example-rec-11-benzo-trigger-with-opioid-prefetch.xml",
+      "base": "Encounter-example-rec-11-benzo-trigger-with-opioid-prefetch.html"
+    },
+
+    "Bundle/example-rec-11-benzo-trigger-without-opioid": {
+      "source": "bundle-example-rec-11-benzo-trigger-without-opioid.xml",
+      "base": "Bundle-example-rec-11-benzo-trigger-without-opioid.html"
+    },
+    "Patient/example-rec-11-benzo-trigger-without-opioid": {
+      "source": "patient-example-rec-11-benzo-trigger-without-opioid.xml",
+      "base": "Patient-example-rec-11-benzo-trigger-without-opioid.html"
+    },
+    "Encounter/example-rec-11-benzo-trigger-without-opioid-context": {
+      "source": "encounter-example-rec-11-benzo-trigger-without-opioid-context.xml",
+      "base": "Encounter-example-rec-11-benzo-trigger-without-opioid-context.html"
+    },
+
+    "Bundle/example-rec-11-opioid-trigger-with-benzo": {
+      "source": "bundle-example-rec-11-opioid-trigger-with-benzo.xml",
+      "base": "Bundle-example-rec-11-opioid-trigger-with-benzo.html"
+    },
+    "Patient/example-rec-11-opioid-trigger-with-benzo": {
+      "source": "patient-example-rec-11-opioid-trigger-with-benzo.xml",
+      "base": "Patient-example-rec-11-opioid-trigger-with-benzo.html"
+    },
+    "MedicationRequest/example-rec-11-opioid-trigger-with-benzo-prefetch": {
+      "source": "medicationrequest-example-rec-11-opioid-trigger-with-benzo-prefetch.xml",
+      "base": "MedicationRequest-example-rec-11-opioid-trigger-with-benzo-prefetch.html"
+    },
+    "Encounter/example-rec-11-opioid-trigger-with-benzo-context": {
+      "source": "encounter-example-rec-11-opioid-trigger-with-benzo-context.xml",
+      "base": "Encounter-example-rec-11-opioid-trigger-with-benzo-context.html"
+    },
+    "Encounter/example-rec-11-opioid-trigger-with-benzo-prefetch": {
+      "source": "encounter-example-rec-11-opioid-trigger-with-benzo-prefetch.xml",
+      "base": "Encounter-example-rec-11-opioid-trigger-with-benzo-prefetch.html"
+    },
+
+    "Bundle/example-rec-11-opioid-trigger-without-benzo": {
+      "source": "bundle-example-rec-11-opioid-trigger-without-benzo.xml",
+      "base": "Bundle-example-rec-11-opioid-trigger-without-benzo.html"
+    },
+    "Patient/example-rec-11-opioid-trigger-without-benzo": {
+      "source": "patient-example-rec-11-opioid-trigger-without-benzo.xml",
+      "base": "Patient-example-rec-11-opioid-trigger-without-benzo.html"
+    },
+    "Encounter/example-rec-11-opioid-trigger-without-benzo-context": {
+      "source": "encounter-example-rec-11-opioid-trigger-without-benzo-context.xml",
+      "base": "Encounter-example-rec-11-opioid-trigger-without-benzo-context.html"
     },
 
     "CarePlan/example-opioidcds": {
@@ -388,10 +539,6 @@
       "source": "library-opioidcds-recommendation-04.xml",
       "base": "Library-opioidcds-recommendation-04.html"
     },
-    "Library/opioidcds-recommendation-04-CDSHooks": {
-      "source": "library-opioidcds-recommendation-04-CDSHooks.xml",
-      "base": "Library-opioidcds-recommendation-04-CDSHooks.html"
-    },
     "Library/opioidcds-recommendation-05": {
       "source": "library-opioidcds-recommendation-05.xml",
       "base": "Library-opioidcds-recommendation-05.html"
@@ -400,33 +547,17 @@
       "source": "library-opioidcds-recommendation-07.xml",
       "base": "Library-opioidcds-recommendation-07.html"
     },
-    "Library/opioidcds-recommendation-07-CDSHooks": {
-      "source": "library-opioidcds-recommendation-07-CDSHooks.xml",
-      "base": "Library-opioidcds-recommendation-07-CDSHooks.html"
-    },
     "Library/opioidcds-recommendation-08": {
       "source": "library-opioidcds-recommendation-08.xml",
       "base": "Library-opioidcds-recommendation-08.html"
-    },
-    "Library/opioidcds-recommendation-08-CDSHooks": {
-      "source": "library-opioidcds-recommendation-08-CDSHooks.xml",
-      "base": "Library-opioidcds-recommendation-08-CDSHooks.html"
     },
     "Library/opioidcds-recommendation-10": {
       "source": "library-opioidcds-recommendation-10.xml",
       "base": "Library-opioidcds-recommendation-10.html"
     },
-    "Library/opioidcds-recommendation-10-CDSHooks": {
-      "source": "library-opioidcds-recommendation-10-CDSHooks.xml",
-      "base": "Library-opioidcds-recommendation-10-CDSHooks.html"
-    },
     "Library/opioidcds-recommendation-11": {
       "source": "library-opioidcds-recommendation-11.xml",
       "base": "Library-opioidcds-recommendation-11.html"
-    },
-    "Library/opioidcds-recommendation-11-CDSHooks": {
-      "source": "library-opioidcds-recommendation-11-CDSHooks.xml",
-      "base": "Library-opioidcds-recommendation-11-CDSHooks.html"
     },
     "MedicationRequest/example-opioidcds": {
       "source": "medicationrequest-example-opioidcds.xml",

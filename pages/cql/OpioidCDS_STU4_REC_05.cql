@@ -11,25 +11,30 @@ include OpioidCDS_STU4_Common version '0.1.0' called MMECommon
 */
 
 parameter UserID String
-parameter Orders List<MedicationRequest>
+parameter ContextPrescriptions List<MedicationRequest>
 
 context Patient
 
-define MMETotal:
-  MMECommon.TotalMME(Orders)
+define "Total MME":
+  MMECommon.TotalMME(ContextPrescriptions union "Get Active Prescriptions")
 
-define IsMME50OrMore:
-  MMETotal >= 50 'mg/d'
+define "Is MME 50 Or More?":
+  "Total MME" >= 50 'mg/d'
 
-define getIndicator:
+define "Get Active Prescriptions":
+  [MedicationRequest] activeRx
+    where activeRx.status.value = 'active'
+    and activeRx.category.coding[0].code.value = 'outpatient'
+
+define "Get Indicator":
   'warning'
 
-define getSummary:
+define "Get Summary":
   'High risk for opioid overdose - '
-    + case when MMETotal.value >= 90
+    + case when "Total MME".value >= 90
        then 'taper now'
        else 'consider tapering'
      end
 
-define getDetail:
-  'Total morphine milligram equivalent (MME) is ' + ToString(MMETotal) + '. Taper to less than 50.'
+define "Get Detail":
+  'Total morphine milligram equivalent (MME) is ' + ToString("Total MME") + '. Taper to less than 50.'
