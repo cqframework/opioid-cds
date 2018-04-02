@@ -1,6 +1,6 @@
 <PlanDefinition xmlns="http://hl7.org/fhir">
     <id value="opioidcds-11"/>
-    <url value="http://hl7.org/fhir/ig/opioid-cds/PlanDefinition/cdc-opioid-11"/>
+    <url value="http://hl7.org/fhir/ig/opioid-cds/PlanDefinition/opioidcds-11"/>
     <identifier>
         <use value="official"/>
         <value value="cdc-opioid-guidance"/>
@@ -89,9 +89,6 @@
     <library>
         <reference value="Library/opioidcds-recommendation-11"/>
     </library>
-    <!--<library>-->
-        <!--<reference value="Library/opioidcds-recommendation-11-CDSHooks"/>-->
-    <!--</library>-->
     <action>
         <!-- non-dynamic card summary -->
         <title value="Existing patient has concurrent opioid and benzodiazepine prescriptions."/>
@@ -132,21 +129,28 @@
         </condition>
         <groupingBehavior value="visual-group"/>
         <selectionBehavior value="exactly-one"/>
-        <!-- dynamic card detail -->
+        <!-- dynamic card elements -->
         <dynamicValue>
             <path value="action.description"/>
-            <expression value="Get Notification"/>
+            <expression value="Get Detail"/>
         </dynamicValue>
-        <!-- TODO - indicator? -->
-        <!-- Assessed - benefits outweigh risks; snooze 3 mo -->
+        <dynamicValue>
+            <path value="action.title"/>
+            <expression value="Get Summary"/>
+        </dynamicValue>
+        <dynamicValue>
+            <path value="action.extension"/>
+            <expression value="Get Indicator"/>
+        </dynamicValue>
         <action>
-            <description value="Benefits outweigh risks. Snooze 3 months."/>
+            <description value="Will revise"/>
+            <!-- Open Order Set, where available -->
         </action>
-        <!-- N/A - see comment (will be reviewed by medical director); snooze 3 mo -->
         <action>
-            <!-- TODO: How do we indicate through the response that a comment must be captured? -->
-            <!-- TODO: How do we communicate the response back to the CDS service for persistence? -->
-            <description value="N/A - see comment (will be reviewed by medical director); snooze 3 mo"/>
+            <description value="Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo"/>
+        </action>
+        <action>
+            <description value="N/A - see comment; snooze 3 mo"/>
         </action>
     </action>
 </PlanDefinition>

@@ -20,7 +20,7 @@
 	<publisher value="Centers for Disease Control and Prevention (CDC)"/>
 	<description value="When prescribing opioids for chronic pain, providers should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs."/>
 	<purpose value="CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care."/>
-	<usage value="Providers should be aware if patients are taking other prescription drugs or illicit drugs that might increase their risk of an overdose"/>
+	<usage value="Providers should be aware if patients are taking other prescription drugs or illicit drugs that might increase their risk of an overdose."/>
 	<useContext>
 		<code>
 			<system value="http://hl7.org/fhir/usage-context-type"/>
@@ -84,9 +84,6 @@
 	<library>
 		<reference value="Library/opioidcds-recommendation-10"/>
 	</library>
-	<!--<library>-->
-	<!--<reference value="Library/opioidcds-recommendation-10-CDSHooks"/>-->
-	<!--</library>-->
 	<action>
 		<title value="Annual Urine Screening Check"/>
 		<description value="Patient has not had a urine screening in the past 12 months"/>
@@ -128,6 +125,13 @@
 			<path value="activity.extension"/>
 			<expression value="Get Indicator"/>
 		</dynamicValue>
+		<action>
+			<description value="Will perform urine screening"/>
+			<!-- Open Order Set, where available -->
+		</action>
+		<action>
+			<description value="Not for chronic pain management. Snooze 3 months"/>
+		</action>
 	</action>
 	<action>
 		<title value="Positive Urine Screening Check"/>
@@ -203,6 +207,9 @@
 				<path value="action.description"/>
 				<expression value="Inconsistent Unprescribed Opioids"/>
 			</dynamicValue>
+			<action>
+				<description value="Not for chronic pain management. Snooze 3 months"/>
+			</action>
 		</action>
 		<action>
 			<title value="Prescribed Opioids Not Found In Urine Screening"/>
@@ -287,6 +294,9 @@
 				<path value="action.description"/>
 				<expression value="Inconsistent Illicit Drugs"/>
 			</dynamicValue>
+			<action>
+				<description value="Not for chronic pain management. Snooze 3 months"/>
+			</action>
 		</action>
 	</action>
 </PlanDefinition>
