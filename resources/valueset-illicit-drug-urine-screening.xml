@@ -1,5 +1,6 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="illicit-drug-urine-screening"/>
+    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/illicit-drug-urine-screening"/>
     <status value="active"/>
     <compose>
         <include>

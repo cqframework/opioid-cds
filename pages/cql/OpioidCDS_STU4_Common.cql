@@ -1,27 +1,113 @@
-library OpioidCDS_STU4_Common version '0.1.0'
+library OpioidCDSCommonSTU4 version '0.1.0'
 
 using FHIR version '3.2.0'
 
-include OMTKLogic version '0.1.0' called OMTKLogic
+include OMTKLogic version '0.0.1' called OMTKLogic
 
-valueset "Benzodiazepines": 'benzodiazepines'
-valueset "Naloxone": 'naloxone'
-valueset "Ambulatory Abuse Potential Opioids": 'opioids-abused-in-ambulatory-care'
-valueset "End Of Life Opioids": 'opioids-indicating-end-of-life'
-valueset "Long Acting Opioids": 'long-acting-opioids'
-valueset "Illicit Drug Screening": 'illicit-drug-urine-screening'
-valueset "Opioid Drug Screening": 'opioid-urine-screening'
+valueset "Benzodiazepines": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/benzodiazepines'
+valueset "End of Life Conditions": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/end-of-life-conditions'
+// Harvested from VSAC - OID: 2.16.840.1.113762.1.4.1108.15
+valueset "Hospice Disposition": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/hospice-disposition'
+valueset "Hospice Finding Codes": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/hospice-finding'
+valueset "Hospice Procedure Codes": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/hospice-procedure'
+valueset "Illicit Drug Screening": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/illicit-drug-urine-screening'
+// Harvested from VSAC - OID: 2.16.840.1.113883.3.526.3.1259
+valueset "Limited Life Expectancy Conditions": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/limited-life-expectancy-conditions'
+valueset "Long Acting Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/long-acting-opioids'
+// Harvested from VSAC - OID: 2.16.840.1.113762.1.4.1116.351
+valueset "Metastatic Cancer": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/metastatic-cancer'
+valueset "Naloxone": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/naloxone'
+valueset "Risk Assessment": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opiate-therapy-risk-assessment'
+valueset "Opioid Drug Screening": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioid-urine-screening'
+valueset "Ambulatory Abuse Potential Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care'
+valueset "End Of Life Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids-indicating-end-of-life'
+valueset "Substance Abuse": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/substance-abuse'
 
-// The following ValueSets are not currently used for any of the recommendations (4, 5, 7, 8, 10, and 11)
-valueset "Opioids": 'opioids'
-valueset "Codeine Cough Meds": 'opioids-codeine-cough-meds'
-valueset "Short Acting Opioids": 'short-acting-opioids'
+// Valuesets that are not currently used
+valueset "Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids'
+valueset "Codeine Cough Meds": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids-codeine-cough-meds'
+valueset "Short Acting Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/short-acting-opioids'
 
 // TODO: Capture process decisions for long-term opioid use
 define IsForChronicPain: true
 
-// TODO: Capture process decisions for metastatic cancer
-define HasMetastaticCancer: false
+define "Get Active Ambulatory Opioid Rx":
+  [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
+    where Rx.status.value = 'active'
+      and Rx.category.coding[0].code.value = 'outpatient'
+
+define "Get Ambulatory Opioid Rx":
+  [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
+      where Rx.category.coding[0].code.value = 'outpatient'
+
+define function "End of Life Assessment" (ContextPrescriptions List<MedicationRequest>):
+  // 1. Conditions indicating end of life or with limited life expectancy
+  exists (
+    (
+      [Condition: "End of Life Conditions"] C
+        where C.clinicalStatus.value in { 'active', 'recurrence' }
+    )
+    union
+    (
+      [Condition: code in "Limited Life Expectancy Conditions"] C
+        where C.clinicalStatus.value in { 'active', 'recurrence' }
+    )
+  )
+  // 2. Admitted/referred/discharged to hospice care
+  or exists (
+    (
+      [Procedure: code in "Hospice Procedure Codes"] P
+        where P.status.value in { 'in-progress', 'completed' }
+    )
+    union
+    (
+      [ServiceRequest: code in "Hospice Procedure Codes"] E
+        where E.status.value in { 'planned', 'arrived', 'in-progress', 'finished', 'onleave' }
+    )
+    union
+    (
+      [Observation: code in "Hospice Finding Codes"] O
+        where O.status.value not in { 'unknown', 'entered-in-error', 'cancelled' }
+    )
+    union
+    (
+      [Encounter] E
+        where
+          (
+            if E.hospitalization.dischargeDisposition.coding[0] is null
+              then false
+            else ToCode(E.hospitalization.dischargeDisposition.coding[0]) in "Hospice Disposition"
+          )
+          and E.status.value in { 'planned', 'arrived', 'in-progress', 'finished', 'onleave' }
+    )
+  )
+  // 3. Medications indicating end of life
+  or exists (
+    (
+      [MedicationAdministration: code in "End Of Life Opioids"] MA
+        where MA.status.value in { 'in-progress', 'on-hold', 'completed' }
+    )
+    union
+    (
+      [MedicationDispense: code in "End Of Life Opioids"] MD
+        where MD.status.value in { 'preparation', 'in-progress', 'on-hold', 'completed' }
+    )
+    union
+    (
+      [MedicationRequest: code in "End Of Life Opioids"] MR
+        where MR.status.value in { 'active', 'completed' }
+    )
+    union
+    (
+      [MedicationStatement: code in "End Of Life Opioids"] MS
+        where MS.status.value in { 'active', 'completed', 'intended' }
+    )
+    union
+    (
+      ContextPrescriptions Rx
+        where ToCode(Rx.medication.coding[0]) in "End Of Life Opioids"
+    )
+  )
 
 define function Prescriptions(Orders List<MedicationRequest>):
   Orders O

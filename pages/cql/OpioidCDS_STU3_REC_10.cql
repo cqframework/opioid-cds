@@ -2,7 +2,7 @@ library OpioidCDS_STU3_REC_10 version '0.1.0'
 
 using FHIR version '3.0.0'
 
-include OpioidCDS_STU3_Common version '0.1.0' called Common
+include OpioidCDSCommonSTU3 version '0.1.0' called Common
 
 /*
 **
@@ -51,7 +51,7 @@ define "Validate Trigger Event":
 define "Inclusion Criteria":
   "Validate Trigger Event"
       and not "Exclusion Criteria"
-      and AnyTrue(Common.ProbableDaysInRange("Get Active Ambulatory Opioid Rx", 90, 80))
+      and AnyTrue(Common.ProbableDaysInRange(Common."Get Active Ambulatory Opioid Rx", 90, 80))
       and
         ("No Urine Screening In Last 12 Months"
           or "Has Missing Opioids?"
@@ -59,16 +59,7 @@ define "Inclusion Criteria":
           or "Has Illicit Drugs in Screening?")
 
 define "Exclusion Criteria":
-  exists ( [MedicationRequest: Common."End Of Life Opioids"] )
-  or Common.HasMetastaticCancer
-
-define "Get Active Ambulatory Opioid Rx":
-  [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] Rx
-    where Rx.status.value = 'active'
-      and Rx.category.coding[0].code.value = 'outpatient'
-      //and
-      //  (Rx.dosageInstruction.asNeeded is null
-      //    or not Rx.dosageInstruction.asNeeded.value)
+  Common."End of Life Assessment"(ContextPrescriptions)
 
 define "Get Illicit Drug Urine Screenings in Last 12 Months":
   [Observation: "combo-code" in Common."Illicit Drug Screening"] observation
@@ -122,7 +113,7 @@ define "Has Opioids in Screening?":
   exists ( "Positive Opioid Drug Screening" )
 
 define "Orders Before Most Recent Opioid Screening":
-  "Get Active Ambulatory Opioid Rx" orders
+  Common."Get Active Ambulatory Opioid Rx" orders
       with "Positive Opioid Drug Screening" mostRecentScreening
         such that orders.authoredOn.value < mostRecentScreening.effective.value
       return
@@ -144,11 +135,8 @@ define "Get Opioids From Most Recent Screening":
         )
 
 define "Unprescribed Opioids":
-  "Get Opioids From Most Recent Screening" mostRecentScreeningOpioids
-    with "Prescribed Opioids" ingredients
-      such that
-        not (mostRecentScreeningOpioids in ingredients)
-    return mostRecentScreeningOpioids
+  "Get Opioids From Most Recent Screening" except
+    ("Get Opioids From Most Recent Screening" intersect "Prescribed Opioids")
 
 define "Has Unprescribed Opioids?":
   exists ("Unprescribed Opioids")

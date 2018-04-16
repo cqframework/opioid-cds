@@ -922,6 +922,70 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines End Of Life Conditions"/>
+            <description value="End of life condition codes"/>
+            <sourceReference>
+                <reference value="ValueSet/end-of-life-conditions"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Hospice Disposition"/>
+            <description value="Hospice encounter discharge disposition codes"/>
+            <sourceReference>
+                <reference value="ValueSet/hospice-disposition"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Hospice Finding"/>
+            <description value="Hospice observation finding codes"/>
+            <sourceReference>
+                <reference value="ValueSet/hospice-finding"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Hospice Procedure"/>
+            <description value="Hospice procedure codes"/>
+            <sourceReference>
+                <reference value="ValueSet/hospice-procedure"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Limited Life Expectancy Conditions"/>
+            <description value="Limited life expectancy condition codes"/>
+            <sourceReference>
+                <reference value="ValueSet/limited-life-expectancy-conditions"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Metastatic Cancer"/>
+            <description value="Metastatic cancer codes"/>
+            <sourceReference>
+                <reference value="ValueSet/metastatic-cancer"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opiate Therapy Risk Assessment"/>
+            <description value="Opiate therapy risk assessment codes"/>
+            <sourceReference>
+                <reference value="ValueSet/opiate-therapy-risk-assessment"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Substance Abuse"/>
+            <description value="Substance abuse codes"/>
+            <sourceReference>
+                <reference value="ValueSet/substance-abuse"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Urine Screening"/>
             <description value="Urine analysis for opioids"/>
             <sourceReference>

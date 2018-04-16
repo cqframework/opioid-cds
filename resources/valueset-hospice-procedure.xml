@@ -1,0 +1,26 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="hospice-procedure"/>
+    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/hospice-procedure"/>
+    <status value="active"/>
+    <compose>
+        <include>
+            <system value="http://snomed.info/sct"/>
+            <concept>
+                <code value="306205009"/>
+                <display value="Referral to hospice (procedure)"/>
+            </concept>
+            <concept>
+                <code value="305336008"/>
+                <display value="Admission to hospice (procedure)"/>
+            </concept>
+            <concept>
+                <code value="183919006"/>
+                <display value="Urgent admission to hospice (procedure)"/>
+            </concept>
+            <concept>
+                <code value="428371000124100"/>
+                <display value="Discharge to healthcare facility for hospice care (procedure)"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>

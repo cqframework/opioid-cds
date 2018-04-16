@@ -1,0 +1,18 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="opiate-therapy-risk-assessment"/>
+    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opiate-therapy-risk-assessment"/>
+    <status value="active"/>
+    <compose>
+        <include>
+            <system value="http://snomed.info/sct"/>
+            <concept>
+                <code value="268525008"/>
+                <display value="High risk drug monitoring (regime/therapy)"/>
+            </concept>
+            <concept>
+                <code value="454281000124100"/>
+                <display value="Assessment of risk for opioid abuse (procedure)"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>

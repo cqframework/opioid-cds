@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
-   <annotation startLine="62" startChar="12" endLine="62" endChar="60" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="62" startChar="12" endLine="62" endChar="60" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="66" startChar="3" endLine="66" endChar="66" message="Could not resolve code path medicationCodeableConcept for the type of the retrieve FHIR.MedicationRequest." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="66" startChar="3" endLine="66" endChar="66" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="74" startChar="3" endLine="74" endChar="64" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="74" startChar="3" endLine="74" endChar="64" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="79" startChar="3" endLine="79" endChar="63" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="79" startChar="3" endLine="79" endChar="63" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="134" startChar="20" endLine="134" endChar="76" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="143" startChar="16" endLine="143" endChar="17" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="157" startChar="52" endLine="157" endChar="73" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="171" startChar="62" endLine="171" endChar="78" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="65" startChar="3" endLine="65" endChar="64" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="65" startChar="3" endLine="65" endChar="64" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="70" startChar="3" endLine="70" endChar="63" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="70" startChar="3" endLine="70" endChar="63" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="125" startChar="20" endLine="125" endChar="76" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="134" startChar="16" endLine="134" endChar="17" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="145" startChar="52" endLine="145" endChar="73" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="159" startChar="62" endLine="159" endChar="78" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <identifier id="OpioidCDS_STU3_REC_10" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
@@ -19,7 +15,7 @@
       <def localIdentifier="FHIR" uri="http://hl7.org/fhir" version="3.0.0"/>
    </usings>
    <includes>
-      <def localIdentifier="Common" path="OpioidCDS_STU3_Common" version="0.1.0"/>
+      <def localIdentifier="Common" path="OpioidCDSCommonSTU3" version="0.1.0"/>
    </includes>
    <parameters>
       <def name="ContextPrescriptions" accessLevel="Public">
@@ -69,43 +65,8 @@
          </expression>
       </def>
       <def name="Exclusion Criteria" context="Patient" accessLevel="Public">
-         <expression xsi:type="Or">
-            <operand xsi:type="Exists">
-               <operand dataType="fhir:MedicationRequest" codeProperty="medicationCodeableConcept" xsi:type="Retrieve">
-                  <codes name="End Of Life Opioids" libraryName="Common" xsi:type="ValueSetRef"/>
-               </operand>
-            </operand>
-            <operand name="HasMetastaticCancer" libraryName="Common" xsi:type="ExpressionRef"/>
-         </expression>
-      </def>
-      <def name="Get Active Ambulatory Opioid Rx" context="Patient" accessLevel="Public">
-         <expression xsi:type="Query">
-            <source alias="Rx">
-               <expression dataType="fhir:MedicationRequest" codeProperty="medicationCodeableConcept" xsi:type="Retrieve">
-                  <codes name="Ambulatory Abuse Potential Opioids" libraryName="Common" xsi:type="ValueSetRef"/>
-               </expression>
-            </source>
-            <where xsi:type="And">
-               <operand xsi:type="Equal">
-                  <operand path="value" xsi:type="Property">
-                     <source path="status" scope="Rx" xsi:type="Property"/>
-                  </operand>
-                  <operand valueType="t:String" value="active" xsi:type="Literal"/>
-               </operand>
-               <operand xsi:type="Equal">
-                  <operand path="value" xsi:type="Property">
-                     <source path="code" xsi:type="Property">
-                        <source xsi:type="Indexer">
-                           <operand path="coding" xsi:type="Property">
-                              <source path="category" scope="Rx" xsi:type="Property"/>
-                           </operand>
-                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
-                        </source>
-                     </source>
-                  </operand>
-                  <operand valueType="t:String" value="outpatient" xsi:type="Literal"/>
-               </operand>
-            </where>
+         <expression name="End of Life Assessment" libraryName="Common" xsi:type="FunctionRef">
+            <operand name="ContextPrescriptions" xsi:type="ParameterRef"/>
          </expression>
       </def>
       <def name="Get Illicit Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
@@ -228,7 +189,7 @@
       <def name="Orders Before Most Recent Opioid Screening" context="Patient" accessLevel="Public">
          <expression xsi:type="Query">
             <source alias="orders">
-               <expression name="Get Active Ambulatory Opioid Rx" xsi:type="ExpressionRef"/>
+               <expression name="Get Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
             </source>
             <relationship alias="mostRecentScreening" xsi:type="With">
                <expression name="Positive Opioid Drug Screening" xsi:type="ExpressionRef"/>
@@ -530,24 +491,12 @@
          </expression>
       </def>
       <def name="Unprescribed Opioids" context="Patient" accessLevel="Public">
-         <expression xsi:type="Query">
-            <source alias="mostRecentScreeningOpioids">
-               <expression name="Get Opioids From Most Recent Screening" xsi:type="ExpressionRef"/>
-            </source>
-            <relationship alias="ingredients" xsi:type="With">
-               <expression name="Prescribed Opioids" xsi:type="ExpressionRef"/>
-               <suchThat xsi:type="Not">
-                  <operand xsi:type="In">
-                     <operand name="mostRecentScreeningOpioids" xsi:type="AliasRef"/>
-                     <operand xsi:type="ToList">
-                        <operand name="ingredients" xsi:type="AliasRef"/>
-                     </operand>
-                  </operand>
-               </suchThat>
-            </relationship>
-            <return>
-               <expression name="mostRecentScreeningOpioids" xsi:type="AliasRef"/>
-            </return>
+         <expression xsi:type="Except">
+            <operand name="Get Opioids From Most Recent Screening" xsi:type="ExpressionRef"/>
+            <operand xsi:type="Intersect">
+               <operand name="Get Opioids From Most Recent Screening" xsi:type="ExpressionRef"/>
+               <operand name="Prescribed Opioids" xsi:type="ExpressionRef"/>
+            </operand>
          </expression>
       </def>
       <def name="Has Unprescribed Opioids?" context="Patient" accessLevel="Public">
@@ -626,7 +575,7 @@
                </operand>
                <operand xsi:type="AnyTrue">
                   <source name="ProbableDaysInRange" libraryName="Common" xsi:type="FunctionRef">
-                     <operand name="Get Active Ambulatory Opioid Rx" xsi:type="ExpressionRef"/>
+                     <operand name="Get Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
                      <operand valueType="t:Integer" value="90" xsi:type="Literal"/>
                      <operand valueType="t:Integer" value="80" xsi:type="Literal"/>
                   </source>

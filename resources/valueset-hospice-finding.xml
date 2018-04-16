@@ -1,0 +1,26 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="hospice-finding"/>
+    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/hospice-finding"/>
+    <status value="active"/>
+    <compose>
+        <include>
+            <system value="http://snomed.info/sct"/>
+            <concept>
+                <code value="170935008"/>
+                <display value="Full care by hospice (finding)"/>
+            </concept>
+            <concept>
+                <code value="448451000124101"/>
+                <display value="Transition from self-care to hospice (finding)"/>
+            </concept>
+            <concept>
+                <code value="1891000124102"/>
+                <display value="Transition from acute care to hospice (finding)"/>
+            </concept>
+            <concept>
+                <code value="1951000124104"/>
+                <display value="Transition from long-term care to hospice (finding)"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>

@@ -7,94 +7,54 @@ codesystem RxNorm: 'http://www.nlm.nih.gov/research/umls/rxnorm'
 //define MED_DOSE_FORMS: [MED_DOSE_FORM]
 
 // Given an RxNorm Code:
-// MED_DRUG_VALUE_SET.DRUG_RXCUI (VALUE_SET_ID = 1) // Opioids
+// NON_SURGICAL_OPIOID_TO_INCLUDE.DRUG_RXCUI
 // MED_DRUG.DRUG_RXCUI
 // MED_SCDC_FOR_DRUG.DRUG_RXCUI -> SCDC_RXCUI
 // MED_SCDC.SCDC_RXCUI (STRENGTH, STRENGTH_VALUE, STRENGTH_UNIT)
 // MED_INGREDIENT_FOR_SCDC.SCDC_RXCUI -> INGREDIENT_RXCUI
 // MED_INGREDIENT.INGREDIENT_RXCUI
-// MED_INGREDIENT_TYPE.INGREDIENT_RXCUI (INGREDIENT_TYPE = 'Opioid_NonSurgical')
+// MED_INGREDIENT_TYPE.INGREDIENT_RXCUI (INGREDIENT_TYPE = 'NonSurgicalOpioid')
 
 /*
  SQL ->
 select D.DRUG_RXCUI, D.DRUG_NAME, DF.DOSE_FORM_NAME, SCDCD.SCDC_RXCUI, SCDC.SCDC_NAME, SCDC.STRENGTH, SCDC.STRENGTH_VALUE, SCDC.STRENGTH_UNIT, I.INGREDIENT_RXCUI, I.INGREDIENT_NAME
   from MED_DRUG D
-    join MED_DRUG_VALUE_SET MDVS on D.DRUG_RXCUI = MDVS.DRUG_RXCUI and MDVS.VALUE_SET_ID = 1 -- Opioids
+    join NON_SURGICAL_OPIOID_TO_INCLUDE NSO on D.DRUG_RXCUI = NSO.DRUG_RXCUI
     join MED_SCDC_FOR_DRUG SCDCD on D.DRUG_RXCUI = SCDCD.DRUG_RXCUI
     join MED_SCDC SCDC on SCDCD.SCDC_RXCUI = SCDC.SCDC_RXCUI
-    join MED_INGREDIENT I on SCDC.INGREDIENT_RXCUI = I.INGREDIENT_RXCUI
+    join MED_INGREDIENT_FOR_SCDC SCDCI on SCDC.SCDC_RXCUI = SCDCI.SCDC_RXCUI
+    join MED_INGREDIENT I on SCDCI.INGREDIENT_RXCUI = I.INGREDIENT_RXCUI
     join MED_INGREDIENT_TYPE IT on I.INGREDIENT_RXCUI = IT.INGREDIENT_RXCUI
-    left join MED_DOSE_FORM DF on DF.DOSE_FORM_RXCUI = D.DOSE_FORM_RXCUI
-    --Most of the drugs have multiple dose form groups...
-    --left join MED_DRUG_DOSE_FORM_GROUP DDFG on D.DRUG_RXCUI = DDFG.DRUG_RXCUI
-    --left join MED_DOSE_FORM_GROUP DFG on DDFG.DOSE_FORM_GROUP_RXCUI = DFG.DOSE_FORM_GROUP_RXCUI
-  where D.DRUG_RXCUI = @RxNormCode -- 197696
-    and IT.INGREDIENT_TYPE = 'Opioid_NonSurgical'
+	left join MED_DRUG_DOSE_FORM DDF on D.DRUG_RXCUI = DDF.DRUG_RXCUI
+	left join MED_DOSE_FORM DF on DDF.DOSE_FORM_RXCUI = DF.DOSE_FORM_RXCUI
+	--Most of the drugs have multiple dose form groups...
+	--left join MED_DRUG_DOSE_FORM_GROUP DDFG on D.DRUG_RXCUI = DDFG.DRUG_RXCUI
+	--left join MED_DOSE_FORM_GROUP DFG on DDFG.DOSE_FORM_GROUP_RXCUI = DFG.DOSE_FORM_GROUP_RXCUI
+  where D.DRUG_RXCUI = @RxNormCode // 197696
+    and IT.INGREDIENT_TYPE = 'NonSurgicalOpioid'
 */
-
-/*
-SQL to create CQL tuple selectors for the query result:
-
-select '{ ' || char(10) || group_concat(
-    '  { drugCode: Code { code: ''' || D.DRUG_RXCUI || ''', system: ''http://www.nlm.nih.gov/research/umls/rxnorm'' }, '
-    || 'drugName: ''' || D.DRUG_NAME || ''', '
-    || 'doseFormCode: Code { code: ''' || D.DOSE_FORM_RXCUI || ''', system: ''http://www.nlm.nih.gov/research/umls/rxnorm'' }, '
-    || 'doseFormName: ''' || DF.DOSE_FORM_NAME || ''', '
-    || 'ingredientCode: Code { code: ''' || I.INGREDIENT_RXCUI || ''', system: ''http://www.nlm.nih.gov/research/umls/rxnorm'' }, '
-    || 'ingredientName: ''' || I.INGREDIENT_NAME || ''', '
-    || 'strength: ''' || SCDC.STRENGTH || ''', '
-    || 'strengthValue: ''' || SCDC.STRENGTH_VALUE || ''', '
-    || 'strengthUnit: ''' || SCDC.STRENGTH_UNIT || ''' '
-    || '}', ', ' || char(10)) || char(10) || '}' as TUPLES
-  from MED_DRUG D
-    join MED_DRUG_VALUE_SET MDVS on D.DRUG_RXCUI = MDVS.DRUG_RXCUI and MDVS.VALUE_SET_ID = 1 -- Opioids
-    join MED_SCDC_FOR_DRUG SCDCD on D.DRUG_RXCUI = SCDCD.DRUG_RXCUI
-    join MED_SCDC SCDC on SCDCD.SCDC_RXCUI = SCDC.SCDC_RXCUI
-    join MED_INGREDIENT I on SCDC.INGREDIENT_RXCUI = I.INGREDIENT_RXCUI
-    join MED_INGREDIENT_TYPE IT on I.INGREDIENT_RXCUI = IT.INGREDIENT_RXCUI and IT.INGREDIENT_TYPE = 'Opioid_NonSurgical'
-    left join MED_DOSE_FORM DF on DF.DOSE_FORM_RXCUI = D.DOSE_FORM_RXCUI
-
-SQL to create CQL tuple selectors without codes...
-
-select '{ ' || char(10) || group_concat(
-    '  { drugCode: ' || D.DRUG_RXCUI || ', '
-    || 'drugName: ''' || D.DRUG_NAME || ''', '
-    || 'doseFormCode: ' || D.DOSE_FORM_RXCUI || ', '
-    || 'doseFormName: ''' || DF.DOSE_FORM_NAME || ''', '
-    || 'ingredientCode: ' || I.INGREDIENT_RXCUI || ', '
-    || 'ingredientName: ''' || I.INGREDIENT_NAME || ''', '
-    || 'strength: ''' || SCDC.STRENGTH || ''', '
-    || 'strengthValue: ' || SCDC.STRENGTH_VALUE || ', '
-    || 'strengthUnit: ''' || SCDC.STRENGTH_UNIT || ''' '
-    || '}', ', ' || char(10)) || char(10) || '}' as TUPLES
-  from MED_DRUG D
-    join MED_DRUG_VALUE_SET MDVS on D.DRUG_RXCUI = MDVS.DRUG_RXCUI and MDVS.VALUE_SET_ID = 1 -- Opioids
-    join MED_SCDC_FOR_DRUG SCDCD on D.DRUG_RXCUI = SCDCD.DRUG_RXCUI
-    join MED_SCDC SCDC on SCDCD.SCDC_RXCUI = SCDC.SCDC_RXCUI
-    join MED_INGREDIENT I on SCDC.INGREDIENT_RXCUI = I.INGREDIENT_RXCUI
-    join MED_INGREDIENT_TYPE IT on I.INGREDIENT_RXCUI = IT.INGREDIENT_RXCUI and IT.INGREDIENT_TYPE = 'Opioid_NonSurgical'
-    left join MED_DOSE_FORM DF on DF.DOSE_FORM_RXCUI = D.DOSE_FORM_RXCUI
-*/
-
 
 /*
   CQL, assuming translation to SQL:
 
   from
     [MED_DRUG: rxNormCode] D,
-    [MED_DRUG_VALUE_SET] MDVS,
+    [NON_SURGICAL_OPIOID_TO_INCLUDE] NSO,
     [MED_SCDC_FOR_DRUG] SCDCD,
     [MED_SCDC] SCDC,
+    [MED_INGREDIENT_FOR_SCDC] SCDCI,
     [MED_INGREDIENT] I,
     [MED_INGREDIENT_TYPE] IT,
+    [MED_DRUG_DOSE_FORM] DDF,
     [MED_DOSE_FORM] DF
-  where D.DRUG_RXCUI = MDVS.DRUG_RXCUI
-    and MDVS.VALUE_SET_ID = 1 // Opioids
+  where D.DRUG_RXCUI = NSO.DRUG_RXCUI
     and D.DRUG_RXCUI = SCDCD.DRUG_RXCUI
     and SCDCD.SCDC_RXCUI = SCDC.SCDC_RXCUI
-    and SDCD.INGREDIENT_RXCUI = I.INGREDIENT_RXCUI
+    and SCDC.SCDC_RXCUI = SCDCI.SCDC_RXCUI
+    and SDCDI.INGREDIENT_RXCUI = I.INGREDIENT_RXCUI
     and I.INGREDIENT_RXCUI = IT.INGREDIENT_RXCUI
-    and D.DOSE_FORM_RXCUI = DF.DOSE_FORM_RXCUI
+    and D.DRUG_RXCUI = DDF.DRUG_RXCUI
+    and DDF.DOSE_FORM_RXCUI = DF.DOSE_FORM_RXCUI
     and IT.INGREDIENT_TYPE = 'NonSurgicalOpioid'
 */
 

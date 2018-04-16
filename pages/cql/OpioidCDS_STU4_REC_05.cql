@@ -2,7 +2,7 @@ library OpioidCDS_STU4 version '0.1.0'
 
 using FHIR version '3.2.0'
 
-include OpioidCDS_STU4_Common version '0.1.0' called MMECommon
+include OpioidCDSCommonSTU4 version '0.1.0' called Common
 
 /*
 **
@@ -15,16 +15,15 @@ parameter ContextPrescriptions List<MedicationRequest>
 
 context Patient
 
+define "Inclusion Criteria":
+  not "Exclusion Criteria"
+  and "Total MME" >= 50 'mg/d'
+
+define "Exclusion Criteria":
+  Common."End of Life Assessment"(ContextPrescriptions)
+
 define "Total MME":
-  MMECommon.TotalMME(ContextPrescriptions union "Get Active Prescriptions")
-
-define "Is MME 50 Or More?":
-  "Total MME" >= 50 'mg/d'
-
-define "Get Active Prescriptions":
-  [MedicationRequest] activeRx
-    where activeRx.status.value = 'active'
-    and activeRx.category.coding[0].code.value = 'outpatient'
+  Common.TotalMME(ContextPrescriptions union Common."Get Active Ambulatory Opioid Rx")
 
 define "Get Indicator":
   'warning'

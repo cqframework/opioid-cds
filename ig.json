@@ -620,6 +620,38 @@
       "source": "requestgroup-example-opioidcds.xml",
       "base": "RequestGroup-example-opioidcds.html"
     },
+    "ValueSet/end-of-life-conditions": {
+      "source": "valueset-end-of-life-conditions.xml",
+      "base": "ValueSet-end-of-life-conditions.html"
+    },
+    "ValueSet/hospice-disposition": {
+      "source": "valueset-hospice-disposition.xml",
+      "base": "ValueSet-hospice-disposition.html"
+    },
+    "ValueSet/hospice-finding": {
+      "source": "valueset-hospice-finding.xml",
+      "base": "ValueSet-hospice-finding.html"
+    },
+    "ValueSet/hospice-procedure": {
+      "source": "valueset-hospice-procedure.xml",
+      "base": "ValueSet-hospice-procedure.html"
+    },
+    "ValueSet/limited-life-expectancy-conditions": {
+      "source": "valueset-limited-life-expectancy-conditions.xml",
+      "base": "ValueSet-limited-life-expectancy-conditions.html"
+    },
+    "ValueSet/metastatic-cancer": {
+      "source": "valueset-metastatic-cancer.xml",
+      "base": "ValueSet-metastatic-cancer.html"
+    },
+    "ValueSet/opiate-therapy-risk-assessment": {
+      "source": "valueset-opiate-therapy-risk-assessment.xml",
+      "base": "ValueSet-opiate-therapy-risk-assessment.html"
+    },
+    "ValueSet/substance-abuse": {
+      "source": "valueset-substance-abuse.xml",
+      "base": "ValueSet-substance-abuse.html"
+    },
     "ValueSet/illicit-drug-urine-screening": {
       "source": "valueset-illicit-drug-urine-screening.xml",
       "base": "ValueSet-illicit-drug-urine-screening.html"

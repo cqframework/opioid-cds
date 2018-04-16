@@ -482,16 +482,6 @@
     <system value="urn:va.gov:kbs:knart:artifact:r1" />
     <value value="bb7ccea6-9744-4743-854a-bcffd87191f6" />
   </identifier>
-  <!--identifierName="Contract: VA118-16-D-1008, Task Order (TO): VA-118-16-F-1008-0007, CLIN0004AG" -->
-  <identifier>
-    <system value="urn:va.gov:kbs:contract:VA118-16-D-1008:to:VA-118-16-F-1008-0007" />
-    <value value="CLIN0004AG" />
-  </identifier>
-  <!--identifierName="Jira KP-914" -->
-  <identifier>
-    <system value="urn:cognitivemedicine.com:lab:jira" />
-    <value value="KP-914" />
-  </identifier>
   <version value="0.1" />
   <name value="ChestPainCoronaryArteryDiseaseOrderSetKNART" />
   <title value="Chest Pain (CP) - Coronary Artery Disease (CAD) Order Set KNART" />

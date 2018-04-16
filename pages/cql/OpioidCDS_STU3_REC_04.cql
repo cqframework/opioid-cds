@@ -2,7 +2,7 @@ library OpioidCDS_STU3_REC_04 version '0.1.0'
 
 using FHIR version '3.0.0'
 
-include OpioidCDS_STU3_Common version '0.1.0' called Common
+include OpioidCDSCommonSTU3 version '0.1.0' called Common
 
 /*
 **
@@ -56,17 +56,18 @@ define "Validate Trigger Event":
 
 define "Inclusion Criteria":
   "Validate Trigger Event"
-  and not "Opioid with Ambulatory Care Abuse Potential in Past 90 Days"
+  and not "Exclusion Criteria"
+  and not exists(
+    Common."Get Ambulatory Opioid Rx" orders
+      where date from orders.authoredOn.value in "Inclusion Period"
+  )
   and exists(
     [Encounter] encounters
       where date from encounters.period."start".value in "Encounter Period"
   )
 
-define "Opioid with Ambulatory Care Abuse Potential in Past 90 Days":
-  exists(
-    [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] orders
-      where date from orders.authoredOn.value in "Inclusion Period"
-  )
+define "Exclusion Criteria":
+  Common."End of Life Assessment"(ContextPrescriptions)
 
 define "Get Indicator":
   'warning'

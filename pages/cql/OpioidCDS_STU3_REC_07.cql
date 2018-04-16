@@ -2,7 +2,7 @@ library OpioidCDS_STU3_REC_07 version '0.1.0'
 
 using FHIR version '3.0.0'
 
-include OpioidCDS_STU3_Common version '0.1.0' called Common
+include OpioidCDSCommonSTU3 version '0.1.0' called Common
 
 /*
 **
@@ -39,13 +39,6 @@ include OpioidCDS_STU3_Common version '0.1.0' called Common
     then use EHR snoozing functionality to allow "Have assessed/will assess. Snooze 3 months."
 */
 
-codesystem "SNOMED": 'http://snomed.info/sct'
-
-// valueset "End Of Life Conditions": 'TODO'
-
-code "Assessment of risk for opioid abuse": '454281000124100' from "SNOMED"
-code "High risk drug monitoring": '268525008' from "SNOMED"
-
 parameter ContextPrescriptions List<MedicationRequest>
 
 context Patient
@@ -69,41 +62,21 @@ define "Inclusion Criteria":
     and ( "Rx Active 7 of Past 10 Days With Encounter" or "Rx Active 63 of Past 90 Days" )
 
 define "Exclusion Criteria":
-  exists ( "Medications Indicating End Of Life" )
-  // or exists( "Conditions Indicating End Of Life )
-
-define "Medications Indicating End Of Life":
-  [MedicationRequest: Common."End Of Life Opioids"] endOfLifeRx
-    where endOfLifeRx.status.value = 'active'
-
-// TODO - need valueset for this
-// define "Conditions Indicating End Of Life":
-//   [Condition: "End Of Life Conditions"] endOfLifeConditions
-//     where endOfLifeConditions.clinicalStatus.value = 'active'
+  Common."End of Life Assessment"(ContextPrescriptions)
 
 define "Opioid Risk Assessment in Past 90 Days":
-  ([Procedure: "Assessment of risk for opioid abuse"]
-      union [Procedure: "High risk drug monitoring"]) riskAssessment
-    where
-      riskAssessment.performed."start".value in "Risk Assessment Interval"
-
-define "Encounter in past 12 months":
-  [Encounter] E
-    where E.period."start".value in "Encounter Interval"
-
-define "Get Active Ambulatory Opioid Rx":
-  [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] Rx
-    where Rx.status.value = 'active'
-      and Rx.category.coding[0].code.value = 'outpatient'
-      //and
-      //  (Rx.dosageInstruction.asNeeded is null
-      //    or not Rx.dosageInstruction.asNeeded.value)
+  [Procedure: Common."Risk Assessment"] riskAssessment
+    where riskAssessment.performed."start".value in "Risk Assessment Interval"
 
 define "Rx Active 7 of Past 10 Days With Encounter":
-  AnyTrue(Common.ProbableDaysInRange("Get Active Ambulatory Opioid Rx", 10, 7)) and exists("Encounter in past 12 months")
+  AnyTrue(Common.ProbableDaysInRange(Common."Get Active Ambulatory Opioid Rx", 10, 7))
+    and exists(
+      [Encounter] E
+        where E.period."start".value in "Encounter Interval"
+    )
 
 define "Rx Active 63 of Past 90 Days":
-  AnyTrue(Common.ProbableDaysInRange("Get Active Ambulatory Opioid Rx", 90, 63))
+  AnyTrue(Common.ProbableDaysInRange(Common."Get Active Ambulatory Opioid Rx", 90, 63))
 
 define "Get Indicator":
   'warning'

@@ -218,7 +218,7 @@ define function GetDailyDose(ingredientCode Code, strength Quantity, doseFormCod
     when IsPatch(doseFormCode) then
       /* buprenorphine or fentanyl patch */
       if ToInteger(ingredientCode.code) in { 1819, 4337 } then
-        Quantity { value: doseQuantity.value * strength.value, unit: strength.unit }
+        Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: strength.unit }
       else
         null
 
@@ -312,5 +312,5 @@ define function CalculateMMEs(medications List<Tuple { rxNormCode Code, doseQuan
           }
   )
 
-//define TestCalculateMMEs:
-//  CalculateMMEs({ { rxNormCode: Code '388508' from RxNorm, doseQuantity: Quantity { value: 1, unit: 'patch' }, dosesPerDay: 0.33 } })
+define TestCalculateMMEs:
+  CalculateMMEs({ { rxNormCode: Code '388508' from RxNorm, doseQuantity: Quantity { value: 1, unit: 'patch' }, dosesPerDay: 0.33 } })

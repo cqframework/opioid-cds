@@ -2,7 +2,7 @@ library OpioidCDS_STU4_REC_11 version '0.1.0'
 
 using FHIR version '3.2.0'
 
-include OpioidCDS_STU4_Common version '0.1.0' called Common
+include OpioidCDSCommonSTU4 version '0.1.0' called Common
 
 /*
 **
@@ -46,16 +46,24 @@ define "Validate Trigger Event For Ambulatory Care Abuse Potential":
 define "Inclusion Criteria":
   ("Validate Trigger Event For Benzodiazepine"
     or "Validate Trigger Event For Ambulatory Care Abuse Potential")
+    and not "Exclusion Criteria"
     and "On Benzodiazepine"
     and "Opioid with Ambulatory Care Abuse Potential"
 
+define "Exclusion Criteria":
+  Common."End of Life Assessment"(ContextPrescriptions)
+
 define "On Benzodiazepine":
- "Validate Trigger Event For Benzodiazepine"
- or exists( [MedicationRequest: Common."Benzodiazepines"] )
+  "Validate Trigger Event For Benzodiazepine"
+  or exists(
+    [MedicationRequest: Common."Benzodiazepines"] Rx
+      where Rx.status.value = 'active'
+        and Rx.category.coding[0].code.value = 'outpatient'
+  )
 
 define "Opioid with Ambulatory Care Abuse Potential":
   "Validate Trigger Event For Ambulatory Care Abuse Potential"
-  or exists( [MedicationRequest: Common."Ambulatory Abuse Potential Opioids"] )
+  or exists( Common."Get Active Ambulatory Opioid Rx" )
 
 define "Get Indicator":
   'warning'
