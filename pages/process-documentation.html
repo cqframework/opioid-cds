@@ -86,13 +86,13 @@ behavior once the target recommendations were chosen.</p>
 
 <p>The daily dosage calculation is different based on whether dispsensed data is used:</p>
 
-<p><b>Order Data (total daily dose based on the sig)</b></p>
+<p><strong>Order Data (total daily dose based on the sig)</strong></p>
 
 <p>Expected use: Total daily dose = quantity per use * strength * daily frequency</p>
 
 <p>Example: Order for two 24 mg tabs every 4 hours = 2 * 24 mg * 6 = 300 mg per day</p>
 
-<p><b>Dispensed Data (dose not use sig)</b></p>
+<p><strong>Dispensed Data (dose not use sig)</strong></p>
 
 <p>Expected use: Total daily dose = (number dispensed * strength) / duration (days)</p>
 
@@ -177,40 +177,83 @@ behavior once the target recommendations were chosen.</p>
 
 <a name="funcdesc"> </a>
 <h3><span class="sectioncount">2.1.3</span> Functional Description <a href="process-documentation.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<p>The following sections provide the process logic for the implemented recommendations. The following two criteria must be satisfied for every patient for each recommendation:</p>
+<ul>
+  <li>Patient is being prescribed opioid medications for chronic pain</li>
+  <li>Patient does not appear to be at end of life</li>
+</ul>
+<h4>Chronic Pain</h4>
+<p>TODO - the decision points for this criteria is not well defined.</p>
+<h4>End of Life Assessment</h4>
+<p>The assessment to determine whether the patient appears to be at end of life consists of three elements:</p>
+<ul>
+  <li>Patient has been diagnosed with a condition that has a limited life expectancy prognostic estimation</li>
+  <li>Patient has been prescribed a medication that indicates the patient is approaching end of life</li>
+  <li>Patient has been referred, discharged or admitted to hospice care</li>
+</ul>
+<a name="recommendation4"> </a>
+<h4><span class="sectioncount">2.1.3.1</span> Recommendation #4 - Opioid Release Rate When Starting Opioid Therapy <a href="process-documentation.html#recommendation4" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+<p><strong>Patient is being prescribed opioids for chronic pain.</strong></p>
+<p><strong>Patient does not appear to be at end of life.</strong></p>
+<p><strong>Patient is being prescribed extended release opioids with ambulatory abuse potential.</strong></p>
+<p><strong>Patient has not been prescribed an opioid with ambulatory abuse potential in the past 90 days.</strong></p>
+<p><strong>There exists an encounter with the patient in the past 12 months.</strong></p>
+<p>This is to ensure that the patient is not new to the system.</p>
+<p><strong>
+  If prescribed extended release opioid and encounter in past 12 months without prescription
+  for opioid in past 90 days, provide a recommendation to use immediate release:
+</strong></p>
+<p>
+  Recommend use of immediate-release opioids instead of extended release/long acting
+  opioids when starting patient on opioids.
+</p>
+<p>Provide links to the CDC Guidance.</p>
+<p>One of the following responses should be required:</p>
+<ul>
+  <li>Will prescribe immediate release</li>
+  <li>Risk of overdose carefully considered and outweight by benefit; snooze 3 months.</li>
+  <li>N/A-see comment (will be reviewed by medical directory); snooze 3 months.</li>
+</ul>
+
+<p></p>
+
+<img src="assets/images/Recommendation04-Flow.png"/>
+
+<p></p>
+<p></p>
 
 <a name="recommendation5"> </a>
-<h4><span class="sectioncount">2.1.3.1</span> Recommendation #5 - Morphine Milligram Equivalence <a href="process-documentation.html#recommendation5" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+<h4><span class="sectioncount">2.1.3.2</span> Recommendation #5 - Lowest Effective Dose <a href="process-documentation.html#recommendation5" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+<p><strong>Patient is being prescribed opioids for chronic pain.</strong></p>
+<p><strong>Patient is being prescribed non-surgical opioids that cover 80 days or more in the previous 90 days.</strong></p>
 
-<p><b>Patient is being prescribed opioids for chronic pain</b></p>
-
-<p>Patient is being prescribed non-surgical opioids that cover 80 days or more in the previous 90 days</p>
-
-<p>To be generalizable to areas where dispense information is not available, base the calculation
+<p>
+  To be generalizable to areas where dispense information is not available, base the calculation
   on prescriptions, and assume all prescribed medications were taken, including for PRN (as needed)
-  medications. Assume PRN medications are taken at the maximum frequency.</p>
+  medications. Assume PRN medications are taken at the maximum frequency.
+</p>
 
-<p><b>Patient does not appear to be at end of life</b></p>
+<p><strong>Patient does not appear to be at end of life.</strong></p>
 
-<p>An active problem list entry for metastatic cancer or pancreatic cancer, or a liquid form
-   opioid other than codeine cough syrups.</p>
+<p><strong>Calculate the morphine milligram equivalence (MME) for the opioid being prescribed plus any other active opioid prescriptions.</strong></p>
 
-<p><b>Calculate the MME for the opioid being prescribed plus any other active opioid prescriptions.</b></p>
+<p><strong>if MME &gt;= 50 and &lt; 90, provide a recommendation to taper:</strong></p>
 
-<p><b>if MME &gt;= 50 and &lt; 90, provide a recommendation to taper:</b></p>
-
-<p><b>High risk for opioid overdose - consider tapering.</b></p>
+<p><strong>High risk for opioid overdose - consider tapering.</strong></p>
 
 <p>Total morphine milligram equivalent (MME) is 60 mg/day. Taper to &lt; 50.</p>
 
-<p><b>if MME &gt;= 90, provide a recommendation to taper now:</b></p>
+<p><strong>if MME &gt;= 90, provide a recommendation to taper now:</strong></p>
 
-<p><b>High risk for opioid overdose - taper now.</b></p>
+<p><strong>High risk for opioid overdose - taper now.</strong></p>
 
 <p>Total morphine milligram equivalent (MME) is 100 mg/day. Taper to &lt; 50.</p>
 
-<p>For both recommendations, provide the information used to calculate the MME as a table of results to provide
+<p>
+  For both recommendations, provide the information used to calculate the MME as a table of results to provide
   the clinician with sufficient information to understand how the equivalence was calculated, as well as the source
-  of the data used in the calculation.</p>
+  of the data used in the calculation.
+</p>
 
 <p>In addition, provide links to the CDC Guidance, as well as the MME conversion table.</p>
 
@@ -223,14 +266,19 @@ behavior once the target recommendations were chosen.</p>
   <li>N/A-see comment (will be reviewed by medical directory); snooze 3 months.</li>
 </ul>
 
+<p></p>
+
 <img src="assets/images/Recommendation05-Flow.png"/>
+
+<p></p>
+<p></p>
 
 <a name="recommendation10"> </a>
 <h4><span class="sectioncount">2.1.3.2</span> Recommendation #10 - Urine Drug Testing <a href="process-documentation.html#recommendation10" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
-<p><b>Patient is being prescribed opioids for chronic pain.</b></p>
+<p><strong>Patient is being prescribed opioids for chronic pain.</strong></p>
 
-<p><b>Patient has not had a urine drug screening within the last 12 months</b></p>
+<p><strong>Patient has not had a urine drug screening within the last 12 months</strong></p>
 
 <p>Display a message indicating that urine drug testing results are not available within the last 12 months. Patient
   should have a urine drug test performed.</p>
@@ -242,7 +290,7 @@ behavior once the target recommendations were chosen.</p>
   <li>N/A - not for chronic pain management; snooze 3 months</li>
 </ul>
 
-<p><b>Patient has a urine drug screening but does test not positive for opioids, or tests positive for other drugs</b></p>
+<p><strong>Patient has a urine drug screening but does test not positive for opioids, or tests positive for other drugs</strong></p>
 
 <p>Display a message indicating that uring drug testing results are inconsistent with the patient's medication regimen.</p>
 
