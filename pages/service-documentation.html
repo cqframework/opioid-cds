@@ -10,7 +10,7 @@
 <!-- ============CONTENT CONTENT=============== -->
 
 <a name="service"> </a>
-<h2><span class="sectioncount">2.4.0</span> CDC Opioid Prescribing Guidelines - Service Documentation <a href="service-documentation.html#service" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
+<h2><span class="sectioncount">8.4.0</span> CDC Opioid Prescribing Guidelines - Service Documentation <a href="service-documentation.html#service" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
 
 <p>
   <i>Standards-Based Implementation of CDC Recommendations as a CDS Hooks Web Service</i>
@@ -29,7 +29,7 @@
 </p>
 
 <a name="solution1"> </a>
-<h3><span class="sectioncount">2.4.1</span> Solution Component # 1: Medication and Terminology Knowledge Base <a href="service-documentation.html#solution1" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<h3><span class="sectioncount">8.4.1</span> Solution Component # 1: Medication and Terminology Knowledge Base <a href="service-documentation.html#solution1" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
   A Microsoft Access database called OpioidManagementTerminologyKnowledge.accdb was created to enable the definition of the medication and terminology knowledge required. Also, an important desire was to be able to continually update this database when new concept codes entered the system. This was accomplished by developing the Terminology Knowledge Builder, described in the next section.
@@ -56,14 +56,14 @@
 </p>
 
 <a name="solution2"> </a>
-<h3><span class="sectioncount">2.4.2</span> Solution Component # 2: Terminology Knowledge Builder <a href="service-documentation.html#solution2" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<h3><span class="sectioncount">8.4.2</span> Solution Component # 2: Terminology Knowledge Builder <a href="service-documentation.html#solution2" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
   The terminology knowledge builder is a stand-alone Java program that populates and updates the medication and terminology knowledge base. It identifies when particular entries and value sets have been updated, so that a client system can use it to determine if the database used by the CDS system needs to be updated.
 </p>
 
 <a name="solution3"> </a>
-<h3><span class="sectioncount">2.4.3</span> Solution Component # 3: Core Logic Processing Java Class <a href="service-documentation.html#solution3" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<h3><span class="sectioncount">8.4.3</span> Solution Component # 3: Core Logic Processing Java Class <a href="service-documentation.html#solution3" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
   The core of the CDS Hooks Web service is a Java class (UtilsOpioid.java), located in the opioids-lib package. This class uses FHIR STU2 resources as the input and does the following:
@@ -96,21 +96,21 @@
 </ul>
 
 <a name="solution4"> </a>
-<h3><span class="sectioncount">2.4.4</span> Solution Component # 4: OpenCDS Knowledge Modules <a href="service-documentation.html#solution4" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<h3><span class="sectioncount">8.4.4</span> Solution Component # 4: OpenCDS Knowledge Modules <a href="service-documentation.html#solution4" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
   OpenCDS knowledge modules utilize the UtilsOpioid Java class to take in FHIR resources as the input and return CDS Hooks cards as the output. These knowledge modules are in the opioid-mme and opioid-drugtesting packages.
 </p>
 
 <a name="solution5"> </a>
-<h3><span class="sectioncount">2.4.5</span> Solution Component # 5: Epic CDS Hooks Adapter <a href="service-documentation.html#solution5" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<h3><span class="sectioncount">8.4.5</span> Solution Component # 5: Epic CDS Hooks Adapter <a href="service-documentation.html#solution5" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
   While Epic is working on native support for CDS Hooks, such support is not currently available. We have therefore created an adapter/middleware for CDS Hooks on top of Epic to support this project. This adapter essentially translates the Epic-specific Best Practice Advisory (BPA) Web service interface into a CDS Hooks interface. Included in this adapter is a translator for converting the "markdown" output format used by CDS Hooks into the HMTL display format used within Epic.
 </p>
 
 <a name="solution6"> </a>
-<h3><span class="sectioncount">2.4.6</span> Solution Component # 6: Local EHR and Configuration <a href="service-documentation.html#solution6" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<h3><span class="sectioncount">8.4.6</span> Solution Component # 6: Local EHR and Configuration <a href="service-documentation.html#solution6" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
   The local EHR is configured to use the CDS Hooks CDC knowledge module. In this case, the Epic EHR and its BPA configuration was used. In this environment, we can specify such elements as:
