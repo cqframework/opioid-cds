@@ -24,8 +24,8 @@
             <code>
                <coding>
                   <system value="http://snomed.info/sct"/>
-                  <code value="454281000124100"/>
-                  <display value="Assessment of risk for opioid abuse (procedure)"/>
+                  <code value="268525008"/>
+                  <display value="High risk drug monitoring (regime/therapy)"/>
                </coding>
             </code>
             <subject>

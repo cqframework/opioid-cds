@@ -779,9 +779,25 @@
         <resource>
             <example value="true"/>
             <name value="Library - OMTK Logic"/>
-            <description value="Opioid Management Terminology Knowledge Base Logic"/>
+            <description value="Opioid Management Terminology Knowledge Base v0.1.0 Logic"/>
             <sourceReference>
-                <reference value="Library/omtk-logic"/>
+                <reference value="Library/omtk-logic-0.1.0"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - OMTK Logic"/>
+            <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic"/>
+            <sourceReference>
+                <reference value="Library/omtk-logic-0.0.1"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - OMTK Data"/>
+            <description value="Opioid Management Terminology Knowledge Base v0.0.0 Data"/>
+            <sourceReference>
+                <reference value="Library/omtk-data-0.0.0"/>
             </sourceReference>
         </resource>
         <resource>

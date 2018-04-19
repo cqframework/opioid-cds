@@ -544,9 +544,17 @@
       "source": "codesystem-opioidcds-indicator.xml",
       "base": "CodeSystem-opioidcds-indicator.html"
     },
-    "Library/omtk-logic": {
-      "source": "library-omtk-logic.xml",
-      "base": "Library-omtk-logic.html"
+    "Library/omtk-logic-0.1.0": {
+      "source": "library-omtk-logic-0.1.0.xml",
+      "base": "Library-omtk-logic-0.1.0.html"
+    },
+    "Library/omtk-logic-0.0.1": {
+      "source": "library-omtk-logic-0.0.1.xml",
+      "base": "Library-omtk-logic-0.0.1.html"
+    },
+    "Library/omtk-data-0.0.0": {
+      "source": "library-omtk-data-0.0.0.xml",
+      "base": "Library-omtk-data-0.0.0.html"
     },
     "Library/omtk-modelinfo": {
       "source": "library-omtk-modelinfo.xml",
