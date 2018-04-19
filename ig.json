@@ -31,7 +31,8 @@
     "careplan-profile-spreadsheet.xml",
     "medicationrequest-profile-spreadsheet.xml",
     "plandefinition-profile-spreadsheet.xml",
-    "requestgroup-profile-spreadsheet.xml"
+    "requestgroup-profile-spreadsheet.xml",
+    "valueset-profile-spreadsheet.xml"
   ],
   "resources": {
     "Bundle/example-rec-04-long-acting-opioid": {
@@ -721,10 +722,19 @@
       "defns": "cdc-requestgroup-definitions.html",
       "base": "cdc-requestgroup.html"
     },
+    "StructureDefinition/cdc-valueset": {
+      "defns": "cdc-valueset-definitions.html",
+      "base": "cdc-valueset.html"
+    },
     "StructureDefinition/cdc-requestgroup-action-indicator": {
       "defns": "cdc-requestgroup-action-indicator-definitions.html",
       "base": "cdc-requestgroup-action-indicator.html",
       "source": "structuredefinition-cdc-requestgroup-action-indicator.xml"
+    },
+    "StructureDefinition/cdc-valueset-tql-query": {
+      "defns": "cdc-valueset-tql-query-definitions.html",
+      "base": "cdc-valueset-tql-query.html",
+      "source": "structuredefinition-cdc-valueset-tql-query.xml"
     }
   }
 }

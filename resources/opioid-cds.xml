@@ -1094,6 +1094,12 @@
                 <reference value="StructureDefinition/cdc-requestgroup-action-indicator"/>
             </sourceReference>
         </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="StructureDefinition/cdc-valueset-tql-query"/>
+            </sourceReference>
+        </resource>
     </package>
     <binary value="cql/OMTKLogic-0.1.0.cql"/>
     <binary value="cql/OpioidCDS_STU3_Common.cql"/>
