@@ -2,7 +2,7 @@
     <id value="cdc-valueset-tql-query"/>
     <url value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-tql-query"/>
     <name value="tql-query"/>
-    <title value="TQL Query"/>
+    <title value="OpioidCDSTqlQuery"/>
     <status value="draft"/>
     <date value="2018-04-19"/>
     <description value="TQL query to build valueset from CodeSystem"/>
@@ -20,7 +20,7 @@
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
     <derivation value="constraint"/>
     <snapshot>
-        <element id="Extension">
+        <element id="Extension:tql-query">
             <path value="Extension"/>
             <short value="TQL query string"/>
             <definition value="TQL query to build valueset from CodeSystem"/>
@@ -31,25 +31,8 @@
                 <min value="0"/>
                 <max value="*"/>
             </base>
-            <condition value="ele-1"/>
-            <constraint>
-                <key value="ele-1"/>
-                <severity value="error"/>
-                <human value="All FHIR elements must have a @value or children"/>
-                <expression value="hasValue() | (children().count() &gt; id.count())"/>
-                <xpath value="@value|f:*|h:div"/>
-                <source value="Element"/>
-            </constraint>
-            <constraint>
-                <key value="ext-1"/>
-                <severity value="error"/>
-                <human value="Must have either extensions or value[x], not both"/>
-                <expression value="extension.exists() != value.exists()"/>
-                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-                <source value="Extension"/>
-            </constraint>
         </element>
-        <element id="Extension.id">
+        <element id="Extension:tql-query.id">
             <path value="Extension.id"/>
             <representation value="xmlAttr"/>
             <short value="xml:id (or equivalent in JSON)"/>
@@ -60,7 +43,7 @@
             <base>
                 <path value="Element.id"/>
                 <min value="0"/>
-                <max value="1"/>
+                <max value="*"/>
             </base>
             <type>
                 <code value="string"/>
@@ -70,30 +53,13 @@
                 <map value="n/a"/>
             </mapping>
         </element>
-        <element id="Extension.extension">
+        <element id="Extension:tql-query.extension">
             <path value="Extension.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <description value="Extensions are always sliced by (at least) url"/>
-                <rules value="open"/>
-            </slicing>
-            <short value="Additional Content defined by implementations"/>
-            <definition value="May be used to represent additional information that is not part of the basic definition
-       of the element. In order to make the use of extensions safe and manageable, there is a
-       strict set of governance  applied to the definition and use of extensions. Though any
-       implementer is allowed to define an extension, there is a set of requirements that SHALL
-       be met as part of the definition of the extension."/>
-            <comment value="There can be no stigma associated with the use of extensions by any application, project,
-       or standard - regardless of the institution or jurisdiction that uses or defines the extensions.
-        The use of extensions is what allows the FHIR specification to retain a core level of
-       simplicity for everyone."/>
-            <alias value="extensions"/>
-            <alias value="user content"/>
+            <sliceName value="extension"/>
+            <short value="Extension"/>
+            <definition value="An Extension"/>
             <min value="0"/>
-            <max value="*"/>
+            <max value="0"/>
             <base>
                 <path value="Element.extension"/>
                 <min value="0"/>
@@ -102,12 +68,8 @@
             <type>
                 <code value="Extension"/>
             </type>
-            <mapping>
-                <identity value="rim"/>
-                <map value="n/a"/>
-            </mapping>
         </element>
-        <element id="Extension.url">
+        <element id="Extension:tql-query.url">
             <path value="Extension.url"/>
             <representation value="xmlAttr"/>
             <short value="identifies the meaning of the extension"/>
@@ -131,16 +93,16 @@
                 <map value="N/A"/>
             </mapping>
         </element>
-        <element id="Extension.valueString">
+        <element id="Extension:tql-query.valueString">
             <path value="Extension.valueString"/>
             <short value="Value of extension"/>
             <definition value="Value of extension - may be a resource or one of a constrained set of the data types (see
        Extensibility in the spec for list)."/>
-            <min value="0"/>
+            <min value="1"/>
             <max value="1"/>
             <base>
                 <path value="Extension.value[x]"/>
-                <min value="0"/>
+                <min value="1"/>
                 <max value="1"/>
             </base>
             <type>
@@ -153,25 +115,27 @@
         </element>
     </snapshot>
     <differential>
-        <element id="Extension">
+        <element id="Extension:tql-query">
             <path value="Extension"/>
             <short value="TQL query string"/>
             <definition value="TQL query to build valueset from CodeSystem"/>
             <min value="0"/>
             <max value="1"/>
         </element>
-        <element id="Extension.extension">
+        <element id="Extension:tql-query.extension">
             <path value="Extension.extension"/>
             <max value="0"/>
         </element>
-        <element id="Extension.url">
+        <element id="Extension:tql-query.url">
             <path value="Extension.url"/>
+            <min value="1"/>
+            <max value="1"/>
             <type>
                 <code value="uri"/>
             </type>
             <fixedUri value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-tql-query"/>
         </element>
-        <element id="Extension.valueString">
+        <element id="Extension:tql-query.valueString">
             <path value="Extension.valueString"/>
             <type>
                 <code value="string"/>
