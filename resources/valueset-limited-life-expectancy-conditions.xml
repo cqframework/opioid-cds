@@ -7,23 +7,23 @@
             <system value="http://snomed.info/sct"/>
             <concept>
                 <code value="162607003"/>
-                <display value="Terminal illness - early stage (finding)"/>
+                <!--<display value="Terminal illness - early stage (finding)"/>-->
             </concept>
             <concept>
                 <code value="162608008"/>
-                <display value="Terminal illness - late stage (finding)"/>
+                <!--<display value="Terminal illness - late stage (finding)"/>-->
             </concept>
             <concept>
                 <code value="170969009"/>
-                <display value="Prognosis bad (finding)"/>
+                <!--<display value="Prognosis bad (finding)"/>-->
             </concept>
             <concept>
                 <code value="27143004"/>
-                <display value="Patient status determination, pre-terminal (finding)"/>
+                <!--<display value="Patient status determination, pre-terminal (finding)"/>-->
             </concept>
             <concept>
                 <code value="300936002"/>
-                <display value="Terminal illness (finding)"/>
+                <!--<display value="Terminal illness (finding)"/>-->
             </concept>
         </include>
     </compose>

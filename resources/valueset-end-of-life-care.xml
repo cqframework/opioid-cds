@@ -1,0 +1,26 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="end-of-life-care"/>
+    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/end-of-life-care"/>
+    <status value="active"/>
+    <compose>
+        <include>
+            <system value="http://snomed.info/sct"/>
+            <concept>
+                <code value="395103003"/>
+                <!--<display value="Final days pathway (regime/therapy)"/>-->
+            </concept>
+            <concept>
+                <code value="182964004"/>
+                <!--<display value="Terminal care (regime/therapy)"/>-->
+            </concept>
+            <concept>
+                <code value="133904006"/>
+                <!--<display value="Postmortem care (regime/therapy)"/>-->
+            </concept>
+            <concept>
+                <code value="385763009"/>
+                <!--<display value="Hospice care (regime/therapy)"/>-->
+            </concept>
+        </include>
+    </compose>
+</ValueSet>

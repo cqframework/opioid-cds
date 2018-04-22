@@ -946,10 +946,18 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Hospice Disposition"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines End Of Life Care"/>
+            <description value="End of life care procedure codes"/>
+            <sourceReference>
+                <reference value="ValueSet/end-of-life-care"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Discharge to Hospice"/>
             <description value="Hospice encounter discharge disposition codes"/>
             <sourceReference>
-                <reference value="ValueSet/hospice-disposition"/>
+                <reference value="ValueSet/discharge-to-hospice"/>
             </sourceReference>
         </resource>
         <resource>
@@ -986,10 +994,10 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opiate Therapy Risk Assessment"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Abuse Assessment"/>
             <description value="Opiate therapy risk assessment codes"/>
             <sourceReference>
-                <reference value="ValueSet/opiate-therapy-risk-assessment"/>
+                <reference value="ValueSet/opioid-abuse-assessment"/>
             </sourceReference>
         </resource>
         <resource>

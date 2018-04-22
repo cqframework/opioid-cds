@@ -633,9 +633,13 @@
       "source": "valueset-end-of-life-conditions.xml",
       "base": "ValueSet-end-of-life-conditions.html"
     },
-    "ValueSet/hospice-disposition": {
-      "source": "valueset-hospice-disposition.xml",
-      "base": "ValueSet-hospice-disposition.html"
+    "ValueSet/end-of-life-care": {
+      "source": "valueset-end-of-life-care.xml",
+      "base": "ValueSet-end-of-life-care.html"
+    },
+    "ValueSet/discharge-to-hospice": {
+      "source": "valueset-discharge-to-hospice.xml",
+      "base": "ValueSet-discharge-to-hospice.html"
     },
     "ValueSet/hospice-finding": {
       "source": "valueset-hospice-finding.xml",
@@ -653,9 +657,9 @@
       "source": "valueset-metastatic-cancer.xml",
       "base": "ValueSet-metastatic-cancer.html"
     },
-    "ValueSet/opiate-therapy-risk-assessment": {
-      "source": "valueset-opiate-therapy-risk-assessment.xml",
-      "base": "ValueSet-opiate-therapy-risk-assessment.html"
+    "ValueSet/opioid-abuse-assessment": {
+      "source": "valueset-opioid-abuse-assessment.xml",
+      "base": "ValueSet-opioid-abuse-assessment.html"
     },
     "ValueSet/substance-abuse": {
       "source": "valueset-substance-abuse.xml",

@@ -1,0 +1,18 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="discharge-to-hospice"/>
+    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/discharge-to-hospice"/>
+    <status value="active"/>
+    <compose>
+        <include>
+            <system value="http://snomed.info/sct"/>
+            <concept>
+                <code value="428371000124100"/>
+                <!--<display value="Discharge to healthcare facility for hospice care (procedure)"/>-->
+            </concept>
+            <concept>
+                <code value="428361000124107"/>
+                <!--<display value="Discharge to home for hospice care (procedure)"/>-->
+            </concept>
+        </include>
+    </compose>
+</ValueSet>
