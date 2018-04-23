@@ -1109,6 +1109,8 @@
             </sourceReference>
         </resource>
     </package>
+    <binary value="cql/OMTKLogic-0.0.0.cql"/>
+    <binary value="cql/OMTKLogic-0.0.1.cql"/>
     <binary value="cql/OMTKLogic-0.1.0.cql"/>
     <binary value="cql/OpioidCDS_STU3_Common.cql"/>
     <binary value="cql/OpioidCDS_STU3_REC_04.cql"/>
@@ -1117,6 +1119,8 @@
     <binary value="cql/OpioidCDS_STU3_REC_08.cql"/>
     <binary value="cql/OpioidCDS_STU3_REC_10.cql"/>
     <binary value="cql/OpioidCDS_STU3_REC_11.cql"/>
+    <binary value="elm/OMTKLogic-0.0.0.xml"/>
+    <binary value="elm/OMTKLogic-0.0.1.xml"/>
     <binary value="elm/OMTKLogic-0.1.0.xml"/>
     <binary value="elm/OpioidCDS_STU3_Common.xml"/>
     <binary value="elm/OpioidCDS_STU3_REC_04.xml"/>
