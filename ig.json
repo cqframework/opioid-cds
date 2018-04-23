@@ -735,10 +735,10 @@
       "base": "cdc-requestgroup-action-indicator.html",
       "source": "structuredefinition-cdc-requestgroup-action-indicator.xml"
     },
-    "StructureDefinition/cdc-valueset-tql-query": {
-      "defns": "cdc-valueset-tql-query-definitions.html",
-      "base": "cdc-valueset-tql-query.html",
-      "source": "structuredefinition-cdc-valueset-tql-query.xml"
+    "StructureDefinition/cdc-valueset-query": {
+      "defns": "cdc-valueset-query-definitions.html",
+      "base": "cdc-valueset-query.html",
+      "source": "structuredefinition-cdc-valueset-query.xml"
     }
   }
 }
