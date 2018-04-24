@@ -1,7 +1,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
     <id value="cdc-valueset-query"/>
     <url value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query"/>
-    <version value="1.1.0"/>
+    <version value="1.0.0"/>
     <name value="CDC Opioid Guidance ValueSet Query Extension"/>
     <title value="CDC Opioid Guidance Query Extension"/>
     <status value="draft"/>

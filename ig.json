@@ -743,6 +743,16 @@
       "defns": "cdc-valueset-query-definitions.html",
       "base": "cdc-valueset-query.html",
       "source": "structuredefinition-cdc-valueset-query.xml"
+    },
+    "StructureDefinition/cdc-valueset-inclusion": {
+      "defns": "cdc-valueset-inclusion-definitions.html",
+      "base": "cdc-valueset-inclusion.html",
+      "source": "structuredefinition-cdc-valueset-inclusion.xml"
+    },
+    "StructureDefinition/cdc-valueset-exclusion": {
+      "defns": "cdc-valueset-exclusion-definitions.html",
+      "base": "cdc-valueset-exclusion.html",
+      "source": "structuredefinition-cdc-valueset-exclusion.xml"
     }
   }
 }

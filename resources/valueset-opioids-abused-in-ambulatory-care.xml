@@ -1,5 +1,11 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="opioids-abused-in-ambulatory-care"/>
+    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+        <valueString value="Opioid drugs not restricted to surgical use, that can be used in ambulatory setting."/>
+    </extension>
+    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
+        <valueString value="Formulations with dose form Topical Cream(RXCUI 316982) or Topical Solution(RXCUI 316986). Ingredients available in surgery."/>
+    </extension>
     <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care"/>
     <name value="Opioid medications with ambulatory abuse potential"/>
     <title value="RxNorm Opioid Medications with Ambulatory Abuse Potential"/>
@@ -28,6 +34,14 @@
     <purpose value="Used to determine if prescription is for opioid medication with ambulatory abuse potential for all recommendations."/>
     <copyright value="© CDC 2016+."/>
     <compose>
+        <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
+            <extension url="language">
+                <valueUri value="http://www.nlm.nih.gov/research/umls/rxmix"/>
+            </extension>
+            <extension url="expression">
+                <valueString value="from [^RxNorm R^] with (INV ^Parent Of[MED-RT]^ equals &quot;Opioid Agonist [EPC][MED-RT]&quot; OR INV ^Parent Of[MED-RT]^ equals &quot;Opioid Agonist/Antagonist [EPC][MED-RT]&quot;) AND (^TTY[RxNorm R]^=&quot;IN&quot; OR ^TTY[RxNorm R]^=&quot;PIN&quot;) AND_NOT (^Code^= 480 OR ^Code^=73032 OR ^Code^=56795 OR ^Code^=477468) EXPORT ^RXCUI[RxNorm R]^, Concept_Name, ^TTY[RxNorm R]^;"/>
+            </extension>
+        </extension>
         <include>
             <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
             <concept>

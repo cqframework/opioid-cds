@@ -1115,6 +1115,18 @@
                 <reference value="StructureDefinition/cdc-valueset-query"/>
             </sourceReference>
         </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="StructureDefinition/cdc-valueset-inclusion"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="StructureDefinition/cdc-valueset-exclusion"/>
+            </sourceReference>
+        </resource>
     </package>
     <binary value="cql/OMTKLogic-0.0.0.cql"/>
     <binary value="cql/OMTKLogic-0.0.1.cql"/>
