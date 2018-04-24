@@ -1,7 +1,18 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="substance-abuse"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+        <profile value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset"/>
+    </meta>
+    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+        <valueString value="Conditions and findings indicating drug abuse."/>
+    </extension>
+    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
+        <valueString value="Conditions indicating nicotine abuse."/>
+    </extension>
     <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/substance-abuse"/>
-    <name value="Drug abuse conditions"/>
+    <version value="1.0.0"/>
+    <name value="valueset-drug-abuse-conditions"/>
     <title value="ICD9, ICD10 and Snomed Drug Abuse Conditions"/>
     <status value="active"/>
     <experimental value="false"/>
@@ -28,6 +39,14 @@
     <purpose value="Provide terminology to determine whether patient has drug abuse conditions in recommendation 8."/>
     <copyright value="© CDC 2016+."/>
     <compose>
+        <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
+            <extension url="language">
+                <valueUri value="http://www.nlm.nih.gov/research/umls/rxmix"/>
+            </extension>
+            <extension url="expression">
+                <valueString value="FROM [^SNOMED CT US Edition^] with (CONCEPT DESCENDANT_OF_PLUS &quot;Drug dependence (disorder)[SNOMED CT US Edition]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;Finding relating to drug misuse behavior (finding)[SNOMED CT US Edition]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;Substance abuse (disorder)[SNOMED CT US Edition]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;Current drug user (finding)[SNOMED CT US Edition]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;Drug seeking behavior (finding)[SNOMED CT US Edition]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;Drug-related offending behavior (finding)[SNOMED CT US Edition]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;Injecting drug user (finding)[SNOMED CT US Edition]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;Has a routine of drug-related activities (finding)[SNOMED CT US Edition]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;Misuse of prescription only drugs (finding)[SNOMED CT US Edition]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;Misuses drugs (finding)[SNOMED CT US Edition]&quot;) AND_NOT (CONCEPT DESCENDANT_OF_PLUS &quot;Nicotine dependence (disorder)[SNOMED CT US Edition]&quot;) EXPORT  Concept_Name, ^Code in Source[SNOMED CT US Edition]^,^Parent^; FROM [^ICD-10-CM^] with (CONCEPT DESCENDANT_OF_PLUS &quot;[Z71.4] Alcohol abuse counseling and surveillance[ICD-10-CM]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;[Z71.5] Drug abuse counseling and surveillance[ICD-10-CM]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;[F55] Abuse of non-psychoactive substances[ICD-10-CM]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;[F10-F19] Mental and behavioral disorders due to psychoactive substance use (F10-F19)[ICD-10-CM]&quot;) AND_NOT (CONCEPT DESCENDANT_OF_PLUS &quot;[F17] Nicotine dependence[ICD-10-CM]&quot;) EXPORT Concept_Name, ^Code in Source[ICD-10-CM]^,^Parent^; FROM [^ICD-9-CM^] with (CONCEPT DESCENDANT_OF_PLUS &quot;Alcohol dependence syndrome [303][ICD-9-CM]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;Drug dependence [304][ICD-9-CM]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;Nondependent abuse of drugs [305][ICD-9-CM]&quot;) AND_NOT (CONCEPT DESCENDANT_OF_PLUS &quot;Tobacco use disorder [305.1][ICD-9-CM]&quot;) EXPORT Concept_Name, ^Code in Source[ICD-9-CM]^, ^Parent^;"/>
+            </extension>
+        </extension>
         <include>
             <system value="http://hl7.org/fhir/sid/icd-10-cm"/>
             <concept>
