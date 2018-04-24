@@ -287,7 +287,7 @@
             <type>
                 <code value="uri"/>
             </type>
-            <fixedUri value="detailed"/>
+            <fixedUri value="language"/>
             <mapping>
                 <identity value="rim"/>
                 <map value="N/A"/>
@@ -388,7 +388,7 @@
             <type>
                 <code value="uri"/>
             </type>
-            <fixedUri value="text"/>
+            <fixedUri value="expression"/>
             <mapping>
                 <identity value="rim"/>
                 <map value="N/A"/>
