@@ -5,6 +5,7 @@
 		<value value="OMTKModelInfo"/>
 	</identifier>
 	<version value="0.1.0"/>
+	<name value="Library - OMTK Model Info"/>
 	<title value="OMTK Model Info"/>
 	<status value="active"/>
 	<experimental value="true"/>

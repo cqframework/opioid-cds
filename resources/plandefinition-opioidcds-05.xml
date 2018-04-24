@@ -6,7 +6,7 @@
 		<value value="cdc-opioid-guidance"/>
 	</identifier>
 	<version value="0.1.0"/>
-	<name value="cdc-opioid-05"/>
+	<name value="PlanDefinition - Recommendation #5 Workflow"/>
 	<title value="CDC Opioid Prescribing Guideline Recommendation #5"/>
 	<type>
 		<coding>
@@ -124,7 +124,7 @@
 			<kind value="applicability"/>
 			<description value="Is total MME >= 50?"/>
 			<language value="text/cql"/>
-			<expression value="Is MME 50 Or More?"/>
+			<expression value="Inclusion Criteria"/>
 		</condition>
 		<groupingBehavior value="visual-group"/>
 		<selectionBehavior value="exactly-one"/>

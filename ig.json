@@ -537,6 +537,10 @@
       "base": "Encounter-example-rec-11-opioid-trigger-without-benzo-context.html"
     },
 
+    "ActivityDefinition/opioidcds-risk-assessment-request": {
+      "source": "activitydefinition-opioidcds-risk-assessment-request.xml",
+      "base": "ActivityDefinition-opioidcds-risk-assessment-request.html"
+    },
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"

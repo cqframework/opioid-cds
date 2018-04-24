@@ -754,6 +754,13 @@
 
         <resource>
             <example value="true"/>
+            <name value="ActivityDefinition - ProcedureRequest for risk assessment"/>
+            <sourceReference>
+                <reference value="ActivityDefinition/opioidcds-risk-assessment-request"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="CarePlan - Example result of recommendation #5"/>
             <description value="Example result of applying the PlanDefinition for recommendation #5"/>
             <sourceReference>

@@ -6,7 +6,7 @@
 		<value value="cdc-opioid-guidance"/>
 	</identifier>
 	<version value="0.1.0"/>
-	<name value="cdc-opioid-10"/>
+	<name value="PlanDefinition - Recommendation #10 Workflow"/>
 	<title value="CDC Opioid Prescribing Guideline Recommendation #10"/>
 	<type>
 		<coding>
@@ -85,87 +85,60 @@
 		<reference value="Library/opioidcds-recommendation-10"/>
 	</library>
 	<action>
-		<title value="Annual Urine Screening Check"/>
-		<description value="Patient has not had a urine screening in the past 12 months"/>
-		<documentation>
-			<type value="documentation"/>
-			<document>
-				<!-- We can use the example code systems from the FHIR CLinical Reasoning Module, or we can define GRADE specific code systems and use those here -->
-				<extension url="http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation">
-					<valueCodeableConcept>
-						<coding>
-							<system value="http://hl7.org/fhir/recommendation-strength"/>
-							<code value="strong"/>
-							<display value="Strong"/>
-						</coding>
-					</valueCodeableConcept>
-				</extension>
-				<extension url="http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence">
-					<valueCodeableConcept>
-						<coding>
-							<system value="http://hl7.org/fhir/evidence-quality"/>
-							<code value="low"/>
-							<display value="Low quality"/>
-						</coding>
-					</valueCodeableConcept>
-				</extension>
-			</document>
-		</documentation>
 		<triggerDefinition>
 			<type value="named-event"/>
 			<eventName value="medication-prescribe"/>
 		</triggerDefinition>
 		<condition>
 			<kind value="applicability"/>
+			<language value="text/cql"/>
+			<expression value="Inclusion Criteria"/>
+		</condition>
+		<action>
+			<title value="Annual Urine Screening Check"/>
 			<description value="Patient has not had a urine screening in the past 12 months"/>
-			<language value="text/cql"/>
-			<expression value="No Screenings in Past Year"/>
-		</condition>
-		<dynamicValue>
-			<path value="activity.extension"/>
-			<expression value="Get Indicator"/>
-		</dynamicValue>
-		<action>
-			<description value="Will perform urine screening"/>
-			<!-- Open Order Set, where available -->
+			<documentation>
+				<type value="documentation"/>
+				<document>
+					<!-- We can use the example code systems from the FHIR CLinical Reasoning Module, or we can define GRADE specific code systems and use those here -->
+					<extension url="http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation">
+						<valueCodeableConcept>
+							<coding>
+								<system value="http://hl7.org/fhir/recommendation-strength"/>
+								<code value="strong"/>
+								<display value="Strong"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+					<extension url="http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence">
+						<valueCodeableConcept>
+							<coding>
+								<system value="http://hl7.org/fhir/evidence-quality"/>
+								<code value="low"/>
+								<display value="Low quality"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+				</document>
+			</documentation>
+			<condition>
+				<kind value="applicability"/>
+				<description value="Patient has not had a urine screening in the past 12 months"/>
+				<language value="text/cql"/>
+				<expression value="No Screenings in Past Year"/>
+			</condition>
+			<dynamicValue>
+				<path value="activity.extension"/>
+				<expression value="Get Indicator"/>
+			</dynamicValue>
+			<action>
+				<description value="Will perform urine screening"/>
+				<!-- Open Order Set, where available -->
+			</action>
+			<action>
+				<description value="Not for chronic pain management. Snooze 3 months"/>
+			</action>
 		</action>
-		<action>
-			<description value="Not for chronic pain management. Snooze 3 months"/>
-		</action>
-	</action>
-	<action>
-		<title value="Positive Urine Screening Check"/>
-		<description value="Patient has a urine screening testing positive for either unprescribed opioids or illicit drugs in the past 12 months"/>
-		<documentation>
-			<type value="documentation"/>
-			<document>
-				<!-- We can use the example code systems from the FHIR CLinical Reasoning Module, or we can define GRADE specific code systems and use those here -->
-				<extension url="http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation">
-					<valueCodeableConcept>
-						<coding>
-							<system value="http://hl7.org/fhir/recommendation-strength"/>
-							<code value="strong"/>
-							<display value="Strong"/>
-						</coding>
-					</valueCodeableConcept>
-				</extension>
-				<extension url="http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence">
-					<valueCodeableConcept>
-						<coding>
-							<system value="http://hl7.org/fhir/evidence-quality"/>
-							<code value="low"/>
-							<display value="Low quality"/>
-						</coding>
-					</valueCodeableConcept>
-				</extension>
-			</document>
-		</documentation>
-		<condition>
-			<kind value="applicability"/>
-			<description value="Patient has a positive urine screening in the past 12 months"/>
-			<language value="text/cql"/>
-			<expression value="Has Positive Screening?"/>
-		</condition>
 		<action>
 			<title value="Unprescribed Opioids Found In Urine Screening"/>
 			<description value="Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed"/>

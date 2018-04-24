@@ -5,6 +5,7 @@
       <value value="OpioidCDS_STU3_Common"/>
    </identifier>
    <version value="0.1.0"/>
+   <name value="Library - Common Logic"/>
    <title value="Opioid CDS Common Logic (for FHIR STU3)"/>
    <status value="active"/>
    <experimental value="false"/>

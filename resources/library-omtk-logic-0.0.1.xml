@@ -5,6 +5,7 @@
         <value value="OMTKLogic"/>
     </identifier>
     <version value="0.0.1"/>
+    <name value="Library - OMTK v0.0.1 Logic"/>
     <title value="OMTK Logic"/>
     <status value="active"/>
     <experimental value="true"/>
