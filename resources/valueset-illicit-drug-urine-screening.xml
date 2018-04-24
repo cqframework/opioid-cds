@@ -1,7 +1,32 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="illicit-drug-urine-screening"/>
     <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/illicit-drug-urine-screening"/>
+    <name value="Non-opioid drug urine test"/>
+    <title value="Loinc Non-opioid Drug Urine Test"/>
     <status value="active"/>
+    <experimental value="false"/>
+    <date value="2018-04-23"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <description value="ValueSet containing all general screening tests in urine for drugs of abuse other than narcotics codes."/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/usage-context-type"/>
+            <code value="focus"/>
+            <display value="Clinical Focus"/>
+        </code>
+        <valueCodeableConcept>
+            <text value="General screening tests in urine for drugs of abuse other than narcotics."/>
+        </valueCodeableConcept>
+    </useContext>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+    </jurisdiction>
+    <purpose value="Used to determine if patient has urine screening for drugs of abuse other than narcotics for recommendation 10."/>
+    <copyright value="© CDC 2016+."/>
     <compose>
         <include>
             <system value="http://loinc.org"/>

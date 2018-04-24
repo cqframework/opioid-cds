@@ -1,7 +1,32 @@
 <ValueSet xmlns="http://hl7.org/fhir">
    <id value="naloxone"/>
    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/naloxone"/>
+   <name value="Nalaxone Drugs"/>
+   <title value="RxNorm Nalaxone Drugs"/>
    <status value="active"/>
+   <experimental value="false"/>
+   <date value="2018-04-23"/>
+   <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+   <description value="ValueSet containing all orderable drug representations for Nalaxone codes."/>
+   <useContext>
+      <code>
+         <system value="http://hl7.org/fhir/usage-context-type"/>
+         <code value="focus"/>
+         <display value="Clinical Focus"/>
+      </code>
+      <valueCodeableConcept>
+         <text value="All orderable drug representations for Nalaxone."/>
+      </valueCodeableConcept>
+   </useContext>
+   <jurisdiction>
+      <coding>
+         <system value="urn:iso:std:iso:3166"/>
+         <code value="US"/>
+         <display value="United States of America"/>
+      </coding>
+   </jurisdiction>
+   <purpose value="Provide terminology for Naloxone MedicationRequest retrieval in recommendation 8."/>
+   <copyright value="© CDC 2016+."/>
    <compose>
       <include>
          <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>

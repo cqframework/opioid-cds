@@ -1,7 +1,32 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="opioid-abuse-assessment"/>
     <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioid-abuse-assessment"/>
+    <name value="Drug use assessment"/>
+    <title value="Snomed Drug Use Assessment"/>
     <status value="active"/>
+    <experimental value="false"/>
+    <date value="2018-04-23"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <description value="ValueSet containing all procedure codes indicating assessment of opioid abuse risk."/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/usage-context-type"/>
+            <code value="focus"/>
+            <display value="Clinical Focus"/>
+        </code>
+        <valueCodeableConcept>
+            <text value="Procedure indicating assessment of opioid abuse risk."/>
+        </valueCodeableConcept>
+    </useContext>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+    </jurisdiction>
+    <purpose value="Used to determine if patient has been assessed for risk of opioid use for recommendation 7."/>
+    <copyright value="© CDC 2016+."/>
     <compose>
         <include>
             <system value="http://snomed.info/sct"/>

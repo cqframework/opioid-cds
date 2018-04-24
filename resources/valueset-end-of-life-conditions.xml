@@ -1,7 +1,32 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="end-of-life-conditions"/>
     <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/end-of-life-conditions"/>
+    <name value="Malignant or pacreatic cancers or hepatic failure"/>
+    <title value="Snomed and ICD10 Malignant or Pacreatic Cancers or Hepatic Failure"/>
     <status value="active"/>
+    <experimental value="false"/>
+    <date value="2018-04-23"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <description value="ValueSet containing conditions that generally are thought to have terminal prognosis."/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/usage-context-type"/>
+            <code value="focus"/>
+            <display value="Clinical Focus"/>
+        </code>
+        <valueCodeableConcept>
+            <text value="Conditions that generally are thought to have terminal prognosis."/>
+        </valueCodeableConcept>
+    </useContext>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+    </jurisdiction>
+    <purpose value="Used to determine if patient is diagnosed with a terminal condition as part of the patient's end of life assessment workflow in all recommendations."/>
+    <copyright value="© CDC 2016+."/>
     <compose>
         <include>
             <system value="http://hl7.org/fhir/sid/icd-10-cm"/>

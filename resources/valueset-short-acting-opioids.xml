@@ -1,7 +1,32 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="short-acting-opioids"/>
     <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/short-acting-opioids"/>
+    <name value="Intermediate release Opioid medications with ambulatory abuse potential"/>
+    <title value="RxNorm Intermediate Release Opioid Medications with Ambulatory Abuse Potential"/>
     <status value="active"/>
+    <experimental value="false"/>
+    <date value="2018-04-23"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <description value="ValueSet containing all opioid clinical drugs that are not restricted to surgical use only, and that are NOT in an extended release dose form codes."/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/usage-context-type"/>
+            <code value="focus"/>
+            <display value="Clinical Focus"/>
+        </code>
+        <valueCodeableConcept>
+            <text value="All opioid clinical drugs that are not restricted to surgical use only, and that are NOT in an extended release dose form."/>
+        </valueCodeableConcept>
+    </useContext>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+    </jurisdiction>
+    <purpose value="Used to determine if prescription is for intermediate release opioids for recommendation 4."/>
+    <copyright value="© CDC 2016+."/>
     <compose>
         <include>
             <system value="http://hl7.org/fhir/ig/opioid-cds/CodeSystem/opioidcds-rxnorm-codes"/>

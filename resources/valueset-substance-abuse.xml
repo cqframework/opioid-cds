@@ -1,7 +1,32 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="substance-abuse"/>
     <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/substance-abuse"/>
+    <name value="Drug abuse conditions"/>
+    <title value="ICD9, ICD10 and Snomed Drug Abuse Conditions"/>
     <status value="active"/>
+    <experimental value="false"/>
+    <date value="2018-04-23"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <description value="ValueSet containing all diagnosis and findings indicating drug abuse codes."/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/usage-context-type"/>
+            <code value="focus"/>
+            <display value="Clinical Focus"/>
+        </code>
+        <valueCodeableConcept>
+            <text value="Diagnosis and findings indicating drug abuse."/>
+        </valueCodeableConcept>
+    </useContext>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+    </jurisdiction>
+    <purpose value="Provide terminology to determine whether patient has drug abuse conditions in recommendation 8."/>
+    <copyright value="© CDC 2016+."/>
     <compose>
         <include>
             <system value="http://hl7.org/fhir/sid/icd-10-cm"/>

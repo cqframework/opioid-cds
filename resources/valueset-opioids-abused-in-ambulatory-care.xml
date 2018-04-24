@@ -1,7 +1,32 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="opioids-abused-in-ambulatory-care"/>
     <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care"/>
+    <name value="Opioid medications with ambulatory abuse potential"/>
+    <title value="RxNorm Opioid Medications with Ambulatory Abuse Potential"/>
     <status value="active"/>
+    <experimental value="false"/>
+    <date value="2018-04-23"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <description value="ValueSet containing all Opioid medication formulations that are abuseable in ambulatory setting codes."/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/usage-context-type"/>
+            <code value="focus"/>
+            <display value="Clinical Focus"/>
+        </code>
+        <valueCodeableConcept>
+            <text value="Opioid medication formulations (ingredient, OR ingredient+strength+form : RXNORM TTY=IN or SCD OR SBD) that are abuseable in ambulatory setting."/>
+        </valueCodeableConcept>
+    </useContext>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+    </jurisdiction>
+    <purpose value="Used to determine if prescription is for opioid medication with ambulatory abuse potential for all recommendations."/>
+    <copyright value="© CDC 2016+."/>
     <compose>
         <include>
             <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
