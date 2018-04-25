@@ -1,7 +1,18 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="benzodiazepines"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+        <profile value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset"/>
+    </meta>
+    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+        <valueString value="For RxNorm, TTY = IN, BN, PIN, SBD, SCD for Benzodiazepines as identified as descendents of &quot;Benzodiazepine [EPC]&quot; concept in MED-RT."/>
+    </extension>
+    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
+        <valueString value="Any drug concept not specified in the inclusion."/>
+    </extension>
     <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/benzodiazepines"/>
-    <name value="Benzodiazepine Drugs"/>
+    <version value="1.0.0"/>
+    <name value="valueset-benzodiazepine-drugs"/>
     <title value="RxNorm Benzodiazepine Drugs"/>
     <status value="active"/>
     <experimental value="false"/>
@@ -28,6 +39,14 @@
     <purpose value="Provide terminology for Benzodiazepine MedicationRequest retrieval in recommendations 8 and 11."/>
     <copyright value="© CDC 2016+."/>
     <compose>
+        <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
+            <extension url="language">
+                <valueUri value="http://www.apelondts.org/tql"/>
+            </extension>
+            <extension url="expression">
+                <valueString value="Create {^RXN_Benzo_IN^:^Apelon, Inc.^} from [^MED-RT^] WITH CONCEPT Descendant_of &quot;Benzodiazepine [EPC][MED-RT]&quot;;"/>
+            </extension>
+        </extension>
         <include>
             <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
             <concept>

@@ -5,6 +5,7 @@
         <value value="OpioidCDS_REC_07"/>
     </identifier>
     <version value="0.1.0"/>
+    <name value="Library - Logic for Recommendation #7"/>
     <title value="Opioid CDS Logic for recommendation #7"/>
     <status value="active"/>
     <experimental value="false"/>

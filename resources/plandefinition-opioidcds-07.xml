@@ -6,7 +6,7 @@
         <value value="cdc-opioid-guidance"/>
     </identifier>
     <version value="0.1.0"/>
-    <name value="cdc-opioid-07"/>
+    <name value="PlanDefinition - Recommendation #7 Workflow"/>
     <title value="CDC Opioid Prescribing Guideline Recommendation #7"/>
     <type>
         <coding>
@@ -129,6 +129,10 @@
         </condition>
         <groupingBehavior value="visual-group"/>
         <selectionBehavior value="exactly-one"/>
+        <!-- reference to risk assessment activity definition -->
+        <definition>
+            <reference value="ActivityDefinition/opioidcds-risk-assessment-request"/>
+        </definition>
         <!-- dynamic card elements -->
         <dynamicValue>
             <path value="action.title"/>

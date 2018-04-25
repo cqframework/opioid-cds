@@ -2,10 +2,11 @@
     <id value="opioidcds-recommendation-08"/>
     <identifier>
         <use value="official"/>
-        <value value="OpioidCDS_REC_04"/>
+        <value value="OpioidCDS_REC_08"/>
     </identifier>
     <version value="0.1.0"/>
-    <title value="Opioid CDS Logic for recommendation #4"/>
+    <name value="Library - Logic for Recommendation #8"/>
+    <title value="Opioid CDS Logic for recommendation #8"/>
     <status value="active"/>
     <experimental value="false"/>
     <type>

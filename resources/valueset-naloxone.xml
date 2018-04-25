@@ -1,7 +1,18 @@
 <ValueSet xmlns="http://hl7.org/fhir">
    <id value="naloxone"/>
+   <meta>
+      <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+      <profile value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset"/>
+   </meta>
+   <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+      <valueString value="For RxNorm, TTY = IN, BN, PIN, SBD, SCD for Nalaxone."/>
+   </extension>
+   <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
+      <valueString value="Any drug concept not specified in the inclusion."/>
+   </extension>
    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/naloxone"/>
-   <name value="Nalaxone Drugs"/>
+   <version value="1.0.0"/>
+   <name value="valueset-nalaxone-drugs"/>
    <title value="RxNorm Nalaxone Drugs"/>
    <status value="active"/>
    <experimental value="false"/>
@@ -28,6 +39,14 @@
    <purpose value="Provide terminology for Naloxone MedicationRequest retrieval in recommendation 8."/>
    <copyright value="© CDC 2016+."/>
    <compose>
+      <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
+         <extension url="language">
+            <valueUri value="http://www.nlm.nih.gov/research/umls/rxmix"/>
+         </extension>
+         <extension url="expression">
+            <valueString value="TTY = BN,IN,PIN,SBD,SCD for Nalaxone (TTY=IN, RxCUI=7242)"/>
+         </extension>
+      </extension>
       <include>
          <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
          <concept>

@@ -1,7 +1,18 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="illicit-drug-urine-screening"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+        <profile value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset"/>
+    </meta>
+    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+        <valueString value="General screening test in urine for controlled substances and drugs of abuse."/>
+    </extension>
+    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
+        <valueString value="Narcotic drug tests."/>
+    </extension>
     <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/illicit-drug-urine-screening"/>
-    <name value="Non-opioid drug urine test"/>
+    <version value="1.0.0"/>
+    <name value="valueset-non-opioid-drug-urine-test"/>
     <title value="Loinc Non-opioid Drug Urine Test"/>
     <status value="active"/>
     <experimental value="false"/>
@@ -28,6 +39,14 @@
     <purpose value="Used to determine if patient has urine screening for drugs of abuse other than narcotics for recommendation 10."/>
     <copyright value="© CDC 2016+."/>
     <compose>
+        <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
+            <extension url="language">
+                <valueUri value="http://www.nlm.nih.gov/research/umls/rxmix"/>
+            </extension>
+            <extension url="expression">
+                <valueString value="set delimiter = &quot;	&quot;; set axis = &quot;Multiaxial Parent Of&quot;; FROM [^LOINC^] with (CONCEPT DESCENDANT_OF &quot;Controlled substances and drugs of abuse (LP31448-1)[LOINC]&quot; AND ^System[LOINC]^ EQUALS &quot;Urine&quot;) AND_NOT CONCEPT DESCENDANT_OF &quot;Narcotics and opioids (LP18149-2)[LOINC]&quot; EXPORT ^Name^,^Code^,^Component[LOINC]^,^has element[LOINC]^;"/>
+            </extension>
+        </extension>
         <include>
             <system value="http://loinc.org"/>
             <concept>

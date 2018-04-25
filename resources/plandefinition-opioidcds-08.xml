@@ -6,7 +6,7 @@
         <value value="cdc-opioid-guidance"/>
     </identifier>
     <version value="0.1.0"/>
-    <name value="cdc-opioid-08"/>
+    <name value="PlanDefinition - Recommendation #8 Workflow"/>
     <title value="CDC Opioid Prescribing Guideline Recommendation #8"/>
     <type>
         <coding>

@@ -1,7 +1,18 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="end-of-life-care"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+        <profile value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset"/>
+    </meta>
+    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+        <valueString value="Procedures or therapies specific to a terminal patient."/>
+    </extension>
+    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
+        <valueString value="Procedures or therapies that are done on a deceased patient."/>
+    </extension>
     <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/end-of-life-care"/>
-    <name value="Therapies indicating end of life care"/>
+    <version value="1.0.0"/>
+    <name value="valueset-therapies-indicating-end-of-life-care"/>
     <title value="Snomed Therapies Indicating End of Life Care"/>
     <status value="active"/>
     <experimental value="false"/>
@@ -28,6 +39,14 @@
     <purpose value="Used to determine if patient is at end of life as part of the patient's end of life assessment workflow in all recommendations."/>
     <copyright value="© CDC 2016+."/>
     <compose>
+        <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
+            <extension url="language">
+                <valueUri value="http://www.nlm.nih.gov/research/umls/rxmix"/>
+            </extension>
+            <extension url="expression">
+                <valueString value="set delimiter = &quot;	&quot;; FROM [^SNOMED CT US Edition^] with CONCEPT DESCENDANT_OF_PLUS &quot;Terminal care (regime/therapy) [SNOMED CT US Edition]&quot; AND_NOT CONCEPT DESCENDANT_OF_PLUS &quot;Dying care (regime/therapy)[SNOMED CT US Edition]&quot; EXPORT Concept_Name,^Code in Source[SNOMED CT US Edition]^,^Parent^;"/>
+            </extension>
+        </extension>
         <include>
             <system value="http://snomed.info/sct"/>
             <concept>
