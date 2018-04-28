@@ -93,8 +93,8 @@
 					<valueCodeableConcept>
 						<coding>
 							<system value="http://hl7.org/fhir/recommendation-strength"/>
-							<code value="strong"/>
-							<display value="Strong"/>
+							<code value="weak"/>
+							<display value="Weak"/>
 						</coding>
 					</valueCodeableConcept>
 				</extension>
@@ -102,8 +102,8 @@
 					<valueCodeableConcept>
 						<coding>
 							<system value="http://hl7.org/fhir/evidence-quality"/>
-							<code value="low"/>
-							<display value="Low quality"/>
+							<code value="very-low"/>
+							<display value="Very Low quality"/>
 						</coding>
 					</valueCodeableConcept>
 				</extension>
@@ -142,8 +142,8 @@
 					<valueCodeableConcept>
 						<coding>
 							<system value="http://hl7.org/fhir/recommendation-strength"/>
-							<code value="strong"/>
-							<display value="Strong"/>
+							<code value="weak"/>
+							<display value="Weak"/>
 						</coding>
 					</valueCodeableConcept>
 				</extension>
@@ -151,8 +151,8 @@
 					<valueCodeableConcept>
 						<coding>
 							<system value="http://hl7.org/fhir/evidence-quality"/>
-							<code value="low"/>
-							<display value="Low quality"/>
+							<code value="very-low"/>
+							<display value="Very Low quality"/>
 						</coding>
 					</valueCodeableConcept>
 				</extension>

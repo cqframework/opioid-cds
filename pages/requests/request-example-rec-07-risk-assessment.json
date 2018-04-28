@@ -1,8 +1,9 @@
 {
-  "hookInstance": "b31adb6f-edc6-4d8b-8f00-515c8cc06612",
+  "hookInstance": "f4a85598-bc39-4c4f-a944-c876eb0e984e",
   "fhirServer": "http://measure.eval.kanvix.com/cqf-ruler/baseDstu3",
   "hook": "medication-prescribe",
   "user": "Practitioner/example",
+  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-07-risk-assessment",
     "encounterId": "Encounter/example-rec-07-risk-assessment-context",
@@ -15,6 +16,7 @@
         "category": {
           "coding": [
             {
+              "system": "http://hl7.org/fhir/medication-request-category",
               "code": "outpatient"
             }
           ]
@@ -77,7 +79,12 @@
     ]
   },
   "prefetch": {
-    "encounters": {
+    "item1": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item2": {
       "response": {
         "status": "200 OK"
       },
@@ -98,13 +105,18 @@
         }
       }
     },
-    "medications": {
+    "item3": {
       "response": {
         "status": "200 OK"
       },
-      "resource": {}
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-rec-07-risk-assessment",
+        "gender": "male",
+        "birthDate": "1982-01-07"
+      }
     },
-    "procedures": {
+    "item4": {
       "response": {
         "status": "200 OK"
       },
@@ -116,8 +128,8 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "454281000124100",
-              "display": "Assessment of risk for opioid abuse (procedure)"
+              "code": "268525008",
+              "display": "High risk drug monitoring (regime/therapy)"
             }
           ]
         },
@@ -137,6 +149,56 @@
             ]
           }
         }
+      }
+    },
+    "item5": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item6": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item7": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item8": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item9": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item10": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item11": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item12": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item13": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item14": {
+      "response": {
+        "status": "200 OK"
       }
     }
   }

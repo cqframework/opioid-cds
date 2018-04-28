@@ -130,15 +130,15 @@
 		<selectionBehavior value="exactly-one"/>
 		<dynamicValue>
 			<path value="action.title"/>
-			<expression value="getSummary"/>
+			<expression value="Get Summary"/>
 		</dynamicValue>
 		<dynamicValue>
 			<path value="action.description"/>
-			<expression value="getDetail"/>
+			<expression value="Get Detail"/>
 		</dynamicValue>
 		<dynamicValue>
 			<path value="activity.extension"/>
-			<expression value="getIndicator"/>
+			<expression value="Get Indicator"/>
 		</dynamicValue>
 		<!-- Will reduce dosage -->
 		<action>

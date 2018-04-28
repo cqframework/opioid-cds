@@ -5,6 +5,7 @@ using FHIR version '3.0.0'
 include OMTKLogic version '0.0.1' called OMTKLogic
 
 codesystem "SNOMED": 'http://snomed.info/sct'
+codesystem "Medication Request Category Codes": 'http://hl7.org/fhir/medication-request-category'
 
 valueset "Benzodiazepines": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/benzodiazepines'
 valueset "End of Life Conditions": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/end-of-life-conditions'
@@ -19,7 +20,7 @@ valueset "Long Acting Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/long
 // Harvested from VSAC - OID: 2.16.840.1.113762.1.4.1116.351
 valueset "Metastatic Cancer": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/metastatic-cancer'
 valueset "Naloxone": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/naloxone'
-valueset "Risk Assessment": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opiate-therapy-risk-assessment'
+valueset "Risk Assessment": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioid-abuse-assessment'
 valueset "Opioid Drug Screening": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioid-urine-screening'
 valueset "Ambulatory Abuse Potential Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care'
 valueset "End Of Life Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids-indicating-end-of-life'
@@ -31,20 +32,37 @@ valueset "Codeine Cough Meds": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioi
 valueset "Short Acting Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/short-acting-opioids'
 
 code "Referral to Hospice": '306205009' from "SNOMED"
+code "Outpatient": 'outpatient' from "Medication Request Category Codes"
 
 // TODO: Capture process decisions for long-term opioid use
 define IsForChronicPain: true
 
-define "Get Active Ambulatory Opioid Rx":
+define "Active Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
     where Rx.status.value = 'active'
-      and Rx.category.coding[0].code.value = 'outpatient'
+      and ToCode(Rx.category.coding[0]) ~ "Outpatient"
 
-define "Get Ambulatory Opioid Rx":
+define "Active Ambulatory Benzodiazepine Rx":
+  [MedicationRequest: "Benzodiazepines"] Rx
+    where Rx.status.value = 'active'
+      and ToCode(Rx.category.coding[0]) ~ "Outpatient"
+
+define "Active Ambulatory Naloxone Rx":
+  [MedicationRequest: "Naloxone"] Rx
+    where Rx.status.value = 'active'
+      and ToCode(Rx.category.coding[0]) ~ "Outpatient"
+
+define "Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
-      where Rx.category.coding[0].code.value = 'outpatient'
+      where ToCode(Rx.category.coding[0]) ~ "Outpatient"
 
-define function "End of Life Assessment" (ContextPrescriptions List<MedicationRequest>):
+define function "Is Context Prescription End of Life Opioid?" (ContextPrescriptions List<MedicationRequest>):
+  exists (
+    ContextPrescriptions Rx
+      where ToCode(Rx.medication.coding[0]) in "End Of Life Opioids"
+  )
+
+define "End of Life Assessment":
   // 1. Conditions indicating end of life or with limited life expectancy
   exists (
     (
@@ -110,11 +128,6 @@ define function "End of Life Assessment" (ContextPrescriptions List<MedicationRe
     (
       [MedicationStatement: code in "End Of Life Opioids"] MS
         where MS.status.value in { 'active', 'completed', 'intended' }
-    )
-    union
-    (
-      ContextPrescriptions Rx
-        where ToCode(Rx.medication.coding[0]) in "End Of Life Opioids"
     )
   )
 
@@ -200,23 +213,36 @@ define function ProbableDaysInRange(Orders List<MedicationRequest>, daysPast Int
         then days between orders.dispenseRequest.validityPeriod."end".value and Today()
         else 0
     return
-      (dosesPerDay * ((repeat * supplyDuration) / validityPeriod) * (daysPast - endDifference)) >= numDaysInDaysPast
+      if (repeat * supplyDuration) < numDaysInDaysPast then false
+      else
+        (dosesPerDay * ((repeat * supplyDuration) / validityPeriod) * (daysPast - endDifference)) >= numDaysInDaysPast
 
 define function GetPeriodDays(value System.String):
   case
-    when StartsWith(value, 'year') then 365.0
-    when StartsWith(value, 'month') then 30.0
-    when StartsWith(value, 'hour') then 1.0/24.0
-    when StartsWith(value, 'minute') then 1.0/24.0*60.0
+    when value = 'a' then 365.0
+    when value = 'mo' then 30.0
+    when value = 'h' then 1.0/24.0
+    when value = 'min' then 1.0/24.0*60.0
     else 1.0
   end
 
 define function GetDurationInDays(value FHIR.Duration):
   case
-    when StartsWith(value.unit.value, 'year') then value.value.value * 365.0
-    when StartsWith(value.unit.value, 'month') then value.value.value * 30.0
+    when StartsWith(value.unit.value, 'a') then value.value.value * 365.0
+    when StartsWith(value.unit.value, 'mo') then value.value.value * 30.0
     else value.value.value
   end
+
+define function GetIngredient(rxNormCode Code):
+  OMTKLogic.GetIngredients(rxNormCode).ingredientName
+
+define function GetMedicationNames(medications List<MedicationRequest>):
+  medications M
+    return OMTKLogic.GetIngredients(ToCode(M.medication.coding[0])).rxNormCode.display
+
+/*
+*  Conversion Functions
+*/
 
 define function ToCode(coding FHIR.Coding):
   System.Code {
@@ -228,27 +254,3 @@ define function ToCode(coding FHIR.Coding):
 
 define function ToQuantity(quantity FHIR.Quantity):
   System.Quantity { value: quantity.value.value, unit: quantity.unit.value }
-
-define function IsNaloxone(rxNormCode Code):
-  rxNormCode in "Naloxone"
-
-define function IsBenzodiazepine(rxNormCode Code):
-  rxNormCode in "Benzodiazepines"
-
-define function IsOpioidWithAmbulatoryAbusePotential(rxNormCode Code):
-  rxNormCode in "Ambulatory Abuse Potential Opioids"
-
-define function IsLongActingOpioid(rxNormCode Code):
-  rxNormCode in "Long Acting Opioids"
-
-define function IsEndOfLifeOpioid(rxNormCode Code):
-  rxNormCode in "End Of Life Opioids"
-
-define function IsOpioidDrugScreen(observationCode Code):
-  observationCode in "Opioid Drug Screening"
-
-define function IsIllicitDrugScreen(observationCode Code):
-  observationCode in "Illicit Drug Screening"
-
-define function GetIngredient(rxNormCode Code):
-  OMTKLogic.GetIngredients(rxNormCode).ingredientName

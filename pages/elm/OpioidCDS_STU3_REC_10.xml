@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
-   <annotation startLine="65" startChar="3" endLine="65" endChar="64" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="65" startChar="3" endLine="65" endChar="64" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="70" startChar="3" endLine="70" endChar="63" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="70" startChar="3" endLine="70" endChar="63" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="125" startChar="20" endLine="125" endChar="76" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="134" startChar="16" endLine="134" endChar="17" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="145" startChar="52" endLine="145" endChar="73" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="159" startChar="62" endLine="159" endChar="78" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="70" startChar="3" endLine="70" endChar="64" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="70" startChar="3" endLine="70" endChar="64" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="75" startChar="3" endLine="75" endChar="63" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="75" startChar="3" endLine="75" endChar="63" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="132" startChar="20" endLine="132" endChar="76" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="163" startChar="18" endLine="163" endChar="19" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="141" startChar="16" endLine="141" endChar="17" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="152" startChar="52" endLine="152" endChar="73" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="172" startChar="62" endLine="172" endChar="78" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <identifier id="OpioidCDS_STU3_REC_10" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
@@ -24,6 +25,14 @@
          </parameterTypeSpecifier>
       </def>
    </parameters>
+   <codeSystems>
+      <def name="V2 Interpretation Codes" id="http://hl7.org/fhir/v2/0078" accessLevel="Public"/>
+   </codeSystems>
+   <codes>
+      <def name="Positive" id="POS" accessLevel="Public">
+         <codeSystem name="V2 Interpretation Codes"/>
+      </def>
+   </codes>
    <statements>
       <def name="Patient" context="Patient">
          <expression xsi:type="SingletonFrom">
@@ -51,34 +60,40 @@
                <source alias="triggerScript">
                   <expression name="ContextPrescriptions" xsi:type="ParameterRef"/>
                </source>
-               <where name="IsOpioidWithAmbulatoryAbusePotential" libraryName="Common" xsi:type="FunctionRef">
-                  <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+               <where xsi:type="InValueSet">
+                  <code name="ToCode" libraryName="Common" xsi:type="FunctionRef">
                      <operand xsi:type="Indexer">
                         <operand path="coding" xsi:type="Property">
                            <source path="medication" scope="triggerScript" xsi:type="Property"/>
                         </operand>
                         <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
                      </operand>
-                  </operand>
+                  </code>
+                  <valueset name="Ambulatory Abuse Potential Opioids" libraryName="Common"/>
                </where>
             </operand>
          </expression>
       </def>
       <def name="Exclusion Criteria" context="Patient" accessLevel="Public">
-         <expression name="End of Life Assessment" libraryName="Common" xsi:type="FunctionRef">
-            <operand name="ContextPrescriptions" xsi:type="ParameterRef"/>
+         <expression xsi:type="Or">
+            <operand name="End of Life Assessment" libraryName="Common" xsi:type="ExpressionRef"/>
+            <operand name="Is Context Prescription End of Life Opioid?" libraryName="Common" xsi:type="FunctionRef">
+               <operand name="ContextPrescriptions" xsi:type="ParameterRef"/>
+            </operand>
          </expression>
       </def>
-      <def name="Get Illicit Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
+      <def name="Illicit Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
          <expression xsi:type="Query">
             <source alias="observation">
                <expression dataType="fhir:Observation" codeProperty="combo-code" xsi:type="Retrieve">
                   <codes name="Illicit Drug Screening" libraryName="Common" xsi:type="ValueSetRef"/>
                </expression>
             </source>
-            <where xsi:type="In">
-               <operand path="value" xsi:type="Property">
-                  <source path="effective" scope="observation" xsi:type="Property"/>
+            <where precision="Day" xsi:type="In">
+               <operand xsi:type="DateFrom">
+                  <operand path="value" xsi:type="Property">
+                     <source path="effective" scope="observation" xsi:type="Property"/>
+                  </operand>
                </operand>
                <operand name="Lookback Year" xsi:type="ExpressionRef"/>
             </where>
@@ -93,19 +108,21 @@
       </def>
       <def name="Most Recent Illicit Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
          <expression xsi:type="Last">
-            <source name="Get Illicit Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
+            <source name="Illicit Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
          </expression>
       </def>
-      <def name="Get Opioid Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
+      <def name="Opioid Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
          <expression xsi:type="Query">
             <source alias="observation">
                <expression dataType="fhir:Observation" codeProperty="combo-code" xsi:type="Retrieve">
                   <codes name="Opioid Drug Screening" libraryName="Common" xsi:type="ValueSetRef"/>
                </expression>
             </source>
-            <where xsi:type="In">
-               <operand path="value" xsi:type="Property">
-                  <source path="effective" scope="observation" xsi:type="Property"/>
+            <where precision="Day" xsi:type="In">
+               <operand xsi:type="DateFrom">
+                  <operand path="value" xsi:type="Property">
+                     <source path="effective" scope="observation" xsi:type="Property"/>
+                  </operand>
                </operand>
                <operand name="Lookback Year" xsi:type="ExpressionRef"/>
             </where>
@@ -120,7 +137,7 @@
       </def>
       <def name="Most Recent Opioid Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
          <expression xsi:type="Last">
-            <source name="Get Opioid Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
+            <source name="Opioid Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
          </expression>
       </def>
       <def name="No Urine Screening In Last 12 Months" context="Patient" accessLevel="Public">
@@ -139,18 +156,16 @@
                <expression name="Most Recent Opioid Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
             </source>
             <where xsi:type="Or">
-               <operand xsi:type="Equal">
-                  <operand path="value" xsi:type="Property">
-                     <source path="code" xsi:type="Property">
-                        <source xsi:type="Indexer">
-                           <operand path="coding" xsi:type="Property">
-                              <source path="interpretation" scope="mostRecentScreening" xsi:type="Property"/>
-                           </operand>
-                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
-                        </source>
-                     </source>
+               <operand xsi:type="Equivalent">
+                  <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                     <operand xsi:type="Indexer">
+                        <operand path="coding" xsi:type="Property">
+                           <source path="interpretation" scope="mostRecentScreening" xsi:type="Property"/>
+                        </operand>
+                        <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                     </operand>
                   </operand>
-                  <operand valueType="t:String" value="POS" xsi:type="Literal"/>
+                  <operand name="Positive" xsi:type="CodeRef"/>
                </operand>
                <operand xsi:type="If">
                   <condition asType="t:Boolean" xsi:type="As">
@@ -163,23 +178,21 @@
                         </operand>
                      </operand>
                   </condition>
-                  <then xsi:type="Equal">
-                     <operand path="value" xsi:type="Property">
-                        <source path="code" xsi:type="Property">
-                           <source xsi:type="Indexer">
-                              <operand path="coding" xsi:type="Property">
-                                 <source path="interpretation" xsi:type="Property">
-                                    <source xsi:type="Indexer">
-                                       <operand path="component" scope="mostRecentScreening" xsi:type="Property"/>
-                                       <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
-                                    </source>
+                  <then xsi:type="Equivalent">
+                     <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                        <operand xsi:type="Indexer">
+                           <operand path="coding" xsi:type="Property">
+                              <source path="interpretation" xsi:type="Property">
+                                 <source xsi:type="Indexer">
+                                    <operand path="component" scope="mostRecentScreening" xsi:type="Property"/>
+                                    <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
                                  </source>
-                              </operand>
-                              <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
-                           </source>
-                        </source>
+                              </source>
+                           </operand>
+                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                        </operand>
                      </operand>
-                     <operand valueType="t:String" value="POS" xsi:type="Literal"/>
+                     <operand name="Positive" xsi:type="CodeRef"/>
                   </then>
                   <else valueType="t:Boolean" value="false" xsi:type="Literal"/>
                </operand>
@@ -189,7 +202,7 @@
       <def name="Orders Before Most Recent Opioid Screening" context="Patient" accessLevel="Public">
          <expression xsi:type="Query">
             <source alias="orders">
-               <expression name="Get Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
+               <expression name="Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
             </source>
             <relationship alias="mostRecentScreening" xsi:type="With">
                <expression name="Positive Opioid Drug Screening" xsi:type="ExpressionRef"/>
@@ -230,148 +243,50 @@
             </return>
          </expression>
       </def>
-      <def name="GetOpioid" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression xsi:type="Case">
-            <comparand name="value" xsi:type="OperandRef"/>
-            <caseItem>
-               <when valueType="t:String" value="3299-5" xsi:type="Literal"/>
-               <then valueType="t:String" value="Acetaminophen" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="14184-6" xsi:type="Literal"/>
-               <then valueType="t:String" value="Atropine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="16485-5" xsi:type="Literal"/>
-               <then valueType="t:String" value="Bromodiphenhydramine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3408-2" xsi:type="Literal"/>
-               <then valueType="t:String" value="Brompheniramine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3414-0" xsi:type="Literal"/>
-               <then valueType="t:String" value="Buprenorphine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3421-5" xsi:type="Literal"/>
-               <then valueType="t:String" value="Butalbital" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="12333-1" xsi:type="Literal"/>
-               <then valueType="t:String" value="Butorphanol" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3423-1" xsi:type="Literal"/>
-               <then valueType="t:String" value="Caffeine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="21142-5" xsi:type="Literal"/>
-               <then valueType="t:String" value="Carisoprodol" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="16605-8" xsi:type="Literal"/>
-               <then valueType="t:String" value="Chlorcyclizine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3467-8" xsi:type="Literal"/>
-               <then valueType="t:String" value="Chlorpheniramine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3507-1" xsi:type="Literal"/>
-               <then valueType="t:String" value="Codeine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="14066-5" xsi:type="Literal"/>
-               <then valueType="t:String" value="Dihydrocodeine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3571-7" xsi:type="Literal"/>
-               <then valueType="t:String" value="Diphenhydramine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="11235-9" xsi:type="Literal"/>
-               <then valueType="t:String" value="Fentanyl" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="12308-3" xsi:type="Literal"/>
-               <then valueType="t:String" value="Hydrocodone" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="9834-3" xsi:type="Literal"/>
-               <then valueType="t:String" value="Hydromorphone" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="14071" xsi:type="Literal"/>
-               <then valueType="t:String" value="Ibuprofen" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3711-9" xsi:type="Literal"/>
-               <then valueType="t:String" value="Levorphanol" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3746-5" xsi:type="Literal"/>
-               <then valueType="t:String" value="Meperidine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3773-9" xsi:type="Literal"/>
-               <then valueType="t:String" value="Methadone" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3830-7" xsi:type="Literal"/>
-               <then valueType="t:String" value="Morphine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="42618-9" xsi:type="Literal"/>
-               <then valueType="t:String" value="Naloxone" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="12309-1" xsi:type="Literal"/>
-               <then valueType="t:String" value="Naltrexone" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="10998-3" xsi:type="Literal"/>
-               <then valueType="t:String" value="Oxycodone" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="11247-4" xsi:type="Literal"/>
-               <then valueType="t:String" value="Oxymorphone" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3917-2" xsi:type="Literal"/>
-               <then valueType="t:String" value="Pentazocine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3962-8" xsi:type="Literal"/>
-               <then valueType="t:String" value="Phenylephrine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3965-1" xsi:type="Literal"/>
-               <then valueType="t:String" value="Phenylpropanolamine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="11000-7" xsi:type="Literal"/>
-               <then valueType="t:String" value="Promethazine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="4003-0" xsi:type="Literal"/>
-               <then valueType="t:String" value="Pseudoephedrine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="4009-7" xsi:type="Literal"/>
-               <then valueType="t:String" value="Pyrilamine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="65807-0" xsi:type="Literal"/>
-               <then valueType="t:String" value="Tapentadol" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="43219-5" xsi:type="Literal"/>
-               <then valueType="t:String" value="Tramadol" xsi:type="Literal"/>
-            </caseItem>
-            <else xsi:type="Concatenate">
-               <operand valueType="t:String" value="Unknown code: " xsi:type="Literal"/>
-               <operand name="value" xsi:type="OperandRef"/>
+      <def name="GetDrug" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand xsi:type="IsNull">
+                  <operand name="value" xsi:type="OperandRef"/>
+               </operand>
+            </condition>
+            <then asType="t:String" xsi:type="As">
+               <operand xsi:type="Null"/>
+            </then>
+            <else xsi:type="If">
+               <condition asType="t:Boolean" xsi:type="As">
+                  <operand xsi:type="Equal">
+                     <operand xsi:type="PositionOf">
+                        <pattern valueType="t:String" value="[" xsi:type="Literal"/>
+                        <string name="value" xsi:type="OperandRef"/>
+                     </operand>
+                     <operand xsi:type="Negate">
+                        <operand valueType="t:Integer" value="1" xsi:type="Literal"/>
+                     </operand>
+                  </operand>
+               </condition>
+               <then xsi:type="ReplaceMatches">
+                  <operand xsi:type="Indexer">
+                     <operand xsi:type="Split">
+                        <stringToSplit name="value" xsi:type="OperandRef"/>
+                        <separator valueType="t:String" value="tested" xsi:type="Literal"/>
+                     </operand>
+                     <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                  </operand>
+                  <operand valueType="t:String" value="\s" xsi:type="Literal"/>
+                  <operand valueType="t:String" value="" xsi:type="Literal"/>
+               </then>
+               <else xsi:type="ReplaceMatches">
+                  <operand xsi:type="Indexer">
+                     <operand xsi:type="Split">
+                        <stringToSplit name="value" xsi:type="OperandRef"/>
+                        <separator valueType="t:String" value="\[" xsi:type="Literal"/>
+                     </operand>
+                     <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                  </operand>
+                  <operand valueType="t:String" value="\s" xsi:type="Literal"/>
+                  <operand valueType="t:String" value="" xsi:type="Literal"/>
+               </else>
             </else>
          </expression>
          <operand name="value">
@@ -387,28 +302,72 @@
                   </operand>
                </operand>
             </condition>
-            <then xsi:type="Except">
-               <operand xsi:type="Query">
-                  <source alias="Prescriptions">
-                     <expression name="Prescribed Opioids" xsi:type="ExpressionRef"/>
-                  </source>
-               </operand>
-               <operand xsi:type="ToList">
-                  <operand xsi:type="Lower">
-                     <operand name="GetOpioid" xsi:type="FunctionRef">
-                        <operand path="value" xsi:type="Property">
-                           <source path="code" xsi:type="Property">
-                              <source xsi:type="Indexer">
-                                 <operand path="coding" xsi:type="Property">
-                                    <source path="code" xsi:type="Property">
-                                       <source name="Positive Opioid Drug Screening" xsi:type="ExpressionRef"/>
-                                    </source>
-                                 </operand>
-                                 <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+            <then xsi:type="Union">
+               <operand xsi:type="Except">
+                  <operand xsi:type="Query">
+                     <source alias="Prescriptions">
+                        <expression name="Prescribed Opioids" xsi:type="ExpressionRef"/>
+                     </source>
+                  </operand>
+                  <operand xsi:type="ToList">
+                     <operand xsi:type="Lower">
+                        <operand name="GetDrug" xsi:type="FunctionRef">
+                           <operand path="value" xsi:type="Property">
+                              <source path="display" xsi:type="Property">
+                                 <source xsi:type="Indexer">
+                                    <operand path="coding" xsi:type="Property">
+                                       <source path="code" xsi:type="Property">
+                                          <source name="Positive Opioid Drug Screening" xsi:type="ExpressionRef"/>
+                                       </source>
+                                    </operand>
+                                    <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                 </source>
                               </source>
-                           </source>
+                           </operand>
                         </operand>
                      </operand>
+                  </operand>
+               </operand>
+               <operand xsi:type="ToList">
+                  <operand xsi:type="If">
+                     <condition asType="t:Boolean" xsi:type="As">
+                        <operand xsi:type="Not">
+                           <operand xsi:type="IsNull">
+                              <operand xsi:type="Indexer">
+                                 <operand path="component" xsi:type="Property">
+                                    <source name="Positive Opioid Drug Screening" xsi:type="ExpressionRef"/>
+                                 </operand>
+                                 <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                     </condition>
+                     <then xsi:type="Lower">
+                        <operand name="GetDrug" xsi:type="FunctionRef">
+                           <operand path="value" xsi:type="Property">
+                              <source path="display" xsi:type="Property">
+                                 <source xsi:type="Indexer">
+                                    <operand path="coding" xsi:type="Property">
+                                       <source path="code" xsi:type="Property">
+                                          <source xsi:type="Indexer">
+                                             <operand path="component" xsi:type="Property">
+                                                <source name="Positive Opioid Drug Screening" xsi:type="ExpressionRef"/>
+                                             </operand>
+                                             <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                          </source>
+                                       </source>
+                                    </operand>
+                                    <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                 </source>
+                              </source>
+                           </operand>
+                        </operand>
+                     </then>
+                     <else asType="t:String" xsi:type="As">
+                        <operand xsi:type="SingletonFrom">
+                           <operand xsi:type="List"/>
+                        </operand>
+                     </else>
                   </operand>
                </operand>
             </then>
@@ -425,7 +384,7 @@
             <operand name="Missing Opioids" xsi:type="ExpressionRef"/>
          </expression>
       </def>
-      <def name="Get Opioids From Most Recent Screening" context="Patient" accessLevel="Public">
+      <def name="Opioids From Most Recent Screening" context="Patient" accessLevel="Public">
          <expression xsi:type="Query">
             <source alias="mostRecentScreening">
                <expression name="Positive Opioid Drug Screening" xsi:type="ExpressionRef"/>
@@ -434,9 +393,9 @@
                <expression xsi:type="Union">
                   <operand xsi:type="ToList">
                      <operand xsi:type="Lower">
-                        <operand name="GetOpioid" xsi:type="FunctionRef">
+                        <operand name="GetDrug" xsi:type="FunctionRef">
                            <operand path="value" xsi:type="Property">
-                              <source path="code" xsi:type="Property">
+                              <source path="display" xsi:type="Property">
                                  <source xsi:type="Indexer">
                                     <operand path="coding" xsi:type="Property">
                                        <source path="code" scope="mostRecentScreening" xsi:type="Property"/>
@@ -461,9 +420,9 @@
                            </operand>
                         </condition>
                         <then xsi:type="Lower">
-                           <operand name="GetOpioid" xsi:type="FunctionRef">
+                           <operand name="GetDrug" xsi:type="FunctionRef">
                               <operand path="value" xsi:type="Property">
-                                 <source path="code" xsi:type="Property">
+                                 <source path="display" xsi:type="Property">
                                     <source xsi:type="Indexer">
                                        <operand path="coding" xsi:type="Property">
                                           <source path="code" xsi:type="Property">
@@ -492,9 +451,9 @@
       </def>
       <def name="Unprescribed Opioids" context="Patient" accessLevel="Public">
          <expression xsi:type="Except">
-            <operand name="Get Opioids From Most Recent Screening" xsi:type="ExpressionRef"/>
+            <operand name="Opioids From Most Recent Screening" xsi:type="ExpressionRef"/>
             <operand xsi:type="Intersect">
-               <operand name="Get Opioids From Most Recent Screening" xsi:type="ExpressionRef"/>
+               <operand name="Opioids From Most Recent Screening" xsi:type="ExpressionRef"/>
                <operand name="Prescribed Opioids" xsi:type="ExpressionRef"/>
             </operand>
          </expression>
@@ -510,18 +469,16 @@
                <expression name="Most Recent Illicit Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
             </source>
             <where xsi:type="Or">
-               <operand xsi:type="Equal">
-                  <operand path="value" xsi:type="Property">
-                     <source path="code" xsi:type="Property">
-                        <source xsi:type="Indexer">
-                           <operand path="coding" xsi:type="Property">
-                              <source path="interpretation" scope="mostRecentScreening" xsi:type="Property"/>
-                           </operand>
-                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
-                        </source>
-                     </source>
+               <operand xsi:type="Equivalent">
+                  <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                     <operand xsi:type="Indexer">
+                        <operand path="coding" xsi:type="Property">
+                           <source path="interpretation" scope="mostRecentScreening" xsi:type="Property"/>
+                        </operand>
+                        <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                     </operand>
                   </operand>
-                  <operand valueType="t:String" value="POS" xsi:type="Literal"/>
+                  <operand name="Positive" xsi:type="CodeRef"/>
                </operand>
                <operand xsi:type="If">
                   <condition asType="t:Boolean" xsi:type="As">
@@ -534,23 +491,21 @@
                         </operand>
                      </operand>
                   </condition>
-                  <then xsi:type="Equal">
-                     <operand path="value" xsi:type="Property">
-                        <source path="code" xsi:type="Property">
-                           <source xsi:type="Indexer">
-                              <operand path="coding" xsi:type="Property">
-                                 <source path="interpretation" xsi:type="Property">
-                                    <source xsi:type="Indexer">
-                                       <operand path="component" scope="mostRecentScreening" xsi:type="Property"/>
-                                       <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
-                                    </source>
+                  <then xsi:type="Equivalent">
+                     <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+                        <operand xsi:type="Indexer">
+                           <operand path="coding" xsi:type="Property">
+                              <source path="interpretation" xsi:type="Property">
+                                 <source xsi:type="Indexer">
+                                    <operand path="component" scope="mostRecentScreening" xsi:type="Property"/>
+                                    <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
                                  </source>
-                              </operand>
-                              <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
-                           </source>
-                        </source>
+                              </source>
+                           </operand>
+                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                        </operand>
                      </operand>
-                     <operand valueType="t:String" value="POS" xsi:type="Literal"/>
+                     <operand name="Positive" xsi:type="CodeRef"/>
                   </then>
                   <else valueType="t:Boolean" value="false" xsi:type="Literal"/>
                </operand>
@@ -575,7 +530,7 @@
                </operand>
                <operand xsi:type="AnyTrue">
                   <source name="ProbableDaysInRange" libraryName="Common" xsi:type="FunctionRef">
-                     <operand name="Get Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
+                     <operand name="Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
                      <operand valueType="t:Integer" value="90" xsi:type="Literal"/>
                      <operand valueType="t:Integer" value="80" xsi:type="Literal"/>
                   </source>
@@ -593,63 +548,15 @@
             </operand>
          </expression>
       </def>
-      <def name="GetIllicitDrug" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression xsi:type="Case">
-            <comparand name="value" xsi:type="OperandRef"/>
-            <caseItem>
-               <when valueType="t:String" value="3397-7" xsi:type="Literal"/>
-               <then valueType="t:String" value="Cocaine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="14267-9" xsi:type="Literal"/>
-               <then valueType="t:String" value="Methylenedioxymethamphetamine (MDMA)" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="29868-7" xsi:type="Literal"/>
-               <then valueType="t:String" value="Gamma Hydroxybutyric Acid (GHB)" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="12327-3" xsi:type="Literal"/>
-               <then valueType="t:String" value="Ketamine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3732-5" xsi:type="Literal"/>
-               <then valueType="t:String" value="Lysergic Acid Diethylamide (LSD)" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3779-6" xsi:type="Literal"/>
-               <then valueType="t:String" value="Methamphetamine" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="17504-2" xsi:type="Literal"/>
-               <then valueType="t:String" value="Psilocybin" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="41020-9" xsi:type="Literal"/>
-               <then valueType="t:String" value="Flunitrazepam (Rohypnol)" xsi:type="Literal"/>
-            </caseItem>
-            <caseItem>
-               <when valueType="t:String" value="3426-4" xsi:type="Literal"/>
-               <then valueType="t:String" value="Tetrahydrocannabinol (THC)" xsi:type="Literal"/>
-            </caseItem>
-            <else xsi:type="Concatenate">
-               <operand valueType="t:String" value="Unknown code: " xsi:type="Literal"/>
-               <operand name="value" xsi:type="OperandRef"/>
-            </else>
-         </expression>
-         <operand name="value">
-            <operandTypeSpecifier name="t:String" xsi:type="NamedTypeSpecifier"/>
-         </operand>
-      </def>
       <def name="Inconsistent Illicit Drugs" context="Patient" accessLevel="Public">
          <expression xsi:type="Concatenate">
             <operand valueType="t:String" value="Found the following illicit drug(s) in urine drug screen: " xsi:type="Literal"/>
             <operand xsi:type="If">
                <condition asType="t:Boolean" xsi:type="As">
                   <operand xsi:type="IsNull">
-                     <operand name="GetIllicitDrug" xsi:type="FunctionRef">
+                     <operand name="GetDrug" xsi:type="FunctionRef">
                         <operand path="value" xsi:type="Property">
-                           <source path="code" xsi:type="Property">
+                           <source path="display" xsi:type="Property">
                               <source xsi:type="Indexer">
                                  <operand path="coding" xsi:type="Property">
                                     <source path="code" xsi:type="Property">
@@ -663,23 +570,54 @@
                      </operand>
                   </operand>
                </condition>
-               <then name="GetIllicitDrug" xsi:type="FunctionRef">
-                  <operand path="value" xsi:type="Property">
-                     <source path="code" xsi:type="Property">
-                        <source xsi:type="Indexer">
-                           <operand path="coding" xsi:type="Property">
-                              <source path="interpretation" xsi:type="Property">
-                                 <source name="Positive Illicit Drug Screening" xsi:type="ExpressionRef"/>
+               <then xsi:type="If">
+                  <condition asType="t:Boolean" xsi:type="As">
+                     <operand xsi:type="IsNull">
+                        <operand name="GetDrug" xsi:type="FunctionRef">
+                           <operand path="value" xsi:type="Property">
+                              <source path="display" xsi:type="Property">
+                                 <source xsi:type="Indexer">
+                                    <operand path="coding" xsi:type="Property">
+                                       <source path="code" xsi:type="Property">
+                                          <source xsi:type="Indexer">
+                                             <operand path="component" xsi:type="Property">
+                                                <source name="Positive Illicit Drug Screening" xsi:type="ExpressionRef"/>
+                                             </operand>
+                                             <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                          </source>
+                                       </source>
+                                    </operand>
+                                    <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                 </source>
                               </source>
                            </operand>
-                           <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                        </operand>
+                     </operand>
+                  </condition>
+                  <then valueType="t:String" value="could not determine the drug name" xsi:type="Literal"/>
+                  <else name="GetDrug" xsi:type="FunctionRef">
+                     <operand path="value" xsi:type="Property">
+                        <source path="display" xsi:type="Property">
+                           <source xsi:type="Indexer">
+                              <operand path="coding" xsi:type="Property">
+                                 <source path="code" xsi:type="Property">
+                                    <source xsi:type="Indexer">
+                                       <operand path="component" xsi:type="Property">
+                                          <source name="Positive Illicit Drug Screening" xsi:type="ExpressionRef"/>
+                                       </operand>
+                                       <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                    </source>
+                                 </source>
+                              </operand>
+                              <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
+                           </source>
                         </source>
-                     </source>
-                  </operand>
+                     </operand>
+                  </else>
                </then>
-               <else name="GetIllicitDrug" xsi:type="FunctionRef">
+               <else name="GetDrug" xsi:type="FunctionRef">
                   <operand path="value" xsi:type="Property">
-                     <source path="code" xsi:type="Property">
+                     <source path="display" xsi:type="Property">
                         <source xsi:type="Indexer">
                            <operand path="coding" xsi:type="Property">
                               <source path="code" xsi:type="Property">

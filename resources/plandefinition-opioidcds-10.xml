@@ -95,51 +95,51 @@
 			<expression value="Inclusion Criteria"/>
 		</condition>
 		<action>
-		<title value="Annual Urine Screening Check"/>
-		<description value="Patient has not had a urine screening in the past 12 months"/>
-		<documentation>
-			<type value="documentation"/>
-			<document>
-				<!-- We can use the example code systems from the FHIR CLinical Reasoning Module, or we can define GRADE specific code systems and use those here -->
-				<extension url="http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation">
-					<valueCodeableConcept>
-						<coding>
-							<system value="http://hl7.org/fhir/recommendation-strength"/>
-							<code value="weak"/>
-							<display value="Weak"/>
-						</coding>
-					</valueCodeableConcept>
-				</extension>
-				<extension url="http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence">
-					<valueCodeableConcept>
-						<coding>
-							<system value="http://hl7.org/fhir/evidence-quality"/>
-							<code value="very-low"/>
-							<display value="Very Low quality"/>
-						</coding>
-					</valueCodeableConcept>
-				</extension>
-			</document>
-		</documentation>
-		<condition>
-			<kind value="applicability"/>
+			<title value="Annual Urine Screening Check"/>
 			<description value="Patient has not had a urine screening in the past 12 months"/>
-			<language value="text/cql"/>
-			<expression value="No Screenings in Past Year"/>
-		</condition>
-		<dynamicValue>
-			<path value="activity.extension"/>
-			<expression value="Get Indicator"/>
-		</dynamicValue>
-		<action>
-			<description value="Will perform urine screening"/>
-			<!-- Open Order Set, where available -->
+			<documentation>
+				<type value="documentation"/>
+				<document>
+					<!-- We can use the example code systems from the FHIR CLinical Reasoning Module, or we can define GRADE specific code systems and use those here -->
+					<extension url="http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation">
+						<valueCodeableConcept>
+							<coding>
+								<system value="http://hl7.org/fhir/recommendation-strength"/>
+								<code value="weak"/>
+								<display value="Weak"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+					<extension url="http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence">
+						<valueCodeableConcept>
+							<coding>
+								<system value="http://hl7.org/fhir/evidence-quality"/>
+								<code value="very-low"/>
+								<display value="Very Low quality"/>
+							</coding>
+						</valueCodeableConcept>
+					</extension>
+				</document>
+			</documentation>
+			<condition>
+				<kind value="applicability"/>
+				<description value="Patient has not had a urine screening in the past 12 months"/>
+				<language value="text/cql"/>
+				<expression value="No Screenings in Past Year"/>
+			</condition>
+			<dynamicValue>
+				<path value="activity.extension"/>
+				<expression value="Get Indicator"/>
+			</dynamicValue>
+			<action>
+				<description value="Will perform urine screening"/>
+				<!-- Open Order Set, where available -->
+			</action>
+			<action>
+				<description value="Not for chronic pain management. Snooze 3 months"/>
+			</action>
 		</action>
 		<action>
-			<description value="Not for chronic pain management. Snooze 3 months"/>
-		</action>
-	</action>
-	<action>
 			<title value="Unprescribed Opioids Found In Urine Screening"/>
 			<description value="Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed"/>
 			<documentation>

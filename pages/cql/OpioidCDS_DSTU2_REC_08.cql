@@ -43,7 +43,7 @@ context Patient
 define "Validate Trigger Event":
   exists(
     ContextPrescriptions triggerScript
-      where Common.IsOpioidWithAmbulatoryAbusePotential(Common.ToCode(triggerScript.medicationCodeableConcept.coding[0]))
+      where Common.ToCode(triggerScript.medicationCodeableConcept.coding[0]) in Common."Ambulatory Abuse Potential Opioids"
   )
 
 define "Inclusion Criteria":
@@ -57,22 +57,17 @@ define "Inclusion Criteria":
 
 define "Exclusion Criteria":
   "On Naloxone"
-  or Common."End of Life Assessment"(ContextPrescriptions)
+    or Common."End of Life Assessment"
+    or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 define "Total MME":
-  Common.TotalMME(Common."Get Active Ambulatory Opioid Rx" union ContextPrescriptions)
+  Common.TotalMME(Common."Active Ambulatory Opioid Rx" union ContextPrescriptions)
 
 define "On Naloxone":
-  exists(
-    [MedicationOrder: Common."Naloxone"] Rx
-      where Rx.status.value = 'active'
-  )
+  exists( Common."Active Ambulatory Naloxone Rx" )
 
 define "On Benzodiazepine":
-  exists(
-    [MedicationOrder: Common."Benzodiazepines"] Rx
-      where Rx.status.value = 'active'
-  )
+  exists( Common."Active Ambulatory Benzodiazepine Rx" )
 
 define "Has Substance Abuse History":
   exists ( [Condition: Common."Substance Abuse"] )

@@ -331,6 +331,19 @@
       "base": "Encounter-example-rec-08-on-naloxone-prefetch.html"
     },
 
+    "Bundle/example-rec-08-substance-abuse": {
+      "source": "bundle-example-rec-08-substance-abuse.xml",
+      "base": "Bundle-example-rec-08-substance-abuse.html"
+    },
+    "Patient/example-rec-08-substance-abuse": {
+      "source": "patient-example-rec-08-substance-abuse.xml",
+      "base": "Patient-example-rec-08-substance-abuse.html"
+    },
+    "Encounter/example-rec-08-substance-abusee-context": {
+      "source": "encounter-example-rec-08-substance-abuse-context.xml",
+      "base": "Encounter-example-rec-08-substance-abuse-context.html"
+    },
+
     "Bundle/example-rec-10-end-of-life-med-exclusion": {
       "source": "bundle-example-rec-10-end-of-life-med-exclusion.xml",
       "base": "Bundle-example-rec-10-end-of-life-med-exclusion.html"

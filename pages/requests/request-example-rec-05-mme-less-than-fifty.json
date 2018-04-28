@@ -1,8 +1,9 @@
 {
-  "hookInstance": "4c3813ef-a0c6-4aef-87c4-b80897fd2176",
+  "hookInstance": "2d1c3d80-69c7-444e-bd89-ce36dda0647d",
   "fhirServer": "http://measure.eval.kanvix.com/cqf-ruler/baseDstu3",
   "hook": "medication-prescribe",
   "user": "Practitioner/example",
+  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-05-mme-less-than-fifty",
     "encounterId": "Encounter/example-rec-05-mme-less-than-fifty-context",
@@ -15,6 +16,7 @@
         "category": {
           "coding": [
             {
+              "system": "http://hl7.org/fhir/medication-request-category",
               "code": "outpatient"
             }
           ]
@@ -77,17 +79,76 @@
     ]
   },
   "prefetch": {
-    "encounters": {
+    "item1": {
       "response": {
         "status": "200 OK"
-      },
-      "resource": {}
+      }
     },
-    "medications": {
+    "item2": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item3": {
       "response": {
         "status": "200 OK"
       },
-      "resource": {}
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-rec-05-mme-less-than-fifty",
+        "gender": "female",
+        "birthDate": "1982-01-07"
+      }
+    },
+    "item4": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item5": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item6": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item7": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item8": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item9": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item10": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item11": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item12": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item13": {
+      "response": {
+        "status": "200 OK"
+      }
     }
   }
 }

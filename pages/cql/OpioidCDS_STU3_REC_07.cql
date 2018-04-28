@@ -52,7 +52,7 @@ define "Encounter Interval":
 define "Validate Trigger Event":
   exists(
     ContextPrescriptions triggerScript
-      where Common.IsOpioidWithAmbulatoryAbusePotential(Common.ToCode(triggerScript.medication.coding[0]))
+      where Common.ToCode(triggerScript.medication.coding[0]) in Common."Ambulatory Abuse Potential Opioids"
   )
 
 define "Inclusion Criteria":
@@ -62,21 +62,22 @@ define "Inclusion Criteria":
     and ( "Rx Active 7 of Past 10 Days With Encounter" or "Rx Active 63 of Past 90 Days" )
 
 define "Exclusion Criteria":
-  Common."End of Life Assessment"(ContextPrescriptions)
+  Common."End of Life Assessment"
+    or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 define "Opioid Risk Assessment in Past 90 Days":
   [Procedure: Common."Risk Assessment"] riskAssessment
-    where riskAssessment.performed."start".value in "Risk Assessment Interval"
+    where date from riskAssessment.performed."start".value in day of "Risk Assessment Interval"
 
 define "Rx Active 7 of Past 10 Days With Encounter":
-  AnyTrue(Common.ProbableDaysInRange(Common."Get Active Ambulatory Opioid Rx", 10, 7))
+  AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 10, 7))
     and exists(
       [Encounter] E
-        where E.period."start".value in "Encounter Interval"
+        where date from E.period."start".value in day of "Encounter Interval"
     )
 
 define "Rx Active 63 of Past 90 Days":
-  AnyTrue(Common.ProbableDaysInRange(Common."Get Active Ambulatory Opioid Rx", 90, 63))
+  AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 63))
 
 define "Get Indicator":
   'warning'

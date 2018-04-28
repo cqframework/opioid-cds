@@ -26,15 +26,18 @@
          </expression>
       </def>
       <def name="Exclusion Criteria" context="Patient" accessLevel="Public">
-         <expression name="End of Life Assessment" libraryName="Common" xsi:type="FunctionRef">
-            <operand name="ContextPrescriptions" xsi:type="ParameterRef"/>
+         <expression xsi:type="Or">
+            <operand name="End of Life Assessment" libraryName="Common" xsi:type="ExpressionRef"/>
+            <operand name="Is Context Prescription End of Life Opioid?" libraryName="Common" xsi:type="FunctionRef">
+               <operand name="ContextPrescriptions" xsi:type="ParameterRef"/>
+            </operand>
          </expression>
       </def>
       <def name="Total MME" context="Patient" accessLevel="Public">
          <expression name="TotalMME" libraryName="Common" xsi:type="FunctionRef">
             <operand xsi:type="Union">
                <operand name="ContextPrescriptions" xsi:type="ParameterRef"/>
-               <operand name="Get Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
+               <operand name="Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
             </operand>
          </expression>
       </def>

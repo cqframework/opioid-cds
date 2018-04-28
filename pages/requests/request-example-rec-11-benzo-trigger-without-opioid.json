@@ -1,8 +1,9 @@
 {
-  "hookInstance": "f6eb9a9a-2202-4ea8-a7f8-dffeecd44cef",
+  "hookInstance": "259cf767-4b52-4e14-a741-04da147a430f",
   "fhirServer": "http://measure.eval.kanvix.com/cqf-ruler/baseDstu3",
   "hook": "medication-prescribe",
   "user": "Practitioner/example",
+  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-11-benzo-trigger-without-opioid",
     "encounterId": "Encounter/example-rec-11-benzo-trigger-without-opioid-context",
@@ -15,6 +16,7 @@
         "category": {
           "coding": [
             {
+              "system": "http://hl7.org/fhir/medication-request-category",
               "code": "outpatient"
             }
           ]
@@ -77,17 +79,81 @@
     ]
   },
   "prefetch": {
-    "encounters": {
+    "item1": {
       "response": {
         "status": "200 OK"
-      },
-      "resource": {}
+      }
     },
-    "medications": {
+    "item2": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item3": {
       "response": {
         "status": "200 OK"
       },
-      "resource": {}
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-rec-11-benzo-trigger-without-opioid",
+        "gender": "female",
+        "birthDate": "1982-01-07"
+      }
+    },
+    "item4": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item5": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item6": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item7": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item8": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item9": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item10": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item11": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item12": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item13": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item14": {
+      "response": {
+        "status": "200 OK"
+      }
     }
   }
 }

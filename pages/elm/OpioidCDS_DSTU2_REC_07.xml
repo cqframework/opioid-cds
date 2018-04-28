@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
-   <annotation startLine="68" startChar="3" endLine="68" endChar="39" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="69" startChar="3" endLine="69" endChar="39" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <identifier id="OpioidCDS_DSTU2_REC_07" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
@@ -56,22 +56,26 @@
                <source alias="triggerScript">
                   <expression name="ContextPrescriptions" xsi:type="ParameterRef"/>
                </source>
-               <where name="IsOpioidWithAmbulatoryAbusePotential" libraryName="Common" xsi:type="FunctionRef">
-                  <operand name="ToCode" libraryName="Common" xsi:type="FunctionRef">
+               <where xsi:type="InValueSet">
+                  <code name="ToCode" libraryName="Common" xsi:type="FunctionRef">
                      <operand xsi:type="Indexer">
                         <operand path="coding" xsi:type="Property">
                            <source path="medicationCodeableConcept" scope="triggerScript" xsi:type="Property"/>
                         </operand>
                         <operand valueType="t:Integer" value="0" xsi:type="Literal"/>
                      </operand>
-                  </operand>
+                  </code>
+                  <valueset name="Ambulatory Abuse Potential Opioids" libraryName="Common"/>
                </where>
             </operand>
          </expression>
       </def>
       <def name="Exclusion Criteria" context="Patient" accessLevel="Public">
-         <expression name="End of Life Assessment" libraryName="Common" xsi:type="FunctionRef">
-            <operand name="ContextPrescriptions" xsi:type="ParameterRef"/>
+         <expression xsi:type="Or">
+            <operand name="End of Life Assessment" libraryName="Common" xsi:type="ExpressionRef"/>
+            <operand name="Is Context Prescription End of Life Opioid?" libraryName="Common" xsi:type="FunctionRef">
+               <operand name="ContextPrescriptions" xsi:type="ParameterRef"/>
+            </operand>
          </expression>
       </def>
       <def name="Opioid Risk Assessment in Past 90 Days" context="Patient" accessLevel="Public">
@@ -81,11 +85,13 @@
                   <codes name="Risk Assessment" libraryName="Common" xsi:type="ValueSetRef"/>
                </expression>
             </source>
-            <where xsi:type="In">
-               <operand path="value" xsi:type="Property">
-                  <source path="start" xsi:type="Property">
-                     <source path="performedPeriod" scope="riskAssessment" xsi:type="Property"/>
-                  </source>
+            <where precision="Day" xsi:type="In">
+               <operand xsi:type="DateFrom">
+                  <operand path="value" xsi:type="Property">
+                     <source path="start" xsi:type="Property">
+                        <source path="performedPeriod" scope="riskAssessment" xsi:type="Property"/>
+                     </source>
+                  </operand>
                </operand>
                <operand name="Risk Assessment Interval" xsi:type="ExpressionRef"/>
             </where>
@@ -95,7 +101,7 @@
          <expression xsi:type="And">
             <operand xsi:type="AnyTrue">
                <source name="ProbableDaysInRange" libraryName="Common" xsi:type="FunctionRef">
-                  <operand name="Get Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
+                  <operand name="Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
                   <operand valueType="t:Integer" value="10" xsi:type="Literal"/>
                   <operand valueType="t:Integer" value="7" xsi:type="Literal"/>
                </source>
@@ -105,11 +111,13 @@
                   <source alias="E">
                      <expression dataType="fhir:Encounter" xsi:type="Retrieve"/>
                   </source>
-                  <where xsi:type="In">
-                     <operand path="value" xsi:type="Property">
-                        <source path="start" xsi:type="Property">
-                           <source path="period" scope="E" xsi:type="Property"/>
-                        </source>
+                  <where precision="Day" xsi:type="In">
+                     <operand xsi:type="DateFrom">
+                        <operand path="value" xsi:type="Property">
+                           <source path="start" xsi:type="Property">
+                              <source path="period" scope="E" xsi:type="Property"/>
+                           </source>
+                        </operand>
                      </operand>
                      <operand name="Encounter Interval" xsi:type="ExpressionRef"/>
                   </where>
@@ -120,7 +128,7 @@
       <def name="Rx Active 63 of Past 90 Days" context="Patient" accessLevel="Public">
          <expression xsi:type="AnyTrue">
             <source name="ProbableDaysInRange" libraryName="Common" xsi:type="FunctionRef">
-               <operand name="Get Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
+               <operand name="Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
                <operand valueType="t:Integer" value="90" xsi:type="Literal"/>
                <operand valueType="t:Integer" value="63" xsi:type="Literal"/>
             </source>

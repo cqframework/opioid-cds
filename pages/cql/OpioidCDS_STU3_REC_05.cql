@@ -20,10 +20,11 @@ define "Inclusion Criteria":
   and "Total MME" >= 50 'mg/d'
 
 define "Exclusion Criteria":
-  Common."End of Life Assessment"(ContextPrescriptions)
+  Common."End of Life Assessment"
+    or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 define "Total MME":
-  Common.TotalMME(ContextPrescriptions union Common."Get Active Ambulatory Opioid Rx")
+  Common.TotalMME(ContextPrescriptions union Common."Active Ambulatory Opioid Rx")
 
 define "Get Indicator":
   'warning'

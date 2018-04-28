@@ -122,21 +122,21 @@
 			<kind value="applicability"/>
 			<description value="Is total MME >= 50?"/>
 			<language value="text/cql"/>
-			<expression value="Is MME 50 Or More?"/>
+			<expression value="Inclusion Criteria"/>
 		</condition>
 		<groupingBehavior value="visual-group"/>
 		<selectionBehavior value="exactly-one"/>
 		<dynamicValue>
 			<path value="action.title"/>
-			<expression value="getSummary"/>
+			<expression value="Get Summary"/>
 		</dynamicValue>
 		<dynamicValue>
 			<path value="action.description"/>
-			<expression value="getDetail"/>
+			<expression value="Get Detail"/>
 		</dynamicValue>
 		<dynamicValue>
 			<path value="activity.extension"/>
-			<expression value="getIndicator"/>
+			<expression value="Get Indicator"/>
 		</dynamicValue>
 		<!-- Will reduce dosage -->
 		<action>

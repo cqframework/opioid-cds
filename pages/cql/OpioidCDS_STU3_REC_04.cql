@@ -39,35 +39,30 @@ define "Inclusion Period":
 define "Encounter Period":
   Interval[Today() - 12 months - 1 days, Today() - 1 days]
 
-define "Get Trigger Trigger Event Prescription Ids":
-  "Get Trigger Event Prescriptions" triggerScripts
-    let codeString: ''
-    return
-      codeString + triggerScripts.id.value + ' '
-
-define "Get Trigger Event Prescriptions":
+define "Trigger Event Prescriptions":
   ContextPrescriptions triggerScripts
     let rxNormCode: Common.ToCode(triggerScripts.medication.coding[0])
-      where Common.IsOpioidWithAmbulatoryAbusePotential(rxNormCode)
-        and Common.IsLongActingOpioid(rxNormCode)
+      where rxNormCode in Common."Ambulatory Abuse Potential Opioids"
+        and rxNormCode in Common."Long Acting Opioids"
 
 define "Validate Trigger Event":
-  exists( "Get Trigger Event Prescriptions" )
+  exists( "Trigger Event Prescriptions" )
 
 define "Inclusion Criteria":
   "Validate Trigger Event"
   and not "Exclusion Criteria"
   and not exists(
-    Common."Get Ambulatory Opioid Rx" orders
-      where date from orders.authoredOn.value in "Inclusion Period"
+    Common."Ambulatory Opioid Rx" orders
+      where date from orders.authoredOn.value in day of "Inclusion Period"
   )
   and exists(
     [Encounter] encounters
-      where date from encounters.period."start".value in "Encounter Period"
+      where date from encounters.period."start".value in day of "Encounter Period"
   )
 
 define "Exclusion Criteria":
-  Common."End of Life Assessment"(ContextPrescriptions)
+  Common."End of Life Assessment"
+    or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 define "Get Indicator":
   'warning'
@@ -76,6 +71,6 @@ define "Get Summary":
   'Recommend use of immediate-release opioids instead of extended release/long acting opioids when starting patient on opioids.'
 
 define "Get Detail":
-  'The following medication requests(s) release rates should be re-evaluated: ' + "Get Trigger Trigger Event Prescription Ids"
+  'The following medication requests(s) release rates should be re-evaluated: ' + Common.GetMedicationNames("Trigger Event Prescriptions")
 
 // TODO - I would like to be able to offer the medication's immediate release form as a suggestions

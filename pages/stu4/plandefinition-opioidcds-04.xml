@@ -108,8 +108,8 @@
                     <valueCodeableConcept>
                         <coding>
                             <system value="http://hl7.org/fhir/evidence-quality"/>
-                            <code value="low"/>
-                            <display value="Low quality"/>
+                            <code value="very-low"/>
+                            <display value="Very Low quality"/>
                         </coding>
                     </valueCodeableConcept>
                 </extension>

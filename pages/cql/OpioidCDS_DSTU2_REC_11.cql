@@ -34,13 +34,13 @@ context Patient
 define "Validate Trigger Event For Benzodiazepine":
   exists(
     ContextPrescriptions triggerScript
-      where Common.IsBenzodiazepine(Common.ToCode(triggerScript.medicationCodeableConcept.coding[0]))
+      where Common.ToCode(triggerScript.medicationCodeableConcept.coding[0]) in Common."Benzodiazepines"
   )
 
 define "Validate Trigger Event For Ambulatory Care Abuse Potential":
   exists(
     ContextPrescriptions triggerScript
-      where Common.IsOpioidWithAmbulatoryAbusePotential(Common.ToCode(triggerScript.medicationCodeableConcept.coding[0]))
+    where Common.ToCode(triggerScript.medicationCodeableConcept.coding[0]) in Common."Ambulatory Abuse Potential Opioids"
   )
 
 define "Inclusion Criteria":
@@ -51,18 +51,16 @@ define "Inclusion Criteria":
     and "Opioid with Ambulatory Care Abuse Potential"
 
 define "Exclusion Criteria":
-  Common."End of Life Assessment"(ContextPrescriptions)
+  Common."End of Life Assessment"
+    or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 define "On Benzodiazepine":
   "Validate Trigger Event For Benzodiazepine"
-  or exists(
-    [MedicationOrder: Common."Benzodiazepines"] Rx
-      where Rx.status.value = 'active'
-  )
+  or exists( Common."Active Ambulatory Benzodiazepine Rx" )
 
 define "Opioid with Ambulatory Care Abuse Potential":
   "Validate Trigger Event For Ambulatory Care Abuse Potential"
-  or exists( Common."Get Active Ambulatory Opioid Rx" )
+  or exists( Common."Active Ambulatory Opioid Rx" )
 
 define "Get Indicator":
   'warning'

@@ -1,8 +1,9 @@
 {
-  "hookInstance": "939c54d8-ef2e-4ff8-95e6-0b8ba129670e",
+  "hookInstance": "7d7eab76-d435-458d-8432-de2d35ccac9e",
   "fhirServer": "http://measure.eval.kanvix.com/cqf-ruler/baseDstu3",
   "hook": "medication-prescribe",
   "user": "Practitioner/example",
+  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-08-mme-less-than-fifty",
     "encounterId": "Encounter/example-rec-08-mme-less-than-fifty-context",
@@ -15,6 +16,7 @@
         "category": {
           "coding": [
             {
+              "system": "http://hl7.org/fhir/medication-request-category",
               "code": "outpatient"
             }
           ]
@@ -77,17 +79,91 @@
     ]
   },
   "prefetch": {
-    "encounters": {
+    "item1": {
       "response": {
         "status": "200 OK"
-      },
-      "resource": {}
+      }
     },
-    "medications": {
+    "item2": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item3": {
       "response": {
         "status": "200 OK"
       },
-      "resource": {}
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-rec-08-mme-less-than-fifty",
+        "gender": "male",
+        "birthDate": "1982-01-07"
+      }
+    },
+    "item4": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item5": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item6": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item7": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item8": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item9": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item10": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item11": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item12": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item13": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item14": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item15": {
+      "response": {
+        "status": "200 OK"
+      }
+    },
+    "item16": {
+      "response": {
+        "status": "200 OK"
+      }
     }
   }
 }
