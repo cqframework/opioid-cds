@@ -184,65 +184,17 @@
         "birthDate": "1982-01-07"
       }
     },
-    "item4": {
-      "response": {
-        "status": "200 OK"
-      }
-    },
-    "item5": {
-      "response": {
-        "status": "200 OK"
-      }
-    },
-    "item6": {
-      "response": {
-        "status": "200 OK"
-      }
-    },
-    "item7": {
-      "response": {
-        "status": "200 OK"
-      }
-    },
-    "item8": {
-      "response": {
-        "status": "200 OK"
-      }
-    },
-    "item9": {
-      "response": {
-        "status": "200 OK"
-      }
-    },
-    "item10": {
-      "response": {
-        "status": "200 OK"
-      }
-    },
-    "item11": {
-      "response": {
-        "status": "200 OK"
-      }
-    },
-    "item12": {
-      "response": {
-        "status": "200 OK"
-      }
-    },
-    "item13": {
-      "response": {
-        "status": "200 OK"
-      }
-    },
-    "item14": {
-      "response": {
-        "status": "200 OK"
-      }
-    },
-    "item15": {
-      "response": {
-        "status": "200 OK"
-      }
-    }
+    "item4": null,
+    "item5": null,
+    "item6": null,
+    "item7": null,
+    "item8": null,
+    "item9": null,
+    "item10": null,
+    "item11": null,
+    "item12": null,
+    "item13": null,
+    "item14": null,
+    "item15": null
   }
 }

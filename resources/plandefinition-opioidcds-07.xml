@@ -76,23 +76,19 @@
         <name value="Robert McClure, MD, MPH"/>
     </contributor>
     <copyright value="© CDC 2016+."/>
-    <relatedArtifact>
-        <type value="documentation"/>
-        <display value="CDC guideline for prescribing opioids for chronic pain"/>
-        <url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
-    </relatedArtifact>
-    <relatedArtifact>
-        <type value="documentation"/>
-        <display value="MME Conversion Tables"/>
-        <url value="https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf"/>
-    </relatedArtifact>
     <library>
         <reference value="Library/opioidcds-recommendation-07"/>
     </library>
     <action>
         <!-- non-dynamic card summary -->
+        <label value="Assessment of risk for opioid use procedure"/>
         <title value="Existing patient should be evaluated for risk of continued opioid therapy."/>
         <description value="Checking if the trigger prescription meets the inclusion criteria for recommendation #7 workflow."/>
+        <documentation>
+            <type value="documentation"/>
+            <display value="CDC guideline for prescribing opioids for chronic pain"/>
+            <url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
+        </documentation>
         <documentation>
             <type value="documentation"/>
             <document>
@@ -127,6 +123,10 @@
             <language value="text/cql"/>
             <expression value="Inclusion Criteria"/>
         </condition>
+        <type>
+            <system value="http://hl7.org/fhir/action-type"/>
+            <code value="create"/>
+        </type>
         <groupingBehavior value="visual-group"/>
         <selectionBehavior value="exactly-one"/>
         <!-- reference to risk assessment activity definition -->

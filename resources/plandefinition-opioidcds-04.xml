@@ -1,5 +1,5 @@
 <PlanDefinition xmlns="http://hl7.org/fhir">
-    <id value="opioidcds-04"/>
+    <id value="cdc-opioid-guidance-04"/>
     <url value="http://hl7.org/fhir/ig/opioid-cds/PlanDefinition/opioidcds-04"/>
     <identifier>
         <use value="official"/>
@@ -76,16 +76,6 @@
         <name value="Robert McClure, MD, MPH"/>
     </contributor>
     <copyright value="© CDC 2016+."/>
-    <relatedArtifact>
-        <type value="documentation"/>
-        <display value="CDC guideline for prescribing opioids for chronic pain"/>
-        <url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
-    </relatedArtifact>
-    <relatedArtifact>
-        <type value="documentation"/>
-        <display value="MME Conversion Tables"/>
-        <url value="https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf"/>
-    </relatedArtifact>
     <library>
         <reference value="Library/opioidcds-recommendation-04"/>
     </library>
@@ -93,6 +83,11 @@
         <!-- non-dynamic card summary -->
         <title value="Extended-release opioid prescription triggered."/>
         <description value="Checking if the trigger prescription meets the inclusion criteria for recommendation #4 workflow."/>
+        <documentation>
+            <type value="documentation"/>
+            <display value="CDC guideline for prescribing opioids for chronic pain"/>
+            <url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
+        </documentation>
         <documentation>
             <type value="documentation"/>
             <document>

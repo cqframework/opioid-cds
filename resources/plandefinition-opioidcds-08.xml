@@ -78,11 +78,6 @@
     <copyright value="© CDC 2016+."/>
     <relatedArtifact>
         <type value="documentation"/>
-        <display value="CDC guideline for prescribing opioids for chronic pain"/>
-        <url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
-    </relatedArtifact>
-    <relatedArtifact>
-        <type value="documentation"/>
         <display value="MME Conversion Tables"/>
         <url value="https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf"/>
     </relatedArtifact>
@@ -93,6 +88,11 @@
         <!-- non-dynamic card summary -->
         <title value="Existing patient exhibits risk factors for opioid-related harms."/>
         <description value="Checking if the trigger prescription meets the inclusion criteria for recommendation #8 workflow."/>
+        <documentation>
+            <type value="documentation"/>
+            <display value="CDC guideline for prescribing opioids for chronic pain"/>
+            <url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
+        </documentation>
         <documentation>
             <type value="documentation"/>
             <document>

@@ -76,11 +76,6 @@
 		<name value="Robert McClure, MD, MPH"/>
 	</contributor>
 	<copyright value="© CDC 2016+."/>
-	<relatedArtifact>
-		<type value="documentation"/>
-		<display value="CDC guideline for prescribing opioids for chronic pain"/>
-		<url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
-	</relatedArtifact>
 	<library>
 		<reference value="Library/opioidcds-recommendation-10"/>
 	</library>
@@ -97,6 +92,11 @@
 		<action>
 			<title value="Annual Urine Screening Check"/>
 			<description value="Patient has not had a urine screening in the past 12 months"/>
+			<documentation>
+				<type value="documentation"/>
+				<display value="CDC guideline for prescribing opioids for chronic pain"/>
+				<url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
+			</documentation>
 			<documentation>
 				<type value="documentation"/>
 				<document>
@@ -125,7 +125,7 @@
 				<kind value="applicability"/>
 				<description value="Patient has not had a urine screening in the past 12 months"/>
 				<language value="text/cql"/>
-				<expression value="No Screenings in Past Year"/>
+				<expression value="No Urine Screening In Last 12 Months"/>
 			</condition>
 			<dynamicValue>
 				<path value="activity.extension"/>
@@ -142,6 +142,11 @@
 		<action>
 			<title value="Unprescribed Opioids Found In Urine Screening"/>
 			<description value="Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed"/>
+			<documentation>
+				<type value="documentation"/>
+				<display value="CDC guideline for prescribing opioids for chronic pain"/>
+				<url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
+			</documentation>
 			<documentation>
 				<type value="documentation"/>
 				<document>
@@ -189,6 +194,11 @@
 			<description value="Patient has a positive urine screening in the past 12 months, which does not include prescribed opioids"/>
 			<documentation>
 				<type value="documentation"/>
+				<display value="CDC guideline for prescribing opioids for chronic pain"/>
+				<url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
+			</documentation>
+			<documentation>
+				<type value="documentation"/>
 				<document>
 					<!-- We can use the example code systems from the FHIR CLinical Reasoning Module, or we can define GRADE specific code systems and use those here -->
 					<extension url="http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation">
@@ -229,6 +239,11 @@
 		<action>
 			<title value="Illicit Drugs Found In Urine Screening"/>
 			<description value="Patient has a positive urine screening in the past 12 months for illicit drugs"/>
+			<documentation>
+				<type value="documentation"/>
+				<display value="CDC guideline for prescribing opioids for chronic pain"/>
+				<url value="https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"/>
+			</documentation>
 			<documentation>
 				<type value="documentation"/>
 				<document>
