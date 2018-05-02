@@ -4,8 +4,6 @@
    <annotation startLine="77" startChar="3" endLine="77" endChar="55" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <annotation startLine="124" startChar="20" endLine="124" endChar="91" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <annotation startLine="133" startChar="16" endLine="133" endChar="17" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="144" startChar="52" endLine="144" endChar="73" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="158" startChar="62" endLine="158" endChar="78" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <identifier id="OpioidCDS_DSTU2_REC_10" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
@@ -493,16 +491,18 @@
       <def name="Inconsistent Unprescribed Opioids" context="Patient" accessLevel="Public">
          <expression xsi:type="Concatenate">
             <operand valueType="t:String" value="Found the following unprescribed opioid(s): " xsi:type="Literal"/>
-            <operand xsi:type="SingletonFrom">
-               <operand name="Unprescribed Opioids" xsi:type="ExpressionRef"/>
+            <operand xsi:type="Combine">
+               <source name="Unprescribed Opioids" xsi:type="ExpressionRef"/>
+               <separator valueType="t:String" value=", " xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
       <def name="Inconsistent Missing Opioids" context="Patient" accessLevel="Public">
          <expression xsi:type="Concatenate">
             <operand valueType="t:String" value="The following opioids are missing from the screening: " xsi:type="Literal"/>
-            <operand xsi:type="SingletonFrom">
-               <operand name="Missing Opioids" xsi:type="ExpressionRef"/>
+            <operand xsi:type="Combine">
+               <source name="Missing Opioids" xsi:type="ExpressionRef"/>
+               <separator valueType="t:String" value=", " xsi:type="Literal"/>
             </operand>
          </expression>
       </def>

@@ -141,7 +141,7 @@ define "Has Unprescribed Opioids?":
   exists ("Unprescribed Opioids")
 
 define "Inconsistent Unprescribed Opioids":
-  'Found the following unprescribed opioid(s): ' + "Unprescribed Opioids"
+  'Found the following unprescribed opioid(s): ' + Combine("Unprescribed Opioids", ', ')
 
 define "Missing Opioids":
   if "Positive Opioid Drug Screening" is not null
@@ -155,7 +155,7 @@ define "Has Missing Opioids?":
   exists ("Missing Opioids")
 
 define "Inconsistent Missing Opioids":
-  'The following opioids are missing from the screening: ' + "Missing Opioids"
+  'The following opioids are missing from the screening: ' + Combine("Missing Opioids", ', ')
 
 define "Get Indicator":
   'warning'
