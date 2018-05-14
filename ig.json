@@ -20,6 +20,7 @@
     }
   },
   "version" : "3.0.1",
+  "license": "CC0-1.0",
   "logging": ["init", "progress", "context", "html", "tx"],
   "sct-edition" : "http://snomed.info/sct/731000124108",
   "extraTemplates": [
