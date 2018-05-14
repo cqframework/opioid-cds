@@ -20,10 +20,6 @@
   The <a href="http://cds-hooks.org/">CDS Hooks</a> interoperability framework was used for the integration of the guideline recommendations into EHR systems. This framework was chosen primarily due to its strong support from EHR vendors including Epic, Cerner, Allscripts, and Athena Health. This framework enables an EHR system to call out to an external CDS Web service to obtain patient-specific guidance in the form of "cards". A graphical overview of the CDS Hooks framework from its Web site is shown below.
 </p>
 
-<img src="assets/images/cds-hooks.png">
-
-<p></p>
-
 <p>
   The core components of this standards-based knowledge resource are described below. These components are all available at the locations listed in the Appendix.
 </p>
@@ -32,41 +28,61 @@
 <h3><span class="sectioncount">8.4.1</span> Solution Component # 1: Medication and Terminology Knowledge Base <a href="service-documentation.html#solution1" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
-  A Microsoft Access database called OpioidManagementTerminologyKnowledge.accdb was created to enable the definition of the medication and terminology knowledge required. Also, an important desire was to be able to continually update this database when new concept codes entered the system. This was accomplished by developing the Terminology Knowledge Builder, described in the next section.
+  Three Microsoft Access databases called LocalDataStore_RxNav_OpioidCds.accdb,
+  LocalDataStore_UMLS_OpioidCds.accdb, and LocalDataStore_VSAC_OpioidCds.accdb
+  were created to enable the definition of the medication and terminology knowledge
+  required. Also, an important desire was to be able to continually update this
+  database when new concept codes entered the system. This was accomplished by developing
+  the Terminology Knowledge Builder, described in the next section.
 </p>
 
 <p>
   A visual representation of the database is shown below:
 </p>
 
-<img src="assets/images/omtk-db.png">
+<img style="max-width: 100%; max-height: 100%" src="assets/images/omtk-db.png">
 
 <p></p>
 
 <p>
-  In essence, the top set of tables enables the use of RxNorm's RxNav API interface to build and maintain a medication knowledge base. After seeding the knowledge base with medication ignredients of interest in MED_INGREDIENT and MED_INGREDIENT_TYPE, the system queries the latest version of RxNorm hosted by the NLM to identify which drugs contain those ingredients; what dose forms they take; what components they have (important for combination drugs); the strength of those drugs; and the ingredients of those components (so that opioid vs. non-opioid ingredients can be distinguished).
+  In essence, this database enables the use of RxNorm's RxNav API interface to build and maintain a
+  medication knowledge base. After seeding the knowledge base with medication ingredients of interest
+  in MED_INGREDIENT and MED_INGREDIENT_TYPE, the system queries the latest version of RxNorm hosted by
+  the National Library of Medicine (NLM) to identify which drugs contain those ingredients; what dose
+  forms they take; what components they have (important for combination drugs); the strength of those
+  drugs; and the ingredients of those components (so that opioid vs. non-opioid ingredients can be distinguished).
 </p>
 
 <p>
-  The left set of tables uses database queries on this knowledge base to identify opioid types of interest: those abused in primary care (non-IV, non-topical), those indicating end of life (liquid form opioids except cough syrups), and those which are cough medications.
+  The database also uses queries on this knowledge base to identify opioid types of interest, such as
+  extended-release opioids, opioids abused in ambulatory care, etc.
 </p>
 
 <p>
-  The bottom set of tables uses the UMLS hosted by the NLM. It allows the specification of value sets in terms of "ancestor concepts" (e.g., metastatic cancer, urine opioid testing). It then uses the UMLS API to identify all descendant concepts, which can then be aggregated to identify appropriate value sets. The current concepts defined are for conditions indicating end of life (metastatic cancer and pancreatic cancer) and urine opiate testing.
+  LocalDataStore_MLS_OpioidCds.accdb uses the Unified Medical Language System (UMLS) hosted by the NLM.
+  It allows the specification of value sets in terms of "ancestor concepts" (e.g., metastatic cancer,
+  urine opioid testing). It then uses the UMLS API to identify all descendant concepts, which can then
+  be aggregated to identify appropriate value sets.
 </p>
 
 <a name="solution2"> </a>
 <h3><span class="sectioncount">8.4.2</span> Solution Component # 2: Terminology Knowledge Builder <a href="service-documentation.html#solution2" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
-  The terminology knowledge builder is a stand-alone Java program that populates and updates the medication and terminology knowledge base. It identifies when particular entries and value sets have been updated, so that a client system can use it to determine if the database used by the CDS system needs to be updated.
+  The terminology knowledge builder consists of three stand-alone Java programs that populate and update the
+  medication and terminology knowledge bases. They each identify when particular entries and value sets have
+  been updated, so that a client system can use them to determine if the database used by the CDS system needs
+  to be updated.
 </p>
 
 <a name="solution3"> </a>
 <h3><span class="sectioncount">8.4.3</span> Solution Component # 3: Core Logic Processing Java Class <a href="service-documentation.html#solution3" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
-  The core of the CDS Hooks Web service is a Java class (UtilsOpioid.java), located in the opioids-lib package. This class uses FHIR STU2 resources as the input and does the following:
+  The core of the CDS Hooks Web service is a set of Java classes, located in the opioids-lib package.
+  The main entry point (UtilsOpioid.java) used by the knowledge module uses FHIR STU2 resources as the input.
+  Below is a high-level overview of how the CDS logic is implemented for one of the CDC guideline
+  recommendations (#5), which provides guidance around opioid morphine milligram equivalence (MME).
 </p>
 
 <ul>
@@ -75,7 +91,7 @@
       <li>There is a draft (about-to-be-prescribed) order for an opioid with abuse potential</li>
       <li>There are no draft or active orders for opioids indicating end of life</li>
       <li>There are no active conditions indicating end of life</li>
-      <li>The patient has been on an opioid abused in primary care for at least 80 of the past 90 days
+      <li>The patient has been on an opioid abused in ambulatory care consistently for the past 3 months
         <ul>
           <li>This calculation uses the days' supply of medications based on the sig to calculate coverage. For example, if an opioid was prescribed for 1 tab q6hrs (4 times a day), and 60 tabs were prescribed with 0 refills, the days' supply is calculated as extending only 15 (60/4) days. The intent of this calculation is to avoid situations where a patient receiving only a small quantity of opiates is labeled as a chronic opioid user because they have an old but active medication in their medication list.</li>
         </ul>
@@ -99,14 +115,18 @@
 <h3><span class="sectioncount">8.4.4</span> Solution Component # 4: OpenCDS Knowledge Modules <a href="service-documentation.html#solution4" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
-  OpenCDS knowledge modules utilize the UtilsOpioid Java class to take in FHIR resources as the input and return CDS Hooks cards as the output. These knowledge modules are in the opioid-mme and opioid-drugtesting packages.
+  OpenCDS knowledge modules utilize the UtilsOpioid Java class to take in FHIR resources as the input and
+  return CDS Hooks cards as the output.
 </p>
 
 <a name="solution5"> </a>
 <h3><span class="sectioncount">8.4.5</span> Solution Component # 5: Epic CDS Hooks Adapter <a href="service-documentation.html#solution5" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
-  While Epic is working on native support for CDS Hooks, such support is not currently available. We have therefore created an adapter/middleware for CDS Hooks on top of Epic to support this project. This adapter essentially translates the Epic-specific Best Practice Advisory (BPA) Web service interface into a CDS Hooks interface. Included in this adapter is a translator for converting the "markdown" output format used by CDS Hooks into the HMTL display format used within Epic.
+  While Epic is working on native support for CDS Hooks, such support is not currently available.
+  We have therefore created an adapter/middleware for CDS Hooks on top of Epic to support this project.
+  This adapter essentially translates the Epic-specific Best Practice Advisory (BPA) Web service interface
+  into a CDS Hooks interface.
 </p>
 
 <a name="solution6"> </a>
@@ -117,7 +137,7 @@
 </p>
 
 <ul>
-  <li>Where it is to be invoked (outpatient primary care)</li>
+  <li>Where it is to be invoked (ambulatory clinics)</li>
   <li>For whom it is to be invoked (physicians)</li>
   <li>When it is to be invoked
     <ul>
@@ -134,10 +154,10 @@
 </p>
 
 <p>
-  Below is the screenshot of the end output from the MME rule in Epic. The urine drug testing rule has a similar output.
+  Below is the screenshot of the end output from the MME rule in Epic. It is currently in operational use at University of Utah Health.
 </p>
 
-<img src="assets/images/end-output.png">
+<img style="max-width: 100%; max-height: 100%" src="assets/images/end-output.png">
 
 <p></p>
 
