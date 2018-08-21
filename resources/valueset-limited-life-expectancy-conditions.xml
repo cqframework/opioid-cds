@@ -1,9 +1,14 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="limited-life-expectancy-conditions"/>
+    <identifier>
+      <!-- Harvested from VSAC -->
+      <value value="2.16.840.1.113883.3.526.3.1259"/>
+    </identifier>
     <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/limited-life-expectancy-conditions"/>
     <status value="active"/>
     <compose>
         <include>
+            <!-- NOTE: Could do this as a reference to a valueset if we could rely on runtime expansion being available -->
             <system value="http://snomed.info/sct"/>
             <concept>
                 <code value="162607003"/>

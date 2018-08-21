@@ -38,7 +38,7 @@
     <compose>
         <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
             <extension url="language">
-                <valueUri value="http://www.nlm.nih.gov/research/umls/rxmix"/>
+                <valueUri value="http://www.apelondts.org/tql"/>
             </extension>
             <extension url="expression">
                 <valueString value="set delimiter = &quot; &quot;; FROM [^SNOMED CT US Edition^] with CONCEPT DESCENDANT_OF_PLUS &quot;Discharge to home for hospice care (procedure)[SNOMED CT US Edition]&quot; OR CONCEPT DESCENDANT_OF_PLUS &quot;Discharge to healthcare facility for hospice care (procedure)[SNOMED CT US Edition]&quot; EXPORT Concept_Name,^Code in Source[SNOMED CT US Edition]^,^Parent^;"/>

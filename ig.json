@@ -1,4 +1,10 @@
 {
+  "canonicalBase": "http://hl7.org/fhir/ig/opioid-cds",
+  "version" : "3.0.1",
+  "sct-edition" : "http://snomed.info/sct/731000124108",
+  "source": "opioid-cds.xml",
+  "npm-name": "hl7.fhir.us.opioidcds",
+  "license": "CC0-1.0",
   "tool" : "jekyll",
   "paths": {
     "resources": ["resources", "examples"],
@@ -19,14 +25,10 @@
       "template-defns": "instance-template-definitions.html"
     }
   },
-  "version" : "3.0.1",
   "logging": ["init", "progress", "context", "html", "tx"],
-  "sct-edition" : "http://snomed.info/sct/731000124108",
   "extraTemplates": [
     "mappings"
   ],
-  "canonicalBase": "http://hl7.org/fhir/ig/opioid-cds",
-  "source": "opioid-cds.xml",
   "spreadsheets": [
     "careplan-profile-spreadsheet.xml",
     "medicationrequest-profile-spreadsheet.xml",

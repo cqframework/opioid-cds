@@ -8,8 +8,11 @@ codesystem "SNOMED": 'http://snomed.info/sct'
 codesystem "Medication Request Category Codes": 'http://hl7.org/fhir/medication-request-category'
 
 valueset "Benzodiazepines": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/benzodiazepines'
+// TODO: Fix this name
 valueset "End of Life Conditions": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/end-of-life-conditions'
 // Harvested from VSAC - OID: 2.16.840.1.113762.1.4.1108.15
+// NOTE: This harvest note is incorrect, none of the following 3 value sets contain any of the codes in the above referenced valueset
+// Rob will construct an appropriate hospice value set aligned with current eCQM program usage and we will use that when available
 valueset "Hospice Disposition": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/hospice-disposition'
 valueset "Hospice Finding Codes": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/hospice-finding'
 valueset "Hospice Procedure Codes": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/hospice-procedure'
@@ -17,6 +20,7 @@ valueset "Illicit Drug Screening": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/i
 // Harvested from VSAC - OID: 2.16.840.1.113883.3.526.3.1259
 valueset "Limited Life Expectancy Conditions": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/limited-life-expectancy-conditions'
 valueset "Long Acting Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/long-acting-opioids'
+// TODO: Remove this valueset, it is not referenced
 // Harvested from VSAC - OID: 2.16.840.1.113762.1.4.1116.351
 valueset "Metastatic Cancer": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/metastatic-cancer'
 valueset "Naloxone": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/naloxone'
@@ -27,11 +31,15 @@ valueset "End Of Life Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opio
 valueset "Substance Abuse": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/substance-abuse'
 
 // Valuesets that are not currently used
+// TODO: Remove this valueset
 valueset "Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids'
+// TODO: Remove this valueset
 valueset "Codeine Cough Meds": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids-codeine-cough-meds'
 valueset "Short Acting Opioids": 'http://hl7.org/fhir/ig/opioid-cds/ValueSet/short-acting-opioids'
 
+// TODO: Turn this into a valueset
 code "Referral to Hospice": '306205009' from "SNOMED"
+// TODO: Turn this into a valueset
 code "Outpatient": 'outpatient' from "Medication Request Category Codes"
 
 // TODO: Capture process decisions for long-term opioid use
@@ -40,21 +48,21 @@ define IsForChronicPain: true
 define "Active Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
     where Rx.status.value = 'active'
-      and ToCode(Rx.category.coding[0]) ~ "Outpatient"
+      and ToCode(Rx.category.coding[0]) ~ "Outpatient" // TODO: This assumes a single category coding...
 
 define "Active Ambulatory Benzodiazepine Rx":
   [MedicationRequest: "Benzodiazepines"] Rx
     where Rx.status.value = 'active'
-      and ToCode(Rx.category.coding[0]) ~ "Outpatient"
+      and ToCode(Rx.category.coding[0]) ~ "Outpatient" // TODO: This assumes a single category coding...
 
 define "Active Ambulatory Naloxone Rx":
   [MedicationRequest: "Naloxone"] Rx
     where Rx.status.value = 'active'
-      and ToCode(Rx.category.coding[0]) ~ "Outpatient"
+      and ToCode(Rx.category.coding[0]) ~ "Outpatient" // TODO: This assumes a single category coding...
 
 define "Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
-      where ToCode(Rx.category.coding[0]) ~ "Outpatient"
+      where ToCode(Rx.category.coding[0]) ~ "Outpatient" // TODO: This assumes a single category coding...
 
 define function "Is Context Prescription End of Life Opioid?" (ContextPrescriptions List<MedicationRequest>):
   exists (

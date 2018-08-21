@@ -41,7 +41,7 @@
     <compose>
         <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
             <extension url="language">
-                <valueUri value="http://www.nlm.nih.gov/research/umls/rxmix"/>
+                <valueUri value="http://www.apelondts.org/tql"/>
             </extension>
             <extension url="expression">
                 <valueString value="from [^RxNorm R^] with (INV ^Parent Of[MED-RT]^ equals &quot;Opioid Agonist [EPC][MED-RT]&quot; OR INV ^Parent Of[MED-RT]^ equals &quot;Opioid Agonist/Antagonist [EPC][MED-RT]&quot;) AND (^TTY[RxNorm R]^=&quot;IN&quot; OR ^TTY[RxNorm R]^=&quot;PIN&quot;) AND_NOT (^Code^= 480 OR ^Code^=73032 OR ^Code^=56795 OR ^Code^=477468) EXPORT ^RXCUI[RxNorm R]^, Concept_Name, ^TTY[RxNorm R]^;"/>

@@ -41,7 +41,7 @@
     <compose>
         <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
             <extension url="language">
-                <valueUri value="http://www.nlm.nih.gov/research/umls/rxmix"/>
+                <valueUri value="http://www.apelondts.org/tql"/>
             </extension>
             <extension url="expression">
                 <valueString value="set delimiter = &quot;	&quot;; set axis = &quot;Multiaxial Parent Of&quot;; FROM [^LOINC^] with (CONCEPT DESCENDANT_OF &quot;Narcotics and opioids (LP18149-2)[LOINC]&quot; AND ^System[LOINC]^ EQUALS &quot;Urine&quot;) EXPORT ^Name^,^Code^,^Component[LOINC]^;"/>
