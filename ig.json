@@ -25,7 +25,6 @@
       "template-defns": "instance-template-definitions.html"
     }
   },
-  "license": "CC0-1.0",
   "logging": ["init", "progress", "context", "html", "tx"],
   "extraTemplates": [
     "mappings"
