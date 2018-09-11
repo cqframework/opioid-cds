@@ -1,11 +1,11 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="opioidcds-indicator"/>
-    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioidcds-indicator"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioidcds-indicator"/>
     <name value="RequestGroupActionIndicator"/>
     <status value="active"/>
     <compose>
         <include>
-            <system value="http://hl7.org/fhir/ig/opioid-cds/CodeSystem/opioidcds-indicator"/>
+            <system value="http://fhir.org/guides/cdc/opioid-cds/CodeSystem/opioidcds-indicator"/>
             <concept>
                 <code value="info"/>
                 <display value="Information"/>

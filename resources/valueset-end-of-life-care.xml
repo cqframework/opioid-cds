@@ -2,15 +2,15 @@
     <id value="end-of-life-care"/>
     <meta>
         <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
-        <profile value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset"/>
+        <profile value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset"/>
     </meta>
-    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
         <valueString value="Procedures or therapies specific to a terminal patient."/>
     </extension>
-    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
+    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
         <valueString value="Procedures or therapies that are done on a deceased patient."/>
     </extension>
-    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/end-of-life-care"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/end-of-life-care"/>
     <version value="1.0.0"/>
     <name value="valueset-therapies-indicating-end-of-life-care"/>
     <title value="Snomed Therapies Indicating End of Life Care"/>
@@ -39,7 +39,7 @@
     <purpose value="Used to determine if patient is at end of life as part of the patient's end of life assessment workflow in all recommendations."/>
     <copyright value="© CDC 2016+."/>
     <compose>
-        <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
+        <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
             <extension url="language">
                 <valueUri value="http://www.apelondts.org/tql"/>
             </extension>

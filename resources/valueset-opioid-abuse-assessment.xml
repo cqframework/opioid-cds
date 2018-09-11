@@ -2,12 +2,12 @@
     <id value="opioid-abuse-assessment"/>
     <meta>
         <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
-        <profile value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset"/>
+        <profile value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset"/>
     </meta>
-    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
         <valueString value="Concepts specific to any drug use assessment."/>
     </extension>
-    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioid-abuse-assessment"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-abuse-assessment"/>
     <version value="1.0.0"/>
     <name value="valueset-drug-use-assessment"/>
     <title value="Snomed Drug Use Assessment"/>
@@ -36,7 +36,7 @@
     <purpose value="Used to determine if patient has been assessed for risk of opioid use for recommendation 7."/>
     <copyright value="© CDC 2016+."/>
     <compose>
-        <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
+        <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
             <extension url="language">
                 <valueUri value="http://www.apelondts.org/tql"/>
             </extension>

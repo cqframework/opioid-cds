@@ -2,15 +2,15 @@
    <id value="long-acting-opioids"/>
    <meta>
       <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
-      <profile value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset"/>
+      <profile value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset"/>
    </meta>
-   <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+   <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
       <valueString value="Opioid medication formulations (ingredient, OR ingredient+strength+form : RXNORM TTY=IN or SCD OR SBD) that are abuseable in ambulatory setting and have extended release dose form."/>
    </extension>
-   <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
+   <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
       <valueString value="Formulations with dose form Topical Cream(RXCUI 316982) or Topical Solution(RXCUI 316986). Ingredients available in surgery."/>
    </extension>
-   <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/long-acting-opioids"/>
+   <url value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/long-acting-opioids"/>
    <version value="1.0.0"/>
    <name value="valueset-extended-release-opioid-medications-with-ambulatory-abuse-potential"/>
    <title value="RxNorm Extended Release Opioid Medications with Ambulatory Abuse Potential"/>

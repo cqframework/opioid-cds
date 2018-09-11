@@ -1,9 +1,9 @@
 {
-  "canonicalBase": "http://hl7.org/fhir/ig/opioid-cds",
+  "canonicalBase": "http://fhir.org/guides/cdc/opioid-cds",
   "version" : "3.0.1",
   "sct-edition" : "http://snomed.info/sct/731000124108",
   "source": "opioid-cds.xml",
-  "npm-name": "hl7.fhir.us.opioidcds",
+  "npm-name": "fhir.cdc.opioid-cds",
   "license": "CC0-1.0",
   "tool" : "jekyll",
   "paths": {

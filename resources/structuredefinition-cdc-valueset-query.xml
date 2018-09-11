@@ -1,6 +1,6 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
     <id value="cdc-valueset-query"/>
-    <url value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query"/>
     <version value="1.0.0"/>
     <name value="CDC Opioid Guidance ValueSet Query Extension"/>
     <title value="CDC Opioid Guidance Query Extension"/>
@@ -429,7 +429,7 @@
             <type>
                 <code value="uri"/>
             </type>
-            <fixedUri value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query"/>
+            <fixedUri value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query"/>
             <mapping>
                 <identity value="rim"/>
                 <map value="N/A"/>
@@ -677,7 +677,7 @@
             <path value="Extension.url"/>
             <min value="1"/>
             <max value="1"/>
-            <fixedUri value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query"/>
+            <fixedUri value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query"/>
         </element>
     </differential>
 </StructureDefinition>

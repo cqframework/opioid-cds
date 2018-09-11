@@ -13,7 +13,7 @@
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
     "valueString" : "C:\\Users\\Bryn\\Documents\\Src\\SS\\Pilots\\Opioid\\opioid-cds\\pages"
   }],
-  "url" : "http://hl7.org/fhir/ig/opioid-cds/ImplementationGuide/opioid-cds",
+  "url" : "http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/opioid-cds",
   "version" : "0.1.0",
   "name" : "Opioid Prescribing Support Implementation Guide",
   "status" : "draft",
@@ -21,7 +21,7 @@
   "date" : "2017-02-06T00:00:00-07:00",
   "publisher" : "Centers for Disease Control and Prevention (CDC)",
   "description" : "Opioid Prescribing Support Implementation Guide",
-  "packageId" : "hl7.fhir.us.opioidcds",
+  "packageId" : "fhir.cdc.opioid-cds",
   "license" : "CC0-1.0",
   "fhirVersion" : "3.0.1",
   "definition" : {

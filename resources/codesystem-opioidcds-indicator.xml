@@ -1,6 +1,6 @@
 <CodeSystem xmlns="http://hl7.org/fhir">
     <id value="opioidcds-indicator"/>
-    <url value="http://hl7.org/fhir/ig/opioid-cds/CodeSystem/opioidcds-indicator"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/CodeSystem/opioidcds-indicator"/>
     <name value="CDC Opioid Indicator"/>
     <status value="draft"/>
     <experimental value="false"/>

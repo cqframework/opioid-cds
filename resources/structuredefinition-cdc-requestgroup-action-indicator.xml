@@ -1,6 +1,6 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
     <id value="cdc-requestgroup-action-indicator"/>
-    <url value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-requestgroup-action-indicator"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-requestgroup-action-indicator"/>
     <name value="indicator"/>
     <title value="OpioidCDSIndicator"/>
     <status value="draft"/>
@@ -87,7 +87,7 @@
             <type>
                 <code value="uri"/>
             </type>
-            <fixedUri value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-requestgroup-action-indicator"/>
+            <fixedUri value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-requestgroup-action-indicator"/>
             <mapping>
                 <identity value="rim"/>
                 <map value="N/A"/>
@@ -111,7 +111,7 @@
                 <strength value="required"/>
                 <description value="List of codes that indicate the urgency/importance of the action"/>
                 <valueSetReference>
-                    <reference value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioidcds-indicator"/>
+                    <reference value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioidcds-indicator"/>
                 </valueSetReference>
             </binding>
             <mapping>
@@ -138,7 +138,7 @@
             <type>
                 <code value="uri"/>
             </type>
-            <fixedUri value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-requestgroup-action-indicator"/>
+            <fixedUri value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-requestgroup-action-indicator"/>
         </element>
         <element id="Extension:indicator.valueCode">
             <path value="Extension.valueCode"/>
@@ -151,7 +151,7 @@
                 <strength value="required"/>
                 <description value="List of codes that indicate the urgency/importance of the action"/>
                 <valueSetReference>
-                    <reference value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioidcds-indicator"/>
+                    <reference value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioidcds-indicator"/>
                 </valueSetReference>
             </binding>
         </element>

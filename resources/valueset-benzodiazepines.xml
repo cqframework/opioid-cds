@@ -2,15 +2,15 @@
     <id value="benzodiazepines"/>
     <meta>
         <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
-        <profile value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset"/>
+        <profile value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset"/>
     </meta>
-    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
         <valueString value="For RxNorm, TTY = IN, BN, PIN, SBD, SCD for Benzodiazepines as identified as descendents of &quot;Benzodiazepine [EPC]&quot; concept in MED-RT."/>
     </extension>
-    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
+    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
         <valueString value="Any drug concept not specified in the inclusion."/>
     </extension>
-    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/benzodiazepines"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/benzodiazepines"/>
     <version value="1.0.0"/>
     <name value="valueset-benzodiazepine-drugs"/>
     <title value="RxNorm Benzodiazepine Drugs"/>
@@ -39,7 +39,7 @@
     <purpose value="Provide terminology for Benzodiazepine MedicationRequest retrieval in recommendations 8 and 11."/>
     <copyright value="© CDC 2016+."/>
     <compose>
-        <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
+        <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
             <extension url="language">
                 <valueUri value="http://www.apelondts.org/tql"/>
             </extension>

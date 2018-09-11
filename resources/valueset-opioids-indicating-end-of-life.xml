@@ -1,6 +1,6 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="opioids-indicating-end-of-life"/>
-    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids-indicating-end-of-life"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life"/>
     <status value="active"/>
     <compose>
         <include>

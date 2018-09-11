@@ -11,7 +11,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
     <valueString value="C:\Users\Bryn\Documents\Src\SS\Pilots\Opioid\opioid-cds\pages"/>
   </extension>
-  <url value="http://hl7.org/fhir/ig/opioid-cds/ImplementationGuide/opioid-cds"/>
+  <url value="http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/opioid-cds"/>
   <version value="0.1.0"/>
   <name value="Opioid Prescribing Support Implementation Guide"/>
   <status value="draft"/>
@@ -19,7 +19,7 @@
   <date value="2017-02-06T00:00:00-07:00"/>
   <publisher value="Centers for Disease Control and Prevention (CDC)"/>
   <description value="Opioid Prescribing Support Implementation Guide"/>
-  <packageId value="hl7.fhir.us.opioidcds"/>
+  <packageId value="fhir.cdc.opioid-cds"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="3.0.1"/>
   <definition>

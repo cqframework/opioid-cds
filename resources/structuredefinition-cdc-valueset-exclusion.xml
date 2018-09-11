@@ -1,6 +1,6 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
     <id value="cdc-valueset-exclusion"/>
-    <url value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion"/>
     <version value="1.0.0"/>
     <name value="CDC Opioid Guidance ValueSet Exclusion Extension"/>
     <title value="CDC Opioid Guidance Exclusion Extension"/>
@@ -116,7 +116,7 @@
             <type>
                 <code value="uri"/>
             </type>
-            <fixedUri value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion"/>
+            <fixedUri value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion"/>
             <mapping>
                 <identity value="rim"/>
                 <map value="N/A"/>
@@ -153,7 +153,7 @@
         </element>
         <element id="Extension:exclusion.url">
             <path value="Extension.url"/>
-            <fixedUri value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion"/>
+            <fixedUri value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion"/>
         </element>
         <element id="Extension:exclusion.valueString">
             <path value="Extension.valueString"/>

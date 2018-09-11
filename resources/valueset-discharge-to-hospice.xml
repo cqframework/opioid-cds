@@ -2,12 +2,12 @@
     <id value="discharge-to-hospice"/>
     <meta>
         <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
-        <profile value="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset"/>
+        <profile value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset"/>
     </meta>
-    <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
         <valueString value="Discharge to another facility for hospice."/>
     </extension>
-    <url value="http://hl7.org/fhir/ig/opioid-cds/ValueSet/discharge-to-hospice"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/discharge-to-hospice"/>
     <version value="1.0.0"/>
     <name value="valueset-discharge-to-hospice"/>
     <title value="Snomed Discharge to Hospice"/>
@@ -36,7 +36,7 @@
     <purpose value="Used to determine if patient was discharged to hospice as part of the patient's end of life assessment workflow in all recommendations."/>
     <copyright value="© CDC 2016+."/>
     <compose>
-        <extension url="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query">
+        <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
             <extension url="language">
                 <valueUri value="http://www.apelondts.org/tql"/>
             </extension>

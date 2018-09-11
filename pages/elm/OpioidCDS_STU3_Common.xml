@@ -36,24 +36,24 @@
       <def name="Medication Request Category Codes" id="http://hl7.org/fhir/medication-request-category" accessLevel="Public"/>
    </codeSystems>
    <valueSets>
-      <def name="Benzodiazepines" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/benzodiazepines" accessLevel="Public"/>
-      <def name="End of Life Conditions" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/end-of-life-conditions" accessLevel="Public"/>
-      <def name="Hospice Disposition" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/hospice-disposition" accessLevel="Public"/>
-      <def name="Hospice Finding Codes" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/hospice-finding" accessLevel="Public"/>
-      <def name="Hospice Procedure Codes" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/hospice-procedure" accessLevel="Public"/>
-      <def name="Illicit Drug Screening" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/illicit-drug-urine-screening" accessLevel="Public"/>
-      <def name="Limited Life Expectancy Conditions" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/limited-life-expectancy-conditions" accessLevel="Public"/>
-      <def name="Long Acting Opioids" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/long-acting-opioids" accessLevel="Public"/>
-      <def name="Metastatic Cancer" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/metastatic-cancer" accessLevel="Public"/>
-      <def name="Naloxone" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/naloxone" accessLevel="Public"/>
-      <def name="Risk Assessment" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioid-abuse-assessment" accessLevel="Public"/>
-      <def name="Opioid Drug Screening" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioid-urine-screening" accessLevel="Public"/>
-      <def name="Ambulatory Abuse Potential Opioids" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care" accessLevel="Public"/>
-      <def name="End Of Life Opioids" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids-indicating-end-of-life" accessLevel="Public"/>
-      <def name="Substance Abuse" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/substance-abuse" accessLevel="Public"/>
-      <def name="Opioids" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids" accessLevel="Public"/>
-      <def name="Codeine Cough Meds" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/opioids-codeine-cough-meds" accessLevel="Public"/>
-      <def name="Short Acting Opioids" id="http://hl7.org/fhir/ig/opioid-cds/ValueSet/short-acting-opioids" accessLevel="Public"/>
+      <def name="Benzodiazepines" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/benzodiazepines" accessLevel="Public"/>
+      <def name="End of Life Conditions" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/end-of-life-conditions" accessLevel="Public"/>
+      <def name="Hospice Disposition" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-disposition" accessLevel="Public"/>
+      <def name="Hospice Finding Codes" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding" accessLevel="Public"/>
+      <def name="Hospice Procedure Codes" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure" accessLevel="Public"/>
+      <def name="Illicit Drug Screening" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/illicit-drug-urine-screening" accessLevel="Public"/>
+      <def name="Limited Life Expectancy Conditions" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions" accessLevel="Public"/>
+      <def name="Long Acting Opioids" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/long-acting-opioids" accessLevel="Public"/>
+      <def name="Metastatic Cancer" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/metastatic-cancer" accessLevel="Public"/>
+      <def name="Naloxone" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/naloxone" accessLevel="Public"/>
+      <def name="Risk Assessment" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-abuse-assessment" accessLevel="Public"/>
+      <def name="Opioid Drug Screening" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-urine-screening" accessLevel="Public"/>
+      <def name="Ambulatory Abuse Potential Opioids" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care" accessLevel="Public"/>
+      <def name="End Of Life Opioids" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life" accessLevel="Public"/>
+      <def name="Substance Abuse" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-abuse" accessLevel="Public"/>
+      <def name="Opioids" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids" accessLevel="Public"/>
+      <def name="Codeine Cough Meds" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-codeine-cough-meds" accessLevel="Public"/>
+      <def name="Short Acting Opioids" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/short-acting-opioids" accessLevel="Public"/>
    </valueSets>
    <codes>
       <def name="Referral to Hospice" id="306205009" accessLevel="Public">

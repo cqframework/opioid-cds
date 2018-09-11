@@ -1218,8 +1218,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">extension.uri</Data></Cell>
-    <Cell ss:StyleID="s80" ss:HRef="http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-"><Data
-      ss:Type="String">http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-</Data></Cell>
+    <Cell ss:StyleID="s80" ss:HRef="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-"><Data
+      ss:Type="String">http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s81"><Data ss:Type="String">introduction</Data></Cell>
@@ -1459,7 +1459,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">0..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Extension{http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-inclusion}</Data><NamedCell
+    <Cell ss:Index="8"><Data ss:Type="String">Extension{http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
@@ -1470,7 +1470,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:Index="6"><Data ss:Type="String">0..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:Index="8"><Data ss:Type="String">Extension{http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-exclusion}</Data><NamedCell
+    <Cell ss:Index="8"><Data ss:Type="String">Extension{http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell><Data ss:Type="String">Y</Data><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
@@ -1515,7 +1515,7 @@
     <Cell ss:StyleID="s111"><Data ss:Type="String">0..1</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s111"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s111"><Data ss:Type="String">Extension{http://hl7.org/fhir/ig/opioid-cds/StructureDefinition/cdc-valueset-query}</Data><NamedCell
+    <Cell ss:StyleID="s111"><Data ss:Type="String">Extension{http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s111"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>

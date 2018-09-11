@@ -976,8 +976,8 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s166"><Data ss:Type="String">extension.uri</Data></Cell>
-    <Cell ss:StyleID="s171" ss:HRef="http://hl7.org/fhir/ig/opioid-cds/ImplementationGuide/opioid-cds/"><Data
-      ss:Type="String">http://hl7.org/fhir/ig/opioid-cds/ImplementationGuide/opioid-cds/</Data></Cell>
+    <Cell ss:StyleID="s171" ss:HRef="http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/opioid-cds/"><Data
+      ss:Type="String">http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/opioid-cds/</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s172"><Data ss:Type="String">introduction</Data></Cell>
