@@ -353,10 +353,146 @@ monitoring.
     <li>Patient has been referred, discharged or admitted to hospice care</li>
 </ul>
 
+<a name="scope-rationale"> </a>
+<h3><span class="sectioncount">8.1.4</span> Rationale for Recommendations Not Targeted <a href="process-documentation.html#scope-rationale" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>This section describes rationale and justification for guideline recommendations that are not currently targeted in this implementation guide.</p>
+
+<a name="scope-rationale-rec01"> </a>
+<h3><span class="sectioncount">8.1.4.1</span> Recommendation #1 <a href="process-documentation.html#scope-rationale-rec-01" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#1_Nonpharmacologic_therapy" target="_blank">Recommendation #1:</a></p>
+<p>
+    <strong>Nonpharmacologic therapy and nonopioid pharmacologic therapy are preferred for chronic pain. 
+      Clinicians should consider opioid therapy only if expected benefits for both pain and function are 
+      anticipated to outweigh risks to the patient. If opioids are used, they should be combined with 
+      nonpharmacologic therapy and nonopioid pharmacologic therapy, as appropriate. <em>(recommendation category: A, evidence type: 3)</em>.</strong>
+</p>
+
+<p>Justification for deferring Recommendation #1: The recommendations includes a large number of 
+  incompletely defined conditions and non-pharmacologic therapy. Creating definitions and specific 
+  recommendations for non-pharmacologic therapy (as orderables) will be complex.  Alternatively, 
+  on selection of an opioid order, a simple method might merely provide a selectable option linking 
+  to a general description of such therapy, but the impact on outcomes would be low.
+</p>
+
+<a name="scope-rationale-rec02"> </a>
+<h3><span class="sectioncount">8.1.4.2</span> Recommendation #2 <a href="process-documentation.html#scope-rationale-rec-02" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#2_Before_starting_opioid_therapy" target="_blank">Recommendation #2:</a></p>
+<p>
+    <strong>Before starting opioid therapy for chronic pain, clinicians should establish treatment 
+      goals with all patients, including realistic goals for pain and function, and should consider 
+      how opioid therapy will be discontinued if benefits do not outweigh risks. Clinicians should 
+      continue opioid therapy only if there is clinically meaningful improvement in pain and function 
+      that outweighs risks to patient safety. <em>(recommendation category: A, evidence type: 4)</em>.</strong>
+</p> 
+
+<p>Justification for deferring Recommendation #2: EHRs have different mechanisms for enabling treatment goals, 
+  ranging from narrative elements of a visit record, structured care plans, or unstructured visit notes. 
+  Therefore, determining that a care goal is established is difficult from a standards perspective. 
+  Assuring that such goals are realistic is more problematic. Alternatively, on selection of an opioid order, 
+  a simple method is to merely provide guidance (or an option to view such guidance).
+</p>
+
+<a name="scope-rationale-rec03"> </a>
+<h3><span class="sectioncount">8.1.4.3</span> Recommendation #3 <a href="process-documentation.html#scope-rationale-rec-03" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#3_Before_starting_and_periodically" target="_blank">Recommendation #3:</a></p>
+<p>
+    <strong>Before starting and periodically during opioid therapy, clinicians should discuss with 
+      patients known risks and realistic benefits of opioid therapy and patient and clinician 
+      responsibilities for managing therapy. <em>(recommendation category: A, evidence type: 3)</em>.</strong>
+</p>
+
+<p>Justification for deferring Recommendation #3: This recommendation might include provision of general 
+  guidance about risks. Potentially, if defined with value sets or direct referenced codes, opioid-induced 
+  risks might be identified with entry of new conditions on the problem list, or population of the record 
+  with new laboratory results. And the CDS can alert the provider (synchronously or asynchronously) when 
+  such a new risk occurs. The number of potential conditions to address is quite large and challenges 
+  are similar to those for Recommendation #1.
+</p>
+
+<a name="scope-rationale-rec06"> </a>
+<h3><span class="sectioncount">8.1.4.4</span> Recommendation #6 <a href="process-documentation.html#scope-rationale-rec-06" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#6_Long_term_opioid_use" target="_blank">Recommendation #6:</a></p>
+<p>
+    <strong>Long-term opioid use often begins with treatment of acute pain. When opioids are used 
+      for acute pain, clinicians should prescribe the lowest effective dose of immediate-release 
+      opioids and should prescribe no greater quantity than needed for the expected duration of pain 
+      severe enough to require opioids. Three days or less will often be sufficient; more than seven 
+      days will rarely be needed. <em>(recommendation category: A, evidence type: 4)</em>.</strong>
+</p>
+
+<p>Justification for deferring Recommendation #6: It may be possible to determine a new prescription 
+  with no prior treatment in the last x months. Determining acute from chronic pain as the cause for 
+  the prescription may be more problematic. CDS can recommend limiting therapy to three days or less 
+  with maximum of seven days and restricting orders to immediate-release opioids. However, determining 
+  the lowest effective dose based on the individual patient’s condition and expected duration of pain 
+  is not trivial and requires individual physician-patient interaction. For the latter item, potentially 
+  link to the recommendation is possible without trying to define effective does by condition.
+</p>
+
+<a name="scope-rationale-rec09"> </a>
+<h3><span class="sectioncount">8.1.4.5</span> Recommendation #9 <a href="process-documentation.html#scope-rationale-rec-09" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#9_Clinicians_should_review" target="_blank">Recommendation #9:</a></p>
+<p>
+    <strong>Clinicians should review the patient’s history of controlled substance prescriptions using 
+      state prescription drug monitoring program (PDMP) data to determine whether the patient is receiving 
+      opioid dosages or dangerous combinations that put him or her at high risk for overdose. Clinicians 
+      should review PDMP data when starting opioid therapy for chronic pain and periodically during opioid 
+      therapy for chronic pain, ranging from every prescription to every 3 months. <em>(recommendation category: A, evidence type: 4)</em>.</strong>
+</p>
+
+<p>Justification for deferring Recommendation #9: This recommendation may be more problematic unless there 
+  is a way to define input from a PDMP as structured data similar to that retrieved with a query to an immunization 
+  registry – and associate review and recommendations for ordering with such data. The work also assumes the information 
+  from the PDMP is incorporated as structured data in the EHR. Challenges to implementation with potential mitigation 
+  for future work: </p>
+  
+<ul>
+  <li><p>a.	PDMP data are compilations of dispensed data from pharmacies. Such data includes NDC codes, several of which are
+     represented by a single RxNorm ingredient code.  Therefore, data from PDMP require terminology mapping to RxNorm ingredient 
+     codes to incorporate into medication ordering workflow pathways.</p>
+  </li>
+  <li><p>b.	Clinical sites generally receive PDMP data in unstructured form, e.g., PDF files. To enable re-use of these data,
+     PDMP output requires standardization to meet needs for semantic interoperability and incorporation directly into 
+     clinical software workflow.</p>
+  </li>
+  <li><p>c.	Note that calculations regarding maximum daily dose of opioids for clinical decision support may provide different 
+    results for “as needed” (PRN) medications based on the method for determining daily dose. CDS calculating the maximum daily 
+    dose from dosage multiplied by the maximum frequency provides the largest dose potentially consumed by a patient during any 
+    of the days covered by the prescription. CDS calculating the maximum daily dose from number of doses (i.e., supply) divided 
+    by the days supplied (days covered by the prescription), the largest dose potentially consumed by a patient during any of the 
+    days covered by the prescription may lead to a lesser daily total.</p>
+  </li>
+</ul>
+
+<a name="scope-rationale-rec12"> </a>
+<h3><span class="sectioncount">8.1.4.6</span> Recommendation #12 <a href="process-documentation.html#scope-rationale-rec-12" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#12_Clinicians_should_offer_or_arrange" target="_blank">Recommendation #12:</a></p>
+<p>
+    <strong>Clinicians should offer or arrange evidence-based treatment (usually medication assisted 
+      treatment with buprenorphine or methadone in combination with behavioral therapies) for patients 
+      with opioid use disorder. <em>(recommendation category: A, evidence type: 2)</em>.</strong>
+</p>
+
+<p>Justification for deferring Recommendation #12: Potentially complex for implementation. I suspect this recommendation would 
+  require the ability to include a referral order to a clinic or recommendation to use methadone or buprenorphine. But the work 
+  may be complicated by what information is available in the EHR with respect to behavioral therapies. Ideally, acknowledgement 
+  of the referral and fulfillment (i.e., the patient has been seen and accepted into the program, or is currently receiving one 
+  of the therapies from the index physician)
+</p>
+
 <hr></hr>
 
 <sup id="fn1">1. Centers for Medicare and Medicaid Services. Medicare Provider Utilization and Payment Data: Part D Prescriber. Available at: https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Part-D-Prescriber.html. Accessed 19 July 2018.<a href="#ref1">↩</a></sup>
+
 <sup id="fn2">2. Data.Gov. Data Catalog: Pharmacy datasets. Available at: https://catalog.data.gov/dataset?tags=pharmacy. Accessed 19 July 2018.<a href="#ref2">↩</a></sup>
+
 <sup id="fn3">3. Stokowski LA. Adult cancer pain: part 2 – the latest guidelines for pain management. Medscape Oncology. 2010. Available at: https://www.medscape.com/viewarticle/733067_2. Accessed 19 July 2018.<a href="#ref3">↩</a></sup>
 
 <!-- ==============END CONTENT END CONTENT=================== -->
