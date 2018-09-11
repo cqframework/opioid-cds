@@ -1,5 +1,6 @@
 <ActivityDefinition xmlns="http://hl7.org/fhir">
     <id value="opioidcds-risk-assessment-request"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ActivityDefinition/opioidcds-risk-assessment-request"/>
     <version value="0.1.0"/>
     <name value="ActivityDefinition - Recommendation #7 Risk Assessment ProcedureRequest"/>
     <title value="CDC Opioid Prescribing Guideline Recommendation #7 - Risk Assessment ProcedureRequest"/>
