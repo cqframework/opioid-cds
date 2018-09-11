@@ -32,7 +32,7 @@
 
 <p>
     Opioids for chronic pain management are often not started with an intent for chronic use; such
-    prescriptions often transition from intended acute paitn management. Therefore, it is very difficult
+    prescriptions often transition from intended acute pain management. Therefore, it is very difficult
     to identify a new opioid prescription a prior as for chronic pain management.
 </p>
 
@@ -49,7 +49,7 @@
     Clinical Reasoning Module to represent the behavioral artifacts.
 </p>
 <p>
-    Widely scaling this type of CDS is still belleding-edge clinical informatics work, so
+    Widely scaling this type of CDS is still bleeding-edge clinical informatics work, so
     an iterative and agile approach is recommended.
 </p>
 <p>Both Epic and Cerner will be capable of supporting the provision of the following information:</p>
@@ -79,21 +79,73 @@
 <p>To avoid excess alerting, the algorithm uses the following exclusions:</p>
 
 <ol>
-    <li>Oral liquid medications, assuming the greatest majority of prescriptions for liquid oral
-        formulations are intended for patients unable to swallow pills or tablets due to late stage terminal illness.</li>
+    <li>The project team considered excluding liquid opioids altogether, since they may be used for patients with 
+      life-limited diseases who might be excluded from the recommnedations. However, that approach would also exclude
+      cough medications which have a significant abuse potential. Therefore, the team excluded only injectable liquid
+      forms of opioid and retained oral formulations.</li>
     <li>In some cases, EHR vendors have developed approaches to identify MME equivalents. In such situations, the
         implementation should attempt to match the vendor's approach so that end users receive consistent advice.</li>
 </ol>
 
+<a name="terminology"> </a>
+<h4><span class="sectioncount">8.1.2.2</span> Terminology <a href="process-documentation.html#terminology" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+
+<p>
+To identify opioids, the IG provides a value set containing RxNorm Semantic 
+Clinical Drug (SCD) and Semantic Brand Drug (SBD) concepts which include 
+ingredient(s), strength, route and dose form.  The team provides an 
+enumerated (extensional) value set. However, a value set with that approach 
+quickly becomes outdated as RxNorm updates frequently, or the value set must 
+be updated and made available frequently. Therefore, the project team also 
+includes an RxNorm query to retrieve all opioids in the 
+extended-release/long-acting category and in the immediate-release category.  
+Thus, each implementer can update their value sets and run the expressions 
+at frequencies appropriate to the organization.  The challenge with using 
+queries is that RxNorm retires concepts for medications for which there is no 
+input activity (e.g., the NDC code is no longer available). Thus, the output 
+of the data retrieved will not include historical drugs for which codes have 
+been retired. The impact of missing retired codes for MME calculations is 
+likely to be minimal to none since most opioid prescriptions have short 
+durations of 30 days or less and codes should be relatively recent.  
+</p>
+
+<a name="ordered-vs-dispensed"> </a>
+<h4><span class="sectioncount">8.1.2.3</span> Use of Ordered vs Dispensed Medications <a href="process-documentation.html#ordered-vs-dispensed" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+
+<p>
+Medication self-administration data are not available in the ambulatory setting, 
+nor would such data be reliable. Therefore, the most proximal information about 
+a patient’s medication usage is medication dispensed data. Such dispensed data 
+is increasingly accessible from claims data available to insurers and used to 
+evaluate provider medication utilization rates.<sup><a href="#fn1" id="ref1">1</a></sup>  Researchers can access 
+population-based dispensed data from government sources.<sup><a href="#fn2" id="ref2">2</a></sup>  Some provider 
+organizations also have access to dispensed data for patients treated by their 
+clinicians.  The project team considered calculating morphine milligram 
+equivalents (MMEs) available to a patient based on medication dispensed data. 
+However, since dispensed data are not available to all provider organizations 
+and since the pilot site did not have such access, the guidance in this 
+implementation guide addresses medication order (prescription) data. Using 
+prescription data presented an issue regarding comprehensiveness of the data 
+set. While dispensed data are generally available as structured data, 
+evaluation of medication order data at the pilot organization showed 20% of 
+opioid prescriptions used free-text (unstructured) instructions with over 10,000
+ unique patterns. Eliminating such prescriptions from the analysis could 
+ introduce disproportionate impact of clinical decision support interventions. 
+ The team built a parsing algorithm to create structured information from 80% 
+ of the free-text instructions. Clinical review of the parsing results by two, 
+ independent clinicians confirmed their accuracy. Therefore, the team included 
+ the parsed data in the MME calculations.
+</p>
+
 <p>
     For geographic locations with pharmacies that participate in Surescripts, implementation sites have
-    the optio to use dispense data to perform the MME calculation. However, coverage varies by region,
+    the option to use dispense data to perform the MME calculation. However, coverage varies by region,
     and even for regions with coverage, licensing costs may be required and must be considered as a factor
     when determining whether to use dispense data.
 </p>
 
 <a name="calc"> </a>
-<h4><span class="sectioncount">8.1.2.2</span> Calculation of Daily Dosage <a href="process-documentation.html#calc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+<h4><span class="sectioncount">8.1.2.4</span> Calculation of Daily Dosage <a href="process-documentation.html#calc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>
     Calculation of daily dosage is based on the prescribed (order) or dispensed data based on expected use
@@ -132,7 +184,7 @@
 </p>
 
 <a name="usage"> </a>
-<h4><span class="sectioncount">8.1.2.3</span> Determining Opioid Usage <a href="process-documentation.html#usage" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+<h4><span class="sectioncount">8.1.2.5</span> Determining Opioid Usage <a href="process-documentation.html#usage" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>
     Active medications in an EHR may have a start date and indicate the number of doses written; however,
@@ -143,8 +195,90 @@
 
 <p>If the prescription includes refills, the system assumes the patient requested all refills of the medication.</p>
 
+<a name="tolerant-vs-naive"> </a>
+<h4><span class="sectioncount">8.1.2.6</span> Opioid-tolerant vs Opioid-naive <a href="process-documentation.html#tolerant-vs-naive" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+
+<p>
+The team considered how to define the concepts opioid-tolerant and opioid-naïve. 
+Guidelines for pain management in adult cancer pain defined these terms as:<sup><a href="#fn3" id="ref1">3</a></sup>
+<p>
+
+<ul>
+  <li><p><b>Opioid tolerant:</b> patients who are taking, for 1 week or longer, at least:
+    <ul>
+      <li>60 mg oral morphine/day;</li>
+      <li>25 µg transdermal fentanyl/hour;</li>
+      <li>30 mg oral oxycodone/day;</li>
+      <li>8 mg oral hydromorphone/day;</li>
+      <li>25 mg oral oxymorphone/day; or</li>
+      <li>An equianalgesic dose of any other opioid.</li>
+    </ul></p>
+  </li>
+  <li><p><b>Opioid naive:</b> patients who do not meet the above definition of
+     opioid tolerant, and who have not taken opioid doses at least as much as
+      those listed above for 1 week or longer.
+    </p>
+  </li>
+</ul>
+
+<p>The NCCN v.2010 pain management algorithms also supply simpler definitions for these terms:
+      <ul>
+        <li><b>Opioid naive:</b> patients who are not chronically receiving opioid analgesics on a daily basis; and</li>
+        <li><b>Opioid tolerant:</b> patients who are chronically receiving opioid analgesics on a daily basis.</li>
+      </ul>
+</p>
+
+<p>
+The team was concerned that an opioid-naïve patient by the definitions provided 
+could have received opioid prescriptions and potentially have an MME of greater 
+than 50.  Informing a physician that a patient with an elevated MME is opioid 
+naïve would lead to confusion. Therefore, the team decided to base 
+recommendations on the MME calculation and to avoid categorizing patients as 
+opioid tolerant or naïve.
+</p>
+
+<a name="opioid-abuse-assessment"> </a>
+<h4><span class="sectioncount">8.1.2.7</span> Opioid Abuse Risk Assessment <a href="process-documentation.html#opioid-abuse-assessment" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+
+<p>The project team considered options to determine that a provider has evaluated 
+  benefits and harms of opioid use.  The implementer needs to determine how the 
+  local clinicians capture such assessments and map the concept to the SNOMED-CT 
+  concept: <i>Assessment of risk for opioid abuse (procedure) SCTID: 454281000124100</i>
+
+</p>The team rejected use of the concept <i>At risk for drug therapy problem (finding) (SCTID: 451691000124102)</i>
+ as it was too generic as it could address non-opioid medication therapy concerns. 
+ The team also considered searching for use of patient responses to pain scales as 
+ evidence that the clinician evaluated patients’ responses to opioid use. However, 
+ pain scales have many uses without concomitant use of opioids and merely evaluating 
+ pain is not sufficient to assess risk for opioid-related harms. Therefore, the 
+ guidance does not include pain scale evaluation as a method for determining the 
+ benefits of opioid use. 
+<p>
+  
+<p>To address the recommendation statement “optimize other therapies and work 
+  with patients to taper opioids to lower dosages or to taper opioids,” implementers 
+  should determine what local activities represent such actions and map the activity 
+  to the SNOMED-CT concept: <i>High risk drug monitoring (regime/therapy): SCTID: 268525008</i>
+</p>
+
+<p>The project team considered potential benefits of regularly scheduled queries 
+to identify the cohort of patients who have been given new prescriptions for
+opioids or prescriptions for escalating doses. Further the analysis of the
+cohort could also determine those for whom assessment of risk or high-risk 
+drug monitoring had not occurred at the expected intervals, triggering a 
+task list for a clinician role to be determined by the practice. This 
+non-synchronous approach is challenged by the fact that CDS Hooks requires
+an event such as opening a record or ordering a mediation as a trigger. 
+Since opioid prescriptions have limited number of days supplied,
+patients on continued therapy have encounters with physicians; 
+therefore, triggering on the entry of a new prescription order allows 
+intervention in a synchronous manner and is equally effective to the
+asynchronous approach to identify patients requiring evaluation and
+monitoring.  
+</p>
+
 <a name="nonmedication"> </a>
-<h4><span class="sectioncount">8.1.2.4</span> Information to assist with Non-Medication Terminology Decisions <a href="process-documentation.html#nonmedication" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+<h4><span class="sectioncount">8.1.2.8</span> Information to assist with Non-Medication Terminology Decisions <a href="process-documentation.html#nonmedication" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <ul>
     <li>
@@ -218,6 +352,12 @@
     <li>Patient has been prescribed a medication that indicates the patient is approaching end of life</li>
     <li>Patient has been referred, discharged or admitted to hospice care</li>
 </ul>
+
+<hr></hr>
+
+<sup id="fn1">1. Centers for Medicare and Medicaid Services. Medicare Provider Utilization and Payment Data: Part D Prescriber. Available at: https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Part-D-Prescriber.html. Accessed 19 July 2018.<a href="#ref1">↩</a></sup>
+<sup id="fn2">2. Data.Gov. Data Catalog: Pharmacy datasets. Available at: https://catalog.data.gov/dataset?tags=pharmacy. Accessed 19 July 2018.<a href="#ref2">↩</a></sup>
+<sup id="fn3">3. Stokowski LA. Adult cancer pain: part 2 – the latest guidelines for pain management. Medscape Oncology. 2010. Available at: https://www.medscape.com/viewarticle/733067_2. Accessed 19 July 2018.<a href="#ref3">↩</a></sup>
 
 <!-- ==============END CONTENT END CONTENT=================== -->
 
