@@ -10,7 +10,7 @@
 <!-- ============CONTENT CONTENT=============== -->
 
 <a name="process"> </a>
-<h2><span class="sectioncount">8.1.0</span> CDC Opioid Prescribing Guidelines - Process Documentation <a href="process-documentation.html#process" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
+<h2><span class="sectioncount">8.1.0</span> CDC Opioid Prescribing Guideline - Process Documentation <a href="process-documentation.html#process" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
 
 <p>
     This section describes the functional behavior of the recommendations as implemented for
@@ -33,7 +33,7 @@
 <p>
     Opioids for chronic pain management are often not started with an intent for chronic use; such
     prescriptions often transition from intended acute pain management. Therefore, it is very difficult
-    to identify a new opioid prescription a prior as for chronic pain management.
+    to identify a new opioid prescription a priori as for chronic pain management.
 </p>
 
 <p>Indications and associated diagnoses for opioid prescriptions are often not available within the EHR.</p>
@@ -56,7 +56,7 @@
 <ul>
     <li>Opioid medications about to be prescribed</li>
     <li>Problem list, including for cancer</li>
-    <li>Prior uring drug testing results</li>
+    <li>Prior urine drug testing results</li>
 </ul>
 <p>
     The degree to which standard vocabularies are used by Epic and Cerner to provide this
@@ -73,14 +73,14 @@
 <p>
     The first issue to establish is how to determine what constitutes an opioid. The CDC guideline
     uses NDC codes derived from SAS calculations intended for use against prescription data. Prescription
-    data can included ordered medication and/or dispensed medication, depending on availability at the local site.
+    data can include ordered medication and/or dispensed medication, depending on availability at the local site.
 </p>
 
 <p>To avoid excess alerting, the algorithm uses the following exclusions:</p>
 
 <ol>
     <li>The project team considered excluding liquid opioids altogether, since they may be used for patients with 
-      life-limited diseases who might be excluded from the recommnedations. However, that approach would also exclude
+      life-limited diseases who might be excluded from the recommendations. However, that approach would also exclude
       cough medications which have a significant abuse potential. Therefore, the team excluded only injectable liquid
       forms of opioid and retained oral formulations.</li>
     <li>In some cases, EHR vendors have developed approaches to identify MME equivalents. In such situations, the
@@ -150,7 +150,7 @@ opioid prescriptions used free-text (unstructured) instructions with over 10,000
 <p>
     Calculation of daily dosage is based on the prescribed (order) or dispensed data based on expected use
     at the implementation site. The patient may be taking medication less often than prescribed or expected. For
-    example, medication ordered every 4 hours as needed (PRN) leads to a calculation of six doses with a 24 hour
+    example, medication ordered every 4 hours as needed (PRN) leads to a calculation of six doses within a 24 hour
     period.
 </p>
 
@@ -177,7 +177,7 @@ opioid prescriptions used free-text (unstructured) instructions with over 10,000
 
 <p>
     The National Comittee for Quality Assurance (NCQA) Healthcare Effectiveness Data and Information Set (HEDIS)
-    took a similar approach to determining cumulative medication use over time. The related electronice clinical quality
+    took a similar approach to determining cumulative medication use over time. The related electronic clinical quality
     measure (eCQM) CMS 128 addresses continuous use of anti-depressant medication management as 84 to 114 days (short term) and
     180 to 231 days (long term) based on active medication and can use prescribed or dispensed data as they are available.
     The eCQM assumes the medication is dispensed and used as written.
@@ -244,8 +244,9 @@ opioid tolerant or naïve.
   benefits and harms of opioid use.  The implementer needs to determine how the 
   local clinicians capture such assessments and map the concept to the SNOMED-CT 
   concept: <i>Assessment of risk for opioid abuse (procedure) SCTID: 454281000124100</i>
+</p>
 
-</p>The team rejected use of the concept <i>At risk for drug therapy problem (finding) (SCTID: 451691000124102)</i>
+<p>The team rejected use of the concept <i>At risk for drug therapy problem (finding) (SCTID: 451691000124102)</i>
  as it was too generic as it could address non-opioid medication therapy concerns. 
  The team also considered searching for use of patient responses to pain scales as 
  evidence that the clinician evaluated patients’ responses to opioid use. However, 
@@ -297,7 +298,7 @@ monitoring.
     <li>
         Some concepts seem relatively straigthforward when included in a clinical guideline for consumption by a
         clinician. However, when setting up queries to retrieve data from EHR or other clinical software data storage, the
-        concepts needed may be difficult to encode using available code systems. Value sets can help with problem only in
+        concepts needed may be difficult to encode using available code systems. Value sets can help with the problem only in
         so far as the concepts are clearly defined without ambiguity. A good example is the definition of end-stage,
         stage 4 or terminal cancer, for exclusion from opiate usage calculation. One approach is to develop a value set
         indicating metastatic cancer and pancreatic cancer. This has the potential of covering the vast majority of cancers
@@ -369,7 +370,7 @@ monitoring.
       nonpharmacologic therapy and nonopioid pharmacologic therapy, as appropriate. <em>(recommendation category: A, evidence type: 3)</em>.</strong>
 </p>
 
-<p>Justification for deferring Recommendation #1: The recommendations includes a large number of 
+<p>Justification for deferring Recommendation #1: The recommendation includes a large number of 
   incompletely defined conditions and non-pharmacologic therapy. Creating definitions and specific 
   recommendations for non-pharmacologic therapy (as orderables) will be complex.  Alternatively, 
   on selection of an opioid order, a simple method might merely provide a selectable option linking 
@@ -408,7 +409,7 @@ monitoring.
 <p>Justification for deferring Recommendation #3: This recommendation might include provision of general 
   guidance about risks. Potentially, if defined with value sets or direct referenced codes, opioid-induced 
   risks might be identified with entry of new conditions on the problem list, or population of the record 
-  with new laboratory results. And the CDS can alert the provider (synchronously or asynchronously) when 
+  with new laboratory results, and the CDS can alert the provider (synchronously or asynchronously) when 
   such a new risk occurs. The number of potential conditions to address is quite large and challenges 
   are similar to those for Recommendation #1.
 </p>
@@ -431,7 +432,7 @@ monitoring.
   with maximum of seven days and restricting orders to immediate-release opioids. However, determining 
   the lowest effective dose based on the individual patient’s condition and expected duration of pain 
   is not trivial and requires individual physician-patient interaction. For the latter item, potentially 
-  link to the recommendation is possible without trying to define effective does by condition.
+  link to the recommendation if possible without trying to define effective dose by condition.
 </p>
 
 <a name="scope-rationale-rec09"> </a>
