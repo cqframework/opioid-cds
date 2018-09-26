@@ -404,7 +404,7 @@
 <h4 class="self-link-parent"><span class="sectioncount">8.3.6.1</span> $apply Parameters <a href="implementation-documentation.html#applyparams" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>
-  Most of the standard $apply parameters will not be used. In fact the only standard parameter that will be used for the opioid guidelines is the required patient ID parameter. In addition, the PlanDefinition that this implementation applies needs access to the context and prefetch resources from the CDS Hooks request. Therefore, this particular instance of the $apply operation will need to add an additional "context" parameter. The additional context parameter will be represented as a parameter of parameters. See an example <a href="https://github.com/DBCG/cqf-ruler/blob/master/src/main/java/org/opencds/cqf/servlet/OpioidGuidanceServlet.java#L67">here</a>
+  Most of the standard $apply parameters will not be used. In fact the only standard parameter that will be used for the opioid guidelines is the required patient ID parameter. In addition, the PlanDefinition that this implementation applies needs access to the context and prefetch resources from the CDS Hooks request. Therefore, this particular instance of the $apply operation will need to add an additional "context" parameter. The additional context parameter will be represented as a parameter of parameters.
 </p>
 
 <a name="applyop"> </a>
@@ -419,11 +419,7 @@
 <p></p>
 
 <p>
-  Here is an <a href="https://github.com/DBCG/cqf-ruler/blob/master/src/main/java/org/opencds/cqf/providers/FHIRPlanDefinitionResourceProvider.java">example</a>
-</p>
-
-<p>
-  As shown in the flowchart, the $apply operation begins by parsing the input parameters. Then the <a href="Library-opioidcds-recommendation-05.json.html">CDC Opioid Guidelines library</a> is serialized into a library object. The next step is to resolve data providers for FHIR STU3 and OMTK. OMTK, or Opioid Management Terminology Knowledge, is a library that provides MME conversion factors and terminology information for the opioid medications. The OMTK data provider endpoint is a SQLite database and is NOT a FHIR data provider. The next step is to walk through the specified PlanDefinition actions, checking for applicability and an expression reference in the condition. If the PlanDefinition condition is applicable and has an expression reference, set the library "Orders" parameter to the list of MedictionRequest resources (context and prefetch) and evaluate the expression. If the expression evaluates to true, the context prescription violates the opioid guidelines by exceeding the suggested MME and a warning should be returned to the author. If the expression evaluates to false, then the presription is in accordance with the opioid guidelines. No matter the outcome of the expression, a CarePlan resource must be constructed and returned, which is left to the developer to format (see the example link above for an example).
+  As shown in the flowchart, the $apply operation begins by parsing the input parameters. Then the <a href="Library-opioidcds-recommendation-05.json.html">CDC Opioid Guidelines library</a> is serialized into a library object. The next step is to resolve data providers for FHIR STU3 and OMTK. OMTK, or Opioid Management Terminology Knowledge, is a library that provides MME conversion factors and terminology information for the opioid medications. The OMTK data provider endpoint is an Access database and is NOT a FHIR data provider. The next step is to walk through the specified PlanDefinition actions, checking for applicability and an expression reference in the condition. If the PlanDefinition condition is applicable and has an expression reference, set the library "Orders" parameter to the list of MedictionRequest resources (context and prefetch) and evaluate the expression. If the expression evaluates to true, the context prescription violates the opioid guidelines by exceeding the suggested MME and a warning should be returned to the author. If the expression evaluates to false, then the presription is in accordance with the opioid guidelines. No matter the outcome of the expression, a CarePlan resource must be constructed and returned, which is left to the developer to format (see the example link above for an example).
 </p>
 
 <a name="transform"> </a>
@@ -488,7 +484,7 @@
       "url": "https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf"
     }
   ],
-  "detail": "Total morphine milligram equivalent (MME) is 20200.700mg/d. Taper to less than 50."
+  "detail": "Total morphine milligram equivalent (MME) is 179.99999820 mg/d. Taper to less than 50."
 }
   </pre>
 </div>
