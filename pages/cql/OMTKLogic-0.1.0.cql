@@ -4,8 +4,6 @@ using OMTK version '0.1.0'
 
 codesystem RxNorm: 'http://www.nlm.nih.gov/research/umls/rxnorm'
 
-//define MED_DOSE_FORMS: [MED_DOSE_FORM]
-
 // Given an RxNorm Code:
 // NON_SURGICAL_OPIOID_TO_INCLUDE.DRUG_RXCUI
 // MED_DRUG.DRUG_RXCUI
