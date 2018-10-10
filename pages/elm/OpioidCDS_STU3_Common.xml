@@ -1026,6 +1026,41 @@
                   <operand valueType="t:Decimal" value="60.0" xsi:type="Literal"/>
                </then>
             </caseItem>
+            <caseItem>
+               <when xsi:type="Equal">
+                  <operand name="value" xsi:type="OperandRef"/>
+                  <operand valueType="t:String" value="s" xsi:type="Literal"/>
+               </when>
+               <then xsi:type="Multiply">
+                  <operand xsi:type="Multiply">
+                     <operand xsi:type="Divide">
+                        <operand valueType="t:Decimal" value="1.0" xsi:type="Literal"/>
+                        <operand valueType="t:Decimal" value="24.0" xsi:type="Literal"/>
+                     </operand>
+                     <operand valueType="t:Decimal" value="60.0" xsi:type="Literal"/>
+                  </operand>
+                  <operand valueType="t:Decimal" value="60.0" xsi:type="Literal"/>
+               </then>
+            </caseItem>
+            <caseItem>
+               <when xsi:type="Equal">
+                  <operand name="value" xsi:type="OperandRef"/>
+                  <operand valueType="t:String" value="ms" xsi:type="Literal"/>
+               </when>
+               <then xsi:type="Multiply">
+                  <operand xsi:type="Multiply">
+                     <operand xsi:type="Multiply">
+                        <operand xsi:type="Divide">
+                           <operand valueType="t:Decimal" value="1.0" xsi:type="Literal"/>
+                           <operand valueType="t:Decimal" value="24.0" xsi:type="Literal"/>
+                        </operand>
+                        <operand valueType="t:Decimal" value="60.0" xsi:type="Literal"/>
+                     </operand>
+                     <operand valueType="t:Decimal" value="60.0" xsi:type="Literal"/>
+                  </operand>
+                  <operand valueType="t:Decimal" value="1000.0" xsi:type="Literal"/>
+               </then>
+            </caseItem>
             <else valueType="t:Decimal" value="1.0" xsi:type="Literal"/>
          </expression>
          <operand name="value">

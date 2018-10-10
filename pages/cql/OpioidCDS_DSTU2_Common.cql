@@ -210,6 +210,8 @@ define function GetPeriodDays(value System.String):
     when value = 'mo' then 30.0
     when value = 'h' then 1.0/24.0
     when value = 'min' then 1.0/24.0*60.0
+    when value = 's' then 1.0/24.0*60.0*60.0
+    when value = 'ms' then 1.0/24.0*60.0*60.0*1000.0
     else 1.0
   end
 
