@@ -10,9 +10,6 @@
       <def localIdentifier="Common" path="OpioidCDSCommonSTU4" version="0.1.0"/>
    </includes>
    <parameters>
-      <def name="UserID" accessLevel="Public">
-         <parameterTypeSpecifier name="t:String" xsi:type="NamedTypeSpecifier"/>
-      </def>
       <def name="ContextPrescriptions" accessLevel="Public">
          <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
             <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
