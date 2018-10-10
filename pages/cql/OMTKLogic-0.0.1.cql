@@ -28,7 +28,7 @@ define function ToUCUM(unit String):
     when 'MG/ACTUAT' then 'mg/{actuat}'
     when 'MG/HR' then 'mg/h'
     when 'MG/ML' then 'mg/mL'
-    else 'unknown{' + unit + '}' /* Should probably be an error */
+    else 'Error: unknown{' + unit + '}'
   end
 
 /*
