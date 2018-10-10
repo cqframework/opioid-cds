@@ -1,4 +1,4 @@
-library OMTKData version '0.0.0'
+library OMTKData version '0.0.1'
 
 define Months: { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }
 
@@ -26,11 +26,6 @@ Returns true if the given year is a leap year, false otherwise
 define function IsLeapYear(y Integer):
   (y mod 4 = 0 and y mod 100 != 0) or y mod 400 = 0  
 
-/*  
-define TestIsLeapYear1: IsLeapYear(2000) = true
-define TestIsLeapYear2: IsLeapYear(2016) = true
-define TestIsLeapYear3: IsLeapYear(2015) = false
-*/
 
 /*
 Returns a list of the days in the given month in the given year
@@ -47,12 +42,6 @@ define function DaysInMonth(y Integer, m Integer):
     return DateTime(y, m, D)
 
 /*
-define TestDaysInMonth1: DaysInMonth(2018, 4)
-define TestDaysInMonth2: DaysInMonth(2018, 2)
-define TestDaysInMonth3: DaysInMonth(2016, 2)
-*/
-
-/*
 Returns a list of the days in the given year
 List<DateTime>
 */
@@ -60,12 +49,7 @@ define function DaysInYear(y Integer):
   flatten (
     Months M
       return DaysInMonth(y, M)
-  )    
-
-/*
-define TestDaysInYear1: DaysInYear(2016)
-define TestDaysInYear2: DaysInYear(2018)
-*/
+  )
 
 define function DaysInPeriod(period Interval<DateTime>):
   case
@@ -94,12 +78,6 @@ define function DaysInPeriod(period Interval<DateTime>):
           )
     else null // Should maybe throw, can't calculate arbitrary years, need the expand operator (1.3)
   end
-
-/*
-define TestDaysInPeriod1: DaysInPeriod(Interval[@2018-04-02, @2018-04-25])
-define TestDaysInPeriod2: DaysInPeriod(Interval[@2018-04-25, @2018-05-31])
-define TestDaysInPeriod3: DaysInPeriod(Interval[@2017-11-20, @2018-04-30])
-*/
 
 /*
 DrugIngredients:
