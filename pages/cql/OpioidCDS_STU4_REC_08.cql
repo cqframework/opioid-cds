@@ -34,6 +34,8 @@ include OpioidCDSCommonSTU4 version '0.1.0' called Common
       For now, defining value sets as descendants of:
         ICD10: F10-F19, Mental and behavioral disorders due to psychoactive substance use
         ICD9: 304, Drug dependence and 303, Alcohol dependence syndrome
+  Plan Definition:
+	http://build.fhir.org/ig/cqframework/opioid-cds/stu4/plandefinition-opioidcds-08.xml
 */
 
 parameter ContextPrescriptions List<MedicationRequest>
