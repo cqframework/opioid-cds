@@ -821,9 +821,9 @@
         <resource>
             <example value="true"/>
             <name value="Library - OMTK Data"/>
-            <description value="Opioid Management Terminology Knowledge Base v0.0.0 Data"/>
+            <description value="Opioid Management Terminology Knowledge Base v0.0.1 Data"/>
             <sourceReference>
-                <reference value="Library/omtk-data-0.0.0"/>
+                <reference value="Library/omtk-data-0.0.1"/>
             </sourceReference>
         </resource>
         <resource>

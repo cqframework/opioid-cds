@@ -572,9 +572,9 @@
       "source": "library-omtk-logic-0.0.1.xml",
       "base": "Library-omtk-logic-0.0.1.html"
     },
-    "Library/omtk-data-0.0.0": {
-      "source": "library-omtk-data-0.0.0.xml",
-      "base": "Library-omtk-data-0.0.0.html"
+    "Library/omtk-data-0.0.1": {
+      "source": "library-omtk-data-0.0.1.xml",
+      "base": "Library-omtk-data-0.0.1.html"
     },
     "Library/omtk-modelinfo": {
       "source": "library-omtk-modelinfo.xml",

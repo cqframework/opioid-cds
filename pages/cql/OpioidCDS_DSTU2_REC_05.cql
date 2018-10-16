@@ -10,7 +10,6 @@ include OpioidCDSCommonDSTU2 version '0.1.0' called Common
 **
 */
 
-parameter UserID String
 parameter ContextPrescriptions List<MedicationOrder>
 
 context Patient

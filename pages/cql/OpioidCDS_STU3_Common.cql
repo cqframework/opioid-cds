@@ -20,22 +20,12 @@ valueset "Illicit Drug Screening": 'http://fhir.org/guides/cdc/opioid-cds/ValueS
 // Harvested from VSAC - OID: 2.16.840.1.113883.3.526.3.1259
 valueset "Limited Life Expectancy Conditions": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions'
 valueset "Long Acting Opioids": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/long-acting-opioids'
-// TODO: Remove this valueset, it is not referenced
-// Harvested from VSAC - OID: 2.16.840.1.113762.1.4.1116.351
-valueset "Metastatic Cancer": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/metastatic-cancer'
 valueset "Naloxone": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/naloxone'
 valueset "Risk Assessment": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-abuse-assessment'
 valueset "Opioid Drug Screening": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-urine-screening'
 valueset "Ambulatory Abuse Potential Opioids": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care'
 valueset "End Of Life Opioids": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life'
 valueset "Substance Abuse": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-abuse'
-
-// Valuesets that are not currently used
-// TODO: Remove this valueset
-valueset "Opioids": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids'
-// TODO: Remove this valueset
-valueset "Codeine Cough Meds": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-codeine-cough-meds'
-valueset "Short Acting Opioids": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/short-acting-opioids'
 
 // TODO: Turn this into a valueset
 code "Referral to Hospice": '306205009' from "SNOMED"
@@ -231,6 +221,8 @@ define function GetPeriodDays(value System.String):
     when value = 'mo' then 30.0
     when value = 'h' then 1.0/24.0
     when value = 'min' then 1.0/24.0*60.0
+    when value = 's' then 1.0/24.0*60.0*60.0
+    when value = 'ms' then 1.0/24.0*60.0*60.0*1000.0
     else 1.0
   end
 
