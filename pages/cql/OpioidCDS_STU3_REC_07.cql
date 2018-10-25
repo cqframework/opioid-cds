@@ -37,8 +37,9 @@ include OpioidCDSCommonSTU3 version '0.1.0' called Common
   EHR expectations:
     If not able to document/retrieve above procedure,
     then use EHR snoozing functionality to allow "Have assessed/will assess. Snooze 3 months."
+
   Plan Definition:
-	http://build.fhir.org/ig/cqframework/opioid-cds/stu4/plandefinition-opioidcds-07.xml
+	http://build.fhir.org/ig/cqframework/opioid-cds/plandefinition-opioidcds-07.xml
 */
 
 parameter ContextPrescriptions List<MedicationRequest>

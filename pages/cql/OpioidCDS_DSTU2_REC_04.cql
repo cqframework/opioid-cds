@@ -26,8 +26,6 @@ include OpioidCDSCommonDSTU2 version '0.1.0' called Common
     Ref: CDC Recommendation #4.
   EHR expectations:
     Have availability to snooze if benefits outweigh risks or if not applicable
-  Plan Definition:
-	http://build.fhir.org/ig/cqframework/opioid-cds/stu4/plandefinition-opioidcds-04.xml
 */
 
 // Trigger Event Rx
