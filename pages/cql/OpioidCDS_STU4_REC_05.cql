@@ -12,7 +12,7 @@ include OpioidCDSCommonSTU4 version '0.1.0' called Common
 
 /*
   Plan Definition:
-	http://build.fhir.org/ig/cqframework/opioid-cds/stu4/plandefinition-opioidcds-05.xml
+	http://build.fhir.org/ig/cqframework/opioid-cds/stu4/PlanDefinition-opioidcds-05.html
 */
 
 parameter ContextPrescriptions List<MedicationRequest>

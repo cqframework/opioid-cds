@@ -27,7 +27,7 @@ include OpioidCDSCommonSTU3 version '0.1.0' called Common
     Have availability to snooze if benefits outweigh risks
 
   Plan Definition:
-	http://build.fhir.org/ig/cqframework/opioid-cds/plandefinition-opioidcds-11.xml
+	http://build.fhir.org/ig/cqframework/opioid-cds/PlanDefinition-opioidcds-11.html
 */
 
 parameter ContextPrescriptions List<MedicationRequest>

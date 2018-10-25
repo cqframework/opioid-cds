@@ -28,7 +28,7 @@ include OpioidCDSCommonSTU3 version '0.1.0' called Common
     Have availability to snooze if benefits outweigh risks or if not applicable
 
   Plan Definition:
-	http://build.fhir.org/ig/cqframework/opioid-cds/plandefinition-opioidcds-04.xml
+	http://build.fhir.org/ig/cqframework/opioid-cds/PlanDefinition-opioidcds-04.html
 */
 
 // Trigger Event Rx

@@ -25,8 +25,9 @@ include OpioidCDSCommonSTU4 version '0.1.0' called Common
     Ref: CDC Recommendation #11.
   EHR expectations:
     Have availability to snooze if benefits outweigh risks
+
   Plan Definition:
-	http://build.fhir.org/ig/cqframework/opioid-cds/stu4/plandefinition-opioidcds-11.xml
+	http://build.fhir.org/ig/cqframework/opioid-cds/stu4/PlanDefinition-opioidcds-11.html
 */
 
 parameter ContextPrescriptions List<MedicationRequest>
