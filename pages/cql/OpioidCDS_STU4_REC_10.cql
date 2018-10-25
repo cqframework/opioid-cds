@@ -35,6 +35,9 @@ codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
     Ref: CDC Recommendation #10.
   EHR expectations:
     Have availability to snooze for 3 months
+
+  Plan Definition:
+	http://build.fhir.org/ig/cqframework/opioid-cds/stu4/PlanDefinition-opioidcds-10.html
 */
 
 code "Positive": 'POS' from "V2 Interpretation Codes"
