@@ -379,3 +379,29 @@ a.to-top {
 ----------------------------------------------------------------------------------------*/
 /* D-I-D AREA
 ----------------------------------------------------------------------------------------*/
+
+#markdown-toc {
+}
+
+#markdown-toc::before {
+  content: 'Contents';
+  font-size: 1.5em;
+}
+
+
+ul#markdown-toc {
+  font-size: .6em;
+  list-style: none;
+  margin: 4px;
+  padding: 4px;
+  float: right;
+  z-index: 10;
+  width: 150px;
+  background-color: #f5f5f5;
+  border: 1px solid #f5f5f5;
+  border-radius: 5px;
+}
+
+#markdown-toc li{
+  font-size: 1em;
+}
