@@ -29,9 +29,13 @@ define "Total MME":
 define "Get Indicator":
   'warning'
 
+define "Taper Now": "Total MME".value >= 90
+
+define "Consider Tapering": "Total MME".value < 90
+
 define "Get Summary":
   'High risk for opioid overdose - '
-    + case when "Total MME".value >= 90
+    + case when "Taper Now"
        then 'taper now'
        else 'consider tapering'
      end
