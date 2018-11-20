@@ -156,18 +156,42 @@
          </expression>
       </def>
       <def name="Get Indicator" context="Patient" accessLevel="Public">
-         <expression valueType="t:String" value="warning" xsi:type="Literal"/>
+         <expression xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+            </condition>
+            <then valueType="t:String" value="warning" xsi:type="Literal"/>
+            <else asType="t:String" xsi:type="As">
+               <operand xsi:type="Null"/>
+            </else>
+         </expression>
       </def>
       <def name="Get Summary" context="Patient" accessLevel="Public">
-         <expression valueType="t:String" value="Patients on opioid therapy should be evaluated for benefits and harms within 1 to 4 weeks of starting opioid therapy and every 3 months or more subsequently." xsi:type="Literal"/>
+         <expression xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+            </condition>
+            <then valueType="t:String" value="Patients on opioid therapy should be evaluated for benefits and harms within 1 to 4 weeks of starting opioid therapy and every 3 months or more subsequently." xsi:type="Literal"/>
+            <else asType="t:String" xsi:type="As">
+               <operand xsi:type="Null"/>
+            </else>
+         </expression>
       </def>
       <def name="Get Detail" context="Patient" accessLevel="Public">
          <expression xsi:type="If">
             <condition asType="t:Boolean" xsi:type="As">
-               <operand name="Rx Active 63 of Past 90 Days" xsi:type="ExpressionRef"/>
+               <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
             </condition>
-            <then valueType="t:String" value="No evaluation for benefits and harms associated with opioid therapy has been performed for the patient in the past 3 months" xsi:type="Literal"/>
-            <else valueType="t:String" value="No evaluation for benefits and harms has been performed for the patient starting opioid therapy" xsi:type="Literal"/>
+            <then xsi:type="If">
+               <condition asType="t:Boolean" xsi:type="As">
+                  <operand name="Rx Active 63 of Past 90 Days" xsi:type="ExpressionRef"/>
+               </condition>
+               <then valueType="t:String" value="No evaluation for benefits and harms associated with opioid therapy has been performed for the patient in the past 3 months" xsi:type="Literal"/>
+               <else valueType="t:String" value="No evaluation for benefits and harms has been performed for the patient starting opioid therapy" xsi:type="Literal"/>
+            </then>
+            <else asType="t:String" xsi:type="As">
+               <operand xsi:type="Null"/>
+            </else>
          </expression>
       </def>
    </statements>

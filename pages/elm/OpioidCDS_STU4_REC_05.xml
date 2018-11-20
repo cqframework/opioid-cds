@@ -49,37 +49,74 @@
             </operand>
          </expression>
       </def>
-      <def name="Get Indicator" context="Patient" accessLevel="Public">
-         <expression valueType="t:String" value="warning" xsi:type="Literal"/>
-      </def>
-      <def name="Get Summary" context="Patient" accessLevel="Public">
-         <expression xsi:type="Concatenate">
-            <operand valueType="t:String" value="High risk for opioid overdose - " xsi:type="Literal"/>
-            <operand xsi:type="Case">
-               <caseItem>
-                  <when xsi:type="GreaterOrEqual">
-                     <operand path="value" xsi:type="Property">
-                        <source name="Total MME" xsi:type="ExpressionRef"/>
-                     </operand>
-                     <operand xsi:type="ToDecimal">
-                        <operand valueType="t:Integer" value="90" xsi:type="Literal"/>
-                     </operand>
-                  </when>
-                  <then valueType="t:String" value="taper now" xsi:type="Literal"/>
-               </caseItem>
-               <else valueType="t:String" value="consider tapering" xsi:type="Literal"/>
+      <def name="Taper Now" context="Patient" accessLevel="Public">
+         <expression xsi:type="GreaterOrEqual">
+            <operand path="value" xsi:type="Property">
+               <source name="Total MME" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand xsi:type="ToDecimal">
+               <operand valueType="t:Integer" value="90" xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
-      <def name="Get Detail" context="Patient" accessLevel="Public">
-         <expression xsi:type="Concatenate">
-            <operand xsi:type="Concatenate">
-               <operand valueType="t:String" value="Total morphine milligram equivalent (MME) is " xsi:type="Literal"/>
-               <operand xsi:type="ToString">
-                  <operand name="Total MME" xsi:type="ExpressionRef"/>
-               </operand>
+      <def name="Consider Tapering" context="Patient" accessLevel="Public">
+         <expression xsi:type="Less">
+            <operand path="value" xsi:type="Property">
+               <source name="Total MME" xsi:type="ExpressionRef"/>
             </operand>
-            <operand valueType="t:String" value=". Taper to less than 50." xsi:type="Literal"/>
+            <operand xsi:type="ToDecimal">
+               <operand valueType="t:Integer" value="90" xsi:type="Literal"/>
+            </operand>
+         </expression>
+      </def>
+      <def name="Get Indicator" context="Patient" accessLevel="Public">
+         <expression xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+            </condition>
+            <then valueType="t:String" value="warning" xsi:type="Literal"/>
+            <else asType="t:String" xsi:type="As">
+               <operand xsi:type="Null"/>
+            </else>
+         </expression>
+      </def>
+      <def name="Get Summary" context="Patient" accessLevel="Public">
+         <expression xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+            </condition>
+            <then xsi:type="Concatenate">
+               <operand valueType="t:String" value="High risk for opioid overdose - " xsi:type="Literal"/>
+               <operand xsi:type="Case">
+                  <caseItem>
+                     <when name="Taper Now" xsi:type="ExpressionRef"/>
+                     <then valueType="t:String" value="taper now" xsi:type="Literal"/>
+                  </caseItem>
+                  <else valueType="t:String" value="consider tapering" xsi:type="Literal"/>
+               </operand>
+            </then>
+            <else asType="t:String" xsi:type="As">
+               <operand xsi:type="Null"/>
+            </else>
+         </expression>
+      </def>
+      <def name="Get Detail" context="Patient" accessLevel="Public">
+         <expression xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+            </condition>
+            <then xsi:type="Concatenate">
+               <operand xsi:type="Concatenate">
+                  <operand valueType="t:String" value="Total morphine milligram equivalent (MME) is " xsi:type="Literal"/>
+                  <operand xsi:type="ToString">
+                     <operand name="Total MME" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+               <operand valueType="t:String" value=". Taper to less than 50." xsi:type="Literal"/>
+            </then>
+            <else asType="t:String" xsi:type="As">
+               <operand xsi:type="Null"/>
+            </else>
          </expression>
       </def>
    </statements>
