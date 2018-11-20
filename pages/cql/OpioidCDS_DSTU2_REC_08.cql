@@ -92,6 +92,16 @@ define "Detail Descriptions":
 define "Detail List":
 	Combine("Detail Descriptions" dd where dd.hasCondition return dd.text, ', ')
 
+define "Detail Descriptions":
+	{
+    { hasCondition: "Total MME" >= 50 'mg/day', text: 'Average MME (' + ToString("Total MME") + ') >= 50 mg/day' },
+    { hasCondition: "On Benzodiazepine", text: 'concurrent use of benzodiazepine'},
+    { hasCondition: "Has Substance Abuse History", text: 'history of alcohol or drug abuse' }
+  }
+
+define "Detail List":
+	Combine("Detail Descriptions" dd where dd.hasCondition return dd.text, ', ')
+
 define "Get Detail":
   if "Inclusion Criteria"
     then
