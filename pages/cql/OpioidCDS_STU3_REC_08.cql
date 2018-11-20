@@ -81,14 +81,18 @@ define "Get Indicator":
 define "Get Summary":
   'Incorporate into the management plan strategies to mitigate risk; including considering offering naloxone when factors that increase risk for opioid overdose are present'
 
+define "Detail Descriptions":
+	{
+    { hasCondition: "Total MME" >= 50 'mg/day', text: 'Average MME (' + ToString("Total MME") + ') >= 50 mg/day' },
+    { hasCondition: "On Benzodiazepine", text: 'concurrent use of benzodiazepine'},
+    { hasCondition: "Has Substance Abuse History", text: 'history of alcohol or drug abuse' }
+  }
+
+define "Detail List":
+	Combine("Detail Descriptions" dd where dd.hasCondition return dd.text, ', ')
+
 define "Get Detail":
-  'Consider offering naloxone given following risk factor(s) for opioid overdose: '
-      + if "Total MME" >= 50 'mg/d'
-          then 'Average MME (' + ToString("Total MME") + ') >= 50 mg/day, '
-        else ''
-      + if "On Benzodiazepine"
-          then 'concurrent use of benzodiazepine, '
-        else ''
-      + if "Has Substance Abuse History"
-          then 'history of alcohol or drug abuse.'
-        else ''
+	'Consider offering naloxone given following risk factor(s) for opioid overdose: ' 
+    + if "Detail List" is not null and "Detail List" != '' 
+	  then "Detail List" + '.'
+    else 'N/A.'
