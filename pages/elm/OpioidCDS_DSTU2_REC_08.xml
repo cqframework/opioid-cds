@@ -100,10 +100,26 @@
          </expression>
       </def>
       <def name="Get Indicator" context="Patient" accessLevel="Public">
-         <expression valueType="t:String" value="warning" xsi:type="Literal"/>
+         <expression xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+            </condition>
+            <then valueType="t:String" value="warning" xsi:type="Literal"/>
+            <else asType="t:String" xsi:type="As">
+               <operand xsi:type="Null"/>
+            </else>
+         </expression>
       </def>
       <def name="Get Summary" context="Patient" accessLevel="Public">
-         <expression valueType="t:String" value="Incorporate into the management plan strategies to mitigate risk; including considering offering naloxone when factors that increase risk for opioid overdose are present" xsi:type="Literal"/>
+         <expression xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+            </condition>
+            <then valueType="t:String" value="Incorporate into the management plan strategies to mitigate risk; including considering offering naloxone when factors that increase risk for opioid overdose are present" xsi:type="Literal"/>
+            <else asType="t:String" xsi:type="As">
+               <operand xsi:type="Null"/>
+            </else>
+         </expression>
       </def>
       <def name="Detail Descriptions" context="Patient" accessLevel="Public">
          <expression xsi:type="List">
@@ -159,30 +175,38 @@
          </expression>
       </def>
       <def name="Get Detail" context="Patient" accessLevel="Public">
-         <expression xsi:type="Concatenate">
-            <operand valueType="t:String" value="Consider offering naloxone given following risk factor(s) for opioid overdose: " xsi:type="Literal"/>
-            <operand xsi:type="If">
-               <condition asType="t:Boolean" xsi:type="As">
-                  <operand xsi:type="And">
-                     <operand xsi:type="Not">
-                        <operand xsi:type="IsNull">
-                           <operand name="Detail List" xsi:type="ExpressionRef"/>
+         <expression xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+            </condition>
+            <then xsi:type="Concatenate">
+               <operand valueType="t:String" value="Consider offering naloxone given following risk factor(s) for opioid overdose: " xsi:type="Literal"/>
+               <operand xsi:type="If">
+                  <condition asType="t:Boolean" xsi:type="As">
+                     <operand xsi:type="And">
+                        <operand xsi:type="Not">
+                           <operand xsi:type="IsNull">
+                              <operand name="Detail List" xsi:type="ExpressionRef"/>
+                           </operand>
+                        </operand>
+                        <operand xsi:type="Not">
+                           <operand xsi:type="Equal">
+                              <operand name="Detail List" xsi:type="ExpressionRef"/>
+                              <operand valueType="t:String" value="" xsi:type="Literal"/>
+                           </operand>
                         </operand>
                      </operand>
-                     <operand xsi:type="Not">
-                        <operand xsi:type="Equal">
-                           <operand name="Detail List" xsi:type="ExpressionRef"/>
-                           <operand valueType="t:String" value="" xsi:type="Literal"/>
-                        </operand>
-                     </operand>
-                  </operand>
-               </condition>
-               <then xsi:type="Concatenate">
-                  <operand name="Detail List" xsi:type="ExpressionRef"/>
-                  <operand valueType="t:String" value="." xsi:type="Literal"/>
-               </then>
-               <else valueType="t:String" value="N/A." xsi:type="Literal"/>
-            </operand>
+                  </condition>
+                  <then xsi:type="Concatenate">
+                     <operand name="Detail List" xsi:type="ExpressionRef"/>
+                     <operand valueType="t:String" value="." xsi:type="Literal"/>
+                  </then>
+                  <else valueType="t:String" value="N/A." xsi:type="Literal"/>
+               </operand>
+            </then>
+            <else asType="t:String" xsi:type="As">
+               <operand xsi:type="Null"/>
+            </else>
          </expression>
       </def>
    </statements>

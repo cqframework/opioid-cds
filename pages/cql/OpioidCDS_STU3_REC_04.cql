@@ -68,12 +68,18 @@ define "Exclusion Criteria":
     or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 define "Get Indicator":
-  'warning'
+  if "Inclusion Criteria"
+    then 'warning'
+  else null
 
 define "Get Summary":
-  'Recommend use of immediate-release opioids instead of extended release/long acting opioids when starting patient on opioids.'
+  if "Inclusion Criteria"
+    then 'Recommend use of immediate-release opioids instead of extended release/long acting opioids when starting patient on opioids.'
+  else null
 
 define "Get Detail":
-  'The following medication requests(s) release rates should be re-evaluated: ' + Common.GetMedicationNames("Trigger Event Prescriptions")
+  if "Inclusion Criteria"
+    then 'The following medication requests(s) release rates should be re-evaluated: ' + Common.GetMedicationNames("Trigger Event Prescriptions")
+  else null
 
 // TODO - I would like to be able to offer the medication's immediate release form as a suggestions

@@ -26,19 +26,26 @@ define "Exclusion Criteria":
 define "Total MME":
   Common.TotalMME(ContextPrescriptions union Common."Active Ambulatory Opioid Rx")
 
-define "Get Indicator":
-  'warning'
-
 define "Taper Now": "Total MME".value >= 90
 
 define "Consider Tapering": "Total MME".value < 90
 
+define "Get Indicator":
+  if "Inclusion Criteria"
+    then 'warning'
+  else null
+
 define "Get Summary":
-  'High risk for opioid overdose - '
-    + case when "Taper Now"
-       then 'taper now'
-       else 'consider tapering'
-     end
+  if "Inclusion Criteria"
+    then
+      'High risk for opioid overdose - '
+        + case when "Taper Now"
+           then 'taper now'
+           else 'consider tapering'
+         end
+  else null
 
 define "Get Detail":
-  'Total morphine milligram equivalent (MME) is ' + ToString("Total MME") + '. Taper to less than 50.'
+  if "Inclusion Criteria"
+    then'Total morphine milligram equivalent (MME) is ' + ToString("Total MME") + '. Taper to less than 50.'
+  else null
