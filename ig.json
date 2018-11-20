@@ -32,6 +32,7 @@
   "spreadsheets": [
     "careplan-profile-spreadsheet.xml",
     "medicationrequest-profile-spreadsheet.xml",
+    "observation-profile-spreadsheet.xml",
     "plandefinition-profile-spreadsheet.xml",
     "requestgroup-profile-spreadsheet.xml",
     "valueset-profile-spreadsheet.xml"
@@ -736,6 +737,10 @@
     "StructureDefinition/cdc-medicationrequest": {
       "defns": "cdc-medicationrequest-definitions.html",
       "base": "cdc-medicationrequest.html"
+    },
+    "StructureDefinition/cdc-observation": {
+      "defns": "cdc-observation-definitions.html",
+      "base": "cdc-observation.html"
     },
     "StructureDefinition/cdc-plandefinition": {
       "defns": "cdc-plandefinition-definitions.html",
