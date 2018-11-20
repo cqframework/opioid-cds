@@ -174,7 +174,6 @@ define function MME(prescriptions List<MedicationOrder>):
       conversionFactor: mme.conversionFactor,
       mme: mme.mme
     }
-    // sort by if isDraft then 0 else 1, rxNormCode.code
 
 define function TotalMME(prescriptions List<MedicationOrder>):
   System.Quantity {
