@@ -105,44 +105,83 @@
       <def name="Get Summary" context="Patient" accessLevel="Public">
          <expression valueType="t:String" value="Incorporate into the management plan strategies to mitigate risk; including considering offering naloxone when factors that increase risk for opioid overdose are present" xsi:type="Literal"/>
       </def>
+      <def name="Detail Descriptions" context="Patient" accessLevel="Public">
+         <expression xsi:type="List">
+            <element xsi:type="Tuple">
+               <element name="hasCondition">
+                  <value xsi:type="GreaterOrEqual">
+                     <operand name="Total MME" xsi:type="ExpressionRef"/>
+                     <operand value="50" unit="mg/day" xsi:type="Quantity"/>
+                  </value>
+               </element>
+               <element name="text">
+                  <value xsi:type="Concatenate">
+                     <operand xsi:type="Concatenate">
+                        <operand valueType="t:String" value="Average MME (" xsi:type="Literal"/>
+                        <operand xsi:type="ToString">
+                           <operand name="Total MME" xsi:type="ExpressionRef"/>
+                        </operand>
+                     </operand>
+                     <operand valueType="t:String" value=") >= 50 mg/day" xsi:type="Literal"/>
+                  </value>
+               </element>
+            </element>
+            <element xsi:type="Tuple">
+               <element name="hasCondition">
+                  <value name="On Benzodiazepine" xsi:type="ExpressionRef"/>
+               </element>
+               <element name="text">
+                  <value valueType="t:String" value="concurrent use of benzodiazepine" xsi:type="Literal"/>
+               </element>
+            </element>
+            <element xsi:type="Tuple">
+               <element name="hasCondition">
+                  <value name="Has Substance Abuse History" xsi:type="ExpressionRef"/>
+               </element>
+               <element name="text">
+                  <value valueType="t:String" value="history of alcohol or drug abuse" xsi:type="Literal"/>
+               </element>
+            </element>
+         </expression>
+      </def>
+      <def name="Detail List" context="Patient" accessLevel="Public">
+         <expression xsi:type="Combine">
+            <source xsi:type="Query">
+               <source alias="dd">
+                  <expression name="Detail Descriptions" xsi:type="ExpressionRef"/>
+               </source>
+               <where path="hasCondition" scope="dd" xsi:type="Property"/>
+               <return>
+                  <expression path="text" scope="dd" xsi:type="Property"/>
+               </return>
+            </source>
+            <separator valueType="t:String" value=", " xsi:type="Literal"/>
+         </expression>
+      </def>
       <def name="Get Detail" context="Patient" accessLevel="Public">
          <expression xsi:type="Concatenate">
             <operand valueType="t:String" value="Consider offering naloxone given following risk factor(s) for opioid overdose: " xsi:type="Literal"/>
             <operand xsi:type="If">
                <condition asType="t:Boolean" xsi:type="As">
-                  <operand xsi:type="GreaterOrEqual">
-                     <operand name="Total MME" xsi:type="ExpressionRef"/>
-                     <operand value="50" unit="mg/d" xsi:type="Quantity"/>
+                  <operand xsi:type="And">
+                     <operand xsi:type="Not">
+                        <operand xsi:type="IsNull">
+                           <operand name="Detail List" xsi:type="ExpressionRef"/>
+                        </operand>
+                     </operand>
+                     <operand xsi:type="Not">
+                        <operand xsi:type="Equal">
+                           <operand name="Detail List" xsi:type="ExpressionRef"/>
+                           <operand valueType="t:String" value="" xsi:type="Literal"/>
+                        </operand>
+                     </operand>
                   </operand>
                </condition>
                <then xsi:type="Concatenate">
-                  <operand xsi:type="Concatenate">
-                     <operand valueType="t:String" value="Average MME (" xsi:type="Literal"/>
-                     <operand xsi:type="ToString">
-                        <operand name="Total MME" xsi:type="ExpressionRef"/>
-                     </operand>
-                  </operand>
-                  <operand valueType="t:String" value=") >= 50 mg/day, " xsi:type="Literal"/>
+                  <operand name="Detail List" xsi:type="ExpressionRef"/>
+                  <operand valueType="t:String" value="." xsi:type="Literal"/>
                </then>
-               <else xsi:type="Concatenate">
-                  <operand valueType="t:String" value="" xsi:type="Literal"/>
-                  <operand xsi:type="If">
-                     <condition asType="t:Boolean" xsi:type="As">
-                        <operand name="On Benzodiazepine" xsi:type="ExpressionRef"/>
-                     </condition>
-                     <then valueType="t:String" value="concurrent use of benzodiazepine, " xsi:type="Literal"/>
-                     <else xsi:type="Concatenate">
-                        <operand valueType="t:String" value="" xsi:type="Literal"/>
-                        <operand xsi:type="If">
-                           <condition asType="t:Boolean" xsi:type="As">
-                              <operand name="Has Substance Abuse History" xsi:type="ExpressionRef"/>
-                           </condition>
-                           <then valueType="t:String" value="history of alcohol or drug abuse." xsi:type="Literal"/>
-                           <else valueType="t:String" value="" xsi:type="Literal"/>
-                        </operand>
-                     </else>
-                  </operand>
-               </else>
+               <else valueType="t:String" value="N/A." xsi:type="Literal"/>
             </operand>
          </expression>
       </def>
