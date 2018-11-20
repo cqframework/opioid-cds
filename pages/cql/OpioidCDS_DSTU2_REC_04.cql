@@ -76,7 +76,7 @@ define "Get Summary":
 
 define "Get Detail":
   if "Inclusion Criteria"
-    then 'The following medication requests(s) release rates should be re-evaluated: ' + Common.GetMedicationNames("Trigger Event Prescriptions")
+    then 'The following medication requests(s) release rates should be re-evaluated: ' + Combine(Common.GetMedicationNames("Trigger Event Prescriptions"), ', ')
   else null
 
 // TODO - I would like to be able to offer the medication's immediate release form as a suggestions
