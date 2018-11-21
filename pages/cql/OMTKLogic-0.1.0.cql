@@ -63,12 +63,12 @@ pretty horribly here, so rewrite it using "syntactic optimization" :)
 
 /*
   Normalizes the input units to UCUM units
-  
+
   Note guidance for UCUM presentation of medication units from SNOMED here:
   https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjU3vLpicPTAhWFMGMKHRpOBUAQFggiMAA&url=https%3A%2F%2Fconfluence.ihtsdotools.org%2Fdownload%2Fattachments%2F17859188%2FExpressing%2520Units%2520of%2520Measure%2520for%2520Medicinal%2520Products.doc%3Fapi%3Dv2&usg=AFQjCNE5sboicqvJDUyXJ2im8VzBpgHE8A
-  
+
   The values listed here are the only ones currently present in the OMTK data
-  
+
   Based on the HL7 UCUM subset here:
   http://download.hl7.de/documents/ucum/ucumdata.html
 */
@@ -142,11 +142,11 @@ define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, dos
     when 1223 then 0 //	Atropine
     when 1767 then 0 //	Brompheniramine
     when 1819 then ( //	Buprenorphine
-      case 
+      case
         when ToInteger(doseFormCode.code) = 316987 then 12.6 // Transdermal system
         else 30 // Tablet or Film (or Film in MCG)
       end
-    ) 
+    )
     when 1841 then 7 //	Butorphanol
     when 1886 then 0 //	Caffeine
     when 2101 then 0 //	Carisoprodol
@@ -161,7 +161,7 @@ define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, dos
         when ToInteger(doseFormCode.code) = 346163 then 0.18 // Buccal Film
         when ToInteger(doseFormCode.code) in { 126542, 346163 } then 0.16 // Nasal Spray, Mucosal Spray
         when IsPatch(doseFormCode) then 7.2 // Transdermal system
-        else 1000 // Really ought to be an error because it represents a previously unencountered dose form....
+        else Message(1000, true, 'Undefined', 'Error', 'The dose form is unexpected')
       end
     )
     when 5032 then 0 //	Guaifenesin
@@ -176,7 +176,7 @@ define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, dos
         when dailyDose.value between 21 and 40 then 8
         when dailyDose.value between 41 and 60 then 10
         when dailyDose.value >= 61 then 12
-        else 1000 // Really ought to be an error because it represents an unexpected dose range...
+        else Message(1000, dailyDose.value < 1, 'Undefined', 'Error', 'The dose range is unexpected')
       end
     )
     when 7052 then 1 //	Morphine
@@ -285,7 +285,7 @@ define function GetDailyDose(ingredientCode Code, strength Quantity, doseFormCod
     else
       Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: Substring(strength.unit, 0, PositionOf('/', strength.unit)) }
   end
-  
+
 define function GetMedicationName(rxNormCode Code):
   SingletonFrom([MED_DRUG: DRUG_RXCUI in rxNormCode]).DRUG_NAME
 
