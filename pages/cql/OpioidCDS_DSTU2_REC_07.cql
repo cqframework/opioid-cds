@@ -56,7 +56,8 @@ define "Validate Trigger Event":
   )
 
 define "Inclusion Criteria":
-  "Validate Trigger Event"
+  AgeInYears() >= 18
+    and "Validate Trigger Event"
     and not "Exclusion Criteria"
     and not exists ( "Opioid Risk Assessment in Past 90 Days" )
     and ( "Rx Active 7 of Past 10 Days With Encounter" or "Rx Active 63 of Past 90 Days" )

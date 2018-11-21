@@ -44,8 +44,9 @@ define "Validate Trigger Event For Ambulatory Care Abuse Potential":
   )
 
 define "Inclusion Criteria":
-  ("Validate Trigger Event For Benzodiazepine"
-    or "Validate Trigger Event For Ambulatory Care Abuse Potential")
+  AgeInYears() >= 18
+    and ("Validate Trigger Event For Benzodiazepine"
+      or "Validate Trigger Event For Ambulatory Care Abuse Potential")
     and not "Exclusion Criteria"
     and "On Benzodiazepine"
     and "Opioid with Ambulatory Care Abuse Potential"
@@ -74,7 +75,7 @@ define "Get Summary":
 
 define "Get Detail":
   if "Inclusion Criteria"
-    then 
+    then
       if "Validate Trigger Event For Benzodiazepine"
         then 'The benzodiazepine prescription request is concurrent with an active opioid prescription'
       else 'The opioid prescription request is concurrent with an active benzodiazepine prescription'

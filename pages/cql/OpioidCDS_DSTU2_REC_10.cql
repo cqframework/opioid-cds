@@ -53,14 +53,15 @@ define "Validate Trigger Event":
   )
 
 define "Inclusion Criteria":
-  "Validate Trigger Event"
-      and not "Exclusion Criteria"
-      and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
-      and
-        ("No Urine Screening In Last 12 Months"
-          or "Has Missing Opioids?"
-          or "Has Unprescribed Opioids?"
-          or "Has Illicit Drugs in Screening?")
+  AgeInYears() >= 18
+    and "Validate Trigger Event"
+    and not "Exclusion Criteria"
+    and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
+    and
+      ("No Urine Screening In Last 12 Months"
+        or "Has Missing Opioids?"
+        or "Has Unprescribed Opioids?"
+        or "Has Illicit Drugs in Screening?")
 
 define "Exclusion Criteria":
   Common."End of Life Assessment"

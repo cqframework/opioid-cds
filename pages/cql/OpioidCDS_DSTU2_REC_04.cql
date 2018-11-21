@@ -49,16 +49,17 @@ define "Validate Trigger Event":
   exists( "Trigger Event Prescriptions" )
 
 define "Inclusion Criteria":
-  "Validate Trigger Event"
-  and not "Exclusion Criteria"
-  and not exists(
-    Common."Ambulatory Opioid Rx" orders
-      where date from orders.dateWritten.value in day of "Inclusion Period"
-  )
-  and exists(
-    [Encounter] encounters
-      where date from encounters.period."start".value in day of "Encounter Period"
-  )
+  AgeInYears() >= 18
+    and "Validate Trigger Event"
+    and not "Exclusion Criteria"
+    and not exists(
+      Common."Ambulatory Opioid Rx" orders
+        where date from orders.dateWritten.value in day of "Inclusion Period"
+    )
+    and exists(
+      [Encounter] encounters
+        where date from encounters.period."start".value in day of "Encounter Period"
+    )
 
 define "Exclusion Criteria":
   Common."End of Life Assessment"

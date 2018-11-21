@@ -16,8 +16,9 @@ parameter ContextPrescriptions List<MedicationOrder>
 context Patient
 
 define "Inclusion Criteria":
-  not "Exclusion Criteria"
-  and "Total MME" >= 50 'mg/d'
+  AgeInYears() >= 18
+    and not "Exclusion Criteria"
+    and "Total MME" >= 50 'mg/d'
 
 define "Exclusion Criteria":
   Common."End of Life Assessment"

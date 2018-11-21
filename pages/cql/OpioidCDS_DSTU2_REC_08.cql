@@ -47,13 +47,14 @@ define "Validate Trigger Event":
   )
 
 define "Inclusion Criteria":
-  "Validate Trigger Event"
-  and not "Exclusion Criteria"
-  and (
-    "Total MME" >= 50 'mg/d'
-      or "On Benzodiazepine"
-      or "Has Substance Abuse History"
-  )
+  AgeInYears() >= 18
+    and "Validate Trigger Event"
+    and not "Exclusion Criteria"
+    and (
+      "Total MME" >= 50 'mg/d'
+        or "On Benzodiazepine"
+        or "Has Substance Abuse History"
+    )
 
 define "Exclusion Criteria":
   "On Naloxone"
@@ -105,8 +106,8 @@ define "Detail List":
 define "Get Detail":
   if "Inclusion Criteria"
     then
-    	'Consider offering naloxone given following risk factor(s) for opioid overdose: ' 
-        + if "Detail List" is not null and "Detail List" != '' 
+    	'Consider offering naloxone given following risk factor(s) for opioid overdose: '
+        + if "Detail List" is not null and "Detail List" != ''
     	   then "Detail List" + '.'
         else 'N/A.'
   else null
