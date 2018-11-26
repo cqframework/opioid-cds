@@ -225,12 +225,18 @@ define function GetPeriodDays(value System.String):
     else 1.0
   end
 
-define function GetDurationInDays(value FHIR.Duration):
-  case
-    when StartsWith(value.unit.value, 'a') then value.value.value * 365.0
-    when StartsWith(value.unit.value, 'mo') then value.value.value * 30.0
-    else value.value.value
-  end
+  define function GetDurationInDays(value FHIR.Duration):
+    case
+      when StartsWith(value.unit.value, 'a') then value.value.value * 365.0
+      when StartsWith(value.unit.value, 'mo') then value.value.value * 30.0
+      when StartsWith(value.unit.value, 'wk') then value.value.value * 7.0
+      when StartsWith(value.unit.value, 'd') then value.value.value
+      when StartsWith(value.unit.value, 'h') then value.value.value / 24.0
+      when StartsWith(value.unit.value, 'min') then value.value.value / 60.0 / 24.0
+      when StartsWith(value.unit.value, 's') then value.value.value / 60.0 / 60.0 / 24.0
+      else Message(1000, true, 'Undefined', 'Error', 'Unsupported duration unit')
+    end
+
 
 define function GetIngredient(rxNormCode Code):
   OMTKLogic.GetIngredients(rxNormCode).ingredientName
