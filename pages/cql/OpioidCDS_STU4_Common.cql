@@ -2,6 +2,7 @@ library OpioidCDSCommonSTU4 version '0.1.0'
 
 using FHIR version '3.2.0'
 
+include FHIRHelpers version '3.2.0' called FHIRHelpers
 include OMTKLogic version '0.0.1' called OMTKLogic
 
 codesystem "SNOMED": 'http://snomed.info/sct'
@@ -52,7 +53,7 @@ define "Ambulatory Opioid Rx":
 define function "Is Context Prescription End of Life Opioid?" (ContextPrescriptions List<MedicationRequest>):
   exists (
     ContextPrescriptions Rx
-      where ToCode(Rx.medication.coding[0]) in "End Of Life Opioids"
+      where Rx.medication in "End Of Life Opioids"
   )
 
 define "End of Life Assessment":
@@ -89,9 +90,9 @@ define "End of Life Assessment":
         [Encounter] E
           where
             (
-              if E.hospitalization.dischargeDisposition.coding[0] is null
+              if not exists (E.hospitalization.dischargeDisposition.coding)
                 then false
-              else ToCode(E.hospitalization.dischargeDisposition.coding[0]) in "Hospice Disposition"
+              else E.hospitalization.dischargeDisposition in "Hospice Disposition"
             )
             and E.status.value in { 'planned', 'arrived', 'in-progress', 'finished', 'onleave' }
       )
@@ -224,6 +225,7 @@ define function GetDurationInDays(value FHIR.Duration):
       when StartsWith(value.unit.value, 'h') then value.value.value / 24.0
       when StartsWith(value.unit.value, 'min') then value.value.value / 60.0 / 24.0
       when StartsWith(value.unit.value, 's') then value.value.value / 60.0 / 60.0 / 24.0
+      when StartsWith(value.unit.value, 'ms') then value.value.value / 60.0 / 60.0 / 24.0 / 1000.0
       else Message(1000, true, 'Undefined', 'Error', 'Unsupported duration unit')
     end
 
