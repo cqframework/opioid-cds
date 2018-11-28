@@ -2,6 +2,7 @@ library OpioidCDS_DSTU2_REC_11 version '0.1.0'
 
 using FHIR version '1.0.2'
 
+include FHIRHelpers version '1.0.2' called FHIRHelpers
 include OpioidCDSCommonDSTU2 version '0.1.0' called Common
 
 /*
@@ -34,13 +35,13 @@ context Patient
 define "Validate Trigger Event For Benzodiazepine":
   exists(
     ContextPrescriptions triggerScript
-      where Common.ToCode(triggerScript.medicationCodeableConcept.coding[0]) in Common."Benzodiazepines"
+      where triggerScript.medicationCodeableConcept in Common."Benzodiazepines"
   )
 
 define "Validate Trigger Event For Ambulatory Care Abuse Potential":
   exists(
     ContextPrescriptions triggerScript
-    where Common.ToCode(triggerScript.medicationCodeableConcept.coding[0]) in Common."Ambulatory Abuse Potential Opioids"
+    where triggerScript.medicationCodeableConcept in Common."Ambulatory Abuse Potential Opioids"
   )
 
 define "Inclusion Criteria":

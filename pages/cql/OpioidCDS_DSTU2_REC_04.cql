@@ -2,6 +2,7 @@ library OpioidCDS_DSTU2_REC_04 version '0.1.0'
 
 using FHIR version '1.0.2'
 
+include FHIRHelpers version '1.0.2' called FHIRHelpers
 include OpioidCDSCommonDSTU2 version '0.1.0' called Common
 
 /*
@@ -41,9 +42,8 @@ define "Encounter Period":
 
 define "Trigger Event Prescriptions":
   ContextPrescriptions triggerScripts
-    let rxNormCode: Common.ToCode(triggerScripts.medicationCodeableConcept.coding[0])
-      where rxNormCode in Common."Ambulatory Abuse Potential Opioids"
-        and rxNormCode in Common."Long Acting Opioids"
+      where triggerScripts.medicationCodeableConcept in Common."Ambulatory Abuse Potential Opioids"
+        and triggerScripts.medicationCodeableConcept in Common."Long Acting Opioids"
 
 define "Validate Trigger Event":
   exists( "Trigger Event Prescriptions" )

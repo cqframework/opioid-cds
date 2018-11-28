@@ -2,6 +2,7 @@ library OpioidCDS_STU4_REC_10 version '0.1.0'
 
 using FHIR version '3.2.0'
 
+include FHIRHelpers version '3.2.0' called FHIRHelpers
 include OpioidCDSCommonSTU4 version '0.1.0' called Common
 
 codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
@@ -52,7 +53,7 @@ define "Lookback Year":
 define "Validate Trigger Event":
   exists (
     ContextPrescriptions triggerScript
-      where Common.ToCode(triggerScript.medication.coding[0]) in Common."Ambulatory Abuse Potential Opioids"
+      where triggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
   )
 
 define "Inclusion Criteria":

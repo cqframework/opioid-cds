@@ -2,6 +2,7 @@ library OpioidCDS_DSTU2_REC_08 version '0.1.0'
 
 using FHIR version '1.0.2'
 
+include FHIRHelpers version '1.0.2' called FHIRHelpers
 include OpioidCDSCommonDSTU2 version '0.1.0' called Common
 
 /*
@@ -43,7 +44,7 @@ context Patient
 define "Validate Trigger Event":
   exists(
     ContextPrescriptions triggerScript
-      where Common.ToCode(triggerScript.medicationCodeableConcept.coding[0]) in Common."Ambulatory Abuse Potential Opioids"
+      where triggerScript.medicationCodeableConcept in Common."Ambulatory Abuse Potential Opioids"
   )
 
 define "Inclusion Criteria":

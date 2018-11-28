@@ -90,7 +90,8 @@ define "End of Life Assessment":
         [Encounter] E
           where
             (
-              if not exists (E.hospitalization.dischargeDisposition.coding)
+              if E.hospitalization.dischargeDisposition.coding is null
+                  or not exists (E.hospitalization.dischargeDisposition.coding)
                 then false
               else E.hospitalization.dischargeDisposition in "Hospice Disposition"
             )
