@@ -39,21 +39,21 @@ define IsForChronicPain: true
 define "Active Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
     where Rx.status.value = 'active'
-      and ToCode(Rx.category.coding[0]) ~ "Outpatient" // TODO: This assumes a single category coding...
+      and ToCodes(Rx.category.coding) contains "Outpatient"
 
 define "Active Ambulatory Benzodiazepine Rx":
   [MedicationRequest: "Benzodiazepines"] Rx
     where Rx.status.value = 'active'
-      and ToCode(Rx.category.coding[0]) ~ "Outpatient" // TODO: This assumes a single category coding...
+      and ToCodes(Rx.category.coding) contains "Outpatient"
 
 define "Active Ambulatory Naloxone Rx":
   [MedicationRequest: "Naloxone"] Rx
     where Rx.status.value = 'active'
-      and ToCode(Rx.category.coding[0]) ~ "Outpatient" // TODO: This assumes a single category coding...
+      and ToCodes(Rx.category.coding) contains "Outpatient"
 
 define "Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
-      where ToCode(Rx.category.coding[0]) ~ "Outpatient" // TODO: This assumes a single category coding...
+      where ToCodes(Rx.category.coding) contains "Outpatient"
 
 define function "Is Context Prescription End of Life Opioid?" (ContextPrescriptions List<MedicationRequest>):
   exists (
