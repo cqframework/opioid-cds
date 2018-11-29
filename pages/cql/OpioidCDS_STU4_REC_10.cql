@@ -93,11 +93,16 @@ define "No Urine Screening In Last 12 Months":
 
 define "Positive Illicit Drug Screening":
   "Most Recent Illicit Drug Urine Screenings in Last 12 Months" mostRecentScreening
-    where Common.ToCode(mostRecentScreening.interpretation.coding[0]) ~ "Positive"
+    where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
       or
-        (if mostRecentScreening.component[0] is not null
-          then Common.ToCode(mostRecentScreening.component[0].interpretation.coding[0]) ~ "Positive"
-        else false)
+      (
+          if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
+            then
+              exists (mostRecentScreening.component c
+                where c.interpretation.coding is not null and
+                  Common.ToCodes(c.interpretation.coding) contains "Positive")
+            else false
+      )
 
 define "Has Illicit Drugs in Screening?":
   exists ( "Positive Illicit Drug Screening" )
@@ -115,11 +120,16 @@ define "Inconsistent Illicit Drugs":
 
 define "Positive Opioid Drug Screening":
   "Most Recent Opioid Drug Urine Screenings in Last 12 Months" mostRecentScreening
-    where Common.ToCode(mostRecentScreening.interpretation.coding[0]) ~ "Positive"
+    where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
       or
-        (if mostRecentScreening.component[0] is not null
-          then Common.ToCode(mostRecentScreening.component[0].interpretation.coding[0]) ~ "Positive"
-        else false)
+      (
+          if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
+            then
+              exists (mostRecentScreening.component c
+                where c.interpretation.coding is not null and
+                  Common.ToCodes(c.interpretation.coding) contains "Positive")
+            else false
+      )
 
 define "Has Opioids in Screening?":
   exists ( "Positive Opioid Drug Screening" )

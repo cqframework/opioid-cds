@@ -92,7 +92,7 @@ define "No Urine Screening In Last 12 Months":
 
 define "Positive Illicit Drug Screening":
   "Most Recent Illicit Drug Urine Screenings in Last 12 Months" mostRecentScreening
-    where mostRecentScreening.interpretation.coding[0].code.value = 'POS'
+    where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
 
 define "Has Illicit Drugs in Screening?":
   exists ( "Positive Illicit Drug Screening" )
@@ -108,7 +108,7 @@ define "Inconsistent Illicit Drugs":
 
 define "Positive Opioid Drug Screening":
   "Most Recent Opioid Drug Urine Screenings in Last 12 Months" mostRecentScreening
-    where mostRecentScreening.interpretation.coding[0].code.value = 'POS'
+    where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
 
 define "Has Opioids in Screening?":
   exists ( "Positive Opioid Drug Screening" )

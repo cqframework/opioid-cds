@@ -260,5 +260,8 @@ define function ToCode(coding FHIR.Coding):
     display: coding.display.value
   }
 
+define function ToCodes(coding List<FHIR.Coding>):
+  coding c return ToCode(c)
+
 define function ToQuantity(quantity FHIR.Quantity):
   System.Quantity { value: quantity.value.value, unit: quantity.unit.value }
