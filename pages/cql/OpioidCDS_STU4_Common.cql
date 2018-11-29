@@ -230,9 +230,11 @@ define function GetDurationInDays(value FHIR.Duration):
       else Message(1000, true, 'Undefined', 'Error', 'Unsupported duration unit')
     end
 
-
 define function GetIngredient(rxNormCode Code):
   OMTKLogic.GetIngredients(rxNormCode).ingredientName
+
+define function GetIngredients(rxNormCodes List<Code>):
+  rxNormCodes rnc return GetIngredient(rnc)
 
 define function GetMedicationNames(medications List<MedicationRequest>):
   medications M

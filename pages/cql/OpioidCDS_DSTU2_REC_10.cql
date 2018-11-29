@@ -97,13 +97,14 @@ define "Positive Illicit Drug Screening":
 define "Has Illicit Drugs in Screening?":
   exists ( "Positive Illicit Drug Screening" )
 
-// Assuming only one code
 define "Inconsistent Illicit Drugs":
-  'Found the following illicit drug(s) in urine drug screen: ' +
+  "Positive Illicit Drug Screening".code.coding d
+  let illicitDrugs: GetDrugs(d)
+  return 'Found the following illicit drug(s) in urine drug screen: ' +
     (
-      if GetDrug("Positive Illicit Drug Screening".code.coding[0].display.value) is null
+      if illicitDrugs is null
         then 'could not determine the drug name'
-      else GetDrug("Positive Illicit Drug Screening".code.coding[0].display.value)
+      else illicitDrugs
     )
 
 define "Positive Opioid Drug Screening":
@@ -122,8 +123,7 @@ define "Orders Before Most Recent Opioid Screening":
 
 define "Prescribed Opioids":
   "Orders Before Most Recent Opioid Screening" orders
-    return
-      Lower(Common.GetIngredient(Common.ToCode(orders.medicationCodeableConcept.coding[0])))
+    return Lower(Common.GetIngredients(Common.ToCodes(orders.medicationCodeableConcept.coding)))
 
 define "Opioids From Most Recent Screening":
   "Positive Opioid Drug Screening" mostRecentScreening
@@ -168,3 +168,6 @@ define function GetDrug(value String):
   else if PositionOf('[', value) = -1
     then ReplaceMatches(Split(value, 'tested')[0], '\\s', '')
   else ReplaceMatches(Split(value, '\\[')[0], '\\s', '')
+
+define function GetDrugs(value List<FHIR.Coding>):
+  value v return GetDrug(v.display.value)

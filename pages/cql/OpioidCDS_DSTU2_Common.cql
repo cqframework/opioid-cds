@@ -233,6 +233,9 @@ define function GetDurationInDays(value FHIR.Duration):
 define function GetIngredient(rxNormCode Code):
   OMTKLogic.GetIngredients(rxNormCode).ingredientName
 
+define function GetIngredients(rxNormCodes List<Code>):
+  rxNormCodes rnc return GetIngredient(rnc)
+
 define function GetMedicationNames(medications List<MedicationOrder>):
   medications M
     return OMTKLogic.GetIngredients(ToCode(M.medicationCodeableConcept.coding[0])).rxNormCode.display
