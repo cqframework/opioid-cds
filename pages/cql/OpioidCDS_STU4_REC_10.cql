@@ -149,10 +149,10 @@ define "Prescribed Opioids":
 define "Opioids From Most Recent Screening":
   "Positive Opioid Drug Screening" mostRecentScreening
     return
-      Lower(GetDrug(mostRecentScreening.code.coding[0].display.value))
+      Lower(GetDrugs(mostRecentScreening.code.coding))
         union (
-          if mostRecentScreening.component[0] is not null
-            then Lower(GetDrug(mostRecentScreening.component[0].code.coding[0].display.value))
+          if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
+            then mostRecentScreening.component pis return Lower(GetDrugs(pis.code.coding))
           else {}
         )
 
@@ -171,10 +171,10 @@ define "Missing Opioids":
   then
     "Prescribed Opioids" Prescriptions
       except
-        Lower(GetDrug("Positive Opioid Drug Screening".code.coding[0].display.value))
+        Lower(GetDrugs("Positive Opioid Drug Screening".code.coding))
           union (
-            if "Positive Opioid Drug Screening".component[0] is not null
-              then Lower(GetDrug("Positive Opioid Drug Screening".component[0].code.coding[0].display.value))
+            if "Positive Opioid Drug Screening".component is not null and exists("Positive Opioid Drug Screening".component)
+              then "Positive Opioid Drug Screening".component pds return Lower(GetDrugs(pds.code.coding))
             else {}
           )
   else null
