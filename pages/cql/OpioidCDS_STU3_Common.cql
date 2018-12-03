@@ -248,7 +248,7 @@ define function GetIngredients(rxNormCodes List<Code>):
 
 define function GetMedicationNames(medications List<MedicationRequest>):
   medications M
-    return OMTKLogic.GetIngredients(ToCode(M.medication.coding[0])).rxNormCode.display
+    return OMTKLogic.GetIngredients(ToCodes(M.medication.coding)).rxNormCode.display
 
 /*
 *  Conversion Functions
