@@ -136,8 +136,7 @@ define "Opioids From Most Recent Screening":
         )
 
 define "Unprescribed Opioids":
-  "Opioids From Most Recent Screening" except
-    ("Opioids From Most Recent Screening" intersect "Prescribed Opioids")
+  "Opioids From Most Recent Screening" except "Prescribed Opioids"
 
 define "Has Unprescribed Opioids?":
   exists ("Unprescribed Opioids")
