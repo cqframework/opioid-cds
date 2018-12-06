@@ -99,7 +99,7 @@ define "Has Illicit Drugs in Screening?":
 
 define "Inconsistent Illicit Drugs":
   "Positive Illicit Drug Screening".code.coding d
-  let illicitDrugs: GetDrugs(d)
+  let illicitDrugs: GetDrugNamesFromScreeningCodes(d)
   return 'Found the following illicit drug(s) in urine drug screen: ' +
     (
       if illicitDrugs is null
@@ -128,10 +128,10 @@ define "Prescribed Opioids":
 define "Opioids From Most Recent Screening":
   "Positive Opioid Drug Screening" mostRecentScreening
     return
-      Lower(GetDrugs(mostRecentScreening.code.coding))
+      Lower(GetDrugNamesFromScreeningCodes(mostRecentScreening.code.coding))
         union (
           if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
-            then mostRecentScreening.component pis return Lower(GetDrugs(pis.code.coding))
+            then mostRecentScreening.component pis return Lower(GetDrugNamesFromScreeningCodes(pis.code.coding))
           else {}
         )
 
@@ -148,7 +148,7 @@ define "Missing Opioids":
   if "Positive Opioid Drug Screening" is not null
   then
     "Prescribed Opioids" Prescriptions
-      except Lower(GetDrugs("Positive Opioid Drug Screening".code.coding))
+      except Lower(GetDrugNamesFromScreeningCodes("Positive Opioid Drug Screening".code.coding))
   else null
 
 define "Has Missing Opioids?":
@@ -161,11 +161,19 @@ define "Get Indicator":
   'warning'
 
 // Functions
-define function GetDrug(value String):
-  if value is null then null
+/*
+  The GetDrugNamesFromScreeningCodes(value List<FHIR.Coding>) function extracts the drug name
+  from the display value for the given code. The expectation is that the drug name will be
+  at the beginning of the string and will end with any of the following characters/strings:
+  ‘[‘, ‘tested’, ‘cutoff’. Anything in the string that precedes the first occurrence of any
+  of those characters/strings will be assumed to be the drug name.
+*/
+define function GetDrugNameFromScreeningCode(value String):
+  if value is null
+    then null
   else if PositionOf('[', value) = -1
-    then ReplaceMatches(Split(value, 'tested')[0], '\\s', '')
+    then ReplaceMatches(Split(ReplaceMatches(Split(value, 'cutoff')[0], '\\s', ''), 'tested')[0], '\\s', '')
   else ReplaceMatches(Split(value, '\\[')[0], '\\s', '')
 
-define function GetDrugs(value List<FHIR.Coding>):
-  value v return GetDrug(v.display.value)
+define function GetDrugNamesFromScreeningCodes(value List<FHIR.Coding>):
+  value v return GetDrugNameFromScreeningCode(v.display.value)
