@@ -165,6 +165,11 @@ define "Has Unprescribed Opioids?":
 define "Inconsistent Unprescribed Opioids":
   'Found the following unprescribed opioid(s): ' + Combine("Unprescribed Opioids", ', ')
 
+/*
+  The "Missing Opioids" set is identified by comparing the medication code displays
+  with the urine drug screen code's displays - a dependency that implementers should
+  be aware of.
+*/
 define "Missing Opioids":
   if "Positive Opioid Drug Screening" is not null
   then
