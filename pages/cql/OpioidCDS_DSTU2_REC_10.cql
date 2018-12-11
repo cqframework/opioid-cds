@@ -95,6 +95,16 @@ define "Positive Illicit Drug Screening":
   "Most Recent Illicit Drug Urine Screenings in Last 12 Months" mostRecentScreening
     where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
 
+define "Illicit Drugs":
+  "Positive Illicit Drug Screening" mostRecentScreening
+    return
+    Lower(GetDrugNamesFromScreeningCodes(mostRecentScreening.code.coding))
+      union (
+        if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
+          then mostRecentScreening.component pis return Lower(GetDrugNamesFromScreeningCodes(pis.code.coding))
+        else {}
+      )
+
 define "Has Illicit Drugs in Screening?":
   exists ( "Positive Illicit Drug Screening" )
 
@@ -172,24 +182,24 @@ define "Get Summary":
   if "Inclusion Criteria"
     then 'Consider urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs'
   else null
-  
-define "Detail Descriptions":
-	{
-    { hasCondition: not "No Urine Screening In Last 12 Months", text: 'Patients on opioid therapy should have a urine drug test performed every 12 months.' },
-    { hasCondition: "Has Missing Opioids?", text: 'Expected opioid x not present in urine screening'},
-    { hasCondition: "Has Unprescribed Opioids?", text: 'Unexpected drug x present in urine screening' }
-  }
 
-define "Detail List":
-	Combine("Detail Descriptions" dd where dd.hasCondition return dd.text, ', ')
-
-define "Get Detail":
-  if "Inclusion Criteria"
+define "No Screening In Last 12 Months Detail":
+  if "Inclusion Criteria" and "No Urine Screening In Last 12 Months"
     then
-      'Consider offering naloxone given following risk factor(s) for opioid overdose: '
-        + if "Detail List" is not null and "Detail List" != ''
-         then "Detail List" + '.'
-        else 'N/A.'
+      'Patients on opioid therapy should have a urine drug test performed every 12 months.'
+  else null
+
+define "Missing Opioids Detail":
+  if "Inclusion Criteria" and "Has Missing Opioids?"
+    then
+      "Missing Opioids" mo
+      return Combine('Expected opioid ' + mo + ' not present in uring screening', ', ')
+  else null
+
+define "Unprescribed Opioids Detail":
+  if "Inclusion Criteria" and "Has Unprescribed Opioids?"
+    then
+      Combine("Unprescribed Opioids" union "Illicit Drugs", ', ')
   else null
 
 // Functions

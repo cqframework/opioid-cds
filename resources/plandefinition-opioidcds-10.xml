@@ -127,10 +127,19 @@
 				<language value="text/cql"/>
 				<expression value="No Urine Screening In Last 12 Months"/>
 			</condition>
-			<dynamicValue>
-				<path value="activity.extension"/>
-				<expression value="Get Indicator"/>
-			</dynamicValue>
+	        <!-- dynamic card elements -->
+	        <dynamicValue>
+	            <path value="action.description"/>
+	            <expression value="No Screening In Last 12 Months Detail"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.title"/>
+	            <expression value="Get Summary"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.extension"/>
+	            <expression value="Get Indicator"/>
+	        </dynamicValue>
 			<action>
 				<description value="Will perform urine screening"/>
 				<!-- Open Order Set, where available -->
@@ -177,10 +186,19 @@
 				<language value="text/cql"/>
 				<expression value="Has Unprescribed Opioids?"/>
 			</condition>
-			<dynamicValue>
-				<path value="activity.extension"/>
-				<expression value="Get Indicator"/>
-			</dynamicValue>
+	        <!-- dynamic card elements -->
+	        <dynamicValue>
+	            <path value="action.description"/>
+	            <expression value="Unprescribed Opioids Detail"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.title"/>
+	            <expression value="Get Summary"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.extension"/>
+	            <expression value="Get Indicator"/>
+	        </dynamicValue>
 			<dynamicValue>
 				<path value="action.description"/>
 				<expression value="Inconsistent Unprescribed Opioids"/>
@@ -227,10 +245,19 @@
 				<language value="text/cql"/>
 				<expression value="Has Missing Opioids?"/>
 			</condition>
-			<dynamicValue>
-				<path value="activity.extension"/>
-				<expression value="Get Indicator"/>
-			</dynamicValue>
+			<!-- dynamic card elements -->
+	        <dynamicValue>
+	            <path value="action.description"/>
+	            <expression value="Missing Opioids Detail"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.title"/>
+	            <expression value="Get Summary"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.extension"/>
+	            <expression value="Get Indicator"/>
+	        </dynamicValue>
 			<dynamicValue>
 				<path value="action.description"/>
 				<expression value="Inconsistent Missing Opioids"/>
@@ -274,10 +301,19 @@
 				<language value="text/cql"/>
 				<expression value="Has Illicit Drugs in Screening?"/>
 			</condition>
-			<dynamicValue>
-				<path value="activity.extension"/>
-				<expression value="Get Indicator"/>
-			</dynamicValue>
+	        <!-- dynamic card elements -->
+	        <dynamicValue>
+	            <path value="action.description"/>
+	            <expression value="Get Detail"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.title"/>
+	            <expression value="Get Summary"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.extension"/>
+	            <expression value="Get Indicator"/>
+	        </dynamicValue>
 			<dynamicValue>
 				<path value="action.description"/>
 				<expression value="Inconsistent Illicit Drugs"/>
