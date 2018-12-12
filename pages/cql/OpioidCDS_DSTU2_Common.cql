@@ -2,6 +2,7 @@ library OpioidCDSCommonDSTU2 version '0.1.0'
 
 using FHIR version '1.0.2'
 
+include FHIRHelpers version '1.0.2' called FHIRHelpers
 include OMTKLogic version '0.0.1' called OMTKLogic
 
 codesystem "SNOMED": 'http://snomed.info/sct'
@@ -46,7 +47,7 @@ define "Ambulatory Opioid Rx":
 define function "Is Context Prescription End of Life Opioid?" (ContextPrescriptions List<MedicationOrder>):
   exists (
     ContextPrescriptions Rx
-      where ToCode(Rx.medicationCodeableConcept.coding[0]) in "End Of Life Opioids"
+      where Rx.medicationCodeableConcept in "End Of Life Opioids"
   )
 
 define "End of Life Assessment":
@@ -89,9 +90,10 @@ define "End of Life Assessment":
       [Encounter] E
         where
           (
-            if E.hospitalization.dischargeDisposition.coding[0] is null
+            if E.hospitalization.dischargeDisposition.coding is null
+              or not exists (E.hospitalization.dischargeDisposition.coding)
               then false
-            else ToCode(E.hospitalization.dischargeDisposition.coding[0]) in "Hospice Disposition"
+            else E.hospitalization.dischargeDisposition in "Hospice Disposition"
           )
           and E.status.value in { 'planned', 'arrived', 'in-progress', 'finished', 'onleave' }
     )
@@ -174,7 +176,6 @@ define function MME(prescriptions List<MedicationOrder>):
       conversionFactor: mme.conversionFactor,
       mme: mme.mme
     }
-    // sort by if isDraft then 0 else 1, rxNormCode.code
 
 define function TotalMME(prescriptions List<MedicationOrder>):
   System.Quantity {
@@ -219,15 +220,25 @@ define function GetDurationInDays(value FHIR.Duration):
   case
     when StartsWith(value.unit.value, 'a') then value.value.value * 365.0
     when StartsWith(value.unit.value, 'mo') then value.value.value * 30.0
-    else value.value.value
+    when StartsWith(value.unit.value, 'wk') then value.value.value * 7.0
+    when StartsWith(value.unit.value, 'd') then value.value.value
+    when StartsWith(value.unit.value, 'h') then value.value.value / 24.0
+    when StartsWith(value.unit.value, 'min') then value.value.value / 60.0 / 24.0
+    when StartsWith(value.unit.value, 's') then value.value.value / 60.0 / 60.0 / 24.0
+    when StartsWith(value.unit.value, 'ms') then value.value.value / 60.0 / 60.0 / 24.0 / 1000.0
+    else Message(1000, true, 'Undefined', 'Error', 'Unsupported duration unit')
   end
+
 
 define function GetIngredient(rxNormCode Code):
   OMTKLogic.GetIngredients(rxNormCode).ingredientName
 
+define function GetIngredients(rxNormCodes List<Code>):
+  rxNormCodes rnc return GetIngredient(rnc)
+
 define function GetMedicationNames(medications List<MedicationOrder>):
   medications M
-    return OMTKLogic.GetIngredients(ToCode(M.medicationCodeableConcept.coding[0])).rxNormCode.display
+    return OMTKLogic.GetIngredients(ToCodes(M.medicationCodeableConcept.coding)).rxNormCode.display
 
 /*
 *  Conversion Functions
@@ -240,6 +251,9 @@ define function ToCode(coding FHIR.Coding):
     version: coding.version.value,
     display: coding.display.value
   }
+
+define function ToCodes(coding List<FHIR.Coding>):
+  coding c return ToCode(c)
 
 define function ToQuantity(quantity FHIR.Quantity):
   System.Quantity { value: quantity.value.value, unit: quantity.unit.value }

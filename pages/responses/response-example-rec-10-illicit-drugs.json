@@ -1,0 +1,13 @@
+{
+  "cards": [
+    {
+      "summary": "Illicit Drugs Found In Urine Screening",
+      "indicator": "warning",
+      "detail": "Found the following illicit drug(s) in urine drug screen: Tetrahydrocannabinol",
+      "source": {
+        "label": "CDC guideline for prescribing opioids for chronic pain",
+        "url": "https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"
+      }
+    }
+  ]
+}

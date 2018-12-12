@@ -2,6 +2,7 @@ library OpioidCDS_DSTU2_REC_07 version '0.1.0'
 
 using FHIR version '1.0.2'
 
+include FHIRHelpers version '1.0.2' called FHIRHelpers
 include OpioidCDSCommonDSTU2 version '0.1.0' called Common
 
 /*
@@ -52,11 +53,12 @@ define "Encounter Interval":
 define "Validate Trigger Event":
   exists(
     ContextPrescriptions triggerScript
-      where Common.ToCode(triggerScript.medicationCodeableConcept.coding[0]) in Common."Ambulatory Abuse Potential Opioids"
+      where triggerScript.medicationCodeableConcept in Common."Ambulatory Abuse Potential Opioids"
   )
 
 define "Inclusion Criteria":
-  "Validate Trigger Event"
+  AgeInYears() >= 18
+    and "Validate Trigger Event"
     and not "Exclusion Criteria"
     and not exists ( "Opioid Risk Assessment in Past 90 Days" )
     and ( "Rx Active 7 of Past 10 Days With Encounter" or "Rx Active 63 of Past 90 Days" )

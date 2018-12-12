@@ -32,7 +32,7 @@ define Prescriptions:
             '-' + ToString(repeat.periodMax.value),
             ''
           ) + repeat.periodUnit.value,
-      doseDescription: 
+      doseDescription:
         Coalesce(
           // There should be a conversion from FHIR.SimpleQuantity to System.Quantity
           ToString(ToQuantity(dosageInstruction.dose)),
@@ -52,7 +52,7 @@ define Prescriptions:
       //and O.whenHandedOver during "Measurement Period"
     return {
       rxNormCode: rxNormCode,
-      effectivePeriod: Interval[Max({ start of effectivePeriod, start of "Measurement Period" }), 
+      effectivePeriod: Interval[Max({ start of effectivePeriod, start of "Measurement Period" }),
         Min({ end of effectivePeriod, end of "Measurement Period" })],
       whenHandedOver: O.whenHandedOver.value,
       daysSupply: O.daysSupply.value,
@@ -84,7 +84,7 @@ define PrescriptionsWithMME:
       conversionFactor: mme.conversionFactor,
       mme: mme.mme
     }
-    
+
 // A very simple approach would be to compute the average mme for each RxNormCode and then
 // return the sum of the average mmes. This wouldn't always be accurate (it would produce
 // false positives), but it wouldn't miss any true positives.
@@ -97,7 +97,7 @@ define PrescriptionRanges:
       firstPrescription: First(PrescriptionsWithMME F1 sort by whenHandedOver),
       lastPrescrpition: Last(PrescriptionsWithMME L1 sort by whenHandedOver)
     }
-    
+
 define AverageEquivalents:
   PrescriptionRanges R
     return {
@@ -111,7 +111,7 @@ define AverageEquivalents:
 // mme for every prescription for every day, sum the values by day, and then
 // collapse the days back to the covering intervals.
 
-// This approach would give you a much more accurate result, but it is based on the 
+// This approach would give you a much more accurate result, but it is based on the
 // assumption that the prescription period (and dosing during it) is
 // accurate.
 
@@ -134,25 +134,25 @@ define PrescriptionDays:
     }
 
 // { rxNormCode, ds, mme }
-  
+
 define MMEDays:
   flatten (
     PrescriptionDays R
       return all (R.ds D return { rxNormCode: R.rxNormCode, d: D, mme: R.mme })
   )
-  
+
 // { rxNormCode, d, mme }
 
 define MMESum:
   MMEDays D
     return { d: D.d, totalMME: Sum(MMEDays X where X.d = D.d return all X.mme) }
-    
+
 // { d, mme }
 
 define MMEPeriods:
   MMESum S
     return { periods: collapse (MMESum X where X.totalMME = S.totalMME return Interval[X.d, X.d]), mme: S.totalMME  }
-    
+
 // { periods, mme }
 
 /*
@@ -177,4 +177,3 @@ define function ToCode(coding FHIR.Coding):
 
 define function ToQuantity(quantity FHIR.Quantity):
     System.Quantity { value: quantity.value.value, unit: quantity.unit.value }
-

@@ -1,0 +1,13 @@
+{
+  "cards": [
+    {
+      "summary": "Annual Urine Screening Check",
+      "indicator": "warning",
+      "detail": "Patient has not had a urine screening in the past 12 months",
+      "source": {
+        "label": "CDC guideline for prescribing opioids for chronic pain",
+        "url": "https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"
+      }
+    }
+  ]
+}

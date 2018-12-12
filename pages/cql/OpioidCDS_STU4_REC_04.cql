@@ -2,6 +2,7 @@ library OpioidCDS_STU4_REC_04 version '0.1.0'
 
 using FHIR version '3.2.0'
 
+include FHIRHelpers version '3.2.0' called FHIRHelpers
 include OpioidCDSCommonSTU4 version '0.1.0' called Common
 
 /*
@@ -44,24 +45,24 @@ define "Encounter Period":
 
 define "Trigger Event Prescriptions":
   ContextPrescriptions triggerScripts
-    let rxNormCode: Common.ToCode(triggerScripts.medication.coding[0])
-      where rxNormCode in Common."Ambulatory Abuse Potential Opioids"
-        and rxNormCode in Common."Long Acting Opioids"
+      where triggerScripts.medication in Common."Ambulatory Abuse Potential Opioids"
+        and triggerScripts.medication in Common."Long Acting Opioids"
 
 define "Validate Trigger Event":
   exists( "Trigger Event Prescriptions" )
 
 define "Inclusion Criteria":
-  "Validate Trigger Event"
-  and not "Exclusion Criteria"
-  and not exists(
-    Common."Ambulatory Opioid Rx" orders
-      where date from orders.authoredOn.value in day of "Inclusion Period"
-  )
-  and exists(
-    [Encounter] encounters
-      where date from encounters.period."start".value in day of "Encounter Period"
-  )
+  AgeInYears() >= 18
+    and "Validate Trigger Event"
+    and not "Exclusion Criteria"
+    and not exists(
+      Common."Ambulatory Opioid Rx" orders
+        where date from orders.authoredOn.value in day of "Inclusion Period"
+    )
+    and exists(
+      [Encounter] encounters
+        where date from encounters.period."start".value in day of "Encounter Period"
+    )
 
 define "Exclusion Criteria":
   Common."End of Life Assessment"
@@ -79,7 +80,7 @@ define "Get Summary":
 
 define "Get Detail":
   if "Inclusion Criteria"
-    then 'The following medication requests(s) release rates should be re-evaluated: ' + Common.GetMedicationNames("Trigger Event Prescriptions")
+    then 'The following medication requests(s) release rates should be re-evaluated: ' + Combine(Common.GetMedicationNames("Trigger Event Prescriptions"), ', ')
   else null
 
 // TODO - I would like to be able to offer the medication's immediate release form as a suggestions

@@ -2,6 +2,7 @@ library OpioidCDS_STU3_REC_11 version '0.1.0'
 
 using FHIR version '3.0.0'
 
+include FHIRHelpers version '3.0.0' called FHIRHelpers
 include OpioidCDSCommonSTU3 version '0.1.0' called Common
 
 /*
@@ -37,18 +38,19 @@ context Patient
 define "Validate Trigger Event For Benzodiazepine":
   exists(
     ContextPrescriptions triggerScript
-      where Common.ToCode(triggerScript.medication.coding[0]) in Common."Benzodiazepines"
+      where triggerScript.medication in Common."Benzodiazepines"
   )
 
 define "Validate Trigger Event For Ambulatory Care Abuse Potential":
   exists(
     ContextPrescriptions triggerScript
-      where Common.ToCode(triggerScript.medication.coding[0]) in Common."Ambulatory Abuse Potential Opioids"
+      where triggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
   )
 
 define "Inclusion Criteria":
-  ("Validate Trigger Event For Benzodiazepine"
-    or "Validate Trigger Event For Ambulatory Care Abuse Potential")
+  AgeInYears() >= 18
+    and ("Validate Trigger Event For Benzodiazepine"
+      or "Validate Trigger Event For Ambulatory Care Abuse Potential")
     and not "Exclusion Criteria"
     and "On Benzodiazepine"
     and "Opioid with Ambulatory Care Abuse Potential"
@@ -77,7 +79,7 @@ define "Get Summary":
 
 define "Get Detail":
   if "Inclusion Criteria"
-    then 
+    then
       if "Validate Trigger Event For Benzodiazepine"
         then 'The benzodiazepine prescription request is concurrent with an active opioid prescription'
       else 'The opioid prescription request is concurrent with an active benzodiazepine prescription'

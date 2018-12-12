@@ -2,6 +2,7 @@ library OpioidCDS_STU4_REC_10 version '0.1.0'
 
 using FHIR version '3.2.0'
 
+include FHIRHelpers version '3.2.0' called FHIRHelpers
 include OpioidCDSCommonSTU4 version '0.1.0' called Common
 
 codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
@@ -52,18 +53,19 @@ define "Lookback Year":
 define "Validate Trigger Event":
   exists (
     ContextPrescriptions triggerScript
-      where Common.ToCode(triggerScript.medication.coding[0]) in Common."Ambulatory Abuse Potential Opioids"
+      where triggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
   )
 
 define "Inclusion Criteria":
-  "Validate Trigger Event"
-      and not "Exclusion Criteria"
-      and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
-      and
-        ("No Urine Screening In Last 12 Months"
-          or "Has Missing Opioids?"
-          or "Has Unprescribed Opioids?"
-          or "Has Illicit Drugs in Screening?")
+  AgeInYears() >= 18
+    and "Validate Trigger Event"
+    and not "Exclusion Criteria"
+    and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
+    and
+      ("No Urine Screening In Last 12 Months"
+        or "Has Missing Opioids?"
+        or "Has Unprescribed Opioids?"
+        or "Has Illicit Drugs in Screening?")
 
 define "Exclusion Criteria":
   Common."End of Life Assessment"
@@ -91,33 +93,44 @@ define "No Urine Screening In Last 12 Months":
 
 define "Positive Illicit Drug Screening":
   "Most Recent Illicit Drug Urine Screenings in Last 12 Months" mostRecentScreening
-    where Common.ToCode(mostRecentScreening.interpretation.coding[0]) ~ "Positive"
+    where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
       or
-        (if mostRecentScreening.component[0] is not null
-          then Common.ToCode(mostRecentScreening.component[0].interpretation.coding[0]) ~ "Positive"
-        else false)
+      (
+          if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
+            then
+              exists (mostRecentScreening.component c
+                where c.interpretation.coding is not null and
+                  Common.ToCodes(c.interpretation.coding) contains "Positive")
+            else false
+      )
 
 define "Has Illicit Drugs in Screening?":
   exists ( "Positive Illicit Drug Screening" )
 
-// Assuming only one code
 define "Inconsistent Illicit Drugs":
-  'Found the following illicit drug(s) in urine drug screen: ' +
+  "Positive Illicit Drug Screening" positiveIllicitDrugScreening
+  let illicitDrugs: GetDrugs(positiveIllicitDrugScreening.code.coding)
+  return 'Found the following illicit drug(s) in urine drug screen: ' +
     (
-      if GetDrug("Positive Illicit Drug Screening".code.coding[0].display.value) is null
-        then if GetDrug("Positive Illicit Drug Screening".component[0].code.coding[0].display.value) is null
+      if illicitDrugs is null
+        then if positiveIllicitDrugScreening.component is null or not exists(positiveIllicitDrugScreening.component)
           then 'could not determine the drug name'
-          else GetDrug("Positive Illicit Drug Screening".component[0].code.coding[0].display.value)
-      else GetDrug("Positive Illicit Drug Screening".code.coding[0].display.value)
+          else positiveIllicitDrugScreening.component pis return GetDrugs(pis.code.coding)
+      else illicitDrugs
     )
 
 define "Positive Opioid Drug Screening":
   "Most Recent Opioid Drug Urine Screenings in Last 12 Months" mostRecentScreening
-    where Common.ToCode(mostRecentScreening.interpretation.coding[0]) ~ "Positive"
+    where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
       or
-        (if mostRecentScreening.component[0] is not null
-          then Common.ToCode(mostRecentScreening.component[0].interpretation.coding[0]) ~ "Positive"
-        else false)
+      (
+          if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
+            then
+              exists (mostRecentScreening.component c
+                where c.interpretation.coding is not null and
+                  Common.ToCodes(c.interpretation.coding) contains "Positive")
+            else false
+      )
 
 define "Has Opioids in Screening?":
   exists ( "Positive Opioid Drug Screening" )
@@ -131,16 +144,15 @@ define "Orders Before Most Recent Opioid Screening":
 
 define "Prescribed Opioids":
   "Orders Before Most Recent Opioid Screening" orders
-    return
-      Lower(Common.GetIngredient(Common.ToCode(orders.medication.coding[0])))
+    return Lower(Common.GetIngredients(Common.ToCodes(orders.medication.coding)))
 
 define "Opioids From Most Recent Screening":
   "Positive Opioid Drug Screening" mostRecentScreening
     return
-      Lower(GetDrug(mostRecentScreening.code.coding[0].display.value))
+      Lower(GetDrugs(mostRecentScreening.code.coding))
         union (
-          if mostRecentScreening.component[0] is not null
-            then Lower(GetDrug(mostRecentScreening.component[0].code.coding[0].display.value))
+          if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
+            then mostRecentScreening.component pis return Lower(GetDrugs(pis.code.coding))
           else {}
         )
 
@@ -159,10 +171,10 @@ define "Missing Opioids":
   then
     "Prescribed Opioids" Prescriptions
       except
-        Lower(GetDrug("Positive Opioid Drug Screening".code.coding[0].display.value))
+        Lower(GetDrugs("Positive Opioid Drug Screening".code.coding))
           union (
-            if "Positive Opioid Drug Screening".component[0] is not null
-              then Lower(GetDrug("Positive Opioid Drug Screening".component[0].code.coding[0].display.value))
+            if "Positive Opioid Drug Screening".component is not null and exists("Positive Opioid Drug Screening".component)
+              then "Positive Opioid Drug Screening".component pds return Lower(GetDrugs(pds.code.coding))
             else {}
           )
   else null
@@ -183,3 +195,6 @@ define function GetDrug(value String):
   else if PositionOf('[', value) = -1
     then ReplaceMatches(Split(value, 'tested')[0], '\\s', '')
   else ReplaceMatches(Split(value, '\\[')[0], '\\s', '')
+
+define function GetDrugs(value List<FHIR.Coding>):
+  value v return GetDrug(v.display.value)

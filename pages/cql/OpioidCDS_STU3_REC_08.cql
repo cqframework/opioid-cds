@@ -2,6 +2,7 @@ library OpioidCDS_STU3_REC_08 version '0.1.0'
 
 using FHIR version '3.0.0'
 
+include FHIRHelpers version '3.0.0' called FHIRHelpers
 include OpioidCDSCommonSTU3 version '0.1.0' called Common
 
 /*
@@ -46,17 +47,18 @@ context Patient
 define "Validate Trigger Event":
   exists(
     ContextPrescriptions triggerScript
-      where Common.ToCode(triggerScript.medication.coding[0]) in Common."Ambulatory Abuse Potential Opioids"
+      where triggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
   )
 
 define "Inclusion Criteria":
-  "Validate Trigger Event"
-  and not "Exclusion Criteria"
-  and (
-    "Total MME" >= 50 'mg/d'
-      or "On Benzodiazepine"
-      or "Has Substance Abuse History"
-  )
+  AgeInYears() >= 18
+    and "Validate Trigger Event"
+    and not "Exclusion Criteria"
+    and (
+      "Total MME" >= 50 'mg/d'
+        or "On Benzodiazepine"
+        or "Has Substance Abuse History"
+    )
 
 define "Exclusion Criteria":
   "On Naloxone"
@@ -95,21 +97,11 @@ define "Detail Descriptions":
 define "Detail List":
 	Combine("Detail Descriptions" dd where dd.hasCondition return dd.text, ', ')
 
-define "Detail Descriptions":
-	{
-    { hasCondition: "Total MME" >= 50 'mg/day', text: 'Average MME (' + ToString("Total MME") + ') >= 50 mg/day' },
-    { hasCondition: "On Benzodiazepine", text: 'concurrent use of benzodiazepine'},
-    { hasCondition: "Has Substance Abuse History", text: 'history of alcohol or drug abuse' }
-  }
-
-define "Detail List":
-	Combine("Detail Descriptions" dd where dd.hasCondition return dd.text, ', ')
-
 define "Get Detail":
   if "Inclusion Criteria"
     then
-      'Consider offering naloxone given following risk factor(s) for opioid overdose: ' 
-        + if "Detail List" is not null and "Detail List" != '' 
+      'Consider offering naloxone given following risk factor(s) for opioid overdose: '
+        + if "Detail List" is not null and "Detail List" != ''
          then "Detail List" + '.'
         else 'N/A.'
   else null
