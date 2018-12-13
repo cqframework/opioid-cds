@@ -95,28 +95,8 @@ define "Positive Illicit Drug Screening":
   "Most Recent Illicit Drug Urine Screenings in Last 12 Months" mostRecentScreening
     where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
 
-define "Illicit Drugs":
-  "Positive Illicit Drug Screening" mostRecentScreening
-    return
-    Lower(GetDrugNamesFromScreeningCodes(mostRecentScreening.code.coding))
-      union (
-        if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
-          then mostRecentScreening.component pis return Lower(GetDrugNamesFromScreeningCodes(pis.code.coding))
-        else {}
-      )
-
 define "Has Illicit Drugs in Screening?":
   exists ( "Positive Illicit Drug Screening" )
-
-define "Inconsistent Illicit Drugs":
-  "Positive Illicit Drug Screening".code.coding d
-  let illicitDrugs: GetDrugNamesFromScreeningCodes(d)
-  return 'Found the following illicit drug(s) in urine drug screen: ' +
-    (
-      if illicitDrugs is null
-        then 'could not determine the drug name'
-      else illicitDrugs
-    )
 
 define "Positive Opioid Drug Screening":
   "Most Recent Opioid Drug Urine Screenings in Last 12 Months" mostRecentScreening
@@ -152,9 +132,6 @@ define "Unprescribed Opioids":
 define "Has Unprescribed Opioids?":
   exists ("Unprescribed Opioids")
 
-define "Inconsistent Unprescribed Opioids":
-  'Found the following unprescribed opioid(s): ' + Combine("Unprescribed Opioids", ', ')
-
 /*
   The "Missing Opioids" set is identified by comparing the medication code displays
   with the urine drug screen code's displays - a dependency that implementers should
@@ -170,37 +147,76 @@ define "Missing Opioids":
 define "Has Missing Opioids?":
   exists ("Missing Opioids")
 
-define "Inconsistent Missing Opioids":
-  'The following opioids are missing from the screening: ' + Combine("Missing Opioids", ', ')
-
-define "Get Indicator":
+define "No Screening In Last 12 Months Indicator":
   if "Inclusion Criteria"
     then 'warning'
   else null
 
-define "Get Summary":
+define "Missing Opioids Indicator":
   if "Inclusion Criteria"
-    then 'Consider urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs'
+    then 'warning'
+  else null
+
+define "Unprescribed Opioids Indicator":
+  if "Inclusion Criteria"
+    then 'warning'
+  else null
+
+define "Illicit Drugs Indicator":
+  if "Inclusion Criteria"
+    then 'warning'
+  else null
+
+define "No Screening In Last 12 Months Summary":
+  if "Inclusion Criteria" and "No Urine Screening In Last 12 Months"
+    then 'Annual Urine Screening Check'
+  else null
+
+define "Missing Opioids Summary":
+  if "Inclusion Criteria" and "Has Missing Opioids?"
+    then 'Prescribed Opioids Not Found In Urine Screening'
+  else null
+
+define "Unprescribed Opioids Summary":
+  if "Inclusion Criteria" and "Has Unprescribed Opioids?"
+    then 'Unprescribed Opioids Found In Urine Screening'
+  else null
+
+define "Illicit Drugs Summary":
+  if "Inclusion Criteria" and "Has Illicit Drugs in Screening?"
+    then 'Illicit Drugs Found In Urine Screening'
   else null
 
 define "No Screening In Last 12 Months Detail":
   if "Inclusion Criteria" and "No Urine Screening In Last 12 Months"
-    then
-      'Patients on opioid therapy should have a urine drug test performed every 12 months.'
+    then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
   else null
 
 define "Missing Opioids Detail":
   if "Inclusion Criteria" and "Has Missing Opioids?"
     then
-      "Missing Opioids" mo
-      return Combine('Expected opioid ' + mo + ' not present in uring screening', ', ')
+      'The following opioids are missing from the screening: ' + Combine("Missing Opioids", ', ')
   else null
 
 define "Unprescribed Opioids Detail":
   if "Inclusion Criteria" and "Has Unprescribed Opioids?"
     then
-      Combine("Unprescribed Opioids" union "Illicit Drugs", ', ')
+      'Found the following unprescribed opioid(s): ' + Combine("Unprescribed Opioids", ', ')
   else null
+
+define "Illicit Drugs Detail":
+  "Positive Illicit Drug Screening" positiveIllicitDrugScreening
+  let illicitDrugs: GetDrugNamesFromScreeningCodes(positiveIllicitDrugScreening.code.coding)
+  return
+    if "Inclusion Criteria" and "Has Illicit Drugs in Screening?"
+      then
+        'Found the following illicit drug(s) in urine drug screen: ' +
+          (
+            if illicitDrugs is null
+              then 'could not determine the drug name'
+            else illicitDrugs
+          )
+    else null
 
 // Functions
 /*

@@ -134,11 +134,11 @@
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.title"/>
-	            <expression value="Get Summary"/>
+	            <expression value="No Screening In Last 12 Months Summary"/>
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.extension"/>
-	            <expression value="Get Indicator"/>
+	            <expression value="No Screening In Last 12 Months Indicator"/>
 	        </dynamicValue>
 			<action>
 				<description value="Will perform urine screening"/>
@@ -193,16 +193,12 @@
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.title"/>
-	            <expression value="Get Summary"/>
+	            <expression value="Unprescribed Opioids Summary"/>
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.extension"/>
-	            <expression value="Get Indicator"/>
+	            <expression value="Unprescribed Opioids Indicator"/>
 	        </dynamicValue>
-			<dynamicValue>
-				<path value="action.description"/>
-				<expression value="Inconsistent Unprescribed Opioids"/>
-			</dynamicValue>
 			<action>
 				<description value="Not for chronic pain management. Snooze 3 months"/>
 			</action>
@@ -252,16 +248,12 @@
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.title"/>
-	            <expression value="Get Summary"/>
+	            <expression value="Missing Opioids Summary"/>
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.extension"/>
-	            <expression value="Get Indicator"/>
+	            <expression value="Missing Opioids Indicator"/>
 	        </dynamicValue>
-			<dynamicValue>
-				<path value="action.description"/>
-				<expression value="Inconsistent Missing Opioids"/>
-			</dynamicValue>
 		</action>
 		<action>
 			<title value="Illicit Drugs Found In Urine Screening"/>
@@ -304,20 +296,16 @@
 	        <!-- dynamic card elements -->
 	        <dynamicValue>
 	            <path value="action.description"/>
-	            <expression value="Get Detail"/>
+	            <expression value="Illicit Drugs Detail"/>
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.title"/>
-	            <expression value="Get Summary"/>
+	            <expression value="Illicit Drugs Summary"/>
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.extension"/>
-	            <expression value="Get Indicator"/>
+	            <expression value="Illicit Drugs Indicator"/>
 	        </dynamicValue>
-			<dynamicValue>
-				<path value="action.description"/>
-				<expression value="Inconsistent Illicit Drugs"/>
-			</dynamicValue>
 			<action>
 				<description value="Not for chronic pain management. Snooze 3 months"/>
 			</action>
