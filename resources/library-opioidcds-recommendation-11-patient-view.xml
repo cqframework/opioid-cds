@@ -1,5 +1,5 @@
 <Library xmlns="http://hl7.org/fhir">
-    <id value="opioidcds-recommendation-11"/>
+    <id value="opioidcds-recommendation-11-patient-view"/>
     <url value="http://fhir.org/guides/cdc/opioid-cds/Library/opioidcds-common"/>
     <identifier>
         <use value="official"/>
