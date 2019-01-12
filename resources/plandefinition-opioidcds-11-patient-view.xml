@@ -77,7 +77,7 @@
     </contributor>
     <copyright value="© CDC 2016+."/>
     <library>
-        <reference value="Library/opioidcds-recommendation-11"/>
+        <reference value="Library/opioidcds-recommendation-11-patient-view"/>
     </library>
     <action>
         <!-- non-dynamic card summary -->
