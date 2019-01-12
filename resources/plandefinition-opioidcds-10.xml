@@ -127,10 +127,19 @@
 				<language value="text/cql"/>
 				<expression value="No Urine Screening In Last 12 Months"/>
 			</condition>
-			<dynamicValue>
-				<path value="activity.extension"/>
-				<expression value="Get Indicator"/>
-			</dynamicValue>
+	        <!-- dynamic card elements -->
+	        <dynamicValue>
+	            <path value="action.description"/>
+	            <expression value="No Screening In Last 12 Months Detail"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.title"/>
+	            <expression value="No Screening In Last 12 Months Summary"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.extension"/>
+	            <expression value="No Screening In Last 12 Months Indicator"/>
+	        </dynamicValue>
 			<action>
 				<description value="Will perform urine screening"/>
 				<!-- Open Order Set, where available -->
@@ -177,14 +186,19 @@
 				<language value="text/cql"/>
 				<expression value="Has Unprescribed Opioids?"/>
 			</condition>
-			<dynamicValue>
-				<path value="activity.extension"/>
-				<expression value="Get Indicator"/>
-			</dynamicValue>
-			<dynamicValue>
-				<path value="action.description"/>
-				<expression value="Inconsistent Unprescribed Opioids"/>
-			</dynamicValue>
+	        <!-- dynamic card elements -->
+	        <dynamicValue>
+	            <path value="action.description"/>
+	            <expression value="Unprescribed Opioids Detail"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.title"/>
+	            <expression value="Unprescribed Opioids Summary"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.extension"/>
+	            <expression value="Unprescribed Opioids Indicator"/>
+	        </dynamicValue>
 			<action>
 				<description value="Not for chronic pain management. Snooze 3 months"/>
 			</action>
@@ -227,14 +241,19 @@
 				<language value="text/cql"/>
 				<expression value="Has Missing Opioids?"/>
 			</condition>
-			<dynamicValue>
-				<path value="activity.extension"/>
-				<expression value="Get Indicator"/>
-			</dynamicValue>
-			<dynamicValue>
-				<path value="action.description"/>
-				<expression value="Inconsistent Missing Opioids"/>
-			</dynamicValue>
+			<!-- dynamic card elements -->
+	        <dynamicValue>
+	            <path value="action.description"/>
+	            <expression value="Missing Opioids Detail"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.title"/>
+	            <expression value="Missing Opioids Summary"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.extension"/>
+	            <expression value="Missing Opioids Indicator"/>
+	        </dynamicValue>
 		</action>
 		<action>
 			<title value="Illicit Drugs Found In Urine Screening"/>
@@ -274,14 +293,19 @@
 				<language value="text/cql"/>
 				<expression value="Has Illicit Drugs in Screening?"/>
 			</condition>
-			<dynamicValue>
-				<path value="activity.extension"/>
-				<expression value="Get Indicator"/>
-			</dynamicValue>
-			<dynamicValue>
-				<path value="action.description"/>
-				<expression value="Inconsistent Illicit Drugs"/>
-			</dynamicValue>
+	        <!-- dynamic card elements -->
+	        <dynamicValue>
+	            <path value="action.description"/>
+	            <expression value="Illicit Drugs Detail"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.title"/>
+	            <expression value="Illicit Drugs Summary"/>
+	        </dynamicValue>
+	        <dynamicValue>
+	            <path value="action.extension"/>
+	            <expression value="Illicit Drugs Indicator"/>
+	        </dynamicValue>
 			<action>
 				<description value="Not for chronic pain management. Snooze 3 months"/>
 			</action>
