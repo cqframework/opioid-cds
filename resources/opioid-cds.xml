@@ -876,10 +876,26 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #10 Patient View"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #10 Patient View"/>
+            <sourceReference>
+                <reference value="Library/opioidcds-recommendation-10-patient-view"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="Library - Opioid CDS Recommendation #11"/>
             <description value="Opioid Management Decision Support Logic for recommendation #11"/>
             <sourceReference>
                 <reference value="Library/opioidcds-recommendation-11"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #11 Patient View"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #11 Patient View"/>
+            <sourceReference>
+                <reference value="Library/opioidcds-recommendation-11-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
@@ -948,10 +964,26 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 Patient View"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10 Patient View"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-10-patient-view"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #11"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-11"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 Patient View"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #11 Patient View"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-11-patient-view"/>
             </sourceReference>
         </resource>
         <resource>

@@ -18,7 +18,7 @@ codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
   Trigger context:
     Primary care/ambulatory care
   Trigger event:
-    Prescription of opioid with ambulatory care abuse potential
+    Patient chart is opened
   Assumptions:
     Count only ambulatory prescriptions
   Inclusion criteria:

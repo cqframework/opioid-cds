@@ -16,7 +16,7 @@ include OpioidCDSCommonSTU3 version '0.1.0' called Common
   Trigger context:
     Primary care/ambulatory care
   Trigger event:
-    Prescription of benzodiazepine or opioid with ambulatory care abuse potential
+    Patient chart is opened
   Assumptions:
     Count only ambulatory prescriptions
   Inclusion criteria:
