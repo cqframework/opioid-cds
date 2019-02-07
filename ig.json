@@ -605,9 +605,17 @@
       "source": "library-opioidcds-recommendation-10.xml",
       "base": "Library-opioidcds-recommendation-10.html"
     },
+    "Library/opioidcds-recommendation-10-patient-view": {
+      "source": "library-opioidcds-recommendation-10-patient-view.xml",
+      "base": "Library-opioidcds-recommendation-10-patient-view.html"
+    },
     "Library/opioidcds-recommendation-11": {
       "source": "library-opioidcds-recommendation-11.xml",
       "base": "Library-opioidcds-recommendation-11.html"
+    },
+    "Library/opioidcds-recommendation-11-patient-view": {
+      "source": "library-opioidcds-recommendation-11-patient-view.xml",
+      "base": "Library-opioidcds-recommendation-11-patient-view.html"
     },
     "MedicationRequest/example-opioidcds": {
       "source": "medicationrequest-example-opioidcds.xml",
@@ -641,9 +649,17 @@
       "source": "plandefinition-opioidcds-10.xml",
       "base": "PlanDefinition-opioidcds-10.html"
     },
+    "PlanDefinition/opioidcds-10-patient-view": {
+      "source": "plandefinition-opioidcds-10-patient-view.xml",
+      "base": "PlanDefinition-opioidcds-10-patient-view.html"
+    },
     "PlanDefinition/opioidcds-11": {
       "source": "plandefinition-opioidcds-11.xml",
       "base": "PlanDefinition-opioidcds-11.html"
+    },
+    "PlanDefinition/opioidcds-11-patient-view": {
+      "source": "plandefinition-opioidcds-11-patient-view.xml",
+      "base": "PlanDefinition-opioidcds-11-patient-view.html"
     },
     "RequestGroup/example-opioidcds": {
       "source": "requestgroup-example-opioidcds.xml",

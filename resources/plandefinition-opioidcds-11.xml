@@ -6,8 +6,8 @@
         <value value="cdc-opioid-guidance"/>
     </identifier>
     <version value="0.1.0"/>
-    <name value="PlanDefinition - Recommendation #11 Workflow"/>
-    <title value="CDC Opioid Prescribing Guideline Recommendation #11"/>
+    <name value="PlanDefinition_Recommendation_11"/>
+    <title value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11"/>
     <type>
         <coding>
             <system value="http://hl7.org/fhir/plan-definition-type"/>
