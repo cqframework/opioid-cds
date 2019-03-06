@@ -69,15 +69,19 @@ define "Exclusion Criteria":
   Common."End of Life Assessment"
     or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
-// todo - check component code, but doesn't have interpretation code
 define "Illicit Drug Urine Screenings in Last 12 Months":
-  [Observation: code in Common."Illicit Drug Screening"] observation
+  (
+    [Observation: Common."Illicit Drug Screening"]
+      union [Observation: "component-code" in Common."Illicit Drug Screening"]
+  ) observation
     where date from observation.effectiveDateTime.value in day of "Lookback Year"
       sort by effectiveDateTime.value
 
-// todo - check component code, but doesn't have interpretation code
 define "Opioid Drug Urine Screenings in Last 12 Months":
-  [Observation: code in Common."Opioid Drug Screening"] observation
+  (
+    [Observation: Common."Opioid Drug Screening"]
+      union [Observation: "component-code" in Common."Opioid Drug Screening"]
+  ) observation
     where date from observation.effectiveDateTime.value in day of "Lookback Year"
       sort by effectiveDateTime.value
 

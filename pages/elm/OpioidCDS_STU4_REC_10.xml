@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
-   <annotation startLine="75" startChar="3" endLine="75" endChar="64" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="75" startChar="3" endLine="75" endChar="64" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="80" startChar="3" endLine="80" endChar="63" message="Could not resolve code path combo-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="80" startChar="3" endLine="80" endChar="63" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="147" startChar="25" endLine="147" endChar="80" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="77" startChar="13" endLine="77" endChar="78" message="Could not resolve code path component-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="77" startChar="13" endLine="77" endChar="78" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="85" startChar="13" endLine="85" endChar="77" message="Could not resolve code path component-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="85" startChar="13" endLine="85" endChar="77" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="153" startChar="25" endLine="153" endChar="80" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <annotation message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="174" startChar="15" endLine="174" endChar="68" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="177" startChar="80" endLine="177" endChar="104" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="152" startChar="13" endLine="152" endChar="53" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="155" startChar="65" endLine="155" endChar="89" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="118" startChar="16" endLine="118" endChar="90" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="180" startChar="15" endLine="180" endChar="68" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="183" startChar="80" endLine="183" endChar="104" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="158" startChar="13" endLine="158" endChar="53" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="161" startChar="65" endLine="161" endChar="89" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="124" startChar="16" endLine="124" endChar="90" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <annotation message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="119" startChar="12" endLine="119" endChar="23" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="125" startChar="12" endLine="125" endChar="23" message="List-valued expression was demoted to a singleton." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <identifier id="OpioidCDS_STU4_REC_10" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
@@ -87,8 +87,13 @@
       <def name="Illicit Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
          <expression xsi:type="Query">
             <source alias="observation">
-               <expression dataType="fhir:Observation" codeProperty="combo-code" xsi:type="Retrieve">
-                  <codes name="Illicit Drug Screening" libraryName="Common" xsi:type="ValueSetRef"/>
+               <expression xsi:type="Union">
+                  <operand dataType="fhir:Observation" codeProperty="code" xsi:type="Retrieve">
+                     <codes name="Illicit Drug Screening" libraryName="Common" xsi:type="ValueSetRef"/>
+                  </operand>
+                  <operand dataType="fhir:Observation" codeProperty="component-code" xsi:type="Retrieve">
+                     <codes name="Illicit Drug Screening" libraryName="Common" xsi:type="ValueSetRef"/>
+                  </operand>
                </expression>
             </source>
             <where precision="Day" xsi:type="In">
@@ -116,8 +121,13 @@
       <def name="Opioid Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
          <expression xsi:type="Query">
             <source alias="observation">
-               <expression dataType="fhir:Observation" codeProperty="combo-code" xsi:type="Retrieve">
-                  <codes name="Opioid Drug Screening" libraryName="Common" xsi:type="ValueSetRef"/>
+               <expression xsi:type="Union">
+                  <operand dataType="fhir:Observation" codeProperty="code" xsi:type="Retrieve">
+                     <codes name="Opioid Drug Screening" libraryName="Common" xsi:type="ValueSetRef"/>
+                  </operand>
+                  <operand dataType="fhir:Observation" codeProperty="component-code" xsi:type="Retrieve">
+                     <codes name="Opioid Drug Screening" libraryName="Common" xsi:type="ValueSetRef"/>
+                  </operand>
                </expression>
             </source>
             <where precision="Day" xsi:type="In">

@@ -18,7 +18,7 @@ codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
   Trigger context:
     Primary care/ambulatory care
   Trigger event:
-    Patient chart is opened
+    Prescription of opioid with ambulatory care abuse potential
   Assumptions:
     Count only ambulatory prescriptions
   Inclusion criteria:
@@ -66,12 +66,18 @@ define "Inclusion Criteria":
         or "Has Illicit Drugs in Screening?")
 
 define "Illicit Drug Urine Screenings in Last 12 Months":
-  [Observation: "combo-code" in Common."Illicit Drug Screening"] observation
+  (
+    [Observation: Common."Illicit Drug Screening"]
+      union [Observation: "component-code" in Common."Illicit Drug Screening"]
+  ) observation
     where date from observation.effective.value in day of "Lookback Year"
       sort by effective.value
 
 define "Opioid Drug Urine Screenings in Last 12 Months":
-  [Observation: "combo-code" in Common."Opioid Drug Screening"] observation
+  (
+    [Observation: Common."Opioid Drug Screening"]
+      union [Observation: "component-code" in Common."Opioid Drug Screening"]
+  ) observation
     where date from observation.effective.value in day of "Lookback Year"
       sort by effective.value
 
