@@ -33,6 +33,47 @@ select D.DRUG_RXCUI, D.DRUG_NAME, DF.DOSE_FORM_NAME, SCDCD.SCDC_RXCUI, SCDC.SCDC
 */
 
 /*
+SQL to create CQL tuple selectors for the query result:
+select '{ ' || char(10) || group_concat(
+    '  { drugCode: Code { code: ''' || D.DRUG_RXCUI || ''', system: ''http://www.nlm.nih.gov/research/umls/rxnorm'' }, '
+    || 'drugName: ''' || D.DRUG_NAME || ''', '
+    || 'doseFormCode: Code { code: ''' || D.DOSE_FORM_RXCUI || ''', system: ''http://www.nlm.nih.gov/research/umls/rxnorm'' }, '
+    || 'doseFormName: ''' || DF.DOSE_FORM_NAME || ''', '
+    || 'ingredientCode: Code { code: ''' || I.INGREDIENT_RXCUI || ''', system: ''http://www.nlm.nih.gov/research/umls/rxnorm'' }, '
+    || 'ingredientName: ''' || I.INGREDIENT_NAME || ''', '
+    || 'strength: ''' || SCDC.STRENGTH || ''', '
+    || 'strengthValue: ''' || SCDC.STRENGTH_VALUE || ''', '
+    || 'strengthUnit: ''' || SCDC.STRENGTH_UNIT || ''' '
+    || '}', ', ' || char(10)) || char(10) || '}' as TUPLES
+  from MED_DRUG D
+    join MED_DRUG_VALUE_SET MDVS on D.DRUG_RXCUI = MDVS.DRUG_RXCUI and MDVS.VALUE_SET_ID = 1 -- Opioids
+    join MED_SCDC_FOR_DRUG SCDCD on D.DRUG_RXCUI = SCDCD.DRUG_RXCUI
+    join MED_SCDC SCDC on SCDCD.SCDC_RXCUI = SCDC.SCDC_RXCUI
+    join MED_INGREDIENT I on SCDC.INGREDIENT_RXCUI = I.INGREDIENT_RXCUI
+    join MED_INGREDIENT_TYPE IT on I.INGREDIENT_RXCUI = IT.INGREDIENT_RXCUI and IT.INGREDIENT_TYPE = 'Opioid_NonSurgical'
+    left join MED_DOSE_FORM DF on DF.DOSE_FORM_RXCUI = D.DOSE_FORM_RXCUI
+SQL to create CQL tuple selectors without codes...
+select '{ ' || char(10) || group_concat(
+    '  { drugCode: ' || D.DRUG_RXCUI || ', '
+    || 'drugName: ''' || D.DRUG_NAME || ''', '
+    || 'doseFormCode: ' || D.DOSE_FORM_RXCUI || ', '
+    || 'doseFormName: ''' || DF.DOSE_FORM_NAME || ''', '
+    || 'ingredientCode: ' || I.INGREDIENT_RXCUI || ', '
+    || 'ingredientName: ''' || I.INGREDIENT_NAME || ''', '
+    || 'strength: ''' || SCDC.STRENGTH || ''', '
+    || 'strengthValue: ' || SCDC.STRENGTH_VALUE || ', '
+    || 'strengthUnit: ''' || SCDC.STRENGTH_UNIT || ''' '
+    || '}', ', ' || char(10)) || char(10) || '}' as TUPLES
+  from MED_DRUG D
+    join MED_DRUG_VALUE_SET MDVS on D.DRUG_RXCUI = MDVS.DRUG_RXCUI and MDVS.VALUE_SET_ID = 1 -- Opioids
+    join MED_SCDC_FOR_DRUG SCDCD on D.DRUG_RXCUI = SCDCD.DRUG_RXCUI
+    join MED_SCDC SCDC on SCDCD.SCDC_RXCUI = SCDC.SCDC_RXCUI
+    join MED_INGREDIENT I on SCDC.INGREDIENT_RXCUI = I.INGREDIENT_RXCUI
+    join MED_INGREDIENT_TYPE IT on I.INGREDIENT_RXCUI = IT.INGREDIENT_RXCUI and IT.INGREDIENT_TYPE = 'Opioid_NonSurgical'
+    left join MED_DOSE_FORM DF on DF.DOSE_FORM_RXCUI = D.DOSE_FORM_RXCUI
+*/
+
+/*
   CQL, assuming translation to SQL:
 
   from
