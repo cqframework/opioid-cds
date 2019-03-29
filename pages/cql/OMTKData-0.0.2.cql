@@ -93,7 +93,7 @@ DrugIngredients:
     strengthUnit String 
   }>
 */
-// Generated from LocalDataStore_RxNav_OpioidCds-2019-03-27.sqlite
+// Generated from LocalDataStore_RxNav_OpioidCds-2018-02-28.db
 define DrugIngredients:
 { 
   { drugCode: 197696, drugName: '72 HR Fentanyl 0.075 MG/HR Transdermal System', doseFormCode: 316987, doseFormName: 'Transdermal System', ingredientCode: 4337, ingredientName: 'Fentanyl', strength: '0.075 MG/HR', strengthValue: 0.075, strengthUnit: 'MG/HR' }, 
