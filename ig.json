@@ -577,6 +577,10 @@
       "source": "library-omtk-data-0.0.1.xml",
       "base": "Library-omtk-data-0.0.1.html"
     },
+    "Library/omtk-data-0.0.2": {
+      "source": "library-omtk-data-0.0.2.xml",
+      "base": "Library-omtk-data-0.0.2.html"
+    },
     "Library/omtk-modelinfo": {
       "source": "library-omtk-modelinfo.xml",
       "base": "Library-omtk-modelinfo.html"
