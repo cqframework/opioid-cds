@@ -64,7 +64,7 @@ Dihydrocodeine	0.25
 Fentanyl, buccal/SL tabet or lozenge/troche (MCG)	0.13
 Fentanyl, film or oral spray (MCG)	0.18
 Fentanyl, nasal spray (MCG)	0.16
-Fentanyl, transdermal patch (MCG/HR)	7.2
+Fentanyl, transdermal patch (MCG/HR)	2.4
 Hydrocodone	1
 Hydromorphone	4
 Levomethadyl acetate	8
@@ -109,7 +109,7 @@ define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, dos
         when ToInteger(doseFormCode.code) in { 970789, 317007, 316992 } then 0.13 /* Buccal Tablet, Sublingual Tablet, Oral Lozenge */
         when ToInteger(doseFormCode.code) = 346163 then 0.18 /* Buccal Film */
         when ToInteger(doseFormCode.code) in { 126542, 346163 } then 0.16 /* Nasal Spray, Mucosal Spray */
-        when IsPatch(doseFormCode) then 7.2 /* Transdermal system */
+        when IsPatch(doseFormCode) then 2.4 /* Transdermal system */
         else Message(1000, true, 'Undefined', 'Error', 'The dose form is unexpected')
       end
     )
