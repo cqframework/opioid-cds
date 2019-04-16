@@ -693,10 +693,6 @@
       "source": "valueset-limited-life-expectancy-conditions.xml",
       "base": "ValueSet-limited-life-expectancy-conditions.html"
     },
-    "ValueSet/metastatic-cancer": {
-      "source": "valueset-metastatic-cancer.xml",
-      "base": "ValueSet-metastatic-cancer.html"
-    },
     "ValueSet/opioid-abuse-assessment": {
       "source": "valueset-opioid-abuse-assessment.xml",
       "base": "ValueSet-opioid-abuse-assessment.html"
@@ -729,21 +725,9 @@
       "source": "valueset-naloxone.xml",
       "base": "ValueSet-naloxone.html"
     },
-    "ValueSet/opioids": {
-      "source": "valueset-opioids.xml",
-      "base": "ValueSet-opioids.html"
-    },
     "ValueSet/opioids-abused-in-ambulatory-care": {
       "source": "valueset-opioids-abused-in-ambulatory-care.xml",
       "base": "ValueSet-opioids-abused-in-ambulatory-care.html"
-    },
-    "ValueSet/opioids-codeine-cough-meds": {
-      "source": "valueset-opioids-codeine-cough-meds.xml",
-      "base": "ValueSet-opioids-codeine-cough-meds.html"
-    },
-    "ValueSet/opioids-indicating-end-of-life": {
-      "source": "valueset-opioids-indicating-end-of-life.xml",
-      "base": "ValueSet-opioids-indicating-end-of-life.html"
     },
     "ValueSet/short-acting-opioids": {
       "source": "valueset-short-acting-opioids.xml",

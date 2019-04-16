@@ -1044,14 +1044,6 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Metastatic Cancer"/>
-            <description value="Metastatic cancer codes"/>
-            <sourceReference>
-                <reference value="ValueSet/metastatic-cancer"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Abuse Assessment"/>
             <description value="Opiate therapy risk assessment codes"/>
             <sourceReference>
@@ -1116,34 +1108,10 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Medication"/>
-            <description value="Opioid medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioids Abused in Ambulatory Care Medication"/>
             <description value="Opioids abused in ambulatory care medication codes"/>
             <sourceReference>
                 <reference value="ValueSet/opioids-abused-in-ambulatory-care"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Codeine Cough Medication"/>
-            <description value="Opioid codeine cough medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioids-codeine-cough-meds"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioids Indicating End Of Life Medication"/>
-            <description value="Opioids indicating end of life medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioids-indicating-end-of-life"/>
             </sourceReference>
         </resource>
         <resource>
