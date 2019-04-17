@@ -26,7 +26,6 @@ define "Inclusion Criteria":
 
 define "Exclusion Criteria":
   Common."End of Life Assessment"
-    or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 define "Total MME":
   Common.TotalMME(ContextPrescriptions union Common."Active Ambulatory Opioid Rx")

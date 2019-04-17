@@ -66,7 +66,6 @@ define "Inclusion Criteria":
 
 define "Exclusion Criteria":
   Common."End of Life Assessment"
-    or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 define "Get Indicator":
   if "Inclusion Criteria"

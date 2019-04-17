@@ -68,7 +68,6 @@ define "Inclusion Criteria":
 
 define "Exclusion Criteria":
   Common."End of Life Assessment"
-    or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 define "Opioid Risk Assessment in Past 90 Days":
   [Procedure: Common."Risk Assessment"] riskAssessment
