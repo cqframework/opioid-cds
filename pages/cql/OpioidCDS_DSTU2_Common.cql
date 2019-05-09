@@ -1,4 +1,4 @@
-library OpioidCDSCommonDSTU2 version '0.1.0'
+library OpioidCDS_DSTU2_Common version '0.1.0'
 
 using FHIR version '1.0.2'
 
@@ -78,12 +78,12 @@ define "End of Life Assessment":
     (
       // todo - code not listed as a valid search param for DSTU2 - verify and change if needed
       [ProcedureRequest: code in "Hospice Procedure Codes"] E
-        where E.status.value not in { 'suspended', 'aborted', 'rejected', 'draft' }
+        where not (E.status.value in { 'suspended', 'aborted', 'rejected', 'draft' })
     )
     union
     (
       [Observation: code in "Hospice Finding Codes"] O
-        where O.status.value not in { 'unknown', 'entered-in-error', 'cancelled' }
+        where not (O.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
     )
     union
     (
@@ -138,7 +138,8 @@ define function Prescriptions(Orders List<MedicationOrder>):
             then ToString(ToQuantity(dosageInstruction.doseRange.low))
                           + '-' + ToString(ToQuantity(dosageInstruction.doseRange.high))
                           + dosageInstruction.doseRange.high.unit.value
-          else ToString(ToQuantity(dosageInstruction.doseQuantity))
+          else ToString(ToQuantity(dosageInstruction.doseQuantity)),
+          ''
         ),
       frequencyDescription:
         ToString(dosageInstruction.timing.repeat.frequency.value) +
@@ -238,7 +239,7 @@ define function GetIngredients(rxNormCodes List<Code>):
 
 define function GetMedicationNames(medications List<MedicationOrder>):
   medications M
-    return OMTKLogic.GetIngredients(ToCodes(M.medicationCodeableConcept.coding)).rxNormCode.display
+    return OMTKLogic.GetIngredients(ToRxNormCode(M.medicationCodeableConcept.coding)).rxNormCode.display
 
 /*
 *  Conversion Functions
@@ -251,9 +252,11 @@ define function ToCode(coding FHIR.Coding):
     version: coding.version.value,
     display: coding.display.value
   }
-
-define function ToCodes(coding List<FHIR.Coding>):
-  coding c return ToCode(c)
+  
+define function ToRxNormCode(coding List<FHIR.Coding>):
+  singleton from (
+    coding C where C.system = 'http://www.nlm.nih.gov/research/umls/rxnorm'
+  )
 
 define function ToQuantity(quantity FHIR.Quantity):
   System.Quantity { value: quantity.value.value, unit: quantity.unit.value }

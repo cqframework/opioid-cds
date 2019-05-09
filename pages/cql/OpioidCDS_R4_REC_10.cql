@@ -1,9 +1,9 @@
-library OpioidCDS_STU3_REC_10 version '0.1.0'
+library OpioidCDS_R4_REC_10 version '0.1.0'
 
-using FHIR version '3.0.0'
+using FHIR version '3.2.0'
 
-include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDSCommonSTU3 version '0.1.0' called Common
+include FHIRHelpers version '3.2.0' called FHIRHelpers
+include OpioidCDS_R4_Common version '0.1.0' called Common
 
 codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
 
@@ -18,7 +18,7 @@ codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
   Trigger context:
     Primary care/ambulatory care
   Trigger event:
-    Patient chart is opened
+    Prescription of opioid with ambulatory care abuse potential
   Assumptions:
     Count only ambulatory prescriptions
   Inclusion criteria:
@@ -39,31 +39,38 @@ codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
     Have availability to snooze for 3 months
 
   Plan Definition:
-	http://build.fhir.org/ig/cqframework/opioid-cds/PlanDefinition-opioidcds-10.html
+	http://build.fhir.org/ig/cqframework/opioid-cds/stu4/PlanDefinition-opioidcds-10.html
 */
 
 code "Positive": 'POS' from "V2 Interpretation Codes"
+
+parameter ContextPrescriptions List<MedicationRequest>
 
 context Patient
 
 define "Lookback Year":
   Interval[Today() - 12 months - 1 days, Today() - 1 day]
 
-define "Patient on Opioids with Abuse Potential":
+define "Validate Trigger Event":
   exists (
-    Common."Active Ambulatory Opioid Rx" ActiveOpioidScript
-      where not Common."Is Context Prescription End of Life Opioid?"(ActiveOpioidScript)
+    ContextPrescriptions triggerScript
+      where triggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
   )
 
 define "Inclusion Criteria":
   AgeInYears() >= 18
-    and "Patient on Opioids with Abuse Potential"
+    and "Validate Trigger Event"
+    and not "Exclusion Criteria"
     and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
     and
       ("No Urine Screening In Last 12 Months"
         or "Has Missing Opioids?"
         or "Has Unprescribed Opioids?"
         or "Has Illicit Drugs in Screening?")
+
+define "Exclusion Criteria":
+  Common."End of Life Assessment"
+    or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 define "Illicit Drug Urine Screenings in Last 12 Months":
   [Observation: "combo-code" in Common."Illicit Drug Screening"] observation
@@ -103,16 +110,16 @@ define "Has Illicit Drugs in Screening?":
 
 define "Positive Opioid Drug Screening":
   "Most Recent Opioid Drug Urine Screenings in Last 12 Months" mostRecentScreening
-  where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
-    or
-    (
-        if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
-          then
-            exists (mostRecentScreening.component c
-              where c.interpretation.coding is not null and
-                Common.ToCodes(c.interpretation.coding) contains "Positive")
-          else false
-    )
+    where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
+      or
+      (
+          if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
+            then
+              exists (mostRecentScreening.component c
+                where c.interpretation.coding is not null and
+                  Common.ToCodes(c.interpretation.coding) contains "Positive")
+            else false
+      )
 
 define "Has Opioids in Screening?":
   exists ( "Positive Opioid Drug Screening" )
@@ -144,11 +151,11 @@ define "Unprescribed Opioids":
 define "Has Unprescribed Opioids?":
   exists ("Unprescribed Opioids")
 
-  /*
-    The "Missing Opioids" set is identified by comparing the medication code displays
-    with the urine drug screen code's displays - a dependency that implementers should
-    be aware of.
-  */
+/*
+  The "Missing Opioids" set is identified by comparing the medication code displays
+  with the urine drug screen code's displays - a dependency that implementers should
+  be aware of.
+*/
 define "Missing Opioids":
   if "Positive Opioid Drug Screening" is not null
   then
@@ -237,6 +244,7 @@ define "Illicit Drugs Detail":
           else illicitDrugs
         )
     else null
+
 // Functions
 /*
   The GetDrugNamesFromScreeningCodes(value List<FHIR.Coding>) function extracts the drug name

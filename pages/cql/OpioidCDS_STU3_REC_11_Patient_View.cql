@@ -1,14 +1,14 @@
-library OpioidCDS_DSTU2_REC_11_patient_view version '0.1.0'
+library OpioidCDS_STU3_REC_11_patient_view version '0.1.0'
 
-using FHIR version '1.0.2'
+using FHIR version '3.0.0'
 
-include FHIRHelpers version '1.0.2' called FHIRHelpers
-include OpioidCDSCommonDSTU2 version '0.1.0' called Common
+include FHIRHelpers version '3.0.0' called FHIRHelpers
+include OpioidCDS_STU3_Common version '0.1.0' called Common
 
 /*
 **
 **  Recommendation #11
-**    Avoid prescribing opioid pain medication and benzodiazepines concurrently whenever possible
+**    Patient found to be prescribed opioid pain medication and benzodiazepines. Avoid prescribing opioid pain medication and benzodiazepines concurrently whenever possible
 **
 */
 
@@ -26,9 +26,10 @@ include OpioidCDSCommonDSTU2 version '0.1.0' called Common
     Ref: CDC Recommendation #11.
   EHR expectations:
     Have availability to snooze if benefits outweigh risks
-*/
 
-parameter ContextPrescriptions List<MedicationOrder>
+  Plan Definition:
+	http://build.fhir.org/ig/cqframework/opioid-cds/PlanDefinition-opioidcds-11.html
+*/
 
 context Patient
 
@@ -41,11 +42,11 @@ define "Inclusion Criteria":
 
 define "Benzo Scripts":
   Common."Active Ambulatory Benzodiazepine Rx" BenzoScript
-    where not Common."Is Context Prescription End of Life Opioid?"(BenzoScript)
+    where not (BenzoScript.medication in Common."End Of Life Opioids")
 
 define "Opioid with Abuse Potential Scripts":
   Common."Active Ambulatory Opioid Rx" OpioidScript
-    where not Common."Is Context Prescription End of Life Opioid?"(OpioidScript)
+    where not (OpioidScript.medication in Common."End Of Life Opioids")
 
 define "Get Indicator":
   if "Inclusion Criteria"

@@ -2,7 +2,7 @@ library OpioidCDS_DSTU2_REC_05 version '0.1.0'
 
 using FHIR version '1.0.2'
 
-include OpioidCDSCommonDSTU2 version '0.1.0' called Common
+include OpioidCDS_DSTU2_Common version '0.1.0' called Common
 
 /*
 **

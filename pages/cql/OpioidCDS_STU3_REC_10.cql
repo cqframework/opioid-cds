@@ -3,7 +3,7 @@ library OpioidCDS_STU3_REC_10 version '0.1.0'
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDSCommonSTU3 version '0.1.0' called Common
+include OpioidCDS_STU3_Common version '0.1.0' called Common
 
 codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
 
@@ -73,14 +73,29 @@ define "Exclusion Criteria":
     or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 define "Illicit Drug Urine Screenings in Last 12 Months":
-  [Observation: "combo-code" in Common."Illicit Drug Screening"] observation
-    where date from observation.effective.value in day of "Lookback Year"
-      sort by effective.value
+  (
+    (
+      [Observation: "code" in Common."Illicit Drug Screening"] observation
+        where date from observation.effective.value in day of "Lookback Year"
+    )
+    union (
+      [Observation: "component-code" in Common."Illicit Drug Screening"] observation
+        where date from observation.effective.value in day of "Lookback Year"
+    )
+  ) obs
+    sort by effective.value
 
 define "Opioid Drug Urine Screenings in Last 12 Months":
-  [Observation: "combo-code" in Common."Opioid Drug Screening"] observation
-    where date from observation.effective.value in day of "Lookback Year"
-      sort by effective.value
+  (
+    ([Observation: "code" in Common."Opioid Drug Screening"] observation
+      where date from observation.effective.value in day of "Lookback Year"
+    )
+    union (
+      [Observation: "component-code" in Common."Opioid Drug Screening"] observation
+        where date from observation.effective.value in day of "Lookback Year"
+    )
+  ) obs
+    sort by effective.value
 
 define "Most Recent Illicit Drug Urine Screenings in Last 12 Months":
   Last( "Illicit Drug Urine Screenings in Last 12 Months" )
@@ -106,7 +121,7 @@ define "Positive Illicit Drug Screening":
       )
 
 define "Has Illicit Drugs in Screening?":
-  exists ( "Positive Illicit Drug Screening" )
+  "Positive Illicit Drug Screening" is not null
 
 define "Positive Opioid Drug Screening":
   "Most Recent Opioid Drug Urine Screenings in Last 12 Months" mostRecentScreening
@@ -122,7 +137,7 @@ define "Positive Opioid Drug Screening":
     )
 
 define "Has Opioids in Screening?":
-  exists ( "Positive Opioid Drug Screening" )
+  "Positive Opioid Drug Screening" is not null
 
 define "Orders Before Most Recent Opioid Screening":
   Common."Active Ambulatory Opioid Rx" orders
@@ -133,15 +148,15 @@ define "Orders Before Most Recent Opioid Screening":
 
 define "Prescribed Opioids":
   "Orders Before Most Recent Opioid Screening" orders
-    return Lower(Common.GetIngredients(Common.ToCodes(orders.medication.coding)))
+    return Common.GetIngredients(Common.ToCodes(orders.medication.coding))
 
 define "Opioids From Most Recent Screening":
   "Positive Opioid Drug Screening" mostRecentScreening
     return
-      Lower(GetDrugNamesFromScreeningCodes(mostRecentScreening.code.coding))
+      GetDrugNamesFromScreeningCodes(mostRecentScreening.code.coding)
         union (
           if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
-            then mostRecentScreening.component pis return Lower(GetDrugNamesFromScreeningCodes(pis.code.coding))
+            then mostRecentScreening.component pis return GetDrugNamesFromScreeningCodes(pis.code.coding)
           else {}
         )
 
@@ -161,10 +176,10 @@ define "Missing Opioids":
   then
     "Prescribed Opioids" Prescriptions
       except
-        Lower(GetDrugNamesFromScreeningCodes("Positive Opioid Drug Screening".code.coding))
+        GetDrugNamesFromScreeningCodes("Positive Opioid Drug Screening".code.coding)
           union (
             if "Positive Opioid Drug Screening".component is not null and exists("Positive Opioid Drug Screening".component)
-              then "Positive Opioid Drug Screening".component pds return Lower(GetDrugNamesFromScreeningCodes(pds.code.coding))
+              then "Positive Opioid Drug Screening".component pds return GetDrugNamesFromScreeningCodes(pds.code.coding)
             else {}
           )
   else null
@@ -240,11 +255,12 @@ define "Illicit Drugs Detail":
           if illicitDrugs is null
             then if positiveIllicitDrugScreening.component is null or not exists(positiveIllicitDrugScreening.component)
               then 'could not determine the drug name'
-              else positiveIllicitDrugScreening.component pis return GetDrugNamesFromScreeningCodes(pis.code.coding)
-          else illicitDrugs
+              else Combine(flatten (positiveIllicitDrugScreening.component pis return GetDrugNamesFromScreeningCodes(pis.code.coding)), ', ')
+          else Combine(illicitDrugs, ', ')
         )
     else null
 // Functions
+// TODO: Need a mapping to support proper identification of the drug found in a given screening result
 /*
   The GetDrugNamesFromScreeningCodes(value List<FHIR.Coding>) function extracts the drug name
   from the display value for the given code. The expectation is that the drug name will be

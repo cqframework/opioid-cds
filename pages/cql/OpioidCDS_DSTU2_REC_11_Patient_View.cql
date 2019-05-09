@@ -1,14 +1,14 @@
-library OpioidCDS_STU3_REC_11_patient_view version '0.1.0'
+library OpioidCDS_DSTU2_REC_11_Patient_View version '0.1.0'
 
-using FHIR version '3.0.0'
+using FHIR version '1.0.2'
 
-include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDSCommonSTU3 version '0.1.0' called Common
+include FHIRHelpers version '1.0.2' called FHIRHelpers
+include OpioidCDS_DSTU2_Common version '0.1.0' called Common
 
 /*
 **
 **  Recommendation #11
-**    Patient found to be prescribed opioid pain medication and benzodiazepines. Avoid prescribing opioid pain medication and benzodiazepines concurrently whenever possible
+**    Avoid prescribing opioid pain medication and benzodiazepines concurrently whenever possible
 **
 */
 
@@ -26,10 +26,9 @@ include OpioidCDSCommonSTU3 version '0.1.0' called Common
     Ref: CDC Recommendation #11.
   EHR expectations:
     Have availability to snooze if benefits outweigh risks
-
-  Plan Definition:
-	http://build.fhir.org/ig/cqframework/opioid-cds/PlanDefinition-opioidcds-11.html
 */
+
+parameter ContextPrescriptions List<MedicationOrder>
 
 context Patient
 

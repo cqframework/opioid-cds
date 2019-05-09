@@ -1,4 +1,4 @@
-library OpioidCDSCommonSTU3 version '0.1.0'
+library OpioidCDS_STU3_Common version '0.1.0'
 
 using FHIR version '3.0.0'
 
@@ -93,7 +93,7 @@ define "End of Life Assessment":
     union
     (
       [Observation: code in "Hospice Finding Codes"] O
-        where O.status.value not in { 'unknown', 'entered-in-error', 'cancelled' }
+        where not (O.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
     )
     union
     (
@@ -149,7 +149,8 @@ define function Prescriptions(Orders List<MedicationRequest>):
             then ToString(ToQuantity(dosageInstruction.dose.low))
                           + '-' + ToString(ToQuantity(dosageInstruction.dose.high))
                           + dosageInstruction.dose.high.unit.value
-            else ToString(ToQuantity(dosageInstruction.dose))
+            else ToString(ToQuantity(dosageInstruction.dose)),
+            ''
         ),
       frequencyDescription:
         ToString(dosageInstruction.timing.repeat.frequency.value) +
@@ -248,7 +249,7 @@ define function GetIngredients(rxNormCodes List<Code>):
 
 define function GetMedicationNames(medications List<MedicationRequest>):
   medications M
-    return OMTKLogic.GetIngredients(ToCodes(M.medication.coding)).rxNormCode.display
+    return OMTKLogic.GetIngredients(ToRxNormCode(M.medication.coding)).rxNormCode.display
 
 /*
 *  Conversion Functions
@@ -264,6 +265,11 @@ define function ToCode(coding FHIR.Coding):
 
 define function ToCodes(coding List<FHIR.Coding>):
   coding c return ToCode(c)
+
+define function ToRxNormCode(coding List<FHIR.Coding>):
+  singleton from (
+    coding C where C.system = 'http://www.nlm.nih.gov/research/umls/rxnorm'
+  )
 
 define function ToQuantity(quantity FHIR.Quantity):
   System.Quantity { value: quantity.value.value, unit: quantity.unit.value }
