@@ -727,7 +727,7 @@ System.Quantity { value: quantity.value.value, unit: quantity.unit.value }</code
          </table>
       </div>
    </text>
-   <url value="http://www.ncqa.org/Library/library-opioidcds-stu3-common-0-1-0"/>
+   <url value="http://fhir.org/guides/cdc/opioid-cds/Library/library-opioidcds-stu3-common-0-1-0"/>
    <version value="0.1.0"/>
    <name value="OpioidCDS_STU3_Common"/>
    <title value="Opioid CDS Common Logic"/>

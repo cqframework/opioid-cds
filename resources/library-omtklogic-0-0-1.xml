@@ -410,7 +410,7 @@ define TestCalculateMMEs:
             </table>
         </div>
     </text>
-    <url value="http://www.ncqa.org/Library/library-omtklogic-0-0-1"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/Library/library-omtklogic-0-0-1"/>
     <version value="0.0.1"/>
     <name value="OMTKLogic"/>
     <title value="OMTK Logic"/>
