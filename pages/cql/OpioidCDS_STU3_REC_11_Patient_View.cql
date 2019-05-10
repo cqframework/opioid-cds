@@ -1,4 +1,4 @@
-library OpioidCDS_STU3_REC_11_patient_view version '0.1.0'
+library OpioidCDS_STU3_REC_11_Patient_View version '0.1.0'
 
 using FHIR version '3.0.0'
 
@@ -75,10 +75,9 @@ define "Concurrent Benzodiazepine Prescription Issue":
     date: FHIR.dateTime { value: Now() },
     // TODO: Device representation...
     // author:,
-    implicated: 
+    implicated:
       ("Benzo Scripts" union "Opioid with Abuse Potential Scripts") M
         return FHIR.Reference { reference: FHIR.string { value: 'MedicationRequest/' + M.id } },
     detail: FHIR.string { value: "Get Detail" },
     reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11-patient-view'}
   }
-  
