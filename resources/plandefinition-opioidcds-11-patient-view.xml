@@ -1,6 +1,6 @@
 <PlanDefinition xmlns="http://hl7.org/fhir">
     <id value="opioidcds-11-patient-view"/>
-    <url value="http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11-patient-view"/>
     <identifier>
         <use value="official"/>
         <value value="cdc-opioid-guidance"/>
@@ -77,7 +77,7 @@
     </contributor>
     <copyright value="© CDC 2016+."/>
     <library>
-        <reference value="Library/opioidcds-recommendation-11-patient-view"/>
+        <reference value="Library/library-opioidcds-stu3-rec-11-patient-view-0-1-0"/>
     </library>
     <action>
         <!-- non-dynamic card summary -->

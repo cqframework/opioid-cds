@@ -34,7 +34,7 @@ define function ToUCUM(unit String):
 /*
   Calculates daily frequency given frequency within a period
 */
-define function ToDaily(frequency Integer, period System.Quantity):
+define function ToDaily(frequency Integer, period Quantity):
   case period.unit
     when 'h' then frequency * (24.0 / period.value)
     when 'min' then frequency * (24.0 / period.value) * 60
