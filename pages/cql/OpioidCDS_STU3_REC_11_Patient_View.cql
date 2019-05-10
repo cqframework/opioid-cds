@@ -62,3 +62,23 @@ define "Get Detail":
   if "Inclusion Criteria"
     then 'Avoid prescribing opioid pain medication and benzodiazepines concurrently whenever possible'
   else null
+
+// Detected Issue - Avoid prescribing opioid pain medication and benzodiazepines concurrently
+
+define "Concurrent Benzodiazepine Prescription Issue":
+  DetectedIssue {
+    //identifier:,
+    status: FHIR.ObservationStatus { value: 'preliminary' },
+    category: FHIR.CodeableConcept { text: FHIR.string { value: "Get Summary" } },
+    severity: FHIR.DetectedIssueSeverity { value: 'moderate' },
+    patient: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },
+    date: FHIR.dateTime { value: Now() },
+    // TODO: Device representation...
+    // author:,
+    implicated: 
+      ("Benzo Scripts" union "Opioid with Abuse Potential Scripts") M
+        return FHIR.Reference { reference: FHIR.string { value: 'MedicationRequest/' + M.id } },
+    detail: FHIR.string { value: "Get Detail" },
+    reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11-patient-view'}
+  }
+  

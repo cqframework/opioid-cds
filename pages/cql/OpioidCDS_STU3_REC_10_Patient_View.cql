@@ -7,6 +7,9 @@ include OpioidCDS_STU3_Common version '0.1.0' called Common
 
 codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
 
+// Urine drug screening (procedure) {310627008 , SNOMED-CT }
+code "Urine Drug Screening": '310627008' from Common.SNOMED display 'Urine drug screening (procedure)'
+
 /*
 ** Recommendation #10
 ** Consider urine drug testing before starting opioid therapy and consider urine
@@ -269,3 +272,91 @@ define function GetDrugNameFromScreeningCode(value String):
 
 define function GetDrugNamesFromScreeningCodes(value List<FHIR.Coding>):
   value v return GetDrugNameFromScreeningCode(v.display.value)
+
+
+/*
+PlanDefinition:
+  Inclusion Criteria:
+    No Screening in Last 12 months - ServiceRequest - Urine Screening
+    Unprescribed opioids
+    Prescribed opioids not found in urine screening
+    Illicit drugs found in urine screening
+*/
+
+// Procedure Request - Urine Screening
+// Detected Issue - Unprescribed Opioids
+// Detected Issue - Prescribed Opioids not found in urine screening
+// Detected Issue - Illicit drugs found in urine screening
+
+define "Urine Drug Screening Request":
+  ProcedureRequest {
+    //identifier:,
+    definition: { FHIR.Reference { reference: FHIR.string { value: 'http://fhir.org/guides/cdc/activitydefinition/urine-screening-request' } } },
+    status: FHIR.RequestStatus { value: 'draft' },
+    intent: FHIR.RequestIntent { value: 'proposal' },
+    priority: FHIR.RequestPriority { value: 'routine' },
+    code: FHIR.CodeableConcept { coding: { ToCoding("Urine Drug Screening") } },
+    subject: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },
+    occurrence: FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 7 days } },
+    authoredOn: FHIR.dateTime { value: Now() },
+    reasonCode: { FHIR.CodeableConcept { text: FHIR.string { value: "No Screening In Last 12 Months Detail" } } }
+    // doesn't really work, need a relatedArtifact here...
+    //reasonCode: { FHIR.CodeableConcept { text: FHIR.string { value: 'https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#10_When_prescribing_opioids' } } }
+  }
+  
+define "Unprescribed Opioids Issue":
+  DetectedIssue {
+    //identifier:,
+    status: FHIR.ObservationStatus { value: 'preliminary' },
+    category: FHIR.CodeableConcept { text: FHIR.string { value: "Unprescribed Opioids Summary" } },
+    severity: FHIR.DetectedIssueSeverity { value: 'moderate' },
+    patient: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },
+    date: FHIR.dateTime { value: Now() },
+    // TODO: Device representation...
+    // author:,
+    // TODO: Reference the lab results that were used to infer this
+    // implicated:,
+    detail: FHIR.string { value: "Unprescribed Opioids Detail" },
+    reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10-patient-view'}
+  }
+  
+define "Missing Opioids Issue":
+  DetectedIssue {
+    //identifier:,
+    status: FHIR.ObservationStatus { value: 'preliminary' },
+    category: FHIR.CodeableConcept { text: FHIR.string { value: "Missing Opioids Summary" } },
+    severity: FHIR.DetectedIssueSeverity { value: 'moderate' },
+    patient: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },
+    date: FHIR.dateTime { value: Now() },
+    // TODO: Device representation...
+    // author:,
+    // TODO: Reference the lab results that were used to infer this
+    // implicated:,
+    detail: FHIR.string { value: "Missing Opioids Detail" },
+    reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10-patient-view'}
+  }
+  
+define "Illicit Drugs Issue":
+  DetectedIssue {
+    //identifier:,
+    status: FHIR.ObservationStatus { value: 'preliminary' },
+    category: FHIR.CodeableConcept { text: FHIR.string { value: "Illicit Drugs Summary" } },
+    severity: FHIR.DetectedIssueSeverity { value: 'moderate' },
+    patient: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },
+    date: FHIR.dateTime { value: Now() },
+    // TODO: Device representation...
+    // author:,
+    // TODO: Reference the lab results that were used to infer this
+    // implicated:,
+    detail: FHIR.string { value: "Illicit Drugs Detail" },
+    reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10-patient-view'}
+  }
+  
+define function ToCoding(code System.Code):
+  FHIR.Coding {
+    code: FHIR.code { value: code.code },
+    system: FHIR.uri { value: code.system },
+    version: FHIR.string { value: code.version },
+    display: FHIR.string { value: code.display }
+  }
+  
