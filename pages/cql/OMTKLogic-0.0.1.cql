@@ -1,5 +1,7 @@
 library OMTKLogic version '0.0.1'
 
+using FHIR version '3.0.0'
+
 /*
 This version of the OMTKLogic library uses the OMTKData library as the
 source for drug ingredient and strength information, rather than the
@@ -85,7 +87,7 @@ Tapentadol	0.4
 Tramadol	0.1
 
 */
-define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, doseFormCode Code):
+define function GetConversionFactor(ingredientCode Code, dailyDose System.Quantity, doseFormCode Code):
   case ToInteger(ingredientCode.code)
     when 161 then 0  /*	Acetaminophen */
     when 1191 then 0 /*	Aspirin */
@@ -155,9 +157,9 @@ define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, dos
     else 0
   end
 
-define function EnsureMicrogramQuantity(strength Quantity):
+define function EnsureMicrogramQuantity(strength System.Quantity):
   if strength.value < 0.1 and (PositionOf('mg', strength.unit) = 0) then
-    Quantity {
+    System.Quantity {
       value: strength.value * 1000,
       unit: 'mcg' + Substring(strength.unit, 2)
     }
@@ -202,7 +204,7 @@ define function GetIngredients(rxNormCode Code):
       ingredientCode: Code { code: ToString(DI.ingredientCode), system: 'http://www.nlm.nih.gov/research/umls/rxnorm', display: DI.ingredientName },
       ingredientName: DI.ingredientName,
       strength: EnsureMicrogramQuantity(
-          Quantity {
+          System.Quantity {
             value: DI.strengthValue,
             unit: ToUCUM(DI.strengthUnit)
           }
@@ -212,27 +214,27 @@ define function GetIngredients(rxNormCode Code):
 /*
   Calculates daily dose for a specific ingredient based on the ingredient strength, dose form, dose quantity, and daily frequency
 */
-define function GetDailyDose(ingredientCode Code, strength Quantity, doseFormCode Code, doseQuantity Quantity, dosesPerDay Decimal):
+define function GetDailyDose(ingredientCode Code, strength System.Quantity, doseFormCode Code, doseQuantity System.Quantity, dosesPerDay Decimal):
   case
 	  /* if patch --> daily dose = dose value (e.g, number patches with doseQuantity unit = "patch") * per-hour strength */
     when IsPatch(doseFormCode) then
       /* buprenorphine or fentanyl patch */
       if ToInteger(ingredientCode.code) in { 1819, 4337 } then
-        Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: strength.unit }
+        System.Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: strength.unit }
       else
         null
 
     /* if dose unit in actual mass units (mg or mcg -- when it's a single med) --> daily dose = numTimesPerDay * dose */
     when doseQuantity.unit in { 'mg', 'mcg' } then
-      Quantity { value: dosesPerDay * doseQuantity.value, unit: doseQuantity.unit }
+      System.Quantity { value: dosesPerDay * doseQuantity.value, unit: doseQuantity.unit }
 
     /* if doseQuantity is in actual volume units (mL) --> daily dose = numTimesPerDay * dose * strength */
     when doseQuantity.unit = 'mL' and (PositionOf('/mL', strength.unit) = Length(strength.unit) - 3) then
-      Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: Substring(strength.unit, 0, PositionOf('/', strength.unit)) }
+      System.Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: Substring(strength.unit, 0, PositionOf('/', strength.unit)) }
 
 		/* if doseQuantity is not in actual units (e.g., 1 tab, 1 spray -- when it's a combo med with a unit of tablet, or it's mg/actuat) -->  daily dose = numTimesPerDay * dose value * strength value */
     else
-      Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: Substring(strength.unit, 0, PositionOf('/', strength.unit)) }
+      System.Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: Substring(strength.unit, 0, PositionOf('/', strength.unit)) }
   end
 
 define function GetMedicationName(rxNormCode Code):
@@ -247,7 +249,7 @@ define function GetMedicationName(rxNormCode Code):
 /*
   Builds a description for the daily dose for an ingredient
 */
-define function GetDailyDoseDescription(ingredientCode Code, ingredientName String, strength Quantity, doseFormCode Code, doseFormName String, doseQuantity Quantity, dosesPerDay Decimal, dailyDose Quantity):
+define function GetDailyDoseDescription(ingredientCode Code, ingredientName String, strength System.Quantity, doseFormCode Code, doseFormName String, doseQuantity System.Quantity, dosesPerDay Decimal, dailyDose System.Quantity):
   case
     /* if patch */
     when IsPatch(doseFormCode) then
@@ -284,7 +286,7 @@ define function GetDailyDoseDescription(ingredientCode Code, ingredientName Stri
     mme Quantity
   }>
 */
-define function CalculateMMEs(medications List<Tuple { rxNormCode Code, doseQuantity Quantity, dosesPerDay Decimal }>):
+define function CalculateMMEs(medications List<Tuple { rxNormCode Code, doseQuantity System.Quantity, dosesPerDay Decimal }>):
   Flatten(
     medications M
       let Ingredients: GetIngredients(M.rxNormCode)
@@ -305,7 +307,7 @@ define function CalculateMMEs(medications List<Tuple { rxNormCode Code, doseQuan
             dailyDose: dailyDose,
             dailyDoseDescription: GetDailyDoseDescription(I.ingredientCode, I.ingredientName, I.strength, I.doseFormCode, I.doseFormName, adjustedDoseQuantity, M.dosesPerDay, dailyDose),
             conversionFactor: factor,
-            mme: Quantity {
+            mme: System.Quantity {
               value: dailyDose.value * factor,
               unit: dailyDose.unit + '/d'
             }
@@ -313,4 +315,4 @@ define function CalculateMMEs(medications List<Tuple { rxNormCode Code, doseQuan
   )
 
 define TestCalculateMMEs:
-  CalculateMMEs({ { rxNormCode: Code '388508' from RxNorm, doseQuantity: Quantity { value: 1, unit: 'patch' }, dosesPerDay: 0.33 } })
+  CalculateMMEs({ { rxNormCode: Code '388508' from RxNorm, doseQuantity: System.Quantity { value: 1, unit: 'patch' }, dosesPerDay: 0.33 } })
