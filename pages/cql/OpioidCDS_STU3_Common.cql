@@ -255,6 +255,20 @@ define function GetMedicationNames(medications List<MedicationRequest>):
 *  Conversion Functions
 */
 
+define function CodeableConceptsToString(concepts List<FHIR.CodeableConcept>):
+  concepts c return CodeableConceptToString(c)
+
+define function CodeableConceptToString(concept FHIR.CodeableConcept):  
+  if (concept is null or concept.coding is null)
+  then null
+  else  
+    'CodeableConcept { ' &
+      'code: ' & concept.coding.code &
+      ' system: ' & concept.coding.system &
+      ' version: ' & concept.coding.version &
+      ' display: ' & concept.coding.display &
+    ' }'
+
 define function ToCode(coding FHIR.Coding):
   System.Code {
     code: coding.code.value,
