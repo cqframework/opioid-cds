@@ -55,15 +55,14 @@ define "Validate Trigger Event":
   )
 
 define "Inclusion Criteria":
-  AgeInYears() >= 18
+  AgeInYearsAt(Now()) >= 18
     and "Validate Trigger Event"
     and not "Exclusion Criteria"
     and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
     and
       ("No Urine Screening In Last 12 Months"
-        or "Has Missing Opioids?"
-        or "Has Unprescribed Opioids?"
-        or "Has Illicit Drugs in Screening?")
+        or "Has Evidence of Unprescribed Opioids"
+        or "Has Evidence of Illicit Drugs")
 
 define "Exclusion Criteria":
   Common."End of Life Assessment"
@@ -93,16 +92,34 @@ define "No Urine Screening In Last 12 Months":
 
 define "Positive Illicit Drug Screening":
   "Most Recent Illicit Drug Urine Screenings in Last 12 Months" mostRecentScreening
-    where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
+    where mostRecentScreening.interpretation ~ "Positive"
 
-define "Has Illicit Drugs in Screening?":
+define "Positive Illicit Drug Screening Qualifying Codes":
+  "Positive Illicit Drug Screening" positiveScreening
+    return
+    (
+      if (FHIRHelpers.ToConcept(positiveScreening.interpretation) ~ "Positive")
+      then positiveScreening.code
+      else {}
+    )
+
+define "Has Evidence of Illicit Drugs":
   exists ( "Positive Illicit Drug Screening" )
 
 define "Positive Opioid Drug Screening":
   "Most Recent Opioid Drug Urine Screenings in Last 12 Months" mostRecentScreening
-    where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
+    where mostRecentScreening.interpretation ~ "Positive"
 
-define "Has Opioids in Screening?":
+define "Positive Opioid Drug Screening Qualifying Codes":
+  "Positive Opioid Drug Screening" positiveScreening
+    return
+    (
+      if (FHIRHelpers.ToConcept(positiveScreening.interpretation) ~ "Positive")
+      then positiveScreening.code
+      else {}
+    )
+
+define "Has Evidence of Opioids":
   exists ( "Positive Opioid Drug Screening" )
 
 define "Orders Before Most Recent Opioid Screening":
@@ -114,55 +131,35 @@ define "Orders Before Most Recent Opioid Screening":
 
 define "Prescribed Opioids":
   "Orders Before Most Recent Opioid Screening" orders
-    return Lower(Common.GetIngredients(Common.ToCodes(orders.medicationCodeableConcept.coding)))
+    return orders.medicationCodeableConcept
 
 define "Opioids From Most Recent Screening":
   "Positive Opioid Drug Screening" mostRecentScreening
     return
-      Lower(GetDrugNamesFromScreeningCodes(mostRecentScreening.code.coding))
+      mostRecentScreening.code
         union (
           if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
-            then mostRecentScreening.component pis return Lower(GetDrugNamesFromScreeningCodes(pis.code.coding))
+            then mostRecentScreening.component pis return pis.code
           else {}
         )
 
 define "Unprescribed Opioids":
   "Opioids From Most Recent Screening" except "Prescribed Opioids"
 
-define "Has Unprescribed Opioids?":
+define "Has Evidence of Unprescribed Opioids":
   exists ("Unprescribed Opioids")
-
-/*
-  The "Missing Opioids" set is identified by comparing the medication code displays
-  with the urine drug screen code's displays - a dependency that implementers should
-  be aware of.
-*/
-define "Missing Opioids":
-  if "Positive Opioid Drug Screening" is not null
-  then
-    "Prescribed Opioids" Prescriptions
-      except Lower(GetDrugNamesFromScreeningCodes("Positive Opioid Drug Screening".code.coding))
-  else null
-
-define "Has Missing Opioids?":
-  exists ("Missing Opioids")
 
 define "No Screening In Last 12 Months Indicator":
   if "Inclusion Criteria"
     then 'warning'
   else null
 
-define "Missing Opioids Indicator":
+define "Evidence of Unprescribed Opioids Indicator":
   if "Inclusion Criteria"
     then 'warning'
   else null
 
-define "Unprescribed Opioids Indicator":
-  if "Inclusion Criteria"
-    then 'warning'
-  else null
-
-define "Illicit Drugs Indicator":
+define "Evidence of Illicit Drugs Indicator":
   if "Inclusion Criteria"
     then 'warning'
   else null
@@ -172,18 +169,13 @@ define "No Screening In Last 12 Months Summary":
     then 'Annual Urine Screening Check'
   else null
 
-define "Missing Opioids Summary":
-  if "Inclusion Criteria" and "Has Missing Opioids?"
-    then 'Prescribed Opioids Not Found In Urine Screening'
-  else null
-
-define "Unprescribed Opioids Summary":
-  if "Inclusion Criteria" and "Has Unprescribed Opioids?"
+define "Evidence of Unprescribed Opioids Summary":
+  if "Inclusion Criteria" and "Has Evidence of Unprescribed Opioids"
     then 'Unprescribed Opioids Found In Urine Screening'
   else null
 
-define "Illicit Drugs Summary":
-  if "Inclusion Criteria" and "Has Illicit Drugs in Screening?"
+define "Evidence of Illicit Drugs Summary":
+  if "Inclusion Criteria" and "Has Evidence of Illicit Drugs"
     then 'Illicit Drugs Found In Urine Screening'
   else null
 
@@ -192,46 +184,20 @@ define "No Screening In Last 12 Months Detail":
     then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
   else null
 
-define "Missing Opioids Detail":
-  if "Inclusion Criteria" and "Has Missing Opioids?"
+define "Evidence of Unprescribed Opioids Detail":
+  if "Inclusion Criteria" and "Has Evidence of Unprescribed Opioids"
     then
-      'The following opioids are missing from the screening: ' + Combine("Missing Opioids", ', ')
+      'Found the following unprescribed opioid(s): ' + 
+      Combine(Common.CodeableConceptToString("Unprescribed Opioids Qualifying Codes"), ', ')
   else null
 
-define "Unprescribed Opioids Detail":
-  if "Inclusion Criteria" and "Has Unprescribed Opioids?"
-    then
-      'Found the following unprescribed opioid(s): ' + Combine("Unprescribed Opioids", ', ')
-  else null
-
-define "Illicit Drugs Detail":
-  "Positive Illicit Drug Screening" positiveIllicitDrugScreening
-  let illicitDrugs: GetDrugNamesFromScreeningCodes(positiveIllicitDrugScreening.code.coding)
-  return
-    if "Inclusion Criteria" and "Has Illicit Drugs in Screening?"
-      then
-        'Found the following illicit drug(s) in urine drug screen: ' +
+define "Evidence of Illicit Drugs Detail":
+  "Positive Illicit Drug Screening Qualifying Codes" positiveScreening
+    return
+      if ("Inclusion Criteria" and "Has Evidence of Illicit Drugs")
+        then
+          'Found the following illicit drug(s) in urine drug screen: ' +
           (
-            if illicitDrugs is null
-              then 'could not determine the drug name'
-            else illicitDrugs
+            Combine(Common.CodeableConceptToString(positiveScreening), ', ')
           )
-    else null
-
-// Functions
-/*
-  The GetDrugNamesFromScreeningCodes(value List<FHIR.Coding>) function extracts the drug name
-  from the display value for the given code. The expectation is that the drug name will be
-  at the beginning of the string and will end with any of the following characters/strings:
-  ‘[‘, ‘tested’, ‘cutoff’. Anything in the string that precedes the first occurrence of any
-  of those characters/strings will be assumed to be the drug name.
-*/
-define function GetDrugNameFromScreeningCode(value String):
-  if value is null
-    then null
-  else if PositionOf('[', value) = -1
-    then ReplaceMatches(Split(ReplaceMatches(Split(value, 'cutoff')[0], '\\s', ''), 'tested')[0], '\\s', '')
-  else ReplaceMatches(Split(value, '\\[')[0], '\\s', '')
-
-define function GetDrugNamesFromScreeningCodes(value List<FHIR.Coding>):
-  value v return GetDrugNameFromScreeningCode(v.display.value)
+      else null    
