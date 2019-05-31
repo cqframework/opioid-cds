@@ -59,7 +59,7 @@ define "Patient on Opioids with Abuse Potential":
   )
 
 define "Inclusion Criteria":
-  AgeInYearsAt(Now()) >= 18
+  AgeInYears() >= 18
     and "Patient on Opioids with Abuse Potential"
     and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
     and

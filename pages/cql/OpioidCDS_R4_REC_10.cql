@@ -58,7 +58,7 @@ define "Validate Trigger Event":
   )
 
 define "Inclusion Criteria":
-  AgeInYearsAt(Now()) >= 18
+  AgeInYears() >= 18
     and "Validate Trigger Event"
     and not "Exclusion Criteria"
     and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
