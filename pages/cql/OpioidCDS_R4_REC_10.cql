@@ -25,15 +25,15 @@ codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
     Opioid Rx for at least 80 of the past 90 days
       AND
         (No Urine Screening in last 12 months
-          OR Expected opioids not present
-          OR Unexpected drugs present)
+        OR Evidence of Opioids present
+        OR Evidence of Illicit drugs present)
   Exclusion criteria (optional):
     Meds indicating end of life
     Conditions indicating end of life
   Notification:
     No Urine Screening in last 12 months - Patients on opioid therapy should have a urine drug test performed every 12 months.
-    Expected opioids not present - Expected opioid x not present in urine screening
-    Unexpected drugs present - Unexpected drug x present in urine screening
+    Evidence of Opioids - Opioid x present in urine screening
+    Evidence of Illicit Drugs - Illicit drug x present in urine screening
     Ref: CDC Recommendation #10.
   EHR expectations:
     Have availability to snooze for 3 months
@@ -64,7 +64,7 @@ define "Inclusion Criteria":
     and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
     and
       ("No Urine Screening In Last 12 Months"
-        or "Has Evidence of Unprescribed Opioids"
+        or "Has Evidence of Opioids"
         or "Has Evidence of Illicit Drugs")
 
 define "Exclusion Criteria":
@@ -115,8 +115,8 @@ define "Positive Illicit Drug Screening Qualifying Codes":
       )
       union
       (
-        if positiveScreening.component is not null 
-          and exists(positiveScreening.component) 
+        if positiveScreening.component is not null
+          and exists(positiveScreening.component)
           and FHIRHelpers.ToConcept(positiveScreening.component.interpretation) ~ "Positive"
           then positiveScreening.component.code
         else {}
@@ -150,8 +150,8 @@ define "Positive Opioid Drug Screening Qualifying Codes":
     )
     union
     (
-      if positiveScreening.component is not null 
-        and exists(positiveScreening.component) 
+      if positiveScreening.component is not null
+        and exists(positiveScreening.component)
         and FHIRHelpers.ToConcept(positiveScreening.component.interpretation) ~ "Positive"
         then positiveScreening.component.code
       else {}
@@ -161,59 +161,12 @@ define "Positive Opioid Drug Screening Qualifying Codes":
 define "Has Evidence of Opioids":
   exists ( "Positive Opioid Drug Screening" )
 
-define "Orders Before Most Recent Opioid Screening":
-  Common."Active Ambulatory Opioid Rx" orders
-      with "Positive Opioid Drug Screening" mostRecentScreening
-        such that orders.authoredOn.value < mostRecentScreening.effective.value
-      return
-        orders
-
-define "Prescribed Opioids":
-  "Orders Before Most Recent Opioid Screening" orders
-    return orders.medication
-
-define "Opioids From Most Recent Screening":
-  "Positive Opioid Drug Screening" mostRecentScreening
-    return
-      mostRecentScreening.code
-        union (
-          if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
-            then mostRecentScreening.component pis 
-              return pis.code
-          else {}
-        )
-
-define "Unprescribed Opioids":
-  "Opioids From Most Recent Screening" except "Prescribed Opioids"
-
-define "Unprescribed Opioids Qualifying Codes":
-  "Positive Opioid Drug Screening" positiveScreening
-    return
-    (
-      (
-          if (FHIRHelpers.ToConcept(positiveScreening.interpretation) ~ "Positive")
-          then positiveScreening.interpretation
-          else{}
-      )
-      union
-      (
-        if positiveScreening.component is not null 
-          and exists(positiveScreening.component) 
-          and FHIRHelpers.ToConcept(positiveScreening.component.interpretation) ~ "Positive"
-          then positiveScreening.component.interpretation
-        else {}
-      )
-    )    
-
-define "Has Evidence of Unprescribed Opioids":
-  exists ("Unprescribed Opioids")
-
 define "No Screening In Last 12 Months Indicator":
   if "Inclusion Criteria"
     then 'warning'
   else null
 
-define "Evidence of Unprescribed Opioids Indicator":
+define "Evidence of Opioids Indicator":
   if "Inclusion Criteria"
     then 'warning'
   else null
@@ -228,9 +181,9 @@ define "No Screening In Last 12 Months Summary":
     then 'Annual Urine Screening Check'
   else null
 
-define "Evidence of Unprescribed Opioids Summary":
-  if "Inclusion Criteria" and "Has Evidence of Unprescribed Opioids"
-    then 'Unprescribed Opioids Found In Urine Screening'
+define "Evidence of Opioids Summary":
+  if "Inclusion Criteria" and "Has Evidence of Opioids"
+    then 'Opioids Found In Urine Screening'
   else null
 
 define "Evidence of Illicit Drugs Summary":
@@ -243,11 +196,11 @@ define "No Screening In Last 12 Months Detail":
     then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
   else null
 
-define "Evidence of Unprescribed Opioids Detail":
-  if "Inclusion Criteria" and "Has Evidence of Unprescribed Opioids"
+define "Evidence of Opioids Detail":
+  if "Inclusion Criteria" and "Has Evidence of Opioids"
     then
-      'Found the following unprescribed opioid(s): ' + 
-      Combine(Common.CodeableConceptToString("Unprescribed Opioids Qualifying Codes"), ', ')
+      'Found the following opioid(s): ' +
+      Combine(Common.CodeableConceptToString("Positive Opioid Drug Screening Qualifying Codes"), ', ')
   else null
 
 define "Evidence of Illicit Drugs Detail":
@@ -259,4 +212,4 @@ define "Evidence of Illicit Drugs Detail":
           (
             Combine(Common.CodeableConceptToString(positiveScreening), ', ')
           )
-      else null    
+      else null

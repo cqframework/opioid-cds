@@ -28,15 +28,15 @@ code "Urine Drug Screening": '310627008' from Common.SNOMED display 'Urine drug 
     Opioid Rx for at least 80 of the past 90 days
       AND
         (No Urine Screening in last 12 months
-          OR Expected opioids not present
-          OR Unexpected drugs present)
+          OR Evidence of Opioids present
+          OR Evidence of Illicit drugs present)
   Exclusion criteria (optional):
     Meds indicating end of life
     Conditions indicating end of life
   Notification:
     No Urine Screening in last 12 months - Patients on opioid therapy should have a urine drug test performed every 12 months.
-    Expected opioids not present - Expected opioid x not present in urine screening
-    Unexpected drugs present - Unexpected drug x present in urine screening
+    Evidence of Opioids - Opioid x present in urine screening
+    Evidence of Illicit Drugs - Illicit drug x present in urine screening
     Ref: CDC Recommendation #10.
   EHR expectations:
     Have availability to snooze for 3 months
@@ -64,7 +64,7 @@ define "Inclusion Criteria":
     and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
     and
       ("No Urine Screening In Last 12 Months"
-        or "Has Evidence of Unprescribed Opioids"
+        or "Has Evidence of Opioids"
         or "Has Evidence of Illicit Drugs")
 
 define "Illicit Drug Urine Screenings in Last 12 Months":
@@ -126,8 +126,8 @@ define "Positive Illicit Drug Screening Qualifying Codes":
       )
       union
       (
-        if positiveScreening.component is not null 
-          and exists(positiveScreening.component) 
+        if positiveScreening.component is not null
+          and exists(positiveScreening.component)
           and FHIRHelpers.ToConcept(positiveScreening.component.interpretation) ~ "Positive"
           then positiveScreening.component.code
         else {}
@@ -161,8 +161,8 @@ define "Positive Opioid Drug Screening Qualifying Codes":
     )
     union
     (
-      if positiveScreening.component is not null 
-        and exists(positiveScreening.component) 
+      if positiveScreening.component is not null
+        and exists(positiveScreening.component)
         and FHIRHelpers.ToConcept(positiveScreening.component.interpretation) ~ "Positive"
         then positiveScreening.component.code
       else {}
@@ -172,64 +172,17 @@ define "Positive Opioid Drug Screening Qualifying Codes":
 define "Has Evidence of Opioids":
   "Positive Opioid Drug Screening" is not null
 
-define "Orders Before Most Recent Opioid Screening":
-  Common."Active Ambulatory Opioid Rx" orders
-      with "Positive Opioid Drug Screening" mostRecentScreening
-        such that orders.authoredOn.value < mostRecentScreening.effective.value
-      return
-        orders
-
-define "Prescribed Opioids":
-  "Orders Before Most Recent Opioid Screening" orders
-    return orders.medication
-
-define "Opioids From Most Recent Screening":
-  "Positive Opioid Drug Screening" mostRecentScreening
-    return
-      mostRecentScreening.code
-        union (
-          if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
-            then mostRecentScreening.component pis 
-              return pis.code
-          else {}
-        )
-
-define "Unprescribed Opioids":
-  "Opioids From Most Recent Screening" except "Prescribed Opioids"
-
-define "Unprescribed Opioids Qualifying Codes":
-  "Positive Opioid Drug Screening" positiveScreening
-    return
-    (
-      (
-          if (FHIRHelpers.ToConcept(positiveScreening.interpretation) ~ "Positive")
-          then positiveScreening.interpretation
-          else{}
-      )
-      union
-      (
-        if positiveScreening.component is not null 
-          and exists(positiveScreening.component) 
-          and FHIRHelpers.ToConcept(positiveScreening.component.interpretation) ~ "Positive"
-          then positiveScreening.component.interpretation
-        else {}
-      )
-    )   
-
-define "Has Evidence of Unprescribed Opioids":
-  exists ("Unprescribed Opioids")
-
 define "No Screening In Last 12 Months Indicator":
   if "Inclusion Criteria"
     then 'warning'
   else null
 
-define "Unprescribed Opioids Indicator":
+define "Evidence of Opioids Indicator":
   if "Inclusion Criteria"
     then 'warning'
   else null
 
-define "Illicit Drugs Indicator":
+define "Evidence of Illicit Drugs Indicator":
   if "Inclusion Criteria"
     then 'warning'
   else null
@@ -239,12 +192,12 @@ define "No Screening In Last 12 Months Summary":
     then 'Annual Urine Screening Check'
   else null
 
-define "Unprescribed Opioids Summary":
-  if "Inclusion Criteria" and "Has Evidence of Unprescribed Opioids"
-    then 'Unprescribed Opioids Found In Urine Screening'
+define "Evidence of Opioids Summary":
+  if "Inclusion Criteria" and "Has Evidence of Opioids"
+    then 'Opioids Found In Urine Screening'
   else null
 
-define "Illicit Drugs Summary":
+define "Evidence of Illicit Drugs Summary":
   if "Inclusion Criteria" and "Has Evidence of Illicit Drugs"
     then 'Illicit Drugs Found In Urine Screening'
   else null
@@ -254,11 +207,11 @@ define "No Screening In Last 12 Months Detail":
     then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
   else null
 
-define "Evidence of Unprescribed Opioids Detail":
-  if "Inclusion Criteria" and "Has Evidence of Unprescribed Opioids"
+define "Evidence of Opioids Detail":
+  if "Inclusion Criteria" and "Has Evidence of Opioids"
     then
-      'Found the following unprescribed opioid(s): ' + 
-      Combine(Common.CodeableConceptToString("Unprescribed Opioids Qualifying Codes"), ', ')
+      'Found the following opioid(s): ' +
+      Combine(Common.CodeableConceptToString("Positive Opioid Drug Screening Qualifying Codes"), ', ')
   else null
 
 define "Evidence of Illicit Drugs Detail":
@@ -276,14 +229,12 @@ define "Evidence of Illicit Drugs Detail":
 PlanDefinition:
   Inclusion Criteria:
     No Screening in Last 12 months - ServiceRequest - Urine Screening
-    Unprescribed opioids
-    Prescribed opioids not found in urine screening
+    Opioids found in urine screening
     Illicit drugs found in urine screening
 */
 
 // Procedure Request - Urine Screening
-// Detected Issue - Unprescribed Opioids
-// Detected Issue - Prescribed Opioids not found in urine screening
+// Detected Issue - Opioids found in urine screening
 // Detected Issue - Illicit drugs found in urine screening
 
 define "Urine Drug Screening Request":
@@ -301,12 +252,12 @@ define "Urine Drug Screening Request":
     // doesn't really work, need a relatedArtifact here...
     //reasonCode: { FHIR.CodeableConcept { text: FHIR.string { value: 'https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#10_When_prescribing_opioids' } } }
   }
-  
-define "Unprescribed Opioids Issue":
+
+define "Opioids Issue":
   DetectedIssue {
     //identifier:,
     status: FHIR.ObservationStatus { value: 'preliminary' },
-    category: FHIR.CodeableConcept { text: FHIR.string { value: "Unprescribed Opioids Summary" } },
+    category: FHIR.CodeableConcept { text: FHIR.string { value: "Evidence of Opioids Summary" } },
     severity: FHIR.DetectedIssueSeverity { value: 'moderate' },
     patient: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },
     date: FHIR.dateTime { value: Now() },
@@ -314,15 +265,15 @@ define "Unprescribed Opioids Issue":
     // author:,
     // TODO: Reference the lab results that were used to infer this
     // implicated:,
-    detail: FHIR.string { value: "Evidence of Unprescribed Opioids Detail" },
+    detail: FHIR.string { value: "Evidence of Opioids Detail" },
     reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10-patient-view'}
   }
-  
+
 define "Illicit Drugs Issue":
   DetectedIssue {
     //identifier:,
     status: FHIR.ObservationStatus { value: 'preliminary' },
-    category: FHIR.CodeableConcept { text: FHIR.string { value: "Illicit Drugs Summary" } },
+    category: FHIR.CodeableConcept { text: FHIR.string { value: "Evidence of Illicit Drugs Summary" } },
     severity: FHIR.DetectedIssueSeverity { value: 'moderate' },
     patient: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },
     date: FHIR.dateTime { value: Now() },
@@ -333,7 +284,7 @@ define "Illicit Drugs Issue":
     detail: FHIR.string { value: "Evidence of Illicit Drugs Detail" },
     reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10-patient-view'}
   }
-  
+
 define function ToCoding(code System.Code):
   FHIR.Coding {
     code: FHIR.code { value: code.code },
@@ -341,4 +292,3 @@ define function ToCoding(code System.Code):
     version: FHIR.string { value: code.version },
     display: FHIR.string { value: code.display }
   }
-  

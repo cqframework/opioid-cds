@@ -149,8 +149,8 @@
 			</action>
 		</action>
 		<action>
-			<title value="Unprescribed Opioids Found In Urine Screening"/>
-			<description value="Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed"/>
+			<title value="Opioids Found In Urine Screening"/>
+			<description value="Patient has a positive urine screening in the past 12 months for opioid(s)"/>
 			<documentation>
 				<type value="documentation"/>
 				<display value="CDC guideline for prescribing opioids for chronic pain"/>
@@ -182,22 +182,22 @@
 			</documentation>
 			<condition>
 				<kind value="applicability"/>
-				<description value="Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed"/>
+				<description value="Patient has a positive urine screening in the past 12 months for opioid(s)"/>
 				<language value="text/cql"/>
-				<expression value="Has Evidence of Unprescribed Opioids"/>
+				<expression value="Has Evidence of Opioids"/>
 			</condition>
 	        <!-- dynamic card elements -->
 	        <dynamicValue>
 	            <path value="action.description"/>
-	            <expression value="Evidence of Unprescribed Opioids Detail"/>
+	            <expression value="Evidence of Opioids Detail"/>
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.title"/>
-	            <expression value="Evidence of Unprescribed Opioids Summary"/>
+	            <expression value="Evidence of Opioids Summary"/>
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.extension"/>
-	            <expression value="Evidence of Unprescribed Opioids Indicator"/>
+	            <expression value="Evidence of Opioids Indicator"/>
 	        </dynamicValue>
 			<action>
 				<description value="Not for chronic pain management. Snooze 3 months"/>
