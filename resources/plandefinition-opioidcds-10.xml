@@ -149,8 +149,8 @@
 			</action>
 		</action>
 		<action>
-			<title value="Unprescribed Opioids Found In Urine Screening"/>
-			<description value="Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed"/>
+			<title value="Opioids Found In Urine Screening"/>
+			<description value="Patient has a positive urine screening in the past 12 months for opioid(s)"/>
 			<documentation>
 				<type value="documentation"/>
 				<display value="CDC guideline for prescribing opioids for chronic pain"/>
@@ -182,78 +182,26 @@
 			</documentation>
 			<condition>
 				<kind value="applicability"/>
-				<description value="Patient has a positive urine screening in the past 12 months for opioid(s), which is not prescribed"/>
+				<description value="Patient has a positive urine screening in the past 12 months for opioid(s)"/>
 				<language value="text/cql"/>
-				<expression value="Has Unprescribed Opioids?"/>
+				<expression value="Has Evidence of Opioids"/>
 			</condition>
 	        <!-- dynamic card elements -->
 	        <dynamicValue>
 	            <path value="action.description"/>
-	            <expression value="Unprescribed Opioids Detail"/>
+	            <expression value="Evidence of Opioids Detail"/>
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.title"/>
-	            <expression value="Unprescribed Opioids Summary"/>
+	            <expression value="Evidence of Opioids Summary"/>
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.extension"/>
-	            <expression value="Unprescribed Opioids Indicator"/>
+	            <expression value="Evidence of Opioids Indicator"/>
 	        </dynamicValue>
 			<action>
 				<description value="Not for chronic pain management. Snooze 3 months"/>
 			</action>
-		</action>
-		<action>
-			<title value="Prescribed Opioids Not Found In Urine Screening"/>
-			<description value="Patient has a positive urine screening in the past 12 months, which does not include prescribed opioids"/>
-			<documentation>
-				<type value="documentation"/>
-				<display value="CDC guideline for prescribing opioids for chronic pain"/>
-				<url value="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"/>
-			</documentation>
-			<documentation>
-				<type value="documentation"/>
-				<document>
-					<!-- We can use the example code systems from the FHIR CLinical Reasoning Module, or we can define GRADE specific code systems and use those here -->
-					<extension url="http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation">
-						<valueCodeableConcept>
-							<coding>
-								<system value="http://hl7.org/fhir/recommendation-strength"/>
-								<code value="strong"/>
-								<display value="Strong"/>
-							</coding>
-						</valueCodeableConcept>
-					</extension>
-					<extension url="http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence">
-						<valueCodeableConcept>
-							<coding>
-								<system value="http://hl7.org/fhir/evidence-quality"/>
-								<code value="low"/>
-								<display value="Low quality"/>
-							</coding>
-						</valueCodeableConcept>
-					</extension>
-				</document>
-			</documentation>
-			<condition>
-				<kind value="applicability"/>
-				<description value="Patient has a positive urine screening in the past 12 months, which does not include prescribed opioids"/>
-				<language value="text/cql"/>
-				<expression value="Has Missing Opioids?"/>
-			</condition>
-			<!-- dynamic card elements -->
-	        <dynamicValue>
-	            <path value="action.description"/>
-	            <expression value="Missing Opioids Detail"/>
-	        </dynamicValue>
-	        <dynamicValue>
-	            <path value="action.title"/>
-	            <expression value="Missing Opioids Summary"/>
-	        </dynamicValue>
-	        <dynamicValue>
-	            <path value="action.extension"/>
-	            <expression value="Missing Opioids Indicator"/>
-	        </dynamicValue>
 		</action>
 		<action>
 			<title value="Illicit Drugs Found In Urine Screening"/>
@@ -291,20 +239,20 @@
 				<kind value="applicability"/>
 				<description value="Patient has a positive urine screening in the past 12 months for illicit drugs"/>
 				<language value="text/cql"/>
-				<expression value="Has Illicit Drugs in Screening?"/>
+				<expression value="Has Evidence of Illicit Drugs"/>
 			</condition>
 	        <!-- dynamic card elements -->
 	        <dynamicValue>
 	            <path value="action.description"/>
-	            <expression value="Illicit Drugs Detail"/>
+	            <expression value="Evidence of Illicit Drugs Detail"/>
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.title"/>
-	            <expression value="Illicit Drugs Summary"/>
+	            <expression value="Evidence of Illicit Drugs Summary"/>
 	        </dynamicValue>
 	        <dynamicValue>
 	            <path value="action.extension"/>
-	            <expression value="Illicit Drugs Indicator"/>
+	            <expression value="Evidence of Illicit Drugs Indicator"/>
 	        </dynamicValue>
 			<action>
 				<description value="Not for chronic pain management. Snooze 3 months"/>

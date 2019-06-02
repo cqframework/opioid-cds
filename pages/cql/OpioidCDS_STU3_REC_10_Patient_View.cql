@@ -28,15 +28,15 @@ code "Urine Drug Screening": '310627008' from Common.SNOMED display 'Urine drug 
     Opioid Rx for at least 80 of the past 90 days
       AND
         (No Urine Screening in last 12 months
-          OR Expected opioids not present
-          OR Unexpected drugs present)
+          OR Evidence of Opioids present
+          OR Evidence of Illicit drugs present)
   Exclusion criteria (optional):
     Meds indicating end of life
     Conditions indicating end of life
   Notification:
     No Urine Screening in last 12 months - Patients on opioid therapy should have a urine drug test performed every 12 months.
-    Expected opioids not present - Expected opioid x not present in urine screening
-    Unexpected drugs present - Unexpected drug x present in urine screening
+    Evidence of Opioids - Opioid x present in urine screening
+    Evidence of Illicit Drugs - Illicit drug x present in urine screening
     Ref: CDC Recommendation #10.
   EHR expectations:
     Have availability to snooze for 3 months
@@ -64,9 +64,8 @@ define "Inclusion Criteria":
     and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
     and
       ("No Urine Screening In Last 12 Months"
-        or "Has Missing Opioids?"
-        or "Has Unprescribed Opioids?"
-        or "Has Illicit Drugs in Screening?")
+        or "Has Evidence of Opioids"
+        or "Has Evidence of Illicit Drugs")
 
 define "Illicit Drug Urine Screenings in Last 12 Months":
   (
@@ -105,100 +104,85 @@ define "No Urine Screening In Last 12 Months":
 
 define "Positive Illicit Drug Screening":
   "Most Recent Illicit Drug Urine Screenings in Last 12 Months" mostRecentScreening
-    where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
+    where FHIRHelpers.ToConcept(mostRecentScreening.interpretation) ~ "Positive"
       or
       (
           if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
             then
               exists (mostRecentScreening.component c
-                where c.interpretation.coding is not null and
-                  Common.ToCodes(c.interpretation.coding) contains "Positive")
+                where c.interpretation is not null and
+                  FHIRHelpers.ToConcept(c.interpretation) ~ "Positive")
             else false
       )
 
-define "Has Illicit Drugs in Screening?":
+define "Positive Illicit Drug Screening Qualifying Codes":
+  "Positive Illicit Drug Screening" positiveScreening
+    return
+    (
+      (
+          if (FHIRHelpers.ToConcept(positiveScreening.interpretation) ~ "Positive")
+          then positiveScreening.code
+          else {}
+      )
+      union
+      (
+        if positiveScreening.component is not null
+          and exists(positiveScreening.component)
+          and FHIRHelpers.ToConcept(positiveScreening.component.interpretation) ~ "Positive"
+          then positiveScreening.component.code
+        else {}
+      )
+    )
+
+define "Has Evidence of Illicit Drugs":
   "Positive Illicit Drug Screening" is not null
 
 define "Positive Opioid Drug Screening":
   "Most Recent Opioid Drug Urine Screenings in Last 12 Months" mostRecentScreening
-  where Common.ToCodes(mostRecentScreening.interpretation.coding) contains "Positive"
+  where FHIRHelpers.ToConcept(mostRecentScreening.interpretation) ~ "Positive"
     or
     (
         if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
           then
             exists (mostRecentScreening.component c
-              where c.interpretation.coding is not null and
-                Common.ToCodes(c.interpretation.coding) contains "Positive")
+              where c.interpretation is not null and
+                FHIRHelpers.ToConcept(c.interpretation) ~ "Positive")
           else false
     )
 
-define "Has Opioids in Screening?":
+define "Positive Opioid Drug Screening Qualifying Codes":
+  "Positive Opioid Drug Screening" positiveScreening
+  return
+  (
+    (
+        if (FHIRHelpers.ToConcept(positiveScreening.interpretation) ~ "Positive")
+        then positiveScreening.code
+        else{}
+    )
+    union
+    (
+      if positiveScreening.component is not null
+        and exists(positiveScreening.component)
+        and FHIRHelpers.ToConcept(positiveScreening.component.interpretation) ~ "Positive"
+        then positiveScreening.component.code
+      else {}
+    )
+  )
+
+define "Has Evidence of Opioids":
   "Positive Opioid Drug Screening" is not null
-
-define "Orders Before Most Recent Opioid Screening":
-  Common."Active Ambulatory Opioid Rx" orders
-      with "Positive Opioid Drug Screening" mostRecentScreening
-        such that orders.authoredOn.value < mostRecentScreening.effective.value
-      return
-        orders
-
-define "Prescribed Opioids":
-  "Orders Before Most Recent Opioid Screening" orders
-    return Common.GetIngredients(Common.ToCodes(orders.medication.coding))
-
-define "Opioids From Most Recent Screening":
-  "Positive Opioid Drug Screening" mostRecentScreening
-    return
-      GetDrugNamesFromScreeningCodes(mostRecentScreening.code.coding)
-        union (
-          if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
-            then mostRecentScreening.component pis return GetDrugNamesFromScreeningCodes(pis.code.coding)
-          else {}
-        )
-
-define "Unprescribed Opioids":
-  "Opioids From Most Recent Screening" except "Prescribed Opioids"
-
-define "Has Unprescribed Opioids?":
-  exists ("Unprescribed Opioids")
-
-  /*
-    The "Missing Opioids" set is identified by comparing the medication code displays
-    with the urine drug screen code's displays - a dependency that implementers should
-    be aware of.
-  */
-define "Missing Opioids":
-  if "Positive Opioid Drug Screening" is not null
-  then
-    "Prescribed Opioids" Prescriptions
-      except
-        GetDrugNamesFromScreeningCodes("Positive Opioid Drug Screening".code.coding)
-          union (
-            if "Positive Opioid Drug Screening".component is not null and exists("Positive Opioid Drug Screening".component)
-              then "Positive Opioid Drug Screening".component pds return GetDrugNamesFromScreeningCodes(pds.code.coding)
-            else {}
-          )
-  else null
-
-define "Has Missing Opioids?":
-  exists ("Missing Opioids")
 
 define "No Screening In Last 12 Months Indicator":
   if "Inclusion Criteria"
     then 'warning'
   else null
 
-define "Missing Opioids Indicator":
+define "Evidence of Opioids Indicator":
   if "Inclusion Criteria"
     then 'warning'
   else null
 
-define "Unprescribed Opioids Indicator":
-  if "Inclusion Criteria"
-    then 'warning'
-  else null
-
-define "Illicit Drugs Indicator":
+define "Evidence of Illicit Drugs Indicator":
   if "Inclusion Criteria"
     then 'warning'
   else null
@@ -208,18 +192,13 @@ define "No Screening In Last 12 Months Summary":
     then 'Annual Urine Screening Check'
   else null
 
-define "Missing Opioids Summary":
-  if "Inclusion Criteria" and "Has Missing Opioids?"
-    then 'Prescribed Opioids Not Found In Urine Screening'
+define "Evidence of Opioids Summary":
+  if "Inclusion Criteria" and "Has Evidence of Opioids"
+    then 'Opioids Found In Urine Screening'
   else null
 
-define "Unprescribed Opioids Summary":
-  if "Inclusion Criteria" and "Has Unprescribed Opioids?"
-    then 'Unprescribed Opioids Found In Urine Screening'
-  else null
-
-define "Illicit Drugs Summary":
-  if "Inclusion Criteria" and "Has Illicit Drugs in Screening?"
+define "Evidence of Illicit Drugs Summary":
+  if "Inclusion Criteria" and "Has Evidence of Illicit Drugs"
     then 'Illicit Drugs Found In Urine Screening'
   else null
 
@@ -228,64 +207,34 @@ define "No Screening In Last 12 Months Detail":
     then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
   else null
 
-define "Missing Opioids Detail":
-  if "Inclusion Criteria" and "Has Missing Opioids?"
+define "Evidence of Opioids Detail":
+  if "Inclusion Criteria" and "Has Evidence of Opioids"
     then
-      'The following opioids are missing from the screening: ' + Combine("Missing Opioids", ', ')
+      'Found the following opioid(s): ' +
+      Combine(Common.CodeableConceptToString("Positive Opioid Drug Screening Qualifying Codes"), ', ')
   else null
 
-define "Unprescribed Opioids Detail":
-  if "Inclusion Criteria" and "Has Unprescribed Opioids?"
-    then
-      'Found the following unprescribed opioid(s): ' + Combine("Unprescribed Opioids", ', ')
-  else null
-
-define "Illicit Drugs Detail":
-  "Positive Illicit Drug Screening" positiveIllicitDrugScreening
-  let illicitDrugs: GetDrugNamesFromScreeningCodes(positiveIllicitDrugScreening.code.coding)
-  return
-    if "Inclusion Criteria" and "Has Illicit Drugs in Screening?"
-      then
-        'Found the following illicit drug(s) in urine drug screen: ' +
-        (
-          if illicitDrugs is null
-            then if positiveIllicitDrugScreening.component is null or not exists(positiveIllicitDrugScreening.component)
-              then 'could not determine the drug name'
-              else Combine(flatten (positiveIllicitDrugScreening.component pis return GetDrugNamesFromScreeningCodes(pis.code.coding)), ', ')
-          else Combine(illicitDrugs, ', ')
-        )
-    else null
-// Functions
-// TODO: Need a mapping to support proper identification of the drug found in a given screening result
-/*
-  The GetDrugNamesFromScreeningCodes(value List<FHIR.Coding>) function extracts the drug name
-  from the display value for the given code. The expectation is that the drug name will be
-  at the beginning of the string and will end with any of the following characters/strings:
-  ‘[‘, ‘tested’, ‘cutoff’. Anything in the string that precedes the first occurrence of any
-  of those characters/strings will be assumed to be the drug name.
-*/
-define function GetDrugNameFromScreeningCode(value String):
-  if value is null then null
-  else if PositionOf('[', value) = -1
-    then ReplaceMatches(Split(ReplaceMatches(Split(value, 'cutoff')[0], '\\s', ''), 'tested')[0], '\\s', '')
-  else ReplaceMatches(Split(value, '\\[')[0], '\\s', '')
-
-define function GetDrugNamesFromScreeningCodes(value List<FHIR.Coding>):
-  value v return GetDrugNameFromScreeningCode(v.display.value)
-
+define "Evidence of Illicit Drugs Detail":
+  "Positive Illicit Drug Screening Qualifying Codes" positiveScreening
+    return
+      if ("Inclusion Criteria" and "Has Evidence of Illicit Drugs")
+        then
+          'Found the following illicit drug(s) in urine drug screen: ' +
+          (
+            Combine(Common.CodeableConceptToString(positiveScreening), ', ')
+          )
+      else null
 
 /*
 PlanDefinition:
   Inclusion Criteria:
     No Screening in Last 12 months - ServiceRequest - Urine Screening
-    Unprescribed opioids
-    Prescribed opioids not found in urine screening
+    Opioids found in urine screening
     Illicit drugs found in urine screening
 */
 
 // Procedure Request - Urine Screening
-// Detected Issue - Unprescribed Opioids
-// Detected Issue - Prescribed Opioids not found in urine screening
+// Detected Issue - Opioids found in urine screening
 // Detected Issue - Illicit drugs found in urine screening
 
 define "Urine Drug Screening Request":
@@ -303,12 +252,12 @@ define "Urine Drug Screening Request":
     // doesn't really work, need a relatedArtifact here...
     //reasonCode: { FHIR.CodeableConcept { text: FHIR.string { value: 'https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#10_When_prescribing_opioids' } } }
   }
-  
-define "Unprescribed Opioids Issue":
+
+define "Opioids Issue":
   DetectedIssue {
     //identifier:,
     status: FHIR.ObservationStatus { value: 'preliminary' },
-    category: FHIR.CodeableConcept { text: FHIR.string { value: "Unprescribed Opioids Summary" } },
+    category: FHIR.CodeableConcept { text: FHIR.string { value: "Evidence of Opioids Summary" } },
     severity: FHIR.DetectedIssueSeverity { value: 'moderate' },
     patient: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },
     date: FHIR.dateTime { value: Now() },
@@ -316,31 +265,15 @@ define "Unprescribed Opioids Issue":
     // author:,
     // TODO: Reference the lab results that were used to infer this
     // implicated:,
-    detail: FHIR.string { value: "Unprescribed Opioids Detail" },
+    detail: FHIR.string { value: "Evidence of Opioids Detail" },
     reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10-patient-view'}
   }
-  
-define "Missing Opioids Issue":
-  DetectedIssue {
-    //identifier:,
-    status: FHIR.ObservationStatus { value: 'preliminary' },
-    category: FHIR.CodeableConcept { text: FHIR.string { value: "Missing Opioids Summary" } },
-    severity: FHIR.DetectedIssueSeverity { value: 'moderate' },
-    patient: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },
-    date: FHIR.dateTime { value: Now() },
-    // TODO: Device representation...
-    // author:,
-    // TODO: Reference the lab results that were used to infer this
-    // implicated:,
-    detail: FHIR.string { value: "Missing Opioids Detail" },
-    reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10-patient-view'}
-  }
-  
+
 define "Illicit Drugs Issue":
   DetectedIssue {
     //identifier:,
     status: FHIR.ObservationStatus { value: 'preliminary' },
-    category: FHIR.CodeableConcept { text: FHIR.string { value: "Illicit Drugs Summary" } },
+    category: FHIR.CodeableConcept { text: FHIR.string { value: "Evidence of Illicit Drugs Summary" } },
     severity: FHIR.DetectedIssueSeverity { value: 'moderate' },
     patient: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },
     date: FHIR.dateTime { value: Now() },
@@ -348,10 +281,10 @@ define "Illicit Drugs Issue":
     // author:,
     // TODO: Reference the lab results that were used to infer this
     // implicated:,
-    detail: FHIR.string { value: "Illicit Drugs Detail" },
+    detail: FHIR.string { value: "Evidence of Illicit Drugs Detail" },
     reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10-patient-view'}
   }
-  
+
 define function ToCoding(code System.Code):
   FHIR.Coding {
     code: FHIR.code { value: code.code },
@@ -359,4 +292,3 @@ define function ToCoding(code System.Code):
     version: FHIR.string { value: code.version },
     display: FHIR.string { value: code.display }
   }
-  
