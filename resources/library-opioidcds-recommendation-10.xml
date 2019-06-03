@@ -1,9 +1,5 @@
 <Library xmlns="http://hl7.org/fhir">
-   <id value="library-opioidcds-stu3-rec-10-0-1-0"/>
-   <meta>
-      <versionId value="421"/>
-      <lastUpdated value="2019-05-31T17:00:05.164-06:00"/>
-   </meta>
+   <id value="opioidcds-recommendation-10"/>
    <text>
       <status value="generated"/>
       <div xmlns="http://www.w3.org/1999/xhtml">
