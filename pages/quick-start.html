@@ -124,9 +124,36 @@ GET http://localhost:8080/cqf-ruler/cds-services
 <div class="example">
   <pre class="json">
 {
-    "services": [ {"todo": "todo"} ]
-}
-  </pre>
+    "services": [
+        {
+            "hook": "patient-view",
+            "name": "PlanDefinition_Recommendation_10_Patient_View",
+            "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 (patient-view)",
+            "description": "When prescribing opioids for chronic pain, providers should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs.",
+            "id": "opioidcds-10-patient-view",
+            "prefetch": {
+                "item1": "Patient?_id={{context.patientId}}",
+                "item2": "MedicationRequest?patient={{context.patientId}}&medication=",
+                "item3": "Observation?patient={{context.patientId}}&code=",
+                "item4": "Observation?patient={{context.patientId}}&component-code=",
+                "item5": "Observation?patient={{context.patientId}}&code=",
+                "item6": "Observation?patient={{context.patientId}}&component-code="
+            }
+        },
+        {
+            "hook": "patient-view",
+            "name": "PlanDefinition_Recommendation_11_Patient_View",
+            "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 (patient-view)",
+            "description": "Concurrently prescribing opioid medications with benzodiazepines increases the risk of harm for the patient.",
+            "id": "opioidcds-11-patient-view",
+            "prefetch": {
+                "item1": "Patient?_id={{context.patientId}}",
+                "item2": "MedicationRequest?patient={{context.patientId}}&medication=",
+                "item3": "MedicationRequest?patient={{context.patientId}}&medication="
+            }
+        }
+    ]
+}  </pre>
 </div>
 
 <a name="request-and-response"> </a>
