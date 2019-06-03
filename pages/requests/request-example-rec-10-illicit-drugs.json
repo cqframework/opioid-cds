@@ -211,17 +211,6 @@
         }
       }
     },
-    "item4": {
-      "response": {
-        "status": "200 OK"
-      },
-      "resource": {
-        "resourceType": "Patient",
-        "id": "example-rec-10-illicit-drugs",
-        "gender": "female",
-        "birthDate": "1982-01-07"
-      }
-    },
     "item5": null,
     "item6": null,
     "item7": null,
