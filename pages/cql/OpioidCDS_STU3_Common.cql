@@ -39,21 +39,21 @@ define IsForChronicPain: true
 define "Active Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
     where Rx.status.value = 'active'
-      and FHIRHelpers.ToConcept(Rx.category) contains "Outpatient"
+      and FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
 
 define "Active Ambulatory Benzodiazepine Rx":
   [MedicationRequest: "Benzodiazepines"] Rx
     where Rx.status.value = 'active'
-      and FHIRHelpers.ToConcept(Rx.category) contains "Outpatient"
+      and FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
 
 define "Active Ambulatory Naloxone Rx":
   [MedicationRequest: "Naloxone"] Rx
     where Rx.status.value = 'active'
-      and FHIRHelpers.ToConcept(Rx.category) contains "Outpatient"
+      and FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
 
 define "Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
-      where FHIRHelpers.ToConcept(Rx.category) contains "Outpatient"
+      where FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
 
 define function "Is Context Prescription End of Life Opioid?" (ContextPrescriptions List<MedicationRequest>):
   exists (
@@ -259,15 +259,23 @@ define function CodeableConceptsToString(concepts List<FHIR.CodeableConcept>):
   concepts c return CodeableConceptToString(c)
 
 define function CodeableConceptToString(concept FHIR.CodeableConcept):
-  if (concept is null or concept.coding is null)
+  if (concept is null)
   then null
   else
     'CodeableConcept { ' &
-      'code: ' & concept.coding.code &
-      ' system: ' & concept.coding.system &
-      ' version: ' & concept.coding.version &
-      ' display: ' & concept.coding.display &
-    ' }'
+      Combine(
+        (concept.coding C
+          return
+            'Coding { ' &
+              'code: ' & C.code &
+              ' system: ' & C.system &
+              ' version: ' & C.version &
+              ' display: ' & C.display &
+            ' }'
+        ),
+        ','
+      ) &
+   ' }'
 
 define function ToCode(coding FHIR.Coding):
   System.Code {

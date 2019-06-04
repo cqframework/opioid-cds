@@ -105,14 +105,9 @@ define "No Urine Screening In Last 12 Months":
 define "Positive Illicit Drug Screening":
   "Most Recent Illicit Drug Urine Screenings in Last 12 Months" mostRecentScreening
     where FHIRHelpers.ToConcept(mostRecentScreening.interpretation) ~ "Positive"
-      or
-      (
-          if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
-            then
-              exists (mostRecentScreening.component c
-                where c.interpretation is not null and
-                  FHIRHelpers.ToConcept(c.interpretation) ~ "Positive")
-            else false
+      or exists (mostRecentScreening.component C
+        where C.code in Common."Illicit Drug Screening"
+          and FHIRHelpers.ToConcept(C.interpretation) ~ "Positive"
       )
 
 define "Positive Illicit Drug Screening Qualifying Codes":
@@ -121,16 +116,15 @@ define "Positive Illicit Drug Screening Qualifying Codes":
     (
       (
           if (FHIRHelpers.ToConcept(positiveScreening.interpretation) ~ "Positive")
-          then positiveScreening.code
+          then { positiveScreening.code }
           else {}
       )
       union
       (
-        if positiveScreening.component is not null
-          and exists(positiveScreening.component)
-          and FHIRHelpers.ToConcept(positiveScreening.component.interpretation) ~ "Positive"
-          then positiveScreening.component.code
-        else {}
+        positiveScreening.component C
+          where C.code in Common."Illicit Drug Screening"
+            and FHIRHelpers.ToConcept(C.interpretation) ~ "Positive"
+          return C.code
       )
     )
 
@@ -140,14 +134,9 @@ define "Has Evidence of Illicit Drugs":
 define "Positive Opioid Drug Screening":
   "Most Recent Opioid Drug Urine Screenings in Last 12 Months" mostRecentScreening
   where FHIRHelpers.ToConcept(mostRecentScreening.interpretation) ~ "Positive"
-    or
-    (
-        if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
-          then
-            exists (mostRecentScreening.component c
-              where c.interpretation is not null and
-                FHIRHelpers.ToConcept(c.interpretation) ~ "Positive")
-          else false
+    or exists (mostRecentScreening.component C
+      where C.code in Common."Opioid Drug Screening"
+        and FHIRHelpers.ToConcept(C.interpretation) ~ "Positive"
     )
 
 define "Positive Opioid Drug Screening Qualifying Codes":
@@ -155,17 +144,16 @@ define "Positive Opioid Drug Screening Qualifying Codes":
   return
   (
     (
-        if (FHIRHelpers.ToConcept(positiveScreening.interpretation) ~ "Positive")
-        then positiveScreening.code
-        else{}
+      if (FHIRHelpers.ToConcept(positiveScreening.interpretation) ~ "Positive")
+      then { positiveScreening.code }
+      else {}
     )
     union
     (
-      if positiveScreening.component is not null
-        and exists(positiveScreening.component)
-        and FHIRHelpers.ToConcept(positiveScreening.component.interpretation) ~ "Positive"
-        then positiveScreening.component.code
-      else {}
+      positiveScreening.component C
+        where C.code in Common."Opioid Drug Screening"
+          and FHIRHelpers.ToConcept(C.interpretation) ~ "Positive"
+        return C.code
     )
   )
 
@@ -211,18 +199,14 @@ define "Evidence of Opioids Detail":
   if "Inclusion Criteria" and "Has Evidence of Opioids"
     then
       'Found the following opioid(s): ' +
-      Combine(Common.CodeableConceptToString("Positive Opioid Drug Screening Qualifying Codes"), ', ')
+        Combine(Common.CodeableConceptsToString("Positive Opioid Drug Screening Qualifying Codes"), ', ')
   else null
 
 define "Evidence of Illicit Drugs Detail":
-  "Positive Illicit Drug Screening Qualifying Codes" positiveScreening
-    return
-      if ("Inclusion Criteria" and "Has Evidence of Illicit Drugs")
-        then
-          'Found the following illicit drug(s) in urine drug screen: ' +
-          (
-            Combine(Common.CodeableConceptToString(positiveScreening), ', ')
-          )
+  if "Inclusion Criteria" and "Has Evidence of Illicit Drugs"
+    then
+      'Urine drug screening results: ' +
+        Combine(Common.CodeableConceptsToString("Positive Illicit Drug Screening Qualifying Codes"), ', ')
       else null
 
 /*
