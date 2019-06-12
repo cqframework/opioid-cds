@@ -79,14 +79,14 @@ GET http://localhost:8080/cqf-ruler/cds-services
     <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
   </thead>
   <tbody>
-    <tr><td>OMTKData (v0.0.2)</td><td>Library</td><td>Opioid Management Terminology Knowledge (OMTK) Data Library</td></tr>
-    <tr><td>OMTKLogic (v0.0.1)</td><td>Library</td><td>Opioid Management Terminology Knowledge (OMTK) Logic Library</td></tr>
-    <tr><td>OpioidCDS_STU3_Common (v0.1.0)</td><td>Library</td><td>Opioid Common Library</td></tr>
-    <tr><td>OpioidCDS_STU3_REC_10_Patient_View (v0.1.0)</td><td>Library</td><td>Opioid Recommendation #10 (Patient View Version) Library</td></tr>
-    <tr><td>OpioidCDS_STU3_REC_11_Patient_View (v0.1.0)</td><td>Library</td><td>Opioid Recommendation #11 (Patient View Version) Library</td></tr>
-    <tr><td>PlanDefinition_Recommendation_10_Patient_View (v0.1.0)</td><td>PlanDefinition</td><td>Opioid Recommendation #10 (Patient View Version) PlanDefinition</td></tr>
-    <tr><td>PlanDefinition_Recommendation_11_Patient_view (v0.1.0)</td><td>PlanDefinition</td><td>Opioid Recommendation #11 (Patient View Version) PlanDefinition</td></tr>
-    <tr><td>Terminologies</td><td>ValueSet</td><td>Value sets referenced by the CQL in the Opioid Logic recommendations</td></tr>
+    <tr><td><a href="Library-omtkdata-0-0-2.html">OMTKData (v0.0.2)</a></td><td>Library</td><td>Opioid Management Terminology Knowledge (OMTK) Data Library</td></tr>
+    <tr><td><a href="Library-omtklogic-0-0-1.html">OMTKLogic (v0.0.1)</a></td><td>Library</td><td>Opioid Management Terminology Knowledge (OMTK) Logic Library</td></tr>
+    <tr><td><a href="Library-opioidcds-stu3-common-0-1-0.html">OpioidCDS_STU3_Common (v0.1.0)</a></td><td>Library</td><td>Opioid Common Library</td></tr>
+    <tr><td><a href="Library-opioidcds-stu3-rec-10-patient-view-0-1-0.html">OpioidCDS_STU3_REC_10_Patient_View (v0.1.0)</a></td><td>Library</td><td>Opioid Recommendation #10 (Patient View Version) Library</td></tr>
+    <tr><td><a href="Library-opioidcds-stu3-rec-11-patient-view-0-1-0.html">OpioidCDS_STU3_REC_11_Patient_View (v0.1.0)</a></td><td>Library</td><td>Opioid Recommendation #11 (Patient View Version) Library</td></tr>
+    <tr><td><a href="PlanDefinition-opioidcds-10-patient-view.html">PlanDefinition_Recommendation_10_Patient_View (v0.1.0)</a></td><td>PlanDefinition</td><td>Opioid Recommendation #10 (Patient View Version) PlanDefinition</td></tr>
+    <tr><td><a href="PlanDefinition-opioidcds-11-patient-view.html">PlanDefinition_Recommendation_11_Patient_view (v0.1.0)</a></td><td>PlanDefinition</td><td>Opioid Recommendation #11 (Patient View Version) PlanDefinition</td></tr>
+    <tr><td><a href="terminology.html">Terminologies</a></td><td>ValueSet</td><td>Value sets referenced by the CQL in the Opioid Logic recommendations</td></tr>
   </tbody>
 </table>
 
@@ -103,6 +103,16 @@ PUT http://localhost:8080/cqf-ruler/baseDstu3/Library/library-omtkdata-0-0-2
 
 <p>For convenience, these resources have all been added to a single transaction bundle, quick-start-content,
   that can be POSTed to the base URL of the server:</p>
+	
+<table class="list">
+	<thead>
+		<tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+	</thead>
+	<tbody>
+		<tr><td><a href="quick-start-bundles/opioid-cds-terminology-bundle.json">opioid-cds-terminology-bundle</a></td><td>Bundle</td><td>All Value Sets Referenced by the Opioid Content</td></tr>
+		<tr><td><a href="quick-start-bundles/opioid-cds-content-bundle.json">opioid-cds-content-bundle</a></td><td>Bundle</td><td>All Required Content for Recommendations #10 and #11</td></tr>
+	</tbody>
+</table>
   
 <div class="example">
   <pre class="http">
