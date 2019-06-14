@@ -36,24 +36,46 @@ code "Outpatient": 'outpatient' from "Medication Request Category Codes"
 // TODO: Capture process decisions for long-term opioid use
 define IsForChronicPain: true
 
+// Some systems do not include the "system" attribute in the cateogry element of a MedicationRequest.
+// Though this is not explicitly non-conformant, it is a suggested best-practice to communicate the
+// system when known. In the absence of the system, given that the category binding is preferred, using
+// the code only is acceptable. However, this is introduced as a configuration option to 1) Track that this
+// is not the ideal behavior, and 2) Enable it to be used only when necessary due to system behaviors.
+define IgnoreOutpatientCategorySystem: true
+
+define function CodeOnlyEquivalent(code1 Code, code2 Code):
+  code1.code ~ code2.code
+	
+define function ConceptCodeOnlyEquivalent(concept Concept, code Code):
+  exists (concept.codes C
+	  where C.code ~ code.code
+	)
+
 define "Active Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
     where Rx.status.value = 'active'
-      and FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
+		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
+			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
+			)
 
 define "Active Ambulatory Benzodiazepine Rx":
   [MedicationRequest: "Benzodiazepines"] Rx
     where Rx.status.value = 'active'
-      and FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
+		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
+			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
+			)
 
 define "Active Ambulatory Naloxone Rx":
   [MedicationRequest: "Naloxone"] Rx
     where Rx.status.value = 'active'
-      and FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
+		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
+			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
+			)
 
 define "Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
-      where FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
+		  where FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
+			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
 
 define function "Is Context Prescription End of Life Opioid?" (ContextPrescriptions List<MedicationRequest>):
   exists (
