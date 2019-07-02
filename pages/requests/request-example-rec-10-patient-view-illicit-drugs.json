@@ -149,7 +149,16 @@
         "resourceType": "Patient",
         "id": "example-rec-10-illicit-drugs",
         "gender": "female",
-        "birthDate": "1982-01-07"
+        "birthDate": "1982-01-07",
+        "name": [
+          {
+            "family": "Smith",
+            "given": [
+              "John",
+              "A."
+            ]
+          }
+        ]
       }
     },
     "item5": {
