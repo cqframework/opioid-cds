@@ -53,7 +53,7 @@
                             <span>
                                 <span style="padding-left: 25px;">
                                     <b>reference: </b>
-                                    <span>Library/library-fhirhelpers-3-0-0/_history/3</span>
+                                    <span>Library/library-fhir-helpers</span>
                                 </span>
                             </span>
                         </p>
@@ -285,7 +285,7 @@ define &quot;Concurrent Benzodiazepine Prescription Issue&quot;:
     <relatedArtifact>
         <type value="depends-on"/>
         <resource>
-            <reference value="Library/library-fhirhelpers-3-0-0"/>
+            <reference value="Library/library-fhir-helpers"/>
         </resource>
     </relatedArtifact>
     <relatedArtifact>
