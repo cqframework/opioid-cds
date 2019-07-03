@@ -48,14 +48,6 @@
             ]
         }
     ],
-  "relatedArtifact": [
-    {
-      "type": "depends-on",
-      "resource": {
-        "reference": "Library/library-fhir-model-definition"
-      }
-    }
-  ],
     "content": [
         {
             "contentType": "text/cql",

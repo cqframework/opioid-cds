@@ -40,14 +40,6 @@
       ]
     }
   ],
-  "relatedArtifact": [
-    {
-      "type": "depends-on",
-      "resource": {
-        "reference": "Library/library-fhir-model-definition-FHIR2"
-      }
-    }
-  ],
   "content": [
     {
       "contentType": "application/elm+xml",
