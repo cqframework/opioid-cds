@@ -64,8 +64,8 @@
           {
             "timing": {
               "repeat": {
-                "frequency": 1,
-                "period": 12.0,
+                "frequency": 3,
+                "period": 1.0,
                 "periodUnit": "d"
               }
             },
