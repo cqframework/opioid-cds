@@ -117,7 +117,7 @@
         </documentation>
         <trigger>
             <type value="named-event"/>
-            <name value="medication-prescribe"/>
+            <name value="order-select"/>
         </trigger>
         <condition>
             <kind value="applicability"/>

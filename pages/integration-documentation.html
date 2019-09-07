@@ -41,7 +41,7 @@
 
 <img src="assets/images/ClinicalReasoningApproach.png"/>
 
-<p>Briefly, the EHR invokes the "medication-prescribe" hook at the appropriate point in the
+<p>Briefly, the EHR invokes the "order-select" hook at the appropriate point in the
   prescription workflow. The CDS Service is called via the CDS Hooks API and passed the
   medication being prescribed along with the patient information. The CDS Service then
   processes the appropriate PlanDefinition resource, evaluating the criteria and constructing
@@ -76,12 +76,12 @@
   <pre class="xml">
 &lt;triggerDefinition&gt;
 	&lt;type value="named-event"/&gt;
-	&lt;eventName value="medication-prescribe"/&gt;
+	&lt;eventName value="order-select"/&gt;
 &lt;/triggerDefinition&gt;
   </pre>
 </div>
 
-<p>The name "medication-prescribe" defines the "hook" to be used from the EHR.</p>
+<p>The name "order-select" defines the "hook" to be used from the EHR.</p>
 
 <a name="condition"> </a>
 <h5><span class="sectioncount">8.3.2.1.2</span> Condition <a href="integration-documentation.html#condition" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h5>

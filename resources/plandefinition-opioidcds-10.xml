@@ -82,7 +82,7 @@
 	<action>
 		<triggerDefinition>
 			<type value="named-event"/>
-			<eventName value="medication-prescribe"/>
+			<eventName value="order-select"/>
 		</triggerDefinition>
 		<condition>
 			<kind value="applicability"/>
