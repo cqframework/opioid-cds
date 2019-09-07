@@ -737,10 +737,6 @@
       "source": "valueset-opioids-abused-in-ambulatory-care.xml",
       "base": "ValueSet-opioids-abused-in-ambulatory-care.html"
     },
-    "ValueSet/opioids-codeine-cough-meds": {
-      "source": "valueset-opioids-codeine-cough-meds.xml",
-      "base": "ValueSet-opioids-codeine-cough-meds.html"
-    },
     "ValueSet/short-acting-opioids": {
       "source": "valueset-short-acting-opioids.xml",
       "base": "ValueSet-short-acting-opioids.html"

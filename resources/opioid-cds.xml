@@ -1140,14 +1140,6 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Codeine Cough Medication"/>
-            <description value="Opioid codeine cough medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioids-codeine-cough-meds"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Short Acting Opioids Medication"/>
             <description value="Short acting opioids medication codes"/>
             <sourceReference>
