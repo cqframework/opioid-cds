@@ -343,98 +343,6 @@
                   </div>
                </td>
             </tr>
-            <tr style="vertical-align: top;">
-               <td style="padding-left: 25px; padding-right: 25px;">
-                  <div>
-                     <p style="margin-bottom: 5px;">
-                        <b>type: </b>
-                        <span>MedicationAdministration</span>
-                     </p>
-                     <p style="margin-bottom: 5px;">
-                        <b>code filter:</b>
-                        <br/>
-                        <span style="padding-left: 25px;">
-                           <b>path: </b>
-                           <span>code</span>
-                        </span>
-                        <br/>
-                        <span style="padding-left: 25px;">
-                           <b>valueset: </b>
-                           <span>http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life</span>
-                        </span>
-                     </p>
-                  </div>
-               </td>
-            </tr>
-            <tr style="vertical-align: top;">
-               <td style="padding-left: 25px; padding-right: 25px;">
-                  <div>
-                     <p style="margin-bottom: 5px;">
-                        <b>type: </b>
-                        <span>MedicationDispense</span>
-                     </p>
-                     <p style="margin-bottom: 5px;">
-                        <b>code filter:</b>
-                        <br/>
-                        <span style="padding-left: 25px;">
-                           <b>path: </b>
-                           <span>code</span>
-                        </span>
-                        <br/>
-                        <span style="padding-left: 25px;">
-                           <b>valueset: </b>
-                           <span>http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life</span>
-                        </span>
-                     </p>
-                  </div>
-               </td>
-            </tr>
-            <tr style="vertical-align: top;">
-               <td style="padding-left: 25px; padding-right: 25px;">
-                  <div>
-                     <p style="margin-bottom: 5px;">
-                        <b>type: </b>
-                        <span>MedicationRequest</span>
-                     </p>
-                     <p style="margin-bottom: 5px;">
-                        <b>code filter:</b>
-                        <br/>
-                        <span style="padding-left: 25px;">
-                           <b>path: </b>
-                           <span>code</span>
-                        </span>
-                        <br/>
-                        <span style="padding-left: 25px;">
-                           <b>valueset: </b>
-                           <span>http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life</span>
-                        </span>
-                     </p>
-                  </div>
-               </td>
-            </tr>
-            <tr style="vertical-align: top;">
-               <td style="padding-left: 25px; padding-right: 25px;">
-                  <div>
-                     <p style="margin-bottom: 5px;">
-                        <b>type: </b>
-                        <span>MedicationStatement</span>
-                     </p>
-                     <p style="margin-bottom: 5px;">
-                        <b>code filter:</b>
-                        <br/>
-                        <span style="padding-left: 25px;">
-                           <b>path: </b>
-                           <span>code</span>
-                        </span>
-                        <br/>
-                        <span style="padding-left: 25px;">
-                           <b>valueset: </b>
-                           <span>http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life</span>
-                        </span>
-                     </p>
-                  </div>
-               </td>
-            </tr>
             <!-- Filter down to human readable content -->
             <tr style="vertical-align: top;">
                <th scope="row">
@@ -474,7 +382,6 @@ valueset &quot;Naloxone&quot;: &apos;http://fhir.org/guides/cdc/opioid-cds/Value
 valueset &quot;Risk Assessment&quot;: &apos;http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-abuse-assessment&apos;
 valueset &quot;Opioid Drug Screening&quot;: &apos;http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-urine-screening&apos;
 valueset &quot;Ambulatory Abuse Potential Opioids&quot;: &apos;http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care&apos;
-valueset &quot;End Of Life Opioids&quot;: &apos;http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life&apos;
 valueset &quot;Substance Abuse&quot;: &apos;http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-abuse&apos;
 
 // TODO: Turn this into a valueset
@@ -912,34 +819,6 @@ define function ToQuantity(quantity FHIR.Quantity):
    </dataRequirement>
    <dataRequirement>
       <type value="Encounter"/>
-   </dataRequirement>
-   <dataRequirement>
-      <type value="MedicationAdministration"/>
-      <codeFilter>
-         <path value="code"/>
-         <valueSetString value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life"/>
-      </codeFilter>
-   </dataRequirement>
-   <dataRequirement>
-      <type value="MedicationDispense"/>
-      <codeFilter>
-         <path value="code"/>
-         <valueSetString value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life"/>
-      </codeFilter>
-   </dataRequirement>
-   <dataRequirement>
-      <type value="MedicationRequest"/>
-      <codeFilter>
-         <path value="code"/>
-         <valueSetString value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life"/>
-      </codeFilter>
-   </dataRequirement>
-   <dataRequirement>
-      <type value="MedicationStatement"/>
-      <codeFilter>
-         <path value="code"/>
-         <valueSetString value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life"/>
-      </codeFilter>
    </dataRequirement>
    <content>
       <contentType value="text/cql"/>

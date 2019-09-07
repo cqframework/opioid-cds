@@ -25,7 +25,6 @@ valueset "Naloxone": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/naloxone'
 valueset "Risk Assessment": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-abuse-assessment'
 valueset "Opioid Drug Screening": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-urine-screening'
 valueset "Ambulatory Abuse Potential Opioids": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care'
-valueset "End Of Life Opioids": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life'
 valueset "Substance Abuse": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-abuse'
 
 // TODO: Turn this into a valueset
@@ -45,7 +44,7 @@ define IgnoreOutpatientCategorySystem: true
 
 define function CodeOnlyEquivalent(code1 Code, code2 Code):
   code1.code ~ code2.code
-	
+
 define function ConceptCodeOnlyEquivalent(concept Concept, code Code):
   exists (concept.codes C
 	  where C.code ~ code.code
@@ -76,12 +75,6 @@ define "Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
 		  where FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
 			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
-
-define function "Is Context Prescription End of Life Opioid?" (ContextPrescriptions List<MedicationRequest>):
-  exists (
-    ContextPrescriptions Rx
-      where Rx.medication in "End Of Life Opioids"
-  )
 
 define "End of Life Assessment":
   // 1. Conditions indicating end of life or with limited life expectancy
@@ -128,28 +121,6 @@ define "End of Life Assessment":
             else E.hospitalization.dischargeDisposition in "Hospice Disposition"
           )
           and E.status.value in { 'planned', 'arrived', 'in-progress', 'finished', 'onleave' }
-    )
-  )
-  // 3. Medications indicating end of life
-  or exists (
-    (
-      [MedicationAdministration: code in "End Of Life Opioids"] MA
-        where MA.status.value in { 'in-progress', 'on-hold', 'completed' }
-    )
-    union
-    (
-      [MedicationDispense: code in "End Of Life Opioids"] MD
-        where MD.status.value in { 'preparation', 'in-progress', 'on-hold', 'completed' }
-    )
-    union
-    (
-      [MedicationRequest: code in "End Of Life Opioids"] MR
-        where MR.status.value in { 'active', 'completed' }
-    )
-    union
-    (
-      [MedicationStatement: code in "End Of Life Opioids"] MS
-        where MS.status.value in { 'active', 'completed', 'intended' }
     )
   )
 

@@ -86,9 +86,6 @@
       <def name="Exclusion Criteria" context="Patient" accessLevel="Public">
          <expression xsi:type="Or">
             <operand name="End of Life Assessment" libraryName="Common" xsi:type="ExpressionRef"/>
-            <operand name="Is Context Prescription End of Life Opioid?" libraryName="Common" xsi:type="FunctionRef">
-               <operand name="ContextPrescriptions" xsi:type="ParameterRef"/>
-            </operand>
          </expression>
       </def>
       <def name="Inclusion Criteria" context="Patient" accessLevel="Public">
@@ -181,4 +178,3 @@
       </def>
    </statements>
 </library>
-

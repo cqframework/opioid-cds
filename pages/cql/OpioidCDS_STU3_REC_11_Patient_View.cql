@@ -42,11 +42,9 @@ define "Inclusion Criteria":
 
 define "Benzo Scripts":
   Common."Active Ambulatory Benzodiazepine Rx" BenzoScript
-    where not (BenzoScript.medication in Common."End Of Life Opioids")
 
 define "Opioid with Abuse Potential Scripts":
   Common."Active Ambulatory Opioid Rx" OpioidScript
-    where not (OpioidScript.medication in Common."End Of Life Opioids")
 
 define "Get Indicator":
   if "Inclusion Criteria"

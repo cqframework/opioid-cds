@@ -1148,14 +1148,6 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioids Indicating End Of Life Medication"/>
-            <description value="Opioids indicating end of life medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioids-indicating-end-of-life"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Short Acting Opioids Medication"/>
             <description value="Short acting opioids medication codes"/>
             <sourceReference>

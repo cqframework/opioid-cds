@@ -219,9 +219,6 @@
          </annotation>
          <expression localId="45" xsi:type="Or">
             <operand localId="41" name="End of Life Assessment" libraryName="Common" xsi:type="ExpressionRef"/>
-            <operand localId="44" name="Is Context Prescription End of Life Opioid?" libraryName="Common" xsi:type="FunctionRef">
-               <operand localId="43" name="ContextPrescriptions" xsi:type="ParameterRef"/>
-            </operand>
          </expression>
       </def>
       <def localId="60" name="Opioid Risk Assessment in Past 90 Days" context="Patient" accessLevel="Public">

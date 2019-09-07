@@ -741,10 +741,6 @@
       "source": "valueset-opioids-codeine-cough-meds.xml",
       "base": "ValueSet-opioids-codeine-cough-meds.html"
     },
-    "ValueSet/opioids-indicating-end-of-life": {
-      "source": "valueset-opioids-indicating-end-of-life.xml",
-      "base": "ValueSet-opioids-indicating-end-of-life.html"
-    },
     "ValueSet/short-acting-opioids": {
       "source": "valueset-short-acting-opioids.xml",
       "base": "ValueSet-short-acting-opioids.html"

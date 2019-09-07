@@ -69,7 +69,6 @@ define "Inclusion Criteria":
 
 define "Exclusion Criteria":
   Common."End of Life Assessment"
-    or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 define "Illicit Drug Urine Screenings in Last 12 Months":
   [Observation: "combo-code" in Common."Illicit Drug Screening"] observation

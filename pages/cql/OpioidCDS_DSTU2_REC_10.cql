@@ -66,7 +66,6 @@ define "Inclusion Criteria":
 
 define "Exclusion Criteria":
   Common."End of Life Assessment"
-    or Common."Is Context Prescription End of Life Opioid?"(ContextPrescriptions)
 
 // todo - check component code, but doesn't have interpretation code
 define "Illicit Drug Urine Screenings in Last 12 Months":

@@ -57,14 +57,7 @@
                 <operand xsi:type="Query">
                     <source alias="ActiveOpioidScript">
                         <expression name="Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
-                    </source>
-                    <where xsi:type="Not">
-                        <operand name="Is Context Prescription End of Life Opioid?" libraryName="Common" xsi:type="FunctionRef">
-                            <operand xsi:type="ToList">
-                                <operand name="ActiveOpioidScript" xsi:type="AliasRef"/>
-                            </operand>
-                        </operand>
-                    </where>
+                    </source>                    
                 </operand>
             </expression>
         </def>
@@ -808,4 +801,3 @@
         </def>
     </statements>
 </library>
-

@@ -165,9 +165,6 @@
                <operand localId="26" name="On Naloxone" xsi:type="ExpressionRef"/>
                <operand localId="28" name="End of Life Assessment" libraryName="Common" xsi:type="ExpressionRef"/>
             </operand>
-            <operand localId="32" name="Is Context Prescription End of Life Opioid?" libraryName="Common" xsi:type="FunctionRef">
-               <operand localId="31" name="ContextPrescriptions" xsi:type="ParameterRef"/>
-            </operand>
          </expression>
       </def>
       <def localId="44" name="Total MME" context="Patient" accessLevel="Public">

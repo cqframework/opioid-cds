@@ -44,7 +44,6 @@
       <def name="Risk Assessment" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-abuse-assessment" accessLevel="Public"/>
       <def name="Opioid Drug Screening" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-urine-screening" accessLevel="Public"/>
       <def name="Ambulatory Abuse Potential Opioids" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care" accessLevel="Public"/>
-      <def name="End Of Life Opioids" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life" accessLevel="Public"/>
       <def name="Substance Abuse" id="http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-abuse" accessLevel="Public"/>
    </valueSets>
    <codes>
@@ -267,28 +266,6 @@
             </where>
          </expression>
       </def>
-      <def name="Is Context Prescription End of Life Opioid?" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
-         <expression xsi:type="Exists">
-            <operand xsi:type="Query">
-               <source alias="Rx">
-                  <expression name="ContextPrescriptions" xsi:type="OperandRef"/>
-               </source>
-               <where xsi:type="InValueSet">
-                  <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                     <operand asType="fhir:CodeableConcept" xsi:type="As">
-                        <operand path="medication" scope="Rx" xsi:type="Property"/>
-                     </operand>
-                  </code>
-                  <valueset name="End Of Life Opioids"/>
-               </where>
-            </operand>
-         </expression>
-         <operand name="ContextPrescriptions">
-            <operandTypeSpecifier xsi:type="ListTypeSpecifier">
-               <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
-            </operandTypeSpecifier>
-         </operand>
-      </def>
       <def name="End of Life Assessment" context="Patient" accessLevel="Public">
          <expression xsi:type="Or">
             <operand xsi:type="Or">
@@ -494,136 +471,6 @@
                            </elementType>
                         </asTypeSpecifier>
                      </operand>
-                  </operand>
-               </operand>
-            </operand>
-            <operand xsi:type="Exists">
-               <operand xsi:type="Union">
-                  <operand xsi:type="As">
-                     <operand xsi:type="Union">
-                        <operand xsi:type="As">
-                           <operand xsi:type="Union">
-                              <operand xsi:type="As">
-                                 <operand xsi:type="Query">
-                                    <source alias="MA">
-                                       <expression dataType="fhir:MedicationAdministration" codeProperty="code" xsi:type="Retrieve">
-                                          <codes name="End Of Life Opioids" xsi:type="ValueSetRef"/>
-                                       </expression>
-                                    </source>
-                                    <where xsi:type="In">
-                                       <operand path="value" xsi:type="Property">
-                                          <source path="status" scope="MA" xsi:type="Property"/>
-                                       </operand>
-                                       <operand xsi:type="List">
-                                          <element valueType="t:String" value="in-progress" xsi:type="Literal"/>
-                                          <element valueType="t:String" value="on-hold" xsi:type="Literal"/>
-                                          <element valueType="t:String" value="completed" xsi:type="Literal"/>
-                                       </operand>
-                                    </where>
-                                 </operand>
-                                 <asTypeSpecifier xsi:type="ListTypeSpecifier">
-                                    <elementType xsi:type="ChoiceTypeSpecifier">
-                                       <type name="fhir:MedicationDispense" xsi:type="NamedTypeSpecifier"/>
-                                       <type name="fhir:MedicationAdministration" xsi:type="NamedTypeSpecifier"/>
-                                    </elementType>
-                                 </asTypeSpecifier>
-                              </operand>
-                              <operand xsi:type="As">
-                                 <operand xsi:type="Query">
-                                    <source alias="MD">
-                                       <expression dataType="fhir:MedicationDispense" codeProperty="code" xsi:type="Retrieve">
-                                          <codes name="End Of Life Opioids" xsi:type="ValueSetRef"/>
-                                       </expression>
-                                    </source>
-                                    <where xsi:type="In">
-                                       <operand path="value" xsi:type="Property">
-                                          <source path="status" scope="MD" xsi:type="Property"/>
-                                       </operand>
-                                       <operand xsi:type="List">
-                                          <element valueType="t:String" value="preparation" xsi:type="Literal"/>
-                                          <element valueType="t:String" value="in-progress" xsi:type="Literal"/>
-                                          <element valueType="t:String" value="on-hold" xsi:type="Literal"/>
-                                          <element valueType="t:String" value="completed" xsi:type="Literal"/>
-                                       </operand>
-                                    </where>
-                                 </operand>
-                                 <asTypeSpecifier xsi:type="ListTypeSpecifier">
-                                    <elementType xsi:type="ChoiceTypeSpecifier">
-                                       <type name="fhir:MedicationDispense" xsi:type="NamedTypeSpecifier"/>
-                                       <type name="fhir:MedicationAdministration" xsi:type="NamedTypeSpecifier"/>
-                                    </elementType>
-                                 </asTypeSpecifier>
-                              </operand>
-                           </operand>
-                           <asTypeSpecifier xsi:type="ListTypeSpecifier">
-                              <elementType xsi:type="ChoiceTypeSpecifier">
-                                 <type name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
-                                 <type name="fhir:MedicationDispense" xsi:type="NamedTypeSpecifier"/>
-                                 <type name="fhir:MedicationAdministration" xsi:type="NamedTypeSpecifier"/>
-                              </elementType>
-                           </asTypeSpecifier>
-                        </operand>
-                        <operand xsi:type="As">
-                           <operand xsi:type="Query">
-                              <source alias="MR">
-                                 <expression dataType="fhir:MedicationRequest" codeProperty="code" xsi:type="Retrieve">
-                                    <codes name="End Of Life Opioids" xsi:type="ValueSetRef"/>
-                                 </expression>
-                              </source>
-                              <where xsi:type="In">
-                                 <operand path="value" xsi:type="Property">
-                                    <source path="status" scope="MR" xsi:type="Property"/>
-                                 </operand>
-                                 <operand xsi:type="List">
-                                    <element valueType="t:String" value="active" xsi:type="Literal"/>
-                                    <element valueType="t:String" value="completed" xsi:type="Literal"/>
-                                 </operand>
-                              </where>
-                           </operand>
-                           <asTypeSpecifier xsi:type="ListTypeSpecifier">
-                              <elementType xsi:type="ChoiceTypeSpecifier">
-                                 <type name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
-                                 <type name="fhir:MedicationDispense" xsi:type="NamedTypeSpecifier"/>
-                                 <type name="fhir:MedicationAdministration" xsi:type="NamedTypeSpecifier"/>
-                              </elementType>
-                           </asTypeSpecifier>
-                        </operand>
-                     </operand>
-                     <asTypeSpecifier xsi:type="ListTypeSpecifier">
-                        <elementType xsi:type="ChoiceTypeSpecifier">
-                           <type name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
-                           <type name="fhir:MedicationDispense" xsi:type="NamedTypeSpecifier"/>
-                           <type name="fhir:MedicationAdministration" xsi:type="NamedTypeSpecifier"/>
-                           <type name="fhir:MedicationStatement" xsi:type="NamedTypeSpecifier"/>
-                        </elementType>
-                     </asTypeSpecifier>
-                  </operand>
-                  <operand xsi:type="As">
-                     <operand xsi:type="Query">
-                        <source alias="MS">
-                           <expression dataType="fhir:MedicationStatement" codeProperty="code" xsi:type="Retrieve">
-                              <codes name="End Of Life Opioids" xsi:type="ValueSetRef"/>
-                           </expression>
-                        </source>
-                        <where xsi:type="In">
-                           <operand path="value" xsi:type="Property">
-                              <source path="status" scope="MS" xsi:type="Property"/>
-                           </operand>
-                           <operand xsi:type="List">
-                              <element valueType="t:String" value="active" xsi:type="Literal"/>
-                              <element valueType="t:String" value="completed" xsi:type="Literal"/>
-                              <element valueType="t:String" value="intended" xsi:type="Literal"/>
-                           </operand>
-                        </where>
-                     </operand>
-                     <asTypeSpecifier xsi:type="ListTypeSpecifier">
-                        <elementType xsi:type="ChoiceTypeSpecifier">
-                           <type name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
-                           <type name="fhir:MedicationDispense" xsi:type="NamedTypeSpecifier"/>
-                           <type name="fhir:MedicationAdministration" xsi:type="NamedTypeSpecifier"/>
-                           <type name="fhir:MedicationStatement" xsi:type="NamedTypeSpecifier"/>
-                        </elementType>
-                     </asTypeSpecifier>
                   </operand>
                </operand>
             </operand>
@@ -1553,4 +1400,3 @@
       </def>
    </statements>
 </library>
-

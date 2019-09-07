@@ -21,7 +21,6 @@ valueset "Naloxone": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/naloxone'
 valueset "Risk Assessment": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-abuse-assessment'
 valueset "Opioid Drug Screening": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-urine-screening'
 valueset "Ambulatory Abuse Potential Opioids": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care'
-valueset "End Of Life Opioids": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-indicating-end-of-life'
 valueset "Substance Abuse": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-abuse'
 
 code "Referral to Hospice": '306205009' from "SNOMED"
@@ -43,12 +42,6 @@ define "Active Ambulatory Naloxone Rx":
 
 define "Ambulatory Opioid Rx":
   [MedicationOrder: "Ambulatory Abuse Potential Opioids"] Rx
-
-define function "Is Context Prescription End of Life Opioid?" (ContextPrescriptions List<MedicationOrder>):
-  exists (
-    ContextPrescriptions Rx
-      where Rx.medicationCodeableConcept in "End Of Life Opioids"
-  )
 
 define "End of Life Assessment":
   // 1. Conditions indicating end of life or with limited life expectancy
@@ -96,28 +89,6 @@ define "End of Life Assessment":
             else E.hospitalization.dischargeDisposition in "Hospice Disposition"
           )
           and E.status.value in { 'planned', 'arrived', 'in-progress', 'finished', 'onleave' }
-    )
-  )
-  // 3. Medications indicating end of life
-  or exists (
-    (
-      [MedicationAdministration: code in "End Of Life Opioids"] MA
-        where MA.status.value in { 'in-progress', 'on-hold', 'completed' }
-    )
-    union
-    (
-      [MedicationDispense: code in "End Of Life Opioids"] MD
-        where MD.status.value in { 'in-progress', 'on-hold', 'completed' }
-    )
-    union
-    (
-      [MedicationOrder: code in "End Of Life Opioids"] MR
-        where MR.status.value in { 'active', 'on-hold', 'completed' }
-    )
-    union
-    (
-      [MedicationStatement: code in "End Of Life Opioids"] MS
-        where MS.status.value in { 'active', 'completed', 'intended' }
     )
   )
 
@@ -247,17 +218,17 @@ define function GetMedicationNames(medications List<MedicationOrder>):
 define function CodeableConceptsToString(concepts List<FHIR.CodeableConcept>):
   concepts c return CodeableConceptToString(c)
 
-define function CodeableConceptToString(concept FHIR.CodeableConcept):  
+define function CodeableConceptToString(concept FHIR.CodeableConcept):
   if (concept is null or concept.coding is null)
   then null
-  else  
+  else
     'CodeableConcept { ' &
       'code: ' & concept.coding.code &
       ' system: ' & concept.coding.system &
       ' version: ' & concept.coding.version &
       ' display: ' & concept.coding.display &
     ' }'
-    
+
 define function ToCode(coding FHIR.Coding):
   System.Code {
     code: coding.code.value,
@@ -265,7 +236,7 @@ define function ToCode(coding FHIR.Coding):
     version: coding.version.value,
     display: coding.display.value
   }
-  
+
 define function ToRxNormCode(coding List<FHIR.Coding>):
   singleton from (
     coding C where C.system = 'http://www.nlm.nih.gov/research/umls/rxnorm'

@@ -55,7 +55,6 @@ define "Lookback Year":
 define "Patient on Opioids with Abuse Potential":
   exists (
     Common."Active Ambulatory Opioid Rx" ActiveOpioidScript
-      where not (ActiveOpioidScript.medication in Common."End Of Life Opioids")
   )
 
 define "Inclusion Criteria":

@@ -21,27 +21,13 @@
                 <source alias="BenzoScript">
                     <expression name="Active Ambulatory Benzodiazepine Rx" libraryName="Common" xsi:type="ExpressionRef"/>
                 </source>
-                <where xsi:type="Not">
-                    <operand name="Is Context Prescription End of Life Opioid?" libraryName="Common" xsi:type="FunctionRef">
-                        <operand xsi:type="ToList">
-                            <operand name="BenzoScript" xsi:type="AliasRef"/>
-                        </operand>
-                    </operand>
-                </where>
             </expression>
         </def>
         <def name="Opioid with Abuse Potential Scripts" context="Patient" accessLevel="Public">
             <expression xsi:type="Query">
                 <source alias="OpioidScript">
                     <expression name="Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
-                </source>
-                <where xsi:type="Not">
-                    <operand name="Is Context Prescription End of Life Opioid?" libraryName="Common" xsi:type="FunctionRef">
-                        <operand xsi:type="ToList">
-                            <operand name="OpioidScript" xsi:type="AliasRef"/>
-                        </operand>
-                    </operand>
-                </where>
+                </source>                
             </expression>
         </def>
         <def name="Inclusion Criteria" context="Patient" accessLevel="Public">
@@ -99,4 +85,3 @@
         </def>
     </statements>
 </library>
-
