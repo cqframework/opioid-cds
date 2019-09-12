@@ -36,17 +36,9 @@ context Patient
 define "Inclusion Criteria":
   AgeInYears() >= 18
     and (
-      exists "Benzo Scripts"
-        and exists "Opioid with Abuse Potential Scripts"
+      exists (Common."Active Ambulatory Benzodiazepine Rx")
+        and exists (Common."Active Ambulatory Opioid Rx")
     )
-
-define "Benzo Scripts":
-  Common."Active Ambulatory Benzodiazepine Rx" BenzoScript
-    where not (BenzoScript.medication in Common."End Of Life Opioids")
-
-define "Opioid with Abuse Potential Scripts":
-  Common."Active Ambulatory Opioid Rx" OpioidScript
-    where not (OpioidScript.medication in Common."End Of Life Opioids")
 
 define "Get Indicator":
   if "Inclusion Criteria"
@@ -76,7 +68,8 @@ define "Concurrent Benzodiazepine Prescription Issue":
     // TODO: Device representation...
     // author:,
     implicated:
-      ("Benzo Scripts" union "Opioid with Abuse Potential Scripts") M
+      (Common."Active Ambulatory Benzodiazepine Rx" 
+				union Common."Active Ambulatory Opioid Rx") M
         return FHIR.Reference { reference: FHIR.string { value: 'MedicationRequest/' + M.id } },
     detail: FHIR.string { value: "Get Detail" },
     reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11-patient-view'}

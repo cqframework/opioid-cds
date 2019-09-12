@@ -52,15 +52,9 @@ context Patient
 define "Lookback Year":
   Interval[Today() - 12 months - 1 days, Today() - 1 day]
 
-define "Patient on Opioids with Abuse Potential":
-  exists (
-    Common."Active Ambulatory Opioid Rx" ActiveOpioidScript
-      where not (ActiveOpioidScript.medication in Common."End Of Life Opioids")
-  )
-
 define "Inclusion Criteria":
   AgeInYears() >= 18
-    and "Patient on Opioids with Abuse Potential"
+    and exists (Common."Active Ambulatory Opioid Rx")
     and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
     and
       ("No Urine Screening In Last 12 Months"
