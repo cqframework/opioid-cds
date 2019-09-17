@@ -20,13 +20,23 @@
 <h3><span class="sectioncount">8.1.1</span> Overall Approach <a href="quick-start.html#approach" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>This quick start will focus on standing up an instance of a CDS Hooks service that can run the
-  guidance artifacts published in this implementation guide. In other words, the "Clinical Reasoning Implementation"
-  depicted in the diagram below:</p>
+    guidance artifacts published in this implementation guide. In other words, the "Clinical Reasoning Implementation"
+    depicted in the diagram below:</p>
 
 <img src="assets/images/ClinicalReasoningApproach.png"/>
 
+<a name="api-request-and-response-http-client"> </a>
+<h3><span class="sectioncount">8.1.2</span> API Requests/Responses Via HTTP Client <a href="quick-start.html#api-request-and-response-http-client" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>Throughout the Quick Start you will be required to upload/retrieve data and initiate execution of the recommendations via HTTP requests.
+    Requests can be submitted via any tool or client that allows you to interact with an HTTP API.
+    One popular client is Postman, available <a href="https://www.getpostman.com" target="_blank">here</a>.
+    Postman is an application that provides a user-friendly GUI for constructing and submitting HTTP requests
+    to APIs and viewing responses in an easy-to-read format. A postman collection of requests required to complete this Quick Start can be downloaded
+    <a href="quick-start-bundles/opioid-cds-postman-collection.json" target="_blank" download="opioid-cds-postman-collection">here</a> and imported into Postman.</p>
+
 <a name="service"> </a>
-<h3><span class="sectioncount">8.1.2</span> CDS Hooks Service <a href="quick-start.html#service" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<h3><span class="sectioncount">8.2.0</span> CDS Hooks Service <a href="quick-start.html#service" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>The first step is to stand up an instance of the CQF Ruler, a reference implementation of the FHIR
   Clinical Reasoning module and CDS Hooks. Follow the instructions on the
@@ -38,9 +48,9 @@
 
 <div class="example">
   <pre class="http">
-GET http://localhost:8080/cqf-ruler/baseDstu3/Library
+GET http://localhost:8080/cqf-ruler-dstu3/fhir/Library
 
-GET http://localhost:8080/cqf-ruler/baseDstu3/PlanDefinition
+GET http://localhost:8080/cqf-ruler-dstu3/fhir/PlanDefinition
   </pre>
 </div>
 
@@ -68,7 +78,7 @@ GET http://localhost:8080/cqf-ruler/cds-services
 </div>
 
 <a name="content-load"> </a>
-<h3><span class="sectioncount">8.1.3</span> Loading Content <a href="quick-start.html#content-load" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<h3><span class="sectioncount">8.3.0</span> Loading Content <a href="quick-start.html#content-load" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>The next step is to load the _content_, i.e., the artifacts published in this implementation guide that
   describe the service behavior for the recommendations. For recommendations #10 and #11, patient-view, these
@@ -95,7 +105,7 @@ GET http://localhost:8080/cqf-ruler/cds-services
 
 <div class="example">
   <pre class="http">
-PUT http://localhost:8080/cqf-ruler/baseDstu3/Library/library-omtkdata-0-0-2
+PUT http://localhost:8080/cqf-ruler-dstu3/fhir/Library/library-omtkdata-0-0-2
   </pre>
 </div>
 
@@ -116,7 +126,7 @@ PUT http://localhost:8080/cqf-ruler/baseDstu3/Library/library-omtkdata-0-0-2
 
 <div class="example">
   <pre class="http">
-POST http://localhost:8080/cqf-ruler/baseDstu3
+POST http://localhost:8080/cqf-ruler-dstu3/fhir
   </pre>
 </div>
 
@@ -128,7 +138,7 @@ POST http://localhost:8080/cqf-ruler/baseDstu3
 
 <div class="example">
   <pre class="http">
-GET http://localhost:8080/cqf-ruler/cds-services
+GET http://localhost:8080/cqf-ruler-dstu3/cds-services
   </pre>
 </div>
 
@@ -169,7 +179,7 @@ GET http://localhost:8080/cqf-ruler/cds-services
 </div>
 
 <a name="request-and-response"> </a>
-<h3><span class="sectioncount">8.1.4</span> Request and Response <a href="quick-start.html#request-and-response" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<h3><span class="sectioncount">8.3.1</span> Request and Response <a href="quick-start.html#request-and-response" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>Now that the content is loaded, the service will respond to CDS Hooks requests. For example, POST the following request to the recommendation #10 service:</p>
 
@@ -185,7 +195,7 @@ POST http://localhost:8080/cqf-ruler/cds-services/opioidcds-10-patient-view
   <pre class="json">
 {
   "hookInstance": "31c74cfc-747c-4afc-82e4-bdd3b7a0a58c",
-  "fhirServer": "http://localhost:8080/cqf-ruler/baseDstu3",
+  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
   "hook": "patient-view",
   "applyCql": true,
   "context": {
@@ -218,22 +228,17 @@ POST http://localhost:8080/cqf-ruler/cds-services/opioidcds-10-patient-view
 }  </pre>
 </div>
 
-<a name="api-request-and-response-http-client"> </a>
-<h4><span class="sectioncount">8.1.4.1</span> API Requests/Responses Via HTTP Client <a href="quick-start.html#api-request-and-response-http-client" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
-
-<p>Requests can be submitted via any tool or client that allows you to interact with an HTTP API. One popular client is Postman, available <a href="https://www.getpostman.com">here</a>. Postman is an application that provides a user-friendly GUI for constructing and submitting HTTP requests to APIs and viewing responses in an easy-to-read format.</p>
-
 <a name="api-request-and-response-cds-hooks-client"> </a>
-<h4><span class="sectioncount">8.1.4.2</span> CDS Hooks Sandbox <a href="quick-start.html#api-request-and-response-cds-hooks-client" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<h4><span class="sectioncount">8.4.0</span> CDS Hooks Sandbox <a href="quick-start.html#api-request-and-response-cds-hooks-client" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>The <a href="http://sandbox.cds-hooks.org">CDS Hooks Sandbox</a> is a web application that provides a user-friendly GUI for constructing, viewing and submitting CDS Hooks requests and viewing the responses both in raw JSON format and also in an html representation that is meant to be representative of how it might be presented in a consuming EHR system. The sandbox can be configured to run against the local CDS Hooks service instance created above.</p>
 <p>To configure the sandbox to work with this local CDS Hooks service instance, the following settings need to be set:</p>
-<p>Set the <code>FHIR Server URL</code> to <code>http://localhost:8080/cqf-ruler/baseDstu3</code>. If you're not prompted for this at startup, then in Settings go to <code>Change FHIR Server</code> and set the <code>FHIR Server URL</code> there.</p>
+<p>Set the <code>FHIR Server URL</code> to <code>http://localhost:8080/cqf-ruler-dstu3/fhir</code>. If you're not prompted for this at startup, then in Settings go to <code>Change FHIR Server</code> and set the <code>FHIR Server URL</code> there.</p>
 <p>Set the <code>Discovery Endpoint URL</code> to <code>http://localhost:8080/cqf-ruler/cds-services</code>. If you're not prompted for this at startups, then in Settings go to <code>Add CDS Services</code> and set the <code>Discovery Endpoint URL</code> there.</p>
 <p>Now the sandbox is configured to use the CDS Hooks service that you created above. The next step is to push a Patient resource to that service that we can then use to query via the Sandbox. To do this, you’re going to want to copy the JSON representation of a Patient resource from the request-example-rec-10-patient-view-illicit-drugs.json file above and then POST that to the FHIR server created above. </p>
 <div class="example">
   <pre class="http">
-POST http://localhost:8080/cqf-ruler/baseDstu3/Patient
+POST http://localhost:8080/cqf-ruler-dstu3/fhir/Patient
   </pre>
 </div>
 <p>The patient resource JSON:</p>
