@@ -66,7 +66,7 @@ GET http://localhost:8080/cqf-ruler/cds-services
   </pre>
 </div>
 
-<p>For a newly instantiated CQF Ruler, this will also return an empty list, indicating there are no services
+<p>For a newly instantiated CQF Ruler, this request will return an empty list, indicating there are no services
   configured.</p>
 
 <div class="example">
@@ -80,9 +80,9 @@ GET http://localhost:8080/cqf-ruler/cds-services
 <a name="content-load"> </a>
 <h3><span class="sectioncount">8.3.0</span> Loading Content <a href="quick-start.html#content-load" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
-<p>The next step is to load the _content_, i.e., the artifacts published in this implementation guide that
-  describe the service behavior for the recommendations. For recommendations #10 and #11, patient-view, these
-  artifacts are:</p>
+<p>The next step is to load the content, i.e., the artifacts published in this implementation guide that
+  define the recommendations. For recommendations #10 and #11, patient-view, these
+  artifacts include:</p>
 
 <table class="list">
   <thead>
@@ -153,12 +153,12 @@ GET http://localhost:8080/cqf-ruler-dstu3/cds-services
             "description": "When prescribing opioids for chronic pain, providers should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs.",
             "id": "opioidcds-10-patient-view",
             "prefetch": {
-                "item1": "Patient?_id={{context.patientId}}",
-                "item2": "MedicationRequest?patient={{context.patientId}}&amp;medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|1010600,snipped for brevity",
-                "item3": "Observation?patient={{context.patientId}}&amp;code=http%3A%2F%2Floinc.org|12478-4,http%3A%2F%2Floinc.org|78813-3,snipped for brevity",
-                "item4": "Observation?patient={{context.patientId}}&amp;component-code=http%3A%2F%2Floinc.org|12478-4,http%3A%2F%2Floinc.org|78813-3,snipped for brevity",
-                "item5": "Observation?patient={{context.patientId}}&amp;code=http%3A%2F%2Floinc.org|50542-0,http%3A%2F%2Floinc.org|19487-8,snipped for brevity",
-                "item6": "Observation?patient={{context.patientId}}&amp;component-code=http%3A%2F%2Floinc.org|50542-0,http%3A%2F%2Floinc.org|19487-8,snipped for brevity"
+                "item1": "Patient?_id=&#123;&#123;context.patientId&#125;&#125;",
+                "item2": "MedicationRequest?patient=&#123;&#123;context.patientId&#125;&#125;&amp;medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|1010600,snipped for brevity",
+                "item3": "Observation?patient=&#123;&#123;context.patientId&#125;&#125;&amp;code=http%3A%2F%2Floinc.org|12478-4,http%3A%2F%2Floinc.org|78813-3,snipped for brevity",
+                "item4": "Observation?patient=&#123;&#123;context.patientId&#125;&#125;&amp;component-code=http%3A%2F%2Floinc.org|12478-4,http%3A%2F%2Floinc.org|78813-3,snipped for brevity",
+                "item5": "Observation?patient=&#123;&#123;context.patientId&#125;&#125;&amp;code=http%3A%2F%2Floinc.org|50542-0,http%3A%2F%2Floinc.org|19487-8,snipped for brevity",
+                "item6": "Observation?patient=&#123;&#123;context.patientId&#125;&#125;&amp;component-code=http%3A%2F%2Floinc.org|50542-0,http%3A%2F%2Floinc.org|19487-8,snipped for brevity"
             }
         },
         {
@@ -168,9 +168,9 @@ GET http://localhost:8080/cqf-ruler-dstu3/cds-services
             "description": "Concurrently prescribing opioid medications with benzodiazepines increases the risk of harm for the patient.",
             "id": "opioidcds-11-patient-view",
             "prefetch": {
-                "item1": "Patient?_id={{context.patientId}}",
-                "item2": "MedicationRequest?patient={{context.patientId}}&amp;medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|141927,snipped for brevity",
-                "item3": "MedicationRequest?patient={{context.patientId}}&amp;medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|1010600,snipped for brevity"
+                "item1": "Patient?_id=&#123;&#123;context.patientId&#125;&#125;",
+                "item2": "MedicationRequest?patient=&#123;&#123;context.patientId&#125;&#125;&amp;medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|141927,snipped for brevity",
+                "item3": "MedicationRequest?patient=&#123;&#123;context.patientId&#125;&#125;&amp;medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|1010600,snipped for brevity"
             }
         }
     ]
@@ -185,7 +185,7 @@ GET http://localhost:8080/cqf-ruler-dstu3/cds-services
 
 <div class="example">
   <pre class="http">
-POST http://localhost:8080/cqf-ruler/cds-services/opioidcds-10-patient-view
+POST http://localhost:8080/cqf-ruler-dstu3/cds-services/opioidcds-10-patient-view
   </pre>
 </div>
 
@@ -234,7 +234,7 @@ POST http://localhost:8080/cqf-ruler/cds-services/opioidcds-10-patient-view
 <p>The <a href="http://sandbox.cds-hooks.org">CDS Hooks Sandbox</a> is a web application that provides a user-friendly GUI for constructing, viewing and submitting CDS Hooks requests and viewing the responses both in raw JSON format and also in an html representation that is meant to be representative of how it might be presented in a consuming EHR system. The sandbox can be configured to run against the local CDS Hooks service instance created above.</p>
 <p>To configure the sandbox to work with this local CDS Hooks service instance, the following settings need to be set:</p>
 <p>Set the <code>FHIR Server URL</code> to <code>http://localhost:8080/cqf-ruler-dstu3/fhir</code>. If you're not prompted for this at startup, then in Settings go to <code>Change FHIR Server</code> and set the <code>FHIR Server URL</code> there.</p>
-<p>Set the <code>Discovery Endpoint URL</code> to <code>http://localhost:8080/cqf-ruler/cds-services</code>. If you're not prompted for this at startups, then in Settings go to <code>Add CDS Services</code> and set the <code>Discovery Endpoint URL</code> there.</p>
+<p>Set the <code>Discovery Endpoint URL</code> to <code>http://localhost:8080/cqf-ruler-dstu3/cds-services</code>. If you're not prompted for this at startup, then in Settings go to <code>Add CDS Services</code> and set the <code>Discovery Endpoint URL</code> there.</p>
 <p>Now the sandbox is configured to use the CDS Hooks service that you created above. The next step is to push a Patient resource to that service that we can then use to query via the Sandbox. To do this, you’re going to want to copy the JSON representation of a Patient resource from the request-example-rec-10-patient-view-illicit-drugs.json file above and then POST that to the FHIR server created above. </p>
 <div class="example">
   <pre class="http">
