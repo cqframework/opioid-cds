@@ -38,13 +38,39 @@ context Patient
 define "Validate Trigger Event For Benzodiazepine":
   exists(
     ContextPrescriptions triggerScript
-      where triggerScript.medication in Common."Benzodiazepines"
+      where if triggerScript.medication is FHIR.Reference
+        then exists (
+          Common."Active Ambulatory Benzodiazepine Medications" meds where EndsWith(triggerScript.medication.reference, meds.id)
+        )
+        else triggerScript.medication in Common."Benzodiazepines"
+      and (
+        FHIRHelpers.ToConcept(triggerScript.category) ~ Common."Community"
+          or (
+            Common.IgnoreOutpatientCategorySystem
+              and Common.ConceptCodeOnlyEquivalent(triggerScript.category, Common."Community")
+          )
+      )
   )
+  /* exists(
+    ContextPrescriptions triggerScript
+      where triggerScript.medication in Common."Benzodiazepines"
+  ) */
 
 define "Validate Trigger Event For Ambulatory Care Abuse Potential":
   exists(
     ContextPrescriptions triggerScript
-      where triggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
+      where if triggerScript.medication is FHIR.Reference
+        then exists (
+          Common."Active Ambulatory Opioid Medications" meds where EndsWith(triggerScript.medication.reference, meds.id)
+        )
+        else triggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
+      and (
+        FHIRHelpers.ToConcept(triggerScript.category) ~ Common."Community"
+          or (
+            Common.IgnoreOutpatientCategorySystem
+              and Common.ConceptCodeOnlyEquivalent(triggerScript.category, Common."Community")
+          )
+      )
   )
 
 define "Inclusion Criteria":

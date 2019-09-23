@@ -27,10 +27,8 @@ valueset "Opioid Drug Screening": 'http://fhir.org/guides/cdc/opioid-cds/ValueSe
 valueset "Ambulatory Abuse Potential Opioids": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care'
 valueset "Substance Abuse": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-abuse'
 
-// TODO: Turn this into a valueset
 code "Referral to Hospice": '306205009' from "SNOMED"
-// TODO: Turn this into a valueset
-code "Outpatient": 'outpatient' from "Medication Request Category Codes"
+code "Community": 'community' from "Medication Request Category Codes"
 
 // TODO: Capture process decisions for long-term opioid use
 define IsForChronicPain: true
@@ -44,37 +42,69 @@ define IgnoreOutpatientCategorySystem: true
 
 define function CodeOnlyEquivalent(code1 Code, code2 Code):
   code1.code ~ code2.code
-	
+
 define function ConceptCodeOnlyEquivalent(concept Concept, code Code):
   exists (concept.codes C
 	  where C.code ~ code.code
 	)
 
+define "Active Ambulatory Opioid Medications":
+  [Medication: "Ambulatory Abuse Potential Opioids"]
+
 define "Active Ambulatory Opioid Rx":
+  [MedicationRequest] requests
+    where requests.status = 'active'
+      and
+        if requests.medication is FHIR.Reference
+          then exists(
+            "Active Ambulatory Opioid Medications" meds where EndsWith(requests.medication.reference, meds.id)
+          )
+        else requests.medication in "Ambulatory Abuse Potential Opioids"
+      and
+        (FHIRHelpers.ToConcept(requests.category) ~ "Community"
+          or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(requests.category, "Community"))
+        )
+
+/* define "Active Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
     where Rx.status.value = 'active'
-		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
-			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
-			)
+		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Community"
+			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Community"))
+			) */
+
+define "Active Ambulatory Benzodiazepine Medications":
+  [Medication: "Benzodiazepines"]
 
 define "Active Ambulatory Benzodiazepine Rx":
-  [MedicationRequest: "Benzodiazepines"] Rx
+  [MedicationRequest] requests
+    where requests.status = 'active'
+      and
+        if requests.medication is FHIR.Reference
+          then exists(
+            "Active Ambulatory Benzodiazepine Medications" meds where EndsWith(requests.medication.reference, meds.id)
+          )
+        else requests.medication in "Benzodiazepines"
+      and
+        (FHIRHelpers.ToConcept(requests.category) ~ "Community"
+          or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(requests.category, "Community"))
+        )
+  /* [MedicationRequest: "Benzodiazepines"] Rx
     where Rx.status.value = 'active'
-		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
-			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
-			)
+		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Community"
+			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Community"))
+			) */
 
 define "Active Ambulatory Naloxone Rx":
   [MedicationRequest: "Naloxone"] Rx
     where Rx.status.value = 'active'
-		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
-			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
+		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Community"
+			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Community"))
 			)
 
 define "Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
-		  where FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
-			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
+		  where FHIRHelpers.ToConcept(Rx.category) ~ "Community"
+			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Community"))
 
 define "End of Life Assessment":
   // 1. Conditions indicating end of life or with limited life expectancy
@@ -131,7 +161,7 @@ Specifically, ReferralRequest and ProcedureRequest are not covered by US Core pr
     )
   )
 */
-  
+
 define function Prescriptions(Orders List<MedicationRequest>):
   Orders O
     let
