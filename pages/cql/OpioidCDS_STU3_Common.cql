@@ -48,21 +48,19 @@ define function ConceptCodeOnlyEquivalent(concept Concept, code Code):
 	  where C.code ~ code.code
 	)
 
-define "Active Ambulatory Opioid Medications":
-  [Medication: "Ambulatory Abuse Potential Opioids"]
-
 define "Active Ambulatory Opioid Rx":
-  [MedicationRequest] requests
-    where requests.status = 'active'
+  [MedicationRequest] MedReq
+    where MedReq.status = 'active'
       and
-        if requests.medication is FHIR.Reference
+        if MedReq.medication is FHIR.Reference
           then exists(
-            "Active Ambulatory Opioid Medications" meds where EndsWith(requests.medication.reference, meds.id)
+            [Medication: "Ambulatory Abuse Potential Opioids"] OpioidMedication
+              where EndsWith(MedReq.medication.reference, OpioidMedication.id)
           )
-        else requests.medication in "Ambulatory Abuse Potential Opioids"
+        else MedReq.medication in "Ambulatory Abuse Potential Opioids"
       and
-        (FHIRHelpers.ToConcept(requests.category) ~ "Community"
-          or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(requests.category, "Community"))
+        (FHIRHelpers.ToConcept(MedReq.category) ~ "Community"
+          or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(MedReq.category, "Community"))
         )
 
 /* define "Active Ambulatory Opioid Rx":
@@ -72,21 +70,19 @@ define "Active Ambulatory Opioid Rx":
 			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Community"))
 			) */
 
-define "Active Ambulatory Benzodiazepine Medications":
-  [Medication: "Benzodiazepines"]
-
 define "Active Ambulatory Benzodiazepine Rx":
-  [MedicationRequest] requests
-    where requests.status = 'active'
+  [MedicationRequest] MedReq
+    where MedReq.status = 'active'
       and
-        if requests.medication is FHIR.Reference
+        if MedReq.medication is FHIR.Reference
           then exists(
-            "Active Ambulatory Benzodiazepine Medications" meds where EndsWith(requests.medication.reference, meds.id)
+            [Medication: "Benzodiazepines"] BenzodiazepineMedication
+              where EndsWith(MedReq.medication.reference, BenzodiazepineMedication.id)
           )
-        else requests.medication in "Benzodiazepines"
+        else MedReq.medication in "Benzodiazepines"
       and
-        (FHIRHelpers.ToConcept(requests.category) ~ "Community"
-          or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(requests.category, "Community"))
+        (FHIRHelpers.ToConcept(MedReq.category) ~ "Community"
+          or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(MedReq.category, "Community"))
         )
   /* [MedicationRequest: "Benzodiazepines"] Rx
     where Rx.status.value = 'active'

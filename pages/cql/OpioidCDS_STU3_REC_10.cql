@@ -49,17 +49,18 @@ define "Lookback Year":
 
 define "Validate Trigger Event":
   exists (
-    ContextPrescriptions triggerScript
-      where if triggerScript.medication is FHIR.Reference
+    ContextPrescriptions TriggerScript
+      where if TriggerScript.medication is FHIR.Reference
         then exists (
-          Common."Active Ambulatory Opioid Medications" meds where EndsWith(triggerScript.medication.reference, meds.id)
+          [Medication: Common."Ambulatory Abuse Potential Opioids"] OpioidMedication
+            where EndsWith(TriggerScript.medication.reference, OpioidMedication.id)
         )
-        else triggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
+        else TriggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
       and (
-        FHIRHelpers.ToConcept(triggerScript.category) ~ Common."Community"
+        FHIRHelpers.ToConcept(TriggerScript.category) ~ Common."Community"
           or (
             Common.IgnoreOutpatientCategorySystem
-              and Common.ConceptCodeOnlyEquivalent(triggerScript.category, Common."Community")
+              and Common.ConceptCodeOnlyEquivalent(TriggerScript.category, Common."Community")
           )
       )
   )
@@ -78,13 +79,13 @@ define "Exclusion Criteria":
   Common."End of Life Assessment"
 
 define "Illicit Drug Urine Screenings in Last 12 Months":
-  [Observation: "code" in Common."Illicit Drug Screening"] observation
-    where date from observation.effective.value in day of "Lookback Year"
+  [Observation: "code" in Common."Illicit Drug Screening"] IllicitDrugScreen
+    where date from IllicitDrugScreen.effective.value in day of "Lookback Year"
       sort by effective.value
 
 define "Opioid Drug Urine Screenings in Last 12 Months":
-  [Observation: "code" in Common."Opioid Drug Screening"] observation
-    where date from observation.effective.value in day of "Lookback Year"
+  [Observation: "code" in Common."Opioid Drug Screening"] OpioidDrugScreen
+    where date from OpioidDrugScreen.effective.value in day of "Lookback Year"
       sort by effective.value
 
 define "Most Recent Illicit Drug Urine Screenings in Last 12 Months":

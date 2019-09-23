@@ -63,15 +63,16 @@ define "Inclusion Criteria":
 
 define "Illicit Drug Urine Screenings in Last 12 Months":
   (
-    [Observation: "code" in Common."Illicit Drug Screening"] observation
-      where date from observation.effective in day of "Lookback Year"
-  ) obs
+    [Observation: "code" in Common."Illicit Drug Screening"] IllicitDrugScreen
+      where date from IllicitDrugScreen.effective in day of "Lookback Year"
+  ) IllicitDrugScreenDuringLookback
     sort by effective.value
 
 define "Opioid Drug Urine Screenings in Last 12 Months":
-  ([Observation: "code" in Common."Opioid Drug Screening"] observation
-    where date from observation.effective in day of "Lookback Year"
-  ) obs
+  (
+    [Observation: "code" in Common."Opioid Drug Screening"] OpioidDrugScreen
+      where date from OpioidDrugScreen.effective in day of "Lookback Year"
+  ) OpioidDrugScreenDuringLookback
     sort by effective.value
 
 define "Most Recent Illicit Drug Urine Screenings in Last 12 Months":

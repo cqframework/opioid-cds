@@ -37,17 +37,18 @@ context Patient
 
 define "Validate Trigger Event For Benzodiazepine":
   exists(
-    ContextPrescriptions triggerScript
-      where if triggerScript.medication is FHIR.Reference
+    ContextPrescriptions TriggerScript
+      where if TriggerScript.medication is FHIR.Reference
         then exists (
-          Common."Active Ambulatory Benzodiazepine Medications" meds where EndsWith(triggerScript.medication.reference, meds.id)
+          [Medication: Common."Benzodiazepines"] BenzodiazepineMedication
+            where EndsWith(TriggerScript.medication.reference, BenzodiazepineMedication.id)
         )
-        else triggerScript.medication in Common."Benzodiazepines"
+        else TriggerScript.medication in Common."Benzodiazepines"
       and (
-        FHIRHelpers.ToConcept(triggerScript.category) ~ Common."Community"
+        FHIRHelpers.ToConcept(TriggerScript.category) ~ Common."Community"
           or (
             Common.IgnoreOutpatientCategorySystem
-              and Common.ConceptCodeOnlyEquivalent(triggerScript.category, Common."Community")
+              and Common.ConceptCodeOnlyEquivalent(TriggerScript.category, Common."Community")
           )
       )
   )
@@ -58,17 +59,18 @@ define "Validate Trigger Event For Benzodiazepine":
 
 define "Validate Trigger Event For Ambulatory Care Abuse Potential":
   exists(
-    ContextPrescriptions triggerScript
-      where if triggerScript.medication is FHIR.Reference
+    ContextPrescriptions TriggerScript
+      where if TriggerScript.medication is FHIR.Reference
         then exists (
-          Common."Active Ambulatory Opioid Medications" meds where EndsWith(triggerScript.medication.reference, meds.id)
+          [Medication: Common."Ambulatory Abuse Potential Opioids"] OpioidMedication
+            where EndsWith(TriggerScript.medication.reference, OpioidMedication.id)
         )
-        else triggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
+        else TriggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
       and (
-        FHIRHelpers.ToConcept(triggerScript.category) ~ Common."Community"
+        FHIRHelpers.ToConcept(TriggerScript.category) ~ Common."Community"
           or (
             Common.IgnoreOutpatientCategorySystem
-              and Common.ConceptCodeOnlyEquivalent(triggerScript.category, Common."Community")
+              and Common.ConceptCodeOnlyEquivalent(TriggerScript.category, Common."Community")
           )
       )
   )
