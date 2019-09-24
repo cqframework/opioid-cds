@@ -79,11 +79,11 @@ GET http://localhost:8080/cqf-ruler/cds-services
     <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
   </thead>
   <tbody>
-    <tr><td><a href="Library-omtkdata-0-0-2.html">OMTKData (v0.0.2)</a></td><td>Library</td><td>Opioid Management Terminology Knowledge (OMTK) Data Library</td></tr>
-    <tr><td><a href="Library-omtklogic-0-0-1.html">OMTKLogic (v0.0.1)</a></td><td>Library</td><td>Opioid Management Terminology Knowledge (OMTK) Logic Library</td></tr>
-    <tr><td><a href="Library-opioidcds-stu3-common-0-1-0.html">OpioidCDS_STU3_Common (v0.1.0)</a></td><td>Library</td><td>Opioid Common Library</td></tr>
-    <tr><td><a href="Library-opioidcds-stu3-rec-10-patient-view-0-1-0.html">OpioidCDS_STU3_REC_10_Patient_View (v0.1.0)</a></td><td>Library</td><td>Opioid Recommendation #10 (Patient View Version) Library</td></tr>
-    <tr><td><a href="Library-opioidcds-stu3-rec-11-patient-view-0-1-0.html">OpioidCDS_STU3_REC_11_Patient_View (v0.1.0)</a></td><td>Library</td><td>Opioid Recommendation #11 (Patient View Version) Library</td></tr>
+    <tr><td><a href="Library-omtkdata.html">OMTKData (v0.0.2)</a></td><td>Library</td><td>Opioid Management Terminology Knowledge (OMTK) Data Library</td></tr>
+    <tr><td><a href="Library-omtklogic.html">OMTKLogic (v0.0.1)</a></td><td>Library</td><td>Opioid Management Terminology Knowledge (OMTK) Logic Library</td></tr>
+    <tr><td><a href="Library-opioidcds-common.html">OpioidCDS_STU3_Common (v0.1.0)</a></td><td>Library</td><td>Opioid Common Library</td></tr>
+    <tr><td><a href="Library-opioidcds-rec-10-patient-view.html">OpioidCDS_STU3_REC_10_Patient_View (v0.1.0)</a></td><td>Library</td><td>Opioid Recommendation #10 (Patient View Version) Library</td></tr>
+    <tr><td><a href="Library-opioidcds-rec-11-patient-view.html">OpioidCDS_STU3_REC_11_Patient_View (v0.1.0)</a></td><td>Library</td><td>Opioid Recommendation #11 (Patient View Version) Library</td></tr>
     <tr><td><a href="PlanDefinition-opioidcds-10-patient-view.html">PlanDefinition_Recommendation_10_Patient_View (v0.1.0)</a></td><td>PlanDefinition</td><td>Opioid Recommendation #10 (Patient View Version) PlanDefinition</td></tr>
     <tr><td><a href="PlanDefinition-opioidcds-11-patient-view.html">PlanDefinition_Recommendation_11_Patient_view (v0.1.0)</a></td><td>PlanDefinition</td><td>Opioid Recommendation #11 (Patient View Version) PlanDefinition</td></tr>
     <tr><td><a href="terminology.html">Terminologies</a></td><td>ValueSet</td><td>Value sets referenced by the CQL in the Opioid Logic recommendations</td></tr>
@@ -144,11 +144,9 @@ GET http://localhost:8080/cqf-ruler/cds-services
             "id": "opioidcds-10-patient-view",
             "prefetch": {
                 "item1": "Patient?_id={{context.patientId}}",
-                "item2": "MedicationRequest?patient={{context.patientId}}&amp;medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|1010600,snipped for brevity",
                 "item3": "Observation?patient={{context.patientId}}&amp;code=http%3A%2F%2Floinc.org|12478-4,http%3A%2F%2Floinc.org|78813-3,snipped for brevity",
-                "item4": "Observation?patient={{context.patientId}}&amp;component-code=http%3A%2F%2Floinc.org|12478-4,http%3A%2F%2Floinc.org|78813-3,snipped for brevity",
-                "item5": "Observation?patient={{context.patientId}}&amp;code=http%3A%2F%2Floinc.org|50542-0,http%3A%2F%2Floinc.org|19487-8,snipped for brevity",
-                "item6": "Observation?patient={{context.patientId}}&amp;component-code=http%3A%2F%2Floinc.org|50542-0,http%3A%2F%2Floinc.org|19487-8,snipped for brevity"
+                "item4": "Observation?patient={{context.patientId}}&amp;component-code=http%3A%2F%2Floinc.org|50542-0,http%3A%2F%2Floinc.org|19487-8,snipped for brevity",
+                "item2": "MedicationRequest?patient={{context.patientId}}",
             }
         },
         {
@@ -159,8 +157,7 @@ GET http://localhost:8080/cqf-ruler/cds-services
             "id": "opioidcds-11-patient-view",
             "prefetch": {
                 "item1": "Patient?_id={{context.patientId}}",
-                "item2": "MedicationRequest?patient={{context.patientId}}&amp;medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|141927,snipped for brevity",
-                "item3": "MedicationRequest?patient={{context.patientId}}&amp;medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|1010600,snipped for brevity"
+                "item2": "MedicationRequest?patient={{context.patientId}}"
             }
         }
     ]
@@ -219,12 +216,12 @@ POST http://localhost:8080/cqf-ruler/cds-services/opioidcds-10-patient-view
 </div>
 
 <a name="api-request-and-response-http-client"> </a>
-<h4><span class="sectioncount">8.1.4.1</span> API Requests/Responses Via HTTP Client <a href="quick-start.html#api-request-and-response-http-client" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<h4><span class="sectioncount">8.1.4.1</span> API Requests/Responses Via HTTP Client <a href="quick-start.html#api-request-and-response-http-client" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>Requests can be submitted via any tool or client that allows you to interact with an HTTP API. One popular client is Postman, available <a href="https://www.getpostman.com">here</a>. Postman is an application that provides a user-friendly GUI for constructing and submitting HTTP requests to APIs and viewing responses in an easy-to-read format.</p>
 
 <a name="api-request-and-response-cds-hooks-client"> </a>
-<h4><span class="sectioncount">8.1.4.2</span> CDS Hooks Sandbox <a href="quick-start.html#api-request-and-response-cds-hooks-client" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<h4><span class="sectioncount">8.1.4.2</span> CDS Hooks Sandbox <a href="quick-start.html#api-request-and-response-cds-hooks-client" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>The <a href="http://sandbox.cds-hooks.org">CDS Hooks Sandbox</a> is a web application that provides a user-friendly GUI for constructing, viewing and submitting CDS Hooks requests and viewing the responses both in raw JSON format and also in an html representation that is meant to be representative of how it might be presented in a consuming EHR system. The sandbox can be configured to run against the local CDS Hooks service instance created above.</p>
 <p>To configure the sandbox to work with this local CDS Hooks service instance, the following settings need to be set:</p>

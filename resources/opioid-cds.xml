@@ -796,34 +796,10 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="Library - OMTK Model Info"/>
-            <description value="Opioid Management Terminology Knowledge Base Model Information"/>
-            <sourceReference>
-                <reference value="Library/omtk-modelinfo"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="Library - OMTK Logic"/>
-            <description value="Opioid Management Terminology Knowledge Base v0.1.0 Logic"/>
-            <sourceReference>
-                <reference value="Library/omtk-logic-0.1.0"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
             <name value="Library - OMTK Logic"/>
             <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic"/>
             <sourceReference>
-                <reference value="Library/library-omtklogic-0-0-1"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="Library - OMTK Data"/>
-            <description value="Opioid Management Terminology Knowledge Base v0.0.1 Data"/>
-            <sourceReference>
-                <reference value="Library/omtk-data-0.0.1"/>
+                <reference value="Library/omtklogic"/>
             </sourceReference>
         </resource>
         <resource>
@@ -831,7 +807,7 @@
             <name value="Library - OMTK Data"/>
             <description value="Opioid Management Terminology Knowledge Base v0.0.2 Data"/>
             <sourceReference>
-                <reference value="Library/library-omtkdata-0-0-2"/>
+                <reference value="Library/omtkdata"/>
             </sourceReference>
         </resource>
         <resource>
@@ -839,7 +815,7 @@
             <name value="Library - Opioid CDS Common"/>
             <description value="Opioid Management Decision Support Logic Common"/>
             <sourceReference>
-                <reference value="Library/library-opioidcds-stu3-common-0-1-0"/>
+                <reference value="Library/opioidcds-common"/>
             </sourceReference>
         </resource>
         <resource>
@@ -887,7 +863,7 @@
             <name value="Library - Opioid CDS Recommendation #10 Patient View"/>
             <description value="Opioid Management Decision Support Logic for recommendation #10 Patient View"/>
             <sourceReference>
-                <reference value="Library/library-opioidcds-stu3-rec-10-patient-view-0-1-0"/>
+                <reference value="Library/opioidcds-rec-10-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
@@ -903,7 +879,7 @@
             <name value="Library - Opioid CDS Recommendation #11 Patient View"/>
             <description value="Opioid Management Decision Support Logic for recommendation #11 Patient View"/>
             <sourceReference>
-                <reference value="Library/library-opioidcds-stu3-rec-11-patient-view-0-1-0"/>
+                <reference value="Library/opioidcds-rec-11-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
