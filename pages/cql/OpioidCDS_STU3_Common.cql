@@ -49,53 +49,73 @@ define function ConceptCodeOnlyEquivalent(concept Concept, code Code):
 	)
 
 define "Active Ambulatory Opioid Rx":
-  [MedicationRequest] MedReq
-    where MedReq.status = 'active'
-      and
-        if MedReq.medication is FHIR.Reference
-          then exists(
-            [Medication: "Ambulatory Abuse Potential Opioids"] OpioidMedication
-              where EndsWith(MedReq.medication.reference, OpioidMedication.id)
-          )
-        else MedReq.medication in "Ambulatory Abuse Potential Opioids"
-      and
-        (FHIRHelpers.ToConcept(MedReq.category) ~ "Community"
-          or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(MedReq.category, "Community"))
-        )
-
-/* define "Active Ambulatory Opioid Rx":
-  [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
-    where Rx.status.value = 'active'
-		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Community"
-			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Community"))
-			) */
+  (
+    "Is Active Ambulatory Medication Request?"([MedicationRequest: "Ambulatory Abuse Potential Opioids"])
+  )
+    union
+    (
+        ("Is Active Ambulatory Medication Request?"([MedicationRequest])) Rx
+          let Med: [Medication: id in (Last(Split(Rx.medication.reference, '/')))]
+          where Med.code in "Ambulatory Abuse Potential Opioids"
+          return
+            MedicationRequest {
+              id: Rx.id,
+              status: Rx.status,
+              intent: Rx.intent,
+              category: Rx.category,
+              medication: First(Med.code),
+              subject: Rx.subject,
+              recorder: Rx.recorder,
+              dosageInstruction: Rx.dosageInstruction,
+              dispenseRequest: Rx.dispenseRequest
+            }
+    )
 
 define "Active Ambulatory Benzodiazepine Rx":
-  [MedicationRequest] MedReq
-    where MedReq.status = 'active'
-      and
-        if MedReq.medication is FHIR.Reference
-          then exists(
-            [Medication: "Benzodiazepines"] BenzodiazepineMedication
-              where EndsWith(MedReq.medication.reference, BenzodiazepineMedication.id)
-          )
-        else MedReq.medication in "Benzodiazepines"
-      and
-        (FHIRHelpers.ToConcept(MedReq.category) ~ "Community"
-          or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(MedReq.category, "Community"))
-        )
-  /* [MedicationRequest: "Benzodiazepines"] Rx
-    where Rx.status.value = 'active'
-		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Community"
-			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Community"))
-			) */
+  (
+    "Is Active Ambulatory Medication Request?"([MedicationRequest: "Benzodiazepines"])
+  )
+  union
+  (
+      ("Is Active Ambulatory Medication Request?"([MedicationRequest])) Rx
+        let Med: [Medication: id in (Last(Split(Rx.medication.reference, '/')))]
+        where Med.code in "Benzodiazepines"
+        return
+          MedicationRequest {
+            id: Rx.id,
+            status: Rx.status,
+            intent: Rx.intent,
+            category: Rx.category,
+            medication: First(Med.code),
+            subject: Rx.subject,
+            recorder: Rx.recorder,
+            dosageInstruction: Rx.dosageInstruction,
+            dispenseRequest: Rx.dispenseRequest
+          }
+  )
 
 define "Active Ambulatory Naloxone Rx":
-  [MedicationRequest: "Naloxone"] Rx
-    where Rx.status.value = 'active'
-		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Community"
-			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Community"))
-			)
+  (
+    "Is Active Ambulatory Medication Request?"([MedicationRequest: "Naloxone"])
+  )
+  union
+  (
+      ("Is Active Ambulatory Medication Request?"([MedicationRequest])) Rx
+        let Med: [Medication: id in (Last(Split(Rx.medication.reference, '/')))]
+        where Med.code in "Naloxone"
+        return
+          MedicationRequest {
+            id: Rx.id,
+            status: Rx.status,
+            intent: Rx.intent,
+            category: Rx.category,
+            medication: First(Med.code),
+            subject: Rx.subject,
+            recorder: Rx.recorder,
+            dosageInstruction: Rx.dosageInstruction,
+            dispenseRequest: Rx.dispenseRequest
+          }
+  )
 
 define "Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
@@ -106,13 +126,15 @@ define "End of Life Assessment":
   // 1. Conditions indicating end of life or with limited life expectancy
   exists (
     (
-      [Condition: "End of Life Conditions"] C
+      [Condition] C
         where C.clinicalStatus.value in { 'active', 'recurrence' }
+        and C.code in "End of Life Conditions"
     )
     union
     (
-      [Condition: code in "Limited Life Expectancy Conditions"] C
+      [Condition] C
         where C.clinicalStatus.value in { 'active', 'recurrence' }
+        and C.code in "Limited Life Expectancy Conditions"
     )
   )
   // 2. Admitted/referred/discharged to hospice care
@@ -322,3 +344,10 @@ define function ToRxNormCode(coding List<FHIR.Coding>):
 
 define function ToQuantity(quantity FHIR.Quantity):
   System.Quantity { value: quantity.value.value, unit: quantity.unit.value }
+
+define function "Is Active Ambulatory Medication Request?" (value List<FHIR.MedicationRequest>) returns List<FHIR.MedicationRequest>:
+  value Rx
+  where Rx.status.value = 'active'
+    and (FHIRHelpers.ToConcept(Rx.category) ~ "Community"
+      or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Community"))
+    )
