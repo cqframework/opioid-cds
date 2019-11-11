@@ -1,0 +1,49 @@
+{
+  "resourceType": "Medication",
+  "id": "example-rec-11-opioid",
+  "code": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.253",
+        "code": "79777"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.68",
+        "code": "65991702100356"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.162",
+        "code": "31063"
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "161"
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "5489"
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "214182"
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "857002"
+      }
+    ],
+    "text": "HYDROcodone-acetaminophen (NORCO) tablet 5-325 mg"
+  },
+  "isBrand": false,
+  "isOverTheCounter": false,
+  "form": {
+    "coding": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.698288.310",
+        "code": "tablet",
+        "display": "tablet"
+      }
+    ],
+    "text": "HYDROcodone-acetaminophen (NORCO) tablet 5-325 mg"
+  }
+}

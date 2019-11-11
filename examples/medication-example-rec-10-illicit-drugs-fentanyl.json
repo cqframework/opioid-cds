@@ -1,0 +1,13 @@
+{
+  "resourceType": "Medication",
+  "id": "example-rec-10-illicit-drugs-fentanyl",
+  "code": {
+    "coding": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "197696",
+        "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
+      }
+    ]
+  }
+}

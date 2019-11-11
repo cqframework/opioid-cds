@@ -1,0 +1,451 @@
+{
+  "hookInstance": "b266185d-c26a-40dd-a024-70b5b6222170",
+  "fhirServer": "http://localhost:8080/cqf-ruler/baseDstu3",
+  "hook": "patient-view",
+  "context": {
+    "user": "Practitioner/BBBB",
+    "patientId": "Patient/AAAAAAAAA",
+    "encounterId": "Encounter/example-rec-11-benzo-trigger-with-opioid-context"
+  },
+  "prefetch": {
+    "item1": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Patient",
+        "id": "AAAAAAAAA",
+        "extension": [
+          {
+            "valueCode": "M",
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex"
+          },
+          {
+            "extension": [
+              {
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/us/core/ValueSet/omb-race-category",
+                  "code": "2106-3",
+                  "display": "White"
+                },
+                "url": "ombCategory"
+              },
+              {
+                "valueString": "White",
+                "url": "text"
+              }
+            ],
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+          },
+          {
+            "extension": [
+              {
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/us/core/ValueSet/omb-ethnicity-category",
+                  "code": "2186-5",
+                  "display": "Not Hispanic or Latino"
+                },
+                "url": "ombCategory"
+              },
+              {
+                "valueString": "Not Hispanic or Latino",
+                "url": "text"
+              }
+            ],
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+          }
+        ],
+        "identifier": "",
+        "active": true,
+        "name": [
+          {
+            "extension": [
+              {
+                "valueString": "XXX",
+                "url": "http://hl7.org/fhir/StructureDefinition/humanname-partner-name"
+              }
+            ],
+            "use": "usual",
+            "text": "Test Patient",
+            "family": "XXX",
+            "given": [
+              "Test",
+              "Test"
+            ]
+          }
+        ],
+        "telecom": "",
+        "gender": "male",
+        "birthDate": "1959-01-01",
+        "deceasedBoolean": false,
+        "address": "",
+        "maritalStatus": {
+          "text": "Test Patient"
+        },
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/ValueSet/languages",
+                  "code": "en",
+                  "display": "English"
+                }
+              ],
+              "text": "Test Patient"
+            },
+            "preferred": true
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "/Practitioner/BBBB",
+            "display": "BBBB, MD"
+          }
+        ],
+        "managingOrganization": ""
+      }
+    },
+    "item2": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Bundle",
+        "entry": [
+          {
+            "resource": {
+              "resourceType": "MedicationRequest",
+              "id": "MMMMMMMMMMM",
+              "identifier": "",
+              "status": "active",
+              "intent": "order",
+              "category": {
+                "coding": [
+                  {
+                    "code": "community",
+                    "display": "Community"
+                  }
+                ],
+                "text": "Community"
+              },
+              "medicationReference": {
+                "reference": "/Medication/example-rec-11-opioid",
+                "display": "HYDROcodone-acetaminophen (NORCO) tablet 5-325 mg"
+              },
+              "subject": {
+                "reference": "/Patient/AAAAAAAAA",
+                "display": ""
+              },
+              "authoredOn": "2019-06-18",
+              "requester": {
+                "agent": {
+                  "reference": "/Practitioner/BBBB",
+                  "display": "BBBB, MD"
+                }
+              },
+              "recorder": {
+                "reference": "/Practitioner/BBBB",
+                "display": "BBBB, MD"
+              },
+              "dosageInstruction": [
+                {
+                  "extension": [
+                    {
+                      "valueQuantity": {
+                        "value": 1,
+                        "unit": "tablet",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "{tbl}"
+                      },
+                      "url": "https://open.epic.com/fhir/extensions/admin-amount"
+                    },
+                    {
+                      "valueQuantity": {
+                        "value": 1,
+                        "unit": "tablet",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "{tbl}"
+                      },
+                      "url": "https://open.epic.com/fhir/extensions/ordered-dose"
+                    }
+                  ],
+                  "text": "Community",
+                  "patientInstruction": "xxxx x xxxxxx xx xxxxx xxxxx x xxxxx xx xxxxxx xxx xxxxx",
+                  "timing": {
+                    "repeat": {
+                      "boundsPeriod": {
+                        "start": "2019-07-05"
+                      },
+                      "frequency": 1,
+                      "period": 6,
+                      "periodUnit": "h"
+                    },
+                    "code": {
+                      "text": "Community"
+                    }
+                  },
+                  "asNeededBoolean": true,
+                  "route": {
+                    "coding": [
+                      {
+                        "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.798268.7025",
+                        "code": "19",
+                        "display": "Oral"
+                      }
+                    ],
+                    "text": "Community"
+                  },
+                  "method": {
+                    "text": "Community"
+                  },
+                  "doseQuantity": {
+                    "value": 1,
+                    "unit": "tablet",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "{tbl}"
+                  }
+                }
+              ],
+              "dispenseRequest": {
+                "validityPeriod": {
+                  "start": "2019-07-05"
+                },
+                "quantity": {
+                  "value": 10,
+                  "unit": "tablet"
+                },
+                "expectedSupplyDuration": {
+                  "value": 3,
+                  "unit": "Day",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              },
+              "priorPrescription": {
+                "reference": "/MedicationRequest/CCCCCCCCCCCCC",
+                "display": "HYDROcodone-acetaminophen (NORCO/ LORTAB) 5-325 MG tablet"
+              }
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "MedicationRequest",
+              "id": "DDDDDDDDDDDDDDDDDDD",
+              "identifier": "",
+              "status": "active",
+              "intent": "order",
+              "category": {
+                "coding": [
+                  {
+                    "code": "community",
+                    "display": "Community"
+                  }
+                ],
+                "text": "Community"
+              },
+              "medicationReference": {
+                "reference": "/Medication/example-rec-11-benzo",
+                "display": "diazepam (VALIUM) tablet"
+              },
+              "subject": {
+                "reference": "/Patient/AAAAAAAAA",
+                "display": ""
+              },
+              "authoredOn": "2019-09-20",
+              "requester": {
+                "agent": {
+                  "reference": "/Practitioner/BBBB",
+                  "display": "BBBB, MD"
+                }
+              },
+              "recorder": {
+                "reference": "/Practitioner/BBBB",
+                "display": "BBBB"
+              },
+              "dosageInstruction": [
+                {
+                  "extension": [
+                    {
+                      "valueQuantity": {
+                        "value": 1,
+                        "unit": "tablet",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "{tbl}"
+                      },
+                      "url": "https://open.epic.com/fhir/extensions/admin-amount"
+                    },
+                    {
+                      "valueQuantity": {
+                        "value": 5,
+                        "unit": "mg",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "mg"
+                      },
+                      "url": "https://open.epic.com/fhir/extensions/ordered-dose"
+                    }
+                  ],
+                  "text": "Community",
+                  "patientInstruction": "Take 1 tablet (5 mg) by mouth 4 times daily as needed for anxiety.",
+                  "timing": {
+                    "repeat": {
+                      "boundsPeriod": {
+                        "start": "2019-10-07"
+                      },
+                      "frequency": 4,
+                      "period": 1,
+                      "periodUnit": "d"
+                    },
+                    "code": {
+                      "text": "Community"
+                    }
+                  },
+                  "asNeededBoolean": true,
+                  "route": {
+                    "coding": [
+                      {
+                        "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.798268.7025",
+                        "code": "19",
+                        "display": "Oral"
+                      }
+                    ],
+                    "text": "Community"
+                  },
+                  "method": {
+                    "text": "Community"
+                  },
+                  "doseQuantity": {
+                    "value": 5,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg"
+                  }
+                }
+              ],
+              "dispenseRequest": {
+                "validityPeriod": {
+                  "start": "2019-10-07"
+                },
+                "numberOfRepeatsAllowed": 4,
+                "quantity": {
+                  "value": 100,
+                  "unit": "tablet"
+                },
+                "expectedSupplyDuration": {
+                  "value": 25,
+                  "unit": "Day",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "item3": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Bundle",
+        "entry": [
+          {
+            "resource": {
+              "resourceType": "Medication",
+              "id": "12bd1f88-426f-4567-85fe-db9eae37f56b",
+              "code": {
+                "coding": [
+                  {
+                    "system": "urn:oid:2.16.840.1.113883.6.253",
+                    "code": "6507"
+                  },
+                  {
+                    "system": "urn:oid:2.16.840.1.113883.6.68",
+                    "code": "57100040000310"
+                  },
+                  {
+                    "system": "urn:oid:2.16.840.1.113883.6.162",
+                    "code": "02974"
+                  },
+                  {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "3322"
+                  },
+                  {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "197591"
+                  }
+                ],
+                "text": "diazepam (VALIUM) tablet"
+              },
+              "isBrand": false,
+              "isOverTheCounter": false,
+              "form": {
+                "coding": [
+                  {
+                    "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.698288.310",
+                    "code": "tablet",
+                    "display": "tablet"
+                  }
+                ],
+                "text": "diazepam (VALIUM) tablet"
+              }
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Medication",
+              "id": "371016cf-18eb-4311-bbc9-0ef2b923a8c9",
+              "code": {
+                "coding": [
+                  {
+                    "system": "urn:oid:2.16.840.1.113883.6.253",
+                    "code": "79777"
+                  },
+                  {
+                    "system": "urn:oid:2.16.840.1.113883.6.68",
+                    "code": "65991702100356"
+                  },
+                  {
+                    "system": "urn:oid:2.16.840.1.113883.6.162",
+                    "code": "31063"
+                  },
+                  {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "161"
+                  },
+                  {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "5489"
+                  },
+                  {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "214182"
+                  },
+                  {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "857002"
+                  }
+                ],
+                "text": "HYDROcodone-acetaminophen (NORCO) tablet 5-325 mg"
+              },
+              "isBrand": false,
+              "isOverTheCounter": false,
+              "form": {
+                "coding": [
+                  {
+                    "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.698288.310",
+                    "code": "tablet",
+                    "display": "tablet"
+                  }
+                ],
+                "text": "HYDROcodone-acetaminophen (NORCO) tablet 5-325 mg"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
