@@ -9,7 +9,7 @@
     <publisher value="Centers for Disease Control and Prevention (CDC)"/>
     <date value="2017-02-06"/>
     <description value="Opioid Prescribing Support Implementation Guide"/>
-    <fhirVersion value="3.0.1"/>
+    <fhirVersion value="3.0.2"/>
     <package>
         <name value="Opioid Prescribing Support Implementation Guide Package"/>
         <resource>

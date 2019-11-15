@@ -6,7 +6,7 @@
     <status value="draft"/>
     <date value="2018-04-19"/>
     <description value="Used for construction of CDS Hooks response cards. Indicates urgency/importance of what the RequestGroup action conveys."/>
-    <fhirVersion value="3.0.1"/>
+    <fhirVersion value="3.0.2"/>
     <mapping>
         <identity value="rim"/>
         <uri value="http://hl7.org/v3"/>
