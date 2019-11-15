@@ -62,7 +62,7 @@ GET http://localhost:8080/cqf-ruler-dstu3/fhir/PlanDefinition
 
 <div class="example">
   <pre class="http">
-GET http://localhost:8080/cqf-ruler/cds-services
+GET http://localhost:8080/cqf-ruler-dstu3/cds-services
   </pre>
 </div>
 
@@ -81,8 +81,30 @@ GET http://localhost:8080/cqf-ruler/cds-services
 <h3><span class="sectioncount">8.3.0</span> Loading Content <a href="quick-start.html#content-load" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>The next step is to load the content, i.e., the artifacts published in this implementation guide that
-  define the recommendations. For recommendations #10 and #11, patient-view, these
-  artifacts include:</p>
+  define the recommendations. For convenience, the resources for recommendations #10 and #11, patient-view
+  have all been added to the 'opioid-cds-content-bundle' and 'opioid-cds-terminology-bundle' transaction
+  bundles below that can be POSTed to the base URL of the server:</p>
+
+  <table class="list">
+  	<thead>
+  		<tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+  	</thead>
+  	<tbody>
+  		<tr><td><a href="quick-start-bundles/opioid-cds-terminology-bundle.json">opioid-cds-terminology-bundle</a></td><td>Bundle</td><td>All Value Sets Referenced by the Opioid Content</td></tr>
+  		<tr><td><a href="quick-start-bundles/opioid-cds-content-bundle.json">opioid-cds-content-bundle</a></td><td>Bundle</td><td>All Required Content for Recommendations #10 and #11</td></tr>
+  	</tbody>
+  </table>
+
+  <div class="example">
+    <pre class="http">
+  POST http://localhost:8080/cqf-ruler-dstu3/fhir
+    </pre>
+  </div>
+
+  <p>Following normal FHIR server transaction processing, this will post all the content resources as
+    a single transaction.</p>
+
+  <p>The resources contained in these bundles are:</p>
 
 <table class="list">
   <thead>
@@ -100,8 +122,9 @@ GET http://localhost:8080/cqf-ruler/cds-services
   </tbody>
 </table>
 
-<p>Because this content is published as FHIR resources, these can be loaded by POSTing or PUTing them to the
-  FHIR server, just like any other FHIR resource:</p>
+<p>Because this content is published as FHIR resources, each of the resources
+  can be loaded individually rather than as part of the bundles above by POSTing
+  or PUTing them to the FHIR server, just like any other FHIR resource:</p>
 
 <div class="example">
   <pre class="http">
@@ -109,29 +132,7 @@ PUT http://localhost:8080/cqf-ruler-dstu3/fhir/Library/library-omtkdata-0-0-2
   </pre>
 </div>
 
-<p>With the body of the PUT as the XML (or JSON) for the resource.</p>
-
-<p>For convenience, these resources have all been added to a single transaction bundle, quick-start-content,
-  that can be POSTed to the base URL of the server:</p>
-
-<table class="list">
-	<thead>
-		<tr><th>Resource</th><th>Type</th><th>Description</th></tr>
-	</thead>
-	<tbody>
-		<tr><td><a href="quick-start-bundles/opioid-cds-terminology-bundle.json">opioid-cds-terminology-bundle</a></td><td>Bundle</td><td>All Value Sets Referenced by the Opioid Content</td></tr>
-		<tr><td><a href="quick-start-bundles/opioid-cds-content-bundle.json">opioid-cds-content-bundle</a></td><td>Bundle</td><td>All Required Content for Recommendations #10 and #11</td></tr>
-	</tbody>
-</table>
-
-<div class="example">
-  <pre class="http">
-POST http://localhost:8080/cqf-ruler-dstu3/fhir
-  </pre>
-</div>
-
-<p>Following normal FHIR server transaction processing, this will post all the content resources as
-  a single transaction.</p>
+<p>With the body of the PUT request set to be the XML (or JSON) for the resource.</p>
 
 <p>Once the content has been loaded, the CDS Hooks discovery endpoint will list the recommendations as
   available services to be called:</p>
