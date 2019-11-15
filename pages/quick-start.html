@@ -146,35 +146,32 @@ GET http://localhost:8080/cqf-ruler-dstu3/cds-services
 <div class="example">
   <pre class="json">
 {
-    "services": [
-        {
-            "hook": "patient-view",
-            "name": "PlanDefinition_Recommendation_10_Patient_View",
-            "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 (patient-view)",
-            "description": "When prescribing opioids for chronic pain, providers should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs.",
-            "id": "opioidcds-10-patient-view",
-            "prefetch": {
-                "item1": "Patient?_id=&#123;&#123;context.patientId&#125;&#125;",
-                "item2": "MedicationRequest?patient=&#123;&#123;context.patientId&#125;&#125;&amp;medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|1010600,snipped for brevity",
-                "item3": "Observation?patient=&#123;&#123;context.patientId&#125;&#125;&amp;code=http%3A%2F%2Floinc.org|12478-4,http%3A%2F%2Floinc.org|78813-3,snipped for brevity",
-                "item4": "Observation?patient=&#123;&#123;context.patientId&#125;&#125;&amp;component-code=http%3A%2F%2Floinc.org|12478-4,http%3A%2F%2Floinc.org|78813-3,snipped for brevity",
-                "item5": "Observation?patient=&#123;&#123;context.patientId&#125;&#125;&amp;code=http%3A%2F%2Floinc.org|50542-0,http%3A%2F%2Floinc.org|19487-8,snipped for brevity",
-                "item6": "Observation?patient=&#123;&#123;context.patientId&#125;&#125;&amp;component-code=http%3A%2F%2Floinc.org|50542-0,http%3A%2F%2Floinc.org|19487-8,snipped for brevity"
-            }
-        },
-        {
-            "hook": "patient-view",
-            "name": "PlanDefinition_Recommendation_11_Patient_View",
-            "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 (patient-view)",
-            "description": "Concurrently prescribing opioid medications with benzodiazepines increases the risk of harm for the patient.",
-            "id": "opioidcds-11-patient-view",
-            "prefetch": {
-                "item1": "Patient?_id=&#123;&#123;context.patientId&#125;&#125;",
-                "item2": "MedicationRequest?patient=&#123;&#123;context.patientId&#125;&#125;&amp;medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|141927,snipped for brevity",
-                "item3": "MedicationRequest?patient=&#123;&#123;context.patientId&#125;&#125;&amp;medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|1010600,snipped for brevity"
-            }
-        }
-    ]
+  "services": [
+    {
+      "hook": "patient-view",
+      "name": "PlanDefinition_Recommendation_10_Patient_View",
+      "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 (patient-view)",
+      "description": "When prescribing opioids for chronic pain, providers should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs.",
+      "id": "opioidcds-10-patient-view",
+      "prefetch": {
+        "item1": "Patient?_id={{context.patientId}}",
+        "item2": "Observation?patient={{context.patientId}}&code=http%3A%2F%2Floinc.org|12478-4, snipped for brevity",
+        "item3": "Observation?patient={{context.patientId}}&code=http%3A%2F%2Floinc.org|50542-0, snipped for brevity",
+        "item4": "MedicationRequest?patient={{context.patientId}}&medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|1010600, snipped for brevity"
+      }
+    },
+    {
+      "hook": "patient-view",
+      "name": "PlanDefinition_Recommendation_11_Patient_View",
+      "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 (patient-view)",
+      "description": "Concurrently prescribing opioid medications with benzodiazepines increases the risk of harm for the patient.",
+      "id": "opioidcds-11-patient-view",
+      "prefetch": {
+        "item1": "Patient?_id={{context.patientId}}",
+        "item2": "MedicationRequest?patient={{context.patientId}}&medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|141927, snipped for brevity",
+        "item3": "MedicationRequest?patient={{context.patientId}}&medication=http%3A%2F%2Fwww.nlm.nih.gov%2Fresearch%2Fumls%2Frxnorm|1010600, snipped for brevity"
+      }
+    }
 }
   </pre>
 </div>
