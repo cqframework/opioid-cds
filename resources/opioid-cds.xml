@@ -6,8 +6,8 @@
     <name value="Opioid Prescribing Support Implementation Guide"/>
     <status value="draft"/>
     <experimental value="false"/>
-    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
     <date value="2017-02-06"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
     <description value="Opioid Prescribing Support Implementation Guide"/>
     <fhirVersion value="3.0.2"/>
     <package>
@@ -792,6 +792,14 @@
             <description value="System of codes that indicate the urgency/importance of the action"/>
             <sourceReference>
                 <reference value="CodeSystem/opioidcds-indicator"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - FHIR Helpers"/>
+            <description value="FHIR Helpers"/>
+            <sourceReference>
+                <reference value="Library/library-fhir-helpers"/>
             </sourceReference>
         </resource>
         <resource>

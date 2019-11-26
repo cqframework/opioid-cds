@@ -72,26 +72,15 @@ define "Exclusion Criteria":
 
 define "Illicit Drug Urine Screenings in Last 12 Months":
   (
-    (
-      [Observation: "code" in Common."Illicit Drug Screening"] observation
-        where date from observation.effective.value in day of "Lookback Year"
-    )
-    union (
-      [Observation: "component-code" in Common."Illicit Drug Screening"] observation
-        where date from observation.effective.value in day of "Lookback Year"
-    )
+    [Observation: "code" in Common."Illicit Drug Screening"] observation
+      where date from observation.effective.value in day of "Lookback Year"
   ) obs
     sort by effective.value
 
 define "Opioid Drug Urine Screenings in Last 12 Months":
   (
-    ([Observation: "code" in Common."Opioid Drug Screening"] observation
+    [Observation: "code" in Common."Opioid Drug Screening"] observation
       where date from observation.effective.value in day of "Lookback Year"
-    )
-    union (
-      [Observation: "component-code" in Common."Opioid Drug Screening"] observation
-        where date from observation.effective.value in day of "Lookback Year"
-    )
   ) obs
     sort by effective.value
 

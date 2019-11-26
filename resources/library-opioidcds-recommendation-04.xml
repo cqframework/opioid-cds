@@ -303,7 +303,7 @@ define &quot;Get Detail&quot;:
     <relatedArtifact>
         <type value="depends-on"/>
         <resource>
-            <reference value="Library/opioidcds-common"/>
+            <reference value="Library/library-opioidcds-stu3-common-0-1-0"/>
         </resource>
     </relatedArtifact>
     <dataRequirement>

@@ -565,6 +565,10 @@
       "source": "codesystem-opioidcds-indicator.xml",
       "base": "CodeSystem-opioidcds-indicator.html"
     },
+    "Library/library-fhir-helpers": {
+      "source": "library-fhir-helpers.json",
+      "base": "Library-fhir-helpers.html"
+    },
     "Library/omtk-logic-0.1.0": {
       "source": "library-omtk-logic-0.1.0.xml",
       "base": "Library-omtk-logic-0.1.0.html"

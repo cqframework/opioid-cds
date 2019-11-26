@@ -100,7 +100,7 @@
                      <span>http://hl7.org/fhir|3.0.0</span>
                   </p>
                </td>
-            </tr> 
+            </tr>
             <!-- Filter down to human readable content -->
             <tr style="vertical-align: top;">
                <th scope="row">
@@ -199,13 +199,13 @@ define &quot;Get Detail&quot;:
         then &apos;The benzodiazepine prescription request is concurrent with an active opioid prescription'
       else 'The opioid prescription request is concurrent with an active benzodiazepine prescription'
   else null
-</code></pre> 
-               </td> 
-            </tr> 
-         </table> 
+</code></pre>
+               </td>
+            </tr>
+         </table>
       </div>
    </text>
-    <url value="http://fhir.org/guides/cdc/opioid-cds/Library/opioidcds-common"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/Library/opioidcds-recommendation-11"/>
     <identifier>
         <use value="official"/>
         <value value="OpioidCDS_REC_11"/>
@@ -290,7 +290,7 @@ define &quot;Get Detail&quot;:
     <relatedArtifact>
         <type value="depends-on"/>
         <resource>
-            <reference value="Library/opioidcds-common"/>
+            <reference value="Library/library-opioidcds-stu3-common-0-1-0"/>
         </resource>
     </relatedArtifact>
      <content>
