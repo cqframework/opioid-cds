@@ -8,7 +8,7 @@
                     <th scope="row">
                         <b>Id: </b>
                     </th>
-                    <td style="padding-left: 25px; padding-right: 25px;">Library/library-opioidcds-stu3-rec-11-patient-view-0-1-0/_history/3</td>
+                    <td style="padding-left: 25px; padding-right: 25px;">Library/library-opioidcds-stu3-rec-11-patient-view-0-1-0</td>
                 </tr>
                 <tr>
                     <th scope="row">
@@ -71,7 +71,7 @@
                             <span>
                                 <span style="padding-left: 25px;">
                                     <b>reference: </b>
-                                    <span>Library/library-opioidcds-stu3-common-0-1-0/_history/20</span>
+                                    <span>Library/library-opioidcds-stu3-common-0-1-00</span>
                                 </span>
                             </span>
                         </p>
