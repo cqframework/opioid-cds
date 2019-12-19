@@ -55,7 +55,7 @@ define "Lookback Year":
 define "Inclusion Criteria":
   AgeInYears() >= 18
     and exists (Common."Active Ambulatory Opioid Rx")
-    and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
+    //and AnyTrue(Common.ProbableDaysInRange(Common."Active Ambulatory Opioid Rx", 90, 80))
     and
       ("No Urine Screening In Last 12 Months"
         or "Has Evidence of Opioids"
