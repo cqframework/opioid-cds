@@ -1,9 +1,9 @@
 {
   "cards": [
     {
-      "summary": "Avoid prescribing opioid pain medication and benzodiazepine concurrently whenever possible.",
+      "summary": "Patient has active prescriptions for opioid pain medication and benzodiazepines",
       "indicator": "warning",
-      "detail": "The opioid prescription request is concurrent with an active benzodiazepine prescription",
+      "detail": "Avoid prescribing opioid pain medication and benzodiazepines concurrently whenever possible",
       "source": {
         "label": "CDC guideline for prescribing opioids for chronic pain",
         "url": "https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"
