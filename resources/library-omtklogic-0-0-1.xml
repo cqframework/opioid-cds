@@ -1,9 +1,5 @@
 <Library xmlns="http://hl7.org/fhir">
     <id value="library-omtklogic-0-0-1"/>
-    <meta>
-        <versionId value="47"/>
-        <lastUpdated value="2019-05-10T04:25:30.527-06:00"/>
-    </meta>
     <text>
         <status value="generated"/>
         <div xmlns="http://www.w3.org/1999/xhtml">
