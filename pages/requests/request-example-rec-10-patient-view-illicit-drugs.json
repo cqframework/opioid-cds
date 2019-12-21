@@ -135,7 +135,8 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/v2/0078",
-              "code": "POS"
+              "code": "POS",
+              "display": "Tetrahydrocannabinol [Presence] in Urine"
             }
           ]
         }
