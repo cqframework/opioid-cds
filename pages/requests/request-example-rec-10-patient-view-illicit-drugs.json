@@ -135,7 +135,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/v2/0078",
-              "code": "Positive"
+              "code": "POS"
             }
           ]
         }
