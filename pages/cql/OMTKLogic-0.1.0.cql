@@ -61,7 +61,7 @@ select '{ ' || char(10) || group_concat(
     || 'ingredientCode: ' || T.INGREDIENT_RXCUI || ', '
     || 'ingredientName: ''' || T.INGREDIENT_NAME || ''', '
     || 'strength: ''' || T.STRENGTH || ''', '
-    || 'strengthValue: ' || T.STRENGTH_VALUE || ', '
+    || 'strengthValue: ' || CAST(T.STRENGTH_VALUE as REAL) || ', '
     || 'strengthUnit: ''' || T.STRENGTH_UNIT || ''' '
     || '}', ', ' || char(10)) || char(10) || '}' as TUPLES
   from (
@@ -75,6 +75,7 @@ select '{ ' || char(10) || group_concat(
 		left join MED_DOSE_FORM DF on DF.DOSE_FORM_RXCUI = D.DOSE_FORM_RXCUI
 	  order by D.DRUG_RXCUI, I.INGREDIENT_RXCUI
   ) T
+
 */
 
 /*
