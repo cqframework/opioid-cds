@@ -1,9 +1,5 @@
 <Library xmlns="http://hl7.org/fhir">
    <id value="library-opioidcds-stu3-common-0-1-0"/>
-   <meta>
-      <versionId value="316"/>
-      <lastUpdated value="2019-06-01T18:46:50.782-06:00"/>
-   </meta>
    <text>
       <status value="generated"/>
       <div xmlns="http://www.w3.org/1999/xhtml">
@@ -12,7 +8,7 @@
                <th scope="row">
                   <b>Id: </b>
                </th>
-               <td style="padding-left: 25px; padding-right: 25px;">Library/library-opioidcds-stu3-common-0-1-0/_history/315</td>
+               <td style="padding-left: 25px; padding-right: 25px;">Library/library-opioidcds-stu3-common-0-1-015</td>
             </tr>
             <tr>
                <th scope="row">
@@ -75,7 +71,7 @@
                      <span>
                         <span style="padding-left: 25px;">
                            <b>reference: </b>
-                           <span>Library/library-omtklogic-0-0-1/_history/10</span>
+                           <span>Library/library-omtklogic-0-0-1</span>
                         </span>
                      </span>
                   </p>
