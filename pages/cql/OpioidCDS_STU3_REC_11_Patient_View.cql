@@ -68,7 +68,7 @@ define "Concurrent Benzodiazepine Prescription Issue":
     // TODO: Device representation...
     // author:,
     implicated:
-      (Common."Active Ambulatory Benzodiazepine Rx" 
+      (Common."Active Ambulatory Benzodiazepine Rx"
 				union Common."Active Ambulatory Opioid Rx") M
         return FHIR.Reference { reference: FHIR.string { value: 'MedicationRequest/' + M.id } },
     detail: FHIR.string { value: "Get Detail" },

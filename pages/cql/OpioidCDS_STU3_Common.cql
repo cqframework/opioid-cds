@@ -27,10 +27,8 @@ valueset "Opioid Drug Screening": 'http://fhir.org/guides/cdc/opioid-cds/ValueSe
 valueset "Ambulatory Abuse Potential Opioids": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care'
 valueset "Substance Abuse": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-abuse'
 
-// TODO: Turn this into a valueset
 code "Referral to Hospice": '306205009' from "SNOMED"
-// TODO: Turn this into a valueset
-code "Outpatient": 'outpatient' from "Medication Request Category Codes"
+code "Community": 'community' from "Medication Request Category Codes"
 
 // TODO: Capture process decisions for long-term opioid use
 define IsForChronicPain: true
@@ -44,49 +42,101 @@ define IgnoreOutpatientCategorySystem: true
 
 define function CodeOnlyEquivalent(code1 Code, code2 Code):
   code1.code ~ code2.code
-	
+
 define function ConceptCodeOnlyEquivalent(concept Concept, code Code):
   exists (concept.codes C
 	  where C.code ~ code.code
 	)
 
 define "Active Ambulatory Opioid Rx":
-  [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
-    where Rx.status.value = 'active'
-		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
-			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
-			)
+  (
+    "Is Active Ambulatory Medication Request?"([MedicationRequest: "Ambulatory Abuse Potential Opioids"])
+  )
+    union
+    (
+        ("Is Active Ambulatory Medication Request?"([MedicationRequest])) Rx
+          let Med: [Medication: id in (Last(Split(Rx.medication.reference, '/')))]
+          where Med.code in "Ambulatory Abuse Potential Opioids"
+          return
+            MedicationRequest {
+              id: Rx.id,
+              status: Rx.status,
+              intent: Rx.intent,
+              category: Rx.category,
+              medication: First(Med.code),
+              subject: Rx.subject,
+              authoredOn: Rx.authoredOn,
+              recorder: Rx.recorder,
+              dosageInstruction: Rx.dosageInstruction,
+              dispenseRequest: Rx.dispenseRequest
+            }
+    )
 
 define "Active Ambulatory Benzodiazepine Rx":
-  [MedicationRequest: "Benzodiazepines"] Rx
-    where Rx.status.value = 'active'
-		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
-			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
-			)
+  (
+    "Is Active Ambulatory Medication Request?"([MedicationRequest: "Benzodiazepines"])
+  )
+  union
+  (
+      ("Is Active Ambulatory Medication Request?"([MedicationRequest])) Rx
+        let Med: [Medication: id in (Last(Split(Rx.medication.reference, '/')))]
+        where Med.code in "Benzodiazepines"
+        return
+          MedicationRequest {
+            id: Rx.id,
+            status: Rx.status,
+            intent: Rx.intent,
+            category: Rx.category,
+            medication: First(Med.code),
+            subject: Rx.subject,
+            authoredOn: Rx.authoredOn,
+            recorder: Rx.recorder,
+            dosageInstruction: Rx.dosageInstruction,
+            dispenseRequest: Rx.dispenseRequest
+          }
+  )
 
 define "Active Ambulatory Naloxone Rx":
-  [MedicationRequest: "Naloxone"] Rx
-    where Rx.status.value = 'active'
-		  and (FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
-			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
-			)
+  (
+    "Is Active Ambulatory Medication Request?"([MedicationRequest: "Naloxone"])
+  )
+  union
+  (
+      ("Is Active Ambulatory Medication Request?"([MedicationRequest])) Rx
+        let Med: [Medication: id in (Last(Split(Rx.medication.reference, '/')))]
+        where Med.code in "Naloxone"
+        return
+          MedicationRequest {
+            id: Rx.id,
+            status: Rx.status,
+            intent: Rx.intent,
+            category: Rx.category,
+            medication: First(Med.code),
+            subject: Rx.subject,
+            recorder: Rx.recorder,
+            dosageInstruction: Rx.dosageInstruction,
+            dispenseRequest: Rx.dispenseRequest
+          }
+  )
 
 define "Ambulatory Opioid Rx":
   [MedicationRequest: "Ambulatory Abuse Potential Opioids"] Rx
-		  where FHIRHelpers.ToConcept(Rx.category) ~ "Outpatient"
-			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Outpatient"))
+		  where FHIRHelpers.ToConcept(Rx.category) ~ "Community"
+			  or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Community"))
 
 define "End of Life Assessment":
   // 1. Conditions indicating end of life or with limited life expectancy
   exists (
     (
-      [Condition: "End of Life Conditions"] C
+      [Condition] C
         where C.clinicalStatus.value in { 'active', 'recurrence' }
+        and C.code in "End of Life Conditions"
     )
     union
     (
-      [Condition: code in "Limited Life Expectancy Conditions"] C
+      [Condition] C
         where C.clinicalStatus.value in { 'active', 'recurrence' }
+        and C.code in "Limited Life Expectancy Conditions"
     )
   )
   // 2. Admitted/referred/discharged to hospice care
@@ -131,7 +181,7 @@ Specifically, ReferralRequest and ProcedureRequest are not covered by US Core pr
     )
   )
 */
-  
+
 define function Prescriptions(Orders List<MedicationRequest>):
   Orders O
     let
@@ -230,17 +280,19 @@ define function GetPeriodDays(value System.String):
   end
 
   define function GetDurationInDays(value FHIR.Duration):
-    case
-      when StartsWith(value.unit.value, 'a') then value.value.value * 365.0
-      when StartsWith(value.unit.value, 'mo') then value.value.value * 30.0
-      when StartsWith(value.unit.value, 'wk') then value.value.value * 7.0
-      when StartsWith(value.unit.value, 'd') then value.value.value
-      when StartsWith(value.unit.value, 'h') then value.value.value / 24.0
-      when StartsWith(value.unit.value, 'min') then value.value.value / 60.0 / 24.0
-      when StartsWith(value.unit.value, 's') then value.value.value / 60.0 / 60.0 / 24.0
-      when StartsWith(value.unit.value, 'ms') then value.value.value / 60.0 / 60.0 / 24.0 / 1000.0
-      else Message(1000, true, 'Undefined', 'Error', 'Unsupported duration unit')
-    end
+    if value is null then null
+    else
+      case
+        when (StartsWith(value.code.value, 'a') or StartsWith(value.unit.value, 'a')) then value.value.value * 365.0
+        when (StartsWith(value.code.value, 'mo') or StartsWith(value.unit.value, 'mo')) then value.value.value * 30.0
+        when (StartsWith(value.code.value, 'wk') or StartsWith(value.unit.value, 'wk')) then value.value.value * 7.0
+        when (StartsWith(value.code.value, 'd') or StartsWith(value.unit.value, 'd')) then value.value.value
+        when (StartsWith(value.code.value, 'h') or StartsWith(value.unit.value, 'h')) then value.value.value / 24.0
+        when (StartsWith(value.code.value, 'min') or StartsWith(value.unit.value, 'min')) then value.value.value / 60.0 / 24.0
+        when (StartsWith(value.code.value, 's') or StartsWith(value.unit.value, 's')) then value.value.value / 60.0 / 60.0 / 24.0
+        when (StartsWith(value.code.value, 'ms') or StartsWith(value.unit.value, 'ms')) then value.value.value / 60.0 / 60.0 / 24.0 / 1000.0
+        else Message(1000, true, 'Undefined', 'Error', 'Unsupported duration unit code')
+      end
 
 define function GetIngredient(rxNormCode Code):
   OMTKLogic.GetIngredients(rxNormCode).ingredientName
@@ -295,4 +347,13 @@ define function ToRxNormCode(coding List<FHIR.Coding>):
   )
 
 define function ToQuantity(quantity FHIR.Quantity):
-  System.Quantity { value: quantity.value.value, unit: quantity.unit.value }
+  if quantity.code.value is not null
+    then System.Quantity { value: quantity.value.value, unit: quantity.code.value }
+  else System.Quantity { value: quantity.value.value, unit: quantity.unit.value }
+
+define function "Is Active Ambulatory Medication Request?" (value List<FHIR.MedicationRequest>) returns List<FHIR.MedicationRequest>:
+  value Rx
+  where Rx.status.value = 'active'
+    and (FHIRHelpers.ToConcept(Rx.category) ~ "Community"
+      or (IgnoreOutpatientCategorySystem and ConceptCodeOnlyEquivalent(Rx.category, "Community"))
+    )

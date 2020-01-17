@@ -8,7 +8,7 @@
                <th scope="row">
                   <b>Id: </b>
                </th>
-               <td style="padding-left: 25px; padding-right: 25px;">Library/library-opioidcds-stu3-rec-04-0-1-0</td>
+               <td style="padding-left: 25px; padding-right: 25px;">Library/opioidcds-recommendation-04</td>
             </tr>
             <tr>
                <th scope="row">
@@ -221,11 +221,11 @@ define &quot;Get Detail&quot;:
     <url value="http://fhir.org/guides/cdc/opioid-cds/Library/opioidcds-recommendation-04"/>
     <identifier>
         <use value="official"/>
-        <value value="OpioidCDS_REC_04"/>
+        <value value="OpioidCDS_STU3_REC_04"/>
     </identifier>
     <version value="0.1.0"/>
-    <name value="Library - Logic for Recommendation #4"/>
-    <title value="Opioid CDS Logic for recommendation #4"/>
+    <name value="OpioidCDS_STU3_REC_04"/>
+    <title value="Library - Opioid CDS Logic for recommendation #4"/>
     <status value="active"/>
     <experimental value="false"/>
     <type>

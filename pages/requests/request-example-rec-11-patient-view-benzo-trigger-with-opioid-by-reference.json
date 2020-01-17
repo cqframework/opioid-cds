@@ -1,0 +1,311 @@
+{
+  "hookInstance": "b266185d-c26a-40dd-a024-70b5b6222170",
+  "fhirServer": "http://localhost:8080/cqf-ruler/baseDstu3",
+  "hook": "patient-view",
+  "context": {
+    "user": "Practitioner/BBBB",
+    "patientId": "Patient/AAAAAAAAA",
+    "encounterId": "Encounter/example-rec-11-benzo-trigger-with-opioid-context"
+  },
+  "prefetch": {
+    "item1": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Patient",
+        "id": "AAAAAAAAA",
+        "extension": [
+          {
+            "valueCode": "M",
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex"
+          },
+          {
+            "extension": [
+              {
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/us/core/ValueSet/omb-race-category",
+                  "code": "2106-3",
+                  "display": "White"
+                },
+                "url": "ombCategory"
+              },
+              {
+                "valueString": "White",
+                "url": "text"
+              }
+            ],
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+          },
+          {
+            "extension": [
+              {
+                "valueCoding": {
+                  "system": "http://hl7.org/fhir/us/core/ValueSet/omb-ethnicity-category",
+                  "code": "2186-5",
+                  "display": "Not Hispanic or Latino"
+                },
+                "url": "ombCategory"
+              },
+              {
+                "valueString": "Not Hispanic or Latino",
+                "url": "text"
+              }
+            ],
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+          }
+        ],
+        "identifier": "",
+        "active": true,
+        "name": [
+          {
+            "extension": [
+              {
+                "valueString": "XXX",
+                "url": "http://hl7.org/fhir/StructureDefinition/humanname-partner-name"
+              }
+            ],
+            "use": "usual",
+            "text": "Test Patient",
+            "family": "XXX",
+            "given": [
+              "Test",
+              "Test"
+            ]
+          }
+        ],
+        "telecom": "",
+        "gender": "male",
+        "birthDate": "1959-01-01",
+        "deceasedBoolean": false,
+        "address": "",
+        "maritalStatus": {
+          "text": "Test Patient"
+        },
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/ValueSet/languages",
+                  "code": "en",
+                  "display": "English"
+                }
+              ],
+              "text": "Test Patient"
+            },
+            "preferred": true
+          }
+        ],
+        "generalPractitioner": [
+          {
+            "reference": "/Practitioner/BBBB",
+            "display": "BBBB, MD"
+          }
+        ],
+        "managingOrganization": ""
+      }
+    },
+    "item2": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Bundle",
+        "type": "searchset",
+        "entry": [
+          {
+            "resource": {
+              "resourceType": "MedicationRequest",
+              "id": "example-rec-10-no-screenings-context",
+              "status": "active",
+              "intent": "order",
+              "category": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/medication-request-category",
+                    "code": "outpatient"
+                  }
+                ]
+              },
+              "medicationReference": {
+                "reference": "Medication/12bd1f88-426f-4567-85fe-db9eae37f56b",
+                "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
+              },
+              "subject": {
+                "reference": "Patient/example-rec-10-no-screenings"
+              },
+              "context": {
+                "reference": "Encounter/example-rec-10-no-screenings-context"
+              },
+              "_authoredOn": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                    "valueString": "Today()"
+                  }
+                ]
+              },
+              "dosageInstruction": [
+                {
+                  "timing": {
+                    "repeat": {
+                      "frequency": 1,
+                      "period": 12.0,
+                      "periodUnit": "d"
+                    }
+                  },
+                  "asNeededBoolean": false,
+                  "doseQuantity": {
+                    "value": 1.0,
+                    "unit": "patch"
+                  }
+                }
+              ],
+              "dispenseRequest": {
+                "validityPeriod": {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                      "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
+                    }
+                  ]
+                },
+                "numberOfRepeatsAllowed": 3,
+                "expectedSupplyDuration": {
+                  "value": 30.0,
+                  "unit": "d"
+                }
+              }
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "MedicationRequest",
+              "id": "example-rec-10-no-screenings-prefetch",
+              "status": "active",
+              "intent": "order",
+              "category": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/medication-request-category",
+                    "code": "outpatient"
+                  }
+                ]
+              },
+              "medicationReference": {
+                "reference": "Medication/371016cf-18eb-4311-bbc9-0ef2b923a8c9",
+                "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
+              },
+              "subject": {
+                "reference": "Patient/example-rec-10-no-screenings"
+              },
+              "context": {
+                "reference": "Encounter/example-rec-10-no-screenings-prefetch"
+              },
+              "_authoredOn": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                    "valueString": "Today() - 90 days"
+                  }
+                ]
+              },
+              "dosageInstruction": [
+                {
+                  "timing": {
+                    "repeat": {
+                      "frequency": 3,
+                      "period": 1.0,
+                      "periodUnit": "d"
+                    }
+                  },
+                  "asNeededBoolean": false,
+                  "doseQuantity": {
+                    "value": 1.0,
+                    "unit": "tablet"
+                  }
+                }
+              ],
+              "dispenseRequest": {
+                "validityPeriod": {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                      "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() } }"
+                    }
+                  ]
+                },
+                "numberOfRepeatsAllowed": 3,
+                "expectedSupplyDuration": {
+                  "value": 30.0,
+                  "unit": "d"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "item3": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Bundle",
+        "entry": [
+          {
+            "resource": {
+              "resourceType": "Medication",
+              "id": "12bd1f88-426f-4567-85fe-db9eae37f56b",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "197696"
+                  }
+                ]
+              },
+              "isBrand": false,
+              "isOverTheCounter": false,
+              "form": {
+                "coding": [
+                  {
+                    "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.698288.310",
+                    "code": "tablet",
+                    "display": "tablet"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Medication",
+              "id": "371016cf-18eb-4311-bbc9-0ef2b923a8c9",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "1049502"
+                  }
+                ]
+              },
+              "isBrand": false,
+              "isOverTheCounter": false,
+              "form": {
+                "coding": [
+                  {
+                    "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.698288.310",
+                    "code": "tablet",
+                    "display": "tablet"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

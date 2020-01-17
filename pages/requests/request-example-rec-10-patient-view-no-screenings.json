@@ -42,14 +42,9 @@
                   }
                 ]
               },
-              "medicationCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                    "code": "197696",
-                    "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
-                  }
-                ]
+              "medicationReference": {
+                "reference": "Medication/12bd1f88-426f-4567-85fe-db9eae37f56b",
+                "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
               },
               "subject": {
                 "reference": "Patient/example-rec-10-no-screenings"
@@ -112,14 +107,9 @@
                   }
                 ]
               },
-              "medicationCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                    "code": "1049502",
-                    "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
-                  }
-                ]
+              "medicationReference": {
+                "reference": "Medication/371016cf-18eb-4311-bbc9-0ef2b923a8c9",
+                "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
               },
               "subject": {
                 "reference": "Patient/example-rec-10-no-screenings"
@@ -171,7 +161,66 @@
         ]
       }
     },
-    "item3": null,
+    "item3": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Bundle",
+        "entry": [
+          {
+            "resource": {
+              "resourceType": "Medication",
+              "id": "12bd1f88-426f-4567-85fe-db9eae37f56b",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "197696"
+                  }
+                ]
+              },
+              "isBrand": false,
+              "isOverTheCounter": false,
+              "form": {
+                "coding": [
+                  {
+                    "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.698288.310",
+                    "code": "tablet",
+                    "display": "tablet"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Medication",
+              "id": "371016cf-18eb-4311-bbc9-0ef2b923a8c9",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "1049502"
+                  }
+                ]
+              },
+              "isBrand": false,
+              "isOverTheCounter": false,
+              "form": {
+                "coding": [
+                  {
+                    "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.698288.310",
+                    "code": "tablet",
+                    "display": "tablet"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
     "item4": null,
     "item5": null,
     "item6": null

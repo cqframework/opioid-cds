@@ -5,8 +5,6 @@ using FHIR version '3.0.0'
 include FHIRHelpers version '3.0.0' called FHIRHelpers
 include OpioidCDS_STU3_Common version '0.1.0' called Common
 
-codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
-
 /*
 ** Recommendation #10
 ** Consider urine drug testing before starting opioid therapy and consider urine
@@ -42,8 +40,6 @@ codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
 	http://build.fhir.org/ig/cqframework/opioid-cds/PlanDefinition-opioidcds-10.html
 */
 
-code "Positive": 'POS' from "V2 Interpretation Codes"
-
 parameter ContextPrescriptions List<MedicationRequest>
 
 context Patient
@@ -53,8 +49,20 @@ define "Lookback Year":
 
 define "Validate Trigger Event":
   exists (
-    ContextPrescriptions triggerScript
-      where triggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
+    ContextPrescriptions TriggerScript
+      where if TriggerScript.medication is FHIR.Reference
+        then exists (
+          [Medication: Common."Ambulatory Abuse Potential Opioids"] OpioidMedication
+            where EndsWith(TriggerScript.medication.reference, OpioidMedication.id)
+        )
+        else TriggerScript.medication in Common."Ambulatory Abuse Potential Opioids"
+      and (
+        FHIRHelpers.ToConcept(TriggerScript.category) ~ Common."Community"
+          or (
+            Common.IgnoreOutpatientCategorySystem
+              and Common.ConceptCodeOnlyEquivalent(TriggerScript.category, Common."Community")
+          )
+      )
   )
 
 define "Inclusion Criteria":
@@ -71,29 +79,14 @@ define "Exclusion Criteria":
   Common."End of Life Assessment"
 
 define "Illicit Drug Urine Screenings in Last 12 Months":
-  (
-    (
-      [Observation: "code" in Common."Illicit Drug Screening"] observation
-        where date from observation.effective.value in day of "Lookback Year"
-    )
-    union (
-      [Observation: "component-code" in Common."Illicit Drug Screening"] observation
-        where date from observation.effective.value in day of "Lookback Year"
-    )
-  ) obs
-    sort by effective.value
+  [Observation: "code" in Common."Illicit Drug Screening"] IllicitDrugScreen
+    where date from IllicitDrugScreen.effective.value in day of "Lookback Year"
+      sort by effective.value
 
 define "Opioid Drug Urine Screenings in Last 12 Months":
-  (
-    ([Observation: "code" in Common."Opioid Drug Screening"] observation
-      where date from observation.effective.value in day of "Lookback Year"
-    )
-    union (
-      [Observation: "component-code" in Common."Opioid Drug Screening"] observation
-        where date from observation.effective.value in day of "Lookback Year"
-    )
-  ) obs
-    sort by effective.value
+  [Observation: "code" in Common."Opioid Drug Screening"] OpioidDrugScreen
+    where date from OpioidDrugScreen.effective.value in day of "Lookback Year"
+      sort by effective.value
 
 define "Most Recent Illicit Drug Urine Screenings in Last 12 Months":
   Last( "Illicit Drug Urine Screenings in Last 12 Months" )
@@ -105,75 +98,17 @@ define "No Urine Screening In Last 12 Months":
   "Most Recent Illicit Drug Urine Screenings in Last 12 Months" is null
     and "Most Recent Opioid Drug Urine Screenings in Last 12 Months" is null
 
-define "Positive Illicit Drug Screening":
-  "Most Recent Illicit Drug Urine Screenings in Last 12 Months" mostRecentScreening
-    where FHIRHelpers.ToConcept(mostRecentScreening.interpretation) ~ "Positive"
-      or
-      (
-          if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
-            then
-              exists (mostRecentScreening.component c
-                where c.interpretation is not null and
-                  FHIRHelpers.ToConcept(c.interpretation) ~ "Positive")
-            else false
-      )
-
 define "Positive Illicit Drug Screening Qualifying Codes":
-  "Positive Illicit Drug Screening" positiveScreening
-    return
-    (
-      (
-          if (FHIRHelpers.ToConcept(positiveScreening.interpretation) ~ "Positive")
-          then positiveScreening.code
-          else {}
-      )
-      union
-      (
-        if positiveScreening.component is not null
-          and exists(positiveScreening.component)
-          and FHIRHelpers.ToConcept(positiveScreening.component.interpretation) ~ "Positive"
-          then positiveScreening.component.code
-        else {}
-      )
-    )
+  "Most Recent Illicit Drug Urine Screenings in Last 12 Months".code
 
 define "Has Evidence of Illicit Drugs":
-  "Positive Illicit Drug Screening" is not null
-
-define "Positive Opioid Drug Screening":
-  "Most Recent Opioid Drug Urine Screenings in Last 12 Months" mostRecentScreening
-  where FHIRHelpers.ToConcept(mostRecentScreening.interpretation) ~ "Positive"
-    or
-    (
-        if mostRecentScreening.component is not null and exists(mostRecentScreening.component)
-          then
-            exists (mostRecentScreening.component c
-              where c.interpretation is not null and
-                FHIRHelpers.ToConcept(c.interpretation) ~ "Positive")
-          else false
-    )
+  "Most Recent Illicit Drug Urine Screenings in Last 12 Months" is not null
 
 define "Positive Opioid Drug Screening Qualifying Codes":
-  "Positive Opioid Drug Screening" positiveScreening
-  return
-  (
-    (
-        if (FHIRHelpers.ToConcept(positiveScreening.interpretation) ~ "Positive")
-        then positiveScreening.code
-        else {}
-    )
-    union
-    (
-      if positiveScreening.component is not null
-        and exists(positiveScreening.component)
-        and FHIRHelpers.ToConcept(positiveScreening.component.interpretation) ~ "Positive"
-        then positiveScreening.component.code
-      else {}
-    )
-  )
+  "Most Recent Opioid Drug Urine Screenings in Last 12 Months".code
 
 define "Has Evidence of Opioids":
-  "Positive Opioid Drug Screening" is not null
+  "Most Recent Opioid Drug Urine Screenings in Last 12 Months" is not null
 
 define "No Screening In Last 12 Months Indicator":
   if "Inclusion Criteria"
@@ -214,7 +149,7 @@ define "Evidence of Opioids Detail":
   if "Inclusion Criteria" and "Has Evidence of Opioids"
     then
       'Found the following opioid(s): ' +
-      Combine(Common.CodeableConceptToString("Positive Opioid Drug Screening Qualifying Codes"), ', ')
+      Common.CodeableConceptToString("Positive Opioid Drug Screening Qualifying Codes")
   else null
 
 define "Evidence of Illicit Drugs Detail":
@@ -223,7 +158,5 @@ define "Evidence of Illicit Drugs Detail":
       if ("Inclusion Criteria" and "Has Evidence of Illicit Drugs")
         then
           'Found the following illicit drug(s) in urine drug screen: ' +
-          (
-            Combine(Common.CodeableConceptToString(positiveScreening), ', ')
-          )
-      else null
+            Common.CodeableConceptToString(positiveScreening)
+        else null

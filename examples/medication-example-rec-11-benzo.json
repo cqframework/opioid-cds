@@ -1,0 +1,41 @@
+{
+  "resourceType": "Medication",
+  "id": "example-rec-11-benzo",
+  "code": {
+    "coding": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.253",
+        "code": "6507"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.68",
+        "code": "57100040000310"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.162",
+        "code": "02974"
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "3322"
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "197591"
+      }
+    ],
+    "text": "diazepam (VALIUM) tablet"
+  },
+  "isBrand": false,
+  "isOverTheCounter": false,
+  "form": {
+    "coding": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.698288.310",
+        "code": "tablet",
+        "display": "tablet"
+      }
+    ],
+    "text": "diazepam (VALIUM) tablet"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "resourceType": "Medication",
+  "id": "example-rec-10-illicit-drugs-oxycodone",
+  "code": {
+    "coding": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "1049502",
+        "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
+      }
+    ]
+  }
+}
