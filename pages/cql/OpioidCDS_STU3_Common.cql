@@ -65,6 +65,7 @@ define "Active Ambulatory Opioid Rx":
               category: Rx.category,
               medication: First(Med.code),
               subject: Rx.subject,
+              authoredOn: Rx.authoredOn,
               recorder: Rx.recorder,
               dosageInstruction: Rx.dosageInstruction,
               dispenseRequest: Rx.dispenseRequest
@@ -88,6 +89,7 @@ define "Active Ambulatory Benzodiazepine Rx":
             category: Rx.category,
             medication: First(Med.code),
             subject: Rx.subject,
+            authoredOn: Rx.authoredOn,
             recorder: Rx.recorder,
             dosageInstruction: Rx.dosageInstruction,
             dispenseRequest: Rx.dispenseRequest
