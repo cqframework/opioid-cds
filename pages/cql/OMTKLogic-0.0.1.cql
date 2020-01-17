@@ -108,7 +108,7 @@ define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, dos
     when 4337 then ( /*	Fentanyl */
       case
         when ToInteger(doseFormCode.code) in { 970789, 317007, 316992 } then 0.13 /* Buccal Tablet, Sublingual Tablet, Oral Lozenge */
-        when ToInteger(doseFormCode.code) = 346163 then 0.18 /* Buccal Film */
+        when ToInteger(doseFormCode.code) = 858080 then 0.18 /* Buccal Film */
         when ToInteger(doseFormCode.code) in { 126542, 346163 } then 0.16 /* Nasal Spray, Mucosal Spray */
         when IsPatch(doseFormCode) then 2.4 /* Transdermal system */
         else Message(1000, true, 'Undefined', 'Error', 'The dose form is unexpected')

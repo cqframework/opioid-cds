@@ -54,23 +54,28 @@ select '{ ' || char(10) || group_concat(
     left join MED_DOSE_FORM DF on DF.DOSE_FORM_RXCUI = D.DOSE_FORM_RXCUI
 SQL to create CQL tuple selectors without codes...
 select '{ ' || char(10) || group_concat(
-    '  { drugCode: ' || D.DRUG_RXCUI || ', '
-    || 'drugName: ''' || D.DRUG_NAME || ''', '
-    || 'doseFormCode: ' || D.DOSE_FORM_RXCUI || ', '
-    || 'doseFormName: ''' || DF.DOSE_FORM_NAME || ''', '
-    || 'ingredientCode: ' || I.INGREDIENT_RXCUI || ', '
-    || 'ingredientName: ''' || I.INGREDIENT_NAME || ''', '
-    || 'strength: ''' || SCDC.STRENGTH || ''', '
-    || 'strengthValue: ' || SCDC.STRENGTH_VALUE || ', '
-    || 'strengthUnit: ''' || SCDC.STRENGTH_UNIT || ''' '
+    '  { drugCode: ' || T.DRUG_RXCUI || ', '
+    || 'drugName: ''' || T.DRUG_NAME || ''', '
+    || 'doseFormCode: ' || T.DOSE_FORM_RXCUI || ', '
+    || 'doseFormName: ''' || T.DOSE_FORM_NAME || ''', '
+    || 'ingredientCode: ' || T.INGREDIENT_RXCUI || ', '
+    || 'ingredientName: ''' || T.INGREDIENT_NAME || ''', '
+    || 'strength: ''' || T.STRENGTH || ''', '
+    || 'strengthValue: ' || CAST(T.STRENGTH_VALUE as REAL) || ', '
+    || 'strengthUnit: ''' || T.STRENGTH_UNIT || ''' '
     || '}', ', ' || char(10)) || char(10) || '}' as TUPLES
-  from MED_DRUG D
-    join MED_DRUG_VALUE_SET MDVS on D.DRUG_RXCUI = MDVS.DRUG_RXCUI and MDVS.VALUE_SET_ID = 1 -- Opioids
-    join MED_SCDC_FOR_DRUG SCDCD on D.DRUG_RXCUI = SCDCD.DRUG_RXCUI
-    join MED_SCDC SCDC on SCDCD.SCDC_RXCUI = SCDC.SCDC_RXCUI
-    join MED_INGREDIENT I on SCDC.INGREDIENT_RXCUI = I.INGREDIENT_RXCUI
-    join MED_INGREDIENT_TYPE IT on I.INGREDIENT_RXCUI = IT.INGREDIENT_RXCUI and IT.INGREDIENT_TYPE = 'Opioid_NonSurgical'
-    left join MED_DOSE_FORM DF on DF.DOSE_FORM_RXCUI = D.DOSE_FORM_RXCUI
+  from (
+	select D.DRUG_RXCUI, D.DRUG_NAME, D.DOSE_FORM_RXCUI, DF.DOSE_FORM_NAME, I.INGREDIENT_RXCUI, I.INGREDIENT_NAME, SCDC.STRENGTH, SCDC.STRENGTH_VALUE, SCDC.STRENGTH_UNIT
+	  from MED_DRUG D
+		join MED_DRUG_VALUE_SET MDVS on D.DRUG_RXCUI = MDVS.DRUG_RXCUI and MDVS.VALUE_SET_ID = 1 -- Opioids
+		join MED_SCDC_FOR_DRUG SCDCD on D.DRUG_RXCUI = SCDCD.DRUG_RXCUI
+		join MED_SCDC SCDC on SCDCD.SCDC_RXCUI = SCDC.SCDC_RXCUI
+		join MED_INGREDIENT I on SCDC.INGREDIENT_RXCUI = I.INGREDIENT_RXCUI
+		join MED_INGREDIENT_TYPE IT on I.INGREDIENT_RXCUI = IT.INGREDIENT_RXCUI and IT.INGREDIENT_TYPE = 'Opioid_NonSurgical'
+		left join MED_DOSE_FORM DF on DF.DOSE_FORM_RXCUI = D.DOSE_FORM_RXCUI
+	  order by D.DRUG_RXCUI, I.INGREDIENT_RXCUI
+  ) T
+
 */
 
 /*
@@ -199,7 +204,7 @@ define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, dos
     when 4337 then ( //	Fentanyl
       case
         when ToInteger(doseFormCode.code) in { 970789, 317007, 316992 } then 0.13 // Buccal Tablet, Sublingual Tablet, Oral Lozenge
-        when ToInteger(doseFormCode.code) = 346163 then 0.18 // Buccal Film
+        when ToInteger(doseFormCode.code) = 858080 then 0.18 // Buccal Film
         when ToInteger(doseFormCode.code) in { 126542, 346163 } then 0.16 // Nasal Spray, Mucosal Spray
         when IsPatch(doseFormCode) then 2.4 // Transdermal system
         else Message(1000, true, 'Undefined', 'Error', 'The dose form is unexpected')
