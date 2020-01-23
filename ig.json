@@ -565,12 +565,16 @@
       "source": "codesystem-opioidcds-indicator.xml",
       "base": "CodeSystem-opioidcds-indicator.html"
     },
+    "Library/fhir-helpers": {
+      "source": "library-fhir-helpers.json",
+      "base": "Library-fhir-helpers.html"
+    },
     "Library/omtklogic": {
-      "source": "library-omtklogic.xml",
+      "source": "library-omtklogic.json",
       "base": "Library-omtklogic.html"
     },
     "Library/omtkdata": {
-      "source": "library-omtkdata.xml",
+      "source": "library-omtkdata.json",
       "base": "Library-omtkdata.html"
     },
     "Library/opioidcds-common": {
@@ -578,19 +582,19 @@
       "base": "Library-opioidcds-common.html"
     },
     "Library/opioidcds-recommendation-04": {
-      "source": "library-opioidcds-recommendation-04.xml",
+      "source": "library-opioidcds-recommendation-04.json",
       "base": "Library-opioidcds-recommendation-04.html"
     },
     "Library/opioidcds-recommendation-05": {
-      "source": "library-opioidcds-recommendation-05.xml",
+      "source": "library-opioidcds-recommendation-05.json",
       "base": "Library-opioidcds-recommendation-05.html"
     },
     "Library/opioidcds-recommendation-07": {
-      "source": "library-opioidcds-recommendation-07.xml",
+      "source": "library-opioidcds-recommendation-07.json",
       "base": "Library-opioidcds-recommendation-07.html"
     },
     "Library/opioidcds-recommendation-08": {
-      "source": "library-opioidcds-recommendation-08.xml",
+      "source": "library-opioidcds-recommendation-08.json",
       "base": "Library-opioidcds-recommendation-08.html"
     },
     "Library/opioidcds-recommendation-10": {
@@ -622,120 +626,112 @@
       "base": "Patient-example-opioidcds.html"
     },
     "PlanDefinition/opioidcds-04": {
-      "source": "plandefinition-opioidcds-04.xml",
+      "source": "plandefinition-opioidcds-04.json",
       "base": "PlanDefinition-opioidcds-04.html"
     },
     "PlanDefinition/opioidcds-05": {
-      "source": "plandefinition-opioidcds-05.xml",
+      "source": "plandefinition-opioidcds-05.json",
       "base": "PlanDefinition-opioidcds-05.html"
     },
     "PlanDefinition/opioidcds-07": {
-      "source": "plandefinition-opioidcds-07.xml",
+      "source": "plandefinition-opioidcds-07.json",
       "base": "PlanDefinition-opioidcds-07.html"
     },
     "PlanDefinition/opioidcds-08": {
-      "source": "plandefinition-opioidcds-08.xml",
+      "source": "plandefinition-opioidcds-08.json",
       "base": "PlanDefinition-opioidcds-08.html"
     },
     "PlanDefinition/opioidcds-10": {
-      "source": "plandefinition-opioidcds-10.xml",
+      "source": "plandefinition-opioidcds-10.json",
       "base": "PlanDefinition-opioidcds-10.html"
     },
     "PlanDefinition/opioidcds-10-patient-view": {
-      "source": "plandefinition-opioidcds-10-patient-view.xml",
+      "source": "plandefinition-opioidcds-10-patient-view.json",
       "base": "PlanDefinition-opioidcds-10-patient-view.html"
     },
     "PlanDefinition/opioidcds-11": {
-      "source": "plandefinition-opioidcds-11.xml",
+      "source": "plandefinition-opioidcds-11.json",
       "base": "PlanDefinition-opioidcds-11.html"
     },
     "PlanDefinition/opioidcds-11-patient-view": {
-      "source": "plandefinition-opioidcds-11-patient-view.xml",
+      "source": "plandefinition-opioidcds-11-patient-view.json",
       "base": "PlanDefinition-opioidcds-11-patient-view.html"
     },
     "RequestGroup/example-opioidcds": {
       "source": "requestgroup-example-opioidcds.xml",
       "base": "RequestGroup-example-opioidcds.html"
     },
-    "ValueSet/end-of-life-conditions": {
-      "source": "valueset-end-of-life-conditions.xml",
-      "base": "ValueSet-end-of-life-conditions.html"
-    },
-    "ValueSet/end-of-life-care": {
-      "source": "valueset-end-of-life-care.xml",
-      "base": "ValueSet-end-of-life-care.html"
+    "ValueSet/benzodiazepines": {
+      "source": "valueset-benzodiazepines.json",
+      "base": "ValueSet-benzodiazepines.html"
     },
     "ValueSet/discharge-to-hospice": {
-      "source": "valueset-discharge-to-hospice.xml",
+      "source": "valueset-discharge-to-hospice.json",
       "base": "ValueSet-discharge-to-hospice.html"
     },
+    "ValueSet/end-of-life-care": {
+      "source": "valueset-end-of-life-care.json",
+      "base": "ValueSet-end-of-life-care.html"
+    },
+    "ValueSet/end-of-life-conditions": {
+      "source": "valueset-end-of-life-conditions.json",
+      "base": "ValueSet-end-of-life-conditions.html"
+    },
     "ValueSet/hospice-finding": {
-      "source": "valueset-hospice-finding.xml",
+      "source": "valueset-hospice-finding.json",
       "base": "ValueSet-hospice-finding.html"
     },
     "ValueSet/hospice-procedure": {
-      "source": "valueset-hospice-procedure.xml",
+      "source": "valueset-hospice-procedure.json",
       "base": "ValueSet-hospice-procedure.html"
     },
-    "ValueSet/limited-life-expectancy-conditions": {
-      "source": "valueset-limited-life-expectancy-conditions.xml",
-      "base": "ValueSet-limited-life-expectancy-conditions.html"
-    },
-    "ValueSet/metastatic-cancer": {
-      "source": "valueset-metastatic-cancer.xml",
-      "base": "ValueSet-metastatic-cancer.html"
-    },
-    "ValueSet/opioid-abuse-assessment": {
-      "source": "valueset-opioid-abuse-assessment.xml",
-      "base": "ValueSet-opioid-abuse-assessment.html"
-    },
-    "ValueSet/substance-abuse": {
-      "source": "valueset-substance-abuse.xml",
-      "base": "ValueSet-substance-abuse.html"
-    },
     "ValueSet/illicit-drug-urine-screening": {
-      "source": "valueset-illicit-drug-urine-screening.xml",
+      "source": "valueset-illicit-drug-urine-screening.json",
       "base": "ValueSet-illicit-drug-urine-screening.html"
     },
+    "ValueSet/limited-life-expectancy-conditions": {
+      "source": "valueset-limited-life-expectancy-conditions.json",
+      "base": "ValueSet-limited-life-expectancy-conditions.html"
+    },
+    "ValueSet/long-acting-opioids": {
+      "source": "valueset-long-acting-opioids.json",
+      "base": "ValueSet-long-acting-opioids.html"
+    },
+    "ValueSet/metastatic-cancer": {
+      "source": "valueset-metastatic-cancer.json",
+      "base": "ValueSet-metastatic-cancer.html"
+    },
+    "ValueSet/naloxone": {
+      "source": "valueset-naloxone.json",
+      "base": "ValueSet-naloxone.html"
+    },
+    "ValueSet/opioid-abuse-assessment": {
+      "source": "valueset-opioid-abuse-assessment.json",
+      "base": "ValueSet-opioid-abuse-assessment.html"
+    },
     "ValueSet/opioid-urine-screening": {
-      "source": "valueset-opioid-urine-screening.xml",
+      "source": "valueset-opioid-urine-screening.json",
       "base": "ValueSet-opioid-urine-screening.html"
     },
     "ValueSet/opioidcds-indicator": {
-      "source": "valueset-opioidcds-indicator.xml",
+      "source": "valueset-opioidcds-indicator.json",
       "base": "ValueSet-opioidcds-indicator.html"
     },
-    "ValueSet/benzodiazepines": {
-      "source": "valueset-benzodiazepines.xml",
-      "base": "ValueSet-benzodiazepines.html"
-    },
-    "ValueSet/long-acting-opioids": {
-      "source": "valueset-long-acting-opioids.xml",
-      "base": "ValueSet-long-acting-opioids.html"
-    },
-    "ValueSet/naloxone": {
-      "source": "valueset-naloxone.xml",
-      "base": "ValueSet-naloxone.html"
-    },
     "ValueSet/opioids": {
-      "source": "valueset-opioids.xml",
+      "source": "valueset-opioids.json",
       "base": "ValueSet-opioids.html"
     },
     "ValueSet/opioids-abused-in-ambulatory-care": {
-      "source": "valueset-opioids-abused-in-ambulatory-care.xml",
+      "source": "valueset-opioids-abused-in-ambulatory-care.json",
       "base": "ValueSet-opioids-abused-in-ambulatory-care.html"
     },
-    "ValueSet/opioids-codeine-cough-meds": {
-      "source": "valueset-opioids-codeine-cough-meds.xml",
-      "base": "ValueSet-opioids-codeine-cough-meds.html"
-    },
-    "ValueSet/opioids-indicating-end-of-life": {
-      "source": "valueset-opioids-indicating-end-of-life.xml",
-      "base": "ValueSet-opioids-indicating-end-of-life.html"
-    },
     "ValueSet/short-acting-opioids": {
-      "source": "valueset-short-acting-opioids.xml",
+      "source": "valueset-short-acting-opioids.json",
       "base": "ValueSet-short-acting-opioids.html"
+    },
+    "ValueSet/substance-abuse": {
+      "source": "valueset-substance-abuse.json",
+      "base": "ValueSet-substance-abuse.html"
     },
 
     "StructureDefinition/cdc-careplan": {

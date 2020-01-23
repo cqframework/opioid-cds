@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-    <id value="opioid-cds"/>
-    <url value="http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/opioid-cds"/>
+    <id value="fhir.cdc.opioid-cds"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/fhir.cdc.opioid-cds"/>
     <version value="0.1.0"/>
     <name value="Opioid Prescribing Support Implementation Guide"/>
     <status value="draft"/>
     <experimental value="false"/>
-    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
     <date value="2017-02-06"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
     <description value="Opioid Prescribing Support Implementation Guide"/>
     <fhirVersion value="3.0.2"/>
     <package>
@@ -796,6 +796,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="Library - FHIRHelpers Logic"/>
+            <description value="FHIRHelpers STU3 Logic"/>
+            <sourceReference>
+                <reference value="Library/fhir-helpers"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="Library - OMTK Logic"/>
             <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic"/>
             <sourceReference>
@@ -1116,22 +1124,6 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Codeine Cough Medication"/>
-            <description value="Opioid codeine cough medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioids-codeine-cough-meds"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioids Indicating End Of Life Medication"/>
-            <description value="Opioids indicating end of life medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioids-indicating-end-of-life"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Short Acting Opioids Medication"/>
             <description value="Short acting opioids medication codes"/>
             <sourceReference>
@@ -1210,6 +1202,6 @@
         <source value="index.html"/>
         <title value="Opioid Prescribing Support Implementation Guide"/>
         <kind value="page"/>
-        <format value="html"/>
+        <format value="text/html"/>
     </page>
 </ImplementationGuide>

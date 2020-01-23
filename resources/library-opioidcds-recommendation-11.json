@@ -124,7 +124,7 @@
         },
         {
             "type": "depends-on",
-            "url": "http://hl7.org/fhir|3.0.0"
+            "url": "http://hl7.org/fhir/STU3/"
         }
     ],
     "dataRequirement": [

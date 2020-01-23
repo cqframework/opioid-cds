@@ -116,7 +116,7 @@
             <type>
                 <code value="uri"/>
             </type>
-            <fixedUri value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusiont"/>
+            <fixedUri value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion"/>
             <mapping>
                 <identity value="rim"/>
                 <map value="N/A"/>

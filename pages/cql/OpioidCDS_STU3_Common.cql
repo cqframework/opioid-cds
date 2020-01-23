@@ -55,7 +55,7 @@ define "Active Ambulatory Opioid Rx":
     union
     (
         ("Is Active Ambulatory Medication Request?"([MedicationRequest])) Rx
-          let Med: [Medication: id in (Last(Split(Rx.medication.reference, '/')))]
+          let Med: if Rx.medication is Reference then [Medication: id in (Last(Split(Rx.medication.reference, '/')))] else null
           where Med.code in "Ambulatory Abuse Potential Opioids"
           return
             MedicationRequest {
@@ -79,7 +79,7 @@ define "Active Ambulatory Benzodiazepine Rx":
   union
   (
       ("Is Active Ambulatory Medication Request?"([MedicationRequest])) Rx
-        let Med: [Medication: id in (Last(Split(Rx.medication.reference, '/')))]
+        let Med: if Rx.medication is Reference then [Medication: id in (Last(Split(Rx.medication.reference, '/')))] else null
         where Med.code in "Benzodiazepines"
         return
           MedicationRequest {
@@ -103,7 +103,7 @@ define "Active Ambulatory Naloxone Rx":
   union
   (
       ("Is Active Ambulatory Medication Request?"([MedicationRequest])) Rx
-        let Med: [Medication: id in (Last(Split(Rx.medication.reference, '/')))]
+        let Med: if Rx.medication is Reference then [Medication: id in (Last(Split(Rx.medication.reference, '/')))] else null
         where Med.code in "Naloxone"
         return
           MedicationRequest {
