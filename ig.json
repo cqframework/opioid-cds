@@ -360,56 +360,6 @@
       "base": "Encounter-example-rec-10-end-of-life-med-exclusion-context.html"
     },
 
-    "Bundle/example-rec-10-illicit-drugs": {
-      "source": "bundle-example-rec-10-illicit-drugs.xml",
-      "base": "Bundle-example-rec-10-illicit-drugs.html"
-    },
-    "Patient/example-rec-10-illicit-drugs": {
-      "source": "patient-example-rec-10-illicit-drugs.xml",
-      "base": "Patient-example-rec-10-illicit-drugs.html"
-    },
-    "Encounter/example-rec-10-illicit-drugs-context": {
-      "source": "encounter-example-rec-10-illicit-drugs-context.xml",
-      "base": "Encounter-example-rec-10-illicit-drugs-context.html"
-    },
-    "Encounter/example-rec-10-illicit-drugs-prefetch": {
-      "source": "encounter-example-rec-10-illicit-drugs-prefetch.xml",
-      "base": "Encounter-example-rec-10-illicit-drugs-prefetch.html"
-    },
-    "MedicationRequest/example-rec-10-illicit-drugs-prefetch": {
-      "source": "medicationrequest-example-rec-10-illicit-drugs-prefetch.xml",
-      "base": "MedicationRequest-example-rec-10-illicit-drugs-prefetch.html"
-    },
-    "Observation/example-rec-10-illicit-drugs-prefetch": {
-      "source": "observation-example-rec-10-illicit-drugs-prefetch.xml",
-      "base": "Observation-example-rec-10-illicit-drugs-prefetch.html"
-    },
-
-    "Bundle/example-rec-10-missing-prescribed-opioids": {
-      "source": "bundle-example-rec-10-missing-prescribed-opioids.xml",
-      "base": "Bundle-example-rec-10-missing-prescribed-opioids.html"
-    },
-    "Patient/example-rec-10-missing-prescribed-opioids": {
-      "source": "patient-example-rec-10-missing-prescribed-opioids.xml",
-      "base": "Patient-example-rec-10-missing-prescribed-opioids.html"
-    },
-    "Observation/example-rec-10-missing-prescribed-opioids-prefetch": {
-      "source": "observation-example-rec-10-missing-prescribed-opioids-prefetch.xml",
-      "base": "Observation-example-rec-10-missing-prescribed-opioids-prefetch.html"
-    },
-    "MedicationRequest/example-rec-10-missing-prescribed-opioids-prefetch": {
-      "source": "medicationrequest-example-rec-10-missing-prescribed-opioids-prefetch.xml",
-      "base": "MedicationRequest-example-rec-10-missing-prescribed-opioids-prefetch.html"
-    },
-    "Encounter/example-rec-10-missing-prescribed-opioids-context": {
-      "source": "encounter-example-rec-10-missing-prescribed-opioids-context.xml",
-      "base": "Encounter-example-rec-10-missing-prescribed-opioids-context.html"
-    },
-    "Encounter/example-rec-10-missing-prescribed-opioids-prefetch": {
-      "source": "encounter-example-rec-10-missing-prescribed-opioids-prefetch.xml",
-      "base": "Encounter-example-rec-10-missing-prescribed-opioids-prefetch.html"
-    },
-
     "Bundle/example-rec-10-no-screenings": {
       "source": "bundle-example-rec-10-no-screenings.xml",
       "base": "Bundle-example-rec-10-no-screenings.html"
@@ -429,60 +379,6 @@
     "Encounter/example-rec-10-no-screenings-prefetch": {
       "source": "encounter-example-rec-10-no-screenings-prefetch.xml",
       "base": "Encounter-example-rec-10-no-screenings-prefetch.html"
-    },
-
-    "Bundle/example-rec-10-not-missing-prescribed-opioids": {
-      "source": "bundle-example-rec-10-not-missing-prescribed-opioids.xml",
-      "base": "Bundle-example-rec-10-not-missing-prescribed-opioids.html"
-    },
-    "Patient/example-rec-10-not-missing-prescribed-opioids": {
-      "source": "patient-example-rec-10-not-missing-prescribed-opioids.xml",
-      "base": "Patient-example-rec-10-not-missing-prescribed-opioids.html"
-    },
-    "Observation/example-rec-10-not-missing-prescribed-opioids-prefetch": {
-      "source": "observation-example-rec-10-not-missing-prescribed-opioids-prefetch.xml",
-      "base": "Observation-example-rec-10-not-missing-prescribed-opioids-prefetch.html"
-    },
-    "MedicationRequest/example-rec-10-not-missing-prescribed-opioids-prefetch": {
-      "source": "medicationrequest-example-rec-10-not-missing-prescribed-opioids-prefetch.xml",
-      "base": "MedicationRequest-example-rec-10-not-missing-prescribed-opioids-prefetch.html"
-    },
-    "Encounter/example-rec-10-not-missing-prescribed-opioids-context": {
-      "source": "encounter-example-rec-10-not-missing-prescribed-opioids-context.xml",
-      "base": "Encounter-example-rec-10-not-missing-prescribed-opioids-context.html"
-    },
-    "Encounter/example-rec-10-not-missing-prescribed-opioids-prefetch": {
-      "source": "encounter-example-rec-10-not-missing-prescribed-opioids-prefetch.xml",
-      "base": "Encounter-example-rec-10-not-missing-prescribed-opioids-prefetch.html"
-    },
-
-    "Bundle/example-rec-10-unprescribed-opioids": {
-      "source": "bundle-example-rec-10-unprescribed-opioids.xml",
-      "base": "Bundle-example-rec-10-unprescribed-opioids.html"
-    },
-    "Patient/example-rec-10-unprescribed-opioids": {
-      "source": "patient-example-rec-10-unprescribed-opioids.xml",
-      "base": "Patient-example-rec-10-unprescribed-opioids.html"
-    },
-    "Observation/example-rec-10-unprescribed-opioids-prefetch-codeine": {
-      "source": "observation-example-rec-10-unprescribed-opioids-prefetch-codeine.xml",
-      "base": "Observation-example-rec-10-unprescribed-opioids-prefetch-codeine.html"
-    },
-    "Observation/example-rec-10-unprescribed-opioids-prefetch-oxycodone": {
-      "source": "observation-example-rec-10-unprescribed-opioids-prefetch-oxycodone.xml",
-      "base": "Observation-example-rec-10-unprescribed-opioids-prefetch-oxycodone.html"
-    },
-    "MedicationRequest/example-rec-10-unprescribed-opioids-prefetch": {
-      "source": "medicationrequest-example-rec-10-unprescribed-opioids-prefetch.xml",
-      "base": "MedicationRequest-example-rec-10-unprescribed-opioids-prefetch.html"
-    },
-    "Encounter/example-rec-10-unprescribed-opioids-context": {
-      "source": "encounter-example-rec-10-unprescribed-opioids-context.xml",
-      "base": "Encounter-example-rec-10-unprescribed-opioids-context.html"
-    },
-    "Encounter/example-rec-10-unprescribed-opioids-prefetch": {
-      "source": "encounter-example-rec-10-unprescribed-opioids-prefetch.xml",
-      "base": "Encounter-example-rec-10-unprescribed-opioids-prefetch.html"
     },
 
     "Bundle/example-rec-11-benzo-trigger-with-opioid": {

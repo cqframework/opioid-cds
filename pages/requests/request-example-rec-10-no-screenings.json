@@ -1,6 +1,6 @@
 {
   "hookInstance": "a172a2ce-38e7-4a21-a411-522cf481d5d1",
-  "fhirServer": "http://measure.eval.kanvix.com/cqf-ruler/baseDstu3",
+  "fhirServer": "http://localhost:8080/cqf-ruler/baseDstu3",
   "hook": "medication-prescribe",
   "user": "Practitioner/example",
   "applyCql": true,
@@ -184,17 +184,6 @@
         "birthDate": "1982-01-07"
       }
     },
-    "item4": null,
-    "item5": null,
-    "item6": null,
-    "item7": null,
-    "item8": null,
-    "item9": null,
-    "item10": null,
-    "item11": null,
-    "item12": null,
-    "item13": null,
-    "item14": null,
-    "item15": null
+    "item4": null
   }
 }
