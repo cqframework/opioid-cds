@@ -93,7 +93,8 @@ define "No Screening In Last 12 Months Detail":
     then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
   else null
 
-define "Urine Drug Screening Request":
+// TODO: needs work
+/*define "Urine Drug Screening Request":
    ProcedureRequest {
      //identifier:,
      definition: { FHIR.Reference { reference: FHIR.string { value: 'http://fhir.org/guides/cdc/activitydefinition/urine-screening-request' } } },
@@ -107,4 +108,4 @@ define "Urine Drug Screening Request":
      reasonCode: { FHIR.CodeableConcept { text: FHIR.string { value: "No Screening In Last 12 Months Detail" } } }
      // doesn't really work, need a relatedArtifact here...
      //reasonCode: { FHIR.CodeableConcept { text: FHIR.string { value: 'https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#10_When_prescribing_opioids' } } }
-   }
+   }*/
