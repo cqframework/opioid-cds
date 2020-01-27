@@ -139,12 +139,12 @@
             </tr>
             <tr>
                <td colspan="2" style="padding-left: 25px; padding-right: 25px;">
-                  <pre><code class="language-cql">library OpioidCDS_STU3_REC_08 version '0.1.0'
+                  <pre><code class="language-cql">library OpioidCDSSTU3REC08 version '0.1.0'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDS_STU3_Common version '0.1.0' called Common
+include OpioidCDSSTU3Common version '0.1.0' called Common
 
 /*
 **
@@ -256,10 +256,10 @@ define &quot;Get Detail&quot;:
     <url value="http://fhir.org/guides/cdc/opioid-cds/Library/opioidcds-recommendation-08"/>
     <identifier>
         <use value="official"/>
-        <value value="OpioidCDS_STU3_REC_08"/>
+        <value value="OpioidCDSSTU3REC08"/>
     </identifier>
     <version value="0.1.0"/>
-    <name value="OpioidCDS_STU3_REC_08"/>
+    <name value="OpioidCDSSTU3REC08"/>
     <title value="Library - Opioid CDS Logic for recommendation #8"/>
     <status value="active"/>
     <experimental value="false"/>

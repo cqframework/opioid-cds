@@ -4,7 +4,7 @@
    <annotation startLine="82" startChar="7" endLine="82" endChar="72" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <annotation startLine="94" startChar="7" endLine="94" endChar="71" message="Could not resolve code path component-code for the type of the retrieve FHIR.Observation." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <annotation startLine="94" startChar="7" endLine="94" endChar="71" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <identifier id="OpioidCDS_STU3_REC_10" version="0.1.0"/>
+   <identifier id="OpioidCDSSTU3REC10" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
       <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
@@ -12,7 +12,7 @@
    </usings>
    <includes>
       <def localId="2" localIdentifier="FHIRHelpers" path="FHIRHelpers" version="3.0.0"/>
-      <def localId="3" localIdentifier="Common" path="OpioidCDS_STU3_Common" version="0.1.0"/>
+      <def localId="3" localIdentifier="Common" path="OpioidCDSSTU3Common" version="0.1.0"/>
    </includes>
    <parameters>
       <def localId="9" name="ContextPrescriptions" accessLevel="Public">

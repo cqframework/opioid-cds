@@ -9,7 +9,7 @@
    <annotation startLine="124" startChar="7" endLine="124" endChar="56" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <annotation startLine="129" startChar="7" endLine="129" endChar="58" message="Could not resolve code path code for the type of the retrieve FHIR.MedicationStatement." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <annotation startLine="129" startChar="7" endLine="129" endChar="58" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <identifier id="OpioidCDS_STU3_Common" version="0.1.0"/>
+   <identifier id="OpioidCDSSTU3Common" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
       <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
