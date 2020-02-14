@@ -111,14 +111,9 @@
       "codeFilter": [
         {
           "path": "code",
-          "valueSetReference": {
-            "reference": "Risk Assessment"
-          }
+          "valueSetString": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-abuse-assessment"
         }
       ]
-    },
-    {
-      "type": "Encounter"
     }
   ],
   "content": [

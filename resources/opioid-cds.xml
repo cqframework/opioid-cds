@@ -796,6 +796,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="Library - FHIRHelpers Logic"/>
+            <description value="FHIRHelpers Logic"/>
+            <sourceReference>
+                <reference value="Library/fhir-helpers"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="Library - OMTK Logic"/>
             <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic"/>
             <sourceReference>

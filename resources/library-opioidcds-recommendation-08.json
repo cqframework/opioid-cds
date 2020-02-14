@@ -116,9 +116,7 @@
       "codeFilter": [
         {
           "path": "code",
-          "valueSetReference": {
-            "reference": "Substance Abuse"
-          }
+          "valueSetString": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-abuse"
         }
       ]
     }
