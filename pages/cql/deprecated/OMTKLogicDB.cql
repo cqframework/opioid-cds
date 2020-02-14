@@ -1,6 +1,6 @@
 library OMTKLogicDB version '1.1.0'
 
-using OMTK version '1.1.0'
+using OMTK version '1.1.0' called OMTKData
 
 codesystem RxNorm: 'http://www.nlm.nih.gov/research/umls/rxnorm'
 

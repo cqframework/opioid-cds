@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
-    <identifier id="OMTKData2019" version="1.1.0"/>
+    <identifier id="OMTKData2020" version="1.1.0"/>
     <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
     <usings>
         <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
@@ -867,13 +867,13 @@
                         <value valueType="t:String" value="Oxycodone" xsi:type="Literal"/>
                     </element>
                     <element name="strength">
-                        <value valueType="t:String" value=" 10 MG" xsi:type="Literal"/>
+                        <value valueType="t:String" value="10 MG" xsi:type="Literal"/>
                     </element>
                     <element name="strengthValue">
                         <value valueType="t:Decimal" value="10.0" xsi:type="Literal"/>
                     </element>
                     <element name="strengthUnit">
-                        <value valueType="t:String" value="mg" xsi:type="Literal"/>
+                        <value valueType="t:String" value="MG" xsi:type="Literal"/>
                     </element>
                 </element>
                 <element xsi:type="Tuple">
@@ -896,7 +896,7 @@
                         <value valueType="t:String" value="Oxycodone" xsi:type="Literal"/>
                     </element>
                     <element name="strength">
-                        <value valueType="t:String" value="20 mg" xsi:type="Literal"/>
+                        <value valueType="t:String" value="20 MG" xsi:type="Literal"/>
                     </element>
                     <element name="strengthValue">
                         <value valueType="t:Decimal" value="20.0" xsi:type="Literal"/>
@@ -925,7 +925,7 @@
                         <value valueType="t:String" value="Oxycodone" xsi:type="Literal"/>
                     </element>
                     <element name="strength">
-                        <value valueType="t:String" value="30 mg" xsi:type="Literal"/>
+                        <value valueType="t:String" value="30 MG" xsi:type="Literal"/>
                     </element>
                     <element name="strengthValue">
                         <value valueType="t:Decimal" value="30.0" xsi:type="Literal"/>
@@ -945,7 +945,7 @@
                         <value valueType="t:Integer" value="316978" xsi:type="Literal"/>
                     </element>
                     <element name="doseFormName">
-                        <value valueType="t:String" value="Suppository" xsi:type="Literal"/>
+                        <value valueType="t:String" value="Rectal Suppository" xsi:type="Literal"/>
                     </element>
                     <element name="ingredientCode">
                         <value valueType="t:Integer" value="7676" xsi:type="Literal"/>
@@ -957,7 +957,7 @@
                         <value valueType="t:String" value="65 MG" xsi:type="Literal"/>
                     </element>
                     <element name="strengthValue">
-                        <value valueType="t:Integer" value="65" xsi:type="Literal"/>
+                        <value valueType="t:Decimal" value="65.0" xsi:type="Literal"/>
                     </element>
                     <element name="strengthUnit">
                         <value valueType="t:String" value="MG" xsi:type="Literal"/>
@@ -1612,7 +1612,7 @@
                         <value valueType="t:Integer" value="316978" xsi:type="Literal"/>
                     </element>
                     <element name="doseFormName">
-                        <value valueType="t:String" value="Suppository" xsi:type="Literal"/>
+                        <value valueType="t:String" value="Rectal Suppository" xsi:type="Literal"/>
                     </element>
                     <element name="ingredientCode">
                         <value valueType="t:Integer" value="7676" xsi:type="Literal"/>
@@ -1621,10 +1621,10 @@
                         <value valueType="t:String" value="Opium" xsi:type="Literal"/>
                     </element>
                     <element name="strength">
-                        <value valueType="t:String" value="30 MG " xsi:type="Literal"/>
+                        <value valueType="t:String" value="30 MG" xsi:type="Literal"/>
                     </element>
                     <element name="strengthValue">
-                        <value valueType="t:Integer" value="30" xsi:type="Literal"/>
+                        <value valueType="t:Decimal" value="30.0" xsi:type="Literal"/>
                     </element>
                     <element name="strengthUnit">
                         <value valueType="t:String" value="MG" xsi:type="Literal"/>
@@ -1641,7 +1641,7 @@
                         <value valueType="t:Integer" value="316978" xsi:type="Literal"/>
                     </element>
                     <element name="doseFormName">
-                        <value valueType="t:String" value="Suppository" xsi:type="Literal"/>
+                        <value valueType="t:String" value="Rectal Suppository" xsi:type="Literal"/>
                     </element>
                     <element name="ingredientCode">
                         <value valueType="t:Integer" value="7676" xsi:type="Literal"/>
@@ -1653,7 +1653,7 @@
                         <value valueType="t:String" value="60 MG" xsi:type="Literal"/>
                     </element>
                     <element name="strengthValue">
-                        <value valueType="t:Integer" value="60" xsi:type="Literal"/>
+                        <value valueType="t:Decimal" value="60.0" xsi:type="Literal"/>
                     </element>
                     <element name="strengthUnit">
                         <value valueType="t:String" value="MG" xsi:type="Literal"/>
@@ -2824,25 +2824,25 @@
                         <value valueType="t:Integer" value="830196" xsi:type="Literal"/>
                     </element>
                     <element name="drugName">
-                        <value valueType="t:String" value="Opium tincture 100 MG/ML Oral Solution" xsi:type="Literal"/>
+                        <value valueType="t:String" value="opium tincture 100 MG/ML Oral Solution" xsi:type="Literal"/>
                     </element>
                     <element name="doseFormCode">
                         <value valueType="t:Integer" value="316968" xsi:type="Literal"/>
                     </element>
                     <element name="doseFormName">
-                        <value valueType="t:String" value="Oral" xsi:type="Literal"/>
+                        <value valueType="t:String" value="Oral Solution" xsi:type="Literal"/>
                     </element>
                     <element name="ingredientCode">
                         <value valueType="t:Integer" value="7676" xsi:type="Literal"/>
                     </element>
                     <element name="ingredientName">
-                        <value valueType="t:String" value="opium tincture " xsi:type="Literal"/>
+                        <value valueType="t:String" value="Opium" xsi:type="Literal"/>
                     </element>
                     <element name="strength">
-                        <value valueType="t:String" value=" 100 MG/ML" xsi:type="Literal"/>
+                        <value valueType="t:String" value="100 MG/ML" xsi:type="Literal"/>
                     </element>
                     <element name="strengthValue">
-                        <value valueType="t:Integer" value="100" xsi:type="Literal"/>
+                        <value valueType="t:Decimal" value="100.0" xsi:type="Literal"/>
                     </element>
                     <element name="strengthUnit">
                         <value valueType="t:String" value="MG/ML" xsi:type="Literal"/>
@@ -8795,6 +8795,35 @@
                 </element>
                 <element xsi:type="Tuple">
                     <element name="drugCode">
+                        <value valueType="t:Integer" value="886634" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="Butorphanol Tartrate 10 MG/ML Nasal Spray" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="126542" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Nasal Spray" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="1841" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Butorphanol" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="1 MG/ACTUAT" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="1.0" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ACTUAT" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
                         <value valueType="t:Integer" value="891172" xsi:type="Literal"/>
                     </element>
                     <element name="drugName">
@@ -13439,6 +13468,35 @@
                     </element>
                     <element name="drugName">
                         <value valueType="t:String" value="homatropine methylbromide 0.3 MG/ML / Hydrocodone Bitartrate 1 MG/ML Oral Solution" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="316968" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Oral Solution" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="5489" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Hydrocodone" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="1 MG/ML" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="1.0" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ML" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
+                        <value valueType="t:Integer" value="992671" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="homatropine methylbromide 0.3 MG/ML / Hydrocodone Bitartrate 1 MG/ML Oral Solution [Hycodan]" xsi:type="Literal"/>
                     </element>
                     <element name="doseFormCode">
                         <value valueType="t:Integer" value="316968" xsi:type="Literal"/>
@@ -28225,6 +28283,35 @@
                 </element>
                 <element xsi:type="Tuple">
                     <element name="drugCode">
+                        <value valueType="t:Integer" value="1666831" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="Fentanyl 0.04 MG Transdermal System" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="316987" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Transdermal System" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="4337" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Fentanyl" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="0.04 MG/ACTUAT" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="0.04" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ACTUAT" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
                         <value valueType="t:Integer" value="1666837" xsi:type="Literal"/>
                     </element>
                     <element name="drugName">
@@ -28250,6 +28337,35 @@
                     </element>
                     <element name="strengthUnit">
                         <value valueType="t:String" value="MG" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
+                        <value valueType="t:Integer" value="1666837" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="Fentanyl 0.04 MG Transdermal System [Ionsys]" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="316987" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Transdermal System" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="4337" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Fentanyl" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="0.04 MG/ACTUAT" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="0.04" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ACTUAT" xsi:type="Literal"/>
                     </element>
                 </element>
                 <element xsi:type="Tuple">
@@ -30164,6 +30280,122 @@
                     </element>
                     <element name="strengthUnit">
                         <value valueType="t:String" value="MG/ML" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
+                        <value valueType="t:Integer" value="1740007" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="{2 (Fentanyl 0.6 MG/ACTUAT Mucosal Spray) } Pack" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="746839" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Pack" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="4337" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Fentanyl" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="0.6 MG/ACTUAT" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="0.6" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ACTUAT" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
+                        <value valueType="t:Integer" value="1740008" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="{2 (Fentanyl 0.6 MG/ACTUAT Mucosal Spray [Subsys]) } Pack [Subsys 1200 MCG]" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="746839" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Pack" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="4337" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Fentanyl" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="0.6 MG/ACTUAT" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="0.6" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ACTUAT" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
+                        <value valueType="t:Integer" value="1740009" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="{2 (Fentanyl 0.8 MG/ACTUAT Mucosal Spray) } Pack" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="746839" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Pack" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="4337" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Fentanyl" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="0.8 MG/ACTUAT" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="0.8" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ACTUAT" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
+                        <value valueType="t:Integer" value="1740010" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="{2 (Fentanyl 0.8 MG/ACTUAT Mucosal Spray [Subsys]) } Pack [Subsys 1600 MCG]" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="746839" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Pack" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="4337" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Fentanyl" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="0.8 MG/ACTUAT" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="0.8" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ACTUAT" xsi:type="Literal"/>
                     </element>
                 </element>
                 <element xsi:type="Tuple">
@@ -32767,10 +32999,10 @@
                         <value valueType="t:String" value="Oxycodone" xsi:type="Literal"/>
                     </element>
                     <element name="strength">
-                        <value valueType="t:String" value="60 MG/ML" xsi:type="Literal"/>
+                        <value valueType="t:String" value="2 MG/ML" xsi:type="Literal"/>
                     </element>
                     <element name="strengthValue">
-                        <value valueType="t:Decimal" value="60.0" xsi:type="Literal"/>
+                        <value valueType="t:Decimal" value="2.0" xsi:type="Literal"/>
                     </element>
                     <element name="strengthUnit">
                         <value valueType="t:String" value="MG/ML" xsi:type="Literal"/>
@@ -32832,6 +33064,180 @@
                     </element>
                     <element name="strengthUnit">
                         <value valueType="t:String" value="MG" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
+                        <value valueType="t:Integer" value="2168270" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="1 ML Fentanyl 0.05 MG/ML Injection" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="1649574" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Injection" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="4337" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Fentanyl" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="0.05 MG/ML" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="0.05" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ML" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
+                        <value valueType="t:Integer" value="2179635" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="tramadol hydrochloride 100 MG Oral Tablet" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="317541" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Oral Tablet" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="10689" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Tramadol" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="100 MG" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="100.0" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
+                        <value valueType="t:Integer" value="2182349" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="Chlorpheniramine Maleate 0.4 MG/ML / Hydrocodone Bitartrate 0.5 MG/ML / Phenylephrine Hydrochloride 2 MG/ML Oral Solution" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="316968" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Oral Solution" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="5489" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Hydrocodone" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="0.5 MG/ML" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="0.5" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ML" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
+                        <value valueType="t:Integer" value="2182353" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="Chlorpheniramine Maleate 0.4 MG/ML / Hydrocodone Bitartrate 0.5 MG/ML / Phenylephrine Hydrochloride 2 MG/ML Oral Solution [De-Chlor HC]" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="316968" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Oral Solution" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="5489" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Hydrocodone" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="0.5 MG/ML" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="0.5" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ML" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
+                        <value valueType="t:Integer" value="2182355" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="Chlorpheniramine Maleate 0.5 MG/ML / Hydrocodone Bitartrate 0.65 MG/ML / Phenylephrine Hydrochloride 1.6 MG/ML Oral Solution [Relasin HC]" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="316968" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Oral Solution" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="5489" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Hydrocodone" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="0.65 MG/ML" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="0.65" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ML" xsi:type="Literal"/>
+                    </element>
+                </element>
+                <element xsi:type="Tuple">
+                    <element name="drugCode">
+                        <value valueType="t:Integer" value="2183669" xsi:type="Literal"/>
+                    </element>
+                    <element name="drugName">
+                        <value valueType="t:String" value="Chlorpheniramine Tannate 0.8 MG/ML / hydrocodone tannate 1 MG/ML Extended Release Suspension" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormCode">
+                        <value valueType="t:Integer" value="316946" xsi:type="Literal"/>
+                    </element>
+                    <element name="doseFormName">
+                        <value valueType="t:String" value="Extended Release Suspension" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientCode">
+                        <value valueType="t:Integer" value="5489" xsi:type="Literal"/>
+                    </element>
+                    <element name="ingredientName">
+                        <value valueType="t:String" value="Hydrocodone" xsi:type="Literal"/>
+                    </element>
+                    <element name="strength">
+                        <value valueType="t:String" value="1 MG/ML" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthValue">
+                        <value valueType="t:Decimal" value="1.0" xsi:type="Literal"/>
+                    </element>
+                    <element name="strengthUnit">
+                        <value valueType="t:String" value="MG/ML" xsi:type="Literal"/>
                     </element>
                 </element>
             </expression>

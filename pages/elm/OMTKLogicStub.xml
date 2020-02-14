@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
-   <identifier id="OMTKLogic" version="0.0.0"/>
+   <identifier id="OMTKLogicStub" version="1.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
       <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
@@ -30,7 +30,7 @@
             </caseItem>
             <else xsi:type="Concatenate">
                <operand xsi:type="Concatenate">
-                  <operand valueType="t:String" value="unknown{" xsi:type="Literal"/>
+                  <operand valueType="t:String" value="Error: unknown{" xsi:type="Literal"/>
                   <operand name="unit" xsi:type="OperandRef"/>
                </operand>
                <operand valueType="t:String" value="}" xsi:type="Literal"/>
@@ -332,7 +332,7 @@
                               <source name="doseFormCode" xsi:type="OperandRef"/>
                            </operand>
                         </operand>
-                        <operand valueType="t:Integer" value="346163" xsi:type="Literal"/>
+                        <operand valueType="t:Integer" value="858080" xsi:type="Literal"/>
                      </when>
                      <then valueType="t:Decimal" value="0.18" xsi:type="Literal"/>
                   </caseItem>
@@ -354,10 +354,16 @@
                      <when name="IsPatch" xsi:type="FunctionRef">
                         <operand name="doseFormCode" xsi:type="OperandRef"/>
                      </when>
-                     <then valueType="t:Decimal" value="7.2" xsi:type="Literal"/>
+                     <then valueType="t:Decimal" value="2.4" xsi:type="Literal"/>
                   </caseItem>
                   <else xsi:type="ToDecimal">
-                     <operand valueType="t:Integer" value="1000" xsi:type="Literal"/>
+                     <operand xsi:type="Message">
+                        <source valueType="t:Integer" value="1000" xsi:type="Literal"/>
+                        <condition valueType="t:Boolean" value="true" xsi:type="Literal"/>
+                        <code valueType="t:String" value="Undefined" xsi:type="Literal"/>
+                        <severity valueType="t:String" value="Error" xsi:type="Literal"/>
+                        <message valueType="t:String" value="The dose form is unexpected" xsi:type="Literal"/>
+                     </operand>
                   </else>
                </then>
             </caseItem>
@@ -473,7 +479,20 @@
                         </when>
                         <then valueType="t:Integer" value="12" xsi:type="Literal"/>
                      </caseItem>
-                     <else valueType="t:Integer" value="1000" xsi:type="Literal"/>
+                     <else xsi:type="Message">
+                        <source valueType="t:Integer" value="1000" xsi:type="Literal"/>
+                        <condition xsi:type="Less">
+                           <operand path="value" xsi:type="Property">
+                              <source name="dailyDose" xsi:type="OperandRef"/>
+                           </operand>
+                           <operand xsi:type="ToDecimal">
+                              <operand valueType="t:Integer" value="1" xsi:type="Literal"/>
+                           </operand>
+                        </condition>
+                        <code valueType="t:String" value="Undefined" xsi:type="Literal"/>
+                        <severity valueType="t:String" value="Error" xsi:type="Literal"/>
+                        <message valueType="t:String" value="The dose range is unexpected" xsi:type="Literal"/>
+                     </else>
                   </operand>
                </then>
             </caseItem>
@@ -1155,13 +1174,13 @@
             <operandTypeSpecifier xsi:type="ListTypeSpecifier">
                <elementType xsi:type="TupleTypeSpecifier">
                   <element name="rxNormCode">
-                     <type name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                     <elementType name="t:Code" xsi:type="NamedTypeSpecifier"/>
                   </element>
                   <element name="doseQuantity">
-                     <type name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+                     <elementType name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
                   </element>
                   <element name="dosesPerDay">
-                     <type name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
+                     <elementType name="t:Decimal" xsi:type="NamedTypeSpecifier"/>
                   </element>
                </elementType>
             </operandTypeSpecifier>
@@ -1169,4 +1188,3 @@
       </def>
    </statements>
 </library>
-

@@ -1147,8 +1147,11 @@
             </sourceReference>
         </resource>
     </package>
+    <binary value="cql/OMTKData2018.cql"/>
+    <binary value="cql/OMTKData2019.cql"/>
+    <binary value="cql/OMTKData2020.cql"/>
+    <binary value="cql/OMTKData_Changes.cql"/>
     <binary value="cql/OMTKLogicCQL.cql"/>
-    <binary value="cql/OMTKLogicDB.cql"/>
     <binary value="cql/OMTKLogicStub.cql"/>
     <binary value="cql/OpioidCDS_Common.cql"/>
     <binary value="cql/OpioidCDS_REC_04.cql"/>
@@ -1157,20 +1160,23 @@
     <binary value="cql/OpioidCDS_REC_08.cql"/>
     <binary value="cql/OpioidCDS_REC_10.cql"/>
     <binary value="cql/OpioidCDS_REC_11.cql"/>
-    <binary value="cql/OpioidCDS_REC_10_patient-view.cql"/>
-    <binary value="cql/OpioidCDS_REC_11_patient-view.cql"/>
-    <binary value="elm/OMTKLogic-0.0.0.xml"/>
-    <binary value="elm/OMTKLogic-0.0.1.xml"/>
-    <binary value="elm/OMTKLogic-0.1.0.xml"/>
-    <binary value="elm/OpioidCDS_STU3_Common.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_04.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_05.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_07.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_08.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_10.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_11.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_10_patient-view.xml"/>
-    <binary value="elm/OpioidCDS_STU3_REC_11_patient-view.xml"/>
+    <binary value="cql/OpioidCDS_REC_10_Patient_View.cql"/>
+    <binary value="cql/OpioidCDS_REC_11_Patient_View.cql"/>
+    <binary value="elm/OMTKData2018.xml"/>
+    <binary value="elm/OMTKData2019.xml"/>
+    <binary value="elm/OMTKData2020.xml"/>
+    <binary value="elm/OMTKData_Changes.xml"/>
+    <binary value="elm/OMTKLogicCQL.xml"/>
+    <binary value="elm/OMTKLogicStub.xml"/>
+    <binary value="elm/OpioidCDS_Common.xml"/>
+    <binary value="elm/OpioidCDS_REC_04.xml"/>
+    <binary value="elm/OpioidCDS_REC_05.xml"/>
+    <binary value="elm/OpioidCDS_REC_07.xml"/>
+    <binary value="elm/OpioidCDS_REC_08.xml"/>
+    <binary value="elm/OpioidCDS_REC_10.xml"/>
+    <binary value="elm/OpioidCDS_REC_11.xml"/>
+    <binary value="elm/OpioidCDS_REC_10_Patient_View.xml"/>
+    <binary value="elm/OpioidCDS_REC_11_Patient_View.xml"/>
     <binary value="modelinfo/OMTK-modelinfo.xml"/>
     <page>
         <source value="index.html"/>

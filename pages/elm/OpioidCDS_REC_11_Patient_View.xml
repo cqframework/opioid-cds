@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
-    <identifier id="OpioidCDS_STU3_REC_11_patient_view" version="0.1.0"/>
+    <identifier id="OpioidCDS_REC_11_Patient_View" version="1.1.0"/>
     <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
     <usings>
         <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
@@ -8,40 +8,12 @@
     </usings>
     <includes>
         <def localIdentifier="FHIRHelpers" path="FHIRHelpers" version="3.0.0"/>
-        <def localIdentifier="Common" path="OpioidCDSCommonSTU3" version="0.1.0"/>
+        <def localIdentifier="Common" path="OpioidCDS_Common" version="1.1.0"/>
     </includes>
     <statements>
         <def name="Patient" context="Patient">
             <expression xsi:type="SingletonFrom">
                 <operand dataType="fhir:Patient" xsi:type="Retrieve"/>
-            </expression>
-        </def>
-        <def name="Benzo Scripts" context="Patient" accessLevel="Public">
-            <expression xsi:type="Query">
-                <source alias="BenzoScript">
-                    <expression name="Active Ambulatory Benzodiazepine Rx" libraryName="Common" xsi:type="ExpressionRef"/>
-                </source>
-                <where xsi:type="Not">
-                    <operand name="Is Context Prescription End of Life Opioid?" libraryName="Common" xsi:type="FunctionRef">
-                        <operand xsi:type="ToList">
-                            <operand name="BenzoScript" xsi:type="AliasRef"/>
-                        </operand>
-                    </operand>
-                </where>
-            </expression>
-        </def>
-        <def name="Opioid with Abuse Potential Scripts" context="Patient" accessLevel="Public">
-            <expression xsi:type="Query">
-                <source alias="OpioidScript">
-                    <expression name="Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
-                </source>
-                <where xsi:type="Not">
-                    <operand name="Is Context Prescription End of Life Opioid?" libraryName="Common" xsi:type="FunctionRef">
-                        <operand xsi:type="ToList">
-                            <operand name="OpioidScript" xsi:type="AliasRef"/>
-                        </operand>
-                    </operand>
-                </where>
             </expression>
         </def>
         <def name="Inclusion Criteria" context="Patient" accessLevel="Public">
@@ -56,10 +28,10 @@
                 </operand>
                 <operand xsi:type="And">
                     <operand xsi:type="Exists">
-                        <operand name="Benzo Scripts" xsi:type="ExpressionRef"/>
+                        <operand name="Active Ambulatory Benzodiazepine Rx" libraryName="Common" xsi:type="ExpressionRef"/>
                     </operand>
                     <operand xsi:type="Exists">
-                        <operand name="Opioid with Abuse Potential Scripts" xsi:type="ExpressionRef"/>
+                        <operand name="Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
                     </operand>
                 </operand>
             </expression>
@@ -97,6 +69,99 @@
                 </else>
             </expression>
         </def>
+        <def name="Concurrent Benzodiazepine Prescription Issue" context="Patient" accessLevel="Public">
+            <expression classType="fhir:DetectedIssue" xsi:type="Instance">
+                <element name="status">
+                    <value classType="fhir:ObservationStatus" xsi:type="Instance">
+                        <element name="value">
+                            <value valueType="t:String" value="preliminary" xsi:type="Literal"/>
+                        </element>
+                    </value>
+                </element>
+                <element name="category">
+                    <value classType="fhir:CodeableConcept" xsi:type="Instance">
+                        <element name="text">
+                            <value classType="fhir:string" xsi:type="Instance">
+                                <element name="value">
+                                    <value name="Get Summary" xsi:type="ExpressionRef"/>
+                                </element>
+                            </value>
+                        </element>
+                    </value>
+                </element>
+                <element name="severity">
+                    <value classType="fhir:DetectedIssueSeverity" xsi:type="Instance">
+                        <element name="value">
+                            <value valueType="t:String" value="moderate" xsi:type="Literal"/>
+                        </element>
+                    </value>
+                </element>
+                <element name="patient">
+                    <value classType="fhir:Reference" xsi:type="Instance">
+                        <element name="reference">
+                            <value classType="fhir:string" xsi:type="Instance">
+                                <element name="value">
+                                    <value xsi:type="Concatenate">
+                                        <operand valueType="t:String" value="Patient/" xsi:type="Literal"/>
+                                        <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                            <operand path="id" xsi:type="Property">
+                                                <source name="Patient" xsi:type="ExpressionRef"/>
+                                            </operand>
+                                        </operand>
+                                    </value>
+                                </element>
+                            </value>
+                        </element>
+                    </value>
+                </element>
+                <element name="date">
+                    <value classType="fhir:dateTime" xsi:type="Instance">
+                        <element name="value">
+                            <value xsi:type="Now"/>
+                        </element>
+                    </value>
+                </element>
+                <element name="implicated">
+                    <value xsi:type="Query">
+                        <source alias="M">
+                            <expression xsi:type="Union">
+                                <operand name="Active Ambulatory Benzodiazepine Rx" libraryName="Common" xsi:type="ExpressionRef"/>
+                                <operand name="Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
+                            </expression>
+                        </source>
+                        <return>
+                            <expression classType="fhir:Reference" xsi:type="Instance">
+                                <element name="reference">
+                                    <value classType="fhir:string" xsi:type="Instance">
+                                        <element name="value">
+                                            <value xsi:type="Concatenate">
+                                                <operand valueType="t:String" value="MedicationRequest/" xsi:type="Literal"/>
+                                                <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                    <operand path="id" scope="M" xsi:type="Property"/>
+                                                </operand>
+                                            </value>
+                                        </element>
+                                    </value>
+                                </element>
+                            </expression>
+                        </return>
+                    </value>
+                </element>
+                <element name="detail">
+                    <value classType="fhir:string" xsi:type="Instance">
+                        <element name="value">
+                            <value name="Get Detail" xsi:type="ExpressionRef"/>
+                        </element>
+                    </value>
+                </element>
+                <element name="reference">
+                    <value classType="fhir:uri" xsi:type="Instance">
+                        <element name="value">
+                            <value valueType="t:String" value="http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11-patient-view" xsi:type="Literal"/>
+                        </element>
+                    </value>
+                </element>
+            </expression>
+        </def>
     </statements>
 </library>
-
