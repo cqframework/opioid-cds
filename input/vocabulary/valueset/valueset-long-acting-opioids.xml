@@ -1,0 +1,1134 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+   <id value="long-acting-opioids"/>
+   <meta>
+      <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+      <profile value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset"/>
+   </meta>
+   <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+      <valueString value="Opioid medication formulations (ingredient, OR ingredient+strength+form : RXNORM TTY=IN or SCD OR SBD) that are abuseable in ambulatory setting and have extended release dose form."/>
+   </extension>
+   <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
+      <valueString value="Formulations with dose form Topical Cream(RXCUI 316982) or Topical Solution(RXCUI 316986). Ingredients available in surgery."/>
+   </extension>
+   <extension url="http://hl7.org/fhir/StructureDefinition/valueset-warning">
+      <valueMarkdown value="Note that the terminologies included in this implementation guide will need to be updated, because the ideal mechanism for distribution (as an expression) is not currently supported by the content logical definition constructs available in the FHIR ValueSet resource and all known implementations of it. Before use in a production environment, ensure you have the latest value sets based on the definitions for each value set (as defined in the inclusion/exclusion criteria for each one)."/>
+   </extension>
+   <url value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/long-acting-opioids"/>
+   <version value="1.0.0"/>
+   <name value="valueset-extended-release-opioid-medications-with-ambulatory-abuse-potential"/>
+   <title value="RxNorm Extended Release Opioid Medications with Ambulatory Abuse Potential"/>
+   <status value="active"/>
+   <experimental value="false"/>
+   <date value="2018-04-23"/>
+   <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+   <description value="ValueSet containing all opioid clinical drugs that are not restricted to surgical use only, and that are in an extended release dose form codes."/>
+   <useContext>
+      <code>
+         <system value="http://hl7.org/fhir/usage-context-type"/>
+         <code value="focus"/>
+         <display value="Clinical Focus"/>
+      </code>
+      <valueCodeableConcept>
+         <text value="All opioid clinical drugs that are not restricted to surgical use only, and that are in an extended release dose form."/>
+      </valueCodeableConcept>
+   </useContext>
+   <jurisdiction>
+      <coding>
+         <system value="urn:iso:std:iso:3166"/>
+         <code value="US"/>
+         <display value="United States of America"/>
+      </coding>
+   </jurisdiction>
+   <purpose value="Used to determine if prescription is for extended release opioids for recommendation 4."/>
+   <copyright value="© CDC 2016+."/>
+   <compose>
+      <include>
+         <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+         <concept>
+            <code value="1049502"/>
+            <display value="12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1049504"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet [Oxycontin]"/>
+         </concept>
+         <concept>
+            <code value="1049543"/>
+            <display value="12 HR Oxycodone Hydrochloride 15 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1049545"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 15 MG Extended Release Oral Tablet [Oxycontin]"/>
+         </concept>
+         <concept>
+            <code value="1049557"/>
+            <display value="12 HR Oxycodone Hydrochloride 160 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1049563"/>
+            <display value="12 HR Oxycodone Hydrochloride 20 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1049565"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 20 MG Extended Release Oral Tablet [Oxycontin]"/>
+         </concept>
+         <concept>
+            <code value="1049574"/>
+            <display value="12 HR Oxycodone Hydrochloride 30 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1049576"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 30 MG Extended Release Oral Tablet [Oxycontin]"/>
+         </concept>
+         <concept>
+            <code value="1049584"/>
+            <display value="12 HR Oxycodone Hydrochloride 40 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1049586"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 40 MG Extended Release Oral Tablet [Oxycontin]"/>
+         </concept>
+         <concept>
+            <code value="1049593"/>
+            <display value="12 HR Oxycodone Hydrochloride 60 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1049595"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 60 MG Extended Release Oral Tablet [Oxycontin]"/>
+         </concept>
+         <concept>
+            <code value="1049599"/>
+            <display value="12 HR Oxycodone Hydrochloride 80 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1049601"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 80 MG Extended Release Oral Tablet [Oxycontin]"/>
+         </concept>
+         <concept>
+            <code value="1049727"/>
+            <display value="Oxycodone Hydrochloride 5 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1086310"/>
+            <display value="24 HR Morphine Sulfate 75 MG Extended Release Oral Capsule [Avinza]"/>
+         </concept>
+         <concept>
+            <code value="1087389"/>
+            <display value="12 HR CHLORPHENIRAMINE POLISTIREX 4 MG / HYDROCODONE POLISTIREX 5 MG Extended Release Oral Capsule [TussiCaps]"/>
+         </concept>
+         <concept>
+            <code value="1087427"/>
+            <display value="12 HR CHLORPHENIRAMINE POLISTIREX 8 MG / HYDROCODONE POLISTIREX 10 MG Extended Release Oral Capsule [TussiCaps]"/>
+         </concept>
+         <concept>
+            <code value="1087459"/>
+            <display value="12 HR CHLORPHENIRAMINE POLISTIREX 1.6 MG/ML / HYDROCODONE POLISTIREX 2 MG/ML Extended Release Suspension"/>
+         </concept>
+         <concept>
+            <code value="1087463"/>
+            <display value="12 HR CHLORPHENIRAMINE POLISTIREX 1.6 MG/ML / HYDROCODONE POLISTIREX 2 MG/ML Extended Release Suspension [Tussionex]"/>
+         </concept>
+         <concept>
+            <code value="1148478"/>
+            <display value="24 HR tramadol hydrochloride 100 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1148482"/>
+            <display value="24 HR tramadol hydrochloride 100 MG Extended Release Oral Capsule [ConZip]"/>
+         </concept>
+         <concept>
+            <code value="1148485"/>
+            <display value="24 HR tramadol hydrochloride 200 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1148487"/>
+            <display value="24 HR tramadol hydrochloride 200 MG Extended Release Oral Capsule [ConZip]"/>
+         </concept>
+         <concept>
+            <code value="1148489"/>
+            <display value="24 HR tramadol hydrochloride 300 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1148491"/>
+            <display value="24 HR tramadol hydrochloride 300 MG Extended Release Oral Capsule [ConZip]"/>
+         </concept>
+         <concept>
+            <code value="1148797"/>
+            <display value="12 HR tapentadol 100 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1148800"/>
+            <display value="12 HR tapentadol 150 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1148803"/>
+            <display value="12 HR tapentadol 200 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1148807"/>
+            <display value="12 HR tapentadol 250 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1148809"/>
+            <display value="12 HR tapentadol 50 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1149367"/>
+            <display value="12 HR tapentadol 100 MG Extended Release Oral Tablet [Nucynta]"/>
+         </concept>
+         <concept>
+            <code value="1149370"/>
+            <display value="12 HR tapentadol 150 MG Extended Release Oral Tablet [Nucynta]"/>
+         </concept>
+         <concept>
+            <code value="1149373"/>
+            <display value="12 HR tapentadol 200 MG Extended Release Oral Tablet [Nucynta]"/>
+         </concept>
+         <concept>
+            <code value="1149376"/>
+            <display value="12 HR tapentadol 250 MG Extended Release Oral Tablet [Nucynta]"/>
+         </concept>
+         <concept>
+            <code value="1149378"/>
+            <display value="12 HR tapentadol 50 MG Extended Release Oral Tablet [Nucynta]"/>
+         </concept>
+         <concept>
+            <code value="1190284"/>
+            <display value="24 HR Morphine Sulfate 45 MG Extended Release Oral Capsule [Avinza]"/>
+         </concept>
+         <concept>
+            <code value="1236179"/>
+            <display value="dihydrocodeine bitartrate 120 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1236188"/>
+            <display value="dihydrocodeine bitartrate 60 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1236190"/>
+            <display value="dihydrocodeine bitartrate 90 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1248115"/>
+            <display value="24 HR tramadol hydrochloride 150 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1294380"/>
+            <display value="Diphenhydramine Tannate 5 MG/ML / hydrocodone tannate 0.7 MG/ML / Phenylephrine Tannate 1.5 MG/ML Extended Release Suspension"/>
+         </concept>
+         <concept>
+            <code value="1297584"/>
+            <display value="Diphenhydramine Tannate 5 MG/ML / hydrocodone tannate 0.7 MG/ML / Phenylephrine Tannate 1.5 MG/ML Extended Release Suspension [Dytan-HC]"/>
+         </concept>
+         <concept>
+            <code value="1303729"/>
+            <display value="Morphine Sulfate 130 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1303731"/>
+            <display value="Morphine Sulfate 130 MG Extended Release Oral Capsule [Kadian]"/>
+         </concept>
+         <concept>
+            <code value="1303733"/>
+            <display value="Morphine Sulfate 150 MG Extended Release Oral Capsule [Kadian]"/>
+         </concept>
+         <concept>
+            <code value="1303736"/>
+            <display value="Morphine Sulfate 40 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1303738"/>
+            <display value="Morphine Sulfate 40 MG Extended Release Oral Capsule [Kadian]"/>
+         </concept>
+         <concept>
+            <code value="1303740"/>
+            <display value="Morphine Sulfate 70 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1303742"/>
+            <display value="Morphine Sulfate 70 MG Extended Release Oral Capsule [Kadian]"/>
+         </concept>
+         <concept>
+            <code value="1306898"/>
+            <display value="24 HR Hydromorphone Hydrochloride 32 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1306900"/>
+            <display value="24 HR Hydromorphone Hydrochloride 32 MG Extended Release Oral Tablet [Exalgo]"/>
+         </concept>
+         <concept>
+            <code value="1432969"/>
+            <display value="168 HR Buprenorphine 0.015 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="1432971"/>
+            <display value="168 HR Buprenorphine 0.015 MG/HR Transdermal System [BuTrans]"/>
+         </concept>
+         <concept>
+            <code value="1491832"/>
+            <display value="12 HR Acetaminophen 325 MG / Oxycodone Hydrochloride 7.5 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1491834"/>
+            <display value="12 HR Acetaminophen 325 MG / Oxycodone Hydrochloride 7.5 MG Extended Release Oral Tablet [Xartemis]"/>
+         </concept>
+         <concept>
+            <code value="1542997"/>
+            <display value="168 HR Buprenorphine 0.0075 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="1542999"/>
+            <display value="168 HR Buprenorphine 0.0075 MG/HR Transdermal System [BuTrans]"/>
+         </concept>
+         <concept>
+            <code value="1545903"/>
+            <display value="12 HR Naloxone Hydrochloride 10 MG / Oxycodone Hydrochloride 20 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1545907"/>
+            <display value="12 HR Naloxone Hydrochloride 20 MG / Oxycodone Hydrochloride 40 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1545910"/>
+            <display value="12 HR Naloxone Hydrochloride 5 MG / Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1546089"/>
+            <display value="12 HR Naloxone Hydrochloride 5 MG / Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet [Targiniq]"/>
+         </concept>
+         <concept>
+            <code value="1595730"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 20 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1595736"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 20 MG Extended Release Oral Tablet [Hysingla]"/>
+         </concept>
+         <concept>
+            <code value="1595740"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 30 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1595742"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 30 MG Extended Release Oral Tablet [Hysingla]"/>
+         </concept>
+         <concept>
+            <code value="1595746"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 40 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1595748"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 40 MG Extended Release Oral Tablet [Hysingla]"/>
+         </concept>
+         <concept>
+            <code value="1595752"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 60 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1595754"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 60 MG Extended Release Oral Tablet [Hysingla]"/>
+         </concept>
+         <concept>
+            <code value="1595758"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 80 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1595760"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 80 MG Extended Release Oral Tablet [Hysingla]"/>
+         </concept>
+         <concept>
+            <code value="1595764"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 100 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1595766"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 100 MG Extended Release Oral Tablet [Hysingla]"/>
+         </concept>
+         <concept>
+            <code value="1595770"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 120 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1595772"/>
+            <display value="Abuse-Deterrent 24 HR Hydrocodone Bitartrate 120 MG Extended Release Oral Tablet [Hysingla]"/>
+         </concept>
+         <concept>
+            <code value="1603495"/>
+            <display value="72 HR Fentanyl 0.0375 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="1603498"/>
+            <display value="72 HR Fentanyl 0.0625 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="1603501"/>
+            <display value="72 HR Fentanyl 0.0875 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="1652087"/>
+            <display value="12 HR CHLORPHENIRAMINE POLISTIREX 0.8 MG/ML / CODEINE POLISTIREX 4 MG/ML Extended Release Suspension"/>
+         </concept>
+         <concept>
+            <code value="1652093"/>
+            <display value="12 HR CHLORPHENIRAMINE POLISTIREX 0.8 MG/ML / CODEINE POLISTIREX 4 MG/ML Extended Release Suspension [Tuzistra]"/>
+         </concept>
+         <concept>
+            <code value="1664543"/>
+            <display value="12 HR Chlorpheniramine Maleate 8 MG / Codeine Phosphate 54.3 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1666831"/>
+            <display value="Fentanyl 0.04 MG Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="1666837"/>
+            <display value="Fentanyl 0.04 MG Transdermal System [Ionsys]"/>
+         </concept>
+         <concept>
+            <code value="1745881"/>
+            <display value="Abuse-Deterrent 12 HR Morphine Sulfate 15 MG Extended Release Oral Tablet [Morphabond]"/>
+         </concept>
+         <concept>
+            <code value="1745886"/>
+            <display value="Abuse-Deterrent 12 HR Morphine Sulfate 100 MG Extended Release Oral Tablet [Morphabond]"/>
+         </concept>
+         <concept>
+            <code value="1745889"/>
+            <display value="Abuse-Deterrent 12 HR Morphine Sulfate 30 MG Extended Release Oral Tablet [Morphabond]"/>
+         </concept>
+         <concept>
+            <code value="1745892"/>
+            <display value="Abuse-Deterrent 12 HR Morphine Sulfate 60 MG Extended Release Oral Tablet [Morphabond]"/>
+         </concept>
+         <concept>
+            <code value="1790527"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone 9 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1790533"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone 9 MG Extended Release Oral Capsule [Xtampza]"/>
+         </concept>
+         <concept>
+            <code value="1791558"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone 13.5 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1791560"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone 13.5 MG Extended Release Oral Capsule [Xtampza]"/>
+         </concept>
+         <concept>
+            <code value="1791567"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone 18 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1791569"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone 18 MG Extended Release Oral Capsule [Xtampza]"/>
+         </concept>
+         <concept>
+            <code value="1791574"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone 27 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1791576"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone 27 MG Extended Release Oral Capsule [Xtampza]"/>
+         </concept>
+         <concept>
+            <code value="1791580"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone 36 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1791582"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone 36 MG Extended Release Oral Capsule [Xtampza]"/>
+         </concept>
+         <concept>
+            <code value="1806701"/>
+            <display value="12 HR Naltrexone hydrochloride 1.2 MG / Oxycodone Hydrochloride 10 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1806707"/>
+            <display value="12 HR Naltrexone hydrochloride 1.2 MG / Oxycodone Hydrochloride 10 MG Extended Release Oral Capsule [Troxyca]"/>
+         </concept>
+         <concept>
+            <code value="1806710"/>
+            <display value="12 HR Naltrexone hydrochloride 2.4 MG / Oxycodone Hydrochloride 20 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1806716"/>
+            <display value="12 HR Naltrexone hydrochloride 3.6 MG / Oxycodone Hydrochloride 30 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1806722"/>
+            <display value="12 HR Naltrexone hydrochloride 4.8 MG / Oxycodone Hydrochloride 40 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1806728"/>
+            <display value="12 HR Naltrexone hydrochloride 7.2 MG / Oxycodone Hydrochloride 60 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1806734"/>
+            <display value="12 HR Naltrexone hydrochloride 9.6 MG / Oxycodone Hydrochloride 80 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1860127"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 60 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1860129"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 20 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1860137"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 40 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1860148"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 80 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1860151"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 30 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1860154"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 15 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1860157"/>
+            <display value="Abuse-Deterrent 12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1860491"/>
+            <display value="12 HR Hydrocodone Bitartrate 10 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1860492"/>
+            <display value="12 HR Hydrocodone Bitartrate 10 MG Extended Release Oral Capsule [Zohydro]"/>
+         </concept>
+         <concept>
+            <code value="1860493"/>
+            <display value="12 HR Hydrocodone Bitartrate 15 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1860494"/>
+            <display value="12 HR Hydrocodone Bitartrate 15 MG Extended Release Oral Capsule [Zohydro]"/>
+         </concept>
+         <concept>
+            <code value="1860495"/>
+            <display value="12 HR Hydrocodone Bitartrate 20 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1860496"/>
+            <display value="12 HR Hydrocodone Bitartrate 20 MG Extended Release Oral Capsule [Zohydro]"/>
+         </concept>
+         <concept>
+            <code value="1860497"/>
+            <display value="12 HR Hydrocodone Bitartrate 30 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1860498"/>
+            <display value="12 HR Hydrocodone Bitartrate 30 MG Extended Release Oral Capsule [Zohydro]"/>
+         </concept>
+         <concept>
+            <code value="1860499"/>
+            <display value="12 HR Hydrocodone Bitartrate 40 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1860500"/>
+            <display value="12 HR Hydrocodone Bitartrate 40 MG Extended Release Oral Capsule [Zohydro]"/>
+         </concept>
+         <concept>
+            <code value="1860501"/>
+            <display value="12 HR Hydrocodone Bitartrate 50 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="1860502"/>
+            <display value="12 HR Hydrocodone Bitartrate 50 MG Extended Release Oral Capsule [Zohydro]"/>
+         </concept>
+         <concept>
+            <code value="1871434"/>
+            <display value="Abuse-Deterrent 12 HR Morphine Sulfate 15 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1871440"/>
+            <display value="Abuse-Deterrent 12 HR Morphine Sulfate 15 MG Extended Release Oral Tablet [Arymo]"/>
+         </concept>
+         <concept>
+            <code value="1871441"/>
+            <display value="Abuse-Deterrent 12 HR Morphine Sulfate 30 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1871443"/>
+            <display value="Abuse-Deterrent 12 HR Morphine Sulfate 30 MG Extended Release Oral Tablet [Arymo]"/>
+         </concept>
+         <concept>
+            <code value="1871444"/>
+            <display value="Abuse-Deterrent 12 HR Morphine Sulfate 60 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1871446"/>
+            <display value="Abuse-Deterrent 12 HR Morphine Sulfate 60 MG Extended Release Oral Tablet [Arymo]"/>
+         </concept>
+         <concept>
+            <code value="1872234"/>
+            <display value="Abuse-Deterrent 12 HR Morphine Sulfate 100 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1946525"/>
+            <display value="Matrix Delivery 24 HR tramadol hydrochloride 300 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1946527"/>
+            <display value="Matrix Delivery 24 HR tramadol hydrochloride 200 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="1946529"/>
+            <display value="Matrix Delivery 24 HR tramadol hydrochloride 100 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="197696"/>
+            <display value="72 HR Fentanyl 0.075 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="1990745"/>
+            <display value="Methadone Hydrochloride 40 MG Tablet for Oral Suspension [Diskets]"/>
+         </concept>
+         <concept>
+            <code value="245134"/>
+            <display value="72 HR Fentanyl 0.025 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="245135"/>
+            <display value="72 HR Fentanyl 0.05 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="245136"/>
+            <display value="72 HR Fentanyl 0.1 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="261184"/>
+            <display value="72 HR Fentanyl 0.025 MG/HR Transdermal System [Duragesic]"/>
+         </concept>
+         <concept>
+            <code value="261185"/>
+            <display value="72 HR Fentanyl 0.05 MG/HR Transdermal System [Duragesic]"/>
+         </concept>
+         <concept>
+            <code value="261186"/>
+            <display value="72 HR Fentanyl 0.075 MG/HR Transdermal System [Duragesic]"/>
+         </concept>
+         <concept>
+            <code value="262071"/>
+            <display value="72 HR Fentanyl 0.1 MG/HR Transdermal System [Duragesic]"/>
+         </concept>
+         <concept>
+            <code value="388506"/>
+            <display value="72 HR Buprenorphine 0.07 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="388507"/>
+            <display value="72 HR Buprenorphine 0.0525 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="388508"/>
+            <display value="72 HR Buprenorphine 0.035 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="577057"/>
+            <display value="72 HR Fentanyl 0.012 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="583490"/>
+            <display value="72 HR Fentanyl 0.012 MG/HR Transdermal System [Duragesic]"/>
+         </concept>
+         <concept>
+            <code value="833709"/>
+            <display value="24 HR tramadol hydrochloride 100 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="833710"/>
+            <display value="Matrix Delivery 24 HR tramadol hydrochloride 100 MG Extended Release Oral Tablet [Ryzolt]"/>
+         </concept>
+         <concept>
+            <code value="833711"/>
+            <display value="24 HR tramadol hydrochloride 200 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="833712"/>
+            <display value="Matrix Delivery 24 HR tramadol hydrochloride 200 MG Extended Release Oral Tablet [Ryzolt]"/>
+         </concept>
+         <concept>
+            <code value="833713"/>
+            <display value="24 HR tramadol hydrochloride 300 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="833714"/>
+            <display value="Matrix Delivery 24 HR tramadol hydrochloride 300 MG Extended Release Oral Tablet [Ryzolt]"/>
+         </concept>
+         <concept>
+            <code value="845314"/>
+            <display value="24 HR tramadol hydrochloride 100 MG Extended Release Oral Tablet [Ultram]"/>
+         </concept>
+         <concept>
+            <code value="845315"/>
+            <display value="24 HR tramadol hydrochloride 200 MG Extended Release Oral Tablet [Ultram]"/>
+         </concept>
+         <concept>
+            <code value="845316"/>
+            <display value="24 HR tramadol hydrochloride 300 MG Extended Release Oral Tablet [Ultram]"/>
+         </concept>
+         <concept>
+            <code value="849303"/>
+            <display value="Acetaminophen 500 MG / propoxyphene napsylate 100 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="849331"/>
+            <display value="tramadol hydrochloride 75 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="849563"/>
+            <display value="24 HR tramadol hydrochloride 150 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="849564"/>
+            <display value="24 HR tramadol hydrochloride 400 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="849903"/>
+            <display value="tramadol hydrochloride 50 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="857510"/>
+            <display value="12 HR CHLORPHENIRAMINE POLISTIREX 4 MG / HYDROCODONE POLISTIREX 5 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="857512"/>
+            <display value="12 HR CHLORPHENIRAMINE POLISTIREX 8 MG / HYDROCODONE POLISTIREX 10 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="859247"/>
+            <display value="Chlorpheniramine 0.8 MG/ML / Hydrocodone Bitartrate 1 MG/ML Extended Release Suspension"/>
+         </concept>
+         <concept>
+            <code value="863845"/>
+            <display value="Abuse-Deterrent Morphine Sulfate 100 MG / Naltrexone hydrochloride 4 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="863847"/>
+            <display value="Abuse-Deterrent Morphine Sulfate 100 MG / Naltrexone hydrochloride 4 MG Extended Release Oral Capsule [Embeda]"/>
+         </concept>
+         <concept>
+            <code value="863848"/>
+            <display value="Abuse-Deterrent Morphine Sulfate 20 MG / Naltrexone hydrochloride 0.8 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="863849"/>
+            <display value="Abuse-Deterrent Morphine Sulfate 20 MG / Naltrexone hydrochloride 0.8 MG Extended Release Oral Capsule [Embeda]"/>
+         </concept>
+         <concept>
+            <code value="863850"/>
+            <display value="Abuse-Deterrent Morphine Sulfate 30 MG / Naltrexone hydrochloride 1.2 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="863851"/>
+            <display value="Abuse-Deterrent Morphine Sulfate 30 MG / Naltrexone hydrochloride 1.2 MG Extended Release Oral Capsule [Embeda]"/>
+         </concept>
+         <concept>
+            <code value="863852"/>
+            <display value="Abuse-Deterrent Morphine Sulfate 50 MG / Naltrexone hydrochloride 2 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="863853"/>
+            <display value="Abuse-Deterrent Morphine Sulfate 50 MG / Naltrexone hydrochloride 2 MG Extended Release Oral Capsule [Embeda]"/>
+         </concept>
+         <concept>
+            <code value="863854"/>
+            <display value="Abuse-Deterrent Morphine Sulfate 60 MG / Naltrexone hydrochloride 2.4 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="863855"/>
+            <display value="Abuse-Deterrent Morphine Sulfate 60 MG / Naltrexone hydrochloride 2.4 MG Extended Release Oral Capsule [Embeda]"/>
+         </concept>
+         <concept>
+            <code value="863856"/>
+            <display value="Abuse-Deterrent Morphine Sulfate 80 MG / Naltrexone hydrochloride 3.2 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="863857"/>
+            <display value="Abuse-Deterrent Morphine Sulfate 80 MG / Naltrexone hydrochloride 3.2 MG Extended Release Oral Capsule [Embeda]"/>
+         </concept>
+         <concept>
+            <code value="864706"/>
+            <display value="Methadone Hydrochloride 10 MG Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="864708"/>
+            <display value="Methadone Hydrochloride 10 MG Oral Tablet [Dolophine]"/>
+         </concept>
+         <concept>
+            <code value="864712"/>
+            <display value="Methadone Hydrochloride 10 MG Oral Tablet [Methadose]"/>
+         </concept>
+         <concept>
+            <code value="864714"/>
+            <display value="Methadone Hydrochloride 10 MG/ML Injectable Solution"/>
+         </concept>
+         <concept>
+            <code value="864718"/>
+            <display value="Methadone Hydrochloride 5 MG Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="864720"/>
+            <display value="Methadone Hydrochloride 5 MG Oral Tablet [Dolophine]"/>
+         </concept>
+         <concept>
+            <code value="864737"/>
+            <display value="Methadone Hydrochloride 5 MG Oral Tablet [Methadose]"/>
+         </concept>
+         <concept>
+            <code value="864751"/>
+            <display value="Methadone Hydrochloride 0.4 MG/ML Oral Solution"/>
+         </concept>
+         <concept>
+            <code value="864761"/>
+            <display value="Methadone Hydrochloride 1 MG/ML Oral Solution"/>
+         </concept>
+         <concept>
+            <code value="864769"/>
+            <display value="Methadone Hydrochloride 2 MG/ML Oral Solution"/>
+         </concept>
+         <concept>
+            <code value="864794"/>
+            <display value="Methadone Hydrochloride 25 MG/ML Injectable Solution"/>
+         </concept>
+         <concept>
+            <code value="864828"/>
+            <display value="Methadone Hydrochloride 50 MG/ML Injectable Solution"/>
+         </concept>
+         <concept>
+            <code value="864978"/>
+            <display value="Methadone Hydrochloride 40 MG Tablet for Oral Suspension"/>
+         </concept>
+         <concept>
+            <code value="864980"/>
+            <display value="Methadone Hydrochloride 40 MG Tablet for Oral Suspension [Methadose]"/>
+         </concept>
+         <concept>
+            <code value="864984"/>
+            <display value="Methadone Hydrochloride 20 MG/ML Oral Solution"/>
+         </concept>
+         <concept>
+            <code value="891874"/>
+            <display value="Morphine Sulfate 100 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="891878"/>
+            <display value="12 HR Morphine Sulfate 15 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="891881"/>
+            <display value="Morphine Sulfate 15 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="891883"/>
+            <display value="12 HR Morphine Sulfate 100 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="891885"/>
+            <display value="12 HR Morphine Sulfate 30 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="891888"/>
+            <display value="Morphine Sulfate 30 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="891890"/>
+            <display value="12 HR Morphine Sulfate 60 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="891893"/>
+            <display value="Morphine Sulfate 60 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="892297"/>
+            <display value="24 HR Morphine Sulfate 120 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="892299"/>
+            <display value="24 HR Morphine Sulfate 120 MG Extended Release Oral Capsule [Avinza]"/>
+         </concept>
+         <concept>
+            <code value="892342"/>
+            <display value="24 HR Morphine Sulfate 30 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="892344"/>
+            <display value="24 HR Morphine Sulfate 30 MG Extended Release Oral Capsule [Avinza]"/>
+         </concept>
+         <concept>
+            <code value="892345"/>
+            <display value="Morphine Sulfate 30 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="892349"/>
+            <display value="24 HR Morphine Sulfate 60 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="892351"/>
+            <display value="24 HR Morphine Sulfate 60 MG Extended Release Oral Capsule [Avinza]"/>
+         </concept>
+         <concept>
+            <code value="892352"/>
+            <display value="Morphine Sulfate 60 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="892355"/>
+            <display value="24 HR Morphine Sulfate 90 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="892357"/>
+            <display value="24 HR Morphine Sulfate 90 MG Extended Release Oral Capsule [Avinza]"/>
+         </concept>
+         <concept>
+            <code value="892494"/>
+            <display value="Morphine Sulfate 10 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="892496"/>
+            <display value="Morphine Sulfate 10 MG Extended Release Oral Capsule [Kadian]"/>
+         </concept>
+         <concept>
+            <code value="892554"/>
+            <display value="Morphine Sulfate 100 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="892556"/>
+            <display value="Morphine Sulfate 100 MG Extended Release Oral Capsule [Kadian]"/>
+         </concept>
+         <concept>
+            <code value="892560"/>
+            <display value="Morphine Sulfate 100 MG Extended Release Oral Tablet [MS Contin]"/>
+         </concept>
+         <concept>
+            <code value="892574"/>
+            <display value="Morphine Sulfate 15 MG Extended Release Oral Tablet [MS Contin]"/>
+         </concept>
+         <concept>
+            <code value="892596"/>
+            <display value="Morphine Sulfate 20 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="892598"/>
+            <display value="Morphine Sulfate 20 MG Extended Release Oral Capsule [Kadian]"/>
+         </concept>
+         <concept>
+            <code value="892643"/>
+            <display value="Morphine Sulfate 200 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="892645"/>
+            <display value="Morphine Sulfate 200 MG Extended Release Oral Capsule [Kadian]"/>
+         </concept>
+         <concept>
+            <code value="892646"/>
+            <display value="Morphine Sulfate 200 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="892648"/>
+            <display value="Morphine Sulfate 200 MG Extended Release Oral Tablet [MS Contin]"/>
+         </concept>
+         <concept>
+            <code value="892658"/>
+            <display value="Morphine Sulfate 30 MG Extended Release Oral Capsule [Kadian]"/>
+         </concept>
+         <concept>
+            <code value="892660"/>
+            <display value="Morphine Sulfate 30 MG Extended Release Oral Tablet [MS Contin]"/>
+         </concept>
+         <concept>
+            <code value="894801"/>
+            <display value="Morphine Sulfate 50 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="894803"/>
+            <display value="Morphine Sulfate 50 MG Extended Release Oral Capsule [Kadian]"/>
+         </concept>
+         <concept>
+            <code value="894805"/>
+            <display value="Morphine Sulfate 60 MG Extended Release Oral Capsule [Kadian]"/>
+         </concept>
+         <concept>
+            <code value="894813"/>
+            <display value="Morphine Sulfate 60 MG Extended Release Oral Tablet [MS Contin]"/>
+         </concept>
+         <concept>
+            <code value="894814"/>
+            <display value="Morphine Sulfate 80 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="894816"/>
+            <display value="Morphine Sulfate 80 MG Extended Release Oral Capsule [Kadian]"/>
+         </concept>
+         <concept>
+            <code value="894918"/>
+            <display value="12 HR Morphine Sulfate 200 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="894933"/>
+            <display value="Morphine Sulfate 150 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="894942"/>
+            <display value="24 HR Morphine Sulfate 45 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="894970"/>
+            <display value="24 HR Morphine Sulfate 75 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="895217"/>
+            <display value="Morphine Sulfate 5 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="897677"/>
+            <display value="24 HR Hydromorphone Hydrochloride 12 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="897687"/>
+            <display value="24 HR Hydromorphone Hydrochloride 16 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="897730"/>
+            <display value="24 HR Hydromorphone Hydrochloride 24 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="897737"/>
+            <display value="24 HR Hydromorphone Hydrochloride 32 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="898612"/>
+            <display value="12 HR Hydromorphone Hydrochloride 3 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="898624"/>
+            <display value="Hydromorphone Hydrochloride 30 MG Extended Release Oral Capsule"/>
+         </concept>
+         <concept>
+            <code value="902729"/>
+            <display value="24 HR Hydromorphone Hydrochloride 12 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="902733"/>
+            <display value="24 HR Hydromorphone Hydrochloride 12 MG Extended Release Oral Tablet [Exalgo]"/>
+         </concept>
+         <concept>
+            <code value="902736"/>
+            <display value="24 HR Hydromorphone Hydrochloride 16 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="902738"/>
+            <display value="24 HR Hydromorphone Hydrochloride 16 MG Extended Release Oral Tablet [Exalgo]"/>
+         </concept>
+         <concept>
+            <code value="902741"/>
+            <display value="24 HR Hydromorphone Hydrochloride 8 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="902743"/>
+            <display value="24 HR Hydromorphone Hydrochloride 8 MG Extended Release Oral Tablet [Exalgo]"/>
+         </concept>
+         <concept>
+            <code value="904870"/>
+            <display value="168 HR Buprenorphine 0.01 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="904874"/>
+            <display value="168 HR Buprenorphine 0.01 MG/HR Transdermal System [BuTrans]"/>
+         </concept>
+         <concept>
+            <code value="904876"/>
+            <display value="168 HR Buprenorphine 0.02 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="904878"/>
+            <display value="168 HR Buprenorphine 0.02 MG/HR Transdermal System [BuTrans]"/>
+         </concept>
+         <concept>
+            <code value="904880"/>
+            <display value="168 HR Buprenorphine 0.005 MG/HR Transdermal System"/>
+         </concept>
+         <concept>
+            <code value="904882"/>
+            <display value="168 HR Buprenorphine 0.005 MG/HR Transdermal System [BuTrans]"/>
+         </concept>
+         <concept>
+            <code value="977874"/>
+            <display value="12 HR Oxymorphone Hydrochloride 10 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="977876"/>
+            <display value="12 HR Oxymorphone Hydrochloride 10 MG Extended Release Oral Tablet [Opana]"/>
+         </concept>
+         <concept>
+            <code value="977894"/>
+            <display value="12 HR Oxymorphone Hydrochloride 15 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="977896"/>
+            <display value="12 HR Oxymorphone Hydrochloride 15 MG Extended Release Oral Tablet [Opana]"/>
+         </concept>
+         <concept>
+            <code value="977902"/>
+            <display value="12 HR Oxymorphone Hydrochloride 20 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="977904"/>
+            <display value="12 HR Oxymorphone Hydrochloride 20 MG Extended Release Oral Tablet [Opana]"/>
+         </concept>
+         <concept>
+            <code value="977909"/>
+            <display value="12 HR Oxymorphone Hydrochloride 30 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="977911"/>
+            <display value="12 HR Oxymorphone Hydrochloride 30 MG Extended Release Oral Tablet [Opana]"/>
+         </concept>
+         <concept>
+            <code value="977915"/>
+            <display value="12 HR Oxymorphone Hydrochloride 40 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="977917"/>
+            <display value="12 HR Oxymorphone Hydrochloride 40 MG Extended Release Oral Tablet [Opana]"/>
+         </concept>
+         <concept>
+            <code value="977923"/>
+            <display value="12 HR Oxymorphone Hydrochloride 5 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="977925"/>
+            <display value="12 HR Oxymorphone Hydrochloride 5 MG Extended Release Oral Tablet [Opana]"/>
+         </concept>
+         <concept>
+            <code value="977929"/>
+            <display value="12 HR Oxymorphone Hydrochloride 7.5 MG Extended Release Oral Tablet"/>
+         </concept>
+         <concept>
+            <code value="977931"/>
+            <display value="12 HR Oxymorphone Hydrochloride 7.5 MG Extended Release Oral Tablet [Opana]"/>
+         </concept>
+         <concept>
+            <code value="991147"/>
+            <display value="Methadone Hydrochloride 10 MG/ML Oral Solution"/>
+         </concept>
+         <concept>
+            <code value="991149"/>
+            <display value="Methadone Hydrochloride 10 MG/ML Oral Solution [Methadose]"/>
+         </concept>
+         <concept>
+            <code value="997280"/>
+            <display value="Codeine Phosphate 20 MG / Ibuprofen 300 MG Extended Release Oral Tablet"/>
+         </concept>
+      </include>
+   </compose>
+</ValueSet>
+

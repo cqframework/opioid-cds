@@ -1,0 +1,299 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="metastatic-cancer"/>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-warning">
+        <valueMarkdown value="Note that the terminologies included in this implementation guide will need to be updated, because the ideal mechanism for distribution (as an expression) is not currently supported by the content logical definition constructs available in the FHIR ValueSet resource and all known implementations of it. Before use in a production environment, ensure you have the latest value sets based on the definitions for each value set (as defined in the inclusion/exclusion criteria for each one)."/>
+    </extension>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/metastatic-cancer"/>
+    <identifier>
+      <value value="2.16.840.1.113762.1.4.1116.351"/>
+    </identifier>
+    <status value="active"/>
+    <compose>
+        <include>
+            <system value="http://hl7.org/fhir/sid/icd-9-cm"/>
+            <concept>
+                <code value="196.2"/>
+                <display value="Secondary and unspecified malignant neoplasm of intra-abdominal lymph nodes"/>
+            </concept>
+            <concept>
+                <code value="196.3"/>
+                <display value="Secondary and unspecified malignant neoplasm of lymph nodes of axilla and upper limb"/>
+            </concept>
+            <concept>
+                <code value="196.5"/>
+                <display value="Secondary and unspecified malignant neoplasm of lymph nodes of inguinal region and lower limb"/>
+            </concept>
+            <concept>
+                <code value="196.6"/>
+                <display value="Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"/>
+            </concept>
+            <concept>
+                <code value="196.8"/>
+                <display value="Secondary and unspecified malignant neoplasm of lymph nodes of multiple sites"/>
+            </concept>
+            <concept>
+                <code value="196.9"/>
+                <display value="Secondary and unspecified malignant neoplasm of lymph nodes, site unspecified"/>
+            </concept>
+            <concept>
+                <code value="197.0"/>
+                <display value="Secondary malignant neoplasm of lung"/>
+            </concept>
+            <concept>
+                <code value="197.1"/>
+                <display value="Secondary malignant neoplasm of mediastinum"/>
+            </concept>
+            <concept>
+                <code value="197.2"/>
+                <display value="Secondary malignant neoplasm of pleura"/>
+            </concept>
+            <concept>
+                <code value="197.3"/>
+                <display value="Secondary malignant neoplasm of other respiratory organs"/>
+            </concept>
+            <concept>
+                <code value="197.4"/>
+                <display value="Secondary malignant neoplasm of small intestine including duodenum"/>
+            </concept>
+            <concept>
+                <code value="197.5"/>
+                <display value="Secondary malignant neoplasm of large intestine and rectum"/>
+            </concept>
+            <concept>
+                <code value="197.6"/>
+                <display value="Secondary malignant neoplasm of retroperitoneum and peritoneum"/>
+            </concept>
+            <concept>
+                <code value="197.7"/>
+                <display value="Malignant neoplasm of liver, secondary"/>
+            </concept>
+            <concept>
+                <code value="197.8"/>
+                <display value="Secondary malignant neoplasm of other digestive organs and spleen"/>
+            </concept>
+            <concept>
+                <code value="198.0"/>
+                <display value="Secondary malignant neoplasm of kidney"/>
+            </concept>
+            <concept>
+                <code value="198.1"/>
+                <display value="Secondary malignant neoplasm of other urinary organs"/>
+            </concept>
+            <concept>
+                <code value="198.2"/>
+                <display value="Secondary malignant neoplasm of skin"/>
+            </concept>
+            <concept>
+                <code value="198.3"/>
+                <display value="Secondary malignant neoplasm of brain and spinal cord"/>
+            </concept>
+            <concept>
+                <code value="198.4"/>
+                <display value="Secondary malignant neoplasm of other parts of nervous system"/>
+            </concept>
+            <concept>
+                <code value="198.5"/>
+                <display value="Secondary malignant neoplasm of bone and bone marrow"/>
+            </concept>
+            <concept>
+                <code value="198.6"/>
+                <display value="Secondary malignant neoplasm of ovary"/>
+            </concept>
+            <concept>
+                <code value="198.7"/>
+                <display value="Secondary malignant neoplasm of adrenal gland"/>
+            </concept>
+            <concept>
+                <code value="198.81"/>
+                <display value="Secondary malignant neoplasm of breast"/>
+            </concept>
+            <concept>
+                <code value="198.82"/>
+                <display value="Secondary malignant neoplasm of genital organs"/>
+            </concept>
+            <concept>
+                <code value="198.89"/>
+                <display value="Secondary malignant neoplasm of other specified sites"/>
+            </concept>
+        </include>
+        <include>
+            <system value="http://hl7.org/fhir/sid/icd-10-cm"/>
+            <concept>
+                <code value="C77.0"/>
+                <display value="Secondary and unspecified malignant neoplasm of lymph nodes of head, face and neck"/>
+            </concept>
+            <concept>
+                <code value="C77.1"/>
+                <display value="Secondary and unspecified malignant neoplasm of intrathoracic lymph nodes"/>
+            </concept>
+            <concept>
+                <code value="C77.2"/>
+                <display value="Secondary and unspecified malignant neoplasm of intra-abdominal lymph nodes"/>
+            </concept>
+            <concept>
+                <code value="C77.3"/>
+                <display value="Secondary and unspecified malignant neoplasm of axilla and upper limb lymph nodes"/>
+            </concept>
+            <concept>
+                <code value="C77.4"/>
+                <display value="Secondary and unspecified malignant neoplasm of inguinal and lower limb lymph nodes"/>
+            </concept>
+            <concept>
+                <code value="C77.5"/>
+                <display value="Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"/>
+            </concept>
+            <concept>
+                <code value="C77.8"/>
+                <display value="Secondary and unspecified malignant neoplasm of lymph nodes of multiple regions"/>
+            </concept>
+            <concept>
+                <code value="C77.9"/>
+                <display value="Secondary and unspecified malignant neoplasm of lymph node, unspecified"/>
+            </concept>
+            <concept>
+                <code value="C78.00"/>
+                <display value="Secondary malignant neoplasm of unspecified lung"/>
+            </concept>
+            <concept>
+                <code value="C78.01"/>
+                <display value="Secondary malignant neoplasm of right lung"/>
+            </concept>
+            <concept>
+                <code value="C78.02"/>
+                <display value="Secondary malignant neoplasm of left lung"/>
+            </concept>
+            <concept>
+                <code value="C78.1"/>
+                <display value="Secondary malignant neoplasm of mediastinum"/>
+            </concept>
+            <concept>
+                <code value="C78.2"/>
+                <display value="Secondary malignant neoplasm of pleura"/>
+            </concept>
+            <concept>
+                <code value="C78.30"/>
+                <display value="Secondary malignant neoplasm of unspecified respiratory organ"/>
+            </concept>
+            <concept>
+                <code value="C78.39"/>
+                <display value="Secondary malignant neoplasm of other respiratory organs"/>
+            </concept>
+            <concept>
+                <code value="C78.4"/>
+                <display value="Secondary malignant neoplasm of small intestine"/>
+            </concept>
+            <concept>
+                <code value="C78.5"/>
+                <display value="Secondary malignant neoplasm of large intestine and rectum"/>
+            </concept>
+            <concept>
+                <code value="C78.6"/>
+                <display value="Secondary malignant neoplasm of retroperitoneum and peritoneum"/>
+            </concept>
+            <concept>
+                <code value="C78.7"/>
+                <display value="Secondary malignant neoplasm of liver and intrahepatic bile duct"/>
+            </concept>
+            <concept>
+                <code value="C78.80"/>
+                <display value="Secondary malignant neoplasm of unspecified digestive organ"/>
+            </concept>
+            <concept>
+                <code value="C78.89"/>
+                <display value="Secondary malignant neoplasm of other digestive organs"/>
+            </concept>
+            <concept>
+                <code value="C79.00"/>
+                <display value="Secondary malignant neoplasm of unspecified kidney and renal pelvis"/>
+            </concept>
+            <concept>
+                <code value="C79.01"/>
+                <display value="Secondary malignant neoplasm of right kidney and renal pelvis"/>
+            </concept>
+            <concept>
+                <code value="C79.02"/>
+                <display value="Secondary malignant neoplasm of left kidney and renal pelvis"/>
+            </concept>
+            <concept>
+                <code value="C79.10"/>
+                <display value="Secondary malignant neoplasm of unspecified urinary organs"/>
+            </concept>
+            <concept>
+                <code value="C79.11"/>
+                <display value="Secondary malignant neoplasm of bladder"/>
+            </concept>
+            <concept>
+                <code value="C79.19"/>
+                <display value="Secondary malignant neoplasm of other urinary organs"/>
+            </concept>
+            <concept>
+                <code value="C79.2"/>
+                <display value="Secondary malignant neoplasm of skin"/>
+            </concept>
+            <concept>
+                <code value="C79.31"/>
+                <display value="Secondary malignant neoplasm of brain"/>
+            </concept>
+            <concept>
+                <code value="C79.32"/>
+                <display value="Secondary malignant neoplasm of cerebral meninges"/>
+            </concept>
+            <concept>
+                <code value="C79.40"/>
+                <display value="Secondary malignant neoplasm of unspecified part of nervous system"/>
+            </concept>
+            <concept>
+                <code value="C79.49"/>
+                <display value="Secondary malignant neoplasm of other parts of nervous system"/>
+            </concept>
+            <concept>
+                <code value="C79.51"/>
+                <display value="Secondary malignant neoplasm of bone"/>
+            </concept>
+            <concept>
+                <code value="C79.52"/>
+                <display value="Secondary malignant neoplasm of bone marrow"/>
+            </concept>
+            <concept>
+                <code value="C79.60"/>
+                <display value="Secondary malignant neoplasm of unspecified ovary"/>
+            </concept>
+            <concept>
+                <code value="C79.61"/>
+                <display value="Secondary malignant neoplasm of right ovary"/>
+            </concept>
+            <concept>
+                <code value="C79.62"/>
+                <display value="Secondary malignant neoplasm of left ovary"/>
+            </concept>
+            <concept>
+                <code value="C79.70"/>
+                <display value="Secondary malignant neoplasm of unspecified adrenal gland"/>
+            </concept>
+            <concept>
+                <code value="C79.71"/>
+                <display value="Secondary malignant neoplasm of right adrenal gland"/>
+            </concept>
+            <concept>
+                <code value="C79.72"/>
+                <display value="Secondary malignant neoplasm of left adrenal gland"/>
+            </concept>
+            <concept>
+                <code value="C79.81"/>
+                <display value="Secondary malignant neoplasm of breast"/>
+            </concept>
+            <concept>
+                <code value="C79.82"/>
+                <display value="Secondary malignant neoplasm of genital organs"/>
+            </concept>
+            <concept>
+                <code value="C79.89"/>
+                <display value="Secondary malignant neoplasm of other specified sites"/>
+            </concept>
+            <concept>
+                <code value="C79.9"/>
+                <display value="Secondary malignant neoplasm of unspecified site"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>

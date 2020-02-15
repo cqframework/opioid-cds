@@ -1,0 +1,854 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="benzodiazepines"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+        <profile value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset"/>
+    </meta>
+    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+        <valueString value="For RxNorm, TTY = IN, BN, PIN, SBD, SCD for Benzodiazepines as identified as descendents of &quot;Benzodiazepine [EPC]&quot; concept in MED-RT."/>
+    </extension>
+    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
+        <valueString value="Any drug concept not specified in the inclusion."/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-warning">
+        <valueMarkdown value="Note that the terminologies included in this implementation guide will need to be updated, because the ideal mechanism for distribution (as an expression) is not currently supported by the content logical definition constructs available in the FHIR ValueSet resource and all known implementations of it. Before use in a production environment, ensure you have the latest value sets based on the definitions for each value set (as defined in the inclusion/exclusion criteria for each one)."/>
+    </extension>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/benzodiazepines"/>
+    <version value="1.0.0"/>
+    <name value="valueset-benzodiazepine-drugs"/>
+    <title value="RxNorm Benzodiazepine Drugs"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <date value="2018-04-23"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <description value="ValueSet containing all orderable drug representations for Benzodiazepines codes."/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/usage-context-type"/>
+            <code value="focus"/>
+            <display value="Clinical Focus"/>
+        </code>
+        <valueCodeableConcept>
+            <text value="All orderable drug representations for Benzodiazepines."/>
+        </valueCodeableConcept>
+    </useContext>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+    </jurisdiction>
+    <purpose value="Provide terminology for Benzodiazepine MedicationRequest retrieval in recommendations 8 and 11."/>
+    <copyright value="© CDC 2016+."/>
+    <compose>
+        <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
+            <extension url="language">
+                <valueUri value="http://www.apelondts.org/tql"/>
+            </extension>
+            <extension url="expression">
+                <valueString value="Create {^RXN_Benzo_IN^:^Apelon, Inc.^} from [^MED-RT^] WITH CONCEPT Descendant_of &quot;Benzodiazepine [EPC][MED-RT]&quot;;"/>
+            </extension>
+        </extension>
+        <include>
+            <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+            <concept>
+                <code value="141927"/>
+                <display value="Alprazolam 0.25 MG Oral Tablet [Xanax]"/>
+            </concept>
+            <concept>
+                <code value="141928"/>
+                <display value="Alprazolam 0.5 MG Oral Tablet [Xanax]"/>
+            </concept>
+            <concept>
+                <code value="214003"/>
+                <display value="Alprazolam 1 MG Oral Tablet [Xanax]"/>
+            </concept>
+            <concept>
+                <code value="214004"/>
+                <display value="Alprazolam 2 MG Oral Tablet [Xanax]"/>
+            </concept>
+            <concept>
+                <code value="687022"/>
+                <display value="24 HR Alprazolam 3 MG Extended Release Oral Tablet [Xanax]"/>
+            </concept>
+            <concept>
+                <code value="687023"/>
+                <display value="24 HR Alprazolam 2 MG Extended Release Oral Tablet [Xanax]"/>
+            </concept>
+            <concept>
+                <code value="687024"/>
+                <display value="24 HR Alprazolam 1 MG Extended Release Oral Tablet [Xanax]"/>
+            </concept>
+            <concept>
+                <code value="687025"/>
+                <display value="24 HR Alprazolam 0.5 MG Extended Release Oral Tablet [Xanax]"/>
+            </concept>
+            <concept>
+                <code value="577634"/>
+                <display value="Alprazolam 0.25 MG Disintegrating Oral Tablet [Niravam]"/>
+            </concept>
+            <concept>
+                <code value="577643"/>
+                <display value="Alprazolam 0.5 MG Disintegrating Oral Tablet [Niravam]"/>
+            </concept>
+            <concept>
+                <code value="577648"/>
+                <display value="Alprazolam 1 MG Disintegrating Oral Tablet [Niravam]"/>
+            </concept>
+            <concept>
+                <code value="197321"/>
+                <display value="Alprazolam 1 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="197322"/>
+                <display value="Alprazolam 2 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="308047"/>
+                <display value="Alprazolam 0.25 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="308049"/>
+                <display value="Alprazolam 0.1 MG/ML Oral Solution"/>
+            </concept>
+            <concept>
+                <code value="308050"/>
+                <display value="Alprazolam 1 MG/ML Oral Solution"/>
+            </concept>
+            <concept>
+                <code value="433799"/>
+                <display value="24 HR Alprazolam 2 MG Extended Release Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="433800"/>
+                <display value="24 HR Alprazolam 1 MG Extended Release Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="485413"/>
+                <display value="Alprazolam 0.25 MG Disintegrating Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="485414"/>
+                <display value="Alprazolam 1 MG Disintegrating Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="485416"/>
+                <display value="Alprazolam 2 MG Disintegrating Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="308048"/>
+                <display value="Alprazolam 0.5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="433798"/>
+                <display value="24 HR Alprazolam 0.5 MG Extended Release Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="485415"/>
+                <display value="Alprazolam 0.5 MG Disintegrating Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="433801"/>
+                <display value="24 HR Alprazolam 3 MG Extended Release Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="28697"/>
+                <display value="Librax"/>
+            </concept>
+            <concept>
+                <code value="28727"/>
+                <display value="Limbitrol"/>
+            </concept>
+            <concept>
+                <code value="2356"/>
+                <display value="Chlordiazepoxide"/>
+            </concept>
+            <concept>
+                <code value="203173"/>
+                <display value="Chlordiazepoxide Hydrochloride"/>
+            </concept>
+            <concept>
+                <code value="856781"/>
+                <display value="Amitriptyline Hydrochloride 12.5 MG / Chlordiazepoxide 5 MG Oral Tablet [Limbitrol]"/>
+            </concept>
+            <concept>
+                <code value="856796"/>
+                <display value="Amitriptyline Hydrochloride 25 MG / Chlordiazepoxide 10 MG Oral Tablet [Limbitrol]"/>
+            </concept>
+            <concept>
+                <code value="889616"/>
+                <display value="Chlordiazepoxide Hydrochloride 5 MG / Clidinium bromide 2.5 MG Oral Capsule [Librax]"/>
+            </concept>
+            <concept>
+                <code value="856769"/>
+                <display value="Amitriptyline Hydrochloride 12.5 MG / Chlordiazepoxide 5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="856792"/>
+                <display value="Amitriptyline Hydrochloride 25 MG / Chlordiazepoxide 10 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="856863"/>
+                <display value="Amitriptyline Hydrochloride 12.5 MG / Chlordiazepoxide 10 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="889614"/>
+                <display value="Chlordiazepoxide Hydrochloride 5 MG / Clidinium bromide 2.5 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="905516"/>
+                <display value="Chlordiazepoxide Hydrochloride 5 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="905521"/>
+                <display value="Chlordiazepoxide Hydrochloride 5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="905369"/>
+                <display value="Chlordiazepoxide Hydrochloride 10 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="905495"/>
+                <display value="Chlordiazepoxide Hydrochloride 25 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="905505"/>
+                <display value="Chlordiazepoxide Hydrochloride 25 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="905525"/>
+                <display value="Chlordiazepoxide Hydrochloride 50 MG/ML Injectable Solution"/>
+            </concept>
+            <concept>
+                <code value="905532"/>
+                <display value="Chlordiazepoxide Hydrochloride 10 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="1191051"/>
+                <display value="Onfi"/>
+            </concept>
+            <concept>
+                <code value="21241"/>
+                <display value="clobazam"/>
+            </concept>
+            <concept>
+                <code value="1366196"/>
+                <display value="clobazam 2.5 MG/ML Oral Suspension [Onfi]"/>
+            </concept>
+            <concept>
+                <code value="1191056"/>
+                <display value="clobazam 10 MG Oral Tablet [Onfi]"/>
+            </concept>
+            <concept>
+                <code value="1191058"/>
+                <display value="clobazam 20 MG Oral Tablet [Onfi]"/>
+            </concept>
+            <concept>
+                <code value="199450"/>
+                <display value="clobazam 10 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="246172"/>
+                <display value="clobazam 20 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="1366192"/>
+                <display value="clobazam 2.5 MG/ML Oral Suspension"/>
+            </concept>
+            <concept>
+                <code value="202585"/>
+                <display value="Klonopin"/>
+            </concept>
+            <concept>
+                <code value="2598"/>
+                <display value="Clonazepam"/>
+            </concept>
+            <concept>
+                <code value="206157"/>
+                <display value="Clonazepam 0.5 MG Oral Tablet [Klonopin]"/>
+            </concept>
+            <concept>
+                <code value="206159"/>
+                <display value="Clonazepam 1 MG Oral Tablet [Klonopin]"/>
+            </concept>
+            <concept>
+                <code value="206160"/>
+                <display value="Clonazepam 2 MG Oral Tablet [Klonopin]"/>
+            </concept>
+            <concept>
+                <code value="197527"/>
+                <display value="Clonazepam 0.5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="197528"/>
+                <display value="Clonazepam 1 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="349196"/>
+                <display value="Clonazepam 1 MG Disintegrating Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="349198"/>
+                <display value="Clonazepam 0.5 MG Disintegrating Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="197529"/>
+                <display value="Clonazepam 2 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="349197"/>
+                <display value="Clonazepam 2 MG Disintegrating Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="204892"/>
+                <display value="Clonazepam 0.25 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="349195"/>
+                <display value="Clonazepam 0.25 MG Disintegrating Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="246306"/>
+                <display value="Clonazepam 2.5 MG/ML Oral Solution"/>
+            </concept>
+            <concept>
+                <code value="249943"/>
+                <display value="Clonazepam 1 MG/ML Injectable Solution"/>
+            </concept>
+            <concept>
+                <code value="349194"/>
+                <display value="Clonazepam 0.125 MG Disintegrating Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="387007"/>
+                <display value="Clonazepam 0.1 MG/ML Oral Solution"/>
+            </concept>
+            <concept>
+                <code value="387008"/>
+                <display value="Clonazepam 0.4 MG/ML Oral Solution"/>
+            </concept>
+            <concept>
+                <code value="235408"/>
+                <display value="CLORAZEPIC ACID"/>
+            </concept>
+            <concept>
+                <code value="202472"/>
+                <display value="Valium"/>
+            </concept>
+            <concept>
+                <code value="216586"/>
+                <display value="Diastat"/>
+            </concept>
+            <concept>
+                <code value="3322"/>
+                <display value="Diazepam"/>
+            </concept>
+            <concept>
+                <code value="104699"/>
+                <display value="Diazepam 2 MG Oral Tablet [Valium]"/>
+            </concept>
+            <concept>
+                <code value="104700"/>
+                <display value="Diazepam 5 MG Oral Tablet [Valium]"/>
+            </concept>
+            <concept>
+                <code value="104701"/>
+                <display value="Diazepam 10 MG Oral Tablet [Valium]"/>
+            </concept>
+            <concept>
+                <code value="801958"/>
+                <display value="0.5 ML Diazepam 5 MG/ML Rectal Gel [Diastat]"/>
+            </concept>
+            <concept>
+                <code value="801962"/>
+                <display value="2 ML Diazepam 5 MG/ML Rectal Gel [Diastat]"/>
+            </concept>
+            <concept>
+                <code value="801965"/>
+                <display value="4 ML Diazepam 5 MG/ML Rectal Gel [Diastat]"/>
+            </concept>
+            <concept>
+                <code value="104706"/>
+                <display value="Diazepam 10 MG Rectal Suppository"/>
+            </concept>
+            <concept>
+                <code value="105032"/>
+                <display value="Diazepam 5 MG/ML Injectable Suspension"/>
+            </concept>
+            <concept>
+                <code value="197589"/>
+                <display value="Diazepam 10 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="197590"/>
+                <display value="Diazepam 2 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="309844"/>
+                <display value="Diazepam 5 MG/ML Oral Solution"/>
+            </concept>
+            <concept>
+                <code value="309845"/>
+                <display value="Diazepam 5 MG/ML Injectable Solution"/>
+            </concept>
+            <concept>
+                <code value="801957"/>
+                <display value="0.5 ML Diazepam 5 MG/ML Rectal Gel"/>
+            </concept>
+            <concept>
+                <code value="801961"/>
+                <display value="2 ML Diazepam 5 MG/ML Rectal Gel"/>
+            </concept>
+            <concept>
+                <code value="801966"/>
+                <display value="4 ML Diazepam 5 MG/ML Rectal Gel"/>
+            </concept>
+            <concept>
+                <code value="1807452"/>
+                <display value="2 ML Diazepam 5 MG/ML Auto-Injector"/>
+            </concept>
+            <concept>
+                <code value="1807459"/>
+                <display value="2 ML Diazepam 5 MG/ML Cartridge"/>
+            </concept>
+            <concept>
+                <code value="197591"/>
+                <display value="Diazepam 5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="309843"/>
+                <display value="Diazepam 1 MG/ML Oral Solution"/>
+            </concept>
+            <concept>
+                <code value="141926"/>
+                <display value="Diazepam 0.4 MG/ML Oral Solution"/>
+            </concept>
+            <concept>
+                <code value="422657"/>
+                <display value="Diazepam 4 MG/ML Enema"/>
+            </concept>
+            <concept>
+                <code value="108380"/>
+                <display value="Diazepam 2 MG/ML Oral Suspension"/>
+            </concept>
+            <concept>
+                <code value="422658"/>
+                <display value="Diazepam 2 MG/ML Enema"/>
+            </concept>
+            <concept>
+                <code value="108379"/>
+                <display value="Diazepam 0.5 MG/ML Oral Suspension"/>
+            </concept>
+            <concept>
+                <code value="4077"/>
+                <display value="Estazolam"/>
+            </concept>
+            <concept>
+                <code value="197653"/>
+                <display value="Estazolam 1 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="197654"/>
+                <display value="Estazolam 2 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="4501"/>
+                <display value="Flurazepam"/>
+            </concept>
+            <concept>
+                <code value="71484"/>
+                <display value="Flurazepam Hydrochloride"/>
+            </concept>
+            <concept>
+                <code value="1298088"/>
+                <display value="Flurazepam Hydrochloride 15 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="1298091"/>
+                <display value="Flurazepam Hydrochloride 30 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="202479"/>
+                <display value="Ativan"/>
+            </concept>
+            <concept>
+                <code value="6470"/>
+                <display value="Lorazepam"/>
+            </concept>
+            <concept>
+                <code value="104719"/>
+                <display value="Lorazepam 1 MG Oral Tablet [Ativan]"/>
+            </concept>
+            <concept>
+                <code value="206819"/>
+                <display value="Lorazepam 2 MG/ML Injectable Solution [Ativan]"/>
+            </concept>
+            <concept>
+                <code value="206820"/>
+                <display value="Lorazepam 4 MG/ML Injectable Solution [Ativan]"/>
+            </concept>
+            <concept>
+                <code value="206821"/>
+                <display value="Lorazepam 0.5 MG Oral Tablet [Ativan]"/>
+            </concept>
+            <concept>
+                <code value="206828"/>
+                <display value="Lorazepam 2 MG Oral Tablet [Ativan]"/>
+            </concept>
+            <concept>
+                <code value="1665190"/>
+                <display value="1 ML Lorazepam 2 MG/ML Injection [Ativan]"/>
+            </concept>
+            <concept>
+                <code value="1665327"/>
+                <display value="1 ML Lorazepam 4 MG/ML Injection [Ativan]"/>
+            </concept>
+            <concept>
+                <code value="197901"/>
+                <display value="Lorazepam 1 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="197902"/>
+                <display value="Lorazepam 2 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="238100"/>
+                <display value="Lorazepam 2 MG/ML Injectable Solution"/>
+            </concept>
+            <concept>
+                <code value="311376"/>
+                <display value="Lorazepam 2 MG/ML Oral Solution"/>
+            </concept>
+            <concept>
+                <code value="763028"/>
+                <display value="1 ML Lorazepam 2 MG/ML Cartridge"/>
+            </concept>
+            <concept>
+                <code value="1665188"/>
+                <display value="1 ML Lorazepam 2 MG/ML Injection"/>
+            </concept>
+            <concept>
+                <code value="197900"/>
+                <display value="Lorazepam 0.5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="238101"/>
+                <display value="Lorazepam 4 MG/ML Injectable Solution"/>
+            </concept>
+            <concept>
+                <code value="763029"/>
+                <display value="1 ML Lorazepam 4 MG/ML Cartridge"/>
+            </concept>
+            <concept>
+                <code value="1665326"/>
+                <display value="1 ML Lorazepam 4 MG/ML Injection"/>
+            </concept>
+            <concept>
+                <code value="199275"/>
+                <display value="Lorazepam 2.5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="6960"/>
+                <display value="Midazolam"/>
+            </concept>
+            <concept>
+                <code value="142441"/>
+                <display value="Midazolam Maleate"/>
+            </concept>
+            <concept>
+                <code value="203128"/>
+                <display value="Midazolam Hydrochloride"/>
+            </concept>
+            <concept>
+                <code value="311700"/>
+                <display value="Midazolam 1 MG/ML Injectable Solution"/>
+            </concept>
+            <concept>
+                <code value="998211"/>
+                <display value="2 ML Midazolam 1 MG/ML Prefilled Syringe"/>
+            </concept>
+            <concept>
+                <code value="1666777"/>
+                <display value="2 ML Midazolam 1 MG/ML Cartridge"/>
+            </concept>
+            <concept>
+                <code value="1666798"/>
+                <display value="2 ML Midazolam 1 MG/ML Injection"/>
+            </concept>
+            <concept>
+                <code value="1666800"/>
+                <display value="5 ML Midazolam 1 MG/ML Injection"/>
+            </concept>
+            <concept>
+                <code value="106517"/>
+                <display value="Midazolam 2 MG/ML Injectable Solution"/>
+            </concept>
+            <concept>
+                <code value="422410"/>
+                <display value="Midazolam 2 MG/ML Oral Solution"/>
+            </concept>
+            <concept>
+                <code value="311702"/>
+                <display value="Midazolam 5 MG/ML Injectable Solution"/>
+            </concept>
+            <concept>
+                <code value="1551393"/>
+                <display value="2 ML Midazolam 5 MG/ML Prefilled Syringe"/>
+            </concept>
+            <concept>
+                <code value="1551395"/>
+                <display value="1 ML Midazolam 5 MG/ML Prefilled Syringe"/>
+            </concept>
+            <concept>
+                <code value="1666814"/>
+                <display value="1 ML Midazolam 5 MG/ML Injection"/>
+            </concept>
+            <concept>
+                <code value="1666821"/>
+                <display value="1 ML Midazolam 5 MG/ML Cartridge"/>
+            </concept>
+            <concept>
+                <code value="1666823"/>
+                <display value="2 ML Midazolam 5 MG/ML Injection"/>
+            </concept>
+            <concept>
+                <code value="199775"/>
+                <display value="Midazolam 7.5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="7781"/>
+                <display value="Oxazepam"/>
+            </concept>
+            <concept>
+                <code value="198057"/>
+                <display value="Oxazepam 10 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="198058"/>
+                <display value="Oxazepam 15 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="312133"/>
+                <display value="Oxazepam 10 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="312134"/>
+                <display value="Oxazepam 15 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="198059"/>
+                <display value="Oxazepam 30 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="312135"/>
+                <display value="Oxazepam 30 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="216726"/>
+                <display value="Doral"/>
+            </concept>
+            <concept>
+                <code value="35185"/>
+                <display value="quazepam"/>
+            </concept>
+            <concept>
+                <code value="207889"/>
+                <display value="quazepam 15 MG Oral Tablet [Doral]"/>
+            </concept>
+            <concept>
+                <code value="198183"/>
+                <display value="quazepam 15 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="198184"/>
+                <display value="quazepam 7.5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="219641"/>
+                <display value="Restoril"/>
+            </concept>
+            <concept>
+                <code value="10355"/>
+                <display value="Temazepam"/>
+            </concept>
+            <concept>
+                <code value="208463"/>
+                <display value="Temazepam 7.5 MG Oral Capsule [Restoril]"/>
+            </concept>
+            <concept>
+                <code value="208464"/>
+                <display value="Temazepam 15 MG Oral Capsule [Restoril]"/>
+            </concept>
+            <concept>
+                <code value="208465"/>
+                <display value="Temazepam 30 MG Oral Capsule [Restoril]"/>
+            </concept>
+            <concept>
+                <code value="539384"/>
+                <display value="Temazepam 22.5 MG Oral Capsule [Restoril]"/>
+            </concept>
+            <concept>
+                <code value="198241"/>
+                <display value="Temazepam 15 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="198242"/>
+                <display value="Temazepam 30 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="198243"/>
+                <display value="Temazepam 7.5 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="199273"/>
+                <display value="Temazepam 10 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="199975"/>
+                <display value="Temazepam 10 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="104693"/>
+                <display value="Temazepam 20 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="151283"/>
+                <display value="Temazepam 2 MG/ML Oral Solution"/>
+            </concept>
+            <concept>
+                <code value="199278"/>
+                <display value="Temazepam 20 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="485489"/>
+                <display value="Temazepam 22.5 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="227423"/>
+                <display value="Halcion"/>
+            </concept>
+            <concept>
+                <code value="10767"/>
+                <display value="Triazolam"/>
+            </concept>
+            <concept>
+                <code value="208681"/>
+                <display value="Triazolam 0.25 MG Oral Tablet [Halcion]"/>
+            </concept>
+            <concept>
+                <code value="198317"/>
+                <display value="Triazolam 0.125 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="198318"/>
+                <display value="Triazolam 0.25 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="1749"/>
+                <display value="Bromazepam"/>
+            </concept>
+            <concept>
+                <code value="104707"/>
+                <display value="Bromazepam 1.5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="199436"/>
+                <display value="Bromazepam 3 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="199437"/>
+                <display value="Bromazepam 6 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="202966"/>
+                <display value="Tranxene"/>
+            </concept>
+            <concept>
+                <code value="2353"/>
+                <display value="clorazepate"/>
+            </concept>
+            <concept>
+                <code value="2607"/>
+                <display value="Clorazepate Dipotassium"/>
+            </concept>
+            <concept>
+                <code value="1149627"/>
+                <display value="Clorazepate Dipotassium 7.5 MG Oral Tablet [Tranxene]"/>
+            </concept>
+            <concept>
+                <code value="542857"/>
+                <display value="Clorazepate Dipotassium 15 MG Oral Tablet [Tranxene]"/>
+            </concept>
+            <concept>
+                <code value="542967"/>
+                <display value="Clorazepate Dipotassium 3.75 MG Oral Tablet [Tranxene]"/>
+            </concept>
+            <concept>
+                <code value="1251277"/>
+                <display value="Clorazepate Dipotassium 11.3 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="197464"/>
+                <display value="Clorazepate Dipotassium 15 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="197465"/>
+                <display value="Clorazepate Dipotassium 3.75 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="197466"/>
+                <display value="Clorazepate Dipotassium 7.5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="576647"/>
+                <display value="Clorazepate Dipotassium 15 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="618739"/>
+                <display value="Clorazepate Dipotassium 22.5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="618751"/>
+                <display value="Clorazepate Dipotassium 7.5 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="618737"/>
+                <display value="Clorazepate Dipotassium 5 MG Oral Capsule"/>
+            </concept>
+            <concept>
+                <code value="4460"/>
+                <display value="Flunitrazepam"/>
+            </concept>
+            <concept>
+                <code value="199471"/>
+                <display value="Flunitrazepam 2 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="104683"/>
+                <display value="Flunitrazepam 1 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="7440"/>
+                <display value="Nitrazepam"/>
+            </concept>
+            <concept>
+                <code value="199492"/>
+                <display value="Nitrazepam 5 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="141922"/>
+                <display value="Nitrazepam 10 MG Oral Tablet"/>
+            </concept>
+            <concept>
+                <code value="141923"/>
+                <display value="Nitrazepam 0.5 MG/ML Oral Suspension"/>
+            </concept>
+            <concept>
+                <code value="108880"/>
+                <display value="Nitrazepam 1 MG/ML Oral Suspension"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>
+

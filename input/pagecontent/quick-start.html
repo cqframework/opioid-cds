@@ -1,0 +1,268 @@
+---
+# jekyll header
+---
+{% include header.html %}
+
+<!-- ============BreadCrumb=============== -->
+
+{% include container-start.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
+
+<a name="quick-start"> </a>
+<h2><span class="sectioncount">8.1.0</span> CDC Opioid Prescribing Guideline - Quick Start <a href="quick-start.html#quick-start" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
+
+<p>This section provides a quick start guide to getting up and running quickly with the Clinical Quality Framework reference
+    implementation functioning as a CDS Hooks service. This quick start focuses on recommendations #10 and #11, both slightly
+    modified to work on a "patient-view" hook.</p>
+
+<a name="approach"> </a>
+<h3><span class="sectioncount">8.1.1</span> Overall Approach <a href="quick-start.html#approach" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>This quick start will focus on standing up an instance of a CDS Hooks service that can run the
+    guidance artifacts published in this implementation guide. In other words, the "Clinical Reasoning Implementation"
+    depicted in the diagram below:</p>
+
+<img src="assets/images/ClinicalReasoningApproach.png"/>
+
+<a name="api-request-and-response-http-client"> </a>
+<h3><span class="sectioncount">8.1.2</span> API Requests/Responses Via HTTP Client <a href="quick-start.html#api-request-and-response-http-client" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>Throughout the Quick Start you will be required to upload/retrieve data and initiate execution of the recommendations via HTTP requests.
+    Requests can be submitted via any tool or client that allows you to interact with an HTTP API.
+    One popular client is Postman, available <a href="https://www.getpostman.com" target="_blank">here</a>.
+    Postman is an application that provides a user-friendly GUI for constructing and submitting HTTP requests
+    to APIs and viewing responses in an easy-to-read format. A postman collection of requests required to complete this Quick Start can be downloaded
+    <a href="quick-start-bundles/opioid-cds-postman-collection.json" target="_blank" download="opioid-cds-postman-collection">here</a> and imported into Postman.</p>
+
+<a name="service"> </a>
+<h3><span class="sectioncount">8.2.0</span> CDS Hooks Service <a href="quick-start.html#service" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>The first step is to stand up an instance of the CQF Ruler, a reference implementation of the FHIR
+    Clinical Reasoning module and CDS Hooks. Follow the instructions on the
+    <a href="https://github.com/DBCG/cqf-ruler/wiki/Deployment">Deployment</a> page
+    of the CQF Ruler wiki to start a local CQF Ruler service.</p>
+
+<p>This service is a HAPI FHIR Server with some additional plug-ins to support the Clinical Reasoning module. To verify
+    the service is running, issue a couple basic queries:</p>
+
+<div class="example">
+  <pre class="http">
+GET http://localhost:8080/cqf-ruler-dstu3/fhir/Library
+
+GET http://localhost:8080/cqf-ruler-dstu3/fhir/PlanDefinition
+  </pre>
+</div>
+
+<p>For a newly instantiated CQF Ruler, both of these queries should return 0 results, indicating there is no content
+    currently loaded.</p>
+
+<p>In addition to the FHIR Server functionality, the CQF Ruler implements a CDS Hooks service. To view the discovery endpoint,
+    issue the following query:</p>
+
+<div class="example">
+  <pre class="http">
+GET http://localhost:8080/cqf-ruler-dstu3/cds-services
+  </pre>
+</div>
+
+<p>For a newly instantiated CQF Ruler, this request will return an empty list, indicating there are no services
+  configured.</p>
+
+<div class="example">
+  <pre class="json">
+{
+    "services": []
+}
+  </pre>
+</div>
+
+<a name="content-load"> </a>
+<h3><span class="sectioncount">8.3.0</span> Loading Content <a href="quick-start.html#content-load" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>The next step is to load the content, i.e., the artifacts published in this implementation guide that
+    define the recommendations. For convenience, the resources for recommendations #10 and #11, patient-view
+    have all been added to the 'opioid-cds-content-bundle' and 'opioid-cds-terminology-bundle' transaction
+    bundles below that can be POSTed to the base URL of the server:</p>
+
+<table class="list">
+    <thead>
+    <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+    <tr><td><a href="quick-start-bundles/opioid-cds-terminology-bundle.json">opioid-cds-terminology-bundle</a></td><td>Bundle</td><td>All Value Sets Referenced by the Opioid Content</td></tr>
+    <tr><td><a href="quick-start-bundles/opioid-cds-content-bundle.json">opioid-cds-content-bundle</a></td><td>Bundle</td><td>All Required Content for Recommendations #10 and #11</td></tr>
+    </tbody>
+</table>
+
+<div class="example">
+    <pre class="http">
+  POST http://localhost:8080/cqf-ruler-dstu3/fhir
+    </pre>
+</div>
+
+<p>Following normal FHIR server transaction processing, this will post all the content resources as
+    a single transaction.</p>
+
+<p>The resources contained in these bundles are:</p>
+
+<table class="list">
+    <thead>
+    <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+    <tr><td><a href="Library-omtkdata.html">OMTKData (v0.0.2)</a></td><td>Library</td><td>Opioid Management Terminology Knowledge (OMTK) Data Library</td></tr>
+    <tr><td><a href="Library-omtklogic.html">OMTKLogic (v0.0.1)</a></td><td>Library</td><td>Opioid Management Terminology Knowledge (OMTK) Logic Library</td></tr>
+    <tr><td><a href="Library-opioidcds-stu3-common.html">OpioidCDSSTU3Common (v0.1.0)</a></td><td>Library</td><td>Opioid Common Library</td></tr>
+    <tr><td><a href="Library-opioidcds-stu3-rec-10-patient-view.html">OpioidCDSSTU3REC10PatientView (v0.1.0)</a></td><td>Library</td><td>Opioid Recommendation #10 (Patient View Version) Library</td></tr>
+    <tr><td><a href="Library-opioidcds-stu3-rec-11-patient-view.html">OpioidCDSSTU3REC11PatientView (v0.1.0)</a></td><td>Library</td><td>Opioid Recommendation #11 (Patient View Version) Library</td></tr>
+    <tr><td><a href="PlanDefinition-opioidcds-10-patient-view.html">PlanDefinition_Recommendation_10_Patient_View (v0.1.0)</a></td><td>PlanDefinition</td><td>Opioid Recommendation #10 (Patient View Version) PlanDefinition</td></tr>
+    <tr><td><a href="PlanDefinition-opioidcds-11-patient-view.html">PlanDefinition_Recommendation_11_Patient_view (v0.1.0)</a></td><td>PlanDefinition</td><td>Opioid Recommendation #11 (Patient View Version) PlanDefinition</td></tr>
+    <tr><td><a href="terminology.html">Terminologies</a></td><td>ValueSet</td><td>Value sets referenced by the CQL in the Opioid Logic recommendations</td></tr>
+    </tbody>
+</table>
+
+<p>Because this content is published as FHIR resources, each of the resources
+    can be loaded individually rather than as part of the bundles above by POSTing
+    or PUTing them to the FHIR server, just like any other FHIR resource:</p>
+
+<div class="example">
+  <pre class="http">
+PUT http://localhost:8080/cqf-ruler-dstu3/fhir/Library/omtkdata
+  </pre>
+</div>
+
+<p>With the body of the PUT request set to be the XML (or JSON) for the resource.</p>
+
+<p>Once the content has been loaded, the CDS Hooks discovery endpoint will list the recommendations as
+    available services to be called:</p>
+
+<div class="example">
+  <pre class="http">
+GET http://localhost:8080/cqf-ruler-dstu3/cds-services
+  </pre>
+</div>
+
+<div class="example">
+  <pre class="json">
+{
+    "services": [
+        {
+            "hook": "patient-view",
+            "name": "PlanDefinition_Recommendation_10_Patient_View",
+            "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 (patient-view)",
+            "description": "When prescribing opioids for chronic pain, providers should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs.",
+            "id": "opioidcds-10-patient-view",
+            "prefetch": {
+                "item1": "Patient?_id={{context.patientId}}",
+                "item2": "MedicationRequest?patient={{context.patientId}}",
+                "item3": "Observation?patient={{context.patientId}}&amp;code=http%3A%2F%2Floinc.org|12478-4,http%3A%2F%2Floinc.org|78813-3,snipped for brevity",
+                "item4": "Observation?patient={{context.patientId}}&amp;component-code=http%3A%2F%2Floinc.org|50542-0,http%3A%2F%2Floinc.org|19487-8,snipped for brevity"
+            }
+        },
+        {
+            "hook": "patient-view",
+            "name": "PlanDefinition_Recommendation_11_Patient_View",
+            "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 (patient-view)",
+            "description": "Concurrently prescribing opioid medications with benzodiazepines increases the risk of harm for the patient.",
+            "id": "opioidcds-11-patient-view",
+            "prefetch": {
+                "item1": "Patient?_id={{context.patientId}}",
+                "item2": "MedicationRequest?patient={{context.patientId}}"
+            }
+        }
+    ]
+}
+  </pre>
+</div>
+
+<a name="request-and-response"> </a>
+<h3><span class="sectioncount">8.3.1</span> Request and Response <a href="quick-start.html#request-and-response" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>Now that the content is loaded, the service will respond to CDS Hooks requests. For example, POST the following request to the recommendation #10 service:</p>
+
+<div class="example">
+  <pre class="http">
+POST http://localhost:8080/cqf-ruler-dstu3/cds-services/opioidcds-10-patient-view
+  </pre>
+</div>
+
+<a href="requests/request-example-rec-10-patient-view-illicit-drugs.json">request-example-rec-10-patient-view-illicit-drugs.json</a>
+
+<div class="example">
+  <pre class="json">
+{
+  "hookInstance": "31c74cfc-747c-4afc-82e4-bdd3b7a0a58c",
+  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "hook": "patient-view",
+  "applyCql": true,
+  "context": {
+    "user": "Practitioner/example",
+    "patientId": "Patient/example-rec-10-illicit-drugs",
+    "encounterId": "Encounter/example-rec-10-illicit-drugs-context"
+  },
+  "prefetch": {
+    "item1": "snipped for brevity, see the full example at the above link",
+    "item2": "snipped for brevity, see the full example at the above link"
+  }
+}  </pre>
+</div>
+
+<p>This POST results in the following CDS Hooks response:</p>
+
+<div class="example">
+  <pre class="json">
+{
+    "cards": [
+        {
+            "summary": "Illicit Drugs Found In Urine Screening",
+            "indicator": "warning",
+            "source": {
+                "label": "CDC guideline for prescribing opioids for chronic pain",
+                "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
+            }
+        }
+    ]
+}  </pre>
+</div>
+
+<a name="api-request-and-response-cds-hooks-client"> </a>
+<h4><span class="sectioncount">8.4.0</span> CDS Hooks Sandbox <a href="quick-start.html#api-request-and-response-cds-hooks-client" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+
+    <p>The <a href="http://sandbox.cds-hooks.org">CDS Hooks Sandbox</a> is a web application that provides a user-friendly GUI for constructing, viewing and submitting CDS Hooks requests and viewing the responses both in raw JSON format and also in an html representation that is meant to be representative of how it might be presented in a consuming EHR system. The sandbox can be configured to run against the local CDS Hooks service instance created above.</p>
+    <p>To configure the sandbox to work with this local CDS Hooks service instance, the following settings need to be set:</p>
+    <p>Set the <code>FHIR Server URL</code> to <code>http://localhost:8080/cqf-ruler-dstu3/fhir</code>. If you're not prompted for this at startup, then in Settings go to <code>Change FHIR Server</code> and set the <code>FHIR Server URL</code> there.</p>
+    <p>Set the <code>Discovery Endpoint URL</code> to <code>http://localhost:8080/cqf-ruler-dstu3/cds-services</code>. If you're not prompted for this at startup, then in Settings go to <code>Add CDS Services</code> and set the <code>Discovery Endpoint URL</code> there.</p>
+    <p>Now the sandbox is configured to use the CDS Hooks service that you created above. The next step is to push a Patient resource to that service that we can then use to query via the Sandbox. To do this, you’re going to want to copy the JSON representation of a Patient resource from the request-example-rec-10-patient-view-illicit-drugs.json file above and then POST that to the FHIR server created above. </p>
+    <div class="example">
+  <pre class="http">
+POST http://localhost:8080/cqf-ruler-dstu3/fhir/Patient
+  </pre>
+    </div>
+    <p>The patient resource JSON:</p>
+    <div class="example">
+  <pre class="json">
+{
+  "resourceType": "Patient",
+  "id": "example-rec-10-illicit-drugs",
+  "gender": "female",
+  "birthDate": "1982-01-07",
+  "name": [
+    {
+      "family": "Smith",
+      "given": [
+        "John",
+        "A."
+      ]
+    }
+  ]
+}
+  </pre>
+    </div>
+    <p>The response to that POST request will contain the posted Patient including the ID that was assigned to it. Copy that ID so that you can set the Patient context in the sandbox to it. To set the Patient context in the CDS Hooks Sandbox go to Settings and then select ‘Change Patient’. Paste in the new ID that you copied from the Patient resource posted above. </p>
+
+    <!-- ==============END CONTENT END CONTENT=================== -->
+
+    {% include container-end.html %}
+
+    {% include footer.html %}

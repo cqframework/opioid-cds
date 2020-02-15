@@ -1,0 +1,203 @@
+---
+# jekyll header
+---
+{% include header.html %}
+
+<!-- ============BreadCrumb=============== -->
+
+{% include container-start.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
+
+<a name="integration"> </a>
+<h2><span class="sectioncount">8.3.0</span> CDC Opioid Prescribing Guideline - Integration Documentation <a href="integration-documentation.html#integration" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
+
+<p>This section provides a high-level description of how recommendation #5 is implemented in terms of FHIR Clinical
+  Reasoning Module resources and CQL libraries, as well as how those resources can be
+  implemented within a FHIR server for integration with an EHR via CDS Hooks.
+  Although this section focuses on recommendation #5, the implementation approach is generalizable
+  to the other recommendations discussed in this implementation guide.
+  A more detailed description of how recommendation #5 is implemented can be found in <a href="implementation-documentation.html#developer" title="link to here" class="self-link">section 8.4.0</a></p>
+
+<a name="approach"> </a>
+<h3><span class="sectioncount">8.3.1</span> Overall Approach <a href="integration-documentation.html#integration" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>Once the flow has been established for a recommendation, it can be represented in
+  Clinical Reasoning resources, typically using a PlanDefinition resource to build
+  Event-Condition-Action rules.</p>
+
+<img src="assets/images/Recommendation05-Flow.png"/>
+
+<p>The orange starting point for the flow indicates the point at which a clinician is
+  prescribing a medication for a patient. The next steps in green involve determinations
+  based on the input data, evaluating the criteria for whether or not the event meets the
+  condition. If the condition is met, the yellow action steps are performed to created the
+  guidance and return it to the EHR for presentation to the user, and, in this case,
+  prompting a response from the clinician.</p>
+
+<p>The structural information to represent the Event-Condition-Action rule is described
+  in a PlanDefinition resource, while the logic components (the steps in green) are represented
+  in a CQL library. These components are then used in an overall approach as depicted below:</p>
+
+<img src="assets/images/ClinicalReasoningApproach.png"/>
+
+<p>Briefly, the EHR invokes the "medication-prescribe" hook at the appropriate point in the
+  prescription workflow. The CDS Service is called via the CDS Hooks API and passed the
+  medication being prescribed along with the patient information. The CDS Service then
+  processes the appropriate PlanDefinition resource, evaluating the criteria and constructing
+  a response as a CarePlan/RequestGroup if the criteria evaluate to true.</p>
+
+<a name="resources"> </a>
+<h3><span class="sectioncount">8.3.2</span> Clinical Reasoning Resources <a href="integration-documentation.html#resources" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>As described in the previous section, recommendation #5 is represented in Clnical Reasoning
+  resources using a PlanDefinition and several Library resources:</p>
+
+<ul>
+  <li>plandefinition-cdc-opioid-05 - Captures the structure of the Event-Condition-Action rule defining the interaction.</li>
+  <li>library-opioidcds-stu3 - Contains the CQL for the STU3 version of the opioid CDS expressions. This library references the OMTKLogic library.</li>
+  <li>library-omtklogic - Contains Opioid Management Terminology Knowledge (OMTK) logic used to calculate MME equivalence.</li>
+  <li>library-omtk-modelinfo - Contains the OMTK model info referenced by the OMTK logic.</li>
+</ul>
+
+<a name="plandefinition"> </a>
+<h4><span class="sectioncount">8.3.2.1</span> PlanDefinition <a href="integration-documentation.html#plandefinition" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+
+<p>The PlanDefinition is the starting point for the representation of the recommendation and defines the
+  triggering event in the EHR, the condition that must evaluate to true for the guidance to be returned, as
+  well as the actual guidance to be returned.</p>
+
+<a name="event"> </a>
+<h5><span class="sectioncount">8.3.2.1.1</span> Event <a href="integration-documentation.html#event" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h5>
+
+<p>The <i>event</i> is represented using the triggerDefinition element of the PlanDefinition:</p>
+
+<div class="example">
+  <pre class="xml">
+&lt;triggerDefinition&gt;
+	&lt;type value="named-event"/&gt;
+	&lt;eventName value="medication-prescribe"/&gt;
+&lt;/triggerDefinition&gt;
+  </pre>
+</div>
+
+<p>The name "medication-prescribe" defines the "hook" to be used from the EHR.</p>
+
+<a name="condition"> </a>
+<h5><span class="sectioncount">8.3.2.1.2</span> Condition <a href="integration-documentation.html#condition" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h5>
+
+<p>The <i>condition</i> is specified with the condition element and identifies a named
+   expression defined within the CQL library:</p>
+
+<div class="example">
+  <pre class="xml">
+&lt;condition&gt;
+	&lt;kind value="applicability"/&gt;
+	&lt;description value="Is total MME &gt;= 50?"/&gt;
+	&lt;language value="text/cql"/&gt;
+	&lt;expression value="IsMME50OrMore"/&gt;
+&lt;/condition>
+  </pre>
+</div>
+
+<p>The value of the expression element references an expression defined in the library for the PlanDefinition:</p>
+
+<div class="example">
+  <pre class="xml">
+&lt;library&gt;
+	&lt;reference value="Library/opioidcds-stu3"/&gt;
+&lt;/library&gt;
+  </pre>
+</div>
+
+<a name="action"> </a>
+<h5><span class="sectioncount">8.3.2.1.3</span> Action <a href="integration-documentation.html#action" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h5>
+
+<p>The expression returns a true or false, indicating whether the condition is satisfied. If the
+  condition is satisfied, the <i>actions</i> are defined as a group with a behavior of "exactly-one",
+  indicating that the user is required to select one and only one of the options:</p>
+
+<div class="example">
+  <pre class="xml">
+&lt;selectionBehavior value="exactly-one"/&gt;
+&lt;action&gt;
+	&lt;description value="Will reduce dosage"/&gt;
+&lt;/action&gt;
+&lt;action&gt;
+	&lt;description value="Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo"/&gt;
+&lt;/action&gt;
+&lt;action&gt;
+	&lt;description value="Acute pain; snooze 1 mo"/&gt;
+&lt;/action&gt;
+&lt;action&gt;
+	&lt;description value="N/A - see comment (will be reviewed by medical director); snooze 3 mo"/&gt;
+&lt;/action&gt;
+  </pre>
+</div>
+
+<p>Note that as of the time of this writing, the CDS Hooks specification does not support notifying
+  the CDS Service of how the user responded, only that they responded. This issue is actively being addressed as
+  part of the specification. In lieu of CDS Hooks support, the local EHR integration should provide
+  this functionality.</p>
+
+<a name="grades"> </a>
+<h5><span class="sectioncount">8.3.2.1.4</span> Representing GRADEs for the Recommendation <a href="integration-documentation.html#grades" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h5>
+
+<p>The Opioid Management Guideline uses an approach similar to GRADE to describe the quality of evidence and
+  strength of the resulting recommendations. Within the Clinical Reasoning module, this information is
+  represented using the cqif-qualityOfEvidence and cqif-strengthOfRecommendation extensions:</p>
+
+<div class="example">
+  <pre class="xml">
+&lt;extension url="http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation"&gt;
+	&lt;valueCodeableConcept&gt;
+		&lt;coding&gt;
+			&lt;system value="http://hl7.org/fhir/recommendation-strength"/&gt;
+			&lt;code value="strong"/&gt;
+			&lt;display value="Strong"/&gt;
+		&lt;/coding&gt;
+	&lt;/valueCodeableConcept&gt;
+&lt;/extension&gt;
+&lt;extension url="http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence"&gt;
+	&lt;valueCodeableConcept&gt;
+		&lt;coding&gt;
+			&lt;system value="http://hl7.org/fhir/evidence-quality"/&gt;
+			&lt;code value="low"/&gt;
+			&lt;display value="Low quality"/&gt;
+		&lt;/coding&gt;
+	&lt;/valueCodeableConcept&gt;
+&lt;/extension&gt;
+  </pre>
+</div>
+
+<p>The Clinical Reasoning module defines default terminologies for these, based on the GRADE scales, so
+  these defaults are used. If more control over the exact text of the grading is needed, specific bindings could
+  be defined and used instead with the same extensions.</p>
+
+<a name="stu3lib"> </a>
+<h4><span class="sectioncount">8.3.2.2</span> Opioid CDS STU3 Library <a href="integration-documentation.html#stu3lib" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+
+<p>This library contains the STU3 logic used by the PlanDefinition to establish the condition, as well
+  as to dynamically construct the guidance so that it reflects the data for the current patient.</p>
+
+<a name="omtklib"> </a>
+<h4><span class="sectioncount">8.3.2.3</span> Opioid Management Terminology Knowledge (OMTK) Library <a href="integration-documentation.html#omtklib" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+
+<p>This library contains the Opioid Management Terminology Knowledge (OMTK) logic that performs the
+  actual MME calculation. This logic is built in a separate library to enable to be reused from different
+  contexts. In particular, the same OMTK library can be used with STU3 and DSTU2 versions of the Opioid CDS
+  library if necessary.</p>
+
+<p>The library requires the use of the OMTK solution component, a knowledge base derived from RxNorm and other
+  standardized terminologies. Use of this component is described in more detail in the implementation documentation.</p>
+
+<a name="omtkmodel"> </a>
+<h4><span class="sectioncount">8.3.2.4</span> Opioid Management Terminology Knowledge (OMTK) Model Info <a href="integration-documentation.html#omtkmodel" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+
+<p>This library defines the structure of the OMTK solution component so that it can be used within CQL.</p>
+
+<!-- ==============END CONTENT END CONTENT=================== -->
+
+{% include container-end.html %}
+
+{% include footer.html %}

@@ -1,0 +1,1363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="opioid-cds"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/examples"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/extensions"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/profiles"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/resources"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/resources/library"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/resources/activitydefinition"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/resources/plandefinition"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/vocabulary"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/vocabulary/codesystem"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/vocabulary/valueset"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/pagecontent"/>
+  </extension>
+  <url value="http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/opioid-cds"/>
+  <version value="0.1.0"/>
+  <name value="Opioid Prescribing Support Implementation Guide"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2017-02-06T00:00:00-07:00"/>
+  <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+  <description value="Opioid Prescribing Support Implementation Guide"/>
+  <packageId value="fhir.cdc.opioid-cds"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="3.0.2"/>
+  <fhirVersion value="3.0.2"/>
+  <definition>
+    <grouping id="p1">
+      <name value="Opioid Prescribing Support Implementation Guide Package"/>
+    </grouping>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-04-long-acting-opioid"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-04-long-acting-opioid"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-04-long-acting-opioid-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-04-long-acting-opioid-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-04-long-acting-opioid-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-04-new-patient"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-04-new-patient"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-04-new-patient-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-04-not-long-acting-opioid"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-04-not-long-acting-opioid"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-04-not-long-acting-opioid-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-04-not-long-acting-opioid-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-04-not-long-acting-opioid-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-04-opioid-with-abuse-potential"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-04-opioid-with-abuse-potential"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-04-opioid-with-abuse-potential-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-05-mme-greater-than-fifty"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-05-mme-greater-than-fifty"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-05-mme-greater-than-fifty-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-05-mme-less-than-fifty"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-05-mme-less-than-fifty"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-05-mme-less-than-fifty-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-07-end-of-life-exclusion"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-07-end-of-life-exclusion"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-07-end-of-life-exclusion-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-07-end-of-life-exclusion-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-07-end-of-life-exclusion-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-07-risk-assessment"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-07-risk-assessment"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Procedure/example-rec-07-risk-assessment-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-07-risk-assessment-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-07-risk-assessment-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-07-seven-of-past-ten-days"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-07-seven-of-past-ten-days"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-07-seven-of-past-ten-days-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-07-seven-of-past-ten-days-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-07-seven-of-past-ten-days-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-07-six-of-past-ten-days"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-07-six-of-past-ten-days"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-07-six-of-past-ten-days-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-07-six-of-past-ten-days-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-07-six-of-past-ten-days-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-07-sixtythree-of-past-ninety-days"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-07-sixtythree-of-past-ninety-days"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-07-sixtythree-of-past-ninety-days-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-07-sixtythree-of-past-ninety-days-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-07-sixtythree-of-past-ninety-days-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-07-sixtytwo-of-past-ninety-days"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-07-sixtytwo-of-past-ninety-days"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-07-sixtytwo-of-past-ninety-days-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-07-sixtytwo-of-past-ninety-days-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-07-sixtytwo-of-past-ninety-days-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-08-mme-greater-than-fifty"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-08-mme-greater-than-fifty"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-08-mme-greater-than-fifty-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-08-mme-less-than-fifty"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-08-mme-less-than-fifty"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-08-mme-less-than-fifty-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-08-on-benzodiazepine"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-08-on-benzodiazepine"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-08-on-benzodiazepine-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-08-on-benzodiazepine-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-08-on-benzodiazepine-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-08-on-naloxone"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-08-on-naloxone"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-08-on-naloxone-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-08-on-naloxone-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-08-on-naloxone-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-08-substance-abuse"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-08-substance-abuse"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-08-substance-abuse-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-10-end-of-life-med-exclusion"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-10-end-of-life-med-exclusion"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-10-end-of-life-med-exclusion-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-10-illicit-drugs"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-10-illicit-drugs"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/example-rec-10-illicit-drugs-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-10-illicit-drugs-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-10-illicit-drugs-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-10-illicit-drugs-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-10-missing-prescribed-opioids"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-10-missing-prescribed-opioids"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/example-rec-10-missing-prescribed-opioids-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-10-missing-prescribed-opioids-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-10-missing-prescribed-opioids-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-10-missing-prescribed-opioids-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-10-no-screenings"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-10-no-screenings"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-10-no-screenings-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-10-no-screenings-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-10-no-screenings-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-10-not-missing-prescribed-opioids"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-10-not-missing-prescribed-opioids"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/example-rec-10-not-missing-prescribed-opioids-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-10-not-missing-prescribed-opioids-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-10-not-missing-prescribed-opioids-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-10-not-missing-prescribed-opioids-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-10-unprescribed-opioids"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-10-unprescribed-opioids"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/example-rec-10-unprescribed-opioids-prefetch-oxycodone"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/example-rec-10-unprescribed-opioids-prefetch-codeine"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-10-unprescribed-opioids-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-10-unprescribed-opioids-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-10-unprescribed-opioids-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-11-benzo-trigger-with-opioid"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-11-benzo-trigger-with-opioid"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-11-benzo-trigger-with-opioid-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-11-benzo-trigger-with-opioid-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-11-benzo-trigger-with-opioid-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-11-benzo-trigger-without-opioid"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-11-benzo-trigger-without-opioid"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-11-benzo-trigger-without-opioid-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-11-opioid-trigger-with-benzo"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-11-opioid-trigger-with-benzo"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-rec-11-opioid-trigger-with-benzo-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-11-opioid-trigger-with-benzo-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-11-opioid-trigger-with-benzo-prefetch"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/example-rec-11-opioid-trigger-without-benzo"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-rec-11-opioid-trigger-without-benzo"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Encounter/example-rec-11-opioid-trigger-without-benzo-context"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ActivityDefinition/opioidcds-risk-assessment-request"/>
+      </reference>
+      <name value="ActivityDefinition - ProcedureRequest for risk assessment"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CarePlan/example-opioidcds"/>
+      </reference>
+      <name value="CarePlan - Example result of recommendation #5"/>
+      <description value="Example result of applying the PlanDefinition for recommendation #5"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/opioidcds-indicator"/>
+      </reference>
+      <name value="CodeSystem - CDC Opioid Prescribing Guidelines Indicator"/>
+      <description value="System of codes that indicate the urgency/importance of the action"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Library/omtklogic"/>
+      </reference>
+      <name value="Library - OMTK Logic"/>
+      <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Library/omtkdata"/>
+      </reference>
+      <name value="Library - OMTK Data"/>
+      <description value="Opioid Management Terminology Knowledge Base v0.0.2 Data"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Library/opioidcds-common"/>
+      </reference>
+      <name value="Library - Opioid CDS Common"/>
+      <description value="Opioid Management Decision Support Logic Common"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Library/opioidcds-recommendation-04"/>
+      </reference>
+      <name value="Library - Opioid CDS Recommendation #4"/>
+      <description value="Opioid Management Decision Support Logic for recommendation #4"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Library/opioidcds-recommendation-05"/>
+      </reference>
+      <name value="Library - Opioid CDS Recommendation #5"/>
+      <description value="Opioid Management Decision Support Logic for recommendation #5"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Library/opioidcds-recommendation-07"/>
+      </reference>
+      <name value="Library - Opioid CDS Recommendation #7"/>
+      <description value="Opioid Management Decision Support Logic for recommendation #7"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Library/opioidcds-recommendation-08"/>
+      </reference>
+      <name value="Library - Opioid CDS Recommendation #8"/>
+      <description value="Opioid Management Decision Support Logic for recommendation #8"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Library/opioidcds-recommendation-10"/>
+      </reference>
+      <name value="Library - Opioid CDS Recommendation #10"/>
+      <description value="Opioid Management Decision Support Logic for recommendation #10"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Library/opioidcds-rec-10-patient-view"/>
+      </reference>
+      <name value="Library - Opioid CDS Recommendation #10 Patient View"/>
+      <description value="Opioid Management Decision Support Logic for recommendation #10 Patient View"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Library/opioidcds-recommendation-11"/>
+      </reference>
+      <name value="Library - Opioid CDS Recommendation #11"/>
+      <description value="Opioid Management Decision Support Logic for recommendation #11"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Library/opioidcds-rec-11-patient-view"/>
+      </reference>
+      <name value="Library - Opioid CDS Recommendation #11 Patient View"/>
+      <description value="Opioid Management Decision Support Logic for recommendation #11 Patient View"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="MedicationRequest/example-opioidcds"/>
+      </reference>
+      <name value="MedicationRequest - CDC Opioid Prescribing Guideline Recommendation #5"/>
+      <description value="Fentanyl transdermal patch prescription"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/example-opioidcds"/>
+      </reference>
+      <name value="Observation - CDC Opioid Prescribing Guideline Recommendation #10"/>
+      <description value="Observation for illicit drugs"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Patient/example-opioidcds"/>
+      </reference>
+      <name value="Patient - CDC Opioid Prescribing Guidelines"/>
+      <description value="Basic test patient"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="PlanDefinition/opioidcds-04"/>
+      </reference>
+      <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4"/>
+      <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #4"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="PlanDefinition/opioidcds-05"/>
+      </reference>
+      <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5"/>
+      <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #5"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="PlanDefinition/opioidcds-07"/>
+      </reference>
+      <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #7"/>
+      <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #7"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="PlanDefinition/opioidcds-08"/>
+      </reference>
+      <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #8"/>
+      <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #8"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="PlanDefinition/opioidcds-10"/>
+      </reference>
+      <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10"/>
+      <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="PlanDefinition/opioidcds-10-patient-view"/>
+      </reference>
+      <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 Patient View"/>
+      <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10 Patient View"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="PlanDefinition/opioidcds-11"/>
+      </reference>
+      <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11"/>
+      <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #11"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="PlanDefinition/opioidcds-11-patient-view"/>
+      </reference>
+      <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 Patient View"/>
+      <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #11 Patient View"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="RequestGroup/example-opioidcds"/>
+      </reference>
+      <name value="RequestGroup - CDC Opioid Prescribing Guideline Example for Recommendation #5"/>
+      <description value="RequestGroup referenced by CarePlan with information necessary to construct CDS Cards"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/end-of-life-conditions"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines End Of Life Conditions"/>
+      <description value="End of life condition codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/end-of-life-care"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines End Of Life Care"/>
+      <description value="End of life care procedure codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/discharge-to-hospice"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Discharge to Hospice"/>
+      <description value="Hospice encounter discharge disposition codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/hospice-finding"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Hospice Finding"/>
+      <description value="Hospice observation finding codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/hospice-procedure"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Hospice Procedure"/>
+      <description value="Hospice procedure codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/limited-life-expectancy-conditions"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Limited Life Expectancy Conditions"/>
+      <description value="Limited life expectancy condition codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/metastatic-cancer"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Metastatic Cancer"/>
+      <description value="Metastatic cancer codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/opioid-abuse-assessment"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Abuse Assessment"/>
+      <description value="Opiate therapy risk assessment codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/substance-abuse"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Substance Abuse"/>
+      <description value="Substance abuse codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/opioid-urine-screening"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Urine Screening"/>
+      <description value="Urine analysis for opioids"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/illicit-drug-urine-screening"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Illicit Drugs Urine Screening"/>
+      <description value="Urine analysis for illicit drugs"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/opioidcds-indicator"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Indicator"/>
+      <description value="Indicates urgency/importance of the action"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/benzodiazepines"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Benzodiazepine Medication"/>
+      <description value="Benzodiazepine medication codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/long-acting-opioids"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Long Acting Opioid Medication"/>
+      <description value="Long acting opioid medication codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/naloxone"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Naloxone Medication"/>
+      <description value="Naloxone medication codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/opioids"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Medication"/>
+      <description value="Opioid medication codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/opioids-abused-in-ambulatory-care"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioids Abused in Ambulatory Care Medication"/>
+      <description value="Opioids abused in ambulatory care medication codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/opioids-codeine-cough-meds"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Codeine Cough Medication"/>
+      <description value="Opioid codeine cough medication codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/opioids-indicating-end-of-life"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioids Indicating End Of Life Medication"/>
+      <description value="Opioids indicating end of life medication codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/short-acting-opioids"/>
+      </reference>
+      <name value="ValueSet - CDC Opioid Prescribing Guidelines Short Acting Opioids Medication"/>
+      <description value="Short acting opioids medication codes"/>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/cdc-requestgroup-action-indicator"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/cdc-valueset-query"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/cdc-valueset-inclusion"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/cdc-valueset-exclusion"/>
+      </reference>
+      <exampleBoolean value="true"/>
+      <groupingId value="p1"/>
+    </resource>
+    <page>
+      <nameUrl value="index.html"/>
+      <title value="Opioid Prescribing Support Implementation Guide"/>
+      <generation value="html"/>
+    </page>
+    <parameter>
+      <code value="generate"/>
+      <value value="xml"/>
+    </parameter>
+    <parameter>
+      <code value="generate"/>
+      <value value="JSON"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

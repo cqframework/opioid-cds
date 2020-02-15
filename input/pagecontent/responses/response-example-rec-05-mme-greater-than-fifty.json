@@ -1,0 +1,19 @@
+{
+  "cards": [
+    {
+      "summary": "High risk for opioid overdose - taper now",
+      "indicator": "warning",
+      "detail": "Total morphine milligram equivalent (MME) is 179.99999820 'mg/d'. Taper to less than 50.",
+      "source": {
+        "label": "CDC guideline for prescribing opioids for chronic pain",
+        "url": "https://guidelines.gov/summaries/summary/50153/cdc-guideline-for-prescribing-opioids-for-chronic-pain---united-states-2016#420"
+      },
+      "links": [
+        {
+          "label": "MME Conversion Tables",
+          "url": "https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+---
+# jekyll header
+---
+{% include header.html %}
+
+<!-- ============BreadCrumb=============== -->
+
+{% include container-start.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
+
+<a name="developer"> </a>
+<h2><span class="sectioncount">8.4.0</span> CDC Opioid Prescribing Guideline - Implementation Documentation <a href="implementation-documentation.html#developer" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
+
+<p>
+    This documentation is provided as a resource for developers interested in implementing the CDC opioid prescribing guidelines.
+    It is assumed that the developer will have a basic understanding of CQL, FHIR, a FHIR API (like HAPI), and the CDS Hooks API.
+</p>
+
+<a name="needs"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">8.4.1</span> What You Will Need <a href="implementation-documentation.html#needs" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<ul>
+    <li><a href="https://github.com/DBCG/cql_engine"><b>CQL Evaluation Engine</b></a> - the developer will need access to a service that enables the translation and execution of CQL libraries.</li>
+    <li><b>FHIR Server</b> - it is preferred for the developer to have access to edit resource providers and operations within the server. Although not necessary, the server should have the PlanDefinition <a href="https://www.hl7.org/fhir/plandefinition-operations.html#apply">$apply</a> operation implemented, especially if a "pure" FHIR implementation is desired. The examples in this guide use the <a href="http://hapifhir.io/doc_jpa.html">HAPI FHIR JPA Server</a>, but the logic should translate to other FHIR-conformant APIs like the <a href="http://ewoutkramer.github.io/fhir-net-api/">.NET API</a>.</li>
+    <li><b>CDS Hooks API</b> - the developer should be familiar with the <a href="http://cds-hooks.org/">CDS Hooks API and services</a>. The discovery and medication-prescribe hook are the aspects of the API that are used in this context.</li>
+    <li><b>JSON Parser</b> - CDS Hooks requests and responses are issued in JSON. A basic understanding of <a href="http://www.json.org/">JSON format</a> and a good JSON parsing library like <a href="https://code.google.com/archive/p/json-simple/">json-simple</a> or <a href="https://github.com/google/gson/blob/master/UserGuide.md">gson</a> will make life easier.</li>
+</ul>
+
+<a name="start"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">8.4.2</span> Getting Started <a href="implementation-documentation.html#start" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>
+    For those without access to a FHIR server, please refer to the links below to learn how to set one up:
+</p>
+
+<ul>
+    <li><a href="http://hapifhir.io/doc_rest_server.html">HAPI RESTful Server</a></li>
+    <li><a href="http://hapifhir.io/doc_jpa.html">HAPI JPA Server</a> - <a href="https://github.com/jamesagnew/hapi-fhir/tree/master/hapi-fhir-jpaserver-example">example implementation</a></li>
+    <li><a href="http://hapifhir.io/doc_rest_server_jaxrs.html">HAPI JAX-RS Server</a></li>
+    <li><a href="https://github.com/ewoutkramer/fhir-net-api">.NET Server</a></li>
+</ul>
+
+<p>
+    If spinning up a FHIR server is beyond the scope of your implementation, there are several <a href="http://wiki.hl7.org/index.php?title=Publicly_Available_FHIR_Servers_for_testing">publicly available FHIR servers</a>. However, be forewarned that these servers may or may not have the operations implemented that will be discussed in this guide.
+</p>
+
+<p>
+    The following flowchart provides a summary of the operations required to implement the Opioid Guidelines:
+</p>
+
+<img src="assets/images/OpioidGuidanceFlowchart.png">
+
+<p></p>
+
+<p>
+    As depicted in the flowchart, the Opioid Guidelines are triggered by a CDS Hooks request issued by the EHR. More precisely, the request would be triggered by a user within the EHR authoring a new prescription for a medication containing opioid ingredients. In a production environment, this request would be in real-time, which carries performance requirements that will be discussed later in this documentation.
+</p>
+
+<div class="example">
+  <p>The following is an example CDS Hooks medication-prescribe request:</p>
+  <pre class="json">
+{
+  "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
+  "fhirServer": "http://fhirtest.uhn.ca/baseDstu2",
+  "hook": "medication-prescribe",
+  "user": "Practitioner/example",
+  "context": [
+    {
+      "resourceType": "MedicationOrder",
+      "id": "medrx001",
+      "dateWritten": "2017-05-05",
+      "status": "draft",
+      "patient": {
+        "reference": "Patient/Patient-12214"
+      },
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "197696"
+          }
+        ]
+      },
+      "dosageInstruction": [
+        {
+          "text": "Take 40mg three times daily",
+          "timing": {
+            "repeat": {
+              "frequency": 3,
+              "frequencyMax": 3,
+              "period": 1,
+              "unit": "d"
+            }
+          },
+          "asNeededBoolean": false,
+          "doseQuantity": {
+            "value": 40,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      ],
+      "dispenseRequest": {
+        "quantity": {
+          "value": 3000,
+          "unit": "mg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        }
+      }
+    }
+  ],
+  "patient": "Patient/Patient-12214",
+  "prefetch": {
+    "medication": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "MedicationOrder",
+        "id": "medrx002",
+        "dateWritten": "2017-04-25",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/Patient-12214"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "199789"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take 50mg twice daily",
+            "timing": {
+              "repeat": {
+                "frequency": 2,
+                "period": 1,
+                "periodUnits": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseQuantity": {
+              "value": 55,
+              "unit": "mg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "quantity": {
+            "value": 3000,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      }
+    }
+  }
+}
+  </pre>
+</div>
+
+<a name="parsecds"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">8.4.3</span> Parsing the CDS Hooks Request <a href="implementation-documentation.html#parsecds" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>
+    First, the request needs to be parsed into a JSON object. Second, the request needs to be validated. During the validation step, the following should be checked:
+</p>
+
+<ul>
+    <li>The specified hook corresponds to the service called. For example, an error would be given if the EHR called the patient-view hook on a medication-prescribe service.</li>
+    <li>The request MUST provide context resource(s). Additionally, the resources must be relevant to the service. For example, a request to a medication-prescribe service with anything other than a MedicationOrder/MedicationRequest FHIR resource should result in an error.</li>
+    <li>The patient, user, and fhirServer should be specified. Although, if the request contains prefetch resources, then this may be absent from the request.</li>
+    <li>If the request does not contain prefetch resources, then the patient, user, and fhirServer MUST be given. Refer to the "Prefetch" section for more information.</li>
+    <li>To keep this guide simple, the oauth, redirect, and encounter request attributes will be ignored. Refer to the CDS Hooks documentation for more information on these attributes.</li>
+</ul>
+
+<p>
+    NOTE: The CDS services should be prepared to handle different versions of FHIR resources (DSTU, DSTU2, and STU3).
+</p>
+
+<a name="prefetch"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">8.4.4</span> Prefetch <a href="implementation-documentation.html#prefetch" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>
+    The prefetch attribute of a CDS Hooks request is provided to boost the performance of the requested CDS service. The prefetch is defined in the CDS Hooks Discovery request and populated by the EHR before the actual request to the service. If the request does not contain prefetch resources and requires them for more comprehensive processing, then the CDS service will be required to retrieve them. This is achieved by constructing a request to the fhirServer for the resources using the patient, user, and service called as context. For example, if the EHR calls a medication-prescribe service without prefetch resources, the service MUST make the following call to the fhirServer specified in the request (DSTU2 format):
+</p>
+
+<p>
+  <code>{ServerBase}/MedicationOrder?patient={$patient}&amp;status=active</code>
+</p>
+
+<p>
+    It is highly recommended that the EHR request contain the prefetch resources, especially if there is a performance requirement.
+</p>
+
+<a name="convert"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">8.4.5</span> Conversion to STU3 Resources <a href="implementation-documentation.html#convert" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>
+  This implementation uses the PlanDefinition $apply operation to fulfill the requirements of the medication-prescribe service. However, the PlanDefinition resource was introduced in the STU3 release. Therefore, any resources provided by the request or retrieved by the service must be converted into STU3 resources. It is common for FHIR APIs to provide a mechanism to convert resources from one version to another. However, if the API you are using does not provide resource version conversion, then the service will need to handle the conversion.
+</p>
+
+<a name="dstu2todstu3"> </a>
+<h4 class="self-link-parent"><span class="sectioncount">8.4.5.1</span> MedicationOrder to MedicationRequest <a href="implementation-documentation.html#dstu2todstu3" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+
+<p>
+  Regarding the Opioid Guidelines medication-prescribe service, the conversion from DSTU2 to STU3 is rather simple. The medicationCodeableConcept, status, and dosageInstruction are the only attributes that are accessed in this service. Therefore, they are the only attributes that need to be converted. However, depth of conversion is implementation-specific. For example, if your implementation returns a suggestion, which is a modified resource that conforms to certain requirements, then you would want to convert all the attributes to prevent data loss. If your service is returning info cards on the other hand, then attributes that aren't used by the service can be excluded.
+</p>
+
+<p>For example, take the following MedicationOrder:</p>
+
+<div class="example">
+  <pre class="json">
+{
+  "resourceType": "MedicationOrder",
+  "id": "medrx001",
+  "identifier": [
+    {
+      "use": "official",
+      "system": "http://www.bmc.nl/portal/prescriptions",
+      "value": "12345"
+    }
+  ],
+  "dateWritten": "2015-01-15",
+  "status": "active",
+  "patient": {
+    "reference": "Patient/f001",
+    "display": "Eve Everywoman"
+  },
+  "prescriber": {
+    "reference": "Practitioner/f007",
+    "display": "Patrick Pump"
+  },
+  "encounter": {
+    "reference": "Encounter/f002",
+    "display": "encounter who leads to this priscription"
+  },
+  "reasonCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "65363002",
+        "display": "Otitis Media"
+      }
+    ]
+  },
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "197696",
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
+      }
+    ]
+  },
+  "dosageInstruction": [
+    {
+      "text": "Take 5ml three times daily",
+      "additionalInstructions": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "311504000",
+            "display": "With or after food"
+          }
+        ]
+      },
+      "timing": {
+        "repeat": {
+          "frequency": 3,
+          "period": 1,
+          "periodUnits": "d"
+        }
+      },
+      "asNeededBoolean": false,
+      "siteCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "181220002",
+            "display": "Entire oral cavity"
+          }
+        ]
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "26643006",
+            "display": "Oral Route"
+          }
+        ]
+      },
+      "doseQuantity": {
+        "value": 5,
+        "unit": "mL",
+        "system": "http://unitsofmeasure.org",
+        "code": "mL"
+      }
+    }
+  ],
+  "dispenseRequest": {
+    "medicationReference": {
+      "reference": "Medication/MedicationExample3"
+    },
+    "validityPeriod": {
+      "start": "2015-01-15",
+      "end": "2016-01-15"
+    },
+    "numberOfRepeatsAllowed": 2,
+    "quantity": {
+      "value": 100,
+      "unit": "mL",
+      "system": "http://unitsofmeasure.org",
+      "code": "mL"
+    },
+    "expectedSupplyDuration": {
+      "value": 10,
+      "unit": "days",
+      "system": "http://unitsofmeasure.org",
+      "code": "d"
+    }
+  },
+  "substitution": {
+    "type": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir",
+          "code": "G",
+          "display": "Generic Composition"
+        }
+      ]
+    },
+    "reason": {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir",
+          "code": "FP",
+          "display": "formulary policy"
+        }
+      ]
+    }
+  }
+}
+  </pre>
+</div>
+
+<p>
+  If your implementation does not return a suggestion, then the resulting MedicationRequest could be simplified to the following:
+</p>
+
+<div class="example">
+  <pre class="json">
+{
+  "resourceType": "MedicationRequest",
+  "id": "medrx001",
+  "status": "active",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "197696",
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
+      }
+    ]
+  },
+  "dosageInstruction": [
+    {
+      "timing": {
+        "repeat": {
+          "frequency": 3,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "asNeededBoolean": false,
+      "doseQuantity": {
+        "value": 5,
+        "unit": "mL",
+        "system": "http://unitsofmeasure.org",
+        "code": "mL"
+      }
+    }
+  ]
+}
+  </pre>
+</div>
+
+<a name="apply"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">8.4.6</span> PlanDefinition $apply Operation <a href="implementation-documentation.html#apply" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>
+  Now that the CDS request has been parsed and the resources have been converted to STU3, it is time to apply the <a href="PlanDefinition-opioidcds-05.json.html">Opioid Guidance PlanDefinition</a>. The first step is to prepare the $apply operation parameters.
+</p>
+
+<a name="applyparams"> </a>
+<h4 class="self-link-parent"><span class="sectioncount">8.4.6.1</span> $apply Parameters <a href="implementation-documentation.html#applyparams" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+
+<p>
+  Most of the standard $apply parameters will not be used. In fact the only standard parameter that will be used for the opioid guidelines is the required patient ID parameter. In addition, the PlanDefinition that this implementation applies needs access to the context and prefetch resources from the CDS Hooks request. Therefore, this particular instance of the $apply operation will need to add an additional "context" parameter. The additional context parameter will be represented as a parameter of parameters.
+</p>
+
+<a name="applyop"> </a>
+<h4 class="self-link-parent"><span class="sectioncount">8.4.6.2</span> $apply Operation <a href="implementation-documentation.html#applyop" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
+
+<p>
+  The $apply operation, in general, applies a PlanDefinition to a specific context. In the context of the CDC Opioid Guidelines, the application of the PlanDefinition is depicted in the following diagram:
+</p>
+
+<img src="assets/images/CDC_Opioid_Guidelines_$apply_flowchart.png">
+
+<p></p>
+
+<p>
+  As shown in the flowchart, the $apply operation begins by parsing the input parameters. Then the <a href="Library-opioidcds-recommendation-05.json.html">CDC Opioid Guidelines library</a> is serialized into a library object. The next step is to resolve data providers for FHIR STU3 and OMTK. OMTK, or Opioid Management Terminology Knowledge, is a library that provides MME conversion factors and terminology information for the opioid medications. The OMTK data provider endpoint is an Access database and is NOT a FHIR data provider. The next step is to walk through the specified PlanDefinition actions, checking for applicability and an expression reference in the condition. If the PlanDefinition condition is applicable and has an expression reference, set the library "Orders" parameter to the list of MedictionRequest resources (context and prefetch) and evaluate the expression. If the expression evaluates to true, the context prescription violates the opioid guidelines by exceeding the suggested MME and a warning should be returned to the author. If the expression evaluates to false, then the presription is in accordance with the opioid guidelines. No matter the outcome of the expression, a CarePlan resource must be constructed and returned, which is left to the developer to format (see the example link above for an example).
+</p>
+
+<a name="transform"> </a>
+<h3 class="self-link-parent"><span class="sectioncount">8.4.7</span> Transform CarePlan into a CDS Hooks Request <a href="implementation-documentation.html#transform" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>
+  The PlanDefinition $apply operation returns a CarePlan. However, this implementation uses CDS Hooks to handle requests to and responses from the service. Therefore, the service must transform the returned CarePlan into a CDS Hooks response. There are a couple different ways to respond using the CDS Hooks API. The easiest responses are information cards, which can indicate success, a warning, information, or a hard-stop (cease execution). Although, info cards are easy and useful for testing, they are not quite as useful for the EHR user. A better response is called a "suggestion". A suggestion is similar to an info card, but a modified resource is included in the response. The modified resource is the context resource where the attributes have been changed to conform to the specified guidelines. A suggestion is a much more useful response for the user in the EHR as they aren't required to create a new medication order and start this process anew.
+</p>
+
+<p>
+  As an example, consider the following CarePlan is returned from the PlanDefinition $apply operation:
+</p>
+
+<div class="example">
+  <pre class="json">
+{
+  "resourceType": "CarePlan",
+  "status": "active",
+  "intent": "order",
+  "title": "High risk for opioid overdose - taper now",
+  "description": "Total morphine milligram equivalent (MME) is 20200.700mg/d. Taper to less than 50.",
+  "activity": [
+    {
+      "detail": {
+        "status": "in-progress",
+        "statusReason": "warning"
+      }
+    }
+  ],
+  "note": [
+    {
+      "id": "CDC guideline for prescribing opioids for chronic pain",
+      "text": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
+    },
+    {
+      "id": "MME Conversion Tables",
+      "text": "https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf"
+    }
+  ]
+}
+  </pre>
+</div>
+
+<p>
+  Here is an example of what the CDS Response might look like as an info card:
+</p>
+
+<div class="example">
+  <pre class="json">
+{
+  "summary": "High risk for opioid overdose - taper now",
+  "indicator": "warning",
+  "links": [
+    {
+      "label": "CDC guideline for prescribing opioids for chronic pain",
+      "type": "absolute",
+      "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
+    },
+    {
+      "label": "MME Conversion Tables",
+      "type": "absolute",
+      "url": "https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf"
+    }
+  ],
+  "detail": "Total morphine milligram equivalent (MME) is 179.99999820 mg/d. Taper to less than 50."
+}
+  </pre>
+</div>
+
+<!-- ==============END CONTENT END CONTENT=================== -->
+
+{% include container-end.html %}
+
+{% include footer.html %}

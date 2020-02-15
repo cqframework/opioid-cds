@@ -1,0 +1,1437 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="opioid-urine-screening"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset"/>
+        <profile value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset"/>
+    </meta>
+    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion">
+        <valueString value="General screening tests for narcotic and opioids in urine."/>
+    </extension>
+    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion">
+        <valueString value="Non-narcotic drug tests."/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/valueset-warning">
+        <valueMarkdown value="Note that the terminologies included in this implementation guide will need to be updated, because the ideal mechanism for distribution (as an expression) is not currently supported by the content logical definition constructs available in the FHIR ValueSet resource and all known implementations of it. Before use in a production environment, ensure you have the latest value sets based on the definitions for each value set (as defined in the inclusion/exclusion criteria for each one)."/>
+    </extension>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-urine-screening"/>
+    <version value="1.0.0"/>
+    <name value="valueset-opiate-drug-urine-test"/>
+    <title value="Loinc Opiate Drug Urine Test"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <date value="2018-04-23"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <description value="ValueSet containing all general screening tests for narcotic and opioids in urine codes."/>
+    <useContext>
+        <code>
+            <system value="http://hl7.org/fhir/usage-context-type"/>
+            <code value="focus"/>
+            <display value="Clinical Focus"/>
+        </code>
+        <valueCodeableConcept>
+            <text value="General screening tests for narcotic and opioids in urine."/>
+        </valueCodeableConcept>
+    </useContext>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+    </jurisdiction>
+    <purpose value="Used to determine if patient has urine screening for narcotic and opioids for recommendation 10."/>
+    <copyright value="© CDC 2016+."/>
+    <compose>
+        <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
+            <extension url="language">
+                <valueUri value="http://www.apelondts.org/tql"/>
+            </extension>
+            <extension url="expression">
+                <valueString value="set delimiter = &quot;	&quot;; set axis = &quot;Multiaxial Parent Of&quot;; FROM [^LOINC^] with (CONCEPT DESCENDANT_OF &quot;Narcotics and opioids (LP18149-2)[LOINC]&quot; AND ^System[LOINC]^ EQUALS &quot;Urine&quot;) EXPORT ^Name^,^Code^,^Component[LOINC]^;"/>
+            </extension>
+        </extension>
+        <include>
+            <system value="http://loinc.org"/>
+            <concept>
+                <code value="10975-1"/>
+                <display value="6-Monoacetylmorphine (6-MAM) [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3573-3"/>
+                <display value="Dipipanone [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19439-9"/>
+                <display value="Diamorphine [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="19609-7"/>
+                <display value="Naltrexone [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="77775-5"/>
+                <display value="Norfentanyl cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19602-2"/>
+                <display value="Morphine Free [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="40839-3"/>
+                <display value="Fentanyl [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="78767-1"/>
+                <display value="Oxycodone [Mass/volume] in Urine -- adjusted for lean body mass+urine creatinine"/>
+            </concept>
+            <concept>
+                <code value="17384-9"/>
+                <display value="Opiates [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="18383-0"/>
+                <display value="Alfentanil [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19301-1"/>
+                <display value="Opiates screen method [Identifier] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3775-4"/>
+                <display value="Methadone [Mass/time] in 24 hour Urine"/>
+            </concept>
+            <concept>
+                <code value="3842-2"/>
+                <display value="Nalorphine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="86609-5"/>
+                <display value="Noroxymorphone/Creatinine [Mass Ratio] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3851-3"/>
+                <display value="Nicomorphine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="16499-6"/>
+                <display value="Butorphanol [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="58398-9"/>
+                <display value="Propoxyphene/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19613-9"/>
+                <display value="Naltrexone cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3541-0"/>
+                <display value="Dextromoramide [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="51737-5"/>
+                <display value="Hydromorphone Free [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19431-6"/>
+                <display value="Propoxyphene cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="3841-4"/>
+                <display value="Nalbuphine [Mass/time] in 24 hour Urine"/>
+            </concept>
+            <concept>
+                <code value="19463-9"/>
+                <display value="Ethylmorphine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19449-8"/>
+                <display value="Dihydrocodeine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="61423-0"/>
+                <display value="Noroxycodone/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19414-2"/>
+                <display value="Codeine cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3415-7"/>
+                <display value="Buprenorphine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19450-6"/>
+                <display value="Dihydrocodeine cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="19487-8"/>
+                <display value="Hydromorphone cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="11075-9"/>
+                <display value="Norfentanyl [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="79240-8"/>
+                <display value="Tapentadol cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="77754-0"/>
+                <display value="2-Ethylidene-1,5-Dimethyl-3,3-Diphenylpyrrolidine (EDDP) cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19485-2"/>
+                <display value="Hydrocodone cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="82527-3"/>
+                <display value="6-Beta naltrexol/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="65808-8"/>
+                <display value="Nortapentadol [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="75362-4"/>
+                <display value="Tapentadol glucuronide [Mass/volume] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="60276-3"/>
+                <display value="Oxycodone+Oxymorphone cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="58380-7"/>
+                <display value="Fentanyl/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3828-1"/>
+                <display value="Morphine Free [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="58430-0"/>
+                <display value="Oxycodone+Oxymorphone [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="3774-7"/>
+                <display value="Methadone [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="70215-9"/>
+                <display value="Oxycodone [Moles/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="78828-1"/>
+                <display value="Fentanyl [Z-score] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3416-5"/>
+                <display value="Buprenorphine [Mass/time] in 24 hour Urine"/>
+            </concept>
+            <concept>
+                <code value="72384-1"/>
+                <display value="Meperidine+Normeperidine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="73995-3"/>
+                <display value="Mitragynine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="16253-7"/>
+                <display value="Meperidine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="78765-5"/>
+                <display value="Oxymorphone [Mass/volume] in Urine -- adjusted for lean body mass+urine creatinine"/>
+            </concept>
+            <concept>
+                <code value="3748-1"/>
+                <display value="Meperidine [Mass/time] in 24 hour Urine"/>
+            </concept>
+            <concept>
+                <code value="8222-2"/>
+                <display value="Opiates [Presence] in Urine by SAMHSA screen method"/>
+            </concept>
+            <concept>
+                <code value="19464-7"/>
+                <display value="Ethylmorphine cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="66129-8"/>
+                <display value="Fentanyl+Norfentanyl [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="21431-2"/>
+                <display value="Opiates [Presence] in Urine by Screen method >2000 ng/mL"/>
+            </concept>
+            <concept>
+                <code value="20551-8"/>
+                <display value="Nalbuphine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="79377-8"/>
+                <display value="Naltrexol [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="58429-2"/>
+                <display value="2-Ethylidene-1,5-Dimethyl-3,3-Diphenylpyrrolidine (EDDP) [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="89301-6"/>
+                <display value="Oxymorphone-3-glucuronide [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="58360-9"/>
+                <display value="Buprenorphine/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="78862-0"/>
+                <display value="Naloxol [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="89309-9"/>
+                <display value="Hydromorphone-3-glucuronide [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="58428-4"/>
+                <display value="2-Ethylidene-1,5-Dimethyl-3,3-Diphenylpyrrolidine (EDDP) [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="89310-7"/>
+                <display value="Codeine-6-glucuronide [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="18473-9"/>
+                <display value="Hydromorphone [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="16249-5"/>
+                <display value="Oxycodone [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="70147-4"/>
+                <display value="Methadone [Mass/volume] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="19535-4"/>
+                <display value="Meperidine cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="16213-1"/>
+                <display value="Levorphanol [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19302-9"/>
+                <display value="Opiates confirm method [Identifier] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19552-9"/>
+                <display value="Methadone cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="58384-9"/>
+                <display value="6-Monoacetylmorphine (6-MAM)/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="43200-5"/>
+                <display value="Norfentanyl [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="77777-1"/>
+                <display value="Normeperidine cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="78863-8"/>
+                <display value="Naloxol cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19377-1"/>
+                <display value="Butorphanol [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="19649-3"/>
+                <display value="Oxymorphone cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="19413-4"/>
+                <display value="Codeine cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="49829-5"/>
+                <display value="Norcodeine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="59673-4"/>
+                <display value="Fentanyl [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="11073-4"/>
+                <display value="Despropionylfentanyl [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="89307-3"/>
+                <display value="Naloxone-3-glucuronide [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="3831-5"/>
+                <display value="Morphine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="12554-2"/>
+                <display value="Narcotics and opioids [Identifier] in Urine"/>
+            </concept>
+            <concept>
+                <code value="70149-0"/>
+                <display value="Methadone [Presence] in Urine by Screen method >300 ng/mL"/>
+            </concept>
+            <concept>
+                <code value="86197-1"/>
+                <display value="Pentylone [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="17395-5"/>
+                <display value="Oxymorphone [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3747-3"/>
+                <display value="Meperidine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="16251-1"/>
+                <display value="Morphine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3829-9"/>
+                <display value="Morphine Free [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="20540-1"/>
+                <display value="Levorphanol [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3619-4"/>
+                <display value="Ethylmorphine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19446-4"/>
+                <display value="Dihydrocodeine [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="19645-1"/>
+                <display value="Oxycodone cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19321-9"/>
+                <display value="6-Monoacetylmorphine (6-MAM) [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="3869-5"/>
+                <display value="Normeperidine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="17376-5"/>
+                <display value="Norpropoxyphene [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="26867-2"/>
+                <display value="Fentanyl [Units/volume] in 24 hour Urine"/>
+            </concept>
+            <concept>
+                <code value="3540-2"/>
+                <display value="Dextromoramide [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="82524-0"/>
+                <display value="6-Beta naltrexol [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19441-5"/>
+                <display value="Diamorphine cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="77752-4"/>
+                <display value="2-Ethylidene-1,5-Dimethyl-3,3-Diphenylpyrrolidine (EDDP) cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="19518-0"/>
+                <display value="Levorphanol cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="58401-1"/>
+                <display value="Tapentadol [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="49831-1"/>
+                <display value="Normorphine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="52952-9"/>
+                <display value="Opiates [Moles/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="51740-9"/>
+                <display value="6-monoacetylmorphine free [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19603-0"/>
+                <display value="Morphine Free cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="20550-0"/>
+                <display value="Morphine Free [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19432-4"/>
+                <display value="Propoxyphene cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="58379-9"/>
+                <display value="Fentanyl+Norfentanyl [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="72732-1"/>
+                <display value="Mitragynine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="18435-8"/>
+                <display value="Sufentanil [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19516-4"/>
+                <display value="Levorphanol [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="60126-0"/>
+                <display value="Papaverine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19644-4"/>
+                <display value="Oxycodone cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="19482-9"/>
+                <display value="Hydrocodone [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="74817-8"/>
+                <display value="Desomorphine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3507-1"/>
+                <display value="Codeine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="78864-6"/>
+                <display value="Naloxone cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19324-3"/>
+                <display value="6-Monoacetylmorphine (6-MAM) cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="61424-8"/>
+                <display value="Noroxycodone [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="78830-7"/>
+                <display value="Hydrocodone [Z-score] in Urine"/>
+            </concept>
+            <concept>
+                <code value="90894-7"/>
+                <display value="Noroxymorphone [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="16334-5"/>
+                <display value="Alfentanil [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="60514-7"/>
+                <display value="6-Acetylcodeine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19637-8"/>
+                <display value="Norpropoxyphene cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="9834-3"/>
+                <display value="Hydromorphone [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="72789-1"/>
+                <display value="Naltrexone/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3618-6"/>
+                <display value="Ethylmorphine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19635-2"/>
+                <display value="Norpropoxyphene [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="72731-3"/>
+                <display value="7-Hydroxymitragynine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3840-6"/>
+                <display value="Nalbuphine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3839-8"/>
+                <display value="Nalbuphine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="58396-3"/>
+                <display value="Oxymorphone/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19605-5"/>
+                <display value="Nalbuphine [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="51739-1"/>
+                <display value="Codeine Free [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="89308-1"/>
+                <display value="Morphine-6-Glucuronide [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="75643-7"/>
+                <display value="7-Hydroxymitragynine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="70151-6"/>
+                <display value="Opiates [Presence] in Urine by Screen method >300 ng/mL"/>
+            </concept>
+            <concept>
+                <code value="16208-1"/>
+                <display value="Buprenorphine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19448-0"/>
+                <display value="Dihydrocodeine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="41465-6"/>
+                <display value="Opiates/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="16749-4"/>
+                <display value="Propoxyphene + Norpropoxyphene [Units/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="58394-8"/>
+                <display value="Hydromorphone/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="70206-8"/>
+                <display value="Codeine [Moles/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="10998-3"/>
+                <display value="Oxycodone [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="70148-2"/>
+                <display value="Methadone [Presence] in Urine by Screen method >150 ng/mL"/>
+            </concept>
+            <concept>
+                <code value="3711-9"/>
+                <display value="Levorphanol [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3310-0"/>
+                <display value="Alphaprodine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="47004-7"/>
+                <display value="6-monoacetylmorphine free [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="16496-2"/>
+                <display value="Buprenorphine [Units/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="61425-5"/>
+                <display value="Noroxycodone [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="12395-0"/>
+                <display value="Butorphanol [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19601-4"/>
+                <display value="Morphine Free [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="18334-3"/>
+                <display value="Naltrexone [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19612-1"/>
+                <display value="Naltrexone cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="16200-8"/>
+                <display value="Propoxyphene [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="78865-3"/>
+                <display value="Naltrexol cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="86610-3"/>
+                <display value="Sufentanil/Creatinine [Mass Ratio] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="91027-3"/>
+                <display value="Buprenorphine-3-glucuronide [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="19650-1"/>
+                <display value="Oxymorphone cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19534-7"/>
+                <display value="Meperidine cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="89305-7"/>
+                <display value="Norbuprenorphine-3-glucuronide [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="18325-1"/>
+                <display value="Oxymorphone [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="42251-9"/>
+                <display value="Methadone+Metabolite [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="19300-3"/>
+                <display value="Opiates cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="10976-9"/>
+                <display value="6-Monoacetylmorphine (6-MAM) [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="79260-6"/>
+                <display value="Fentanyl cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="3832-3"/>
+                <display value="Morphine [Mass/time] in 24 hour Urine"/>
+            </concept>
+            <concept>
+                <code value="89306-5"/>
+                <display value="Nortapentadol [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="19648-5"/>
+                <display value="Oxymorphone [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="16211-5"/>
+                <display value="Dihydrocodeine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="51448-9"/>
+                <display value="Dihydrocodeine+Hydrocodol [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19299-7"/>
+                <display value="Opiates cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="16218-0"/>
+                <display value="Nalbuphine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19442-3"/>
+                <display value="Diamorphine cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="58395-5"/>
+                <display value="Oxycodone/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="86608-7"/>
+                <display value="Norcodeine/Creatinine [Mass Ratio] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3357-1"/>
+                <display value="Anileridine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="16197-6"/>
+                <display value="Codeine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="74372-4"/>
+                <display value="Acetyl fentanyl [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3575-8"/>
+                <display value="Dipipanone [Mass/time] in 24 hour Urine"/>
+            </concept>
+            <concept>
+                <code value="61197-0"/>
+                <display value="Oxycodone+Oxymorphone [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19599-0"/>
+                <display value="Morphine cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="19380-5"/>
+                <display value="Butorphanol cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="58387-2"/>
+                <display value="Normeperidine/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="58386-4"/>
+                <display value="Meperidine/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="58391-4"/>
+                <display value="Codeine/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="16851-8"/>
+                <display value="Ethylmorphine [Units/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3309-2"/>
+                <display value="Alphaprodine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3712-7"/>
+                <display value="Levorphanol [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="8221-4"/>
+                <display value="Opiates [Presence] in Urine by SAMHSA confirm method"/>
+            </concept>
+            <concept>
+                <code value="81754-4"/>
+                <display value="Nortapentadol [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19434-0"/>
+                <display value="Propoxyphene + Norpropoxyphene [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="27920-8"/>
+                <display value="Normeperidine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="12308-3"/>
+                <display value="Hydrocodone [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19593-3"/>
+                <display value="6-Monoacetylmorphine (6-MAM) [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="51738-3"/>
+                <display value="Hydrocodone Free [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="77779-7"/>
+                <display value="Noroxycodone cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19433-2"/>
+                <display value="Propoxyphene + Norpropoxyphene [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="16242-0"/>
+                <display value="Propoxyphene [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="16196-8"/>
+                <display value="Morphine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="42618-9"/>
+                <display value="Naloxone [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="14066-5"/>
+                <display value="Dihydrocodeine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3637-6"/>
+                <display value="Fentanyl [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="16207-3"/>
+                <display value="Meperidine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19451-4"/>
+                <display value="Dihydrocodeine cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19141-1"/>
+                <display value="Propoxyphene [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="16998-7"/>
+                <display value="Hydromorphone [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="8220-6"/>
+                <display value="Opiates [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19484-5"/>
+                <display value="Hydrocodone cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="19411-8"/>
+                <display value="Codeine [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="65807-0"/>
+                <display value="Tapentadol [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3508-9"/>
+                <display value="Codeine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="58402-9"/>
+                <display value="Tapentadol [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19607-1"/>
+                <display value="Nalbuphine cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="33527-3"/>
+                <display value="Methadone.long acting metabolite [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="58392-2"/>
+                <display value="Morphine/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="78874-5"/>
+                <display value="Oxymorphone [Z-score] in Urine"/>
+            </concept>
+            <concept>
+                <code value="78769-7"/>
+                <display value="Hydrocodone [Mass/volume] in Urine -- adjusted for lean body mass+urine creatinine"/>
+            </concept>
+            <concept>
+                <code value="77879-5"/>
+                <display value="Tapentadol cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="41858-2"/>
+                <display value="2-Ethylidene-1,5-Dimethyl-3,3-Diphenylpyrrolidine (EDDP) [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="89304-0"/>
+                <display value="Norhydrocodone [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="79259-8"/>
+                <display value="Fentanyl cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3830-7"/>
+                <display value="Morphine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19295-5"/>
+                <display value="Opiates [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="17377-3"/>
+                <display value="Norpropoxyphene [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3746-5"/>
+                <display value="Meperidine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19642-8"/>
+                <display value="Oxycodone [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="19486-0"/>
+                <display value="Hydromorphone [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="19296-3"/>
+                <display value="Opiates tested for in Urine by Screen method Nominal"/>
+            </concept>
+            <concept>
+                <code value="19611-3"/>
+                <display value="Naltrexone [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="89300-8"/>
+                <display value="Tapentadol glucuronide [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="61429-7"/>
+                <display value="Tapentadol/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="13648-1"/>
+                <display value="Morphine [Presence] in Urine by SAMHSA confirm method"/>
+            </concept>
+            <concept>
+                <code value="50542-0"/>
+                <display value="2-Ethylidene-1,5-Dimethyl-3,3-Diphenylpyrrolidine (EDDP) [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19429-0"/>
+                <display value="Propoxyphene [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="86604-6"/>
+                <display value="Alfentanil/Creatinine [Mass Ratio] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="86193-0"/>
+                <display value="Pentedrone [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="18390-5"/>
+                <display value="Opiates [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="78873-7"/>
+                <display value="Oxycodone [Z-score] in Urine"/>
+            </concept>
+            <concept>
+                <code value="58381-5"/>
+                <display value="Fentanyl [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="58390-6"/>
+                <display value="2-Ethylidene-1,5-Dimethyl-3,3-Diphenylpyrrolidine (EDDP)/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3546-9"/>
+                <display value="Diamorphine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="4077-4"/>
+                <display value="Trimeperidine [Mass/time] in 24 hour Urine"/>
+            </concept>
+            <concept>
+                <code value="78868-7"/>
+                <display value="Norhydrocodone cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="9396-3"/>
+                <display value="Sufentanil [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19322-7"/>
+                <display value="6-Monoacetylmorphine (6-MAM) [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="43199-9"/>
+                <display value="Norfentanyl [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="58389-8"/>
+                <display value="Normeperidine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="74818-6"/>
+                <display value="Desomorphine [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="70210-0"/>
+                <display value="Morphine [Moles/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="58385-6"/>
+                <display value="Meperidine+Normeperidine [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="16755-1"/>
+                <display value="Diamorphine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="61422-2"/>
+                <display value="Norhydrocodone [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="77207-9"/>
+                <display value="Naloxone [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="12309-1"/>
+                <display value="Naltrexone [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3871-1"/>
+                <display value="Norpropoxyphene [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="9835-0"/>
+                <display value="Hydromorphone [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="41466-4"/>
+                <display value="Methadone/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="77764-9"/>
+                <display value="Buprenorphine cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="78768-9"/>
+                <display value="Morphine [Mass/volume] in Urine -- adjusted for lean body mass+urine creatinine"/>
+            </concept>
+            <concept>
+                <code value="46975-9"/>
+                <display value="Oxymorphone Free [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19597-4"/>
+                <display value="Morphine [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="3359-7"/>
+                <display value="Anileridine [Moles/volume] in 24 hour Urine"/>
+            </concept>
+            <concept>
+                <code value="51955-3"/>
+                <display value="Dihydrocodeine Free+Hydrocodol Free [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="16252-9"/>
+                <display value="Hydrocodone [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="16199-2"/>
+                <display value="Methadone [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="64131-6"/>
+                <display value="Dihydrocodeine/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19297-1"/>
+                <display value="Opiates tested for in Urine by Screen method Narrative"/>
+            </concept>
+            <concept>
+                <code value="78857-0"/>
+                <display value="Methadone [Z-score] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3879-4"/>
+                <display value="Opiates [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="4076-6"/>
+                <display value="Trimeperidine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="4075-8"/>
+                <display value="Trimeperidine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="77787-0"/>
+                <display value="Buprenorphine cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="13641-6"/>
+                <display value="Codeine [Presence] in Urine by SAMHSA confirm method"/>
+            </concept>
+            <concept>
+                <code value="61421-4"/>
+                <display value="Norhydrocodone [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19323-5"/>
+                <display value="6-Monoacetylmorphine (6-MAM) cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="61420-6"/>
+                <display value="Norhydrocodone/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19462-1"/>
+                <display value="Ethylmorphine [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="3713-5"/>
+                <display value="Levorphanol [Mass/time] in 24 hour Urine"/>
+            </concept>
+            <concept>
+                <code value="55520-1"/>
+                <display value="6-Monoacetylmorphine (6-MAM) [Moles/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19379-7"/>
+                <display value="Butorphanol cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="16246-1"/>
+                <display value="Methadone [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="58399-7"/>
+                <display value="Norpropoxyphene/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="78861-2"/>
+                <display value="Morphine [Z-score] in Urine"/>
+            </concept>
+            <concept>
+                <code value="70197-9"/>
+                <display value="6-Monoacetylmorphine (6-MAM) [Moles/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19483-7"/>
+                <display value="Hydrocodone [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19488-6"/>
+                <display value="Hydromorphone cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19138-7"/>
+                <display value="Opiates cutoff [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="70150-8"/>
+                <display value="Opiates [Mass/volume] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="58388-0"/>
+                <display value="Normeperidine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3414-0"/>
+                <display value="Buprenorphine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19553-7"/>
+                <display value="Methadone cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19435-7"/>
+                <display value="Propoxyphene + Norpropoxyphene [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19465-4"/>
+                <display value="Ethylmorphine cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="59960-5"/>
+                <display value="Propoxyphene [Moles/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="12333-1"/>
+                <display value="Butorphanol [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="11235-9"/>
+                <display value="Fentanyl [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="58359-1"/>
+                <display value="Buprenorphine+Norbuprenorphine [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="3311-8"/>
+                <display value="Alphaprodine [Mass/time] in 24 hour Urine"/>
+            </concept>
+            <concept>
+                <code value="78766-3"/>
+                <display value="Fentanyl [Mass/volume] in Urine -- adjusted for lean body mass+urine creatinine"/>
+            </concept>
+            <concept>
+                <code value="16250-3"/>
+                <display value="Codeine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3773-9"/>
+                <display value="Methadone [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19632-9"/>
+                <display value="Norpropoxyphene [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="38373-7"/>
+                <display value="Buprenorphine+Norbuprenorphine [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="74810-3"/>
+                <display value="Acetyl fentanyl [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="58393-0"/>
+                <display value="Hydrocodone/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19600-6"/>
+                <display value="Morphine cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3681-4"/>
+                <display value="Hydrocodone [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="72729-7"/>
+                <display value="7-Hydroxymitragynine/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="16198-4"/>
+                <display value="Diamorphine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="46971-8"/>
+                <display value="Hydromorphone Free [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19438-1"/>
+                <display value="Propoxyphene + Norpropoxyphene cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="11246-6"/>
+                <display value="Oxycodone [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="11247-4"/>
+                <display value="Oxymorphone [Presence] in Urine"/>
+            </concept>
+            <concept>
+                <code value="3574-1"/>
+                <display value="Dipipanone [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19437-3"/>
+                <display value="Propoxyphene + Norpropoxyphene cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="75649-4"/>
+                <display value="Mitragynine+7-Hydroxymitragynine [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="52958-6"/>
+                <display value="Methadone [Moles/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19643-6"/>
+                <display value="Oxycodone [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19604-8"/>
+                <display value="Morphine Free cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19519-8"/>
+                <display value="Levorphanol cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19436-5"/>
+                <display value="Propoxyphene + Norpropoxyphene [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="72485-6"/>
+                <display value="Tapentadol [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="19550-3"/>
+                <display value="Methadone [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="78770-5"/>
+                <display value="Methadone [Mass/volume] in Urine -- adjusted for lean body mass+urine creatinine"/>
+            </concept>
+            <concept>
+                <code value="19378-9"/>
+                <display value="Butorphanol [Presence] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="72730-5"/>
+                <display value="Mitragynine/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19646-9"/>
+                <display value="Oxymorphone [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="49752-9"/>
+                <display value="Buprenorphine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="5706-7"/>
+                <display value="Opiates [Identifier] in Urine"/>
+            </concept>
+            <concept>
+                <code value="20527-8"/>
+                <display value="Ethylmorphine [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3547-7"/>
+                <display value="Diamorphine [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="46973-4"/>
+                <display value="Oxycodone Free [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="3545-1"/>
+                <display value="Propoxyphene [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19608-9"/>
+                <display value="Nalbuphine cutoff [Mass/volume] in Urine for Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="19636-0"/>
+                <display value="Norpropoxyphene cutoff [Mass/volume] in Urine for Screen method"/>
+            </concept>
+            <concept>
+                <code value="51954-6"/>
+                <display value="Oxycodone Free [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="19610-5"/>
+                <display value="Naltrexone [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+            <concept>
+                <code value="51736-7"/>
+                <display value="Oxymorphone Free [Mass/volume] in Urine"/>
+            </concept>
+            <concept>
+                <code value="58382-3"/>
+                <display value="Norfentanyl/Creatinine [Mass Ratio] in Urine"/>
+            </concept>
+            <concept>
+                <code value="89302-4"/>
+                <display value="Noroxymorphone [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="89303-2"/>
+                <display value="Noroxycodone [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="19532-1"/>
+                <display value="Meperidine [Presence] in Urine by Screen method"/>
+            </concept>
+            <concept>
+                <code value="58383-1"/>
+                <display value="Norfentanyl [Mass/volume] in Urine by Confirmatory method"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>
