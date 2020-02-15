@@ -135,15 +135,29 @@
                      <operand dataType="fhir:MedicationRequest" xsi:type="Retrieve"/>
                   </expression>
                </source>
+               <let identifier="MedRef">
+                  <expression xsi:type="If">
+                     <condition asType="t:Boolean" xsi:type="As">
+                        <operand xsi:type="Is">
+                           <operand path="medication" scope="Rx" xsi:type="Property"/>
+                           <isTypeSpecifier name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                        </operand>
+                     </condition>
+                     <then path="reference" xsi:type="Property">
+                        <source path="medication" scope="Rx" xsi:type="Property"/>
+                     </then>
+                     <else asType="fhir:string" xsi:type="As">
+                        <operand xsi:type="Null"/>
+                     </else>
+                  </expression>
+               </let>
                <let identifier="Med">
                   <expression dataType="fhir:Medication" codeProperty="id" xsi:type="Retrieve">
                      <codes xsi:type="ToList">
                         <operand xsi:type="Last">
                            <source xsi:type="Split">
                               <stringToSplit name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                                 <operand path="reference" xsi:type="Property">
-                                    <source path="medication" scope="Rx" xsi:type="Property"/>
-                                 </operand>
+                                 <operand name="MedRef" xsi:type="QueryLetRef"/>
                               </stringToSplit>
                               <separator valueType="t:String" value="/" xsi:type="Literal"/>
                            </source>
@@ -254,15 +268,29 @@
                      <operand dataType="fhir:MedicationRequest" xsi:type="Retrieve"/>
                   </expression>
                </source>
+               <let identifier="MedRef">
+                  <expression xsi:type="If">
+                     <condition asType="t:Boolean" xsi:type="As">
+                        <operand xsi:type="Is">
+                           <operand path="medication" scope="Rx" xsi:type="Property"/>
+                           <isTypeSpecifier name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                        </operand>
+                     </condition>
+                     <then path="reference" xsi:type="Property">
+                        <source path="medication" scope="Rx" xsi:type="Property"/>
+                     </then>
+                     <else asType="fhir:string" xsi:type="As">
+                        <operand xsi:type="Null"/>
+                     </else>
+                  </expression>
+               </let>
                <let identifier="Med">
                   <expression dataType="fhir:Medication" codeProperty="id" xsi:type="Retrieve">
                      <codes xsi:type="ToList">
                         <operand xsi:type="Last">
                            <source xsi:type="Split">
                               <stringToSplit name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                                 <operand path="reference" xsi:type="Property">
-                                    <source path="medication" scope="Rx" xsi:type="Property"/>
-                                 </operand>
+                                 <operand name="MedRef" xsi:type="QueryLetRef"/>
                               </stringToSplit>
                               <separator valueType="t:String" value="/" xsi:type="Literal"/>
                            </source>
@@ -373,15 +401,29 @@
                      <operand dataType="fhir:MedicationRequest" xsi:type="Retrieve"/>
                   </expression>
                </source>
+               <let identifier="MedRef">
+                  <expression xsi:type="If">
+                     <condition asType="t:Boolean" xsi:type="As">
+                        <operand xsi:type="Is">
+                           <operand path="medication" scope="Rx" xsi:type="Property"/>
+                           <isTypeSpecifier name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                        </operand>
+                     </condition>
+                     <then path="reference" xsi:type="Property">
+                        <source path="medication" scope="Rx" xsi:type="Property"/>
+                     </then>
+                     <else asType="fhir:string" xsi:type="As">
+                        <operand xsi:type="Null"/>
+                     </else>
+                  </expression>
+               </let>
                <let identifier="Med">
                   <expression dataType="fhir:Medication" codeProperty="id" xsi:type="Retrieve">
                      <codes xsi:type="ToList">
                         <operand xsi:type="Last">
                            <source xsi:type="Split">
                               <stringToSplit name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                                 <operand path="reference" xsi:type="Property">
-                                    <source path="medication" scope="Rx" xsi:type="Property"/>
-                                 </operand>
+                                 <operand name="MedRef" xsi:type="QueryLetRef"/>
                               </stringToSplit>
                               <separator valueType="t:String" value="/" xsi:type="Literal"/>
                            </source>

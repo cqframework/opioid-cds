@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-    <id value="opioid-cds"/>
+    <id value="fhir.cdc.opioid-cds"/>
     <url value="http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/opioid-cds"/>
     <version value="0.1.0"/>
     <name value="Opioid Prescribing Support Implementation Guide"/>
@@ -470,99 +470,6 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/example-rec-10-end-of-life-med-exclusion"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-10-end-of-life-med-exclusion"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-end-of-life-med-exclusion-context"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Bundle/example-rec-10-illicit-drugs"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-10-illicit-drugs"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Observation/example-rec-10-illicit-drugs-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-10-illicit-drugs-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-illicit-drugs-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-illicit-drugs-prefetch"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Bundle/example-rec-10-missing-prescribed-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-10-missing-prescribed-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Observation/example-rec-10-missing-prescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-10-missing-prescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-missing-prescribed-opioids-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-missing-prescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
                 <reference value="Bundle/example-rec-10-no-screenings"/>
             </sourceReference>
         </resource>
@@ -588,86 +495,6 @@
             <example value="true"/>
             <sourceReference>
                 <reference value="Encounter/example-rec-10-no-screenings-prefetch"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Bundle/example-rec-10-not-missing-prescribed-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-10-not-missing-prescribed-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Observation/example-rec-10-not-missing-prescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-10-not-missing-prescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-not-missing-prescribed-opioids-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-not-missing-prescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Bundle/example-rec-10-unprescribed-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-10-unprescribed-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Observation/example-rec-10-unprescribed-opioids-prefetch-oxycodone"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Observation/example-rec-10-unprescribed-opioids-prefetch-codeine"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-10-unprescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-unprescribed-opioids-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-unprescribed-opioids-prefetch"/>
             </sourceReference>
         </resource>
 

@@ -48,9 +48,9 @@
 
 <div class="example">
   <pre class="http">
-GET http://localhost:8080/cqf-ruler-dstu3/fhir/Library
+GET http://localhost:8080/cqf-ruler/fhir/Library
 
-GET http://localhost:8080/cqf-ruler-dstu3/fhir/PlanDefinition
+GET http://localhost:8080/cqf-ruler/fhir/PlanDefinition
   </pre>
 </div>
 
@@ -62,7 +62,7 @@ GET http://localhost:8080/cqf-ruler-dstu3/fhir/PlanDefinition
 
 <div class="example">
   <pre class="http">
-GET http://localhost:8080/cqf-ruler-dstu3/cds-services
+GET http://localhost:8080/cqf-ruler/cds-services
   </pre>
 </div>
 
@@ -97,7 +97,7 @@ GET http://localhost:8080/cqf-ruler-dstu3/cds-services
 
 <div class="example">
     <pre class="http">
-  POST http://localhost:8080/cqf-ruler-dstu3/fhir
+  POST http://localhost:8080/cqf-ruler/fhir
     </pre>
 </div>
 
@@ -128,7 +128,7 @@ GET http://localhost:8080/cqf-ruler-dstu3/cds-services
 
 <div class="example">
   <pre class="http">
-PUT http://localhost:8080/cqf-ruler-dstu3/fhir/Library/omtkdata
+PUT http://localhost:8080/cqf-ruler/fhir/Library/omtkdata
   </pre>
 </div>
 
@@ -139,7 +139,7 @@ PUT http://localhost:8080/cqf-ruler-dstu3/fhir/Library/omtkdata
 
 <div class="example">
   <pre class="http">
-GET http://localhost:8080/cqf-ruler-dstu3/cds-services
+GET http://localhost:8080/cqf-ruler/cds-services
   </pre>
 </div>
 
@@ -183,23 +183,23 @@ GET http://localhost:8080/cqf-ruler-dstu3/cds-services
 
 <div class="example">
   <pre class="http">
-POST http://localhost:8080/cqf-ruler-dstu3/cds-services/opioidcds-10-patient-view
+POST http://localhost:8080/cqf-ruler/cds-services/opioidcds-10-patient-view
   </pre>
 </div>
 
-<a href="requests/request-example-rec-10-patient-view-illicit-drugs.json">request-example-rec-10-patient-view-illicit-drugs.json</a>
+<a href="requests/request-example-rec-10-patient-view-no-screenings.json">Example Recommendation #10 patient-view Request</a>
 
 <div class="example">
   <pre class="json">
 {
-  "hookInstance": "31c74cfc-747c-4afc-82e4-bdd3b7a0a58c",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "hookInstance": "a172a2ce-38e7-4a21-a411-522cf481d5d1",
+  "fhirServer": "http://localhost:8080/cqf-ruler/baseDstu3",
   "hook": "patient-view",
   "applyCql": true,
   "context": {
     "user": "Practitioner/example",
-    "patientId": "Patient/example-rec-10-illicit-drugs",
-    "encounterId": "Encounter/example-rec-10-illicit-drugs-context"
+    "patientId": "Patient/example-rec-10-no-screenings",
+    "encounterId": "Encounter/example-rec-10-no-screenings-context"
   },
   "prefetch": {
     "item1": "snipped for brevity, see the full example at the above link",
@@ -215,12 +215,10 @@ POST http://localhost:8080/cqf-ruler-dstu3/cds-services/opioidcds-10-patient-vie
 {
     "cards": [
         {
-            "summary": "Illicit Drugs Found In Urine Screening",
+            "summary": "Annual Urine Screening Check",
             "indicator": "warning",
-            "source": {
-                "label": "CDC guideline for prescribing opioids for chronic pain",
-                "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
-            }
+            "detail": "Patients on opioid therapy should have a urine drug test performed every 12 months.",
+            "source": {}
         }
     ]
 }  </pre>
@@ -231,12 +229,12 @@ POST http://localhost:8080/cqf-ruler-dstu3/cds-services/opioidcds-10-patient-vie
 
     <p>The <a href="http://sandbox.cds-hooks.org">CDS Hooks Sandbox</a> is a web application that provides a user-friendly GUI for constructing, viewing and submitting CDS Hooks requests and viewing the responses both in raw JSON format and also in an html representation that is meant to be representative of how it might be presented in a consuming EHR system. The sandbox can be configured to run against the local CDS Hooks service instance created above.</p>
     <p>To configure the sandbox to work with this local CDS Hooks service instance, the following settings need to be set:</p>
-    <p>Set the <code>FHIR Server URL</code> to <code>http://localhost:8080/cqf-ruler-dstu3/fhir</code>. If you're not prompted for this at startup, then in Settings go to <code>Change FHIR Server</code> and set the <code>FHIR Server URL</code> there.</p>
-    <p>Set the <code>Discovery Endpoint URL</code> to <code>http://localhost:8080/cqf-ruler-dstu3/cds-services</code>. If you're not prompted for this at startup, then in Settings go to <code>Add CDS Services</code> and set the <code>Discovery Endpoint URL</code> there.</p>
+    <p>Set the <code>FHIR Server URL</code> to <code>http://localhost:8080/cqf-ruler/fhir</code>. If you're not prompted for this at startup, then in Settings go to <code>Change FHIR Server</code> and set the <code>FHIR Server URL</code> there.</p>
+    <p>Set the <code>Discovery Endpoint URL</code> to <code>http://localhost:8080/cqf-ruler/cds-services</code>. If you're not prompted for this at startup, then in Settings go to <code>Add CDS Services</code> and set the <code>Discovery Endpoint URL</code> there.</p>
     <p>Now the sandbox is configured to use the CDS Hooks service that you created above. The next step is to push a Patient resource to that service that we can then use to query via the Sandbox. To do this, you’re going to want to copy the JSON representation of a Patient resource from the request-example-rec-10-patient-view-illicit-drugs.json file above and then POST that to the FHIR server created above. </p>
     <div class="example">
   <pre class="http">
-POST http://localhost:8080/cqf-ruler-dstu3/fhir/Patient
+POST http://localhost:8080/cqf-ruler/fhir/Patient
   </pre>
     </div>
     <p>The patient resource JSON:</p>
