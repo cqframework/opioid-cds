@@ -3,47 +3,47 @@
   "id" : "opioid-cds",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/examples"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/extensions"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/extensions"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/profiles"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/profiles"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/resources"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/resources/library"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/resources/library"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/resources/activitydefinition"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/resources/activitydefinition"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/resources/plandefinition"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/resources/plandefinition"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/vocabulary"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/vocabulary/codesystem"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/vocabulary/codesystem"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/vocabulary/valueset"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/vocabulary/valueset"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/pagecontent"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/pagecontent"
   }],
   "url" : "http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/opioid-cds",
   "version" : "0.1.0",
@@ -575,111 +575,6 @@
     },
     {
       "reference" : {
-        "reference" : "Bundle/example-rec-10-end-of-life-med-exclusion"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Patient/example-rec-10-end-of-life-med-exclusion"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Encounter/example-rec-10-end-of-life-med-exclusion-context"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Bundle/example-rec-10-illicit-drugs"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Patient/example-rec-10-illicit-drugs"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Observation/example-rec-10-illicit-drugs-prefetch"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "MedicationRequest/example-rec-10-illicit-drugs-prefetch"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Encounter/example-rec-10-illicit-drugs-context"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Encounter/example-rec-10-illicit-drugs-prefetch"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Bundle/example-rec-10-missing-prescribed-opioids"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Patient/example-rec-10-missing-prescribed-opioids"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Observation/example-rec-10-missing-prescribed-opioids-prefetch"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "MedicationRequest/example-rec-10-missing-prescribed-opioids-prefetch"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Encounter/example-rec-10-missing-prescribed-opioids-context"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Encounter/example-rec-10-missing-prescribed-opioids-prefetch"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
         "reference" : "Bundle/example-rec-10-no-screenings"
       },
       "exampleBoolean" : true,
@@ -709,97 +604,6 @@
     {
       "reference" : {
         "reference" : "Encounter/example-rec-10-no-screenings-prefetch"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Bundle/example-rec-10-not-missing-prescribed-opioids"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Patient/example-rec-10-not-missing-prescribed-opioids"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Observation/example-rec-10-not-missing-prescribed-opioids-prefetch"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "MedicationRequest/example-rec-10-not-missing-prescribed-opioids-prefetch"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Encounter/example-rec-10-not-missing-prescribed-opioids-context"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Encounter/example-rec-10-not-missing-prescribed-opioids-prefetch"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Bundle/example-rec-10-unprescribed-opioids"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Patient/example-rec-10-unprescribed-opioids"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Observation/example-rec-10-unprescribed-opioids-prefetch-oxycodone"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Observation/example-rec-10-unprescribed-opioids-prefetch-codeine"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "MedicationRequest/example-rec-10-unprescribed-opioids-prefetch"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Encounter/example-rec-10-unprescribed-opioids-context"
-      },
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "Encounter/example-rec-10-unprescribed-opioids-prefetch"
       },
       "exampleBoolean" : true,
       "groupingId" : "p1"
@@ -944,6 +748,15 @@
     },
     {
       "reference" : {
+        "reference" : "Library/fhir-helpers"
+      },
+      "name" : "Library - FHIRHelpers Logic",
+      "description" : "FHIRHelpers Logic",
+      "exampleBoolean" : true,
+      "groupingId" : "p1"
+    },
+    {
+      "reference" : {
         "reference" : "Library/omtklogic"
       },
       "name" : "Library - OMTK Logic",
@@ -1016,7 +829,7 @@
     },
     {
       "reference" : {
-        "reference" : "Library/opioidcds-rec-10-patient-view"
+        "reference" : "Library/opioidcds-recommendation-10-patient-view"
       },
       "name" : "Library - Opioid CDS Recommendation #10 Patient View",
       "description" : "Opioid Management Decision Support Logic for recommendation #10 Patient View",
@@ -1034,7 +847,7 @@
     },
     {
       "reference" : {
-        "reference" : "Library/opioidcds-rec-11-patient-view"
+        "reference" : "Library/opioidcds-recommendation-11-patient-view"
       },
       "name" : "Library - Opioid CDS Recommendation #11 Patient View",
       "description" : "Opioid Management Decision Support Logic for recommendation #11 Patient View",
@@ -1299,24 +1112,6 @@
       },
       "name" : "ValueSet - CDC Opioid Prescribing Guidelines Opioids Abused in Ambulatory Care Medication",
       "description" : "Opioids abused in ambulatory care medication codes",
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "ValueSet/opioids-codeine-cough-meds"
-      },
-      "name" : "ValueSet - CDC Opioid Prescribing Guidelines Opioid Codeine Cough Medication",
-      "description" : "Opioid codeine cough medication codes",
-      "exampleBoolean" : true,
-      "groupingId" : "p1"
-    },
-    {
-      "reference" : {
-        "reference" : "ValueSet/opioids-indicating-end-of-life"
-      },
-      "name" : "ValueSet - CDC Opioid Prescribing Guidelines Opioids Indicating End Of Life Medication",
-      "description" : "Opioids indicating end of life medication codes",
       "exampleBoolean" : true,
       "groupingId" : "p1"
     },

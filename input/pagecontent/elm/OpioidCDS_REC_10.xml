@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+    <identifier id="OpioidCDS_REC_10" version="1.1.0"/>
+    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+    <usings>
+        <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+        <def localIdentifier="FHIR" uri="http://hl7.org/fhir" version="3.0.0"/>
+    </usings>
+    <includes>
+        <def localIdentifier="FHIRHelpers" path="FHIRHelpers" version="3.0.0"/>
+        <def localIdentifier="Common" path="OpioidCDS_Common" version="1.1.0"/>
+    </includes>
+    <parameters>
+        <def name="ContextPrescriptions" accessLevel="Public">
+            <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+                <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+            </parameterTypeSpecifier>
+        </def>
+    </parameters>
+    <statements>
+        <def name="Patient" context="Patient">
+            <expression xsi:type="SingletonFrom">
+                <operand dataType="fhir:Patient" xsi:type="Retrieve"/>
+            </expression>
+        </def>
+        <def name="Lookback Year" context="Patient" accessLevel="Public">
+            <expression lowClosed="true" highClosed="true" xsi:type="Interval">
+                <low xsi:type="Subtract">
+                    <operand xsi:type="Subtract">
+                        <operand xsi:type="Today"/>
+                        <operand value="12" unit="months" xsi:type="Quantity"/>
+                    </operand>
+                    <operand value="1" unit="days" xsi:type="Quantity"/>
+                </low>
+                <high xsi:type="Subtract">
+                    <operand xsi:type="Today"/>
+                    <operand value="1" unit="day" xsi:type="Quantity"/>
+                </high>
+            </expression>
+        </def>
+        <def name="Validate Trigger Event" context="Patient" accessLevel="Public">
+            <expression xsi:type="Exists">
+                <operand xsi:type="Query">
+                    <source alias="TriggerScript">
+                        <expression name="ContextPrescriptions" xsi:type="ParameterRef"/>
+                    </source>
+                    <where xsi:type="If">
+                        <condition asType="t:Boolean" xsi:type="As">
+                            <operand xsi:type="Is">
+                                <operand path="medication" scope="TriggerScript" xsi:type="Property"/>
+                                <isTypeSpecifier name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                            </operand>
+                        </condition>
+                        <then xsi:type="Exists">
+                            <operand xsi:type="Query">
+                                <source alias="OpioidMedication">
+                                    <expression dataType="fhir:Medication" codeProperty="code" xsi:type="Retrieve">
+                                        <codes name="Ambulatory Abuse Potential Opioids" libraryName="Common" xsi:type="ValueSetRef"/>
+                                    </expression>
+                                </source>
+                                <where xsi:type="EndsWith">
+                                    <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                        <operand path="reference" xsi:type="Property">
+                                            <source path="medication" scope="TriggerScript" xsi:type="Property"/>
+                                        </operand>
+                                    </operand>
+                                    <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                        <operand path="id" scope="OpioidMedication" xsi:type="Property"/>
+                                    </operand>
+                                </where>
+                            </operand>
+                        </then>
+                        <else xsi:type="And">
+                            <operand xsi:type="InValueSet">
+                                <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand asType="fhir:CodeableConcept" xsi:type="As">
+                                        <operand path="medication" scope="TriggerScript" xsi:type="Property"/>
+                                    </operand>
+                                </code>
+                                <valueset name="Ambulatory Abuse Potential Opioids" libraryName="Common"/>
+                            </operand>
+                            <operand xsi:type="Or">
+                                <operand xsi:type="Equivalent">
+                                    <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                        <operand path="category" scope="TriggerScript" xsi:type="Property"/>
+                                    </operand>
+                                    <operand xsi:type="ToConcept">
+                                        <operand name="Community" libraryName="Common" xsi:type="CodeRef"/>
+                                    </operand>
+                                </operand>
+                                <operand xsi:type="And">
+                                    <operand name="IgnoreOutpatientCategorySystem" libraryName="Common" xsi:type="ExpressionRef"/>
+                                    <operand name="ConceptCodeOnlyEquivalent" libraryName="Common" xsi:type="FunctionRef">
+                                        <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                            <operand path="category" scope="TriggerScript" xsi:type="Property"/>
+                                        </operand>
+                                        <operand name="Community" libraryName="Common" xsi:type="CodeRef"/>
+                                    </operand>
+                                </operand>
+                            </operand>
+                        </else>
+                    </where>
+                </operand>
+            </expression>
+        </def>
+        <def name="Exclusion Criteria" context="Patient" accessLevel="Public">
+            <expression name="End of Life Assessment" libraryName="Common" xsi:type="ExpressionRef"/>
+        </def>
+        <def name="Illicit Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
+            <expression xsi:type="Query">
+                <source alias="IllicitDrugScreen">
+                    <expression dataType="fhir:Observation" codeProperty="code" xsi:type="Retrieve">
+                        <codes name="Illicit Drug Screening" libraryName="Common" xsi:type="ValueSetRef"/>
+                    </expression>
+                </source>
+                <where precision="Day" xsi:type="In">
+                    <operand xsi:type="DateFrom">
+                        <operand path="value" xsi:type="Property">
+                            <source path="effective" scope="IllicitDrugScreen" xsi:type="Property"/>
+                        </operand>
+                    </operand>
+                    <operand name="Lookback Year" xsi:type="ExpressionRef"/>
+                </where>
+                <sort>
+                    <by direction="asc" xsi:type="ByExpression">
+                        <expression path="value" xsi:type="Property">
+                            <source name="effective" xsi:type="IdentifierRef"/>
+                        </expression>
+                    </by>
+                </sort>
+            </expression>
+        </def>
+        <def name="Most Recent Illicit Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
+            <expression xsi:type="Last">
+                <source name="Illicit Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
+            </expression>
+        </def>
+        <def name="Opioid Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
+            <expression xsi:type="Query">
+                <source alias="OpioidDrugScreen">
+                    <expression dataType="fhir:Observation" codeProperty="code" xsi:type="Retrieve">
+                        <codes name="Opioid Drug Screening" libraryName="Common" xsi:type="ValueSetRef"/>
+                    </expression>
+                </source>
+                <where precision="Day" xsi:type="In">
+                    <operand xsi:type="DateFrom">
+                        <operand path="value" xsi:type="Property">
+                            <source path="effective" scope="OpioidDrugScreen" xsi:type="Property"/>
+                        </operand>
+                    </operand>
+                    <operand name="Lookback Year" xsi:type="ExpressionRef"/>
+                </where>
+                <sort>
+                    <by direction="asc" xsi:type="ByExpression">
+                        <expression path="value" xsi:type="Property">
+                            <source name="effective" xsi:type="IdentifierRef"/>
+                        </expression>
+                    </by>
+                </sort>
+            </expression>
+        </def>
+        <def name="Most Recent Opioid Drug Urine Screenings in Last 12 Months" context="Patient" accessLevel="Public">
+            <expression xsi:type="Last">
+                <source name="Opioid Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
+            </expression>
+        </def>
+        <def name="No Urine Screening In Last 12 Months" context="Patient" accessLevel="Public">
+            <expression xsi:type="And">
+                <operand xsi:type="IsNull">
+                    <operand name="Most Recent Illicit Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
+                </operand>
+                <operand xsi:type="IsNull">
+                    <operand name="Most Recent Opioid Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
+                </operand>
+            </expression>
+        </def>
+        <def name="Has Evidence of Opioids" context="Patient" accessLevel="Public">
+            <expression xsi:type="Not">
+                <operand xsi:type="IsNull">
+                    <operand name="Most Recent Opioid Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
+                </operand>
+            </expression>
+        </def>
+        <def name="Has Evidence of Illicit Drugs" context="Patient" accessLevel="Public">
+            <expression xsi:type="Not">
+                <operand xsi:type="IsNull">
+                    <operand name="Most Recent Illicit Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
+                </operand>
+            </expression>
+        </def>
+        <def name="Inclusion Criteria" context="Patient" accessLevel="Public">
+            <expression xsi:type="And">
+                <operand xsi:type="And">
+                    <operand xsi:type="And">
+                        <operand xsi:type="And">
+                            <operand xsi:type="GreaterOrEqual">
+                                <operand precision="Year" xsi:type="CalculateAge">
+                                    <operand path="birthDate.value" xsi:type="Property">
+                                        <source name="Patient" xsi:type="ExpressionRef"/>
+                                    </operand>
+                                </operand>
+                                <operand valueType="t:Integer" value="18" xsi:type="Literal"/>
+                            </operand>
+                            <operand name="Validate Trigger Event" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand xsi:type="Not">
+                            <operand name="Exclusion Criteria" xsi:type="ExpressionRef"/>
+                        </operand>
+                    </operand>
+                    <operand xsi:type="AnyTrue">
+                        <source name="ProbableDaysInRange" libraryName="Common" xsi:type="FunctionRef">
+                            <operand name="Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
+                            <operand valueType="t:Integer" value="90" xsi:type="Literal"/>
+                            <operand valueType="t:Integer" value="80" xsi:type="Literal"/>
+                        </source>
+                    </operand>
+                </operand>
+                <operand xsi:type="Or">
+                    <operand xsi:type="Or">
+                        <operand name="No Urine Screening In Last 12 Months" xsi:type="ExpressionRef"/>
+                        <operand name="Has Evidence of Opioids" xsi:type="ExpressionRef"/>
+                    </operand>
+                    <operand name="Has Evidence of Illicit Drugs" xsi:type="ExpressionRef"/>
+                </operand>
+            </expression>
+        </def>
+        <def name="Positive Illicit Drug Screening Qualifying Codes" context="Patient" accessLevel="Public">
+            <expression path="code" xsi:type="Property">
+                <source name="Most Recent Illicit Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
+            </expression>
+        </def>
+        <def name="Positive Opioid Drug Screening Qualifying Codes" context="Patient" accessLevel="Public">
+            <expression path="code" xsi:type="Property">
+                <source name="Most Recent Opioid Drug Urine Screenings in Last 12 Months" xsi:type="ExpressionRef"/>
+            </expression>
+        </def>
+        <def name="No Screening In Last 12 Months Indicator" context="Patient" accessLevel="Public">
+            <expression xsi:type="If">
+                <condition asType="t:Boolean" xsi:type="As">
+                    <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+                </condition>
+                <then valueType="t:String" value="warning" xsi:type="Literal"/>
+                <else asType="t:String" xsi:type="As">
+                    <operand xsi:type="Null"/>
+                </else>
+            </expression>
+        </def>
+        <def name="Evidence Opioids Indicator" context="Patient" accessLevel="Public">
+            <expression xsi:type="If">
+                <condition asType="t:Boolean" xsi:type="As">
+                    <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+                </condition>
+                <then valueType="t:String" value="warning" xsi:type="Literal"/>
+                <else asType="t:String" xsi:type="As">
+                    <operand xsi:type="Null"/>
+                </else>
+            </expression>
+        </def>
+        <def name="Evidence of Illicit Drugs Indicator" context="Patient" accessLevel="Public">
+            <expression xsi:type="If">
+                <condition asType="t:Boolean" xsi:type="As">
+                    <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+                </condition>
+                <then valueType="t:String" value="warning" xsi:type="Literal"/>
+                <else asType="t:String" xsi:type="As">
+                    <operand xsi:type="Null"/>
+                </else>
+            </expression>
+        </def>
+        <def name="No Screening In Last 12 Months Summary" context="Patient" accessLevel="Public">
+            <expression xsi:type="If">
+                <condition asType="t:Boolean" xsi:type="As">
+                    <operand xsi:type="And">
+                        <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+                        <operand name="No Urine Screening In Last 12 Months" xsi:type="ExpressionRef"/>
+                    </operand>
+                </condition>
+                <then valueType="t:String" value="Annual Urine Screening Check" xsi:type="Literal"/>
+                <else asType="t:String" xsi:type="As">
+                    <operand xsi:type="Null"/>
+                </else>
+            </expression>
+        </def>
+        <def name="Evidence of Opioids Summary" context="Patient" accessLevel="Public">
+            <expression xsi:type="If">
+                <condition asType="t:Boolean" xsi:type="As">
+                    <operand xsi:type="And">
+                        <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+                        <operand name="Has Evidence of Opioids" xsi:type="ExpressionRef"/>
+                    </operand>
+                </condition>
+                <then valueType="t:String" value="Opioids Found In Urine Screening" xsi:type="Literal"/>
+                <else asType="t:String" xsi:type="As">
+                    <operand xsi:type="Null"/>
+                </else>
+            </expression>
+        </def>
+        <def name="Evidence of Illicit Drugs Summary" context="Patient" accessLevel="Public">
+            <expression xsi:type="If">
+                <condition asType="t:Boolean" xsi:type="As">
+                    <operand xsi:type="And">
+                        <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+                        <operand name="Has Evidence of Illicit Drugs" xsi:type="ExpressionRef"/>
+                    </operand>
+                </condition>
+                <then valueType="t:String" value="Illicit Drugs Found In Urine Screening" xsi:type="Literal"/>
+                <else asType="t:String" xsi:type="As">
+                    <operand xsi:type="Null"/>
+                </else>
+            </expression>
+        </def>
+        <def name="No Screening In Last 12 Months Detail" context="Patient" accessLevel="Public">
+            <expression xsi:type="If">
+                <condition asType="t:Boolean" xsi:type="As">
+                    <operand xsi:type="And">
+                        <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+                        <operand name="No Urine Screening In Last 12 Months" xsi:type="ExpressionRef"/>
+                    </operand>
+                </condition>
+                <then valueType="t:String" value="Patients on opioid therapy should have a urine drug test performed every 12 months." xsi:type="Literal"/>
+                <else asType="t:String" xsi:type="As">
+                    <operand xsi:type="Null"/>
+                </else>
+            </expression>
+        </def>
+        <def name="Evidence of Opioids Detail" context="Patient" accessLevel="Public">
+            <expression xsi:type="If">
+                <condition asType="t:Boolean" xsi:type="As">
+                    <operand xsi:type="And">
+                        <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+                        <operand name="Has Evidence of Opioids" xsi:type="ExpressionRef"/>
+                    </operand>
+                </condition>
+                <then xsi:type="Concatenate">
+                    <operand valueType="t:String" value="Found the following opioid(s): " xsi:type="Literal"/>
+                    <operand name="CodeableConceptToString" libraryName="Common" xsi:type="FunctionRef">
+                        <operand name="Positive Opioid Drug Screening Qualifying Codes" xsi:type="ExpressionRef"/>
+                    </operand>
+                </then>
+                <else asType="t:String" xsi:type="As">
+                    <operand xsi:type="Null"/>
+                </else>
+            </expression>
+        </def>
+        <def name="Evidence of Illicit Drugs Detail" context="Patient" accessLevel="Public">
+            <expression xsi:type="Query">
+                <source alias="positiveScreening">
+                    <expression name="Positive Illicit Drug Screening Qualifying Codes" xsi:type="ExpressionRef"/>
+                </source>
+                <return>
+                    <expression xsi:type="If">
+                        <condition asType="t:Boolean" xsi:type="As">
+                            <operand xsi:type="And">
+                                <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+                                <operand name="Has Evidence of Illicit Drugs" xsi:type="ExpressionRef"/>
+                            </operand>
+                        </condition>
+                        <then xsi:type="Concatenate">
+                            <operand valueType="t:String" value="Found the following illicit drug(s) in urine drug screen: " xsi:type="Literal"/>
+                            <operand name="CodeableConceptToString" libraryName="Common" xsi:type="FunctionRef">
+                                <operand name="positiveScreening" xsi:type="AliasRef"/>
+                            </operand>
+                        </then>
+                        <else asType="t:String" xsi:type="As">
+                            <operand xsi:type="Null"/>
+                        </else>
+                    </expression>
+                </return>
+            </expression>
+        </def>
+    </statements>
+</library>

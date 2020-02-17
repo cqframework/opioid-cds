@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+    <identifier id="OpioidCDS_REC_11" version="1.1.0"/>
+    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+    <usings>
+        <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+        <def localIdentifier="FHIR" uri="http://hl7.org/fhir" version="3.0.0"/>
+    </usings>
+    <includes>
+        <def localIdentifier="FHIRHelpers" path="FHIRHelpers" version="3.0.0"/>
+        <def localIdentifier="Common" path="OpioidCDS_Common" version="1.1.0"/>
+    </includes>
+    <parameters>
+        <def name="ContextPrescriptions" accessLevel="Public">
+            <parameterTypeSpecifier xsi:type="ListTypeSpecifier">
+                <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+            </parameterTypeSpecifier>
+        </def>
+    </parameters>
+    <statements>
+        <def name="Patient" context="Patient">
+            <expression xsi:type="SingletonFrom">
+                <operand dataType="fhir:Patient" xsi:type="Retrieve"/>
+            </expression>
+        </def>
+        <def name="Validate Trigger Event For Benzodiazepine" context="Patient" accessLevel="Public">
+            <expression xsi:type="Exists">
+                <operand xsi:type="Query">
+                    <source alias="TriggerScript">
+                        <expression name="ContextPrescriptions" xsi:type="ParameterRef"/>
+                    </source>
+                    <where xsi:type="If">
+                        <condition asType="t:Boolean" xsi:type="As">
+                            <operand xsi:type="Is">
+                                <operand path="medication" scope="TriggerScript" xsi:type="Property"/>
+                                <isTypeSpecifier name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                            </operand>
+                        </condition>
+                        <then xsi:type="Exists">
+                            <operand xsi:type="Query">
+                                <source alias="BenzodiazepineMedication">
+                                    <expression dataType="fhir:Medication" codeProperty="code" xsi:type="Retrieve">
+                                        <codes name="Benzodiazepines" libraryName="Common" xsi:type="ValueSetRef"/>
+                                    </expression>
+                                </source>
+                                <where xsi:type="EndsWith">
+                                    <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                        <operand path="reference" xsi:type="Property">
+                                            <source path="medication" scope="TriggerScript" xsi:type="Property"/>
+                                        </operand>
+                                    </operand>
+                                    <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                        <operand path="id" scope="BenzodiazepineMedication" xsi:type="Property"/>
+                                    </operand>
+                                </where>
+                            </operand>
+                        </then>
+                        <else xsi:type="And">
+                            <operand xsi:type="InValueSet">
+                                <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand asType="fhir:CodeableConcept" xsi:type="As">
+                                        <operand path="medication" scope="TriggerScript" xsi:type="Property"/>
+                                    </operand>
+                                </code>
+                                <valueset name="Benzodiazepines" libraryName="Common"/>
+                            </operand>
+                            <operand xsi:type="Or">
+                                <operand xsi:type="Equivalent">
+                                    <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                        <operand path="category" scope="TriggerScript" xsi:type="Property"/>
+                                    </operand>
+                                    <operand xsi:type="ToConcept">
+                                        <operand name="Community" libraryName="Common" xsi:type="CodeRef"/>
+                                    </operand>
+                                </operand>
+                                <operand xsi:type="And">
+                                    <operand name="IgnoreOutpatientCategorySystem" libraryName="Common" xsi:type="ExpressionRef"/>
+                                    <operand name="ConceptCodeOnlyEquivalent" libraryName="Common" xsi:type="FunctionRef">
+                                        <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                            <operand path="category" scope="TriggerScript" xsi:type="Property"/>
+                                        </operand>
+                                        <operand name="Community" libraryName="Common" xsi:type="CodeRef"/>
+                                    </operand>
+                                </operand>
+                            </operand>
+                        </else>
+                    </where>
+                </operand>
+            </expression>
+        </def>
+        <def name="Validate Trigger Event For Ambulatory Care Abuse Potential" context="Patient" accessLevel="Public">
+            <expression xsi:type="Exists">
+                <operand xsi:type="Query">
+                    <source alias="TriggerScript">
+                        <expression name="ContextPrescriptions" xsi:type="ParameterRef"/>
+                    </source>
+                    <where xsi:type="If">
+                        <condition asType="t:Boolean" xsi:type="As">
+                            <operand xsi:type="Is">
+                                <operand path="medication" scope="TriggerScript" xsi:type="Property"/>
+                                <isTypeSpecifier name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                            </operand>
+                        </condition>
+                        <then xsi:type="Exists">
+                            <operand xsi:type="Query">
+                                <source alias="OpioidMedication">
+                                    <expression dataType="fhir:Medication" codeProperty="code" xsi:type="Retrieve">
+                                        <codes name="Ambulatory Abuse Potential Opioids" libraryName="Common" xsi:type="ValueSetRef"/>
+                                    </expression>
+                                </source>
+                                <where xsi:type="EndsWith">
+                                    <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                        <operand path="reference" xsi:type="Property">
+                                            <source path="medication" scope="TriggerScript" xsi:type="Property"/>
+                                        </operand>
+                                    </operand>
+                                    <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                        <operand path="id" scope="OpioidMedication" xsi:type="Property"/>
+                                    </operand>
+                                </where>
+                            </operand>
+                        </then>
+                        <else xsi:type="And">
+                            <operand xsi:type="InValueSet">
+                                <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand asType="fhir:CodeableConcept" xsi:type="As">
+                                        <operand path="medication" scope="TriggerScript" xsi:type="Property"/>
+                                    </operand>
+                                </code>
+                                <valueset name="Ambulatory Abuse Potential Opioids" libraryName="Common"/>
+                            </operand>
+                            <operand xsi:type="Or">
+                                <operand xsi:type="Equivalent">
+                                    <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                        <operand path="category" scope="TriggerScript" xsi:type="Property"/>
+                                    </operand>
+                                    <operand xsi:type="ToConcept">
+                                        <operand name="Community" libraryName="Common" xsi:type="CodeRef"/>
+                                    </operand>
+                                </operand>
+                                <operand xsi:type="And">
+                                    <operand name="IgnoreOutpatientCategorySystem" libraryName="Common" xsi:type="ExpressionRef"/>
+                                    <operand name="ConceptCodeOnlyEquivalent" libraryName="Common" xsi:type="FunctionRef">
+                                        <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                            <operand path="category" scope="TriggerScript" xsi:type="Property"/>
+                                        </operand>
+                                        <operand name="Community" libraryName="Common" xsi:type="CodeRef"/>
+                                    </operand>
+                                </operand>
+                            </operand>
+                        </else>
+                    </where>
+                </operand>
+            </expression>
+        </def>
+        <def name="Exclusion Criteria" context="Patient" accessLevel="Public">
+            <expression name="End of Life Assessment" libraryName="Common" xsi:type="ExpressionRef"/>
+        </def>
+        <def name="On Benzodiazepine" context="Patient" accessLevel="Public">
+            <expression xsi:type="Or">
+                <operand name="Validate Trigger Event For Benzodiazepine" xsi:type="ExpressionRef"/>
+                <operand xsi:type="Exists">
+                    <operand name="Active Ambulatory Benzodiazepine Rx" libraryName="Common" xsi:type="ExpressionRef"/>
+                </operand>
+            </expression>
+        </def>
+        <def name="Opioid with Ambulatory Care Abuse Potential" context="Patient" accessLevel="Public">
+            <expression xsi:type="Or">
+                <operand name="Validate Trigger Event For Ambulatory Care Abuse Potential" xsi:type="ExpressionRef"/>
+                <operand xsi:type="Exists">
+                    <operand name="Active Ambulatory Opioid Rx" libraryName="Common" xsi:type="ExpressionRef"/>
+                </operand>
+            </expression>
+        </def>
+        <def name="Inclusion Criteria" context="Patient" accessLevel="Public">
+            <expression xsi:type="And">
+                <operand xsi:type="And">
+                    <operand xsi:type="And">
+                        <operand xsi:type="And">
+                            <operand xsi:type="GreaterOrEqual">
+                                <operand precision="Year" xsi:type="CalculateAge">
+                                    <operand path="birthDate.value" xsi:type="Property">
+                                        <source name="Patient" xsi:type="ExpressionRef"/>
+                                    </operand>
+                                </operand>
+                                <operand valueType="t:Integer" value="18" xsi:type="Literal"/>
+                            </operand>
+                            <operand xsi:type="Or">
+                                <operand name="Validate Trigger Event For Benzodiazepine" xsi:type="ExpressionRef"/>
+                                <operand name="Validate Trigger Event For Ambulatory Care Abuse Potential" xsi:type="ExpressionRef"/>
+                            </operand>
+                        </operand>
+                        <operand xsi:type="Not">
+                            <operand name="Exclusion Criteria" xsi:type="ExpressionRef"/>
+                        </operand>
+                    </operand>
+                    <operand name="On Benzodiazepine" xsi:type="ExpressionRef"/>
+                </operand>
+                <operand name="Opioid with Ambulatory Care Abuse Potential" xsi:type="ExpressionRef"/>
+            </expression>
+        </def>
+        <def name="Get Indicator" context="Patient" accessLevel="Public">
+            <expression xsi:type="If">
+                <condition asType="t:Boolean" xsi:type="As">
+                    <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+                </condition>
+                <then valueType="t:String" value="warning" xsi:type="Literal"/>
+                <else asType="t:String" xsi:type="As">
+                    <operand xsi:type="Null"/>
+                </else>
+            </expression>
+        </def>
+        <def name="Get Summary" context="Patient" accessLevel="Public">
+            <expression xsi:type="If">
+                <condition asType="t:Boolean" xsi:type="As">
+                    <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+                </condition>
+                <then valueType="t:String" value="Avoid prescribing opioid pain medication and benzodiazepine concurrently whenever possible." xsi:type="Literal"/>
+                <else asType="t:String" xsi:type="As">
+                    <operand xsi:type="Null"/>
+                </else>
+            </expression>
+        </def>
+        <def name="Get Detail" context="Patient" accessLevel="Public">
+            <expression xsi:type="If">
+                <condition asType="t:Boolean" xsi:type="As">
+                    <operand name="Inclusion Criteria" xsi:type="ExpressionRef"/>
+                </condition>
+                <then xsi:type="If">
+                    <condition asType="t:Boolean" xsi:type="As">
+                        <operand name="Validate Trigger Event For Benzodiazepine" xsi:type="ExpressionRef"/>
+                    </condition>
+                    <then valueType="t:String" value="The benzodiazepine prescription request is concurrent with an active opioid prescription" xsi:type="Literal"/>
+                    <else valueType="t:String" value="The opioid prescription request is concurrent with an active benzodiazepine prescription" xsi:type="Literal"/>
+                </then>
+                <else asType="t:String" xsi:type="As">
+                    <operand xsi:type="Null"/>
+                </else>
+            </expression>
+        </def>
+    </statements>
+</library>
