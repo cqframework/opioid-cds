@@ -16,65 +16,7 @@
       "resource": {
         "resourceType": "Patient",
         "id": "AAAAAAAAA",
-        "extension": [
-          {
-            "valueCode": "M",
-            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex"
-          },
-          {
-            "extension": [
-              {
-                "valueCoding": {
-                  "system": "http://hl7.org/fhir/us/core/ValueSet/omb-race-category",
-                  "code": "2106-3",
-                  "display": "White"
-                },
-                "url": "ombCategory"
-              },
-              {
-                "valueString": "White",
-                "url": "text"
-              }
-            ],
-            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
-          },
-          {
-            "extension": [
-              {
-                "valueCoding": {
-                  "system": "http://hl7.org/fhir/us/core/ValueSet/omb-ethnicity-category",
-                  "code": "2186-5",
-                  "display": "Not Hispanic or Latino"
-                },
-                "url": "ombCategory"
-              },
-              {
-                "valueString": "Not Hispanic or Latino",
-                "url": "text"
-              }
-            ],
-            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
-          }
-        ],
-        "identifier": "",
         "active": true,
-        "name": [
-          {
-            "extension": [
-              {
-                "valueString": "XXX",
-                "url": "http://hl7.org/fhir/StructureDefinition/humanname-partner-name"
-              }
-            ],
-            "use": "usual",
-            "text": "Test Patient",
-            "family": "XXX",
-            "given": [
-              "Test",
-              "Test"
-            ]
-          }
-        ],
         "telecom": "",
         "gender": "male",
         "birthDate": "1959-01-01",
@@ -103,8 +45,7 @@
             "reference": "/Practitioner/BBBB",
             "display": "BBBB, MD"
           }
-        ],
-        "managingOrganization": ""
+        ]
       }
     },
     "item2": {
@@ -118,26 +59,26 @@
           {
             "resource": {
               "resourceType": "MedicationRequest",
-              "id": "example-rec-10-no-screenings-context",
+              "id": "example-rec-11-benzo-trigger-with-opioid-by-reference-context",
               "status": "active",
               "intent": "order",
               "category": {
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/medication-request-category",
-                    "code": "outpatient"
+                    "code": "community"
                   }
                 ]
               },
               "medicationReference": {
-                "reference": "Medication/12bd1f88-426f-4567-85fe-db9eae37f56b",
-                "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
+                "reference": "Medication/12bd1f88-426f-4567-85fe-db9eae37f56c",
+                "display": "Flurazepam Hydrochloride 15 MG Oral Capsule"
               },
               "subject": {
-                "reference": "Patient/example-rec-10-no-screenings"
+                "reference": "Patient/AAAAAAAAA"
               },
               "context": {
-                "reference": "Encounter/example-rec-10-no-screenings-context"
+                "reference": "Encounter/example-rec-11-benzo-trigger-with-opioid-context"
               },
               "_authoredOn": {
                 "extension": [
@@ -183,14 +124,14 @@
           {
             "resource": {
               "resourceType": "MedicationRequest",
-              "id": "example-rec-10-no-screenings-prefetch",
+              "id": "example-rec-11-benzo-trigger-with-opioid-by-reference-prefetch",
               "status": "active",
               "intent": "order",
               "category": {
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/medication-request-category",
-                    "code": "outpatient"
+                    "code": "community"
                   }
                 ]
               },
@@ -199,10 +140,10 @@
                 "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
               },
               "subject": {
-                "reference": "Patient/example-rec-10-no-screenings"
+                "reference": "Patient/AAAAAAAAA"
               },
               "context": {
-                "reference": "Encounter/example-rec-10-no-screenings-prefetch"
+                "reference": "Encounter/example-rec-11-benzo-trigger-with-opioid-prefetch"
               },
               "_authoredOn": {
                 "extension": [
@@ -258,12 +199,12 @@
           {
             "resource": {
               "resourceType": "Medication",
-              "id": "12bd1f88-426f-4567-85fe-db9eae37f56b",
+              "id": "12bd1f88-426f-4567-85fe-db9eae37f56c",
               "code": {
                 "coding": [
                   {
                     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                    "code": "197696"
+                    "code": "1298088"
                   }
                 ]
               },
