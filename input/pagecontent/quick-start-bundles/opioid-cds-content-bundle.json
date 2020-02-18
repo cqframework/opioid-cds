@@ -7,6 +7,7 @@
         "resourceType": "PlanDefinition",
         "id": "opioidcds-11-patient-view",
         "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11-patient-view",
+        "version": "1.1.0",
         "name": "PlanDefinition_Recommendation_11_Patient_View",
         "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 (patient-view)",
         "type": {
@@ -316,6 +317,7 @@
         "resourceType": "PlanDefinition",
         "id": "opioidcds-10-patient-view",
         "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10-patient-view",
+        "version": "1.1.0",
         "name": "PlanDefinition_Recommendation_10_Patient_View",
         "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 (patient-view)",
         "type": {
@@ -456,6 +458,7 @@
         "resourceType": "PlanDefinition",
         "id": "opioidcds-08",
         "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-08",
+        "version": "1.1.0",
         "name": "PlanDefinition_Recommendation_8",
         "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #8",
         "type": {
@@ -974,6 +977,7 @@
         "resourceType": "PlanDefinition",
         "id": "opioidcds-04",
         "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-04",
+        "version": "1.1.0",
         "name": "PlanDefinition_Recommendation_4",
         "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4",
         "type": {
@@ -1294,6 +1298,7 @@
         "resourceType": "PlanDefinition",
         "id": "opioidcds-05",
         "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-05",
+        "version": "1.1.0",
         "name": "PlanDefinition_Recommendation_5",
         "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5",
         "type": {
@@ -1796,6 +1801,7 @@
         "resourceType": "PlanDefinition",
         "id": "opioidcds-10",
         "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10",
+        "version": "1.1.0",
         "name": "PlanDefinition_Recommendation_10",
         "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10",
         "type": {
@@ -2300,6 +2306,7 @@
         "resourceType": "PlanDefinition",
         "id": "opioidcds-07",
         "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-07",
+        "version": "1.1.0",
         "name": "PlanDefinition_Recommendation_7",
         "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #7",
         "type": {
@@ -2494,6 +2501,7 @@
         "resourceType": "PlanDefinition",
         "id": "opioidcds-11",
         "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11",
+        "version": "1.1.0",
         "name": "PlanDefinition_Recommendation_11",
         "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11",
         "type": {
