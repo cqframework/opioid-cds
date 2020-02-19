@@ -6,8 +6,8 @@
     <name value="Opioid Prescribing Support Implementation Guide"/>
     <status value="draft"/>
     <experimental value="false"/>
-    <date value="2017-02-06"/>
     <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <date value="2017-02-06"/>
     <description value="Opioid Prescribing Support Implementation Guide"/>
     <fhirVersion value="3.0.2"/>
     <package>
@@ -470,99 +470,6 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/example-rec-10-end-of-life-med-exclusion"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-10-end-of-life-med-exclusion"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-end-of-life-med-exclusion-context"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Bundle/example-rec-10-illicit-drugs"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-10-illicit-drugs"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Observation/example-rec-10-illicit-drugs-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-10-illicit-drugs-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-illicit-drugs-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-illicit-drugs-prefetch"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Bundle/example-rec-10-missing-prescribed-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-10-missing-prescribed-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Observation/example-rec-10-missing-prescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-10-missing-prescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-missing-prescribed-opioids-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-missing-prescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
                 <reference value="Bundle/example-rec-10-no-screenings"/>
             </sourceReference>
         </resource>
@@ -588,86 +495,6 @@
             <example value="true"/>
             <sourceReference>
                 <reference value="Encounter/example-rec-10-no-screenings-prefetch"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Bundle/example-rec-10-not-missing-prescribed-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-10-not-missing-prescribed-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Observation/example-rec-10-not-missing-prescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-10-not-missing-prescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-not-missing-prescribed-opioids-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-not-missing-prescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Bundle/example-rec-10-unprescribed-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Patient/example-rec-10-unprescribed-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Observation/example-rec-10-unprescribed-opioids-prefetch-oxycodone"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Observation/example-rec-10-unprescribed-opioids-prefetch-codeine"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="MedicationRequest/example-rec-10-unprescribed-opioids-prefetch"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-unprescribed-opioids-context"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Encounter/example-rec-10-unprescribed-opioids-prefetch"/>
             </sourceReference>
         </resource>
 
@@ -796,6 +623,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="Library - FHIRHelpers Logic"/>
+            <description value="FHIRHelpers Logic"/>
+            <sourceReference>
+                <reference value="Library/fhir-helpers"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="Library - OMTK Logic"/>
             <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic"/>
             <sourceReference>
@@ -863,7 +698,7 @@
             <name value="Library - Opioid CDS Recommendation #10 Patient View"/>
             <description value="Opioid Management Decision Support Logic for recommendation #10 Patient View"/>
             <sourceReference>
-                <reference value="Library/opioidcds-rec-10-patient-view"/>
+                <reference value="Library/opioidcds-recommendation-10-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
@@ -879,7 +714,7 @@
             <name value="Library - Opioid CDS Recommendation #11 Patient View"/>
             <description value="Opioid Management Decision Support Logic for recommendation #11 Patient View"/>
             <sourceReference>
-                <reference value="Library/opioidcds-rec-11-patient-view"/>
+                <reference value="Library/opioidcds-recommendation-11-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1116,22 +951,6 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Codeine Cough Medication"/>
-            <description value="Opioid codeine cough medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioids-codeine-cough-meds"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioids Indicating End Of Life Medication"/>
-            <description value="Opioids indicating end of life medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioids-indicating-end-of-life"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Short Acting Opioids Medication"/>
             <description value="Short acting opioids medication codes"/>
             <sourceReference>
@@ -1163,49 +982,37 @@
             </sourceReference>
         </resource>
     </package>
-    <binary value="cql/OMTKLogic-0.0.0.cql"/>
-    <binary value="cql/OMTKLogic-0.0.1.cql"/>
-    <binary value="cql/OMTKLogic-0.1.0.cql"/>
-    <binary value="cql/OpioidCDS_DSTU2_Common.cql"/>
-    <binary value="cql/OpioidCDS_DSTU2_REC_04.cql"/>
-    <binary value="cql/OpioidCDS_DSTU2_REC_05.cql"/>
-    <binary value="cql/OpioidCDS_DSTU2_REC_07.cql"/>
-    <binary value="cql/OpioidCDS_DSTU2_REC_08.cql"/>
-    <binary value="cql/OpioidCDS_DSTU2_REC_10.cql"/>
-    <binary value="cql/OpioidCDS_DSTU2_REC_11.cql"/>
-    <binary value="cql/OpioidCDS_DSTU2_REC_10_patient-view.cql"/>
-    <binary value="cql/OpioidCDS_DSTU2_REC_11_patient-view.cql"/>
-    <binary value="cql/OpioidCDSSTU3Common.cql"/>
-    <binary value="cql/OpioidCDSSTU3REC04.cql"/>
-    <binary value="cql/OpioidCDSSTU3REC05.cql"/>
-    <binary value="cql/OpioidCDSSTU3REC07.cql"/>
-    <binary value="cql/OpioidCDSSTU3REC08.cql"/>
-    <binary value="cql/OpioidCDSSTU3REC10.cql"/>
-    <binary value="cql/OpioidCDSSTU3REC11.cql"/>
-    <binary value="cql/OpioidCDSSTU3REC10_patient-view.cql"/>
-    <binary value="cql/OpioidCDSSTU3REC11_patient-view.cql"/>
-    <binary value="elm/OMTKLogic-0.0.0.xml"/>
-    <binary value="elm/OMTKLogic-0.0.1.xml"/>
-    <binary value="elm/OMTKLogic-0.1.0.xml"/>
-    <binary value="elm/OpioidCDS_DSTU2_Common.xml"/>
-    <binary value="elm/OpioidCDS_DSTU2_REC_04.xml"/>
-    <binary value="elm/OpioidCDS_DSTU2_REC_05.xml"/>
-    <binary value="elm/OpioidCDS_DSTU2_REC_07.xml"/>
-    <binary value="elm/OpioidCDS_DSTU2_REC_08.xml"/>
-    <binary value="elm/OpioidCDS_DSTU2_REC_10.xml"/>
-    <binary value="elm/OpioidCDS_DSTU2_REC_11.xml"/>
-    <binary value="elm/OpioidCDS_DSTU2_REC_10_patient-view.xml"/>
-    <binary value="elm/OpioidCDS_DSTU2_REC_11_patient-view.xml"/>
-    <binary value="elm/OpioidCDSSTU3Common.xml"/>
-    <binary value="elm/OpioidCDSSTU3REC04.xml"/>
-    <binary value="elm/OpioidCDSSTU3REC05.xml"/>
-    <binary value="elm/OpioidCDSSTU3REC07.xml"/>
-    <binary value="elm/OpioidCDSSTU3REC08.xml"/>
-    <binary value="elm/OpioidCDSSTU3REC10.xml"/>
-    <binary value="elm/OpioidCDSSTU3REC11.xml"/>
-    <binary value="elm/OpioidCDSSTU3REC10_patient-view.xml"/>
-    <binary value="elm/OpioidCDSSTU3REC11_patient-view.xml"/>
-    <binary value="modelinfo/OMTK-modelinfo-0.1.0.xml"/>
+    <binary value="cql/OMTKData2018.cql"/>
+    <binary value="cql/OMTKData2019.cql"/>
+    <binary value="cql/OMTKData2020.cql"/>
+    <binary value="cql/OMTKData_Changes.cql"/>
+    <binary value="cql/OMTKLogicCQL.cql"/>
+    <binary value="cql/OMTKLogicStub.cql"/>
+    <binary value="cql/OpioidCDS_Common.cql"/>
+    <binary value="cql/OpioidCDS_REC_04.cql"/>
+    <binary value="cql/OpioidCDS_REC_05.cql"/>
+    <binary value="cql/OpioidCDS_REC_07.cql"/>
+    <binary value="cql/OpioidCDS_REC_08.cql"/>
+    <binary value="cql/OpioidCDS_REC_10.cql"/>
+    <binary value="cql/OpioidCDS_REC_11.cql"/>
+    <binary value="cql/OpioidCDS_REC_10_Patient_View.cql"/>
+    <binary value="cql/OpioidCDS_REC_11_Patient_View.cql"/>
+    <binary value="elm/OMTKData2018.xml"/>
+    <binary value="elm/OMTKData2019.xml"/>
+    <binary value="elm/OMTKData2020.xml"/>
+    <binary value="elm/OMTKData_Changes.xml"/>
+    <binary value="elm/OMTKLogicCQL.xml"/>
+    <binary value="elm/OMTKLogicStub.xml"/>
+    <binary value="elm/OpioidCDS_Common.xml"/>
+    <binary value="elm/OpioidCDS_REC_04.xml"/>
+    <binary value="elm/OpioidCDS_REC_05.xml"/>
+    <binary value="elm/OpioidCDS_REC_07.xml"/>
+    <binary value="elm/OpioidCDS_REC_08.xml"/>
+    <binary value="elm/OpioidCDS_REC_10.xml"/>
+    <binary value="elm/OpioidCDS_REC_11.xml"/>
+    <binary value="elm/OpioidCDS_REC_10_Patient_View.xml"/>
+    <binary value="elm/OpioidCDS_REC_11_Patient_View.xml"/>
+    <binary value="modelinfo/OMTK-modelinfo.xml"/>
     <page>
         <source value="index.html"/>
         <title value="Opioid Prescribing Support Implementation Guide"/>
