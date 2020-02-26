@@ -1,4 +1,4 @@
-library OMTKData_Changes version '1.1.0'
+library OMTKData_Changes version '1.1.1'
 
 define OldDrugIngredientsCount: Count(OldDrugIngredients)
 define NewDrugIngredientsCount: Count(NewDrugIngredients)

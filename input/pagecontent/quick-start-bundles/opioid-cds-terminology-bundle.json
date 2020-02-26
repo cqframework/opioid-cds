@@ -27,7 +27,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/naloxone",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-nalaxone",
         "title": "RxNorm Nalaxone Drugs",
         "status": "active",
@@ -346,7 +346,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/long-acting-opioids",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-extended-release-opioid-medications-with-ambulatory-abuse-potential",
         "title": "RxNorm Extended Release Opioid Medications with Ambulatory Abuse Potential",
         "status": "active",
@@ -1502,7 +1502,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-urine-screening",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-opioid-urine-screening",
         "title": "Opioid Urine Screening",
         "status": "active",
@@ -2966,7 +2966,7 @@
             "value": "2.16.840.1.113762.1.4.1116.351"
           }
         ],
-        "version": "1.1.0",
+        "version": "1.1.1",
         "status": "active",
         "compose": {
           "include": [
@@ -3285,7 +3285,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioidcds-indicator",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-opioidcds-indicator",
         "status": "active",
         "compose": {
@@ -3336,7 +3336,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/discharge-to-hospice",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-discharge-to-hospice",
         "title": "Snomed Discharge to Hospice",
         "status": "active",
@@ -3423,7 +3423,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "status": "active",
         "compose": {
           "include": [
@@ -3477,7 +3477,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/end-of-life-conditions",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-end-of-life-conditions",
         "title": "Snomed and ICD10 Malignant or Pacreatic Cancers or Hepatic Failure",
         "status": "active",
@@ -7373,7 +7373,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/end-of-life-care",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-therapies-indicating-end-of-life-care",
         "title": "Snomed Therapies Indicating End of Life Care",
         "status": "active",
@@ -7473,7 +7473,7 @@
             "value": "2.16.840.1.113883.3.526.3.1259"
           }
         ],
-        "version": "1.1.0",
+        "version": "1.1.1",
         "status": "active",
         "compose": {
           "include": [
@@ -7531,7 +7531,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-abuse-assessment",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-opioid-abuse-assessment",
         "title": "Opioid Use Assessment",
         "status": "active",
@@ -7626,7 +7626,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "status": "active",
         "compose": {
           "include": [
@@ -7680,7 +7680,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/short-acting-opioids",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-short-acting-opioids",
         "title": "Intermediate Release Opioid Medications with Ambulatory Abuse Potential",
         "status": "active",
@@ -11088,7 +11088,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/benzodiazepines",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-benzodiazepine-drugs",
         "title": "RxNorm Benzodiazepine Drugs",
         "status": "active",
@@ -11971,7 +11971,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/illicit-drug-urine-screening",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-illicit-drug-urine-screening",
         "title": "Loinc Non-opioid Drug Urine Test",
         "status": "active",
@@ -13622,7 +13622,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids-abused-in-ambulatory-care",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-opioids-abused-in-ambulatory-care",
         "title": "Opioid Medications with Ambulatory Abuse Potential",
         "status": "active",
@@ -18003,7 +18003,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioids",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "status": "active",
         "compose": {
           "include": [
@@ -22465,7 +22465,7 @@
           }
         ],
         "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-abuse",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "name": "valueset-substance-abuse",
         "title": "Drug Abuse Conditions",
         "status": "active",

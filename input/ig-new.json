@@ -3,54 +3,54 @@
   "id" : "opioid-cds",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/examples"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/extensions"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/extensions"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/profiles"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/profiles"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/resources"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/resources/library"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/resources/library"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/resources/activitydefinition"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/resources/activitydefinition"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/resources/plandefinition"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/resources/plandefinition"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/vocabulary"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/vocabulary/codesystem"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/vocabulary/codesystem"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/vocabulary/valueset"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/vocabulary/valueset"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/ImplementationGuides/opioid-cds/input/pagecontent"
+    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/pagecontent"
   }],
   "url" : "http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/opioid-cds",
   "version" : "0.1.0",
   "name" : "Opioid Prescribing Support Implementation Guide",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2017-02-06T00:00:00-07:00",
+  "date" : "2017-02-06",
   "publisher" : "Centers for Disease Control and Prevention (CDC)",
   "description" : "Opioid Prescribing Support Implementation Guide",
   "packageId" : "fhir.cdc.opioid-cds",
