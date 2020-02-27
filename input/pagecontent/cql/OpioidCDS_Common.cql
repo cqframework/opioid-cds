@@ -1,9 +1,9 @@
-library OpioidCDS_Common version '1.1.0'
+library OpioidCDS_Common version '1.1.1'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OMTKLogicCQL version '1.1.0' called OMTKLogic
+include OMTKLogicCQL version '1.1.1' called OMTKLogic
 
 codesystem "SNOMED": 'http://snomed.info/sct'
 codesystem "Medication Request Category Codes": 'http://hl7.org/fhir/medication-request-category'

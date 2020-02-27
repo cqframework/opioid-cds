@@ -2,6 +2,7 @@
   "resourceType": "PlanDefinition",
   "id": "opioidcds-04",
   "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-04",
+  "version": "1.1.1",
   "name": "PlanDefinition_Recommendation_4",
   "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4",
   "type": {

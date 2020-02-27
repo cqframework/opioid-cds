@@ -6,8 +6,8 @@
     <name value="Opioid Prescribing Support Implementation Guide"/>
     <status value="draft"/>
     <experimental value="false"/>
-    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
     <date value="2017-02-06"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
     <description value="Opioid Prescribing Support Implementation Guide"/>
     <fhirVersion value="3.0.2"/>
     <package>
@@ -1017,6 +1017,6 @@
         <source value="index.html"/>
         <title value="Opioid Prescribing Support Implementation Guide"/>
         <kind value="page"/>
-        <format value="html"/>
+        <format value="text/html"/>
     </page>
 </ImplementationGuide>
