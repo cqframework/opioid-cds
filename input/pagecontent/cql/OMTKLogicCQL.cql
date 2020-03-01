@@ -1,4 +1,4 @@
-library OMTKLogicCQL version '1.1.1'
+library OMTKLogicCQL version '1.1.2'
 
 /*
 This version of the OMTKLogic library uses the OMTKData library as the
@@ -7,7 +7,7 @@ OMTK data source. This library has no external dependencies and so
 should be able to run in an environment that supports pure CQL.
 */
 
-include OMTKData2019 version '1.1.1' called OMTKData
+include OMTKData2020 version '1.1.2' called OMTKData
 
 codesystem RxNorm: 'http://www.nlm.nih.gov/research/umls/rxnorm'
 

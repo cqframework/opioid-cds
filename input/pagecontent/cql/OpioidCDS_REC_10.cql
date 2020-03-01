@@ -1,9 +1,9 @@
-library OpioidCDS_REC_10 version '1.1.1'
+library OpioidCDS_REC_10 version '1.1.2'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDS_Common version '1.1.1' called Common
+include OpioidCDS_Common version '1.1.2' called Common
 
 /*
 ** Recommendation #10

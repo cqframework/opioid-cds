@@ -1,9 +1,9 @@
-library OpioidCDS_Common version '1.1.1'
+library OpioidCDS_Common version '1.1.2'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OMTKLogicCQL version '1.1.1' called OMTKLogic
+include OMTKLogicCQL version '1.1.2' called OMTKLogic
 
 codesystem "SNOMED": 'http://snomed.info/sct'
 codesystem "Medication Request Category Codes": 'http://hl7.org/fhir/medication-request-category'
@@ -232,15 +232,14 @@ define function Prescriptions(Orders List<MedicationRequest>):
 
 define function MME(prescriptions List<MedicationRequest>):
   (Prescriptions(prescriptions)) P
-    let mme: SingletonFrom(OMTKLogic.CalculateMMEs({ { rxNormCode: P.rxNormCode, doseQuantity: P.dose, dosesPerDay: P.dosesPerDay } }))
+    let mmePerIngredient: OMTKLogic.CalculateMMEs({ { rxNormCode: P.rxNormCode, doseQuantity: P.dose, dosesPerDay: P.dosesPerDay } })
     return {
       rxNormCode: P.rxNormCode,
       isDraft: P.isDraft,
       isPRN: P.isPRN,
       prescription: P.prescription,
-      dailyDose: mme.dailyDoseDescription,
-      conversionFactor: mme.conversionFactor,
-      mme: mme.mme
+      dailyDose: Combine(mmePerIngredient X return X.dailyDoseDescription, '\r\n'),
+      mme: Sum(mmePerIngredient X return X.mme)
     }
 
 define function TotalMME(prescriptions List<MedicationRequest>):
@@ -305,7 +304,8 @@ define function GetIngredients(rxNormCodes List<Code>):
 
 define function GetMedicationNames(medications List<MedicationRequest>):
   medications M
-    return OMTKLogic.GetIngredients(ToRxNormCode(M.medication.coding)).rxNormCode.display
+    let I: OMTKLogic.GetIngredients(ToRxNormCode(M.medication.coding))
+    return (singleton from (I X return X.rxNormCode)).display
 
 /*
 *  Conversion Functions

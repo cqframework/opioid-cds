@@ -1,9 +1,9 @@
-library OpioidCDS_REC_10_Patient_View version '1.1.1'
+library OpioidCDS_REC_10_Patient_View version '1.1.2'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDS_Common version '1.1.1' called Common
+include OpioidCDS_Common version '1.1.2' called Common
 
 codesystem "V2 Interpretation Codes": 'http://hl7.org/fhir/v2/0078'
 
