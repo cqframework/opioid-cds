@@ -90,7 +90,7 @@
   "copyright": "© CDC 2016+.",
   "library": [
     {
-      "reference": "Library/opioidcds-recommendation-11-patient-view"
+      "reference": "Library/library-OpioidREC11PatientView"
     }
   ],
   "action": [
