@@ -1,0 +1,135 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "plandefinition-OpioidCDSREC10PatientView",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/plandefinition-OpioidCDSREC10PatientView",
+  "version": "1.1.1",
+  "name": "PlanDefinition_Recommendation_10_Patient_View",
+  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 (patient-view)",
+  "type": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/plan-definition-type",
+        "code": "eca-rule",
+        "display": "ECA Rule"
+      }
+    ]
+  },
+  "status": "draft",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "description": "When prescribing opioids for chronic pain, providers should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs.",
+  "purpose": "CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.",
+  "usage": "Providers should be aware if patients are taking other prescription drugs or illicit drugs that might increase their risk of an overdose.",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://hl7.org/fhir/usage-context-type",
+        "code": "focus",
+        "display": "Clinical Focus"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "182888003",
+            "display": "Medication requested (situation)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "system": "http://hl7.org/fhir/usage-context-type",
+        "code": "focus",
+        "display": "Clinical Focus"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "82423001",
+            "display": "Chronic pain (finding)"
+          }
+        ]
+      }
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "topic": [
+    {
+      "text": "Opioid Prescribing"
+    }
+  ],
+  "contributor": [
+    {
+      "type": "author",
+      "name": "Kensaku Kawamoto, MD, PhD, MHS"
+    },
+    {
+      "type": "author",
+      "name": "Bryn Rhodes"
+    },
+    {
+      "type": "author",
+      "name": "Floyd Eisenberg, MD, MPH"
+    },
+    {
+      "type": "author",
+      "name": "Robert McClure, MD, MPH"
+    }
+  ],
+  "copyright": "© CDC 2016+.",
+  "library": [
+    {
+      "reference": "Library/library-OpioidCDSREC10PatientView"
+    }
+  ],
+  "action": [
+    {
+      "triggerDefinition": [
+        {
+          "type": "named-event",
+          "eventName": "patient-view"
+        }
+      ],
+      "condition": [
+        {
+          "kind": "applicability",
+          "language": "text/cql",
+          "expression": "Inclusion Criteria"
+        }
+      ],
+      "dynamicValue": [
+        {
+          "path": "action.description",
+          "expression": "No Screening In Last 12 Months Detail"
+        },
+        {
+          "path": "action.title",
+          "expression": "No Screening In Last 12 Months Summary"
+        },
+        {
+          "path": "action.extension",
+          "expression": "No Screening In Last 12 Months Indicator"
+        }
+      ],
+      "action": [
+        {
+          "description": "Will perform urine screening"
+        },
+        {
+          "description": "Not for chronic pain management. Snooze 3 months"
+        }
+      ]
+    }
+  ]
+}
