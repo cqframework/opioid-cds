@@ -1,7 +1,7 @@
 {
   "resourceType": "PlanDefinition",
-  "id": "opioidcds-05",
-  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-05",
+  "id": "plandefinition-OpioidCDSREC05",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/plandefinition-OpioidCDSREC05",
   "version": "1.1.1",
   "name": "PlanDefinition_Recommendation_5",
   "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5",

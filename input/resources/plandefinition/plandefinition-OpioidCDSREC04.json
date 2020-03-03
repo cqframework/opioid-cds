@@ -1,10 +1,10 @@
 {
   "resourceType": "PlanDefinition",
-  "id": "opioidcds-11",
-  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11",
+  "id": "plandefinition-OpioidCDSREC04",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/plandefinition-OpioidCDSREC04",
   "version": "1.1.1",
-  "name": "PlanDefinition_Recommendation_11",
-  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11",
+  "name": "PlanDefinition_Recommendation_4",
+  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4",
   "type": {
     "coding": [
       {
@@ -16,9 +16,9 @@
   },
   "status": "draft",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
-  "description": "Concurrently prescribing opioid medications with benzodiazepines increases the risk of harm for the patient.",
+  "description": "When starting opioid therapy for chronic pain, clinicians should prescribe immediate-release opioids instead of extended-release/long-acting (ER/LA) opioids.",
   "purpose": "CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.",
-  "usage": "Clinicians should avoid prescribing opioid pain medication and benzodiazepines concurrently whenever possible.",
+  "usage": "Providers should use caution when prescribing extended-release/long-acting (ER/LA) opioids as they carry a higher risk and negligible benefit compared to immediate-release opioids.",
   "useContext": [
     {
       "code": {
@@ -90,13 +90,13 @@
   "copyright": "© CDC 2016+.",
   "library": [
     {
-      "reference": "Library/library-OpioidCDSREC11"
+      "reference": "Library/library-OpioidCDSREC04"
     }
   ],
   "action": [
     {
-      "title": "Existing patient has concurrent opioid and benzodiazepine prescriptions.",
-      "description": "Checking if the trigger prescription meets the inclusion criteria for recommendation #11 workflow.",
+      "title": "Extended-release opioid prescription triggered.",
+      "description": "Checking if the trigger prescription meets the inclusion criteria for recommendation #4 workflow.",
       "documentation": [
         {
           "type": "documentation",
@@ -125,8 +125,8 @@
                   "coding": [
                     {
                       "system": "http://hl7.org/fhir/evidence-quality",
-                      "code": "low",
-                      "display": "Low quality"
+                      "code": "very-low",
+                      "display": "Very Low quality"
                     }
                   ]
                 }
@@ -144,7 +144,7 @@
       "condition": [
         {
           "kind": "applicability",
-          "description": "Check whether the existing patient is using opioids concurrently with benzodiazepines.",
+          "description": "Check whether the opioid prescription for the existing patient is extended-release without any opioids-with-abuse-potential prescribed in the past 90 days.",
           "language": "text/cql",
           "expression": "Inclusion Criteria"
         }
@@ -153,21 +153,21 @@
       "selectionBehavior": "exactly-one",
       "dynamicValue": [
         {
-          "path": "action.description",
-          "expression": "Get Detail"
-        },
-        {
           "path": "action.title",
           "expression": "Get Summary"
         },
         {
-          "path": "action.extension",
+          "path": "action.description",
+          "expression": "Get Detail"
+        },
+        {
+          "path": "activity.extension",
           "expression": "Get Indicator"
         }
       ],
       "action": [
         {
-          "description": "Will revise"
+          "description": "Will precribe immediate release"
         },
         {
           "description": "Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo"

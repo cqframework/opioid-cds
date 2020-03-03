@@ -1,10 +1,10 @@
 {
   "resourceType": "PlanDefinition",
-  "id": "opioidcds-11-patient-view",
-  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11-patient-view",
+  "id": "plandefinition-OpioidCDSREC10PatientView",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/plandefinition-OpioidCDSREC10PatientView",
   "version": "1.1.1",
-  "name": "PlanDefinition_Recommendation_11_Patient_View",
-  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 (patient-view)",
+  "name": "PlanDefinition_Recommendation_10_Patient_View",
+  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 (patient-view)",
   "type": {
     "coding": [
       {
@@ -16,9 +16,9 @@
   },
   "status": "draft",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
-  "description": "Concurrently prescribing opioid medications with benzodiazepines increases the risk of harm for the patient.",
+  "description": "When prescribing opioids for chronic pain, providers should use urine drug testing before starting opioid therapy and consider urine drug testing at least annually to assess for prescribed medications as well as other controlled prescription drugs and illicit drugs.",
   "purpose": "CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.",
-  "usage": "Clinicians should avoid prescribing opioid pain medication and benzodiazepines concurrently whenever possible.",
+  "usage": "Providers should be aware if patients are taking other prescription drugs or illicit drugs that might increase their risk of an overdose.",
   "useContext": [
     {
       "code": {
@@ -90,51 +90,11 @@
   "copyright": "© CDC 2016+.",
   "library": [
     {
-      "reference": "Library/library-OpioidCDSREC11PatientView"
+      "reference": "Library/library-OpioidCDSREC10PatientView"
     }
   ],
   "action": [
     {
-      "title": "Existing patient has concurrent opioid and benzodiazepine prescriptions.",
-      "description": "Checking if the trigger prescription meets the inclusion criteria for recommendation #11 workflow.",
-      "documentation": [
-        {
-          "type": "documentation",
-          "display": "CDC guideline for prescribing opioids for chronic pain",
-          "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
-        },
-        {
-          "type": "documentation",
-          "document": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/recommendation-strength",
-                      "code": "strong",
-                      "display": "Strong"
-                    }
-                  ]
-                }
-              },
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/evidence-quality",
-                      "code": "low",
-                      "display": "Low quality"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      ],
       "triggerDefinition": [
         {
           "type": "named-event",
@@ -144,36 +104,30 @@
       "condition": [
         {
           "kind": "applicability",
-          "description": "Check whether the existing patient is using opioids concurrently with benzodiazepines.",
           "language": "text/cql",
           "expression": "Inclusion Criteria"
         }
       ],
-      "groupingBehavior": "visual-group",
-      "selectionBehavior": "exactly-one",
       "dynamicValue": [
         {
           "path": "action.description",
-          "expression": "Get Detail"
+          "expression": "No Screening In Last 12 Months Detail"
         },
         {
           "path": "action.title",
-          "expression": "Get Summary"
+          "expression": "No Screening In Last 12 Months Summary"
         },
         {
           "path": "action.extension",
-          "expression": "Get Indicator"
+          "expression": "No Screening In Last 12 Months Indicator"
         }
       ],
       "action": [
         {
-          "description": "Will revise"
+          "description": "Will perform urine screening"
         },
         {
-          "description": "Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo"
-        },
-        {
-          "description": "N/A - see comment; snooze 3 mo"
+          "description": "Not for chronic pain management. Snooze 3 months"
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "resourceType": "PlanDefinition",
-  "id": "opioidcds-08",
-  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-08",
+  "id": "plandefinition-OpioidCDSREC08",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/plandefinition-OpioidCDSREC08",
   "version": "1.1.1",
   "name": "PlanDefinition_Recommendation_8",
   "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #8",
