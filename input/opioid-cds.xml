@@ -631,18 +631,26 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="Library - OMTK Logic"/>
-            <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic"/>
+            <name value="Library - OMTK Logic CQL"/>
+            <description value="Opioid Management Terminology Knowledge Base v1.1.2 Logic CQL"/>
             <sourceReference>
-                <reference value="Library/omtklogic"/>
+                <reference value="Library/omtklogiccql"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="Library - OMTK Data"/>
-            <description value="Opioid Management Terminology Knowledge Base v0.0.2 Data"/>
+            <name value="Library - OMTK Logic Stub"/>
+            <description value="Opioid Management Terminology Knowledge Base v1.1.2 Logic Stub"/>
             <sourceReference>
-                <reference value="Library/omtkdata"/>
+                <reference value="Library/omtklogicstub"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - OMTK Data 2020"/>
+            <description value="Opioid Management Terminology Knowledge Base v1.1.2 Data 2020"/>
+            <sourceReference>
+                <reference value="Library/omtkdata2020"/>
             </sourceReference>
         </resource>
         <resource>
@@ -985,33 +993,33 @@
     <binary value="cql/OMTKData2018.cql"/>
     <binary value="cql/OMTKData2019.cql"/>
     <binary value="cql/OMTKData2020.cql"/>
-    <binary value="cql/OMTKData_Changes.cql"/>
+    <binary value="cql/OMTKDataChanges.cql"/>
     <binary value="cql/OMTKLogicCQL.cql"/>
     <binary value="cql/OMTKLogicStub.cql"/>
-    <binary value="cql/OpioidCDS_Common.cql"/>
-    <binary value="cql/OpioidCDS_REC_04.cql"/>
-    <binary value="cql/OpioidCDS_REC_05.cql"/>
-    <binary value="cql/OpioidCDS_REC_07.cql"/>
-    <binary value="cql/OpioidCDS_REC_08.cql"/>
-    <binary value="cql/OpioidCDS_REC_10.cql"/>
-    <binary value="cql/OpioidCDS_REC_11.cql"/>
-    <binary value="cql/OpioidCDS_REC_10_Patient_View.cql"/>
-    <binary value="cql/OpioidCDS_REC_11_Patient_View.cql"/>
+    <binary value="cql/OpioidCDSCommon.cql"/>
+    <binary value="cql/OpioidCDSREC04.cql"/>
+    <binary value="cql/OpioidCDSREC05.cql"/>
+    <binary value="cql/OpioidCDSREC07.cql"/>
+    <binary value="cql/OpioidCDSREC08.cql"/>
+    <binary value="cql/OpioidCDSREC10.cql"/>
+    <binary value="cql/OpioidCDSREC11.cql"/>
+    <binary value="cql/OpioidCDSREC10PatientView.cql"/>
+    <binary value="cql/OpioidCDSREC11PatientView.cql"/>
     <binary value="elm/OMTKData2018.xml"/>
     <binary value="elm/OMTKData2019.xml"/>
     <binary value="elm/OMTKData2020.xml"/>
-    <binary value="elm/OMTKData_Changes.xml"/>
+    <binary value="elm/OMTKDataChanges.xml"/>
     <binary value="elm/OMTKLogicCQL.xml"/>
     <binary value="elm/OMTKLogicStub.xml"/>
-    <binary value="elm/OpioidCDS_Common.xml"/>
-    <binary value="elm/OpioidCDS_REC_04.xml"/>
-    <binary value="elm/OpioidCDS_REC_05.xml"/>
-    <binary value="elm/OpioidCDS_REC_07.xml"/>
-    <binary value="elm/OpioidCDS_REC_08.xml"/>
-    <binary value="elm/OpioidCDS_REC_10.xml"/>
-    <binary value="elm/OpioidCDS_REC_11.xml"/>
-    <binary value="elm/OpioidCDS_REC_10_Patient_View.xml"/>
-    <binary value="elm/OpioidCDS_REC_11_Patient_View.xml"/>
+    <binary value="elm/OpioidCDSCommon.xml"/>
+    <binary value="elm/OpioidCDSREC04.xml"/>
+    <binary value="elm/OpioidCDSREC05.xml"/>
+    <binary value="elm/OpioidCDSREC07.xml"/>
+    <binary value="elm/OpioidCDSREC08.xml"/>
+    <binary value="elm/OpioidCDSREC10.xml"/>
+    <binary value="elm/OpioidCDSREC11.xml"/>
+    <binary value="elm/OpioidCDSREC10PatientView.xml"/>
+    <binary value="elm/OpioidCDSREC11PatientView.xml"/>
     <binary value="modelinfo/OMTK-modelinfo.xml"/>
     <page>
         <source value="index.html"/>
