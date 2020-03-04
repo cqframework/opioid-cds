@@ -73,6 +73,7 @@ select '{ ' || char(10) || group_concat(
 		join MED_INGREDIENT I on SCDC.INGREDIENT_RXCUI = I.INGREDIENT_RXCUI
 		join MED_INGREDIENT_TYPE IT on I.INGREDIENT_RXCUI = IT.INGREDIENT_RXCUI and IT.INGREDIENT_TYPE = 'Opioid_NonSurgical'
 		left join MED_DOSE_FORM DF on DF.DOSE_FORM_RXCUI = D.DOSE_FORM_RXCUI
+    where not exists (select * from RxNormCodesToRemove R where D.DRUG_RXCUI = R.Code) -- RxNorm codes that are inactive, non prescribable, or non-human
 	  order by D.DRUG_RXCUI, I.INGREDIENT_RXCUI
   ) T
 
