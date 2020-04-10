@@ -2,7 +2,7 @@
    <id value="example-rec-08-mme-greater-than-fifty"/>
    <type value="transaction"/>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Patient/example-rec-08-mme-greater-than-fifty"/>
+      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Patient/example-rec-08-mme-greater-than-fifty"/>
       <resource>
          <Patient xmlns="http://hl7.org/fhir">
             <id value="example-rec-08-mme-greater-than-fifty"/>
@@ -12,11 +12,11 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Patient/example-rec-08-mme-greater-than-fifty"/>
+         <url value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Patient/example-rec-08-mme-greater-than-fifty"/>
       </request>
    </entry>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-08-mme-greater-than-fifty-context"/>
+      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Encounter/example-rec-08-mme-greater-than-fifty-context"/>
       <resource>
          <Encounter xmlns="http://hl7.org/fhir">
             <id value="example-rec-08-mme-greater-than-fifty-context"/>
@@ -33,7 +33,7 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/cqf-ruler/baseDstu3/Encounter/example-rec-08-mme-greater-than-fifty-context"/>
+         <url value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Encounter/example-rec-08-mme-greater-than-fifty-context"/>
       </request>
    </entry>
 </Bundle>
