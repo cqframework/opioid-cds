@@ -11,3 +11,7 @@
 /org.hl7.fhir.publisher.jar
 template
 input-cache
+input/ig-expansion-parameters.json
+input/ig-new.json
+input/ig-new.xml
+input/ig-validation-parameters.json

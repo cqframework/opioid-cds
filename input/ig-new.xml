@@ -3,37 +3,37 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="opioid-cds"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/examples"/>
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/extensions"/>
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/extensions"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/profiles"/>
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/profiles"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/resources"/>
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/resources/library"/>
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/resources/library"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/resources/activitydefinition"/>
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/resources/activitydefinition"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/resources/plandefinition"/>
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/resources/plandefinition"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/vocabulary"/>
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/vocabulary/codesystem"/>
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/vocabulary/codesystem"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/vocabulary/valueset"/>
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/vocabulary/valueset"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/pagecontent"/>
+    <valueString value="/Users/Adam/Src/cqframework/opioid-cds/input/pagecontent"/>
   </extension>
   <url value="http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/opioid-cds"/>
   <version value="0.1.0"/>

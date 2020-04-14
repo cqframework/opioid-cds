@@ -3,47 +3,47 @@
   "id" : "opioid-cds",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/examples"
+    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/extensions"
+    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/extensions"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/profiles"
+    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/profiles"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/resources"
+    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/resources/library"
+    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/resources/library"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/resources/activitydefinition"
+    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/resources/activitydefinition"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/resources/plandefinition"
+    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/resources/plandefinition"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/vocabulary"
+    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/vocabulary/codesystem"
+    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/vocabulary/codesystem"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/vocabulary/valueset"
+    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/vocabulary/valueset"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/christopherschuler/Documents/workspace/dcg/repos/SRS/opioid-cds/input/pagecontent"
+    "valueString" : "/Users/Adam/Src/cqframework/opioid-cds/input/pagecontent"
   }],
   "url" : "http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/opioid-cds",
   "version" : "0.1.0",
