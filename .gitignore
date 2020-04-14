@@ -10,3 +10,4 @@
 /resources/ig-new.xml
 /org.hl7.fhir.publisher.jar
 template
+input-cache
