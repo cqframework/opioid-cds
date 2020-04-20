@@ -5,8 +5,8 @@
   "applyCql": true,
   "context": {
     "user": "Practitioner/example",
-    "patientId": "Patient/example-rec-11-benzo-trigger-with-opioid",
-    "encounterId": "Encounter/example-rec-11-benzo-trigger-with-opioid-context"
+    "patientId": "Patient/example-rec-11-patient-view-benzo-trigger-with-opioid",
+    "encounterId": "Encounter/example-rec-11-patient-view-benzo-trigger-with-opioid-context"
   },
   "prefetch": {
     "item1": {
@@ -15,7 +15,7 @@
       },
       "resource": {
         "resourceType": "Patient",
-        "id": "example-rec-11-benzo-trigger-with-opioid",
+        "id": "example-rec-11-patient-view-benzo-trigger-with-opioid",
         "gender": "female",
         "birthDate": "1982-01-07"
       }
@@ -30,7 +30,7 @@
           {
             "resource": {
               "resourceType": "MedicationRequest",
-              "id": "example-rec-11-benzo-trigger-with-opioid-context",
+              "id": "example-rec-11-patient-view-benzo-trigger-with-opioid-context",
               "status": "active",
               "intent": "order",
               "category": {
@@ -51,10 +51,10 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-11-benzo-trigger-with-opioid"
+                "reference": "Patient/example-rec-11-patient-view-benzo-trigger-with-opioid"
               },
               "context": {
-                "reference": "Encounter/example-rec-11-benzo-trigger-with-opioid-context"
+                "reference": "Encounter/example-rec-11-patient-view-benzo-trigger-with-opioid-context"
               },
               "_authoredOn": {
                 "extension": [
@@ -100,7 +100,7 @@
           {
             "resource": {
               "resourceType": "MedicationRequest",
-              "id": "example-rec-11-benzo-trigger-with-opioid-prefetch",
+              "id": "example-rec-11-patient-view-benzo-trigger-with-opioid-prefetch",
               "status": "active",
               "intent": "order",
               "category": {
@@ -121,10 +121,10 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-11-benzo-trigger-with-opioid"
+                "reference": "Patient/example-rec-11-patient-view-benzo-trigger-with-opioid"
               },
               "context": {
-                "reference": "Encounter/example-rec-11-benzo-trigger-with-opioid-prefetch"
+                "reference": "Encounter/example-rec-11-patient-view-benzo-trigger-with-opioid-prefetch"
               },
               "_authoredOn": {
                 "extension": [

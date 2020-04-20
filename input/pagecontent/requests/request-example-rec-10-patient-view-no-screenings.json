@@ -5,8 +5,8 @@
   "applyCql": true,
   "context": {
     "user": "Practitioner/example",
-    "patientId": "Patient/example-rec-10-no-screenings",
-    "encounterId": "Encounter/example-rec-10-no-screenings-context"
+    "patientId": "Patient/example-rec-10-patient-view-no-screenings",
+    "encounterId": "Encounter/example-rec-10-patient-view-no-screenings-context"
   },
   "prefetch": {
     "item1": {
@@ -15,7 +15,7 @@
       },
       "resource": {
         "resourceType": "Patient",
-        "id": "example-rec-10-no-screenings",
+        "id": "example-rec-10-patient-view-no-screenings",
         "gender": "female",
         "birthDate": "1982-01-07"
       }
@@ -31,7 +31,7 @@
           {
             "resource": {
               "resourceType": "MedicationRequest",
-              "id": "example-rec-10-no-screenings-context",
+              "id": "example-rec-10-patient-view-no-screenings-context",
               "status": "active",
               "intent": "order",
               "category": {
@@ -47,10 +47,10 @@
                 "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
               },
               "subject": {
-                "reference": "Patient/example-rec-10-no-screenings"
+                "reference": "Patient/example-rec-10-patient-view-no-screenings"
               },
               "context": {
-                "reference": "Encounter/example-rec-10-no-screenings-context"
+                "reference": "Encounter/example-rec-10-patient-view-no-screenings-context"
               },
               "_authoredOn": {
                 "extension": [
@@ -96,7 +96,7 @@
           {
             "resource": {
               "resourceType": "MedicationRequest",
-              "id": "example-rec-10-no-screenings-prefetch",
+              "id": "example-rec-10-patient-view-no-screenings-prefetch",
               "status": "active",
               "intent": "order",
               "category": {
@@ -112,10 +112,10 @@
                 "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
               },
               "subject": {
-                "reference": "Patient/example-rec-10-no-screenings"
+                "reference": "Patient/example-rec-10-patient-view-no-screenings"
               },
               "context": {
-                "reference": "Encounter/example-rec-10-no-screenings-prefetch"
+                "reference": "Encounter/example-rec-10-patient-view-no-screenings-prefetch"
               },
               "_authoredOn": {
                 "extension": [

@@ -5,8 +5,8 @@
   "applyCql": true,
   "context": {
     "user": "Practitioner/example",
-    "patientId": "Patient/example-rec-11-opioid-trigger-without-benzo",
-    "encounterId": "Encounter/example-rec-11-opioid-trigger-without-benzo-context"
+    "patientId": "Patient/example-rec-11-patient-view-opioid-trigger-without-benzo",
+    "encounterId": "Encounter/example-rec-11-patient-view-opioid-trigger-without-benzo-context"
   },
   "prefetch": {
     "item1": {
@@ -15,7 +15,7 @@
       },
       "resource": {
         "resourceType": "Patient",
-        "id": "example-rec-11-opioid-trigger-without-benzo",
+        "id": "example-rec-11-patient-view-opioid-trigger-without-benzo",
         "gender": "female",
         "birthDate": "1982-01-07"
       }
@@ -26,7 +26,7 @@
       },
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "example-rec-11-opioid-trigger-without-benzo-context",
+        "id": "example-rec-11-patient-view-opioid-trigger-without-benzo-context",
         "status": "active",
         "intent": "order",
         "category": {
@@ -47,10 +47,10 @@
           ]
         },
         "subject": {
-          "reference": "example-rec-11-opioid-trigger-without-benzo-context"
+          "reference": "example-rec-11-patient-view-opioid-trigger-without-benzo-context"
         },
         "context": {
-          "reference": "Encounter/example-rec-11-opioid-trigger-without-benzo-context"
+          "reference": "Encounter/example-rec-11-patient-view-opioid-trigger-without-benzo-context"
         },
         "_authoredOn": {
           "extension": [
