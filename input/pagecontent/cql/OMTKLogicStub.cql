@@ -54,6 +54,13 @@ define function IsPatch(doseFormCode Code):
 /*
   Returns the conversion factor for the given ingredient
 
+CDC Guidance:
+https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf
+https://www.cdc.gov/drugoverdose/modules/data-files.html
+
+CMS Guidance:
+https://www.cms.gov/Medicare/Prescription-Drug-Coverage/PrescriptionDrugCovContra/Downloads/Oral-MME-CFs-vFeb-2018.pdf
+
 Opioid (strength in mg except where noted)	MME Conversion Factor*
 Buprenorphine, transdermal patch (MCG/HR)	12.6
 Buprenorphine, tablet or film	30
