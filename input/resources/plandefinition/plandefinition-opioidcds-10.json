@@ -98,7 +98,7 @@
       "triggerDefinition": [
         {
           "type": "named-event",
-          "eventName": "medication-prescribe"
+          "eventName": "order-select"
         }
       ],
       "condition": [
