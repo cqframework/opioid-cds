@@ -460,20 +460,32 @@
       "base": "CodeSystem-opioidcds-indicator.html"
     },
     "Library/fhir-helpers": {
-      "source": "library-fhir-helpers.json",
-      "base": "Library-fhir-helpers.html"
+      "source": "library-FHIRHelpers.json",
+      "base": "Library-FHIRHelpers.html"
     },
-    "Library/omtklogic": {
-      "source": "library-omtklogic.json",
-      "base": "Library-omtklogic.html"
+    "Library/omtklogiccql": {
+      "source": "library-OMTKLogicCQL.json",
+      "base": "Library-OMTKLogicCQL.html"
     },
-    "Library/omtkdata": {
-      "source": "library-omtkdata.json",
-      "base": "Library-omtkdata.html"
+    "Library/omtklogicstub": {
+      "source": "library-OMTKLogicStub.json",
+      "base": "Library-OMTKLogicStub.html"
+    },
+    "Library/omtkdata2018": {
+      "source": "library-OMTKData2018.json",
+      "base": "Library-OMTKData2018.html"
+    },
+    "Library/omtkdata2019": {
+      "source": "library-OMTKData2019.json",
+      "base": "Library-OMTKData2019.html"
+    },
+    "Library/omtkdata2020": {
+      "source": "library-OMTKData2020.json",
+      "base": "Library-OMTKData2020.html"
     },
     "Library/opioidcds-common": {
-      "source": "library-opioidcds-common.json",
-      "base": "Library-opioidcds-common.html"
+      "source": "library-OpioidCDSCommon.json",
+      "base": "Library-OpioidCDSCommon.html"
     },
     "Library/opioidcds-recommendation-04": {
       "source": "library-opioidcds-recommendation-04.json",

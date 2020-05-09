@@ -70,8 +70,8 @@ define "Not Receiving Evidence-Based Treatment for Opioid Use Disorder":
 define "Presence of Diagnosis of Opioid Use Disorder":
   exists (
     [Condition: Common."Opioid misuse disorders"] C
-      where C.clinicalStatus ~ 'active'
-       and date from C.assertedDate during day of "Opioid Use Disorder Lookback Period"
+      where C.clinicalStatus ~ Common."Active Condition".code
+        and date from C.assertedDate during day of "Opioid Use Disorder Lookback Period"
     )
 
 define "Positive Result from Opioid Use Disorder Evaluation Tool":

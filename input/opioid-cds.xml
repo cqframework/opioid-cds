@@ -626,23 +626,47 @@
             <name value="Library - FHIRHelpers Logic"/>
             <description value="FHIRHelpers Logic"/>
             <sourceReference>
-                <reference value="Library/fhir-helpers"/>
+                <reference value="Library/FHIRHelpers"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="Library - OMTK Logic"/>
-            <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic"/>
+            <name value="Library - OMTK Logic CQL"/>
+            <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic CQL"/>
             <sourceReference>
-                <reference value="Library/omtklogic"/>
+                <reference value="Library/library-OMTKLogicCQL"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="Library - OMTK Data"/>
-            <description value="Opioid Management Terminology Knowledge Base v0.0.2 Data"/>
+            <name value="Library - OMTK Logic Stub"/>
+            <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic Stub"/>
             <sourceReference>
-                <reference value="Library/omtkdata"/>
+                <reference value="Library/library-OMTKLogicStub"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - OMTK Data 2018"/>
+            <description value="Opioid Management Terminology Knowledge Base v0.0.2 Data (2018)"/>
+            <sourceReference>
+                <reference value="Library/library-OMTKData2018"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - OMTK Data 2019"/>
+            <description value="Opioid Management Terminology Knowledge Base v0.0.2 Data (2019)"/>
+            <sourceReference>
+                <reference value="Library/library-OMTKData2019"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - OMTK Data 2020"/>
+            <description value="Opioid Management Terminology Knowledge Base v0.0.2 Data (2020)"/>
+            <sourceReference>
+                <reference value="Library/library-OMTKData2020"/>
             </sourceReference>
         </resource>
         <resource>
@@ -650,7 +674,7 @@
             <name value="Library - Opioid CDS Common"/>
             <description value="Opioid Management Decision Support Logic Common"/>
             <sourceReference>
-                <reference value="Library/opioidcds-common"/>
+                <reference value="Library/library-OpioidCDSCommon"/>
             </sourceReference>
         </resource>
         <resource>
@@ -658,7 +682,7 @@
             <name value="Library - Opioid CDS Recommendation #4"/>
             <description value="Opioid Management Decision Support Logic for recommendation #4"/>
             <sourceReference>
-                <reference value="Library/opioidcds-recommendation-04"/>
+                <reference value="Library/library-OpioidCDSREC04"/>
             </sourceReference>
         </resource>
         <resource>
@@ -666,7 +690,7 @@
             <name value="Library - Opioid CDS Recommendation #5"/>
             <description value="Opioid Management Decision Support Logic for recommendation #5"/>
             <sourceReference>
-                <reference value="Library/opioidcds-recommendation-05"/>
+                <reference value="Library/library-OpioidCDSREC05"/>
             </sourceReference>
         </resource>
         <resource>
@@ -674,7 +698,7 @@
             <name value="Library - Opioid CDS Recommendation #7"/>
             <description value="Opioid Management Decision Support Logic for recommendation #7"/>
             <sourceReference>
-                <reference value="Library/opioidcds-recommendation-07"/>
+                <reference value="Library/library-OpioidCDSREC07"/>
             </sourceReference>
         </resource>
         <resource>
@@ -682,7 +706,7 @@
             <name value="Library - Opioid CDS Recommendation #8"/>
             <description value="Opioid Management Decision Support Logic for recommendation #8"/>
             <sourceReference>
-                <reference value="Library/opioidcds-recommendation-08"/>
+                <reference value="Library/library-OpioidCDSREC08"/>
             </sourceReference>
         </resource>
         <resource>
@@ -690,7 +714,7 @@
             <name value="Library - Opioid CDS Recommendation #10"/>
             <description value="Opioid Management Decision Support Logic for recommendation #10"/>
             <sourceReference>
-                <reference value="Library/opioidcds-recommendation-10"/>
+                <reference value="Library/library-OpioidCDSREC10"/>
             </sourceReference>
         </resource>
         <resource>
@@ -698,7 +722,7 @@
             <name value="Library - Opioid CDS Recommendation #10 Patient View"/>
             <description value="Opioid Management Decision Support Logic for recommendation #10 Patient View"/>
             <sourceReference>
-                <reference value="Library/opioidcds-recommendation-10-patient-view"/>
+                <reference value="Library/library-OpioidCDSREC10PatientView"/>
             </sourceReference>
         </resource>
         <resource>
@@ -706,7 +730,7 @@
             <name value="Library - Opioid CDS Recommendation #11"/>
             <description value="Opioid Management Decision Support Logic for recommendation #11"/>
             <sourceReference>
-                <reference value="Library/opioidcds-recommendation-11"/>
+                <reference value="Library/library-OpioidCDSREC11"/>
             </sourceReference>
         </resource>
         <resource>
@@ -714,7 +738,7 @@
             <name value="Library - Opioid CDS Recommendation #11 Patient View"/>
             <description value="Opioid Management Decision Support Logic for recommendation #11 Patient View"/>
             <sourceReference>
-                <reference value="Library/opioidcds-recommendation-11-patient-view"/>
+                <reference value="Library/library-OpioidCDSREC11PatientView"/>
             </sourceReference>
         </resource>
         <resource>
