@@ -7,76 +7,82 @@
   "context": {
     "patientId": "Patient/example-rec-11-benzo-trigger-with-opioid",
     "encounterId": "Encounter/example-rec-11-benzo-trigger-with-opioid-context",
-    "medications": [
-      {
-        "resourceType": "MedicationRequest",
-        "id": "example-rec-11-benzo-trigger-with-opioid-context",
-        "status": "active",
-        "intent": "order",
-        "category": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/medication-request-category",
-              "code": "outpatient"
-            }
-          ]
-        },
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "1298088",
-              "display": "Flurazepam Hydrochloride 15 MG Oral Capsule"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/example-rec-11-benzo-trigger-with-opioid"
-        },
-        "context": {
-          "reference": "Encounter/example-rec-11-benzo-trigger-with-opioid-context"
-        },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "Today()"
-            }
-          ]
-        },
-        "dosageInstruction": [
+    "selections": [ "MedicationRequest/example-rec-11-benzo-trigger-with-opioid-context" ],
+    "draftOrders": {
+       "resourceType":"Bundle",
+       "entry": [
           {
-            "timing": {
-              "repeat": {
-                "frequency": 1,
-                "period": 1.0,
-                "periodUnit": "d"
-              }
-            },
-            "asNeededBoolean": false,
-            "doseQuantity": {
-              "value": 1.0,
-              "unit": "capsule"
-            }
+             "resource": {
+               "resourceType": "MedicationRequest",
+               "id": "example-rec-11-benzo-trigger-with-opioid-context",
+               "status": "active",
+               "intent": "order",
+               "category": {
+                 "coding": [
+                   {
+                     "system": "http://hl7.org/fhir/medication-request-category",
+                     "code": "outpatient"
+                   }
+                 ]
+               },
+               "medicationCodeableConcept": {
+                 "coding": [
+                   {
+                     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                     "code": "1298088",
+                     "display": "Flurazepam Hydrochloride 15 MG Oral Capsule"
+                   }
+                 ]
+               },
+               "subject": {
+                 "reference": "Patient/example-rec-11-benzo-trigger-with-opioid"
+               },
+               "context": {
+                 "reference": "Encounter/example-rec-11-benzo-trigger-with-opioid-context"
+               },
+               "_authoredOn": {
+                 "extension": [
+                   {
+                     "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                     "valueString": "Today()"
+                   }
+                 ]
+               },
+               "dosageInstruction": [
+                 {
+                   "timing": {
+                     "repeat": {
+                       "frequency": 1,
+                       "period": 1.0,
+                       "periodUnit": "d"
+                     }
+                   },
+                   "asNeededBoolean": false,
+                   "doseQuantity": {
+                     "value": 1.0,
+                     "unit": "capsule"
+                   }
+                 }
+               ],
+               "dispenseRequest": {
+                 "validityPeriod": {
+                   "extension": [
+                     {
+                       "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                       "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
+                     }
+                   ]
+                 },
+                 "numberOfRepeatsAllowed": 3,
+                 "expectedSupplyDuration": {
+                   "value": 30.0,
+                   "unit": "d"
+                 }
+               }
+             } 
           }
-        ],
-        "dispenseRequest": {
-          "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
-          },
-          "numberOfRepeatsAllowed": 3,
-          "expectedSupplyDuration": {
-            "value": 30.0,
-            "unit": "d"
-          }
-        }
+        ]
       }
-    ]
   },
   "prefetch": {
     "item1": {

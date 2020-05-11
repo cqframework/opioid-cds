@@ -151,6 +151,9 @@
       ],
       "groupingBehavior": "visual-group",
       "selectionBehavior": "exactly-one",
+      "definition": {
+        "reference": "ActivityDefinition/opioidcds-detected-issue-opioids-and-benzodiazepines"
+      },
       "dynamicValue": [
         {
           "path": "action.description",
