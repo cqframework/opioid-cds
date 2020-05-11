@@ -3,40 +3,8 @@
   "id": "library-OpioidCDSREC08",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\"grid dict\"><tr><th scope=\"row\"><b>Id: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\">library-OpioidCDSREC08</td></tr><tr><th scope=\"row\"><b>Type: </b></th><td style=\"padding-right: 25px;\"> logic-library </td></tr><tr><th scope=\"row\"><b>Version: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\">1.1.1</td></tr><tr><th scope=\"row\"><b>Status: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\">active</td></tr><tr style=\"vertical-align: top;\"><th rowspan=\"4\" scope=\"row\"><b>Related: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span>Library/FHIRHelpers</span></p></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span>Library/OpioidCDSCommon</span></p></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span>Library/OpioidCDSCommonConfig</span></p></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span>Library/OpioidCDSRoutines</span></p></td></tr><tr style=\"vertical-align: top;\"><th rowspan=\"1\" scope=\"row\"><b>Data Requirements: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><div><p style=\"margin-bottom: 5px;\"><b>type: </b><span>Condition</span></p><p style=\"margin-bottom: 5px;\"><b>code filter:</b><br/><span style=\"padding-left: 25px;\"><b>path: </b><span>code</span></span><br/><span style=\"padding-left: 25px;\"><b>valueset: </b><span>Substance misuse behavioral counseling</span></span></p></div></td></tr><tr style=\"vertical-align: top;\"><th scope=\"row\"><b>Content: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><b>type: </b><span>text/cql</span></td></tr><tr><td colspan=\"2\" style=\"padding-left: 25px; padding-right: 25px;\"><pre><code class=\"language-cql\">library OpioidCDSREC08 version '1.1.1'\n\nusing FHIR version '3.0.0'\n\ninclude FHIRHelpers version '3.0.0' called FHIRHelpers\ninclude OpioidCDSCommon version '1.1.1' called Common\ninclude OpioidCDSCommonConfig version '1.1.1' called Config\ninclude OpioidCDSRoutines version '1.1.1' called Routines\n\n/*\n**\n**  Recommendation #8\n**    Before starting and periodically during continuation of opioid therapy,\n**    clinicians should evaluate risk factors for opioid-related harms. Clinicians\n**    should incorporate into the management plan strategies to mitigate risk,\n**    including considering offering naloxone when factors that increase risk for\n**    opioid overdose, such as history of overdose, history of substance use disorder,\n**    higher opioid dosages (≥50 MME/day), or concurrent benzodiazepine use, are\n**    present (recommendation category: A, evidence type: 4)\n**\n**  When\n**    Provider is prescribing an opioid analgesic with ambulatory misuse potential in the outpatient setting\n**    Prescription is for treating chronic pain.\n**    Opioid review is useful for this patient:\n**      Patient is 18 or over\n**      Patient does not have findings indicating limited life expectancy\n**      Patient does not have orders for therapies indicating end of life care\n**      Patient is not undergoing active cancer treatment:\n**        Patient has had at least 2 encounters within the past year with any diagnosis of cancer\n**    Patient is not currently prescribed naloxone medications\n**    Factors that increase risk for opioid overdose are present:\n**      Concurrent benzodiazepine use\n**      High opioid dosages (MME/day &gt;= 50)\n**      History of substance abuse\n**  Then\n**    Recommend offering naloxone medications\n**      Will offer naloxone medications\n**      Benefits outweigh risks, snooze 3 months\n**      N/A - see comment, snooze 3 months\n**\n*/\n\n// META: Plan Definition: http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioid-cds-08\n\nparameter ContextPrescriptions List&lt;MedicationRequest&gt;\n\ncontext Patient\n\ndefine &quot;Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions&quot;:\n  ( Common.&quot;Is Opioid Analgesic with Ambulatory Misuse Potential?&quot;( ContextPrescriptions ) ) AmbulatoryOpioidPrescription\n    where Routines.&quot;Is Chronic Pain Prescription?&quot;( AmbulatoryOpioidPrescription )\n\ndefine &quot;Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential&quot;:\n  exists( &quot;Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions&quot; )\n\ndefine &quot;Is Recommendation Applicable?&quot;:\n  &quot;Inclusion Criteria&quot;\n    and not &quot;Exclusion Criteria&quot;\n\ndefine &quot;Inclusion Criteria&quot;:\n  &quot;Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential&quot;\n    and Routines.&quot;Is Opioid Review Useful?&quot;\n    and (\n      &quot;Total MME&quot; &gt;= 50 'mg/d'\n        or &quot;On Benzodiazepine&quot;\n        or &quot;Has Substance Abuse History&quot;\n    )\n\ndefine &quot;Exclusion Criteria&quot;:\n  (\n    Config.&quot;Evidence of Naloxone Enabled&quot;\n      and &quot;On Naloxone&quot;\n  )\n\ndefine &quot;Total MME&quot;:\n  Common.TotalMME(\n    &quot;Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions&quot;\n      union Common.&quot;Active Ambulatory Opioid Rx&quot;\n  )\n\ndefine &quot;On Naloxone&quot;:\n  exists( Common.&quot;Active Ambulatory Naloxone Rx&quot; )\n\ndefine &quot;On Benzodiazepine&quot;:\n  exists( Common.&quot;Active Ambulatory Benzodiazepine Rx&quot; )\n\ndefine &quot;Has Substance Abuse History&quot;:\n  exists ( [Condition: Common.&quot;Substance misuse behavioral counseling&quot;] )\n\ndefine &quot;Get Indicator&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then 'warning'\n  else null\n\ndefine &quot;Get Summary&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then 'Incorporate into the management plan strategies to mitigate risk; including considering offering naloxone when factors that increase risk for opioid overdose are present'\n  else null\n\ndefine &quot;Detail Descriptions&quot;:\n\t{\n    { hasCondition: &quot;Total MME&quot; &gt;= 50 'mg/day', text: 'Average MME (' + ToString(&quot;Total MME&quot;) + ') &gt;= 50 mg/day' },\n    { hasCondition: &quot;On Benzodiazepine&quot;, text: 'concurrent use of benzodiazepine'},\n    { hasCondition: &quot;Has Substance Abuse History&quot;, text: 'history of alcohol or drug abuse' }\n  }\n\ndefine &quot;Detail List&quot;:\n\tCombine(&quot;Detail Descriptions&quot; dd where dd.hasCondition return dd.text, ', ')\n\ndefine &quot;Get Detail&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then\n      'Consider offering naloxone given following risk factor(s) for opioid overdose: '\n        + if &quot;Detail List&quot; is not null and &quot;Detail List&quot; != ''\n         then &quot;Detail List&quot; + '.'\n        else 'N/A.'\n  else null\n</code></pre>\n                    \n                    \n                </td>\n            </tr>\n        \n    </table>\n</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\"grid dict\"><tr><th scope=\"row\"><b>Id: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\">library-OpioidCDSREC08</td></tr><tr><th scope=\"row\"><b>Type: </b></th><td style=\"padding-right: 25px;\"> Logic Library </td></tr><tr><th scope=\"row\"><b>Status: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\">active</td></tr><tr style=\"vertical-align: top;\"><th rowspan=\"4\" scope=\"row\"><b>Related: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>Library/FHIRHelpers</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>Library/OpioidCDSCommon</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>Library/OpioidCDSCommonConfig</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>Library/OpioidCDSRoutines</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><th rowspan=\"1\" scope=\"row\"><b>Data Requirements: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><div><p style=\"margin-bottom: 5px;\"><b>type: </b><span>Condition</span></p><p style=\"margin-bottom: 5px;\"><b>code filter:</b><br/><span style=\"padding-left: 25px;\"><b>path: </b><span>code</span></span><br/><span style=\"padding-left: 25px;\"><b>valueset: </b><span>Substance misuse behavioral counseling</span></span></p></div></td></tr><tr style=\"vertical-align: top;\"><th scope=\"row\"><b>Content: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><b>type: </b><span>text/cql</span></td></tr><tr><td colspan=\"2\" style=\"padding-left: 25px; padding-right: 25px;\"><pre><code class=\"language-cql\">library OpioidCDSREC08 version '1.1.1'\n\nusing FHIR version '3.0.0'\n\ninclude FHIRHelpers version '3.0.0' called FHIRHelpers\ninclude OpioidCDSCommon version '1.1.1' called Common\ninclude OpioidCDSCommonConfig version '1.1.1' called Config\ninclude OpioidCDSRoutines version '1.1.1' called Routines\n\n/*\n**\n**  Recommendation #8\n**    Before starting and periodically during continuation of opioid therapy,\n**    clinicians should evaluate risk factors for opioid-related harms. Clinicians\n**    should incorporate into the management plan strategies to mitigate risk,\n**    including considering offering naloxone when factors that increase risk for\n**    opioid overdose, such as history of overdose, history of substance use disorder,\n**    higher opioid dosages (≥50 MME/day), or concurrent benzodiazepine use, are\n**    present (recommendation category: A, evidence type: 4)\n**\n**  When\n**    Provider is prescribing an opioid analgesic with ambulatory misuse potential in the outpatient setting\n**    Prescription is for treating chronic pain.\n**    Opioid review is useful for this patient:\n**      Patient is 18 or over\n**      Patient does not have findings indicating limited life expectancy\n**      Patient does not have orders for therapies indicating end of life care\n**      Patient is not undergoing active cancer treatment:\n**        Patient has had at least 2 encounters within the past year with any diagnosis of cancer\n**    Patient is not currently prescribed naloxone medications\n**    Factors that increase risk for opioid overdose are present:\n**      Concurrent benzodiazepine use\n**      High opioid dosages (MME/day &gt;= 50)\n**      History of substance abuse\n**  Then\n**    Recommend offering naloxone medications\n**      Will offer naloxone medications\n**      Benefits outweigh risks, snooze 3 months\n**      N/A - see comment, snooze 3 months\n**\n*/\n\n// META: Plan Definition: http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioid-cds-08\n\nparameter ContextPrescriptions List&lt;MedicationRequest&gt;\n\ncontext Patient\n\ndefine &quot;Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions&quot;:\n  ( Common.&quot;Is Opioid Analgesic with Ambulatory Misuse Potential?&quot;( ContextPrescriptions ) ) AmbulatoryOpioidPrescription\n    where Routines.&quot;Is Chronic Pain Prescription?&quot;( AmbulatoryOpioidPrescription )\n\ndefine &quot;Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential&quot;:\n  exists( &quot;Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions&quot; )\n\ndefine &quot;Is Recommendation Applicable?&quot;:\n  &quot;Inclusion Criteria&quot;\n    and not &quot;Exclusion Criteria&quot;\n\ndefine &quot;Inclusion Criteria&quot;:\n  &quot;Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential&quot;\n    and Routines.&quot;Is Opioid Review Useful?&quot;\n    and (\n      &quot;Total MME&quot; &gt;= 50 'mg/d'\n        or &quot;On Benzodiazepine&quot;\n        or &quot;Has Substance Abuse History&quot;\n    )\n\ndefine &quot;Exclusion Criteria&quot;:\n  (\n    Config.&quot;Evidence of Naloxone Enabled&quot;\n      and &quot;On Naloxone&quot;\n  )\n\ndefine &quot;Total MME&quot;:\n  Common.TotalMME(\n    &quot;Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions&quot;\n      union Common.&quot;Active Ambulatory Opioid Rx&quot;\n  )\n\ndefine &quot;On Naloxone&quot;:\n  exists( Common.&quot;Active Ambulatory Naloxone Rx&quot; )\n\ndefine &quot;On Benzodiazepine&quot;:\n  exists( Common.&quot;Active Ambulatory Benzodiazepine Rx&quot; )\n\ndefine &quot;Has Substance Abuse History&quot;:\n  exists ( [Condition: Common.&quot;Substance misuse behavioral counseling&quot;] )\n\ndefine &quot;Get Indicator&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then 'warning'\n  else null\n\ndefine &quot;Get Summary&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then 'Incorporate into the management plan strategies to mitigate risk; including considering offering naloxone when factors that increase risk for opioid overdose are present'\n  else null\n\ndefine &quot;Detail Descriptions&quot;:\n\t{\n    { hasCondition: &quot;Total MME&quot; &gt;= 50 'mg/day', text: 'Average MME (' + ToString(&quot;Total MME&quot;) + ') &gt;= 50 mg/day' },\n    { hasCondition: &quot;On Benzodiazepine&quot;, text: 'concurrent use of benzodiazepine'},\n    { hasCondition: &quot;Has Substance Abuse History&quot;, text: 'history of alcohol or drug abuse' }\n  }\n\ndefine &quot;Detail List&quot;:\n\tCombine(&quot;Detail Descriptions&quot; dd where dd.hasCondition return dd.text, ', ')\n\ndefine &quot;Get Detail&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then\n      'Consider offering naloxone given following risk factor(s) for opioid overdose: '\n        + if &quot;Detail List&quot; is not null and &quot;Detail List&quot; != ''\n         then &quot;Detail List&quot; + '.'\n        else 'N/A.'\n  else null\n</code></pre>\n                    \n                    \n                </td>\n            </tr>\n        \n    </table>\n</div>"
   },
-  "contained": [
-    {
-      "resourceType": "Device",
-      "id": "cqf-tooling",
-      "meta": {
-        "profile": [
-          "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/device-softwaresystem-cqfm"
-        ]
-      },
-      "type": {
-        "coding": [
-          {
-            "system": "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/software-system-type",
-            "code": "tooling"
-          }
-        ]
-      },
-      "version": [
-        {
-          "value": "1.1.0-SNAPSHOT"
-        }
-      ]
-    }
-  ],
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
-      "valueReference": {
-        "reference": "#cqf-tooling"
-      }
-    }
-  ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/Library/library-OpioidCDSREC08",
   "version": "1.1.1",
   "name": "OpioidCDSREC08",
@@ -131,25 +99,28 @@
       "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
     },
     {
-      "type": "documentation",
-      "display": "MME Conversion Tables",
-      "url": "https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf"
+      "type": "depends-on",
+      "resource": {
+        "reference": "Library/FHIRHelpers"
+      }
     },
     {
       "type": "depends-on",
-      "resource": "Library/FHIRHelpers"
+      "resource": {
+        "reference": "Library/OpioidCDSCommon"
+      }
     },
     {
       "type": "depends-on",
-      "resource": "Library/OpioidCDSCommon"
+      "resource": {
+        "reference": "Library/OpioidCDSCommonConfig"
+      }
     },
     {
       "type": "depends-on",
-      "resource": "Library/OpioidCDSCommonConfig"
-    },
-    {
-      "type": "depends-on",
-      "resource": "Library/OpioidCDSRoutines"
+      "resource": {
+        "reference": "Library/OpioidCDSRoutines"
+      }
     }
   ],
   "dataRequirement": [
@@ -158,7 +129,7 @@
       "codeFilter": [
         {
           "path": "code",
-          "valueSet": "Substance misuse behavioral counseling"
+          "valueSetString": "Substance misuse behavioral counseling"
         }
       ]
     }
