@@ -222,11 +222,12 @@ define "Admitted/Referred/Discharged to Hospice Care":
     [Procedure: code in "Hospice Procedure Codes"] P
       where P.status.value in { 'in-progress', 'completed' }
   )
-  union
+  // Commented as workaround due to issue in Publisher - "Unknown FHIRAllTypes codd 'ProcedureRequest'".
+  /* union
   (
     [ProcedureRequest: code in "Hospice Procedure Codes"] E
       where E.status.value in { 'active', 'completed', 'suspended' }
-  )
+  ) */
   union
   (
     [Observation: code in "Hospice Finding Codes"] O
