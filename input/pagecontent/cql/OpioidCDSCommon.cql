@@ -269,6 +269,28 @@ define "Medications Indicating End of Life":
   )
 */
 
+define function "Prescription Relevant Period"(prescription FHIR.MedicationRequest):
+  if (
+    prescription.authoredOn is not null and prescription.dispenseRequest is not null
+      and prescription.dispenseRequest.expectedSupplyDuration is not null
+  )
+  then Interval[
+    date from prescription.authoredOn,
+    date from prescription.authoredOn + System.Quantity{ value: GetDurationInDays(prescription.dispenseRequest.expectedSupplyDuration), unit: 'days' }
+  ]
+  else null
+  
+define function "Days on Opioids during Period"(period Interval<Date>):
+  Sum(
+    (
+      collapse (
+        [MedicationRequest: "Opioid analgesics with ambulatory misuse potential"] OpioidPrescription
+        return "Prescription Relevant Period"(OpioidPrescription) intersect period
+      )
+    ) OpioidUseInterval
+      return days between start of OpioidUseInterval and end of OpioidUseInterval
+  )
+
 define function Prescriptions(Orders List<MedicationRequest>):
   Orders O
     let

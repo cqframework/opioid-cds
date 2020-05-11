@@ -78,7 +78,7 @@ define "Opioid Risk Assessment in Past 90 Days":
     where start of (riskAssessment.performed as FHIR.Period) in day of "Risk Assessment Interval"
 
 define "Prescribed Opioids for 7 of Past 10 Days with an Encounter":
-  Routines."Days on Opioids during Period"( "Previous 10 Days Interval" ) >= 7
+  Routines."Days on Opioids during Period"("Previous 10 Days Interval") >= 7
     and exists (
       [Encounter: Common."Office Visit"] AmbulatoryEncounter
         where AmbulatoryEncounter.period during "Encounter Interval"
