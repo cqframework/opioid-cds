@@ -97,7 +97,7 @@
     {
       "type": "depends-on",
       "resource": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/Library/OMTKData2019"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/Library/library-OMTKData2019"
       }
     }
   ],

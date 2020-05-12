@@ -1,7 +1,7 @@
 {
   "resourceType": "PlanDefinition",
-  "id": "opioidcds-10",
-  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10",
+  "id": "OpioidCDSRec10",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/OpioidCDSRec10",
   "version": "1.1.1",
   "name": "PlanDefinition_Recommendation_10",
   "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10",
@@ -90,7 +90,7 @@
   "copyright": "© CDC 2016+.",
   "library": [
     {
-      "reference": "Library/opioidcds-recommendation-10"
+      "reference": "Library/library-OpioidCDSREC10"
     }
   ],
   "action": [

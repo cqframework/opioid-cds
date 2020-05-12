@@ -107,13 +107,13 @@
     {
       "type": "depends-on",
       "resource": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSCommon"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/Library/library-OpioidCDSCommon"
       }
     },
     {
       "type": "depends-on",
       "resource": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSRoutines"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/Library/library-OpioidCDSRoutines"
       }
     }
   ],
@@ -123,7 +123,9 @@
       "codeFilter": [
         {
           "path": "code",
-          "valueSetString": "Non-opioid illicit drug urine screening"
+          "valueSetReference" : {
+            "reference" : "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-illicit-drug-urine-screening"
+          }
         }
       ]
     },
@@ -132,7 +134,9 @@
       "codeFilter": [
         {
           "path": "code",
-          "valueSetString": "Opioid drug urine screening"
+          "valueSetReference" : {
+            "reference" : "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening"
+          }
         }
       ]
     }

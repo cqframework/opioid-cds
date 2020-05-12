@@ -117,22 +117,48 @@
       }
     }
   ],
-  "dataRequirement": [
+  "dataRequirement" : [
     {
-      "type": "Observation",
-      "codeFilter": [
+      "type" : "MedicationRequest",
+      "codeFilter" : [
         {
-          "path": "code",
-          "valueSetString": "Non-opioid illicit drug urine screening"
+          "path" : "medication",
+          "valueSetReference" : {
+            "reference" : "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+          }
         }
       ]
     },
     {
-      "type": "Observation",
-      "codeFilter": [
+      "type" : "MedicationRequest"
+    },
+    {
+      "type" : "Medication",
+      "codeFilter" : [
         {
-          "path": "code",
-          "valueSetString": "Opioid drug urine screening"
+          "path" : "id"
+        }
+      ]
+    },
+    {
+      "type" : "Observation",
+      "codeFilter" : [
+        {
+          "path" : "code",
+          "valueSetReference" : {
+            "reference" : "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-illicit-drug-urine-screening"
+          }
+        }
+      ]
+    },
+    {
+      "type" : "Observation",
+      "codeFilter" : [
+        {
+          "path" : "code",
+          "valueSetReference" : {
+            "reference" : "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening"
+          }
         }
       ]
     }

@@ -102,7 +102,7 @@
     {
       "type": "depends-on",
       "resource": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/Library/OMTKLogicCQL"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/Library/library-OMTKLogicCQL"
       }
     }
   ],

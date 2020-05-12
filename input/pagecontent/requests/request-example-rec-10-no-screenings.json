@@ -7,76 +7,80 @@
   "context": {
     "patientId": "Patient/example-rec-10-no-screenings",
     "encounterId": "Encounter/example-rec-10-no-screenings-context",
-    "medications": [
-      {
-        "resourceType": "MedicationRequest",
-        "id": "example-rec-10-no-screenings-context",
-        "status": "active",
-        "intent": "order",
-        "category": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/medication-request-category",
-              "code": "outpatient"
-            }
-          ]
-        },
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "197696",
-              "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/example-rec-10-no-screenings"
-        },
-        "context": {
-          "reference": "Encounter/example-rec-10-no-screenings-context"
-        },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "Today()"
-            }
-          ]
-        },
-        "dosageInstruction": [
+    "selections": [ "MedicationRequest/example-rec-10-no-screenings-context" ],
+    "draftOrders": {
+       "resourceType":"Bundle",
+       "entry": [
           {
-            "timing": {
-              "repeat": {
-                "frequency": 1,
-                "period": 12.0,
-                "periodUnit": "d"
-              }
+            "resourceType": "MedicationRequest",
+            "id": "example-rec-10-no-screenings-context",
+            "status": "active",
+            "intent": "order",
+            "category": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/medication-request-category",
+                  "code": "outpatient"
+                }
+              ]
             },
-            "asNeededBoolean": false,
-            "doseQuantity": {
-              "value": 1.0,
-              "unit": "patch"
+            "medicationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                  "code": "197696",
+                  "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/example-rec-10-no-screenings"
+            },
+            "context": {
+              "reference": "Encounter/example-rec-10-no-screenings-context"
+            },
+            "_authoredOn": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                  "valueString": "Today()"
+                }
+              ]
+            },
+            "dosageInstruction": [
+              {
+                "timing": {
+                  "repeat": {
+                    "frequency": 1,
+                    "period": 12.0,
+                    "periodUnit": "d"
+                  }
+                },
+                "asNeededBoolean": false,
+                "doseQuantity": {
+                  "value": 1.0,
+                  "unit": "patch"
+                }
+              }
+            ],
+            "dispenseRequest": {
+              "validityPeriod": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                    "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
+                  }
+                ]
+              },
+              "numberOfRepeatsAllowed": 3,
+              "expectedSupplyDuration": {
+                "value": 30.0,
+                "unit": "d"
+              }
             }
           }
-        ],
-        "dispenseRequest": {
-          "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
-          },
-          "numberOfRepeatsAllowed": 3,
-          "expectedSupplyDuration": {
-            "value": 30.0,
-            "unit": "d"
-          }
-        }
+        ]
       }
-    ]
   },
   "prefetch": {
     "item1": {

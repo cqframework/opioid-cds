@@ -27,13 +27,13 @@
     {
       "type": "depends-on",
       "resource": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSCommon"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/Library/library-OpioidCDSCommon"
       }
     },
     {
       "type": "depends-on",
       "resource": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSCommonConfig"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/Library/library-OpioidCDSCommonConfig"
       }
     }
   ],
