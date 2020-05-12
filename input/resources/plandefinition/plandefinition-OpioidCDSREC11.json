@@ -1,10 +1,10 @@
 {
   "resourceType": "PlanDefinition",
-  "id": "opioidcds-11-patient-view",
-  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11-patient-view",
+  "id": "opioidcds-11",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11",
   "version": "1.1.1",
-  "name": "PlanDefinition_Recommendation_11_Patient_View",
-  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 (patient-view)",
+  "name": "PlanDefinition_Recommendation_11",
+  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11",
   "type": {
     "coding": [
       {
@@ -90,7 +90,7 @@
   "copyright": "© CDC 2016+.",
   "library": [
     {
-      "reference": "Library/opioidcds-recommendation-11-patient-view"
+      "reference": "Library/library-OpioidCDSRec11"
     }
   ],
   "action": [
@@ -138,7 +138,7 @@
       "triggerDefinition": [
         {
           "type": "named-event",
-          "eventName": "patient-view"
+          "eventName": "order-select"
         }
       ],
       "condition": [

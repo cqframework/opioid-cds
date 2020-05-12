@@ -1,10 +1,10 @@
 {
   "resourceType": "PlanDefinition",
-  "id": "opioidcds-05",
-  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-05",
+  "id": "opioidcds-08",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-08",
   "version": "1.1.1",
-  "name": "PlanDefinition_Recommendation_5",
-  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5",
+  "name": "PlanDefinition_Recommendation_8",
+  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #8",
   "type": {
     "coding": [
       {
@@ -16,9 +16,9 @@
   },
   "status": "draft",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
-  "description": "When opioids are started, providers should prescribe the lowest effective dosage.",
+  "description": "Clinicians should incorporate into the management plan strategies to mitigate risk, including considering offering naloxone when factors that increase risk for opioid overdose, such as history of overdose, history of substance use disorder, higher opioid dosages (≥50 MME/day), or concurrent benzodiazepine use, are present.",
   "purpose": "CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.",
-  "usage": "Providers should use caution when prescribing opioids at any dosage, should carefully reassess evidence of individual benefits and risks when considering increasing dosage to ≥50 morphine milligram equivalents (MME)/day, and should avoid increasing dosage to ≥90 MME/day or carefully justify a decision to titrate dosage to >90 MME/day",
+  "usage": "Before starting and periodically during continuation of opioid therapy, clinicians should evaluate risk factors for opioid-related harms.",
   "useContext": [
     {
       "code": {
@@ -97,13 +97,13 @@
   ],
   "library": [
     {
-      "reference": "Library/opioidcds-recommendation-05"
+      "reference": "Library/library-OpioidCDSREC08"
     }
   ],
   "action": [
     {
-      "title": "High risk for opioid overdose.",
-      "description": "Total morphine milligram equivalent (MME) exceeds recommended amount. Taper to less than 50.",
+      "title": "Existing patient exhibits risk factors for opioid-related harms.",
+      "description": "Checking if the trigger prescription meets the inclusion criteria for recommendation #8 workflow.",
       "documentation": [
         {
           "type": "documentation",
@@ -132,8 +132,8 @@
                   "coding": [
                     {
                       "system": "http://hl7.org/fhir/evidence-quality",
-                      "code": "low",
-                      "display": "Low quality"
+                      "code": "very-low",
+                      "display": "Very Low quality"
                     }
                   ]
                 }
@@ -151,7 +151,7 @@
       "condition": [
         {
           "kind": "applicability",
-          "description": "Is total MME >= 50?",
+          "description": "Check whether the existing patient exhibits risk factors for opioid-related harms, such as concurrent use with benzodiazepine, a history of substance abuse, and/or a average MME greater than 50 mg/day.",
           "language": "text/cql",
           "expression": "Inclusion Criteria"
         }
@@ -160,30 +160,27 @@
       "selectionBehavior": "exactly-one",
       "dynamicValue": [
         {
-          "path": "action.title",
-          "expression": "Get Summary"
-        },
-        {
           "path": "action.description",
           "expression": "Get Detail"
         },
         {
-          "path": "activity.extension",
+          "path": "action.title",
+          "expression": "Get Summary"
+        },
+        {
+          "path": "action.extension",
           "expression": "Get Indicator"
         }
       ],
       "action": [
         {
-          "description": "Will reduce dosage"
+          "description": "Will offer Naloxone instead"
         },
         {
           "description": "Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo"
         },
         {
-          "description": "Acute pain; snooze 1 mo"
-        },
-        {
-          "description": "N/A - see comment (will be reviewed by medical director); snooze 3 mo"
+          "description": "N/A - see comment; snooze 3 mo"
         }
       ]
     }
