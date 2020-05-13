@@ -177,7 +177,7 @@ define "Encounter Period":
 
 define "Is Active Cancer Treatment?":
   Config."Active Cancer Treatment Encounters Condition Is Enabled"
-    and not "Has Two or More Encounters with Cancer Diagnosis During Encounter Period"
+    and "Has Two or More Encounters with Cancer Diagnosis During Encounter Period"
 
 define "Active Cancer Diagnoses":
   [Condition: Common."CDC malignant cancer conditions"]

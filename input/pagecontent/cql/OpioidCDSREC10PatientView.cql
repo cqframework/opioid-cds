@@ -43,7 +43,7 @@ define "Lookback Year":
 define "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential":
   exists (
     Common."Active Ambulatory Opioid Rx" AmbulatoryOpioidPrescription
-      where Routines."Is Chronic Pain Prescription?"( AmbulatoryOpioidPrescription )
+      where Routines."Is Chronic Pain Prescription?"(AmbulatoryOpioidPrescription)
   )
 
 define "Is Recommendation Applicable?":
