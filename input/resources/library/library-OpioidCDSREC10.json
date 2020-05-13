@@ -139,6 +139,28 @@
           }
         }
       ]
+    },
+    {
+      "type": "MedicationRequest",
+      "codeFilter": [
+        {
+          "path": "medication",
+          "valueSetReference": {
+            "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+          }
+        }
+      ]
+    },
+    {
+      "type": "MedicationRequest"
+    },
+    {
+      "type": "Medication",
+      "codeFilter": [
+        {
+          "path": "id"
+        }
+      ]
     }
   ],
   "content": [
