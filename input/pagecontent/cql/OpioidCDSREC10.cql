@@ -41,11 +41,11 @@ define "Lookback Year":
   Interval[Today() - 12 months - 1 days, Today() - 1 day]
 
 define "Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions":
-  ( Common."Is Opioid Analgesic with Ambulatory Misuse Potential?"( ContextPrescriptions ) ) AmbulatoryOpioidPrescription
-    where Routines."Is Chronic Pain Prescription?"( AmbulatoryOpioidPrescription )
+  (Common."Is Opioid Analgesic with Ambulatory Misuse Potential?"(ContextPrescriptions)) AmbulatoryOpioidPrescription
+    where Routines."Is Chronic Pain Prescription?"(AmbulatoryOpioidPrescription)
 
 define "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential":
-  exists( "Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions" )
+  exists ("Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions")
 
 define "Is Recommendation Applicable?":
   "Inclusion Criteria"
@@ -60,7 +60,7 @@ define "Exclusion Criteria":
   false
 
 define "Patient had Urine Screening in Last 12 Months":
-  exists( "Urine Screenings during the Last 12 Months" )
+  exists ("Urine Screenings during the Last 12 Months")
 
 define "Urine Screenings during the Last 12 Months":
   (

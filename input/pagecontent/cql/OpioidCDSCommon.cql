@@ -155,22 +155,22 @@ define function "Is Ambulatory Medication Request?" (value List<MedicationReques
 define function "Is Opioid Analgesic with Ambulatory Misuse Potential?"(value List<MedicationRequest>):
   value Rx
     let MedRef: if (Rx.medication is FHIR.Reference) then (Rx.medication as FHIR.Reference).reference else null,
-      Med: if MedRef is null then (Rx.medication as FHIR.CodeableConcept).coding else SingletonFrom([Medication: id in (Last(Split(MedRef, '/')))] Med return Med.code.coding)
-    where Med.code in "Opioid analgesics with ambulatory misuse potential"
+      Med: if MedRef is null then (Rx.medication as FHIR.CodeableConcept) else SingletonFrom([Medication: id in (Last(Split(MedRef, '/')))] Med return Med.code)
+    where Med in "Opioid analgesics with ambulatory misuse potential"
       and FHIRHelpers.ToConcept(Rx.category) ~ "Community"
     return
-          MedicationRequest {
-            id: Rx.id,
-            status: Rx.status,
-            intent: Rx.intent,
-            category: Rx.category,
-            medication: FHIR.CodeableConcept{ coding: Med },
-            subject: Rx.subject,
-            authoredOn: Rx.authoredOn,
-            recorder: Rx.recorder,
-            dosageInstruction: Rx.dosageInstruction,
-            dispenseRequest: Rx.dispenseRequest
-          }
+      MedicationRequest {
+        id: Rx.id,
+        status: Rx.status,
+        intent: Rx.intent,
+        category: Rx.category,
+        medication: FHIR.CodeableConcept{ coding: Med.coding },
+        subject: Rx.subject,
+        authoredOn: Rx.authoredOn,
+        recorder: Rx.recorder,
+        dosageInstruction: Rx.dosageInstruction,
+        dispenseRequest: Rx.dispenseRequest
+      }
 
 define function "Is Benzodiazepine?"(value List<MedicationRequest>):
   value Rx

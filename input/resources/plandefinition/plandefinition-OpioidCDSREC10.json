@@ -155,7 +155,7 @@
               "kind": "applicability",
               "description": "Patient has not had a urine screening in the past 12 months",
               "language": "text/cql",
-              "expression": "No Urine Screening In Last 12 Months"
+              "expression": "Is Recommendation Applicable?"
             }
           ],
           "dynamicValue": [

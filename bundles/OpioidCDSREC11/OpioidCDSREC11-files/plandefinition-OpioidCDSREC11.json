@@ -95,46 +95,6 @@
   ],
   "action": [
     {
-      "title": "Existing patient has concurrent opioid and benzodiazepine prescriptions.",
-      "description": "Checking if the trigger prescription meets the inclusion criteria for recommendation #11 workflow.",
-      "documentation": [
-        {
-          "type": "documentation",
-          "display": "CDC guideline for prescribing opioids for chronic pain",
-          "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
-        },
-        {
-          "type": "documentation",
-          "document": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/recommendation-strength",
-                      "code": "strong",
-                      "display": "Strong"
-                    }
-                  ]
-                }
-              },
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/evidence-quality",
-                      "code": "low",
-                      "display": "Low quality"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      ],
       "triggerDefinition": [
         {
           "type": "named-event",
@@ -144,39 +104,96 @@
       "condition": [
         {
           "kind": "applicability",
-          "description": "Check whether the existing patient is using opioids concurrently with benzodiazepines.",
           "language": "text/cql",
           "expression": "Inclusion Criteria"
         }
       ],
-      "groupingBehavior": "visual-group",
-      "selectionBehavior": "exactly-one",
-      "definition": {
-        "reference": "ActivityDefinition/opioidcds-detected-issue-opioids-and-benzodiazepines"
-      },
-      "dynamicValue": [
-        {
-          "path": "action.description",
-          "expression": "Get Detail"
-        },
-        {
-          "path": "action.title",
-          "expression": "Get Summary"
-        },
-        {
-          "path": "action.extension",
-          "expression": "Get Indicator"
-        }
-      ],
       "action": [
         {
-          "description": "Will revise"
-        },
-        {
-          "description": "Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo"
-        },
-        {
-          "description": "N/A - see comment; snooze 3 mo"
+          "title": "Existing patient has concurrent opioid and benzodiazepine prescriptions.",
+          "description": "Checking if the trigger prescription meets the inclusion criteria for recommendation #11 workflow.",
+          "documentation": [
+            {
+              "type": "documentation",
+              "display": "CDC guideline for prescribing opioids for chronic pain",
+              "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
+            },
+            {
+              "type": "documentation",
+              "document": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://hl7.org/fhir/recommendation-strength",
+                          "code": "strong",
+                          "display": "Strong"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://hl7.org/fhir/evidence-quality",
+                          "code": "low",
+                          "display": "Low quality"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "triggerDefinition": [
+            {
+              "type": "named-event",
+              "eventName": "order-select"
+            }
+          ],
+          "condition": [
+            {
+              "kind": "applicability",
+              "description": "Check whether the existing patient is using opioids concurrently with benzodiazepines.",
+              "language": "text/cql",
+              "expression": "Is Recommendation Applicable?"
+            }
+          ],
+          "groupingBehavior": "visual-group",
+          "selectionBehavior": "exactly-one",
+          "definition": {
+            "reference": "ActivityDefinition/opioidcds-detected-issue-opioids-and-benzodiazepines"
+          },
+          "dynamicValue": [
+            {
+              "path": "action.description",
+              "expression": "Get Detail"
+            },
+            {
+              "path": "action.title",
+              "expression": "Get Summary"
+            },
+            {
+              "path": "action.extension",
+              "expression": "Get Indicator"
+            }
+          ],
+          "action": [
+            {
+              "description": "Will revise"
+            },
+            {
+              "description": "Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo"
+            },
+            {
+              "description": "N/A - see comment; snooze 3 mo"
+            }
+          ]
         }
       ]
     }
