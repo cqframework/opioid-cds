@@ -98,7 +98,7 @@
       "triggerDefinition": [
         {
           "type": "named-event",
-          "eventName": "order-select"
+          "eventName": "patient-view"
         }
       ],
       "condition": [
