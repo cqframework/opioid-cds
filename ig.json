@@ -532,35 +532,35 @@
       "base": "Patient-example-opioidcds.html"
     },
     "PlanDefinition/opioidcds-04": {
-      "source": "plandefinition-opioidcds-04.json",
+      "source": "plandefinition-OpioidCDSREC04.json",
       "base": "PlanDefinition-opioidcds-04.html"
     },
     "PlanDefinition/opioidcds-05": {
-      "source": "plandefinition-opioidcds-05.json",
+      "source": "plandefinition-OpioidCDSREC05.json",
       "base": "PlanDefinition-opioidcds-05.html"
     },
     "PlanDefinition/opioidcds-07": {
-      "source": "plandefinition-opioidcds-07.json",
+      "source": "plandefinition-OpioidCDSREC07.json",
       "base": "PlanDefinition-opioidcds-07.html"
     },
     "PlanDefinition/opioidcds-08": {
-      "source": "plandefinition-opioidcds-08.json",
+      "source": "plandefinition-OpioidCDSREC08.json",
       "base": "PlanDefinition-opioidcds-08.html"
     },
     "PlanDefinition/opioidcds-10": {
-      "source": "plandefinition-opioidcds-10.json",
+      "source": "plandefinition-OpioidCDSREC10.json",
       "base": "PlanDefinition-opioidcds-10.html"
     },
     "PlanDefinition/opioidcds-10-patient-view": {
-      "source": "plandefinition-opioidcds-10-patient-view.json",
+      "source": "plandefinition-OpioidCDSREC10PatientView.json",
       "base": "PlanDefinition-opioidcds-10-patient-view.html"
     },
     "PlanDefinition/opioidcds-11": {
-      "source": "plandefinition-opioidcds-11.json",
+      "source": "plandefinition-OpioidCDSREC11.json",
       "base": "PlanDefinition-opioidcds-11.html"
     },
     "PlanDefinition/opioidcds-11-patient-view": {
-      "source": "plandefinition-opioidcds-11-patient-view.json",
+      "source": "plandefinition-OpioidCDSREC11PatientView.json",
       "base": "PlanDefinition-opioidcds-11-patient-view.html"
     },
     "RequestGroup/example-opioidcds": {
@@ -604,7 +604,7 @@
       "base": "ValueSet-substance-abuse.html"
     },
     "ValueSet/illicit-drug-urine-screening": {
-      "source": "valueset-illicit-drug-urine-screening.json",
+      "source": "valueset-non-opioid-illicit-drug-urine-screening.json",
       "base": "ValueSet-illicit-drug-urine-screening.html"
     },
     "ValueSet/opioid-urine-screening": {
