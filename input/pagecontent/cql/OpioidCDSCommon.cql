@@ -46,6 +46,8 @@ valueset "PDMP data reviewed finding": 'http://fhir.org/guides/cdc/opioid-cds/Va
 code "Community": 'community' from "Medication Request Category Codes"
 code "Active Condition": 'active' from "Condition Clinical Status Codes"
 
+context Patient
+
 // TODO: code "Nonpharmacologic therapy and nonopioid pharmocologic": 'TODO' from "TODO"
 
 // TODO: Capture process decisions for long-term opioid use
