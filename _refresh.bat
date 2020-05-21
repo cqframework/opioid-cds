@@ -1,5 +1,5 @@
 @ECHO OFF
-SET tooling_jar=tooling-1.0.2-SNAPSHOT-jar-with-dependencies.jar
+SET tooling_jar=tooling-1.1.0-SNAPSHOT-jar-with-dependencies.jar
 SET input_cache_path=%~dp0input-cache
 SET resources_path=%~dp0/input/resources
 SET ig_resource_path=%~dp0/input/opioid-cds.xml
@@ -12,7 +12,7 @@ GOTO igpublish
 
 :isonline
 ECHO We're online, setting publish to the Connectathon sandbox FHIR server
-SET fsoption=-fs http://cds-sandbox.alphora.com/cqf-ruler-dstu3/fhir/
+SET fsoption=
 
 :igpublish
 
