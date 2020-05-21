@@ -1,4 +1,4 @@
-library OMTKLogicStub version '1.1.1'
+library OMTKLogicStub version '1.2.0'
 
 /*
 This is a "stub" version of the OMTKLogic library that has no dependencies

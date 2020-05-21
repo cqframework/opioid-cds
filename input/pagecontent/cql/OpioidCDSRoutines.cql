@@ -1,10 +1,10 @@
-library OpioidCDSRoutines version '1.1.1'
+library OpioidCDSRoutines version '1.2.0'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDSCommon version '1.1.1' called Common
-include OpioidCDSCommonConfig version '1.1.1' called Config
+include OpioidCDSCommon version '1.2.0' called Common
+include OpioidCDSCommonConfig version '1.2.0' called Config
 
 context Patient
 

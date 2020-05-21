@@ -3,8 +3,8 @@ library OpioidCDSREC01 version '0.1.0'
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDSCommon version '1.1.1' called Common
-include OpioidCDSRoutines version '1.1.1' called Routines
+include OpioidCDSCommon version '1.2.0' called Common
+include OpioidCDSRoutines version '1.2.0' called Routines
 
 /*
 **
