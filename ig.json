@@ -22,7 +22,7 @@
     "pages": "input/pagecontent",
     "temp": "temp",
     "output": "output",
-    "txCache" : "input-cache/txCache",
+    "txCache" : "input-cache/txcache",
     "qa": "qa",
     "specification": "http://hl7.org/fhir/STU3/"
   },
