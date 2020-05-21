@@ -1,4 +1,4 @@
-library OMTKLogicCQL version '1.1.1'
+library OMTKLogicCQL version '1.2.0'
 
 /*
 This version of the OMTKLogic library uses the OMTKData library as the
@@ -7,7 +7,7 @@ OMTK data source. This library has no external dependencies and so
 should be able to run in an environment that supports pure CQL.
 */
 
-include OMTKData2019 version '1.1.1' called OMTKData
+include OMTKData2019 version '1.2.0' called OMTKData
 
 codesystem RxNorm: 'http://www.nlm.nih.gov/research/umls/rxnorm'
 
@@ -54,6 +54,13 @@ define function IsPatch(doseFormCode Code):
 
 /*
   Returns the conversion factor for the given ingredient
+
+CDC Guidance:
+https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf
+https://www.cdc.gov/drugoverdose/modules/data-files.html
+
+CMS Guidance:
+https://www.cms.gov/Medicare/Prescription-Drug-Coverage/PrescriptionDrugCovContra/Downloads/Oral-MME-CFs-vFeb-2018.pdf
 
 Opioid (strength in mg except where noted)	MME Conversion Factor*
 Buprenorphine, transdermal patch (MCG/HR)	12.6

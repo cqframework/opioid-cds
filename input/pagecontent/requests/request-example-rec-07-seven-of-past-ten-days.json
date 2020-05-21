@@ -1,7 +1,7 @@
 {
   "hookInstance": "fa44ba28-6895-4060-b7d0-9e86715e0e08",
   "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
-  "hook": "medication-prescribe",
+  "hook": "order-select",
   "user": "Practitioner/example",
   "applyCql": true,
   "context": {

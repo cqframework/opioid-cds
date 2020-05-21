@@ -1,0 +1,97 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "opioidcds-detected-issue-opioids-and-benzodiazepines",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ActivityDefinition/opioidcds-detected-issue-opioids-and-benzodiazepines",
+  "name": "ActivityDefinition-DetectedIssue-co-prescribed-opioids-and-benzodiazepines",
+  "title": "CDC Opioid Prescribing Guideline Recommendation #11 - Avoid prescribing opioid pain medication and benzodiazepines concurrently",
+  "status": "draft",
+  "date": "2020-05-07T00:00:00-06:00",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "description": "As part of the workflow for recommendation 11, it is recommended that providers avoid prescribing opioid pain medication and benzodiazepines concurrently.",
+  "purpose": "Avoid prescribing opioid pain medication and benzodiazepines concurrently.",
+  "usage": "Avoid prescribing opioid pain medication and benzodiazepines concurrently.",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://hl7.org/fhir/usage-context-type",
+        "code": "focus",
+        "display": "Clinical Focus"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "225314003",
+            "display": "Risk management (procedure)"
+          }
+        ]
+      }
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "topic": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/definition-topic",
+          "code": "assessment",
+          "display": "Assessment"
+        }
+      ],
+      "text": "Opioid Prescribing"
+    }
+  ],
+  "contributor": [
+    {
+      "type": "author",
+      "name": "Kensaku Kawamoto, MD, PhD, MHS"
+    },
+    {
+      "type": "author",
+      "name": "Bryn Rhodes"
+    },
+    {
+      "type": "author",
+      "name": "Floyd Eisenberg, MD, MPH"
+    },
+    {
+      "type": "author",
+      "name": "Robert McClure, MD, MPH"
+    }
+  ],
+  "copyright": "© CDC 2016+.",
+  "kind": "DetectedIssue",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "454281000124100",
+        "display": "Assessment of risk for opioid abuse (procedure)"
+      }
+    ]
+  },
+  "dynamicValue": [
+    {
+      "path": "action.description",
+      "description": "detected issue activitydefinition action.description.description"
+    },
+    {
+      "path": "action.title",
+      "description": "detected issue activitydefinition action.title.description"
+    },
+    {
+      "path": "action.extension",
+      "description": "detected issue activitydefinition action.extension.description"
+    }
+  ]
+}

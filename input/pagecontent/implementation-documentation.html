@@ -23,7 +23,7 @@
 <ul>
     <li><a href="https://github.com/DBCG/cql_engine"><b>CQL Evaluation Engine</b></a> - the developer will need access to a service that enables the translation and execution of CQL libraries.</li>
     <li><b>FHIR Server</b> - it is preferred for the developer to have access to edit resource providers and operations within the server. Although not necessary, the server should have the PlanDefinition <a href="https://www.hl7.org/fhir/plandefinition-operations.html#apply">$apply</a> operation implemented, especially if a "pure" FHIR implementation is desired. The examples in this guide use the <a href="http://hapifhir.io/doc_jpa.html">HAPI FHIR JPA Server</a>, but the logic should translate to other FHIR-conformant APIs like the <a href="http://ewoutkramer.github.io/fhir-net-api/">.NET API</a>.</li>
-    <li><b>CDS Hooks API</b> - the developer should be familiar with the <a href="http://cds-hooks.org/">CDS Hooks API and services</a>. The discovery and medication-prescribe hook are the aspects of the API that are used in this context.</li>
+    <li><b>CDS Hooks API</b> - the developer should be familiar with the <a href="http://cds-hooks.org/">CDS Hooks API and services</a>. The discovery and order-select hook are the aspects of the API that are used in this context.</li>
     <li><b>JSON Parser</b> - CDS Hooks requests and responses are issued in JSON. A basic understanding of <a href="http://www.json.org/">JSON format</a> and a good JSON parsing library like <a href="https://code.google.com/archive/p/json-simple/">json-simple</a> or <a href="https://github.com/google/gson/blob/master/UserGuide.md">gson</a> will make life easier.</li>
 </ul>
 
@@ -58,12 +58,12 @@
 </p>
 
 <div class="example">
-  <p>The following is an example CDS Hooks medication-prescribe request:</p>
+  <p>The following is an example CDS Hooks order-select request:</p>
   <pre class="json">
 {
   "hookInstance": "d1577c69-dfbe-44ad-ba6d-3e05e953b2ea",
   "fhirServer": "http://fhirtest.uhn.ca/baseDstu2",
-  "hook": "medication-prescribe",
+  "hook": "order-select",
   "user": "Practitioner/example",
   "context": [
     {
@@ -176,8 +176,8 @@
 </p>
 
 <ul>
-    <li>The specified hook corresponds to the service called. For example, an error would be given if the EHR called the patient-view hook on a medication-prescribe service.</li>
-    <li>The request MUST provide context resource(s). Additionally, the resources must be relevant to the service. For example, a request to a medication-prescribe service with anything other than a MedicationOrder/MedicationRequest FHIR resource should result in an error.</li>
+    <li>The specified hook corresponds to the service called. For example, an error would be given if the EHR called the patient-view hook on a order-select service.</li>
+    <li>The request MUST provide context resource(s). Additionally, the resources must be relevant to the service. For example, a request to a order-select service with anything other than a MedicationOrder/MedicationRequest FHIR resource should result in an error.</li>
     <li>The patient, user, and fhirServer should be specified. Although, if the request contains prefetch resources, then this may be absent from the request.</li>
     <li>If the request does not contain prefetch resources, then the patient, user, and fhirServer MUST be given. Refer to the "Prefetch" section for more information.</li>
     <li>To keep this guide simple, the oauth, redirect, and encounter request attributes will be ignored. Refer to the CDS Hooks documentation for more information on these attributes.</li>
@@ -191,7 +191,7 @@
 <h3 class="self-link-parent"><span class="sectioncount">8.4.4</span> Prefetch <a href="implementation-documentation.html#prefetch" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
-    The prefetch attribute of a CDS Hooks request is provided to boost the performance of the requested CDS service. The prefetch is defined in the CDS Hooks Discovery request and populated by the EHR before the actual request to the service. If the request does not contain prefetch resources and requires them for more comprehensive processing, then the CDS service will be required to retrieve them. This is achieved by constructing a request to the fhirServer for the resources using the patient, user, and service called as context. For example, if the EHR calls a medication-prescribe service without prefetch resources, the service MUST make the following call to the fhirServer specified in the request (DSTU2 format):
+    The prefetch attribute of a CDS Hooks request is provided to boost the performance of the requested CDS service. The prefetch is defined in the CDS Hooks Discovery request and populated by the EHR before the actual request to the service. If the request does not contain prefetch resources and requires them for more comprehensive processing, then the CDS service will be required to retrieve them. This is achieved by constructing a request to the fhirServer for the resources using the patient, user, and service called as context. For example, if the EHR calls a order-select service without prefetch resources, the service MUST make the following call to the fhirServer specified in the request (DSTU2 format):
 </p>
 
 <p>
@@ -206,14 +206,14 @@
 <h3 class="self-link-parent"><span class="sectioncount">8.4.5</span> Conversion to STU3 Resources <a href="implementation-documentation.html#convert" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>
-  This implementation uses the PlanDefinition $apply operation to fulfill the requirements of the medication-prescribe service. However, the PlanDefinition resource was introduced in the STU3 release. Therefore, any resources provided by the request or retrieved by the service must be converted into STU3 resources. It is common for FHIR APIs to provide a mechanism to convert resources from one version to another. However, if the API you are using does not provide resource version conversion, then the service will need to handle the conversion.
+  This implementation uses the PlanDefinition $apply operation to fulfill the requirements of the order-select service. However, the PlanDefinition resource was introduced in the STU3 release. Therefore, any resources provided by the request or retrieved by the service must be converted into STU3 resources. It is common for FHIR APIs to provide a mechanism to convert resources from one version to another. However, if the API you are using does not provide resource version conversion, then the service will need to handle the conversion.
 </p>
 
 <a name="dstu2todstu3"> </a>
 <h4 class="self-link-parent"><span class="sectioncount">8.4.5.1</span> MedicationOrder to MedicationRequest <a href="implementation-documentation.html#dstu2todstu3" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>
-  Regarding the Opioid Guidelines medication-prescribe service, the conversion from DSTU2 to STU3 is rather simple. The medicationCodeableConcept, status, and dosageInstruction are the only attributes that are accessed in this service. Therefore, they are the only attributes that need to be converted. However, depth of conversion is implementation-specific. For example, if your implementation returns a suggestion, which is a modified resource that conforms to certain requirements, then you would want to convert all the attributes to prevent data loss. If your service is returning info cards on the other hand, then attributes that aren't used by the service can be excluded.
+  Regarding the Opioid Guidelines order-select service, the conversion from DSTU2 to STU3 is rather simple. The medicationCodeableConcept, status, and dosageInstruction are the only attributes that are accessed in this service. Therefore, they are the only attributes that need to be converted. However, depth of conversion is implementation-specific. For example, if your implementation returns a suggestion, which is a modified resource that conforms to certain requirements, then you would want to convert all the attributes to prevent data loss. If your service is returning info cards on the other hand, then attributes that aren't used by the service can be excluded.
 </p>
 
 <p>For example, take the following MedicationOrder:</p>
@@ -419,7 +419,7 @@
 <p></p>
 
 <p>
-  As shown in the flowchart, the $apply operation begins by parsing the input parameters. Then the <a href="Library-opioidcds-recommendation-05.json.html">CDC Opioid Guidelines library</a> is serialized into a library object. The next step is to resolve data providers for FHIR STU3 and OMTK. OMTK, or Opioid Management Terminology Knowledge, is a library that provides MME conversion factors and terminology information for the opioid medications. The OMTK data provider endpoint is an Access database and is NOT a FHIR data provider. The next step is to walk through the specified PlanDefinition actions, checking for applicability and an expression reference in the condition. If the PlanDefinition condition is applicable and has an expression reference, set the library "Orders" parameter to the list of MedictionRequest resources (context and prefetch) and evaluate the expression. If the expression evaluates to true, the context prescription violates the opioid guidelines by exceeding the suggested MME and a warning should be returned to the author. If the expression evaluates to false, then the presription is in accordance with the opioid guidelines. No matter the outcome of the expression, a CarePlan resource must be constructed and returned, which is left to the developer to format (see the example link above for an example).
+  As shown in the flowchart, the $apply operation begins by parsing the input parameters. Then the <a href="Library-library-OpioidCDSREC05.json.html">CDC Opioid Guidelines library</a> is serialized into a library object. The next step is to resolve data providers for FHIR STU3 and OMTK. OMTK, or Opioid Management Terminology Knowledge, is a library that provides MME conversion factors and terminology information for the opioid medications. The OMTK data provider endpoint is an Access database and is NOT a FHIR data provider. The next step is to walk through the specified PlanDefinition actions, checking for applicability and an expression reference in the condition. If the PlanDefinition condition is applicable and has an expression reference, set the library "Orders" parameter to the list of MedictionRequest resources (context and prefetch) and evaluate the expression. If the expression evaluates to true, the context prescription violates the opioid guidelines by exceeding the suggested MME and a warning should be returned to the author. If the expression evaluates to false, then the presription is in accordance with the opioid guidelines. No matter the outcome of the expression, a CarePlan resource must be constructed and returned, which is left to the developer to format (see the example link above for an example).
 </p>
 
 <a name="transform"> </a>

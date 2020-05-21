@@ -12,7 +12,7 @@ else
 	echo "Offline"
 	txoption="-tx n/a"
 fi
-
+txoption="-tx n/a"
 echo "$txoption"
 
 publisher=$input_cache_path/$publisher_jar
