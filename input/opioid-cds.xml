@@ -964,6 +964,14 @@
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Naloxone Medication"/>
             <description value="Naloxone medication codes"/>
             <sourceReference>
+                <reference value="ValueSet/naloxone-medications"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Naloxone Medication"/>
+            <description value="Naloxone medication codes"/>
+            <sourceReference>
                 <reference value="ValueSet/naloxone"/>
             </sourceReference>
         </resource>
