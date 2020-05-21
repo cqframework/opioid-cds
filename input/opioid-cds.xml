@@ -837,12 +837,46 @@
                 <reference value="RequestGroup/example-opioidcds"/>
             </sourceReference>
         </resource>
+
+        <!-- ValueSets  -->
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines End Of Life Conditions"/>
-            <description value="End of life condition codes"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Benzodiazepine Medication"/>
+            <description value="Benzodiazepine medication codes"/>
             <sourceReference>
-                <reference value="ValueSet/end-of-life-conditions"/>
+                <reference value="ValueSet/benzodiazepine-medications"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Buprenorphine and Methadone Medication"/>
+            <description value="Buprenorphine and Methadone medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/buprenorphine-and-methadone-medications"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Malignant Cancer Conditions"/>
+            <description value="Malignant cancer Condition codes"/>
+            <sourceReference>
+                <reference value="ValueSet/cdc-malignant-cancer-conditions-enum"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Likey Terminal for Opioid Prescribing"/>
+            <description value="Condition that are likely terminal for opioid prescribing codes"/>
+            <sourceReference>
+                <reference value="ValueSet/conditions-likely-terminal-for-opioid-prescribing-enum"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Discharge to Hospice"/>
+            <description value="Hospice encounter discharge disposition codes"/>
+            <sourceReference>
+                <reference value="ValueSet/discharge-to-hospice"/>
             </sourceReference>
         </resource>
         <resource>
@@ -855,10 +889,26 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Discharge to Hospice"/>
-            <description value="Hospice encounter discharge disposition codes"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines End Of Life Conditions"/>
+            <description value="End of life condition codes"/>
             <sourceReference>
-                <reference value="ValueSet/discharge-to-hospice"/>
+                <reference value="ValueSet/end-of-life-conditions"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Extended Release Opioids with Ambulatory Misuse Potential Medications"/>
+            <description value="Opioids with ambulatory misuse potential medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/extended-release-opioids-with-ambulatory-misuse-potential"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Hospice Disposition"/>
+            <description value="Hospice disposition finding codes"/>
+            <sourceReference>
+                <reference value="ValueSet/hospice-disposition"/>
             </sourceReference>
         </resource>
         <resource>
@@ -879,66 +929,18 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Limited Life Expectancy Conditions - Enumerated"/>
+            <description value="Limited life expectancy condition codes enumerated"/>
+            <sourceReference>
+                <reference value="ValueSet/limited-life-expectancy-conditions-enum"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Limited Life Expectancy Conditions"/>
             <description value="Limited life expectancy condition codes"/>
             <sourceReference>
                 <reference value="ValueSet/limited-life-expectancy-conditions"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Metastatic Cancer"/>
-            <description value="Metastatic cancer codes"/>
-            <sourceReference>
-                <reference value="ValueSet/metastatic-cancer"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Abuse Assessment"/>
-            <description value="Opiate therapy risk assessment codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioid-abuse-assessment"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Substance Abuse"/>
-            <description value="Substance abuse codes"/>
-            <sourceReference>
-                <reference value="ValueSet/substance-abuse"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Urine Screening"/>
-            <description value="Urine analysis for opioids"/>
-            <sourceReference>
-                <reference value="ValueSet/opioid-urine-screening"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Illicit Drugs Urine Screening"/>
-            <description value="Urine analysis for illicit drugs"/>
-            <sourceReference>
-                <reference value="ValueSet/illicit-drug-urine-screening"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Indicator"/>
-            <description value="Indicates urgency/importance of the action"/>
-            <sourceReference>
-                <reference value="ValueSet/opioidcds-indicator"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Benzodiazepine Medication"/>
-            <description value="Benzodiazepine medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/benzodiazepines"/>
             </sourceReference>
         </resource>
         <resource>
@@ -951,6 +953,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Metastatic Cancer"/>
+            <description value="Metastatic cancer codes"/>
+            <sourceReference>
+                <reference value="ValueSet/metastatic-cancer"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Naloxone Medication"/>
             <description value="Naloxone medication codes"/>
             <sourceReference>
@@ -959,10 +969,90 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Medication"/>
-            <description value="Opioid medication codes"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Non Opioid Illicit Drugs Urine Screening"/>
+            <description value="Urine analysis for non opioid illicit drugs"/>
             <sourceReference>
-                <reference value="ValueSet/opioids"/>
+                <reference value="ValueSet/non-opioid-illicit-drug-urine-screening"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Office Visit"/>
+            <description value="Office visit codes"/>
+            <sourceReference>
+                <reference value="ValueSet/office-visit"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Oncology Specialty Designation"/>
+            <description value="Oncology specialty designation codes"/>
+            <sourceReference>
+                <reference value="ValueSet/oncology-specialty-designation-enum"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Abuse Assessment"/>
+            <description value="Opiate therapy risk assessment codes"/>
+            <sourceReference>
+                <reference value="ValueSet/opioid-abuse-assessment"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Analgesics with Ambulatory Misuse Potential"/>
+            <description value="Opioid analgesics with ambulatory misuse potential codes"/>
+            <sourceReference>
+                <reference value="ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Counseling Procedure "/>
+            <description value="Opioid counseling procedure codes"/>
+            <sourceReference>
+                <reference value="ValueSet/opioid-counseling-procedure"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Urine Screening"/>
+            <description value="Urine analysis for opioids"/>
+            <sourceReference>
+                <reference value="ValueSet/opioid-drug-urine-screening"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Misuse Assessment Procedure"/>
+            <description value="Opioid misuse assessment procedure codes"/>
+            <sourceReference>
+                <reference value="ValueSet/opioid-misuse-assessment-procedure"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Misuse Disorders"/>
+            <description value="Opioid misuse disorder codes"/>
+            <sourceReference>
+                <reference value="ValueSet/opioid-misuse-disorders-enum"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Uring Screening"/>
+            <description value="Opioid urine screening codes"/>
+            <sourceReference>
+                <reference value="ValueSet/opioid-uring-screening"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Indicator"/>
+            <description value="Indicates urgency/importance of the action"/>
+            <sourceReference>
+                <reference value="ValueSet/opioidcds-indicator"/>
             </sourceReference>
         </resource>
         <resource>
@@ -975,10 +1065,74 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Medication"/>
+            <description value="Opioid medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/opioids"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Pain Management Procedures"/>
+            <description value="Pain management procedure codes"/>
+            <sourceReference>
+                <reference value="ValueSet/pain-management-procedure"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Pain Treatment Plan"/>
+            <description value="Pain treatment plan codes"/>
+            <sourceReference>
+                <reference value="ValueSet/pain-treatment-plan"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines PDMP Data Reviewed Finding"/>
+            <description value="PDMP data reviewed finding codes"/>
+            <sourceReference>
+                <reference value="ValueSet/pdmp-data-reviewed-finding"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines PDMP Review Procedure"/>
+            <description value="PDMP review procedure codes"/>
+            <sourceReference>
+                <reference value="ValueSet/pdmp-review-procedure"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Short Acting Opioids Medication"/>
             <description value="Short acting opioids medication codes"/>
             <sourceReference>
                 <reference value="ValueSet/short-acting-opioids"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Substance Abuse"/>
+            <description value="Substance abuse codes"/>
+            <sourceReference>
+                <reference value="ValueSet/substance-abuse"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Substance Misuse Behavioral Counseling"/>
+            <description value="Substance misuse behavioral counseling codes"/>
+            <sourceReference>
+                <reference value="ValueSet/substance-misuse-behavioral-counseling-enum"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Therapies Indicating End of Life Care"/>
+            <description value="Therapies indication end of life care codes"/>
+            <sourceReference>
+                <reference value="ValueSet/therapies-indicating-end-of-life-care-enum"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1009,18 +1163,22 @@
     <binary value="cql/OMTKData2018.cql"/>
     <binary value="cql/OMTKData2019.cql"/>
     <binary value="cql/OMTKData2020.cql"/>
-    <binary value="cql/OMTKData_Changes.cql"/>
+    <binary value="cql/OMTKDataChanges.cql"/>
     <binary value="cql/OMTKLogicCQL.cql"/>
     <binary value="cql/OMTKLogicStub.cql"/>
-    <binary value="cql/OpioidCDS_Common.cql"/>
-    <binary value="cql/OpioidCDS_REC_04.cql"/>
-    <binary value="cql/OpioidCDS_REC_05.cql"/>
-    <binary value="cql/OpioidCDS_REC_07.cql"/>
-    <binary value="cql/OpioidCDS_REC_08.cql"/>
-    <binary value="cql/OpioidCDS_REC_10.cql"/>
-    <binary value="cql/OpioidCDS_REC_11.cql"/>
-    <binary value="cql/OpioidCDS_REC_10_Patient_View.cql"/>
-    <binary value="cql/OpioidCDS_REC_11_Patient_View.cql"/>
+    <binary value="cql/OpioidCDSCommon.cql"/>
+    <binary value="cql/OpioidCDSCommonConfig.cql"/>
+    <binary value="cql/OpioidCDSREC04.cql"/>
+    <binary value="cql/OpioidCDSREC04PatientView.cql"/>
+    <binary value="cql/OpioidCDSREC05.cql"/>
+    <binary value="cql/OpioidCDSREC07.cql"/>
+    <binary value="cql/OpioidCDSREC08.cql"/>
+    <binary value="cql/OpioidCDSREC10.cql"/>
+    <binary value="cql/OpioidCDSREC11.cql"/>
+    <binary value="cql/OpioidCDSREC10PatientView.cql"/>
+    <binary value="cql/OpioidCDSREC11PatientView.cql"/>
+    <binary value="cql/OpioidCDSREC12PatientView.cql"/>
+    <binary value="cql/OpioidCDSRoutines.cql"/>
     <binary value="modelinfo/OMTK-modelinfo.xml"/>
     <page>
         <source value="index.html"/>
