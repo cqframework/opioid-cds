@@ -1044,7 +1044,7 @@
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Uring Screening"/>
             <description value="Opioid urine screening codes"/>
             <sourceReference>
-                <reference value="ValueSet/opioid-uring-screening"/>
+                <reference value="ValueSet/opioid-urine-screening"/>
             </sourceReference>
         </resource>
         <resource>
