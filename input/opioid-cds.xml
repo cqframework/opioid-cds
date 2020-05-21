@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-    <id value="opioid-cds"/>
-    <url value="http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/opioid-cds"/>
+    <id value="fhir.cdc.opioid-cds"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/fhir.cdc.opioid-cds"/>
     <version value="0.1.0"/>
     <name value="Opioid Prescribing Support Implementation Guide"/>
     <status value="draft"/>
@@ -1021,21 +1021,6 @@
     <binary value="cql/OpioidCDS_REC_11.cql"/>
     <binary value="cql/OpioidCDS_REC_10_Patient_View.cql"/>
     <binary value="cql/OpioidCDS_REC_11_Patient_View.cql"/>
-    <binary value="elm/OMTKData2018.xml"/>
-    <binary value="elm/OMTKData2019.xml"/>
-    <binary value="elm/OMTKData2020.xml"/>
-    <binary value="elm/OMTKData_Changes.xml"/>
-    <binary value="elm/OMTKLogicCQL.xml"/>
-    <binary value="elm/OMTKLogicStub.xml"/>
-    <binary value="elm/OpioidCDS_Common.xml"/>
-    <binary value="elm/OpioidCDS_REC_04.xml"/>
-    <binary value="elm/OpioidCDS_REC_05.xml"/>
-    <binary value="elm/OpioidCDS_REC_07.xml"/>
-    <binary value="elm/OpioidCDS_REC_08.xml"/>
-    <binary value="elm/OpioidCDS_REC_10.xml"/>
-    <binary value="elm/OpioidCDS_REC_11.xml"/>
-    <binary value="elm/OpioidCDS_REC_10_Patient_View.xml"/>
-    <binary value="elm/OpioidCDS_REC_11_Patient_View.xml"/>
     <binary value="modelinfo/OMTK-modelinfo.xml"/>
     <page>
         <source value="index.html"/>
