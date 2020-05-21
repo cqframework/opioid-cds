@@ -1,7 +1,7 @@
 #!/bin/bash
-dlurl=https://fhir.github.io/latest-ig-publisher/org.hl7.fhir.publisher.jar
+dlurl=https://storage.googleapis.com/ig-build/org.hl7.fhir.publisher.jar
 publisher_jar=org.hl7.fhir.publisher.jar
-root_path=./
+input_cache_path=./input-cache/
 
 set -e
 if ! type "curl" > /dev/null; then
@@ -9,11 +9,25 @@ if ! type "curl" > /dev/null; then
 	exit 1
 fi
 
-publisher="$root_path$publisher_jar"
+FORCE=false
+
+while :; do
+    case $1 in
+        -f|--force) FORCE=true ;;
+        --)
+            shift
+            break
+            ;;
+        *) break
+    esac
+    shift
+done
+
+publisher="$input_cache_path$publisher_jar"
 if test -f "$publisher"; then
-	echo "IG Publisher FOUND in root"
+	echo "IG Publisher FOUND in input-cache"
 	jarlocation="$publisher"
-	jarlocationname="Root"
+	jarlocationname="Input Cache"
 	upgrade=true
 else
 	publisher="../$publisher_jar"
@@ -25,22 +39,23 @@ else
 		upgrade=true
 	else
 		echo IG Publisher NOT FOUND in input-cache or parent folder...
-		jarlocation="$root_path$publisher_jar"
-		jarlocationname="Root"
+		jarlocation=$input_cache_path$publisher_jar
+		jarlocationname="Input Cache"
 		upgrade=false
 	fi
 fi
 
-if $upgrade ; then
-	message="Overwrite $jarlocation? [Y/N] "
-else
-	#echo Will place publisher jar here: $root_path$publisher_jar
-	echo Will place publisher jar here: $jarlocation
-	message="Ok? [Y/N]"
+if [[ "$FORCE" != true ]]; then
+  if "$upgrade"; then
+    message="Overwrite $jarlocation? (Y/N) "
+  else
+    echo Will place publisher jar here: "$jarlocation"
+    message="Ok (enter 'y' or 'Y' to continue, any other key to cancel)?"
+  fi
+  read -r -p "$message" response
 fi
 
-read -r -p "$message" response
-if [[ "$response" =~ ^([yY])$ ]]; then
+if [[ "$FORCE" == true ]] || [[ "$response" =~ ^([yY])$ ]]; then
 	echo "Downloading most recent publisher to $jarlocationname - it's ~100 MB, so this may take a bit"
 #	wget "https://fhir.github.io/latest-ig-publisher/org.hl7.fhir.publisher.jar" -O "$jarlocation"
 	curl $dlurl -o "$jarlocation" --create-dirs
