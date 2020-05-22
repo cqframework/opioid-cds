@@ -2,7 +2,7 @@
   "resourceType": "PlanDefinition",
   "id": "opioidcds-11-patient-view",
   "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11-patient-view",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "name": "PlanDefinition_Recommendation_11_Patient_View",
   "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 (patient-view)",
   "type": {
