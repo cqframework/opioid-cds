@@ -8,6 +8,7 @@
 template
 input-cache/*
 !/input-cache/txCache
+!/input-cache/txcache
 input/ig-expansion-parameters.json
 input/ig-new.json
 input/ig-new.xml
