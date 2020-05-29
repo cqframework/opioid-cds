@@ -1,13 +1,14 @@
-library OpioidCDSCommon version '1.2.1'
+library OpioidCDSCommon version '1.2.2'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OMTKLogicCQL version '1.2.1' called OMTKLogic
+include OMTKLogicCQL version '1.2.2' called OMTKLogic
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "SNOMED": 'http://snomed.info/sct'
 codesystem "Medication Request Category Codes": 'http://hl7.org/fhir/medication-request-category'
+codesystem "Medication Request Status Codes": 'http://hl7.org/fhir/medication-request-status'
 codesystem "Condition Clinical Status Codes": 'http://hl7.org/fhir/condition-clinical'
 
 // Expression-based
@@ -45,6 +46,7 @@ valueset "PDMP data reviewed finding": 'http://fhir.org/guides/cdc/opioid-cds/Va
 
 code "Community": 'community' from "Medication Request Category Codes"
 code "Active Condition": 'active' from "Condition Clinical Status Codes"
+code "Active MedicationRequest": 'active' from "Medication Request Status Codes"
 
 context Patient
 
@@ -53,97 +55,70 @@ context Patient
 // TODO: Capture process decisions for long-term opioid use
 
 define "Active Ambulatory Opioid Rx":
+  /* ("Get Active Ambulatory Medication Requests"([MedicationRequest: status in "Active MedicationRequest"])) Rx */
   (
-    "Get Active Ambulatory Medication Requests"([MedicationRequest: "Opioid analgesics with ambulatory misuse potential"])
-  )
-    union
-    (
-        ("Get Active Ambulatory Medication Requests"([MedicationRequest])) Rx
-          let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
-          where Med.code in "Opioid analgesics with ambulatory misuse potential"
-          return
-            MedicationRequest {
-              id: Rx.id,
-              status: Rx.status,
-              intent: Rx.intent,
-              category: Rx.category,
-              medication: First(Med.code),
-              subject: Rx.subject,
-              recorder: Rx.recorder,
-              dosageInstruction: Rx.dosageInstruction,
-              dispenseRequest: Rx.dispenseRequest
-            }
-    )
-
+    ("Get Active Ambulatory Medication Requests"([MedicationRequest])) MR
+      where date from MR.authoredOn 2 years or less before Today()
+        and MR.medication is Reference or MR.medication in "Opioid analgesics with ambulatory misuse potential"
+  ) Rx
+    let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
+    where not(Rx.medication is Reference) or Med.code in "Opioid analgesics with ambulatory misuse potential"
+      return
+        MedicationRequest {
+          id: Rx.id,
+          status: Rx.status,
+          intent: Rx.intent,
+          category: Rx.category,
+          medication: if Rx.medication is Reference then First(Med.code) else Rx.medication as CodeableConcept,
+          subject: Rx.subject,
+          recorder: Rx.recorder,
+          dosageInstruction: Rx.dosageInstruction,
+          dispenseRequest: Rx.dispenseRequest
+        }
 
 define "Active Ambulatory Benzodiazepine Rx":
-  (
-    "Get Active Ambulatory Medication Requests"([MedicationRequest: "Benzodiazepine medications"])
-  )
-    union
-    (
-        ("Get Active Ambulatory Medication Requests"([MedicationRequest])) Rx
-          let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
-          where Med.code in "Benzodiazepine medications"
-          return
-            MedicationRequest {
-              id: Rx.id,
-              status: Rx.status,
-              intent: Rx.intent,
-              category: Rx.category,
-              medication: First(Med.code),
-              subject: Rx.subject,
-              recorder: Rx.recorder,
-              dosageInstruction: Rx.dosageInstruction,
-              dispenseRequest: Rx.dispenseRequest
-            }
-    )
+/* ("Get Active Ambulatory Medication Requests"([MedicationRequest: status in "Active MedicationRequest"])) Rx */
+(
+  ("Get Active Ambulatory Medication Requests"([MedicationRequest])) MR
+    where date from MR.authoredOn 2 years or less before Today()
+      and MR.medication is Reference or MR.medication in "Benzodiazepine medications"
+) Rx
+  let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
+  where not(Rx.medication is Reference) or Med.code in "Benzodiazepine medications"
+    return
+      MedicationRequest {
+        id: Rx.id,
+        status: Rx.status,
+        intent: Rx.intent,
+        category: Rx.category,
+        medication: if Rx.medication is Reference then First(Med.code) else Rx.medication as CodeableConcept,
+        subject: Rx.subject,
+        recorder: Rx.recorder,
+        dosageInstruction: Rx.dosageInstruction,
+        dispenseRequest: Rx.dispenseRequest
+      }
 
 define "Active Ambulatory Naloxone Rx":
-  (
-    "Get Active Ambulatory Medication Requests"([MedicationRequest: "Naloxone medications"])
-  )
-    union
-    (
-        ("Get Active Ambulatory Medication Requests"([MedicationRequest])) Rx
-          let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
-          where Med.code in "Naloxone medications"
-          return
-            MedicationRequest {
-              id: Rx.id,
-              status: Rx.status,
-              intent: Rx.intent,
-              category: Rx.category,
-              medication: First(Med.code),
-              subject: Rx.subject,
-              recorder: Rx.recorder,
-              dosageInstruction: Rx.dosageInstruction,
-              dispenseRequest: Rx.dispenseRequest
-            }
-    )
-
-define "Ambulatory Opioid Rx":
-  (
-    "Get Active Ambulatory Medication Requests"([MedicationRequest: "Opioid analgesics with ambulatory misuse potential"])
-  )
-    union
-    (
-        ("Get Active Ambulatory Medication Requests"([MedicationRequest])) Rx
-          let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
-          where Med.code in "Opioid analgesics with ambulatory misuse potential"
-          return
-            MedicationRequest {
-              id: Rx.id,
-              status: Rx.status,
-              intent: Rx.intent,
-              category: Rx.category,
-              medication: First(Med.code),
-              subject: Rx.subject,
-              recorder: Rx.recorder,
-              dosageInstruction: Rx.dosageInstruction,
-              dispenseRequest: Rx.dispenseRequest
-            }
-    )
+/* ("Get Active Ambulatory Medication Requests"([MedicationRequest: status in "Active MedicationRequest"])) Rx */
+(
+  ("Get Active Ambulatory Medication Requests"([MedicationRequest])) MR
+    where date from MR.authoredOn 2 years or less before Today()
+      and MR.medication is Reference or MR.medication in "Naloxone medications"
+) Rx
+  let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
+  where not(Rx.medication is Reference) or Med.code in "Naloxone medications"
+    return
+      MedicationRequest {
+        id: Rx.id,
+        status: Rx.status,
+        intent: Rx.intent,
+        category: Rx.category,
+        medication: if Rx.medication is Reference then First(Med.code) else Rx.medication as CodeableConcept,
+        subject: Rx.subject,
+        recorder: Rx.recorder,
+        dosageInstruction: Rx.dosageInstruction,
+        dispenseRequest: Rx.dispenseRequest
+      }
 
 define function "Get Active Ambulatory Medication Requests" (value List<MedicationRequest>) returns List<MedicationRequest>:
   value Rx
@@ -418,7 +393,8 @@ define function GetDurationInDays(value FHIR.Duration):
       when value.code.value ~ 'min' then value.value.value / 60.0 / 24.0
       when value.code.value ~ 's' then value.value.value / 60.0 / 60.0 / 24.0
       when value.code.value ~ 'ms' then value.value.value / 60.0 / 60.0 / 24.0 / 1000.0
-      else Message(1000, true, 'Undefined', 'Error', 'Unsupported duration unit code: ' + value.code)
+      when value.code.value is null then Message(1000, true, 'Undefined', 'Error', 'Duration unit code is null')
+      else Message(1000, true, 'Undefined', 'Error', 'Unsupported duration unit code: ' + value.code.value)
     end
 
 define function GetIngredient(rxNormCode Code):
