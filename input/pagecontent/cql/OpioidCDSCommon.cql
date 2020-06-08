@@ -58,7 +58,7 @@ define "Active Ambulatory Opioid Rx":
   /* ("Get Active Ambulatory Medication Requests"([MedicationRequest: status in "Active MedicationRequest"])) Rx */
   (
     ("Get Active Ambulatory Medication Requests"([MedicationRequest])) MR
-      where date from MR.authoredOn 2 years or less before Today()
+      where date from MR.authoredOn 2 years or less on or before Today()
         and MR.medication is Reference or MR.medication in "Opioid analgesics with ambulatory misuse potential"
   ) Rx
     let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
@@ -80,7 +80,7 @@ define "Active Ambulatory Benzodiazepine Rx":
 /* ("Get Active Ambulatory Medication Requests"([MedicationRequest: status in "Active MedicationRequest"])) Rx */
 (
   ("Get Active Ambulatory Medication Requests"([MedicationRequest])) MR
-    where date from MR.authoredOn 2 years or less before Today()
+    where date from MR.authoredOn 2 years or less on or before Today()
       and MR.medication is Reference or MR.medication in "Benzodiazepine medications"
 ) Rx
   let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
@@ -102,7 +102,7 @@ define "Active Ambulatory Naloxone Rx":
 /* ("Get Active Ambulatory Medication Requests"([MedicationRequest: status in "Active MedicationRequest"])) Rx */
 (
   ("Get Active Ambulatory Medication Requests"([MedicationRequest])) MR
-    where date from MR.authoredOn 2 years or less before Today()
+    where date from MR.authoredOn 2 years or less on or before Today()
       and MR.medication is Reference or MR.medication in "Naloxone medications"
 ) Rx
   let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
