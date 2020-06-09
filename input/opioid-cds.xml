@@ -1049,14 +1049,6 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Uring Screening"/>
-            <description value="Opioid urine screening codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioid-urine-screening"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Indicator"/>
             <description value="Indicates urgency/importance of the action"/>
             <sourceReference>

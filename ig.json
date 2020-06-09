@@ -672,10 +672,6 @@
       "source": "valueset-opioid-misuse-disorders-enum.json",
       "base": "ValueSet-opioid-misuse-disorders-enum.html"
     },
-    "ValueSet/opioid-urine-screening": {
-      "source": "valueset-opioid-urine-screening.json",
-      "base": "ValueSet-opioid-urine-screening.html"
-    },
     "ValueSet/opioidcds-indicator": {
       "source": "valueset-opioidcds-indicator.json",
       "base": "ValueSet-opioidcds-indicator.html"
