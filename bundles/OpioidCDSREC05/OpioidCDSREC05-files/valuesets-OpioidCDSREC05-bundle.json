@@ -16962,7 +16962,7 @@
         "experimental": true,
         "date": "2020-03-26T17:39:09-06:00",
         "publisher": "Centers for Disease Control and Prevention (CDC)",
-        "description": "Individual tests and panels of tests of urine for opioids",
+        "description": "Individual tests and panels of tests of urine for opioids. NOTE: The explicit exclusion of code LOINC|19300-3 is a workaround for an issue with retrieving observations of that code at some implementation sites.",
         "jurisdiction": [
           {
             "coding": [
@@ -17039,6 +17039,17 @@
                   "property": "concept",
                   "op": "is-a",
                   "value": "LP392077-6"
+                }
+              ]
+            }
+          ],
+          "exclude": [
+            {
+              "system": "http://loinc.org",
+              "concept": [
+                {
+                  "code": "19300-3",
+                  "display": "Opiates cutoff:MCnc:Pt:Urine:Qn:Confirm"
                 }
               ]
             }
@@ -18768,12 +18779,6 @@
               "version": "2.67",
               "code": "19138-7",
               "display": "Opiates cutoff:MCnc:Pt:Urine:Qn:"
-            },
-            {
-              "system": "http://loinc.org",
-              "version": "2.67",
-              "code": "19300-3",
-              "display": "Opiates cutoff:MCnc:Pt:Urine:Qn:Confirm"
             },
             {
               "system": "http://loinc.org",
