@@ -348,39 +348,6 @@ define function TotalMME(prescriptions List<MedicationRequest>):
     unit: 'mg/d'
   }
 
-define function ProbableDaysInRange(Orders List<MedicationRequest>, daysPast Integer, numDaysInDaysPast Integer):
-  Orders orders
-    let
-      frequency: orders.dosageInstruction[0].timing.repeat.frequency.value,
-      period: orders.dosageInstruction[0].timing.repeat.period.value,
-      periodDays: GetPeriodDays(orders.dosageInstruction[0].timing.repeat.periodUnit.value),
-      dosesPerDay:
-        if (frequency / (period * periodDays)) >= 1.0
-        then 1.0
-        else frequency / (period * periodDays),
-      repeat: orders.dispenseRequest.numberOfRepeatsAllowed.value,
-      supplyDuration: GetDurationInDays(orders.dispenseRequest.expectedSupplyDuration),
-      validityPeriod: days between orders.dispenseRequest.validityPeriod."start".value and Today(),
-      endDifference:
-        if orders.dispenseRequest.validityPeriod."end".value < Today()
-        then days between orders.dispenseRequest.validityPeriod."end".value and Today()
-        else 0
-    return
-      if (repeat * supplyDuration) < numDaysInDaysPast then false
-      else
-        (dosesPerDay * ((repeat * supplyDuration) / validityPeriod) * (daysPast - endDifference)) >= numDaysInDaysPast
-
-define function GetPeriodDays(value System.String): // returns Decimal:
-  case
-    when value = 'a' then 365.0
-    when value = 'mo' then 30.0
-    when value = 'h' then 1.0/24.0
-    when value = 'min' then 1.0/24.0*60.0
-    when value = 's' then 1.0/24.0*60.0*60.0
-    when value = 'ms' then 1.0/24.0*60.0*60.0*1000.0
-    else 1.0
-  end
-
 define function GetDurationInDays(value FHIR.Duration):
   if value is null then null
   else
@@ -443,8 +410,8 @@ define function ToCode(coding FHIR.Coding):
     display: coding.display.value
   }
 
-define function ToCodes(coding List<FHIR.Coding>):
-  coding c return FHIRHelpers.ToCode(c)
+/* define function ToCodes(coding List<FHIR.Coding>):
+  coding c return FHIRHelpers.ToCode(c) */
 
 define function ToRxNormCode(coding List<FHIR.Coding>):
   singleton from (
