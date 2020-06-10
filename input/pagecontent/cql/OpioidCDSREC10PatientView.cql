@@ -56,7 +56,7 @@ define "Inclusion Criteria":
     and not "Patient had Urine Screening in Last 12 Months"
 
 define "Exclusion Criteria":
-  false
+  false 
 
 define "Patient had Urine Screening in Last 12 Months":
   exists( "Urine Screenings during the Last 12 Months" )
