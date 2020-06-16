@@ -289,7 +289,7 @@ define function Prescriptions(Orders List<MedicationRequest>):
   Orders O
     let
       // NOTE: Assuming medication is specified as a CodeableConcept with a single RxNorm code
-      rxNormCode: ToCode((O.medication as FHIR.CodeableConcept).coding[0]),
+      rxNormCode: FHIRHelpers.ToCode((O.medication as FHIR.CodeableConcept).coding[0]),
       medicationName: OMTKLogic.GetMedicationName(rxNormCode),
       // NOTE: Assuming a single dosage instruction element
       dosageInstruction: O.dosageInstruction[0],
@@ -401,17 +401,6 @@ define function CodeableConceptToString(concept FHIR.CodeableConcept):
         Combine(concept.coding Coding return CodingToString(Coding), ',')
       & ']'
     & '}'
-
-define function ToCode(coding FHIR.Coding):
-  System.Code {
-    code: coding.code.value,
-    system: coding.system.value,
-    version: coding.version.value,
-    display: coding.display.value
-  }
-
-/* define function ToCodes(coding List<FHIR.Coding>):
-  coding c return FHIRHelpers.ToCode(c) */
 
 define function ToRxNormCode(coding List<FHIR.Coding>):
   singleton from (
