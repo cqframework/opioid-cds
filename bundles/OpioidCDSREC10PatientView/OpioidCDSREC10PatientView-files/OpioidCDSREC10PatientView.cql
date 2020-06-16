@@ -56,7 +56,7 @@ define "Inclusion Criteria":
     and not "Patient had Urine Screening in Last 12 Months"
 
 define "Exclusion Criteria":
-  false
+  false 
 
 define "Patient had Urine Screening in Last 12 Months":
   exists( "Urine Screenings during the Last 12 Months" )
@@ -65,11 +65,13 @@ define "Urine Screenings during the Last 12 Months":
   (
     [Observation: "code" in Common."Non-opioid illicit drug urine screening"] IllicitDrugScreen
       where date from IllicitDrugScreen.effective in day of "Lookback Year"
+        and not (IllicitDrugScreen.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
   )
   union
   (
     [Observation: "code" in Common."Opioid drug urine screening"] OpioidDrugScreen
       where date from OpioidDrugScreen.effective in day of "Lookback Year"
+        and not (OpioidDrugScreen.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
   )
 
 define "No Screening In Last 12 Months Indicator":
