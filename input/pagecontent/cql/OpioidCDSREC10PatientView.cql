@@ -1,10 +1,10 @@
-library OpioidCDSREC10PatientView version '1.2.1'
+library OpioidCDSREC10PatientView version '1.2.2'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDSCommon version '1.2.1' called Common
-include OpioidCDSRoutines version '1.2.1' called Routines
+include OpioidCDSCommon version '1.2.2' called Common
+include OpioidCDSRoutines version '1.2.2' called Routines
 
 code "Urine Drug Screening": '310627008' from Common.SNOMED display 'Urine drug screening (procedure)'
 
@@ -56,7 +56,7 @@ define "Inclusion Criteria":
     and not "Patient had Urine Screening in Last 12 Months"
 
 define "Exclusion Criteria":
-  false
+  false 
 
 define "Patient had Urine Screening in Last 12 Months":
   exists( "Urine Screenings during the Last 12 Months" )
@@ -65,11 +65,13 @@ define "Urine Screenings during the Last 12 Months":
   (
     [Observation: "code" in Common."Non-opioid illicit drug urine screening"] IllicitDrugScreen
       where date from IllicitDrugScreen.effective in day of "Lookback Year"
+        and not (IllicitDrugScreen.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
   )
   union
   (
     [Observation: "code" in Common."Opioid drug urine screening"] OpioidDrugScreen
       where date from OpioidDrugScreen.effective in day of "Lookback Year"
+        and not (OpioidDrugScreen.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
   )
 
 define "No Screening In Last 12 Months Indicator":

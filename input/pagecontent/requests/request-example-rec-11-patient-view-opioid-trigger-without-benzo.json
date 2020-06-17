@@ -72,7 +72,9 @@
             "asNeededBoolean": false,
             "doseQuantity": {
               "value": 1.0,
-              "unit": "tablet"
+              "unit": "tablet",
+              "system": "http://hl7.org/fhir/v3/orderableDrugForm",
+              "code": "TAB"
             }
           }
         ],
@@ -88,7 +90,9 @@
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
             "value": 30.0,
-            "unit": "d"
+            "unit": "days",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
           }
         }
       }
