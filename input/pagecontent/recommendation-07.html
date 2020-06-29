@@ -8,6 +8,8 @@
 {% include container-start.html %}
 
 <!-- ============CONTENT CONTENT=============== -->
+<link href="assets/css/accordions.css" rel="stylesheet"/>
+
 
 <ul id="markdown-toc">
     <li><a href="#rec07" id="markdown-toc-rec07">Recommendation #7 - Opioid Therapy Risk Assessment</a></li>
@@ -28,8 +30,9 @@
     to lower dosages or to taper and discontinue opioids <em>(recommendation category: A, evidence type: 4)</em>.</strong>
 </p>
 
+<details open>
 <a name="funcdesc"> </a>
-<h3><span class="sectioncount">8.8.1</span> Functional Description <a href="recommendation-07.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<summary><h3><span class="sectioncount">8.8.1</span> Functional Description <a href="recommendation-07.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3></summary>
 <p style="background-color: gold; border:1px solid maroon; padding: 5px; max-width: 790px;">
     The ranges introduced are based on practical considerations for identifying a course
     of treatment likely to be subject to the recommendation. They were arrived at through
@@ -66,12 +69,21 @@
 <p></p>
 
 <img src="assets/images/Recommendation07-Flow.png"/>
-
+</details>
 <p></p>
-<p></p>
-
+<details>
+    <summary><h3 class="titles">For Chronic Pain</h3></summary>
+      {% include for-chronic-pain-definitions.html %}
+</details>
+    <p></p>
+<details>
+    <summary><h3 class="title">Opioid Review Useful</h3></summary>
+      {% include opioid-review-useful-definitions.html %}
+</details>
+  <p></p>
+<details>
 <a name="content"> </a>
-<h3><span class="sectioncount">8.8.2</span> Content <a href="recommendation-07.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<summary><h3><span class="sectioncount">8.8.2</span> Content <a href="recommendation-07.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3></summary>
 
 <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
 
@@ -80,6 +92,7 @@
     <tr><td><a href="Library-library-OpioidCDSREC07.html">Recommendation #7 - benefits and harms of starting and/or continuing opioid therapy for chronic pain</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>Defines the data requirements to support evaluation of recommendation #7</td></tr>
     <tr><td><a href="cql/OpioidCDSREC07.cql">Recommendation #7 - benefits and harms of starting and/or continuing opioid therapy for chronic pain</a></td><td>STU3 CQL Source</td><td>For reference, the complete CQL content for recommendation #7.</td></tr>
 {% include common-libraries-end.html %}
+</details>
 
 <!-- ==============END CONTENT END CONTENT=================== -->
 

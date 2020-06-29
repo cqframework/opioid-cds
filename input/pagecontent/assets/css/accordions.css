@@ -1,0 +1,38 @@
+/* / Accordion Styling /  */
+* {
+    box-sizing: border-box
+  }
+  details-wrapper {
+     width: 75vw;
+     box-shadow:0 0 1px 2px #BFBFBF;
+  
+  }
+  details {
+     padding: .5rem;
+     font: 1rem/1.2 sans-serif;
+  }
+  summary {
+    font-size: 22px;
+    background-color: #f5f7f6;
+    list-style: none;
+    height:55px;
+    border: none;
+  }
+  .title {
+    display:flex;
+    margin-left: 2%;
+    color: black;
+  }
+  summary::-webkit-details-marker {
+      display: none;
+  }
+  summary::before {
+     padding-right: .25rem;
+     content: '+ '; /* Instead of Triangle closed */
+  }
+  details[open] summary::before {
+     padding-right: .25rem;
+     font-style: italic;
+     content: '- '; /* Instead of Triangle open */
+  }
+  

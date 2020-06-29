@@ -8,6 +8,8 @@
 {% include container-start.html %}
 
 <!-- ============CONTENT CONTENT=============== -->
+<link href="assets/css/accordions.css" rel="stylesheet"/>
+
 
 <ul id="markdown-toc">
     <li><a href="#rec10" id="markdown-toc-rec10">Recommendation #10 - Urine Drug Testing</a></li>
@@ -26,8 +28,9 @@
     <em>(recommendation category: B, evidence type: 4)</em>.</strong>
 </p>
 
+<details open>
 <a name="funcdesc"> </a>
-<h3><span class="sectioncount">8.10.1</span> Functional Description <a href="recommendation-10.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<summary><h3><span class="sectioncount">8.10.1</span> Functional Description <a href="recommendation-10.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3></summary>
 <p style="background-color: gold; border:1px solid maroon; padding: 5px; max-width: 790px;">
     The GetDrugNamesFromScreeningCodes(value List&lt;FHIR.Coding&gt;) function extracts
     the drug name from the display value for the given code. The expectation is that the
@@ -62,11 +65,20 @@
 
 <p></p>
 <img src="assets/images/Recommendation10-Flow.png"/>
-<p></p>
-<p></p>
-
+</details>
+<details>
+    <summary><h3 class="title">For Chronic Pain</h3></summary>
+    {% include for-chronic-pain-definitions.html %}
+</details>
+  <p></p>
+<details>
+    <summary><h3 class="title">Opioid Review Useful</h3></summary>
+    {% include opioid-review-useful-definitions.html %}
+</details>
+  <p></p>
+<details>
 <a name="content"> </a>
-<h3><span class="sectioncount">8.10.2</span> Content <a href="recommendation-10.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+<summary><h3><span class="sectioncount">8.10.2</span> Content <a href="recommendation-10.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3></summary>
 
 <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
 
@@ -78,6 +90,7 @@
     <tr><td><a href="cql/OpioidCDSREC10.cql">Recommendation #10 - urine drug testing when prescribing opioids for chronic pain</a></td><td>STU3 CQL Source</td><td>For reference, the complete CQL source for recommendation #10</td></tr>
     <tr><td><a href="cql/OpioidCDSREC10PatientView.cql">Recommendation #10 Patient View - urine drug testing when prescribing opioids for chronic pain</a></td><td>STU3 CQL Source</td><td>For reference, the complete CQL source for recommendation #10</td></tr>
     {% include common-libraries-end.html %}
+</details>
 
 <!-- ==============END CONTENT END CONTENT=================== -->
 
