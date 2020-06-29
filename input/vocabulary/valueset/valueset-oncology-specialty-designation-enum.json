@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "id": "oncology-specialty-designation-enum",
+  "id": "oncology-specialty-designations-enum",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-distributablevalueset",
