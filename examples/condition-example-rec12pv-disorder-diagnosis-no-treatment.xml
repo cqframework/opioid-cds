@@ -1,0 +1,48 @@
+<Condition xmlns="http://hl7.org/fhir">
+   <id value="example-rec12pv-diagnosis-no-treatment"/>
+   <clinicalStatus value="active"/>
+   <code>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <version value="http://snomed.info/sct/731000124108/version/20200301"/>
+         <code value="191865004"/>
+         <display value="Combined opioid with other drug dependence"/>
+      </coding>
+   </code>
+   <subject>
+      <reference value="Patient/example-rec12pv-diagnosis-no-treatment"/>
+   </subject>
+   <assertedDate>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
+         <valueString value="Today() - 30 days"/>
+      </extension>
+   </assertedDate>
+</Condition>
+<!--
+{
+  "resourceType": "Condition",
+  "id": "example-rec12pv-diagnosis-no-treatment",
+  "clinicalStatus": "active",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/731000124108/version/20200301",
+        "code": "191865004",
+        "display": "Combined opioid with other drug dependence"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example-rec12pv-diagnosis-no-treatment"
+  },
+  "_assertedDate": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+        "valueString": "Today() - 30 days"
+      }
+    ]
+  }
+}
+-->
