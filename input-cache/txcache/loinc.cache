@@ -21391,3 +21391,13 @@ v: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "80764-4"
+}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "Pain medicine Plan of care note",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

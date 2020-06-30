@@ -78,7 +78,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "Today() - 4 weeks"
+              "valueString": "Today() - 30 days"
             }
           ]
         }
