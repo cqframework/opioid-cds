@@ -12,6 +12,8 @@ cp input/resources/library/library-OpioidCDSCommonConfig.json bundlegen/sourcefi
 cp input/resources/library/library-OpioidCDSRoutines.json bundlegen/sourcefiles/
 cp input/resources/library/library-OpioidCDSREC10PatientView.json bundlegen/sourcefiles/
 cp input/resources/library/library-OpioidCDSREC11PatientView.json bundlegen/sourcefiles/
+cp input/pagecontent/quick-start-bundles/rec10-medication-1.json bundlegen/sourcefiles/
+cp input/pagecontent/quick-start-bundles/rec10-medication-2.json bundlegen/sourcefiles/
 
 #cd /bundlegen
 for entry in "bundlegen/sourcefiles"/*
