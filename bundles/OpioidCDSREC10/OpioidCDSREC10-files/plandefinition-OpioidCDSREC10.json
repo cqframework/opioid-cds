@@ -2,7 +2,7 @@
   "resourceType": "PlanDefinition",
   "id": "opioidcds-10",
   "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-10",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "name": "PlanDefinition_Recommendation_10",
   "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10",
   "type": {
