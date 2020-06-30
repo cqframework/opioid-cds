@@ -17,7 +17,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/medication-request-category",
-              "code": "outpatient"
+              "code": "community"
             }
           ]
         },
@@ -96,7 +96,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/medication-request-category",
-              "code": "outpatient"
+              "code": "community"
             }
           ]
         },

@@ -644,9 +644,9 @@
       "source": "valueset-office-visit.json",
       "base": "ValueSet-office-visit.html"
     },
-    "ValueSet/oncology-specialty-designation-enum": {
-      "source": "valueset-oncology-specialty-designation-enum.json",
-      "base": "ValueSet-oncology-specialty-designation-enum.html"
+    "ValueSet/oncology-specialty-designations-enum": {
+      "source": "valueset-oncology-specialty-designations-enum.json",
+      "base": "ValueSet-oncology-specialty-designations-enum.html"
     },
     "ValueSet/opioid-abuse-assessment": {
       "source": "valueset-opioid-abuse-assessment.json",

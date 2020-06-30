@@ -18,7 +18,8 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "urn:iso:std:iso:3166",
-  "code" : "US"
+  "code" : "US",
+  "display" : "United States of America"
 }, "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {
@@ -56,8 +57,7 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "urn:iso:std:iso:3166",
-  "code" : "US",
-  "display" : "United States of America"
+  "code" : "US"
 }, "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {

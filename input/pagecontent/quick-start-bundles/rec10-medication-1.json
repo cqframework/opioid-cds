@@ -1,0 +1,23 @@
+{
+  "resourceType": "Medication",
+  "id": "371016cf-18eb-4311-bbc9-0ef2b923a8c9",
+  "code": {
+    "coding": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "1049502"
+      }
+    ]
+  },
+  "isBrand": false,
+  "isOverTheCounter": false,
+  "form": {
+    "coding": [
+      {
+        "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.698288.310",
+        "code": "tablet",
+        "display": "tablet"
+      }
+    ]
+  }
+}

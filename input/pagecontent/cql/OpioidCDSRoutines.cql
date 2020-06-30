@@ -1,10 +1,10 @@
-library OpioidCDSRoutines version '1.2.2'
+library OpioidCDSRoutines version '1.2.3'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDSCommon version '1.2.2' called Common
-include OpioidCDSCommonConfig version '1.2.2' called Config
+include OpioidCDSCommon version '1.2.3' called Common
+include OpioidCDSCommonConfig version '1.2.3' called Config
 
 context Patient
 
@@ -46,7 +46,6 @@ define "Is Opioid Review Useful?":
     and not "Order For Palliative Care In Past 90 Days"
     and not "Is Active Cancer Treatment?"
     and not "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present"
-
 
 define "Patient Age Less Than 18":
   Config."Age Less than 18 Years Is Enabled"
