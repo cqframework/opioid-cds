@@ -488,6 +488,10 @@
       "source": "library-OpioidCDSCommon.json",
       "base": "Library-OpioidCDSCommon.html"
     },
+    "Library/opioidcds-recommendation-01": {
+      "source": "library-opioidcds-recommendation-01.json",
+      "base": "Library-opioidcds-recommendation-01.html"
+    },
     "Library/opioidcds-recommendation-04": {
       "source": "library-opioidcds-recommendation-04.json",
       "base": "Library-opioidcds-recommendation-04.html"
