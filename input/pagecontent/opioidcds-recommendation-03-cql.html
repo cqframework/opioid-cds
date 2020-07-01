@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR.CDC.OPIOID-CDS-R4\OpioidCDS Recommendation 03 - CQL Source - FHIR v4.0.1</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+     
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+  
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/cqf.css" rel="stylesheet"/>
+
+    <link href="assets/css/opioid.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body>
+
+    <style type="text/css">h2{--heading-prefix:"17.1"}
+    h3,h4,h5,h6{--heading-prefix:"17.1"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+<div id="hl7-nav">
+    <img height="100" src="assets/images/opioid-overdose-statistic.png"/>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Opioid Prescribing Support Implementation Guide</span><br/>4.0.0 - CI Build</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+    
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+    
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="profiles.html">Profiles</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li><a href="terminology.html">Terminology</a></li>
+  <li><a href="examples.html">Examples</a></li>
+  <li><a href="test.html">Test Data</a></li>
+  <li><a href="documentation.html">Documentation</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <!--<li><a href="extensions.html">Extensions</a></li>-->
+  <!--<li><a href="operations.html">Operations</a></li>-->
+  <!--<li><a href="services.html">Services</a></li>-->
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->  
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='recommendation-03.html'><b>Recommendation #3 - Opioid Therapy Risk/Benefit Discussion</b></a></li><li><b>OpioidCDS Recommendation 03 - CQL Source</b></li>
+        </ul>  
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+    
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Opioid Prescribing Support Implementation Guide - Local Development build (v4.0.0). See the <a href="http://fhir.org/guides/cdc/opioid-cds/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>OpioidCDS Recommendation 03 - CQL Source</h2>
+  
+  <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">library</span> <span class="n">OpioidCDSREC03</span> <span class="k">version</span> <span class="s1">'2.0.0'</span>
+
+<span class="k">using</span> <span class="n">FHIR</span> <span class="k">version</span> <span class="s1">'4.0.0'</span>
+
+<span class="n">include</span> <span class="n">FHIRHelpers</span> <span class="k">version</span> <span class="s1">'4.0.0'</span> <span class="k">called</span> <span class="n">FHIRHelpers</span>
+<span class="n">include</span> <span class="n">OpioidCDSCommon</span> <span class="k">version</span> <span class="s1">'2.0.0'</span> <span class="k">called</span> <span class="n">Common</span>
+<span class="n">include</span> <span class="n">OpioidCDSCommonConfig</span> <span class="k">version</span> <span class="s1">'2.0.0'</span> <span class="k">called</span> <span class="n">Config</span>
+<span class="n">include</span> <span class="n">OpioidCDSRoutines</span> <span class="k">version</span> <span class="s1">'2.0.0'</span> <span class="k">called</span> <span class="n">Routines</span>
+
+<span class="cm">/*
+**
+**  Recommendation #3
+**    Before starting and periodically during opioid therapy, clinicians should
+**    discuss with patients known risks and realistic benefits of opioid therapy
+**    and patient and clinician responsibilities for managing therapy
+**    (recommendation category: A, evidence type: 3).
+**
+**  When
+**    Provider is prescribing an opioid with ambulatory misuse potential in the outpatient setting
+**    Prescription is for treating chronic pain.
+**    Opioid review is useful for this patient:
+**      Patient is 18 or over
+**      Patient does not have findings indicating limited life expectancy
+**      Patient does not have orders for therapies indicating end of life care
+**      Patient is not undergoing active cancer treatment:
+**        Patient has had at least 2 encounters within the past year with any diagnosis of cancer
+**    Patient does not have documented discussion of opioid harms and risks in the past 90 days, including today
+**  Then
+**    Recommend counseling regarding potential opioid harms and risks. Potential actions include:
+**      Order counseling
+**      Document that counseling was provided
+**      Document the reason for not counseling; snooze 3 months
+**      N/A - see comment; snooze 3 months
+**
+*/</span>
+
+<span class="o">//</span> <span class="n">META</span><span class="p">:</span> <span class="n">Plan</span> <span class="n">Definition</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">fhir</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">guides</span><span class="o">/</span><span class="n">cdc</span><span class="o">/</span><span class="n">opioid</span><span class="o">-</span><span class="n">cds</span><span class="o">-</span><span class="n">r4</span><span class="o">/</span><span class="n">PlanDefinition</span><span class="o">/</span><span class="n">opioid</span><span class="o">-</span><span class="n">cds</span><span class="o">-</span><span class="mi">03</span>
+
+<span class="k">parameter</span> <span class="n">ContextPrescriptions</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">MedicationRequest</span><span class="o">&gt;</span>
+
+<span class="n">context</span> <span class="n">Patient</span>
+
+<span class="n">define</span> <span class="nv">"Opioid Harms &amp; Risks Counseling Lookback Period"</span><span class="p">:</span>
+  <span class="n">Interval</span><span class="p">[</span><span class="n">Today</span><span class="p">()</span> <span class="o">-</span> <span class="mi">90</span> <span class="n">days</span><span class="p">,</span> <span class="n">Today</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span> <span class="n">days</span><span class="p">]</span>
+
+<span class="n">define</span> <span class="nv">"Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions"</span><span class="p">:</span>
+  <span class="p">(</span> <span class="n">Common</span><span class="p">.</span><span class="nv">"Is Opioid Analgesic with Ambulatory Misuse Potential?"</span><span class="p">(</span> <span class="n">ContextPrescriptions</span> <span class="p">)</span> <span class="p">)</span> <span class="n">AmbulatoryOpioidPrescription</span>
+    <span class="k">where</span> <span class="n">Routines</span><span class="p">.</span><span class="nv">"Is Chronic Pain Prescription?"</span><span class="p">(</span> <span class="n">AmbulatoryOpioidPrescription</span> <span class="p">)</span>
+
+<span class="n">define</span> <span class="nv">"Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential"</span><span class="p">:</span>
+  <span class="k">exists</span><span class="p">(</span> <span class="nv">"Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions"</span> <span class="p">)</span>
+
+<span class="n">define</span> <span class="nv">"Is Recommendation Applicable?"</span><span class="p">:</span>
+  <span class="nv">"Inclusion Criteria"</span>
+
+<span class="n">define</span> <span class="nv">"Inclusion Criteria"</span><span class="p">:</span>
+  <span class="nv">"Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential"</span>
+    <span class="k">and</span> <span class="n">Routines</span><span class="p">.</span><span class="nv">"Is Opioid Review Useful?"</span>
+    <span class="k">and</span> <span class="nv">"No Documented Discussions of Opioid Harms and Risks"</span>
+
+<span class="n">define</span> <span class="nv">"No Documented Discussions of Opioid Harms and Risks"</span><span class="p">:</span>
+  <span class="n">Config</span><span class="p">.</span><span class="nv">"Opioid Harms &amp; Risks Discussion in Past 90 Days Criteria Enabled"</span>
+    <span class="k">and</span> <span class="k">not</span> <span class="p">(</span>
+      <span class="k">exists</span> <span class="p">(</span> <span class="nv">"Documented Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today"</span> <span class="p">)</span>
+        <span class="k">or</span> <span class="k">exists</span> <span class="p">(</span> <span class="nv">"Ordered Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today"</span> <span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="n">define</span> <span class="nv">"Documented Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today"</span><span class="p">:</span>
+  <span class="p">[</span><span class="k">Procedure</span><span class="p">:</span> <span class="n">Common</span><span class="p">.</span><span class="nv">"Opioid counseling procedure"</span><span class="p">]</span> <span class="n">P</span>
+    <span class="k">where</span> <span class="n">P</span><span class="p">.</span><span class="n">performed</span> <span class="n">during</span> <span class="k">day</span> <span class="k">of</span> <span class="nv">"Opioid Harms &amp; Risks Counseling Lookback Period"</span>
+      <span class="k">and</span> <span class="n">P</span><span class="p">.</span><span class="n">status</span> <span class="o">~</span> <span class="s1">'completed'</span>
+
+<span class="n">define</span> <span class="nv">"Ordered Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today"</span><span class="p">:</span>
+  <span class="p">[</span><span class="n">ServiceRequest</span><span class="p">:</span> <span class="n">Common</span><span class="p">.</span><span class="nv">"Opioid counseling procedure"</span><span class="p">]</span> <span class="n">SR</span>
+    <span class="k">where</span> <span class="n">SR</span><span class="p">.</span><span class="n">occurrence</span> <span class="n">during</span> <span class="k">day</span> <span class="k">of</span> <span class="nv">"Opioid Harms &amp; Risks Counseling Lookback Period"</span>
+
+<span class="n">define</span> <span class="nv">"Get Indicator"</span><span class="p">:</span>
+  <span class="n">if</span> <span class="nv">"Is Recommendation Applicable?"</span>
+    <span class="k">then</span> <span class="s1">'warning'</span>
+  <span class="k">else</span> <span class="k">null</span>
+
+<span class="n">define</span> <span class="nv">"Get Summary"</span><span class="p">:</span>
+  <span class="n">if</span> <span class="nv">"Is Recommendation Applicable?"</span>
+    <span class="k">then</span> <span class="s1">'Recommend counseling regarding potential opioid harms and risks'</span>
+  <span class="k">else</span> <span class="k">null</span>
+
+<span class="n">define</span> <span class="nv">"Get Detail"</span><span class="p">:</span>
+  <span class="n">if</span> <span class="nv">"Is Recommendation Applicable?"</span>
+    <span class="k">then</span> <span class="s1">'Medication requests(s): '</span> <span class="o">+</span> <span class="n">Combine</span><span class="p">(</span> <span class="n">flatten</span><span class="p">(</span> <span class="n">Common</span><span class="p">.</span><span class="n">GetMedicationNames</span><span class="p">(</span> <span class="nv">"Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions"</span> <span class="p">)</span> <span class="p">),</span> <span class="s1">', '</span> <span class="p">)</span>
+  <span class="k">else</span> <span class="k">null</span></code></pre></figure>
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2019+ <a style="color: #81BEF7" href="https://www.cdc.gov">Centers for Disease Control and Prevention (CDC)</a>.  Package fhir.cdc.opioid-cds-r4#4.0.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 1, 2020 13:49-0600">2020-07-01</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+                 | <a style="color: #81BEF7" target="_blank" href="http://fhir.org/guides/cdc/opioid-cds/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+                 <!--<a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
