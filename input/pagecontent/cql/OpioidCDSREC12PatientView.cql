@@ -81,8 +81,9 @@ define "Presence of Diagnosis of Opioid Use Disorder":
   exists ("Diagnosis of Opioid Use Disorder")
 
 define "Diagnosis of Opioid Use Disorder":
-  [Condition: Common."Opioid misuse disorders"] C
-    where C.clinicalStatus ~ Common."Active Condition".code
+  [Condition: category in Common."US Core Condition Category Codes"] C
+    where C.code in Common."Opioid misuse disorders"
+      and C.clinicalStatus ~ Common."Active Condition".code
       and date from C.assertedDate during day of "Opioid Use Disorder Lookback Period"
 
 define "Positive Result from Opioid Use Disorder Evaluation Tool":
