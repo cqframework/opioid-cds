@@ -600,6 +600,10 @@
       "source": "valueset-cdc-malignant-cancer-conditions-enum.json",
       "base": "ValueSet-cdc-malignant-cancer-conditions-enum.html"
     },
+    "ValueSet/conditions-documenting-substance-misuse": {
+      "source": "valueset-conditions-documenting-substance-misuse.json",
+      "base": "ValueSet-conditions-documenting-substance-misuse.html"
+    },
     "ValueSet/conditions-likely-terminal-for-opioid-prescribing-enum": {
       "source": "valueset-conditions-likely-terminal-for-opioid-prescribing-enum.json",
       "base": "ValueSet-conditions-likely-terminal-for-opioid-prescribing-enum.html"
@@ -664,9 +668,9 @@
       "source": "valueset-office-visit.json",
       "base": "ValueSet-office-visit.html"
     },
-    "ValueSet/oncology-specialty-designation-enum": {
-      "source": "valueset-oncology-specialty-designation-enum.json",
-      "base": "ValueSet-oncology-specialty-designation-enum.html"
+    "ValueSet/oncology-specialty-designations-enum": {
+      "source": "valueset-oncology-specialty-designations-enum.json",
+      "base": "ValueSet-oncology-specialty-designations-enum.html"
     },
     "ValueSet/opioid-abuse-assessment": {
       "source": "valueset-opioid-abuse-assessment.json",

@@ -2,7 +2,7 @@
   "resourceType": "ActivityDefinition",
   "id": "opioidcds-risk-assessment-request",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ActivityDefinition/opioidcds-risk-assessment-request",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "name": "ActivityDefinition - Recommendation #7 Risk Assessment ProcedureRequest",
   "title": "CDC Opioid Prescribing Guideline Recommendation #7 - Risk Assessment ProcedureRequest",
   "status": "draft",

@@ -32,3 +32,5 @@ else
 		echo IG Refresh NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
 	fi
 fi
+
+sh input/pagecontent/quick-start-bundles/_refreshQuickStart.sh

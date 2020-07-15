@@ -1,15 +1,17 @@
-library OpioidCDSCommon version '1.2.2'
+library OpioidCDSCommon version '1.2.3'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OMTKLogicCQL version '1.2.2' called OMTKLogic
+include OMTKLogicCQL version '1.2.3' called OMTKLogic
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "SNOMED": 'http://snomed.info/sct'
 codesystem "Medication Request Category Codes": 'http://hl7.org/fhir/medication-request-category'
 codesystem "Medication Request Status Codes": 'http://hl7.org/fhir/medication-request-status'
 codesystem "Condition Clinical Status Codes": 'http://hl7.org/fhir/condition-clinical'
+
+valueset "US Core Condition Category Codes": 'http://hl7.org/fhir/us/core/ValueSet/us-core-condition-category'
 
 // Expression-based
 valueset "Opioid analgesics with ambulatory misuse potential": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential'
@@ -24,6 +26,7 @@ valueset "CDC malignant cancer conditions": 'http://fhir.org/guides/cdc/opioid-c
 valueset "Oncology specialty designations (NUCC)": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/oncology-specialty-designations-enum'
 valueset "Opioid misuse disorders": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-disorders-enum'
 valueset "Substance misuse behavioral counseling": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling-enum'
+valueset "Conditions documenting substance misuse": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/conditions-documenting-substance-misuse'
 // Harvested from VSAC - OID: 2.16.840.1.113883.3.464.1003.101.12.1001
 // Reviewed with Terminology, 2020-02-05 - Value set name in VSAC is "Office Visit", need to verify suitability
 valueset "Office Visit": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/office-visit'
@@ -185,13 +188,15 @@ define "End of Life Assessment":
 
 define "Conditions Indicating End of Life or With Limited Life Expectancy":
   (
-    [Condition: "Conditions likely terminal for opioid prescribing"] C
+    [Condition: category in "US Core Condition Category Codes"] C
       where C.clinicalStatus ~ 'active'
+        and C.code in "Conditions likely terminal for opioid prescribing"
   )
   union
   (
-    [Condition: code in "Limited life expectancy conditions"] C
+    [Condition: category in "US Core Condition Category Codes"] C
       where C.clinicalStatus ~ 'active'
+        and C.code in "Limited life expectancy conditions"
   )
 
 define "Admitted/Referred/Discharged to Hospice Care":

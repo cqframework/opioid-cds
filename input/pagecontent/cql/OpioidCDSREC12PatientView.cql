@@ -1,10 +1,10 @@
-library OpioidCDSREC12PatientView version '1.2.2'
+library OpioidCDSREC12PatientView version '1.2.3'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDSCommon version '1.2.2' called Common
-include OpioidCDSCommonConfig version '1.2.2' called Config
+include OpioidCDSCommon version '1.2.3' called Common
+include OpioidCDSCommonConfig version '1.2.3' called Config
 
 /*
 **
@@ -28,7 +28,7 @@ include OpioidCDSCommonConfig version '1.2.2' called Config
 **
 */
 
-// META: PlanDefinition: http://fhir.org/guides/cdc/opioid-cds-r4/PlanDefinition/plandefinition-OpioidCDSREC12PatientView
+// META: PlanDefinition: http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioid-cds-12-patient-view
 
 context Patient
 
@@ -63,16 +63,28 @@ define "Not Receiving Evidence-Based Treatment for Opioid Use Disorder":
       or exists (
         [Procedure: Common."Substance misuse behavioral counseling"] P
           where P.status ~ 'completed'
-            and P.performed during day of "Opioid Use Disorder Lookback Period"
+          and (
+            case
+              when P.performed is FHIR.dateTime then
+                Interval[FHIRHelpers.ToDateTime(P.performed as FHIR.dateTime), FHIRHelpers.ToDateTime(P.performed as FHIR.dateTime)]
+              when P.performed is FHIR.Period then
+                FHIRHelpers.ToInterval(P.performed as FHIR.Period)
+              else
+                null as Interval<DateTime>
+              end
+          )
+          during day of "Opioid Use Disorder Lookback Period"
       )
-    )
+  )
 
 define "Presence of Diagnosis of Opioid Use Disorder":
-  exists (
-    [Condition: Common."Opioid misuse disorders"] C
-      where C.clinicalStatus ~ Common."Active Condition".code
-        and date from C.assertedDate during day of "Opioid Use Disorder Lookback Period"
-    )
+  exists ("Diagnosis of Opioid Use Disorder")
+
+define "Diagnosis of Opioid Use Disorder":
+  [Condition: category in Common."US Core Condition Category Codes"] C
+    where C.code in Common."Opioid misuse disorders"
+      and C.clinicalStatus ~ Common."Active Condition".code
+      and date from C.assertedDate during day of "Opioid Use Disorder Lookback Period"
 
 define "Positive Result from Opioid Use Disorder Evaluation Tool":
   true
@@ -91,3 +103,24 @@ define "Get Detail":
   if "Is Recommendation Applicable?"
     then null
   else null
+
+  // Detected Issue - Opioid use disorder; offer or arrange evidence-based treatment (usually
+  // medication-assisted treatment with buprenorphine or methadone in combination
+  // with behavioral therapies)Avoid prescribing opioid pain medication and benzodiazepines concurrently
+
+  define "Opioid Use Disorder, Arrange Treatment Issue":
+    DetectedIssue {
+      //identifier:,
+      status: FHIR.ObservationStatus { value: 'preliminary' },
+      category: FHIR.CodeableConcept { text: FHIR.string { value: "Get Summary" } },
+      severity: FHIR.DetectedIssueSeverity { value: 'moderate' },
+      patient: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },
+      date: FHIR.dateTime { value: Now() },
+      // TODO: Device representation...
+      // author:,
+      implicated:
+        ("Diagnosis of Opioid Use Disorder") C
+          return FHIR.Reference { reference: FHIR.string { value: 'Condition/' + C.id } },
+      detail: FHIR.string { value: "Get Detail" },
+      reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-12-patient-view'}
+    }
