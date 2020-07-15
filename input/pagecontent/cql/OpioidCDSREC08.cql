@@ -86,8 +86,10 @@ define "On Benzodiazepine":
 
 define "Has Substance Abuse History":
   exists (
+    [Procedure: Common."Substance misuse behavioral counseling"]
+    union
     [Condition: category in Common."US Core Condition Category Codes"] C
-      where C.code in Common."Substance misuse behavioral counseling"
+      where C.code in Common."Conditions documenting substance misuse"
   )
 
 define "Get Indicator":
