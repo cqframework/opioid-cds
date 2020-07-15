@@ -150,6 +150,12 @@
               }
             }
           ],
+          "triggerDefinition": [
+            {
+              "type": "named-event",
+              "eventName": "patient-view"
+            }
+          ],
           "condition": [
             {
               "kind": "applicability",

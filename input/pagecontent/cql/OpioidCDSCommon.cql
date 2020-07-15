@@ -11,6 +11,8 @@ codesystem "Medication Request Category Codes": 'http://hl7.org/fhir/medication-
 codesystem "Medication Request Status Codes": 'http://hl7.org/fhir/medication-request-status'
 codesystem "Condition Clinical Status Codes": 'http://hl7.org/fhir/condition-clinical'
 
+valueset "US Core Condition Category Codes": 'http://hl7.org/fhir/us/core/ValueSet/us-core-condition-category'
+
 // Expression-based
 valueset "Opioid analgesics with ambulatory misuse potential": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential'
 valueset "Extended release opioid analgesics with ambulatory misuse potential": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/extended-release-opioids-with-ambulatory-misuse-potential'
@@ -185,13 +187,15 @@ define "End of Life Assessment":
 
 define "Conditions Indicating End of Life or With Limited Life Expectancy":
   (
-    [Condition: "Conditions likely terminal for opioid prescribing"] C
+    [Condition: category in "US Core Condition Category Codes"] C
       where C.clinicalStatus ~ 'active'
+        and C.code in "Conditions likely terminal for opioid prescribing"
   )
   union
   (
-    [Condition: code in "Limited life expectancy conditions"] C
+    [Condition: category in "US Core Condition Category Codes"] C
       where C.clinicalStatus ~ 'active'
+        and C.code in "Limited life expectancy conditions"
   )
 
 define "Admitted/Referred/Discharged to Hospice Care":
