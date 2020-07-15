@@ -5,7 +5,7 @@
   details-wrapper {
      width: 75vw;
      box-shadow:0 0 1px 2px #BFBFBF;
-  
+
   }
   details {
      padding: .5rem;
@@ -16,7 +16,7 @@
     background-color: #f5f7f6;
     list-style: none;
     height:55px;
-    border: none;
+    outline: none;
   }
   .title {
     display:flex;
@@ -35,4 +35,3 @@
      font-style: italic;
      content: '- '; /* Instead of Triangle open */
   }
-  
