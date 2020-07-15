@@ -873,7 +873,15 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Likey Terminal for Opioid Prescribing"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Documenting Substance Misuse"/>
+            <description value="Conditions that indicate problematic misuse of a substance other than tobacco"/>
+            <sourceReference>
+                <reference value="ValueSet/conditions-documenting-substance-misuse"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Likely Terminal for Opioid Prescribing"/>
             <description value="Condition that are likely terminal for opioid prescribing codes"/>
             <sourceReference>
                 <reference value="ValueSet/conditions-likely-terminal-for-opioid-prescribing-enum"/>

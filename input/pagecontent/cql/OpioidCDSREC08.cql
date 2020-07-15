@@ -85,7 +85,12 @@ define "On Benzodiazepine":
   exists( Common."Active Ambulatory Benzodiazepine Rx" )
 
 define "Has Substance Abuse History":
-  exists ( [Condition: Common."Substance misuse behavioral counseling"] )
+  exists (
+    [Procedure: Common."Substance misuse behavioral counseling"]
+    union
+    [Condition: category in Common."US Core Condition Category Codes"] C
+      where C.code in Common."Conditions documenting substance misuse"
+  )
 
 define "Get Indicator":
   if "Is Recommendation Applicable?"

@@ -600,6 +600,10 @@
       "source": "valueset-cdc-malignant-cancer-conditions-enum.json",
       "base": "ValueSet-cdc-malignant-cancer-conditions-enum.html"
     },
+    "ValueSet/conditions-documenting-substance-misuse": {
+      "source": "valueset-conditions-documenting-substance-misuse.json",
+      "base": "ValueSet-conditions-documenting-substance-misuse.html"
+    },
     "ValueSet/conditions-likely-terminal-for-opioid-prescribing-enum": {
       "source": "valueset-conditions-likely-terminal-for-opioid-prescribing-enum.json",
       "base": "ValueSet-conditions-likely-terminal-for-opioid-prescribing-enum.html"

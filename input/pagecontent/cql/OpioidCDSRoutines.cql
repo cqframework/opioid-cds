@@ -53,8 +53,9 @@ define "Patient Age Less Than 18":
 
 define "Conditions Indicating End Of Life Present":
   exists (
-    [Condition: Common."Limited life expectancy conditions"] LLEC
-      where LLEC.clinicalStatus ~ Common."Active Condition".code
+    [Condition: category in Common."US Core Condition Category Codes"] LLEC
+      where LLEC.code in Common."Limited life expectancy conditions"
+        and LLEC.clinicalStatus ~ Common."Active Condition".code
   )
 
 define "Order For Palliative Care In Past 90 Days":
@@ -68,8 +69,9 @@ define "Order For Palliative Care In Past 90 Days":
 define "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present":
   Config."End-Stage Disease Criteria Enabled"
     and exists (
-      [Condition: Common."Conditions likely terminal for opioid prescribing"] EOLC
-        where EOLC.clinicalStatus ~ Common."Active Condition".code
+      [Condition: category in Common."US Core Condition Category Codes"] EOLC
+        where EOLC.code in Common."Conditions likely terminal for opioid prescribing"
+          and EOLC.clinicalStatus ~ Common."Active Condition".code
     )
 
 // End of Opioid Review Useful Routine
@@ -179,7 +181,8 @@ define "Is Active Cancer Treatment?":
     and "Has Two or More Encounters with Cancer Diagnosis During Encounter Period"
 
 define "Active Cancer Diagnoses":
-  [Condition: Common."CDC malignant cancer conditions"]
+  [Condition: category in Common."US Core Condition Category Codes"] C
+    where C.code in Common."CDC malignant cancer conditions"
 
 define "Oncologist Practitioner Roles":
   [PractitionerRole] PractitionerRole
