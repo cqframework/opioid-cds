@@ -461,7 +461,7 @@
       "base": "CodeSystem-opioidcds-indicator.html"
     },
     "Library/FHIRHelpers": {
-      "source": "library-FHIRHelpers.json",
+      "source": "FHIRHelpers.json",
       "base": "Library-FHIRHelpers.html"
     },
     "Library/library-OMTKLogicCQL": {
