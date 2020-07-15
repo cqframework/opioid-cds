@@ -677,14 +677,14 @@
                 <reference value="Library/library-OpioidCDSCommon"/>
             </sourceReference>
         </resource>
-        <resource>
+        <!-- <resource>
             <example value="true"/>
-            <name value="Library - Opioid CDS Routines"/>
+            <name value="Library - Opioid CDS "/>
             <description value="Opioid Management Decision Support Logic Routines"/>
             <sourceReference>
                 <reference value="Library/library-OpioidCDSRoutines"/>
             </sourceReference>
-        </resource>
+        </resource> -->
         <resource>
             <example value="true"/>
             <name value="Library - Opioid CDS Recommendation #4"/>

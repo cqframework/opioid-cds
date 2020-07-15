@@ -56,7 +56,7 @@ cp input/vocabulary/valueset/valueset-naloxone-medications.json bundlegen/source
 cp input/vocabulary/valueset/valueset-naloxone.json bundlegen/sourcefiles/valueset-naloxone.json
 cp input/vocabulary/valueset/valueset-non-opioid-illicit-drug-urine-screening.json bundlegen/sourcefiles/valueset-non-opioid-illicit-drug-urine-screening.json
 cp input/vocabulary/valueset/valueset-office-visit.json bundlegen/sourcefiles/valueset-office-visit.json
-cp input/vocabulary/valueset/valueset-oncology-specialty-designation-enum.json bundlegen/sourcefiles/valueset-oncology-specialty-designation-enum.json
+cp input/vocabulary/valueset/valueset-oncology-specialty-designations-enum.json bundlegen/sourcefiles/valueset-oncology-specialty-designations-enum.json
 cp input/vocabulary/valueset/valueset-opioid-abuse-assessment.json bundlegen/sourcefiles/valueset-opioid-abuse-assessment.json
 cp input/vocabulary/valueset/valueset-opioid-analgesics-with-ambulatory-misuse-potential.json bundlegen/sourcefiles/valueset-opioid-analgesics-with-ambulatory-misuse-potential.json
 cp input/vocabulary/valueset/valueset-opioid-counseling-procedure.json bundlegen/sourcefiles/valueset-opioid-counseling-procedure.json
