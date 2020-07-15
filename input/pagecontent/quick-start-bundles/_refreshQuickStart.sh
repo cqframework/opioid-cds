@@ -41,6 +41,7 @@ cp input/vocabulary/valueset/valueset-benzodiazepine-medications.json bundlegen/
 cp input/vocabulary/valueset/valueset-buprenorphine-and-methadone-medications.json bundlegen/sourcefiles/valueset-buprenorphine-and-methadone-medications.json
 cp input/vocabulary/valueset/valueset-cdc-malignant-cancer-conditions-enum.json bundlegen/sourcefiles/valueset-cdc-malignant-cancer-conditions-enum.json
 cp input/vocabulary/valueset/valueset-conditions-likely-terminal-for-opioid-prescribing-enum.json bundlegen/sourcefiles/valueset-conditions-likely-terminal-for-opioid-prescribing-enum.json
+cp input/vocabulary/valueset/valueset-conditions-documenting-substance-misuse.json bundlegen/sourcefiles/valueset-conditions-documenting-substance-misuse.json
 cp input/vocabulary/valueset/valueset-discharge-to-hospice.json bundlegen/sourcefiles/valueset-discharge-to-hospice.json
 cp input/vocabulary/valueset/valueset-end-of-life-care.json bundlegen/sourcefiles/valueset-end-of-life-care.json
 cp input/vocabulary/valueset/valueset-end-of-life-conditions.json bundlegen/sourcefiles/valueset-end-of-life-conditions.json
