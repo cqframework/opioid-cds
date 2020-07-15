@@ -1,6 +1,6 @@
 #!/bin/bash
 #DO NOT EDIT WITH WINDOWS
-tooling_jar=tooling-1.1.0-SNAPSHOT-jar-with-dependencies.jar
+tooling_jar=tooling-1.2.0-SNAPSHOT-jar-with-dependencies.jar
 input_cache_path=./input-cache
 resources_path=$PWD/input/resources
 ig_resource_path=./input/opioid-cds.xml
