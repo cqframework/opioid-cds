@@ -532,7 +532,7 @@
       "source": "library-OpioidCDSREC12PatientView.json",
       "base": "Library-OpioidCDSREC12PatientView.html"
     },
-    "Library/opioidcds-recommendation-12": {
+    "Library/library-opioidcds-recommendation-12": {
       "source": "library-opioidcds-recommendation-12.json",
       "base": "Library-opioidcds-recommendation-12.html"
     },
@@ -668,9 +668,9 @@
       "source": "valueset-office-visit.json",
       "base": "ValueSet-office-visit.html"
     },
-    "ValueSet/oncology-specialty-designations-enum": {
-      "source": "valueset-oncology-specialty-designations-enum.json",
-      "base": "ValueSet-oncology-specialty-designations-enum.html"
+    "ValueSet/oncology-specialty-designation-enum": {
+      "source": "valueset-oncology-specialty-designation-enum.json",
+      "base": "ValueSet-oncology-specialty-designation-enum.html"
     },
     "ValueSet/opioid-abuse-assessment": {
       "source": "valueset-opioid-abuse-assessment.json",
