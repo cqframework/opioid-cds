@@ -51,17 +51,6 @@
       ]
     },
     {
-      "type": "ProcedureRequest",
-      "codeFilter": [
-        {
-          "path": "code",
-          "valueSetReference": {
-            "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/therapies-indicating-end-of-life-care-enum"
-          }
-        }
-      ]
-    },
-    {
       "type": "Encounter",
       "codeFilter": [
         {
@@ -96,18 +85,7 @@
           }
         }
       ]
-    },
-    {
-      "type": "MedicationStatement",
-      "codeFilter": [
-        {
-          "path": "medication",
-          "valueSetReference": {
-            "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
-          }
-        }
-      ]
-    },
+    },    
     {
       "type": "MedicationDispense",
       "codeFilter": [
