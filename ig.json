@@ -464,91 +464,91 @@
       "source": "FHIRHelpers.json",
       "base": "Library-FHIRHelpers.html"
     },
-    "Library/library-OMTKLogicCQL": {
+    "Library/OMTKLogicCQL": {
       "source": "library-OMTKLogicCQL.json",
       "base": "Library-OMTKLogicCQL.html"
     },
-    "Library/library-OMTKLogicStub": {
+    "Library/OMTKLogicStub": {
       "source": "library-OMTKLogicStub.json",
       "base": "Library-OMTKLogicStub.html"
     },
-    "Library/library-OMTKData2018": {
+    "Library/OMTKData2018": {
       "source": "library-OMTKData2018.json",
       "base": "Library-OMTKData2018.html"
     },
-    "Library/library-OMTKData2019": {
+    "Library/OMTKData2019": {
       "source": "library-OMTKData2019.json",
       "base": "Library-OMTKData2019.html"
     },
-    "Library/library-OMTKData2020": {
+    "Library/OMTKData2020": {
       "source": "library-OMTKData2020.json",
       "base": "Library-OMTKData2020.html"
     },
-    "Library/library-OpioidCDSCommon": {
+    "Library/OpioidCDSCommon": {
       "source": "library-OpioidCDSCommon.json",
       "base": "Library-OpioidCDSCommon.html"
     },
-    "Library/library-OpioidCDSRoutines": {
+    "Library/OpioidCDSRoutines": {
       "source": "library-OpioidCDSRoutines.json",
       "base": "Library-OpioidCDSRoutines.html"
     },
-    "Library/library-OpioidCDSREC01": {
+    "Library/OpioidCDSREC01": {
       "source": "library-OpioidCDSREC01.json",
       "base": "Library-OpioidCDSREC01.html"
     },
-    "Library/library-OpioidCDSREC02": {
+    "Library/OpioidCDSREC02": {
       "source": "library-OpioidCDSREC02.json",
       "base": "Library-OpioidCDSREC02.html"
     },
-    "Library/library-OpioidCDSREC03": {
+    "Library/OpioidCDSREC03": {
       "source": "library-OpioidCDSREC03.json",
       "base": "Library-OpioidCDSREC03.html"
     },
-    "Library/library-OpioidCDSREC04": {
+    "Library/OpioidCDSREC04": {
       "source": "library-OpioidCDSREC04.json",
       "base": "Library-OpioidCDSREC04.html"
     },
-    "Library/library-OpioidCDSREC04PatientView": {
+    "Library/OpioidCDSREC04PatientView": {
       "source": "library-OpioidCDSREC04PatientView.json",
       "base": "Library-OpioidCDSREC04PatientView.html"
     },
-    "Library/library-OpioidCDSREC05": {
+    "Library/OpioidCDSREC05": {
       "source": "library-OpioidCDSREC05.json",
       "base": "Library-OpioidCDSREC05.html"
     },
-    "Library/library-OpioidCDSREC06": {
+    "Library/OpioidCDSREC06": {
       "source": "library-OpioidCDSREC06.json",
       "base": "Library-OpioidCDSREC06.html"
     },
-    "Library/library-OpioidCDSREC07": {
+    "Library/OpioidCDSREC07": {
       "source": "library-OpioidCDSREC07.json",
       "base": "Library-OpioidCDSREC07.html"
     },
-    "Library/library-OpioidCDSREC08": {
+    "Library/OpioidCDSREC08": {
       "source": "library-OpioidCDSREC08.json",
       "base": "Library-OpioidCDSREC08.html"
     },
-    "Library/library-OpioidCDSREC09": {
+    "Library/OpioidCDSREC09": {
       "source": "library-OpioidCDSREC09.json",
       "base": "Library-OpioidCDSREC09.html"
     },
-    "Library/library-OpioidCDSREC10": {
+    "Library/OpioidCDSREC10": {
       "source": "library-OpioidCDSREC10.json",
       "base": "Library-OpioidCDSREC10.html"
     },
-    "Library/library-OpioidCDSREC10PatientView": {
+    "Library/OpioidCDSREC10PatientView": {
       "source": "library-OpioidCDSREC10PatientView.json",
       "base": "Library-OpioidCDSREC10PatientView.html"
     },
-    "Library/library-OpioidCDSREC11": {
+    "Library/OpioidCDSREC11": {
       "source": "library-OpioidCDSREC11.json",
       "base": "Library-OpioidCDSREC11.html"
     },
-    "Library/library-OpioidCDSREC11PatientView": {
+    "Library/OpioidCDSREC11PatientView": {
       "source": "library-OpioidCDSREC11PatientView.json",
       "base": "Library-OpioidCDSREC11PatientView.html"
     },
-    "Library/library-OpioidCDSREC12PatientView": {
+    "Library/OpioidCDSREC12PatientView": {
       "source": "library-OpioidCDSREC12PatientView.json",
       "base": "Library-OpioidCDSREC12PatientView.html"
     },
@@ -564,38 +564,48 @@
       "source": "patient-example-opioidcds.xml",
       "base": "Patient-example-opioidcds.html"
     },
-    "PlanDefinition/opioidcds-04": {
+
+    "PlanDefinition/OpioidCDSREC04": {
       "source": "plandefinition-OpioidCDSREC04.json",
       "base": "PlanDefinition-opioidcds-04.html"
     },
-    "PlanDefinition/opioidcds-05": {
+    "PlanDefinition/OpioidCDSREC04PatientView": {
+      "source": "plandefinition-OpioidCDSREC04PatientView.json",
+      "base": "PlanDefinition-opioidcds-04-patient-view.html"
+    },
+    "PlanDefinition/OpioidCDSREC05": {
       "source": "plandefinition-OpioidCDSREC05.json",
       "base": "PlanDefinition-opioidcds-05.html"
     },
-    "PlanDefinition/opioidcds-07": {
+    "PlanDefinition/OpioidCDSREC07": {
       "source": "plandefinition-OpioidCDSREC07.json",
       "base": "PlanDefinition-opioidcds-07.html"
     },
-    "PlanDefinition/opioidcds-08": {
+    "PlanDefinition/OpioidCDSREC08": {
       "source": "plandefinition-OpioidCDSREC08.json",
       "base": "PlanDefinition-opioidcds-08.html"
     },
-    "PlanDefinition/opioidcds-10": {
+    "PlanDefinition/OpioidCDSREC10": {
       "source": "plandefinition-OpioidCDSREC10.json",
       "base": "PlanDefinition-opioidcds-10.html"
     },
-    "PlanDefinition/opioidcds-10-patient-view": {
+    "PlanDefinition/OpioidCDSREC10PatientView": {
       "source": "plandefinition-OpioidCDSREC10PatientView.json",
       "base": "PlanDefinition-opioidcds-10-patient-view.html"
     },
-    "PlanDefinition/opioidcds-11": {
+    "PlanDefinition/OpioidCDSREC11": {
       "source": "plandefinition-OpioidCDSREC11.json",
       "base": "PlanDefinition-opioidcds-11.html"
     },
-    "PlanDefinition/opioidcds-11-patient-view": {
+    "PlanDefinition/OpioidCDSREC11PatientView": {
       "source": "plandefinition-OpioidCDSREC11PatientView.json",
       "base": "PlanDefinition-opioidcds-11-patient-view.html"
     },
+    "PlanDefinition/OpioidCDSREC12PatientView": {
+      "source": "plandefinition-OpioidCDSREC12PatientView.json",
+      "base": "PlanDefinition-opioidcds-12-patient-view.html"
+    },
+
     "RequestGroup/example-opioidcds": {
       "source": "requestgroup-example-opioidcds.xml",
       "base": "RequestGroup-example-opioidcds.html"
