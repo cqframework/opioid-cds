@@ -7,7 +7,7 @@
     <status value="draft"/>
     <experimental value="false"/>
     <date value="2017-02-06"/>
-    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>    
     <description value="Opioid Prescribing Support Implementation Guide"/>
     <fhirVersion value="3.0.2"/>
     <package>
