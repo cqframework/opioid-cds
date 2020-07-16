@@ -621,6 +621,8 @@
                 <reference value="CodeSystem/opioidcds-indicator"/>
             </sourceReference>
         </resource>
+
+        <!-- Libraries -->
         <resource>
             <example value="true"/>
             <name value="Library - FHIRHelpers Logic"/>
@@ -679,10 +681,34 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="Library - Opioid CDS "/>
+            <name value="Library - Opioid CDS Routines"/>
             <description value="Opioid Management Decision Support Logic Routines"/>
             <sourceReference>
                 <reference value="Library/library-OpioidCDSRoutines"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #1"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #1"/>
+            <sourceReference>
+                <reference value="Library/library-OpioidCDSREC01"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #2"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #2"/>
+            <sourceReference>
+                <reference value="Library/library-OpioidCDSREC02"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #3"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #3"/>
+            <sourceReference>
+                <reference value="Library/library-OpioidCDSREC03"/>
             </sourceReference>
         </resource>
         <resource>
@@ -695,10 +721,26 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #4 Patient View"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #4 Patient View"/>
+            <sourceReference>
+                <reference value="Library/library-OpioidCDSREC04PatientView"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="Library - Opioid CDS Recommendation #5"/>
             <description value="Opioid Management Decision Support Logic for recommendation #5"/>
             <sourceReference>
                 <reference value="Library/library-OpioidCDSREC05"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #6"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #6"/>
+            <sourceReference>
+                <reference value="Library/library-OpioidCDSREC06"/>
             </sourceReference>
         </resource>
         <resource>
@@ -715,6 +757,14 @@
             <description value="Opioid Management Decision Support Logic for recommendation #8"/>
             <sourceReference>
                 <reference value="Library/library-OpioidCDSREC08"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #9"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #9"/>
+            <sourceReference>
+                <reference value="Library/library-OpioidCDSREC09"/>
             </sourceReference>
         </resource>
         <resource>
@@ -749,6 +799,15 @@
                 <reference value="Library/library-OpioidCDSREC11PatientView"/>
             </sourceReference>
         </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #12 Patient View"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #12 Patient View"/>
+            <sourceReference>
+                <reference value="Library/library-OpioidCDSREC12PatientView"/>
+            </sourceReference>
+        </resource>
+
         <resource>
             <example value="true"/>
             <name value="MedicationRequest - CDC Opioid Prescribing Guideline Recommendation #5"/>

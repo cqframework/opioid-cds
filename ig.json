@@ -492,6 +492,18 @@
       "source": "library-OpioidCDSRoutines.json",
       "base": "Library-OpioidCDSRoutines.html"
     },
+    "Library/library-OpioidCDSREC01": {
+      "source": "library-OpioidCDSREC01.json",
+      "base": "Library-OpioidCDSREC01.html"
+    },
+    "Library/library-OpioidCDSREC02": {
+      "source": "library-OpioidCDSREC02.json",
+      "base": "Library-OpioidCDSREC02.html"
+    },
+    "Library/library-OpioidCDSREC03": {
+      "source": "library-OpioidCDSREC03.json",
+      "base": "Library-OpioidCDSREC03.html"
+    },
     "Library/library-OpioidCDSREC04": {
       "source": "library-OpioidCDSREC04.json",
       "base": "Library-OpioidCDSREC04.html"
@@ -502,7 +514,11 @@
     },
     "Library/library-OpioidCDSREC05": {
       "source": "library-OpioidCDSREC05.json",
-      "base": "Library-opioidcds-recommendation-05.html"
+      "base": "Library-OpioidCDSREC05.html"
+    },
+    "Library/library-OpioidCDSREC06": {
+      "source": "library-OpioidCDSREC06.json",
+      "base": "Library-OpioidCDSREC06.html"
     },
     "Library/library-OpioidCDSREC07": {
       "source": "library-OpioidCDSREC07.json",
@@ -511,6 +527,10 @@
     "Library/library-OpioidCDSREC08": {
       "source": "library-OpioidCDSREC08.json",
       "base": "Library-OpioidCDSREC08.html"
+    },
+    "Library/library-OpioidCDSREC09": {
+      "source": "library-OpioidCDSREC09.json",
+      "base": "Library-OpioidCDSREC09.html"
     },
     "Library/library-OpioidCDSREC10": {
       "source": "library-OpioidCDSREC10.json",
@@ -531,14 +551,6 @@
     "Library/library-OpioidCDSREC12PatientView": {
       "source": "library-OpioidCDSREC12PatientView.json",
       "base": "Library-OpioidCDSREC12PatientView.html"
-    },
-    "Library/library-opioidcds-recommendation-12": {
-      "source": "library-opioidcds-recommendation-12.json",
-      "base": "Library-opioidcds-recommendation-12.html"
-    },
-    "Library/library-opioidcds-recommendation-12-patient-view": {
-      "source": "library-opioidcds-recommendation-12-patient-view.json",
-      "base": "Library-opioidcds-recommendation-12-patient-view.html"
     },
     "MedicationRequest/example-opioidcds": {
       "source": "medicationrequest-example-opioidcds.xml",

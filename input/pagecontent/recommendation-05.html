@@ -8,22 +8,22 @@
 {% include container-start.html %}
 
 <!-- ============CONTENT CONTENT=============== -->
-<link href="assets/css/accordions.css" rel="stylesheet"/>
+<link href="assets/css/accordions.css" rel="stylesheet" />
 
 
 <ul id="markdown-toc">
-    <li><a href="#rec05" id="markdown-toc-rec05">Recommendation #5 - Lowest Effective Dose</a></li>
-    <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
-    <li><a href="#content" id="markdown-toc-content">Content</a></li>
+  <li><a href="#rec05" id="markdown-toc-rec05">Recommendation #5 - Lowest Effective Dose</a></li>
+  <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
+  <li><a href="#content" id="markdown-toc-content">Content</a></li>
 </ul>
 
 
 <a name="rec05"> </a>
-<h2><span class="sectioncount">8.7.0</span> Recommendation #5 - Lowest Effective Dose <a href="recommendation-05.html#rec05" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
+<h2><span class="sectioncount">8.7.0</span> Recommendation #5 - Lowest Effective Dose <a href="recommendation-05.html#rec05" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h2>
 
 <p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#5_When_opioids_are_started" target="_blank">Recommendation #5:</a></p>
 <p>
-    <strong>When opioids are started, providers should prescribe the lowest effective dosage.
+  <strong>When opioids are started, providers should prescribe the lowest effective dosage.
     Providers should use caution when prescribing opioids at any dosage, should carefully
     reassess evidence of individual benefits and risks when considering increasing dosage
     to ≥50 morphine milligram equivalents (MME)/day, and should avoid increasing dosage
@@ -32,52 +32,77 @@
 </p>
 
 <details open>
-<a name="funcdesc"> </a>
-<summary><h3><span class="sectioncount">8.7.1</span> Functional Description <a href="recommendation-05.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3></summary>
+  <a name="funcdesc"> </a>
+  <summary>
+    <h3><span class="sectioncount">8.7.1</span> Functional Description <a href="recommendation-05.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
 
-{% include recommendation05-functional-description.html %}
+  {% include recommendation05-functional-description.html %}
 
-<p></p>
+  <p></p>
 
-<img src="assets/images/Recommendation05-Flow.png" style="max-width: 100%;"/>
-<img src="assets/images/Recommendation05-Definitions.png" style="max-width: 100%;" />
+  <img src="assets/images/Recommendation05-Flow.png" style="max-width: 100%;" />
+  <img src="assets/images/Recommendation05-Definitions.png" style="max-width: 100%;" />
 
 </details>
 <p></p>
 <details>
-    <summary><h3 class="title">For Chronic Pain</h3></summary>
-      {% include for-chronic-pain-definitions.html %}
-</details>
-    <p></p>
-<details>
-    <summary><h3 class="title">Opioid Review Useful</h3></summary>
-      {% include opioid-review-useful-definitions.html %}
-</details>
-    <p></p>
-<details>
-    <summary><h3 class="title">Opioid Naive</h3></summary>
-      {% include opioid-naive-definitions.html %}
-</details>
-    <p></p>
-<details>
-    <summary><h3 class="title">Opioid Review Useful</h3></summary>
-      {% include opioid-review-useful-definitions.html %}
+  <summary>
+    <h3 class="title">For Chronic Pain</h3>
+  </summary>
+  {% include for-chronic-pain-definitions.html %}
 </details>
 <p></p>
 <details>
-<a name="content"> </a>
-<summary><h3><span class="sectioncount">8.7.2</span> Content <a href="recommendation-05.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3></summary>
+  <summary>
+    <h3 class="title">Opioid Review Useful</h3>
+  </summary>
+  {% include opioid-review-useful-definitions.html %}
+</details>
+<p></p>
+<details>
+  <summary>
+    <h3 class="title">Opioid Naive</h3>
+  </summary>
+  {% include opioid-naive-definitions.html %}
+</details>
+<p></p>
+<details>
+  <summary>
+    <h3 class="title">Opioid Review Useful</h3>
+  </summary>
+  {% include opioid-review-useful-definitions.html %}
+</details>
+<p></p>
+<details>
+  <a name="content"> </a>
+  <summary>
+    <h3><span class="sectioncount">8.7.2</span> Content <a href="recommendation-05.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
 
-<p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
 
-<h4><a href="common.html" title="link to here" class="self-link">Common Libraries</a></h4>
-<table class="list">
+  <h4><a href="common.html" title="link to here" class="self-link">Common Libraries</a></h4>
+  <table class="list">
     <thead>
-    <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+      <tr>
+        <th>Resource</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
     </thead>
     <tbody>
-    <tr><td><a href="PlanDefinition-opioidcds-05.html">CDC Opioid Prescribing Guideline Recommendation #5</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #5</td></tr>
-    <tr><td><a href="Library-library-OpioidCDSREC05.html">Recommendation #5 - lowest effective dosage</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for evaluating whether a prescription exceeds the MME of 50 mg/day</td></tr>
+      <tr>
+        <td><a href="PlanDefinition-opioidcds-05.html">CDC Opioid Prescribing Guideline Recommendation #5</a></td>
+        <td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td>
+        <td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #5</td>
+      </tr>
+      <tr>
+        <td><a href="Library-library-OpioidCDSREC05.html">Recommendation #5 - lowest effective dosage</a></td>
+        <td><a href="{{site.data.fhir.path}}library.html">Library</a></td>
+        <td>CQL Library that provides logic for evaluating whether a prescription exceeds the MME of 50 mg/day</td>
+      </tr>
+      {% include routines-library-table-row.html %}
 </details>
 </tbody>
 </table>

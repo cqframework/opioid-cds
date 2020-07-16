@@ -8,78 +8,107 @@
 {% include container-start.html %}
 
 <!-- ============CONTENT CONTENT=============== -->
-<link href="assets/css/accordions.css" rel="stylesheet"/>
+<link href="assets/css/accordions.css" rel="stylesheet" />
 
 
 <ul id="markdown-toc">
-    <li><a href="#rec10" id="markdown-toc-rec10">Recommendation #10 - Urine Drug Testing</a></li>
-    <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
-    <li><a href="#content" id="markdown-toc-content">Content</a></li>
+  <li><a href="#rec10" id="markdown-toc-rec10">Recommendation #10 - Urine Drug Testing</a></li>
+  <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
+  <li><a href="#content" id="markdown-toc-content">Content</a></li>
 </ul>
 
 <a name="rec10"> </a>
-<h2><span class="sectioncount">8.10.0</span> Recommendation #10 - Urine Drug Testing <a href="recommendation-10.html#rec10" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
+<h2><span class="sectioncount">8.10.0</span> Recommendation #10 - Urine Drug Testing <a href="recommendation-10.html#rec10" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h2>
 
 <p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#10_When_prescribing_opioids" target="_blank">Recommendation #10:</a></p>
 <p>
-    <strong>When prescribing opioids for chronic pain, providers should use urine drug testing before
+  <strong>When prescribing opioids for chronic pain, providers should use urine drug testing before
     starting opioid therapy and consider urine drug testing at least annually to assess for
     prescribed medications as well as other controlled prescription drugs and illicit drugs
     <em>(recommendation category: B, evidence type: 4)</em>.</strong>
 </p>
 
 <details open>
-<a name="funcdesc"> </a>
-<summary><h3><span class="sectioncount">8.10.1</span> Functional Description <a href="recommendation-10.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3></summary>
-<p style="background-color: gold; border:1px solid maroon; padding: 5px; max-width: 790px;">
+  <a name="funcdesc"> </a>
+  <summary>
+    <h3><span class="sectioncount">8.10.1</span> Functional Description <a href="recommendation-10.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
+  <p style="background-color: gold; border:1px solid maroon; padding: 5px; max-width: 790px;">
     The GetDrugNamesFromScreeningCodes(value List&lt;FHIR.Coding&gt;) function extracts
     the drug name from the display value for the given code. The expectation is that the
     drug name will be at the beginning of the string and will end with any of the following
     characters/strings: &lsquo;[&lsquo;, &lsquo;tested&rsquo;, &lsquo;cutoff&rsquo;.
     Anything in the string that precedes the first occurrence of any of those characters/strings
     will be assumed to be the drug name.
-</p>
-<p style="background-color: gold; border:1px solid maroon; padding: 5px; max-width: 790px;">
+  </p>
+  <p style="background-color: gold; border:1px solid maroon; padding: 5px; max-width: 790px;">
     The "Missing Opioids" set is identified by comparing the medication code displays
     with the urine drug screen code's displays - a dependency that implementers should
     be aware of.
-</p>
-<p></p>
-{% include recommendation10-functional-description.html %}
-
-<p></p>
-<img src="assets/images/Recommendation10-Flow.png" style="max-width: 100%;"/>
-<img src="assets/images/Recommendation10-Definitions.png" style="max-width: 100%;" />
-</details>
-<details>
-    <summary><h3 class="title">For Chronic Pain</h3></summary>
-    {% include for-chronic-pain-definitions.html %}
-</details>
+  </p>
   <p></p>
-<details>
-    <summary><h3 class="title">Opioid Review Useful</h3></summary>
-    {% include opioid-review-useful-definitions.html %}
-</details>
+  {% include recommendation10-functional-description.html %}
+
   <p></p>
+  <img src="assets/images/Recommendation10-Flow.png" style="max-width: 100%;" />
+  <img src="assets/images/Recommendation10-Definitions.png" style="max-width: 100%;" />
+</details>
 <details>
-<a name="content"> </a>
-<summary><h3><span class="sectioncount">8.10.2</span> Content <a href="recommendation-10.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3></summary>
+  <summary>
+    <h3 class="title">For Chronic Pain</h3>
+  </summary>
+  {% include for-chronic-pain-definitions.html %}
+</details>
+<p></p>
+<details>
+  <summary>
+    <h3 class="title">Opioid Review Useful</h3>
+  </summary>
+  {% include opioid-review-useful-definitions.html %}
+</details>
+<p></p>
+<details>
+  <a name="content"> </a>
+  <summary>
+    <h3><span class="sectioncount">8.10.2</span> Content <a href="recommendation-10.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
 
-<p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
 
-<h4><a href="common.html" title="link to here" class="self-link">Common Libraries</a></h4>
+  <h4><a href="common.html" title="link to here" class="self-link">Common Libraries</a></h4>
 
-<table class="list">
+  <table class="list">
     <thead>
-    <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+      <tr>
+        <th>Resource</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
     </thead>
     <tbody>
-    <tr><td><a href="PlanDefinition-opioidcds-10.html">CDC Opioid Prescribing Guideline Recommendation #10</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #10</td></tr>
-    <tr><td><a href="Library-library-OpioidCDSREC10.html">Recommendation #10 - urine drug testing when prescribing opioids for chronic pain</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>Defines the data requirements to support evaluation of recommendation #10</td></tr>
-    <tr><td><a href="PlanDefinition-opioidcds-10-patient-view.html">CDC Opioid Prescribing Guideline Recommendation #10 Patient View</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #10</td></tr>
-    <tr><td><a href="Library-library-OpioidCDSREC10PatientView.html">Recommendation #10 Patient View - urine drug testing when prescribing opioids for chronic pain</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>Defines the data requirements to support evaluation of recommendation #10</td></tr>
+      <tr>
+        <td><a href="PlanDefinition-opioidcds-10.html">CDC Opioid Prescribing Guideline Recommendation #10</a></td>
+        <td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td>
+        <td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #10</td>
+      </tr>
+      <tr>
+        <td><a href="Library-library-OpioidCDSREC10.html">Recommendation #10 - urine drug testing when prescribing opioids for chronic pain</a></td>
+        <td><a href="{{site.data.fhir.path}}library.html">Library</a></td>
+        <td>Defines the data requirements to support evaluation of recommendation #10</td>
+      </tr>
+      <tr>
+        <td><a href="PlanDefinition-opioidcds-10-patient-view.html">CDC Opioid Prescribing Guideline Recommendation #10 Patient View</a></td>
+        <td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td>
+        <td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #10</td>
+      </tr>
+      <tr>
+        <td><a href="Library-library-OpioidCDSREC10PatientView.html">Recommendation #10 Patient View - urine drug testing when prescribing opioids for chronic pain</a></td>
+        <td><a href="{{site.data.fhir.path}}library.html">Library</a></td>
+        <td>Defines the data requirements to support evaluation of recommendation #10</td>
+      </tr>
+      {% include routines-library-table-row.html %}
     </tbody>
-    </table>
+  </table>
 </details>
 <!-- ==============END CONTENT END CONTENT=================== -->
 

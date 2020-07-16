@@ -8,21 +8,21 @@
 {% include container-start.html %}
 
 <!-- ============CONTENT CONTENT=============== -->
-<link href="assets/css/accordions.css" rel="stylesheet"/>
+<link href="assets/css/accordions.css" rel="stylesheet" />
 
 
 <ul id="markdown-toc">
-    <li><a href="#rec07" id="markdown-toc-rec07">Recommendation #7 - Opioid Therapy Risk Assessment</a></li>
-    <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
-    <li><a href="#content" id="markdown-toc-content">Content</a></li>
+  <li><a href="#rec07" id="markdown-toc-rec07">Recommendation #7 - Opioid Therapy Risk Assessment</a></li>
+  <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
+  <li><a href="#content" id="markdown-toc-content">Content</a></li>
 </ul>
 
 <a name="rec07"> </a>
-<h2><span class="sectioncount">8.8.0</span> Recommendation #7 - Opioid Therapy Risk Assessment <a href="recommendation-07.html#rec07" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
+<h2><span class="sectioncount">8.8.0</span> Recommendation #7 - Opioid Therapy Risk Assessment <a href="recommendation-07.html#rec07" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h2>
 
 <p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#7_Clinicians_should_evaluate_benefits" target="_blank">Recommendation #7:</a></p>
 <p>
-    <strong>Clinicians should evaluate benefits and harms with patients within 1 to 4 weeks of
+  <strong>Clinicians should evaluate benefits and harms with patients within 1 to 4 weeks of
     starting opioid therapy for chronic pain or of dose escalation. Clinicians should
     evaluate benefits and harms of continued therapy with patients every 3 months or
     more frequently. If benefits do not outweigh harms of continued opioid therapy,
@@ -31,49 +31,70 @@
 </p>
 
 <details open>
-<a name="funcdesc"> </a>
-<summary><h3><span class="sectioncount">8.8.1</span> Functional Description <a href="recommendation-07.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3></summary>
-<p style="background-color: gold; border:1px solid maroon; padding: 5px; max-width: 790px;">
+  <a name="funcdesc"> </a>
+  <summary>
+    <h3><span class="sectioncount">8.8.1</span> Functional Description <a href="recommendation-07.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
+  <p style="background-color: gold; border:1px solid maroon; padding: 5px; max-width: 790px;">
     The ranges introduced are based on practical considerations for identifying a course
     of treatment likely to be subject to the recommendation. They were arrived at through
     discussion with pilot partner clinicians.
-</p>
+  </p>
 
-<p></p>
-{% include recommendation07-functional-description.html %}
-<p></p>
-
-<img src="assets/images/Recommendation07-Flow.png" style="max-width: 100%;"/>
-<img src="assets/images/Recommendation07-Definitions.png" style="max-width: 100%;" />
-
-</details>
-<p></p>
-<details>
-    <summary><h3 class="titles">For Chronic Pain</h3></summary>
-      {% include for-chronic-pain-definitions.html %}
-</details>
-    <p></p>
-<details>
-    <summary><h3 class="title">Opioid Review Useful</h3></summary>
-      {% include opioid-review-useful-definitions.html %}
-</details>
   <p></p>
+  {% include recommendation07-functional-description.html %}
+  <p></p>
+
+  <img src="assets/images/Recommendation07-Flow.png" style="max-width: 100%;" />
+  <img src="assets/images/Recommendation07-Definitions.png" style="max-width: 100%;" />
+
+</details>
+<p></p>
 <details>
-<a name="content"> </a>
-<summary><h3><span class="sectioncount">8.8.2</span> Content <a href="recommendation-07.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3></summary>
+  <summary>
+    <h3 class="titles">For Chronic Pain</h3>
+  </summary>
+  {% include for-chronic-pain-definitions.html %}
+</details>
+<p></p>
+<details>
+  <summary>
+    <h3 class="title">Opioid Review Useful</h3>
+  </summary>
+  {% include opioid-review-useful-definitions.html %}
+</details>
+<p></p>
+<details>
+  <a name="content"> </a>
+  <summary>
+    <h3><span class="sectioncount">8.8.2</span> Content <a href="recommendation-07.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
 
-<p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
 
-<h4><a href="common.html" title="link to here" class="self-link">Common Libraries</a></h4>
-<table class="list">
+  <h4><a href="common.html" title="link to here" class="self-link">Common Libraries</a></h4>
+  <table class="list">
     <thead>
-    <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+      <tr>
+        <th>Resource</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
     </thead>
     <tbody>
-    <tr><td><a href="PlanDefinition-opioidcds-07.html">CDC Opioid Prescribing Guideline Recommendation #7</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #7</td></tr>
-    <tr><td><a href="Library-library-OpioidCDSREC07.html">Recommendation #7 - benefits and harms of starting and/or continuing opioid therapy for chronic pain</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>Defines the data requirements to support evaluation of recommendation #7</td></tr>
+      <tr>
+        <td><a href="PlanDefinition-opioidcds-07.html">CDC Opioid Prescribing Guideline Recommendation #7</a></td>
+        <td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td>
+        <td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #7</td>
+      </tr>
+      <tr>
+        <td><a href="Library-library-OpioidCDSREC07.html">Recommendation #7 - benefits and harms of starting and/or continuing opioid therapy for chronic pain</a></td>
+        <td><a href="{{site.data.fhir.path}}library.html">Library</a></td>
+        <td>Defines the data requirements to support evaluation of recommendation #7</td>
+      </tr>
+      {% include routines-library-table-row.html %}
     </tbody>
-    </table>
+  </table>
 </details>
 
 <!-- ==============END CONTENT END CONTENT=================== -->
