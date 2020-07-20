@@ -60,6 +60,17 @@
           }
         }
       ]
+    },
+    {
+      "type": "ProcedureRequest",
+      "codeFilter": [
+        {
+          "path": "code",
+          "valueSetReference": {
+            "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
+          }
+        }
+      ]
     }
   ],
   "content": [

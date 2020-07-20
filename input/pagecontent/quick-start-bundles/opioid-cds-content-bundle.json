@@ -315,6 +315,17 @@
             ]
           },
           {
+            "type": "MedicationStatement",
+            "codeFilter": [
+              {
+                "path": "medication",
+                "valueSetReference": {
+                  "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+                }
+              }
+            ]
+          },
+          {
             "type": "Encounter",
             "codeFilter": [
               {
@@ -346,17 +357,6 @@
                 "path": "code",
                 "valueSetReference": {
                   "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/conditions-likely-terminal-for-opioid-prescribing-enum"
-                }
-              }
-            ]
-          },
-          {
-            "type": "MedicationStatement",
-            "codeFilter": [
-              {
-                "path": "medication",
-                "valueSetReference": {
-                  "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
                 }
               }
             ]
