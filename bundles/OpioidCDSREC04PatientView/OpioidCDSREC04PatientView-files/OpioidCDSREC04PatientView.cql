@@ -37,9 +37,6 @@ context Patient
 define "Inclusion Period":
   Interval[Today() - 91 days, Today() - 1 days]
 
-define "Encounter Period":
-  Interval[Today() - 12 months - 1 days, Today() - 1 days]
-
 define "Chronic Pain Extended Release Opioid Analgesic with Ambulatory Misuse Potential Prescriptions":
   Common."Active Ambulatory Opioid Rx" AmbulatoryOpioidPrescription
     where Routines."Is Chronic Pain Prescription?"(AmbulatoryOpioidPrescription)

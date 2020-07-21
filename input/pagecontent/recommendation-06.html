@@ -1,0 +1,129 @@
+---
+# jekyll header
+---
+{% include header.html %}
+
+<!-- ============BreadCrumb=============== -->
+
+{% include container-start.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
+<link href="assets/css/accordions.css" rel="stylesheet" />
+
+<ul id="markdown-toc">
+  <li><a href="#rec06" id="markdown-toc-rec06">Recommendation #6 - Prescribe Lowest Effective Dose and Duration</a></li>
+  <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
+  <li><a href="#content" id="markdown-toc-content">Content</a></li>
+</ul>
+
+<a name="rec06"> </a>
+<h2><span class="sectioncount">20</span> Recommendation #6 - Prescribe Lowest Effective Dose and Duration <a href="recommendation-12.html#rec12" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link"
+      height="20" /></a></h2>
+<p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#6_Long_term_opioid_use" target="_blank">Recommendation #6:</a></p>
+<p>
+  <strong>Long-term opioid use often begins with treatment of acute pain. When opioids are used for acute pain, clinicians should prescribe the lowest effective dose of immediate-release opioids and should prescribe no greater quantity than needed
+    for the expected duration of pain severe enough to require opioids. Three days or less will often be sufficient; more than seven days will rarely be needed (recommendation category: A, evidence type: 4).</strong>
+</p>
+<details open="true">
+  <summary>
+    <h3><span class="sectioncount">20</span> Functional Description <a href="recommendation-02.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
+  <a name="funcdesc"> </a>
+
+  {% include recommendation06-functional-description.html %}
+
+  <p></p>
+  <img src="assets/images/Recommendation06-flow.png" style="max-width: 100%;" />
+  <p></p>
+  <img src="assets/images/Recommendation06-Definitions.png" style="max-width: 100%;" />
+</details>
+<p></p>
+<details>
+  <summary>
+    <h3>For Acute Pain</h3>
+  </summary>
+  {% include for-acute-pain-definitions.html %}
+</details>
+<p></p>
+<details>
+  <summary>
+    <h3>Opioid Review Useful</h3>
+  </summary>
+  {% include opioid-review-useful-definitions.html %}
+</details>
+<p></p>
+<details>
+  <summary>
+    <h3>Content</h3>
+  </summary>
+  <a name="content"> </a>
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
+
+  <a name="commonlibraries"> </a>
+  <h4><a href="common.html" title="link to here" class="self-link">Common Libraries</a></h4>
+
+  <p></p>
+
+  <table class="list">
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
+        <td><a href="PlanDefinition-opioidcds-06.html">CDC Opioid Prescribing Guideline Recommendation #6</a></td>
+        <td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td>
+        <td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #6</td>
+      </tr> -->
+      <tr>
+        <td><a href="Library-library-OpioidCDSREC06.html">Recommendation #6 - Prescribe Lowest Effective Dose and Duration</a></td>
+        <td><a href="{{site.data.fhir.path}}library.html">Library</a></td>
+        <td>Defines the data requirements to support evaluation of recommendation #6</td>
+      </tr>
+      {% include routines-library-table-row.html %}
+    </tbody>
+  </table>
+</details>
+
+<p></p>
+
+<!-- Example Data/Requests -->
+<details>
+  <summary>
+    <h3>Example Data/Requests</h3>
+  </summary>
+  <a name="exampledatarequests"> </a>
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Bundle</th>
+        <th>CDS Hooks Request</th>
+        <th>Expected Response</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-7">Patient is 18 or older. Patient has been prescribed oxyCODONE HCl 10 MG 12HR Extended Release Oral Tablet (RXNorm 1049502). Patients “Dosage Instructions” are 1 Tablet per day for 29 days. The patient will be excluded and no
+          message will be triggered – an empty set of cards will be returned.</td>
+        <td><a href="Bundle-example-rec-06-criteria-valid.html">Test Bundle</a></td>
+        <td><a href="requests/request-example-rec-06-in-criteria-met.json">Request JSON</a></td>
+        <td><a href="responses/response-example-rec-06-in-criteria-met.json">Response JSON</a></td>
+      </tr>
+      <tr>
+        <td class="col-7">Patient is 18 or older. Patient has been prescribed oxyCODONE HCl 10 MG 12HR Extended Release Oral Tablet (RXNorm 1049502).Patients “Dosage Instructions” are 1 Tablet per day for 27 days. The patient will be excluded and no
+          message will be triggered – an empty set of cards will be returned. </td>
+        <td><a href="Bundle-example-rec-06-with-extended-release-for-27-days.html">Test Bundle</a></td>
+        <td><a href="requests/request-example-rec-06-out-extended-release-27-days.json">Request JSON</a></td>
+        <td><a href="responses/response-example-rec-06-out-extended-release-27-days.json">Response JSON</a></td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+<!-- ==============END CONTENT END CONTENT=================== -->
+{% include container-end.html %}
+
+{% include footer.html %}

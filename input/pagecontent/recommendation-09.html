@@ -1,0 +1,132 @@
+---
+# jekyll header
+---
+{% include header.html %}
+
+<!-- ============BreadCrumb=============== -->
+
+{% include container-start.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
+<link href="assets/css/accordions.css" rel="stylesheet" />
+
+<ul id="markdown-toc">
+  <li><a href="#rec09" id="markdown-toc-rec09">Recommendation #9 - Consider Patient’s History of Controlled Substance Prescriptions</a></li>
+  <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
+  <li><a href="#content" id="markdown-toc-content">Content</a></li>
+</ul>
+
+<a name="rec06"> </a>
+<h2><span class="sectioncount">23</span> Recommendation #9 - Consider Patient’s History of Controlled Substance Prescriptions <a href="recommendation-12.html#rec12" title="link to here" class="self-link"><img src="target.png" width="20"
+      class="self-link" height="20" /></a></h2>
+<p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#9_Clinicians_should_review" target="_blank">Recommendation #9:</a></p>
+<p>
+  <strong>Long-term opioid use often begins with treatment of acute pain. When opioids are used for acute pain, clinicians should prescribe the lowest effective dose of immediate-release opioids and should prescribe no greater quantity than needed
+    for the expected duration of pain severe enough to require opioids. Three days or less will often be sufficient; more than seven days will rarely be needed (recommendation category: A, evidence type: 4).</strong>
+</p>
+<details open="true">
+  <a name="funcdesc"> </a>
+  <summary>
+    <h3><span class="sectioncount">23</span> Functional Description <a href="recommendation-09.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
+
+  {% include recommendation09-functional-description.html %}
+
+  <p></p>
+  <img src="assets/images/Recommendation09-flow.png" style="max-width: 100%;" />
+  <p></p>
+  <img src="assets/images/Recommendation09-Definitions.png" style="max-width: 100%;" />
+</details>
+<p></p>
+<details>
+  <summary>
+    <h3 class="title">For Chronic Pain</h3>
+  </summary>
+  {% include for-chronic-pain-definitions.html %}
+</details>
+<p></p>
+<details>
+  <summary>
+    <h3 class="title">Opioid Review Useful</h3>
+  </summary>
+  {% include opioid-review-useful-definitions.html %}
+</details>
+<p></p>
+
+<details>
+  <summary>
+    <h3 class="title">Content</h3>
+  </summary>
+  <a name="content"> </a>
+
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
+
+  <a name="commonlibraries"> </a>
+  <h4><a href="common.html" title="link to here" class="self-link">Common Libraries</a></h4>
+
+  <p></p>
+
+  <table class="list">
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
+        <td><a href="PlanDefinition-opioidcds-09.html">CDC Opioid Prescribing Guideline Recommendation #9</a></td>
+        <td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td>
+        <td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #9</td>
+      </tr> -->
+      <tr>
+        <td><a href="Library-library-OpioidCDSREC09.html">Recommendation #9 - Consider Patient’s History of Controlled Substance Prescriptions</a></td>
+        <td><a href="{{site.data.fhir.path}}library.html">Library</a></td>
+        <td>Defines the data requirements to support evaluation of recommendation #9</td>
+      </tr>
+      {% include routines-library-table-row.html %}
+    </tbody>
+  </table>
+</details>
+
+<p></p>
+
+<!-- Example Data/Requests -->
+
+<details>
+  <summary>
+    <h3 class="title">Example Data/Requests</h3>
+  </summary>
+  <a name="exampledatarequests"> </a>
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Bundle</th>
+        <th>CDS Hooks Request</th>
+        <th>Expected Response</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-7">Patient is 18 or older. Patient has been prescribed Suboxone 2 MG / 0.5 MG Sublingual Film (RXNorm 1010603) Patients “Dosage Instructions” are 1 FIlm per day for 30 days. This will trigger the message “PDMP Data Review”
+        </td>
+        <td><a href="Bundle-example-rec-09-true-return-recommendations.html">Test Bundle</a></td>
+        <td><a href="requests/request-example-rec-09-in-criteria-met.json">Request JSON</a></td>
+        <td><a href="responses/response-example-rec-09-in-criteria-met.json">Response JSON</a></td>
+      </tr>
+      <tr>
+        <td class="col-7">Patient is 18 or older. Patient has been prescribed Suboxone 2 MG / 0.5 MG Sublingual Film (RXNorm 1010603) Patients “Dosage Instructions” are 1 Film per day for 30 days. The patient will be excluded and no message will be
+          triggered – an empty set of cards will be returned.</td>
+        <td><a href="Bundle-example-rec-09-false-due-to-PDMP-review-within-90-days.html">Test Bundle</a></td>
+        <td><a href="requests/request-example-rec-09-out-PDMP-review-90-days.json">Request JSON</a></td>
+        <td><a href="responses/response-example-rec-09-out-PDMP-review-90-days.json">Response JSON</a></td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+<!-- ==============END CONTENT END CONTENT=================== -->
+{% include container-end.html %}
+
+{% include footer.html %}

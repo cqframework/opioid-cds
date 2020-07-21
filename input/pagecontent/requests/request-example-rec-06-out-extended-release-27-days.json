@@ -1,0 +1,33 @@
+{
+    "hookInstance": "c7107fd7-7be4-4837-9892-2f31b3224ffe",
+    "fhirServer": "http://localhost:8080/cqf-ruler-r4/fhir",
+    "hook": "order-select",
+    "applyCql": true,
+    "context": {
+      "userId": "Practitioner/example",
+        "patientId": "Patient/example-rec-06-with-extended-release-for-27-days",
+        "selections": [ "MedicationRequest/15fa9928-4f72-4ee3-ac61-1412d9fa446b" ]
+    },
+    "prefetch": {
+        "item1": {
+            "response": {
+                "status": "200 OK"
+            },
+            "resource": {
+                "resourceType": "Patient",
+                "id": "example-rec-06-with-extended-release-for-27-days",
+                "_birthDate": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                            "valueExpression": {
+                                "language": "text/cql",
+                                "expression": "Today() - 20 years"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

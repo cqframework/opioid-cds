@@ -1,0 +1,28 @@
+---
+# jekyll header
+---
+{% include header.html %}
+
+<!-- ============BreadCrumb=============== -->
+
+{% include container-start.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
+  <p>The following libraries are common to some or all of the recommendation implementations:</p>
+  <table class="list">
+      <thead>
+        <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+          <tr><td><a href="Library-library-OpioidCDSCommon.html">Common Opioid Decision Support Logic</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides common logic for the recommendations</td></tr>
+          <tr><td><a href="Library-library-OMTKLogicCQL.html">Opioid Terminology Management Knowledge-base (OMTK) Library</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for implementation of opioid management functionality including Milligram Morphine Equivalents (MME).</td></tr>
+          <tr><td><a href="Library-library-OMTKData2019.html">Opioid Terminology Management Knowledge-base Data (OMTK) Library</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides data for implementation of opioid management functionality including Milligram Morphine Equivalents (MME).</td></tr>
+      </tbody>
+  </table>
+</div>
+<!-- ==============END CONTENT END CONTENT=================== -->
+
+{% include container-end.html %}
+
+{% include footer.html %}

@@ -90,7 +90,7 @@
   "copyright": "© CDC 2016+.",
   "library": [
     {
-      "reference": "Library/library-OpioidCDSREC04PatientView"
+      "reference": "Library/OpioidCDSREC04PatientView"
     }
   ],
   "action": [

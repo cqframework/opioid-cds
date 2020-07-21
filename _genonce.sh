@@ -1,5 +1,5 @@
 #!/bin/bash
-publisher_jar=org.hl7.fhir.publisher.jar
+publisher_jar=publisher.jar
 input_cache_path=./input-cache/
 set -e
 echo Checking internet connection...

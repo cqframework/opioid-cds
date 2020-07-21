@@ -1,0 +1,15 @@
+{
+  "cards": [
+    {
+      "summary": "Recommend opioid agonist or partial agonist treatment with methadone maintenance therapy or buprenorphine and/or behavioral therapy",
+      "indicator": "warning",
+      "source": {},
+      "links": [
+        {
+          "label": "CDC guideline for prescribing opioids for chronic pain",
+          "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
+        }
+      ]
+    }
+  ]
+}

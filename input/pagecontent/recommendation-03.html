@@ -1,0 +1,132 @@
+---
+# jekyll header
+---
+{% include header.html %}
+
+<!-- ============BreadCrumb=============== -->
+
+{% include container-start.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
+<link href="assets/css/accordions.css" rel="stylesheet" />
+
+<ul id="markdown-toc">
+  <li><a href="#rec03" id="markdown-toc-rec03">Recommendation #3 - Opioid Therapy Risk/Benefit Discussion</a></li>
+  <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
+  <li><a href="#content" id="markdown-toc-content">Content</a></li>
+</ul>
+
+<a name="rec02"> </a>
+<h2><span class="sectioncount">17</span> Recommendation #3 - Opioid Therapy Risk/Benefit Discussion <a href="recommendation-12.html#rec12" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a>
+</h2>
+<p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#3_Before_starting_and_periodically" target="_blank">Recommendation #3:</a></p>
+<p>
+  <strong>Before starting and periodically during opioid therapy, clinicians should discuss with patients known risks and realistic benefits of opioid therapy and patient and clinician responsibilities for managing therapy (recommendation category:
+    A, evidence type: 3).</strong>
+</p>
+<details open="true">
+  <summary>
+    <h3><span class="sectioncount">17</span> Functional Description <a href="recommendation-03.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
+  <a name="funcdesc"> </a>
+
+  {% include recommendation03-functional-description.html %}
+
+  <p></p>
+  <img src="assets/images/Recommendation03-flow.png" style="max-width: 100%;" />
+  <p></p>
+  <img src="assets/images/Recommendation03-Definitions.png" style="max-width: 100%;" />
+</details>
+<p></p>
+<details>
+  <summary>
+    <h3>For Chronic Pain</h3>
+  </summary>
+  {% include for-chronic-pain-definitions.html %}
+</details>
+<p></p>
+<details>
+  <summary>
+    <h3>Opioid Review Useful</h3>
+  </summary>
+  {% include opioid-review-useful-definitions.html %}
+</details>
+<p></p>
+<details>
+  <summary>
+    <h3>Content</h3>
+  </summary>
+  <a name="content"> </a>
+
+
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
+
+  <a name="commonlibraries"> </a>
+  <h4><a href="common.html" title="link to here" class="self-link">Common Libraries</a></h4>
+
+  <p></p>
+
+  <table class="list">
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
+        <td><a href="PlanDefinition-opioidcds-03.html">CDC Opioid Prescribing Guideline Recommendation #3</a></td>
+        <td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td>
+        <td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #3</td>
+      </tr> -->
+      <tr>
+        <td><a href="Library-library-OpioidCDSREC03.html">Recommendation #3 - Opioid Therapy Risk/Benefit Discussion</a></td>
+        <td><a href="{{site.data.fhir.path}}library.html">Library</a></td>
+        <td>Defines the data requirements to support evaluation of recommendation #3</td>
+      </tr>
+      {% include routines-library-table-row.html %}
+    </tbody>
+  </table>
+</details>
+<p></p>
+
+<!-- Example Data/Requests -->
+<details>
+  <summary>
+    <h3>Example Data/Requests</h3>
+  </summary>
+  <a name="exampledatarequests"> </a>
+
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Bundle</th>
+        <th>CDS Hooks Request</th>
+        <th>Expected Response</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-7">Patient is 18 years or older and has an outpatient Medication Request of Suboxone 2 MG / 0.5 MG Sublingual Film (RXNorm 1010603) authored “Today” and a “documented discussion of opioid harms and risks” procedure completed 91
+          days prior to today. Patients “Dosage Instructions” are 1 Film per day for 30 days. This will result in a summer message: “Recommend counseling regarding potential opioid harms and risks”</td>
+        <td><a href="Bundle-example-rec-03-true-make-recommendations.html">Test Bundle</a></td>
+        <td><a href="requests/request-example-rec-03-in-no-counseling-within-90-days.json">Request JSON</a></td>
+        <td><a href="responses/response-example-rec-03-in-no-counseling-within-90-days.json">Response JSON</a></td>
+      </tr>
+      <tr>
+        <td class="col-7">Patient is 18 years or older and has an outpatient Medication Request of Suboxone 2 MG / 0.5 MG Sublingual Film (RXNorm 1010603) authored “Today” and a “documented discussion of opioid harms and risks” procedure completed 88
+          days prior to today. Patients “Dosage Instructions” are 1 Film per day for 30 days. This will not result in any recommendation messages.</td>
+        <td><a href="Bundle-example-rec-03-false-due-to-discussion-within-90-days.html">Test Bundle</a></td>
+        <td><a href="requests/request-example-rec-03-out-counseling-within-90-days.json">Request JSON</a></td>
+        <td><a href="responses/response-example-rec-03-out-counseling-within-90-days.json">Response JSON</a></td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+<!-- ==============END CONTENT END CONTENT=================== -->
+
+{% include container-end.html %}
+
+{% include footer.html %}

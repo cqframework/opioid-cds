@@ -58,7 +58,7 @@
               "value": 1.0,
               "unit": "patch",
 				      "system": "http://hl7.org/fhir/v3/orderableDrugForm",
-				      "code": "PATCH""
+				      "code": "PATCH"
             }
           }
         ],
