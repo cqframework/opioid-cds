@@ -75,6 +75,7 @@ cp input/vocabulary/valueset/valueset-short-acting-opioids.json bundlegen/source
 cp input/vocabulary/valueset/valueset-substance-abuse.json bundlegen/sourcefiles/valueset-substance-abuse.json
 cp input/vocabulary/valueset/valueset-substance-misuse-behavioral-counseling-enum.json bundlegen/sourcefiles/valueset-substance-misuse-behavioral-counseling-enum.json
 cp input/vocabulary/valueset/valueset-therapies-indicating-end-of-life-care-enum.json bundlegen/sourcefiles/valueset-therapies-indicating-end-of-life-care-enum.json
+cp input/vocabulary/valueset/external/valueset-us-core-condition-category.json bundlegen/sourcefiles/valueset-us-core-condition-category.json
 
 #cd /bundlegen
 for entry in "bundlegen/sourcefiles"/*
