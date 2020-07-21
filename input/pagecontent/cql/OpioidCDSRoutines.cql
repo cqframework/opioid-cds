@@ -85,17 +85,19 @@ define "Conditions Including Cancer To Exclude Opioid Management Indicating End-
 **  Opioid analgesics with        | No                  | Look for an existing prescription (order) for     | Opioid analgesics with
 **  ambulatory misuse potential   |                     | opioid that is in the value set for opioid with   | ambulatory misuse potential
 **  prescription in past 90 days  |                     | ambulatory abuse potential authored               |
-**  including today               |                     | within the past 90 days (including today)         |
+**  excluding the previous 24     |                     | within the past 90 days (excluding previous 24    |
+**  hours                         |                     | hours)                                            |
 **  ----------------------------------------------------------------------------------------------------------------------------------------
 **  Opioid analgesics with        | No                  | Look for evidence of active medication on         | Opioid analgesics with
 **  ambulatory misuse potential   |                     | the medication list that is in the value set      | ambulatory misuse potential
 **  reported in past 90 days      |                     | for opioid with ambulatory care abuse             |
-**  including today*              |                     | potential                                         |
+**  excluding previous 24 hours*  |                     | potential                                         |
 **  ----------------------------------------------------------------------------------------------------------------------------------------
 **  Opioid analgesics with        | No                  | Look for evidence of a dispensing event for       | Opioid analgesics with
 **  ambulatory misuse potential   |                     | medication that is in the value set for opioid    | ambulatory misuse potential
 **  dispensing event in past 90   |                     | with ambulatory use potential occurring           |
-**  days including today*         |                     | within the past 90 days (including today)         |
+**  days excluding previous 24    |                     | within the past 90 days (excluding previous 24    |
+**  hours                         |                     | hours)                                            |
 **  ----------------------------------------------------------------------------------------------------------------------------------------
 **  *Future consideration: Current algorithm addresses only orders (prescriptions).
 **
@@ -105,10 +107,10 @@ define "Conditions Including Cancer To Exclude Opioid Management Indicating End-
 */
 
 define "Prescription/Dispense Inclusion Period":
-  Interval[Now() - 89 days, Now()]
+  Interval[Now() - 89 days, Now() - 24 hours]
 
 define "Report Inclusion Period":
-  Interval[Now() - 90 days, Now())
+  Interval[Now() - 90 days, Now() - 24 hours)
 
 define "Is Opioid Naive?":
   not ("Has Opioid RX with Ambulatory Abuse Potential In Past 90 Days")
