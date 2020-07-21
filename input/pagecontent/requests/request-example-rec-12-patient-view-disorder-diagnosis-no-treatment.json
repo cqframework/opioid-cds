@@ -28,6 +28,22 @@
         "resourceType": "Condition",
         "id": "example-rec12pv-diagnosis-no-treatment",
         "clinicalStatus": "active",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "439401001",
+                "display": "Diagnosis"
+              }
+            ]
+          }
+        ],
         "code": {
           "coding": [
             {

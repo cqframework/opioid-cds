@@ -53,8 +53,11 @@ define "Patient Age Less Than 18":
 
 define "Conditions Indicating End Of Life Present":
   exists (
-    [Condition: category in Common."US Core Condition Category Codes"] LLEC
-      where LLEC.code in Common."Limited life expectancy conditions"
+    // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
+    /* [Condition: category in Common."US Core Condition Category Codes"] LLEC */
+    [Condition] LLEC
+      where LLEC.category in Common."US Core Condition Category Codes"
+        and LLEC.code in Common."Limited life expectancy conditions"
         and LLEC.clinicalStatus ~ Common."Active Condition".code
   )
 
@@ -69,8 +72,11 @@ define "Order For Palliative Care In Past 90 Days":
 define "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present":
   Config."End-Stage Disease Criteria Enabled"
     and exists (
-      [Condition: category in Common."US Core Condition Category Codes"] EOLC
-        where EOLC.code in Common."Conditions likely terminal for opioid prescribing"
+      // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
+      /* [Condition: category in Common."US Core Condition Category Codes"] EOLC */
+      [Condition] EOLC
+        where EOLC.category in Common."US Core Condition Category Codes"
+          and EOLC.code in Common."Conditions likely terminal for opioid prescribing"
           and EOLC.clinicalStatus ~ Common."Active Condition".code
     )
 
@@ -85,17 +91,19 @@ define "Conditions Including Cancer To Exclude Opioid Management Indicating End-
 **  Opioid analgesics with        | No                  | Look for an existing prescription (order) for     | Opioid analgesics with
 **  ambulatory misuse potential   |                     | opioid that is in the value set for opioid with   | ambulatory misuse potential
 **  prescription in past 90 days  |                     | ambulatory abuse potential authored               |
-**  including today               |                     | within the past 90 days (including today)         |
+**  excluding the previous 24     |                     | within the past 90 days (excluding previous 24    |
+**  hours                         |                     | hours)                                            |
 **  ----------------------------------------------------------------------------------------------------------------------------------------
 **  Opioid analgesics with        | No                  | Look for evidence of active medication on         | Opioid analgesics with
 **  ambulatory misuse potential   |                     | the medication list that is in the value set      | ambulatory misuse potential
 **  reported in past 90 days      |                     | for opioid with ambulatory care abuse             |
-**  including today*              |                     | potential                                         |
+**  excluding previous 24 hours*  |                     | potential                                         |
 **  ----------------------------------------------------------------------------------------------------------------------------------------
 **  Opioid analgesics with        | No                  | Look for evidence of a dispensing event for       | Opioid analgesics with
 **  ambulatory misuse potential   |                     | medication that is in the value set for opioid    | ambulatory misuse potential
 **  dispensing event in past 90   |                     | with ambulatory use potential occurring           |
-**  days including today*         |                     | within the past 90 days (including today)         |
+**  days excluding previous 24    |                     | within the past 90 days (excluding previous 24    |
+**  hours                         |                     | hours)                                            |
 **  ----------------------------------------------------------------------------------------------------------------------------------------
 **  *Future consideration: Current algorithm addresses only orders (prescriptions).
 **
@@ -105,10 +113,10 @@ define "Conditions Including Cancer To Exclude Opioid Management Indicating End-
 */
 
 define "Prescription/Dispense Inclusion Period":
-  Interval[Now() - 89 days, Now()]
+  Interval[Now() - 89 days, Now() - 24 hours]
 
 define "Report Inclusion Period":
-  Interval[Now() - 90 days, Now())
+  Interval[Now() - 90 days, Now() - 24 hours)
 
 define "Is Opioid Naive?":
   not ("Has Opioid RX with Ambulatory Abuse Potential In Past 90 Days")
@@ -181,8 +189,11 @@ define "Is Active Cancer Treatment?":
     and "Has Two or More Encounters with Cancer Diagnosis During Encounter Period"
 
 define "Active Cancer Diagnoses":
-  [Condition: category in Common."US Core Condition Category Codes"] C
-    where C.code in Common."CDC malignant cancer conditions"
+  // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
+  /* [Condition: category in Common."US Core Condition Category Codes"] C */
+  [Condition] C
+    where C.category in Common."US Core Condition Category Codes"
+      and C.code in Common."CDC malignant cancer conditions"
 
 define "Oncologist Practitioner Roles":
   [PractitionerRole] PractitionerRole
