@@ -5,13 +5,13 @@ rm bundlegen/sourcefiles/*
 cp input/resources/plandefinition/plandefinition-OpioidCDSREC10PatientView.json bundlegen/sourcefiles/
 cp input/resources/plandefinition/plandefinition-OpioidCDSREC11PatientView.json bundlegen/sourcefiles/
 cp input/resources/library/FHIRHelpers.json bundlegen/sourcefiles/
-cp input/resources/library/library-OMTKData2019.json bundlegen/sourcefiles/
-cp input/resources/library/library-OMTKLogicCQL.json bundlegen/sourcefiles/
-cp input/resources/library/library-OpioidCDSCommon.json bundlegen/sourcefiles/
-cp input/resources/library/library-OpioidCDSCommonConfig.json bundlegen/sourcefiles/
-cp input/resources/library/library-OpioidCDSRoutines.json bundlegen/sourcefiles/
-cp input/resources/library/library-OpioidCDSREC10PatientView.json bundlegen/sourcefiles/
-cp input/resources/library/library-OpioidCDSREC11PatientView.json bundlegen/sourcefiles/
+cp input/resources/library/OMTKData2019.json bundlegen/sourcefiles/
+cp input/resources/library/OMTKLogicCQL.json bundlegen/sourcefiles/
+cp input/resources/library/OpioidCDSCommon.json bundlegen/sourcefiles/
+cp input/resources/library/OpioidCDSCommonConfig.json bundlegen/sourcefiles/
+cp input/resources/library/OpioidCDSRoutines.json bundlegen/sourcefiles/
+cp input/resources/library/OpioidCDSREC10PatientView.json bundlegen/sourcefiles/
+cp input/resources/library/OpioidCDSREC11PatientView.json bundlegen/sourcefiles/
 cp input/pagecontent/quick-start-bundles/rec10-medication-1.json bundlegen/sourcefiles/
 cp input/pagecontent/quick-start-bundles/rec10-medication-2.json bundlegen/sourcefiles/
 
