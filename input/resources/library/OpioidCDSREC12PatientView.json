@@ -8,6 +8,7 @@
   "url": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSREC12PatientView",
   "version": "1.2.3",
   "name": "OpioidCDSREC12PatientView",
+  "title": "Library - Opioid CDS Logic for recommendation #12 (patient-view)",
   "status": "active",
   "experimental": true,
   "type": {

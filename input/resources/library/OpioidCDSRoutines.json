@@ -8,6 +8,7 @@
   "url": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSRoutines",
   "version": "1.2.3",
   "name": "OpioidCDSRoutines",
+  "title": "Library - Opioid CDS Subroutines Logic",
   "status": "active",
   "experimental": true,
   "type": {

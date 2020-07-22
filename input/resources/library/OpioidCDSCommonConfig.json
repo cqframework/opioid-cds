@@ -8,6 +8,7 @@
   "url": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSCommonConfig",
   "version": "1.2.3",
   "name": "OpioidCDSCommonConfig",
+  "title": "Library - Opioid CDS Common Configuration",
   "status": "active",
   "experimental": true,
   "type": {
