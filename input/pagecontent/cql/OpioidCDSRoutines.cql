@@ -113,7 +113,7 @@ define "Conditions Including Cancer To Exclude Opioid Management Indicating End-
 */
 
 define "Prescription/Dispense Inclusion Period":
-  Interval[Now() - 89 days, Now() - 24 hours]
+  Interval[Now() - 90 days, Now() - 24 hours]
 
 define "Report Inclusion Period":
   Interval[Now() - 90 days, Now() - 24 hours)
