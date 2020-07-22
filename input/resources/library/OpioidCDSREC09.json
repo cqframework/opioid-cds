@@ -8,6 +8,7 @@
   "url": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSREC09",
   "version": "1.2.3",
   "name": "OpioidCDSREC09",
+  "title": "Library - Opioid CDS Logic for recommendation #9",
   "status": "active",
   "experimental": true,
   "type": {

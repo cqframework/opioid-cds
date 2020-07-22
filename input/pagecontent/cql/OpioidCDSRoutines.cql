@@ -53,8 +53,11 @@ define "Patient Age Less Than 18":
 
 define "Conditions Indicating End Of Life Present":
   exists (
-    [Condition: category in Common."US Core Condition Category Codes"] LLEC
-      where LLEC.code in Common."Limited life expectancy conditions"
+    // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
+    /* [Condition: category in Common."US Core Condition Category Codes"] LLEC */
+    [Condition] LLEC
+      where LLEC.category in Common."US Core Condition Category Codes"
+        and LLEC.code in Common."Limited life expectancy conditions"
         and LLEC.clinicalStatus ~ Common."Active Condition".code
   )
 
@@ -69,8 +72,11 @@ define "Order For Palliative Care In Past 90 Days":
 define "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present":
   Config."End-Stage Disease Criteria Enabled"
     and exists (
-      [Condition: category in Common."US Core Condition Category Codes"] EOLC
-        where EOLC.code in Common."Conditions likely terminal for opioid prescribing"
+      // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
+      /* [Condition: category in Common."US Core Condition Category Codes"] EOLC */
+      [Condition] EOLC
+        where EOLC.category in Common."US Core Condition Category Codes"
+          and EOLC.code in Common."Conditions likely terminal for opioid prescribing"
           and EOLC.clinicalStatus ~ Common."Active Condition".code
     )
 
@@ -183,8 +189,11 @@ define "Is Active Cancer Treatment?":
     and "Has Two or More Encounters with Cancer Diagnosis During Encounter Period"
 
 define "Active Cancer Diagnoses":
-  [Condition: category in Common."US Core Condition Category Codes"] C
-    where C.code in Common."CDC malignant cancer conditions"
+  // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
+  /* [Condition: category in Common."US Core Condition Category Codes"] C */
+  [Condition] C
+    where C.category in Common."US Core Condition Category Codes"
+      and C.code in Common."CDC malignant cancer conditions"
 
 define "Oncologist Practitioner Roles":
   [PractitionerRole] PractitionerRole

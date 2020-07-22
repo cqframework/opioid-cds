@@ -88,8 +88,11 @@ define "Has Substance Abuse History":
   exists (
     [Procedure: Common."Substance misuse behavioral counseling"]
     union
-    [Condition: category in Common."US Core Condition Category Codes"] C
-      where C.code in Common."Conditions documenting substance misuse"
+    // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
+    /* [Condition: category in Common."US Core Condition Category Codes"] C */
+    [Condition] C
+      where C.category in Common."US Core Condition Category Codes"
+        and C.code in Common."Conditions documenting substance misuse"
   )
 
 define "Get Indicator":

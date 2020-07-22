@@ -8,6 +8,7 @@
   "url": "http://fhir.org/guides/cdc/opioid-cds/Library/OMTKData2019",
   "version": "1.2.3",
   "name": "OMTKData2019",
+  "title": "Library - OMTKData2019",
   "status": "active",
   "experimental": true,
   "type": {
