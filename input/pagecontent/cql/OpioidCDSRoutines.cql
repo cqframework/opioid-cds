@@ -210,11 +210,13 @@ define "Encounters with Cancer Diagnosis During Encounter Period":
         Encounter.participant EncounterParticipant
           where EncounterParticipant.type in Common."Oncology specialty designations (NUCC)"
             or (
-              Config."Active Cancer Treatment PractitionerRole Specialty Is Enabled"
-                and exists (
+              if (Config."Active Cancer Treatment PractitionerRole Specialty Is Enabled") then
+                exists (
                   "Oncologist Practitioner Roles" PractitionerRole
                     where EndsWith(EncounterParticipant.individual.reference, PractitionerRole.id)
                 )
+              else
+                false
             )
       )
 
