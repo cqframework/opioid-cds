@@ -196,11 +196,7 @@ define "Active Cancer Diagnoses":
       and C.code in Common."CDC malignant cancer conditions"
 
 define "Oncologist Practitioner Roles":
-  [PractitionerRole] PractitionerRole
-    where exists (
-      PractitionerRole.specialty Specialty
-        where Specialty in Common."Oncology specialty designations (NUCC)"
-    )
+  [PractitionerRole: specialty in Common."Oncology specialty designations (NUCC)"] PractitionerRole
 
 define "Encounters with Cancer Diagnosis During Encounter Period":
   [Encounter: Common."Office Visit"] Encounter
