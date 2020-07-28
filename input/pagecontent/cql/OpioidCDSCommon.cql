@@ -122,7 +122,7 @@ define "Active Ambulatory Naloxone Rx":
         dosageInstruction: Rx.dosageInstruction,
         dispenseRequest: Rx.dispenseRequest
       }
-
+      
 define function "Get Active Ambulatory Medication Requests" (value List<MedicationRequest>) returns List<MedicationRequest>:
   value Rx
     where Rx.status.value ~ 'active'
