@@ -15,6 +15,9 @@ define "End-Stage Disease Criteria Enabled":
 define "Active Cancer Treatment Encounters Condition Is Enabled":
   true
 
+define "Active Cancer Treatment PractitionerRole Specialty Is Enabled":
+  false
+
 // Opioid Naive
 define "Opioid Naive Prescription Condition Is Enabled":
   true

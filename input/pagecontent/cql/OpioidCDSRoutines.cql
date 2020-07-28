@@ -209,9 +209,14 @@ define "Encounters with Cancer Diagnosis During Encounter Period":
       and exists (
         Encounter.participant EncounterParticipant
           where EncounterParticipant.type in Common."Oncology specialty designations (NUCC)"
-            or exists (
-              "Oncologist Practitioner Roles" PractitionerRole
-                where EndsWith(EncounterParticipant.individual.reference, PractitionerRole.id)
+            or (
+              if (Config."Active Cancer Treatment PractitionerRole Specialty Is Enabled") then
+                exists (
+                  "Oncologist Practitioner Roles" PractitionerRole
+                    where EndsWith(EncounterParticipant.individual.reference, PractitionerRole.id)
+                )
+              else
+                false
             )
       )
 
