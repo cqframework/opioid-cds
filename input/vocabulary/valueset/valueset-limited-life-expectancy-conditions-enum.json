@@ -44,7 +44,7 @@
   "experimental": true,
   "date": "2020-03-26T17:39:10-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
-  "description": "A finding that documents a terminal prognosis",
+  "description": "A finding that documents a terminal prognosis. Includes both the OID and FHIR system because some implementations return condition data using the OID for ICD, rather than the FHIR URL.",
   "jurisdiction": [
     {
       "coding": [
@@ -129,6 +129,42 @@
       },
       {
         "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/731000124108/version/20200301",
+        "code": "162608008",
+        "display": "Terminal illness - late stage"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.96",
+        "version": "http://snomed.info/sct/731000124108/version/20200301",
+        "code": "111947009",
+        "display": "Functional disorder present, condition terminal"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.96",
+        "version": "http://snomed.info/sct/731000124108/version/20200301",
+        "code": "27143004",
+        "display": "Patient status determination, pre-terminal"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.96",
+        "version": "http://snomed.info/sct/731000124108/version/20200301",
+        "code": "170969009",
+        "display": "Prognosis bad"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.96",
+        "version": "http://snomed.info/sct/731000124108/version/20200301",
+        "code": "300936002",
+        "display": "Terminal illness"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.96",
+        "version": "http://snomed.info/sct/731000124108/version/20200301",
+        "code": "162607003",
+        "display": "Terminal illness - early stage"
+      },
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.96",
         "version": "http://snomed.info/sct/731000124108/version/20200301",
         "code": "162608008",
         "display": "Terminal illness - late stage"

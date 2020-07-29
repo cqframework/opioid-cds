@@ -122,7 +122,7 @@ define "Active Ambulatory Naloxone Rx":
         dosageInstruction: Rx.dosageInstruction,
         dispenseRequest: Rx.dispenseRequest
       }
-      
+
 define function "Get Active Ambulatory Medication Requests" (value List<MedicationRequest>) returns List<MedicationRequest>:
   value Rx
     where Rx.status.value ~ 'active'
@@ -188,13 +188,17 @@ define "End of Life Assessment":
 
 define "Conditions Indicating End of Life or With Limited Life Expectancy":
   (
-    [Condition: category in "US Core Condition Category Codes"] C
+    // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
+    /* [Condition: category in Common."US Core Condition Category Codes"] C */
+    [Condition] C
       where C.clinicalStatus ~ 'active'
         and C.code in "Conditions likely terminal for opioid prescribing"
   )
   union
   (
-    [Condition: category in "US Core Condition Category Codes"] C
+    // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
+    /* [Condition: category in Common."US Core Condition Category Codes"] C */
+    [Condition] C
       where C.clinicalStatus ~ 'active'
         and C.code in "Limited life expectancy conditions"
   )
