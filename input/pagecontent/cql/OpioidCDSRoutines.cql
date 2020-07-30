@@ -48,8 +48,10 @@ define "Is Opioid Review Useful?":
     and not "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present"
 
 define "Patient Age Less Than 18":
-  Config."Age Less than 18 Years Is Enabled"
-    and AgeInYearsAt(Today()) < 18
+  if (Config."Age Less than 18 Years Is Enabled") then
+    AgeInYearsAt(Today()) < 18
+  else
+    false
 
 define "Conditions Indicating End Of Life Present":
   exists (
@@ -70,8 +72,8 @@ define "Order For Palliative Care In Past 90 Days":
   )
 
 define "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present":
-  Config."End-Stage Disease Criteria Enabled"
-    and exists (
+  if (Config."End-Stage Disease Criteria Enabled") then
+    exists (
       // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
       /* [Condition: category in Common."US Core Condition Category Codes"] EOLC */
       [Condition] EOLC
@@ -79,6 +81,8 @@ define "Conditions Including Cancer To Exclude Opioid Management Indicating End-
           and EOLC.code in Common."Conditions likely terminal for opioid prescribing"
           and EOLC.clinicalStatus ~ Common."Active Condition".code
     )
+  else
+    false
 
 // End of Opioid Review Useful Routine
 
@@ -128,8 +132,10 @@ define "Opioid RX with Ambulatory Abuse Potential In Past 90 Days":
     where Rx.authoredOn during day of "Prescription/Dispense Inclusion Period"
 
 define "Has Opioid RX with Ambulatory Abuse Potential In Past 90 Days":
-  Config."Opioid Naive Prescription Condition Is Enabled"
-    and exists ("Opioid RX with Ambulatory Abuse Potential In Past 90 Days")
+  if (Config."Opioid Naive Prescription Condition Is Enabled") then
+    exists ("Opioid RX with Ambulatory Abuse Potential In Past 90 Days")
+  else
+    false
 
 // NOTE: 2020-02-05: Review direction of MedicationStatement resource (US-Core focusing on MedicationRequest i/o Statement)
 define "Reports of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days":
@@ -138,8 +144,10 @@ define "Reports of Opioid with Ambulatory Care Abuse Potential Reported in Past 
       and Statement.effective during day of "Report Inclusion Period"
 
 define "Has Report of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days":
-  Config."Opioid Naive Report Condition Is Enabled"
-    and exists ("Reports of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days")
+  if (Config."Opioid Naive Report Condition Is Enabled") then
+    exists ("Reports of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days")
+  else
+    false
 
 define "Opioid Dispense with Ambulatory Abuse Potential In Past 90 Days":
   [MedicationDispense: Common."Opioid analgesics with ambulatory misuse potential"] OpioidDispense
@@ -147,8 +155,10 @@ define "Opioid Dispense with Ambulatory Abuse Potential In Past 90 Days":
       and OpioidDispense.status = 'completed'
 
 define "Has Opioid Dispense with Ambulatory Abuse Potential In Past 90 Days":
-  Config."Opioid Naive Dispense Condition Is Enabled"
-    and exists ("Opioid Dispense with Ambulatory Abuse Potential In Past 90 Days")
+  if (Config."Opioid Naive Dispense Condition Is Enabled") then
+    exists ("Opioid Dispense with Ambulatory Abuse Potential In Past 90 Days")
+  else
+    false
 
 // End of Opioid Naive Routine
 
@@ -185,8 +195,10 @@ define "Encounter Period":
   Interval[Now() - 12 months, Now())
 
 define "Is Active Cancer Treatment?":
-  Config."Active Cancer Treatment Encounters Condition Is Enabled"
-    and "Has Two or More Encounters with Cancer Diagnosis During Encounter Period"
+  if (Config."Active Cancer Treatment Encounters Condition Is Enabled") then
+    "Has Two or More Encounters with Cancer Diagnosis During Encounter Period"
+  else
+    false
 
 define "Active Cancer Diagnoses":
   // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
