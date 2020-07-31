@@ -4,6 +4,7 @@ using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
 include OMTKLogicCQL version '1.2.3' called OMTKLogic
+include OpioidCDSCommonConfig version '1.2.3' called Config
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "SNOMED": 'http://snomed.info/sct'
@@ -208,16 +209,18 @@ define "Admitted/Referred/Discharged to Hospice Care":
     [Procedure: code in "Hospice Procedure Codes"] P
       where P.status.value in { 'in-progress', 'completed' }
   )
-  // Commented as workaround due to issue in Publisher - "Unknown FHIRAllTypes codd 'ProcedureRequest'".
-  /* union
+  union
   (
     [ProcedureRequest: code in "Hospice Procedure Codes"] E
       where E.status.value in { 'active', 'completed', 'suspended' }
-  ) */
+  )
   union
   (
-    [Observation: code in "Hospice Finding Codes"] O
-      where not (O.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
+    if (Config."Hospice Findings Exclusion Enabled") then
+      [Observation: code in "Hospice Finding Codes"] O
+        where not (O.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
+    else
+      {}
   )
   union
   (
