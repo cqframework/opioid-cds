@@ -82,10 +82,10 @@ define "Presence of Diagnosis of Opioid Use Disorder":
 
 define "Diagnosis of Opioid Use Disorder":
   // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
-  /* [Condition: category in Common."US Core Condition Category Codes"] C */
-  [Condition] C
-    where C.category in Common."US Core Condition Category Codes"
-      and C.code in Common."Opioid misuse disorders"
+  [Condition: category in Common."US Core Condition Category Codes"] C
+  /* [Condition] C */
+    /* where C.category in Common."US Core Condition Category Codes" */
+    where C.code in Common."Opioid misuse disorders"
       and C.clinicalStatus ~ Common."Active Condition".code
       and date from C.assertedDate during day of "Opioid Use Disorder Lookback Period"
 
