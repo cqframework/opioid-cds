@@ -88,9 +88,7 @@ define "Has Substance Abuse History":
   exists (
     [Procedure: Common."Substance misuse behavioral counseling"]
     union
-    // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
-    /* [Condition: category in Common."US Core Condition Category Codes"] C */
-    [Condition] C
+    Common."US Core-Categorized Conditions" C
       where C.category in Common."US Core Condition Category Codes"
         and C.code in Common."Conditions documenting substance misuse"
   )
