@@ -55,9 +55,7 @@ define "Patient Age Less Than 18":
 
 define "Conditions Indicating End Of Life Present":
   exists (
-    // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
-    /* [Condition: category in Common."US Core Condition Category Codes"] LLEC */
-    [Condition] LLEC
+    Common."US Core-Categorized Conditions" LLEC
       where LLEC.category in Common."US Core Condition Category Codes"
         and LLEC.code in Common."Limited life expectancy conditions"
         and LLEC.clinicalStatus ~ Common."Active Condition".code
@@ -74,9 +72,7 @@ define "Order For Palliative Care In Past 90 Days":
 define "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present":
   if (Config."End-Stage Disease Criteria Enabled") then
     exists (
-      // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
-      /* [Condition: category in Common."US Core Condition Category Codes"] EOLC */
-      [Condition] EOLC
+      Common."US Core-Categorized Conditions" EOLC
         where EOLC.category in Common."US Core Condition Category Codes"
           and EOLC.code in Common."Conditions likely terminal for opioid prescribing"
           and EOLC.clinicalStatus ~ Common."Active Condition".code
@@ -201,9 +197,7 @@ define "Is Active Cancer Treatment?":
     false
 
 define "Active Cancer Diagnoses":
-  // NOTE: retrieve by category current commented for Ruler bug - Error: CodeableConcept incompatible with org.opencds.cqf.cql.engine.runtime.Code
-  /* [Condition: category in Common."US Core Condition Category Codes"] C */
-  [Condition] C
+  Common."US Core-Categorized Conditions" C
     where C.category in Common."US Core Condition Category Codes"
       and C.code in Common."CDC malignant cancer conditions"
 
