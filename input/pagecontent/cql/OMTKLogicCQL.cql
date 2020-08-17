@@ -242,6 +242,16 @@ define function GetDailyDose(ingredientCode Code, strength Quantity, doseFormCod
       Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: Substring(strength.unit, 0, PositionOf('/', strength.unit)) }
   end
 
+define function GetMedicationConceptName(concept Concept):
+  if concept.display is null then
+    First(
+      (concept.codes) C
+        where C.system = 'http://www.nlm.nih.gov/research/umls/rxnorm'
+        return GetMedicationName(C)
+    )
+  else
+    concept.display
+
 define function GetMedicationName(rxNormCode Code):
   if rxNormCode.display is null then
     SingletonFrom(

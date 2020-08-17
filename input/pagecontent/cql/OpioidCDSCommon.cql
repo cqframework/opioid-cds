@@ -396,7 +396,7 @@ define function GetIngredients(rxNormCodes List<Code>):
 
 define function GetMedicationNames(medications List<MedicationRequest>):
   medications M
-    return OMTKLogic.GetIngredients(ToRxNormCode((M.medication as FHIR.CodeableConcept).coding)).rxNormCode.display
+    return OMTKLogic.GetMedicationConceptName(M.medication as FHIR.CodeableConcept)
 
 /*
 *  Conversion Functions
