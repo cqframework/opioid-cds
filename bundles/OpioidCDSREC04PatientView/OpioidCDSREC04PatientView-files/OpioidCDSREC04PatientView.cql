@@ -69,7 +69,7 @@ define "Get Summary":
 
 define "Get Detail":
   if "Is Recommendation Applicable?"
-    then 'The following medication requests(s) release rates should be re-evaluated: ' + Combine(flatten(Common.GetMedicationNames("Chronic Pain Extended Release Opioid Analgesic with Ambulatory Misuse Potential Prescriptions")), ', ')
+    then 'The following medication requests(s) release rates should be re-evaluated: ' + Combine(Common.GetMedicationNames("Chronic Pain Extended Release Opioid Analgesic with Ambulatory Misuse Potential Prescriptions"), ', ')
   else null
 
   // Detected Issue - Prescribe immediate-release opioids instead of extended-release/long-acting (ER/LA) opioids
