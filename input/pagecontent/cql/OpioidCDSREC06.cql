@@ -79,5 +79,5 @@ define "Get Summary":
 
 define "Get Detail":
   if "Is Recommendation Applicable?"
-    then 'Medication requests(s): ' + Combine( flatten( Common.GetMedicationNames( "Acute Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions" ) ), ', ' )
+    then 'Medication requests(s): ' + Combine(Common.GetMedicationNames("Acute Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions"), ', ')
   else null
