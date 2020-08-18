@@ -131,11 +131,31 @@ define "Has Opioid RX with Ambulatory Abuse Potential In Past 90 Days":
   else
     false
 
-// NOTE: 2020-02-05: Review direction of MedicationStatement resource (US-Core focusing on MedicationRequest i/o Statement)
-define "Reports of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days":
-  [MedicationStatement: Common."Opioid analgesics with ambulatory misuse potential"] Statement
+define function "Get Active or Completed Medication Statements during Report Inclusion Period" (value List<MedicationStatement>) returns List<MedicationStatement>:
+  value Statement
     where Statement.status in {'active', 'completed'}
       and Statement.effective during day of "Report Inclusion Period"
+
+// NOTE: 2020-02-05: Review direction of MedicationStatement resource (US-Core focusing on MedicationRequest i/o Statement)
+define "Reports of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days":
+  (
+    ("Get Active or Completed Medication Statements during Report Inclusion Period"([MedicationStatement])) MS
+      where MS.medication is Reference or MS.medication in Common."Opioid analgesics with ambulatory misuse potential"
+  ) Statement
+    let Med: [Medication: id in (Last(Split((Statement.medication as FHIR.Reference).reference, '/')))]
+    where not(Statement.medication is Reference) or Med.code in Common."Opioid analgesics with ambulatory misuse potential"
+      return
+        MedicationStatement {
+          id: Statement.id,
+          status: Statement.status,
+          category: Statement.category,
+          medication: if Statement.medication is Reference then First(Med.code) else Statement.medication as CodeableConcept,
+          effective: Statement.effective,
+          dateAsserted: Statement.dateAsserted,
+          subject: Statement.subject,
+          taken: Statement.taken,
+          dosage: Statement.dosage
+        }
 
 define "Has Report of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days":
   if (Config."Opioid Naive Report Condition Is Enabled") then
