@@ -89,8 +89,7 @@ define "Has Substance Abuse History":
     [Procedure: Common."Substance misuse behavioral counseling"]
     union
     Common."US Core-Categorized Conditions" C
-      where C.category in Common."US Core Condition Category Codes"
-        and C.code in Common."Conditions documenting substance misuse"
+      where C.code in Common."Conditions documenting substance misuse"
   )
 
 define "Get Indicator":

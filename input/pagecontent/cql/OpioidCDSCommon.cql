@@ -204,15 +204,13 @@ define "US Core-Categorized Conditions":
 define "Conditions Indicating End of Life or With Limited Life Expectancy":
   (
     "US Core-Categorized Conditions" C
-      where C.category in "US Core Condition Category Codes"
-        and C.clinicalStatus ~ 'active'
+      where C.clinicalStatus ~ 'active'
         and C.code in "Conditions likely terminal for opioid prescribing"
   )
   union
   (
     "US Core-Categorized Conditions" C
-      where C.category in "US Core Condition Category Codes"
-        and C.clinicalStatus ~ 'active'
+      where C.clinicalStatus ~ 'active'
         and C.code in "Limited life expectancy conditions"
   )
 
