@@ -5,34 +5,6 @@
     "status": "generated",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\"grid dict\"><tr><th scope=\"row\"><b>Id: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\">library-OpioidCDSREC04</td></tr><tr><th scope=\"row\"><b>Type: </b></th><td style=\"padding-right: 25px;\"> Logic Library </td></tr><tr><th scope=\"row\"><b>Status: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\">active</td></tr><tr style=\"vertical-align: top;\"><th rowspan=\"3\" scope=\"row\"><b>Related: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>http://fhir.org/guides/cdc/opioid-cds/Library/FHIRHelpers</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>http://fhir.org/guides/cdc/opioid-cds/Library/library-OpioidCDSCommon</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>http://fhir.org/guides/cdc/opioid-cds/Library/library-OpioidCDSRoutines</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><th scope=\"row\"><b>Content: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><b>type: </b><span>text/cql</span></td></tr><tr><td colspan=\"2\" style=\"padding-left: 25px; padding-right: 25px;\"><pre><code class=\"language-cql\">library OpioidCDSREC04 version '1.2.3'\n\nusing FHIR version '3.0.0'\n\ninclude FHIRHelpers version '3.0.0' called FHIRHelpers\ninclude OpioidCDSCommon version '1.2.3' called Common\ninclude OpioidCDSRoutines version '1.2.3' called Routines\n\n/*\n**\n**  Recommendation #4\n**    Prescribe immediate-release opioids instead of extended-release/long-acting (ER/LA) opioids\n**\n**  When\n**    Provider is prescribing an extended release opioid with ambulatory misuse potential in the outpatient setting\n**    Prescription is for treating chronic pain.\n**    Opioid review is useful for this patient:\n**      Patient is 18 or over\n**      Patient does not have findings indicating limited life expectancy\n**      Patient does not have orders for therapies indicating end of life care\n**      Patient is not undergoing active cancer treatment:\n**        Patient has had at least 2 encounters within the past year with any diagnosis of cancer\n**    Patient is opioid naive:\n**      No indication of opioid use in the past 90 days from a prescription, self report, or a dispensing event\n**  Then\n**    Recommend use of immediate release opioids:\n**      Will prescribe immediate release opioid analgesic with ambulatory misuse potential\n**      Benefits outweigh risks, snooze 3 months\n**      N/A - see comment, snooze 3 months\n**\n*/\n\n// META: Plan Definition: http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioid-cds-04\n\nparameter ContextPrescriptions List&lt;MedicationRequest&gt;\n\ncontext Patient\n\ndefine &quot;Inclusion Period&quot;:\n  Interval[Today() - 91 days, Today() - 1 days]\n\ndefine &quot;Encounter Period&quot;:\n  Interval[Today() - 12 months - 1 days, Today() - 1 days]\n\ndefine &quot;Chronic Pain Extended Release Opioid Analgesic with Ambulatory Misuse Potential Prescriptions&quot;:\n  ( Common.&quot;Is Opioid Analgesic with Ambulatory Misuse Potential?&quot;( ContextPrescriptions ) ) AmbulatoryOpioidPrescription\n    where Routines.&quot;Is Chronic Pain Prescription?&quot;( AmbulatoryOpioidPrescription )\n      and AmbulatoryOpioidPrescription.medication in Common.&quot;Extended release opioid analgesics with ambulatory misuse potential&quot;\n\ndefine &quot;Patient Is Being Prescribed Extended Release Opioid Analgesic with Ambulatory Misuse Potential&quot;:\n  exists( &quot;Chronic Pain Extended Release Opioid Analgesic with Ambulatory Misuse Potential Prescriptions&quot; )\n\ndefine &quot;Is Recommendation Applicable?&quot;:\n  &quot;Inclusion Criteria&quot;\n    and not &quot;Exclusion Criteria&quot;\n\ndefine &quot;Inclusion Criteria&quot;:\n  &quot;Patient Is Being Prescribed Extended Release Opioid Analgesic with Ambulatory Misuse Potential&quot;\n    and Routines.&quot;Is Opioid Review Useful?&quot;\n    and Routines.&quot;Is Opioid Naive?&quot;\n\ndefine &quot;Exclusion Criteria&quot;:\n  false\n\ndefine &quot;Get Indicator&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then 'warning'\n  else null\n\ndefine &quot;Get Summary&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then 'Recommend use of immediate-release opioids instead of extended release/long acting opioids when starting patient on opioids.'\n  else null\n\ndefine &quot;Get Detail&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then 'The following medication requests(s) release rates should be re-evaluated: ' + Combine( flatten( Common.GetMedicationNames( &quot;Chronic Pain Extended Release Opioid Analgesic with Ambulatory Misuse Potential Prescriptions&quot; ) ), ', ' )\n  else null\n</code></pre>\n                    \n                    \n                </td>\n            </tr>\n        \n    </table>\n</div>"
   },
-  "contained": [
-    {
-      "resourceType": "Device",
-      "id": "cqf-tooling",
-      "meta": {
-        "profile": [
-          "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/device-softwaresystem-cqfm"
-        ]
-      },
-      "type": {
-        "coding": [
-          {
-            "system": "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/software-system-type",
-            "code": "tooling"
-          }
-        ]
-      },
-      "version": "1.2.0-SNAPSHOT"
-    }
-  ],
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
-      "valueReference": {
-        "reference": "#cqf-tooling"
-      }
-    }
-  ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSREC04",
   "version": "1.2.3",
   "name": "OpioidCDSREC04",
