@@ -5,6 +5,34 @@
     "status": "generated",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\"grid dict\"><tr><th scope=\"row\"><b>Id: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\">library-OpioidCDSREC05</td></tr><tr><th scope=\"row\"><b>Type: </b></th><td style=\"padding-right: 25px;\"> Logic Library </td></tr><tr><th scope=\"row\"><b>Status: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\">active</td></tr><tr style=\"vertical-align: top;\"><th rowspan=\"3\" scope=\"row\"><b>Related: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>http://fhir.org/guides/cdc/opioid-cds/Library/FHIRHelpers</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>http://fhir.org/guides/cdc/opioid-cds/Library/library-OpioidCDSCommon</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>http://fhir.org/guides/cdc/opioid-cds/Library/library-OpioidCDSRoutines</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><th scope=\"row\"><b>Content: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><b>type: </b><span>text/cql</span></td></tr><tr><td colspan=\"2\" style=\"padding-left: 25px; padding-right: 25px;\"><pre><code class=\"language-cql\">library OpioidCDSREC05 version '1.2.3'\n\nusing FHIR version '3.0.0'\n\ninclude FHIRHelpers version '3.0.0' called FHIRHelpers\ninclude OpioidCDSCommon version '1.2.3' called Common\ninclude OpioidCDSRoutines version '1.2.3' called Routines\n\n/*\n**\n** Recommendation #5\n**  When opioids are started, providers should prescribe the lowest effective dosage.\n**  Providers should use caution when prescribing opioids at any dosage, should\n**  carefully reassess evidence of individual benefits and risks when considering\n**  increasing dosage to ≥50 morphine milligram equivalents (MME)/day, and should\n**  avoid increasing dosage to ≥90 MME/day or carefully justify a decision to titrate\n**  dosage to &gt;90 MME/day (recommendation category: A, evidence type: 3)\n**\n**  When\n**    Provider is prescribing an opioid analgesic with ambulatory misuse potential in the outpatient setting\n**    Prescription is for treating chronic pain.\n**    Opioid review is useful for this patient:\n**      Patient is 18 or over\n**      Patient does not have findings indicating limited life expectancy\n**      Patient does not have orders for therapies indicating end of life care\n**      Patient is not undergoing active cancer treatment:\n**        Patient has had at least 2 encounters within the past year with any diagnosis of cancer\n**    Patient Morphine Milligram Equivalent (MME) greater than or equal to 50\n**  Then\n**    Recommend to consider tapering dosage when MME is greater than or equal to 50 and less than 90 or taper dosage now when MME is greater than or equal to 90:\n**      Will reduce dosage\n**      Benefits outweigh risks, snooze 3 months\n**      Active pain, snooze 1 month\n**      N/A - see comment, snooze 3 months\n**\n*/\n\n// META: Plan Definition: http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioid-cds-05\n\nparameter ContextPrescriptions List&lt;MedicationRequest&gt;\n\ncontext Patient\n\ndefine &quot;Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions&quot;:\n  ( Common.&quot;Is Opioid Analgesic with Ambulatory Misuse Potential?&quot;( ContextPrescriptions ) ) AmbulatoryOpioidPrescription\n    where Routines.&quot;Is Chronic Pain Prescription?&quot;( AmbulatoryOpioidPrescription )\n\ndefine &quot;Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential&quot;:\n  exists( &quot;Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions&quot; )\n\ndefine &quot;Is Recommendation Applicable?&quot;:\n  &quot;Inclusion Criteria&quot;\n    and not &quot;Exclusion Criteria&quot;\n\ndefine &quot;Inclusion Criteria&quot;:\n  &quot;Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential&quot;\n    and Routines.&quot;Is Opioid Review Useful?&quot;\n    and &quot;Total MME&quot; &gt;= 50 'mg/d'\n\ndefine &quot;Exclusion Criteria&quot;:\n  false\n\ndefine &quot;Total MME&quot;:\n  Common.TotalMME(\n    (\n      &quot;Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions&quot;\n        union Common.&quot;Active Ambulatory Opioid Rx&quot;\n    ) AmbulatoryOpioidPrescription\n      where Routines.&quot;Is Chronic Pain Prescription?&quot;( AmbulatoryOpioidPrescription )\n  )\n\ndefine &quot;Taper Now&quot;: &quot;Total MME&quot;.value &gt;= 90\n\ndefine &quot;Consider Tapering&quot;: &quot;Total MME&quot;.value &lt; 90\n\ndefine &quot;Get Indicator&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then 'warning'\n  else null\n\ndefine &quot;Get Summary&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then\n      'High risk for opioid overdose - '\n        + case when &quot;Taper Now&quot;\n           then 'taper now'\n           else 'consider tapering'\n         end\n  else null\n\ndefine &quot;Get Detail&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then'Total morphine milligram equivalent (MME) is ' + ToString(&quot;Total MME&quot;) + '. Taper to less than 50.'\n  else null\n</code></pre>\n                    \n                    \n                </td>\n            </tr>\n        \n    </table>\n</div>"
   },
+  "contained": [
+    {
+      "resourceType": "Device",
+      "id": "cqf-tooling",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/device-softwaresystem-cqfm"
+        ]
+      },
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/software-system-type",
+            "code": "tooling"
+          }
+        ]
+      },
+      "version": "1.2.0-SNAPSHOT"
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+      "valueReference": {
+        "reference": "#cqf-tooling"
+      }
+    }
+  ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSREC05",
   "version": "1.2.3",
   "name": "OpioidCDSREC05",
