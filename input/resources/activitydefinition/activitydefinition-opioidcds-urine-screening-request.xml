@@ -1,0 +1,67 @@
+<ActivityDefinition xmlns="http://hl7.org/fhir">
+    <id value="opioidcds-urine-screening-request"/>
+    <url value="http://fhir.org/guides/cdc/opioid-cds/ActivityDefinition/opioidcds-urine-screening-request"/>
+    <version value="0.1.0"/>
+    <name value="ActivityDefinition_Urine_Screening_ServiceRequest"/>
+    <title value="ActivityDefinition - Urine Screening ServiceRequest"/>
+    <status value="draft"/>
+    <date value="2020-12-14"/>
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <description value="A ServiceRequest for Urine drug screening."/>
+    <useContext>
+        <code>
+            <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+            <code value="focus"/>
+            <display value="Clinical Focus"/>
+        </code>
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="310627008"/>
+                <display value="Urine drug screening (procedure)"/>
+            </coding>
+        </valueCodeableConcept>
+    </useContext>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+            <display value="United States of America"/>
+        </coding>
+    </jurisdiction>
+    <purpose value="Provides urine screening suggestion as part of opioid prescribing clinical decision support."/>
+    <usage value="Used to create a urine screening ServiceRequest."/>
+    <copyright value="© CDC 2016+."/>
+    <topic>
+        <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/definition-topic"/>
+            <code value="assessment"/>
+            <display value="Assessment"/>
+        </coding>
+        <text value="Opioid Prescribing"/>
+    </topic>
+    <contributor>
+      <type value="author"/>
+      <name value="Kensaku Kawamoto, MD, PhD, MHS"/>
+    </contributor>
+    <contributor>
+      <type value="author"/>
+      <name value="Bryn Rhodes"/>
+    </contributor>
+    <contributor>
+      <type value="author"/>
+      <name value="Floyd Eisenberg, MD, MPH"/>
+    </contributor>
+    <contributor>
+      <type value="author"/>
+      <name value="Robert McClure, MD, MPH"/>
+    </contributor>
+    <kind value="ProcedureRequest"/>
+    <code>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="310627008"/>
+            <display value="Urine drug screening (procedure)"/>
+        </coding>
+    </code>
+</ActivityDefinition>

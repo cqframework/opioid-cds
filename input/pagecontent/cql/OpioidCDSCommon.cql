@@ -219,11 +219,12 @@ define "Admitted/Referred/Discharged to Hospice Care":
     [Procedure: code in "Hospice Procedure Codes"] P
       where P.status.value in { 'in-progress', 'completed' }
   )
-  union
+  // NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest
+  /* union
   (
     [ProcedureRequest: code in "Hospice Procedure Codes"] E
       where E.status.value in { 'active', 'completed', 'suspended' }
-  )
+  ) */
   union
   (
     if (Config."Hospice Findings Exclusion Enabled") then
