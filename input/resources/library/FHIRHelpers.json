@@ -42,7 +42,7 @@
   "relatedArtifact": [ {
     "type": "depends-on",
     "resource": {
-      "reference": "http://hl7.org/fhir/Library/FHIR-ModelInfo|3.0.0"
+      "reference": "http://hl7.org/fhir/Library/FHIR-ModelInfo"
     }
   } ],
   "content": [ {

@@ -69,27 +69,27 @@
   }, {
     "type": "depends-on",
     "resource": {
-      "reference": "http://hl7.org/fhir/Library/FHIR-ModelInfo|3.0.0"
+      "reference": "http://hl7.org/fhir/Library/FHIR-ModelInfo"
     }
   }, {
     "type": "depends-on",
     "resource": {
-      "reference": "Library/FHIRHelpers|3.0.0"
+      "reference": "Library/FHIRHelpers"
     }
   }, {
     "type": "depends-on",
     "resource": {
-      "reference": "Library/OpioidCDSCommon|1.2.3"
+      "reference": "Library/OpioidCDSCommon"
     }
   }, {
     "type": "depends-on",
     "resource": {
-      "reference": "Library/OpioidCDSCommonConfig|1.2.3"
+      "reference": "Library/OpioidCDSCommonConfig"
     }
   }, {
     "type": "depends-on",
     "resource": {
-      "reference": "Library/OpioidCDSRoutines|1.2.3"
+      "reference": "Library/OpioidCDSRoutines"
     }
   } ],
   "parameter": [ {

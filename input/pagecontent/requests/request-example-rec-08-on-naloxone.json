@@ -16,7 +16,7 @@
         "category": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/medication-request-category",
+              "system": "http://hl7.org/fhir/CodeSystem/medication-request-category",
               "code": "community"
             }
           ]
@@ -24,7 +24,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
               "code": "197696",
               "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
             }
@@ -95,7 +95,7 @@
         "category": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/medication-request-category",
+              "system": "http://hl7.org/fhir/CodeSystem/medication-request-category",
               "code": "community"
             }
           ]
@@ -103,7 +103,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
               "code": "1191212",
               "display": "Naloxone Hydrochloride 0.02 MG/ML Injectable Solution"
             }

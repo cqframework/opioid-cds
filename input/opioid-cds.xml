@@ -620,6 +620,46 @@
                 <reference value="CodeSystem/opioidcds-indicator"/>
             </sourceReference>
         </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - Condition Category Codes"/>
+            <description value="Preferred value set for Condition Categories."/>
+            <sourceReference>
+                <reference value="CodeSystem/condition-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - Condition Clinical Status Codes"/>
+            <description value="Preferred value set for Condition Clinical Status."/>
+            <sourceReference>
+                <reference value="CodeSystem/condition-clinical"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - MedicationRequest Category Codes"/>
+            <description value="A coded concept identifying where the medication ordered is expected to be consumed or administered."/>
+            <sourceReference>
+                <reference value="CodeSystem/medication-request-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - MedicationRequest Status Codes"/>
+            <description value="A coded concept specifying the state of the prescribing event. Describes the lifecycle of the prescription."/>
+            <sourceReference>
+                <reference value="CodeSystem/medication-request-status"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - US Core Condition Category Extension Codes"/>
+            <description value="Set of codes that are needed for implementation of the US-Core profiles. These codes are used as extensions to the FHIR and US Core value sets."/>
+            <sourceReference>
+                <reference value="CodeSystem/uscore-condition-category"/>
+            </sourceReference>
+        </resource>
 
         <!-- Libraries -->
         <resource>

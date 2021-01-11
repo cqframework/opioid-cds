@@ -36,6 +36,11 @@ echo 'quick start content bundle refresh complete.'
 
 # refreshing Terminology bundles
 echo refreshing terminology bundle...
+cp input/vocabulary/codesystem/codesystem-condition-category.json bundlegen/sourcefiles/codesystem-condition-category.json
+cp input/vocabulary/codesystem/codesystem-condition-clinical.json bundlegen/sourcefiles/codesystem-condition-clinical.json
+cp input/vocabulary/codesystem/codesystem-medication-request-category.json bundlegen/sourcefiles/codesystem-medication-request-category.json
+cp input/vocabulary/codesystem/codesystem-medication-request-status.json bundlegen/sourcefiles/codesystem-medication-request-status.json
+cp input/vocabulary/codesystem/codesystem-uscore-condition-category.json bundlegen/sourcefiles/codesystem-uscore-condition-category.json
 
 cp input/vocabulary/valueset/valueset-benzodiazepine-medications.json bundlegen/sourcefiles/valueset-benzodiazepine-medications.json
 cp input/vocabulary/valueset/valueset-buprenorphine-and-methadone-medications.json bundlegen/sourcefiles/valueset-buprenorphine-and-methadone-medications.json
