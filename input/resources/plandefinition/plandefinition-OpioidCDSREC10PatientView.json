@@ -171,6 +171,9 @@
             "code": "create",
             "display": "Create"
           },
+          "definition": {
+            "reference": "ActivityDefinition/opioidcds-urine-screening-request"
+          },
           "dynamicValue": [
             {
               "path": "action.description",
