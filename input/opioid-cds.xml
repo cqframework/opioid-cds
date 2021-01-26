@@ -606,6 +606,13 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ActivityDefinition - ProcedureRequest for opioid uring screening"/>
+            <sourceReference>
+                <reference value="ActivityDefinition/opioidcds-urine-screening-request"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="CarePlan - Example result of recommendation #5"/>
             <description value="Example result of applying the PlanDefinition for recommendation #5"/>
             <sourceReference>

@@ -452,6 +452,10 @@
       "source": "activitydefinition-opioidcds-risk-assessment-request.json",
       "base": "ActivityDefinition-opioidcds-risk-assessment-request.html"
     },
+    "ActivityDefinition/opioidcds-urine-screening-request": {
+      "source": "activitydefinition-opioidcds-urine-screening-request.json",
+      "base": "ActivityDefinition-opioidcds-urine-screening-request.html"
+    },
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"
