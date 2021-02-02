@@ -110,6 +110,7 @@
       ],
       "action": [
         {
+          "label": "Order Urine Screening",
           "title": "Annual Urine Screening Check",
           "description": "Patient has not had a urine screening in the past 12 months",
           "documentation": [
@@ -164,6 +165,15 @@
               "expression": "Is Recommendation Applicable?"
             }
           ],
+          "type":
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/action-type",
+            "code": "create",
+            "display": "Create"
+          },
+          "definition": {
+            "reference": "ActivityDefinition/opioidcds-urine-screening-request"
+          },
           "dynamicValue": [
             {
               "path": "action.description",
@@ -184,6 +194,9 @@
             },
             {
               "description": "Not for chronic pain management. Snooze 3 months"
+            },
+            {
+              "description": "N/A - see comment, Snooze 3 months"
             }
           ]
         }

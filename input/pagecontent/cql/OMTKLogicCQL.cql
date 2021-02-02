@@ -9,7 +9,7 @@ should be able to run in an environment that supports pure CQL.
 
 include OMTKData2019 version '1.2.3' called OMTKData
 
-codesystem RxNorm: 'http://www.nlm.nih.gov/research/umls/rxnorm'
+codesystem RxNorm: 'http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm'
 
 /*
   Normalizes the input units to UCUM units

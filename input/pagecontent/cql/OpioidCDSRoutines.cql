@@ -43,7 +43,7 @@ define "Palliative Care Lookback Period":
 define "Is Opioid Review Useful?":
   not "Patient Age Less Than 18"
     and not "Conditions Indicating End Of Life Present"
-    and not "Order For Palliative Care In Past 90 Days"
+    /* and not "Order For Palliative Care In Past 90 Days" */
     and not "Is Active Cancer Treatment?"
     and not "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present"
 
@@ -60,13 +60,14 @@ define "Conditions Indicating End Of Life Present":
         and LLEC.clinicalStatus ~ Common."Active Condition".code
   )
 
-define "Order For Palliative Care In Past 90 Days":
+// NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest
+/* define "Order For Palliative Care In Past 90 Days":
   exists (
     [ProcedureRequest: Common."Therapies indicating end of life care"] SR
       where SR.status in { 'active', 'completed'}
         and SR.intent != null
         and FHIRHelpers.ToDateTime(SR.authoredOn) during day of "Palliative Care Lookback Period"
-  )
+  ) */
 
 define "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present":
   if (Config."End-Stage Disease Criteria Enabled") then
@@ -118,7 +119,7 @@ define "Report Inclusion Period":
 
 define "Is Opioid Naive?":
   not ("Has Opioid RX with Ambulatory Abuse Potential In Past 90 Days")
-  and not ("Has Report of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days")
+  /* and not ("Has Report sof Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days") */
   and not ("Has Opioid Dispense with Ambulatory Abuse Potential In Past 90 Days")
 
 define "Opioid RX with Ambulatory Abuse Potential In Past 90 Days":
@@ -137,7 +138,8 @@ define function "Get Active or Completed Medication Statements during Report Inc
       and Statement.effective during day of "Report Inclusion Period"
 
 // NOTE: 2020-02-05: Review direction of MedicationStatement resource (US-Core focusing on MedicationRequest i/o Statement)
-define "Reports of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days":
+// NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest
+/* define "Reports of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days":
   (
     ("Get Active or Completed Medication Statements during Report Inclusion Period"([MedicationStatement])) MS
       where MS.medication is Reference or MS.medication in Common."Opioid analgesics with ambulatory misuse potential"
@@ -155,13 +157,13 @@ define "Reports of Opioid with Ambulatory Care Abuse Potential Reported in Past 
           subject: Statement.subject,
           taken: Statement.taken,
           dosage: Statement.dosage
-        }
+        } */
 
-define "Has Report of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days":
+/* define "Has Report of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days":
   if (Config."Opioid Naive Report Condition Is Enabled") then
     exists ("Reports of Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days")
   else
-    false
+    false */
 
 define "Opioid Dispense with Ambulatory Abuse Potential In Past 90 Days":
   [MedicationDispense: Common."Opioid analgesics with ambulatory misuse potential"] OpioidDispense

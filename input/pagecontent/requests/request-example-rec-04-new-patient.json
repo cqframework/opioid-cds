@@ -16,7 +16,7 @@
         "category": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/medication-request-category",
+              "system": "http://hl7.org/fhir/CodeSystem/medication-request-category",
               "code": "community"
             }
           ]
@@ -24,7 +24,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
               "code": "1049502",
               "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
             }
