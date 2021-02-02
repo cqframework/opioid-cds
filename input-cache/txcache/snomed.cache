@@ -26789,3 +26789,2596 @@ v: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "191905001",
+        "display" : "Nondependent hypnotic or anxiolytic abuse, continuous (disorder)"
+      },
+      {
+        "code" : "427229002",
+        "display" : "Episodic inhalant abuse (disorder)"
+      },
+      {
+        "code" : "268641003",
+        "display" : "Cannabis type drug dependence (disorder)"
+      },
+      {
+        "code" : "191937000",
+        "display" : "Nondependent mixed drug abuse, episodic (disorder)"
+      },
+      {
+        "code" : "191820008",
+        "display" : "Episodic opioid dependence (disorder)"
+      },
+      {
+        "code" : "724658007",
+        "display" : "Hypnotic dependence with current use (disorder)"
+      },
+      {
+        "code" : "413096007",
+        "display" : "Never injecting drug user (finding)"
+      },
+      {
+        "code" : "226034001",
+        "display" : "Injecting drug user (finding)"
+      },
+      {
+        "code" : "712545004",
+        "display" : "Abstinent from drug misuse on maintenance replacement (finding)"
+      },
+      {
+        "code" : "191895007",
+        "display" : "Nondependent cannabis abuse in remission (disorder)"
+      },
+      {
+        "code" : "231467000",
+        "display" : "Absinthe addiction (disorder)"
+      },
+      {
+        "code" : "429001000124103",
+        "display" : "Catha edulis abuse (disorder)"
+      },
+      {
+        "code" : "428623008",
+        "display" : "Barbiturate misuse (finding)"
+      },
+      {
+        "code" : "191909007",
+        "display" : "Nondependent opioid abuse (disorder)"
+      },
+      {
+        "code" : "191869005",
+        "display" : "Combined opioid with non-opioid drug dependence in remission (disorder)"
+      },
+      {
+        "code" : "228378005",
+        "display" : "Smokes drugs in cigarette form (finding)"
+      },
+      {
+        "code" : "10741871000119101",
+        "display" : "Alcohol dependence in pregnancy (disorder)"
+      },
+      {
+        "code" : "191874002",
+        "display" : "Combined drug dependence, excluding opioid, episodic (disorder)"
+      },
+      {
+        "code" : "429692000",
+        "display" : "Amphetamine abuse, episodic (disorder)"
+      },
+      {
+        "code" : "191894006",
+        "display" : "Nondependent cannabis abuse, episodic (disorder)"
+      },
+      {
+        "code" : "199254001",
+        "display" : "Drug dependence during pregnancy - baby not yet delivered (disorder)"
+      },
+      {
+        "code" : "724714000",
+        "display" : "Dependence caused by dissociative substance (disorder)"
+      },
+      {
+        "code" : "231470001",
+        "display" : "Anxiolytic dependence (disorder)"
+      },
+      {
+        "code" : "724659004",
+        "display" : "Anxiolytic dependence with current use (disorder)"
+      },
+      {
+        "code" : "191924003",
+        "display" : "Nondependent amphetamine or psychostimulant abuse, continuous (disorder)"
+      },
+      {
+        "code" : "228384008",
+        "display" : "Misuses drugs sublingually (finding)"
+      },
+      {
+        "code" : "713583005",
+        "display" : "Mild alcohol dependence (disorder)"
+      },
+      {
+        "code" : "145101000119102",
+        "display" : "Intravenous cocaine abuse (disorder)"
+      },
+      {
+        "code" : "724703003",
+        "display" : "Harmful pattern of use of substituted amphetamine (disorder)"
+      },
+      {
+        "code" : "231481003",
+        "display" : "Controlled drug dependence (disorder)"
+      },
+      {
+        "code" : "267206008",
+        "display" : "Drug dependence during pregnancy, childbirth and the puerperium (disorder)"
+      },
+      {
+        "code" : "191936009",
+        "display" : "Nondependent mixed drug abuse, continuous (disorder)"
+      },
+      {
+        "code" : "424626006",
+        "display" : "Misuse of over-the-counter medications (finding)"
+      },
+      {
+        "code" : "702771005",
+        "display" : "Illicit drug use unknown (finding)"
+      },
+      {
+        "code" : "1471000119103",
+        "display" : "Drug abuse in remission (disorder)"
+      },
+      {
+        "code" : "153501000119105",
+        "display" : "Drug dependence, episodic (disorder)"
+      },
+      {
+        "code" : "191930003",
+        "display" : "Nondependent antidepressant type drug abuse, continuous (disorder)"
+      },
+      {
+        "code" : "414874007",
+        "display" : "Nondependent amphetamine or psychostimulant abuse in remission (disorder)"
+      },
+      {
+        "code" : "228407003",
+        "display" : "Obtains clean syringes (finding)"
+      },
+      {
+        "code" : "38247002",
+        "display" : "Hallucinogen dependence (disorder)"
+      },
+      {
+        "code" : "191833002",
+        "display" : "Cocaine dependence in remission (disorder)"
+      },
+      {
+        "code" : "231459008",
+        "display" : "Abuse of nonpsychotropic analgesic drugs (disorder)"
+      },
+      {
+        "code" : "228388006",
+        "display" : "Intravenous drug user (finding)"
+      },
+      {
+        "code" : "228398000",
+        "display" : "Frontloading (finding)"
+      },
+      {
+        "code" : "199253007",
+        "display" : "Drug dependence in the puerperium - baby delivered (disorder)"
+      },
+      {
+        "code" : "191825003",
+        "display" : "Hypnotic or anxiolytic dependence, continuous (disorder)"
+      },
+      {
+        "code" : "228371004",
+        "display" : "Long-term drug misuser (finding)"
+      },
+      {
+        "code" : "284591009",
+        "display" : "Persistent alcohol abuse (disorder)"
+      },
+      {
+        "code" : "110281001",
+        "display" : "Chronic drug abuse (disorder)"
+      },
+      {
+        "code" : "191906000",
+        "display" : "Nondependent hypnotic or anxiolytic abuse, episodic (disorder)"
+      },
+      {
+        "code" : "428659002",
+        "display" : "Amphetamine misuse (finding)"
+      },
+      {
+        "code" : "231477003",
+        "display" : "Heroin dependence (disorder)"
+      },
+      {
+        "code" : "365985003",
+        "display" : "Finding of drug injecting equipment hygiene (finding)"
+      },
+      {
+        "code" : "373613000",
+        "display" : "Cleans own needles (finding)"
+      },
+      {
+        "code" : "191857002",
+        "display" : "Glue sniffing dependence in remission (disorder)"
+      },
+      {
+        "code" : "2403008",
+        "display" : "Psychoactive substance dependence (disorder)"
+      },
+      {
+        "code" : "191821007",
+        "display" : "Opioid dependence in remission (disorder)"
+      },
+      {
+        "code" : "228419006",
+        "display" : "Drug habit takes priority over family obligations (finding)"
+      },
+      {
+        "code" : "429512006",
+        "display" : "Methadone misuse (finding)"
+      },
+      {
+        "code" : "199255000",
+        "display" : "Drug dependence in the puerperium - baby delivered during previous episode of care (disorder)"
+      },
+      {
+        "code" : "191850000",
+        "display" : "Hallucinogen dependence, episodic (disorder)"
+      },
+      {
+        "code" : "445273005",
+        "display" : "Polysubstance abuse (disorder)"
+      },
+      {
+        "code" : "5002000",
+        "display" : "Inhalant dependence (disorder)"
+      },
+      {
+        "code" : "280982009",
+        "display" : "Abuse of laxatives (disorder)"
+      },
+      {
+        "code" : "228402009",
+        "display" : "Cleans drug injection equipment (finding)"
+      },
+      {
+        "code" : "703845008",
+        "display" : "Buprenorphine dependence (disorder)"
+      },
+      {
+        "code" : "429782000",
+        "display" : "Cocaine misuse (finding)"
+      },
+      {
+        "code" : "237228001",
+        "display" : "Pregnancy and drug dependence (disorder)"
+      },
+      {
+        "code" : "416751004",
+        "display" : "Reduced drugs misuse (finding)"
+      },
+      {
+        "code" : "428493006",
+        "display" : "Crack cocaine misuse (finding)"
+      },
+      {
+        "code" : "268645007",
+        "display" : "Nondependent alcohol abuse (disorder)"
+      },
+      {
+        "code" : "724695007",
+        "display" : "Hallucinogen dependence with current use (disorder)"
+      },
+      {
+        "code" : "228375008",
+        "display" : "Misuses drugs orally (finding)"
+      },
+      {
+        "code" : "228389003",
+        "display" : "Groin injector (finding)"
+      },
+      {
+        "code" : "365984004",
+        "display" : "Finding of drug injection behavior (finding)"
+      },
+      {
+        "code" : "231478008",
+        "display" : "Methadone dependence (disorder)"
+      },
+      {
+        "code" : "91388009",
+        "display" : "Psychoactive substance abuse (disorder)"
+      },
+      {
+        "code" : "97571000119109",
+        "display" : "Thrombocytopenia co-occurrent and due to alcoholism (disorder)"
+      },
+      {
+        "code" : "427327003",
+        "display" : "Sedative dependence (disorder)"
+      },
+      {
+        "code" : "231479000",
+        "display" : "Morphine dependence (disorder)"
+      },
+      {
+        "code" : "153491000119103",
+        "display" : "Drug dependence, continuous (disorder)"
+      },
+      {
+        "code" : "428819003",
+        "display" : "Opiate misuse (finding)"
+      },
+      {
+        "code" : "144981000119109",
+        "display" : "Nondependent intraveous amphetamine abuse (disorder)"
+      },
+      {
+        "code" : "105550004",
+        "display" : "Misused volatile solvents in past (finding)"
+      },
+      {
+        "code" : "428406005",
+        "display" : "Benzodiazepine misuse (finding)"
+      },
+      {
+        "code" : "191838006",
+        "display" : "Cannabis dependence, episodic (disorder)"
+      },
+      {
+        "code" : "228395002",
+        "display" : "Shares drug injecting equipment (finding)"
+      },
+      {
+        "code" : "191918009",
+        "display" : "Nondependent cocaine abuse, continuous (disorder)"
+      },
+      {
+        "code" : "11048011000119103",
+        "display" : "Cannabis hyperemesis syndrome co-occurrent and due to cannabis dependence (disorder)"
+      },
+      {
+        "code" : "9769006",
+        "display" : "Drug habituation (disorder)"
+      },
+      {
+        "code" : "191928000",
+        "display" : "Abuse of antidepressant drug (disorder)"
+      },
+      {
+        "code" : "762505006",
+        "display" : "Synthetic cathinone dependence (disorder)"
+      },
+      {
+        "code" : "737337007",
+        "display" : "Synthetic cannabinoid dependence (disorder)"
+      },
+      {
+        "code" : "724712001",
+        "display" : "Harmful use of dissociative drug (disorder)"
+      },
+      {
+        "code" : "228387001",
+        "display" : "Injects drugs intramuscularly (finding)"
+      },
+      {
+        "code" : "413329000",
+        "display" : "Treated for drug use in last 12 months (finding)"
+      },
+      {
+        "code" : "191855005",
+        "display" : "Glue sniffing dependence, continuous (disorder)"
+      },
+      {
+        "code" : "37344009",
+        "display" : "Cannabis abuse (disorder)"
+      },
+      {
+        "code" : "307052004",
+        "display" : "Illicit drug use (finding)"
+      },
+      {
+        "code" : "712546003",
+        "display" : "Abstinent from drug misuse when receiving blocking therapy (finding)"
+      },
+      {
+        "code" : "724704009",
+        "display" : "Methylenedioxymethamphetamine dependence with current use (disorder)"
+      },
+      {
+        "code" : "228406007",
+        "display" : "Uses needle exchange scheme (finding)"
+      },
+      {
+        "code" : "429299000",
+        "display" : "Combined drug dependence, continuous (disorder)"
+      },
+      {
+        "code" : "191912005",
+        "display" : "Nondependent opioid abuse, continuous (disorder)"
+      },
+      {
+        "code" : "724724008",
+        "display" : "Psychoactive substance dependence with current use (disorder)"
+      },
+      {
+        "code" : "429179002",
+        "display" : "Antidepressant misuse (finding)"
+      },
+      {
+        "code" : "231468005",
+        "display" : "Lysergic acid diethylamide dependence (disorder)"
+      },
+      {
+        "code" : "231462006",
+        "display" : "Barbiturate abuse (disorder)"
+      },
+      {
+        "code" : "714829008",
+        "display" : "Moderate alcohol dependence (disorder)"
+      },
+      {
+        "code" : "228374007",
+        "display" : "Notified addict (finding)"
+      },
+      {
+        "code" : "228383002",
+        "display" : "Misuses drugs rectally (finding)"
+      },
+      {
+        "code" : "724653003",
+        "display" : "Opioid dependence with current use (disorder)"
+      },
+      {
+        "code" : "191934007",
+        "display" : "Nondependent mixed drug abuse (disorder)"
+      },
+      {
+        "code" : "231474005",
+        "display" : "Diazepam dependence (disorder)"
+      },
+      {
+        "code" : "191939002",
+        "display" : "Misuse of prescription only drugs (finding)"
+      },
+      {
+        "code" : "191916008",
+        "display" : "Nondependent cocaine abuse (disorder)"
+      },
+      {
+        "code" : "427205009",
+        "display" : "Amphetamine abuse, continuous (disorder)"
+      },
+      {
+        "code" : "191920007",
+        "display" : "Nondependent cocaine abuse in remission (disorder)"
+      },
+      {
+        "code" : "228430009",
+        "display" : "Follows drug-related rituals (finding)"
+      },
+      {
+        "code" : "191811004",
+        "display" : "Continuous chronic alcoholism (disorder)"
+      },
+      {
+        "code" : "64386003",
+        "display" : "Sedative abuse (disorder)"
+      },
+      {
+        "code" : "724715004",
+        "display" : "Dependence caused by ketamine (disorder)"
+      },
+      {
+        "code" : "191839003",
+        "display" : "Cannabis dependence in remission (disorder)"
+      },
+      {
+        "code" : "280984005",
+        "display" : "Abuse of herbal medicine (disorder)"
+      },
+      {
+        "code" : "145841000119107",
+        "display" : "Episodic phencyclidine abuse (disorder)"
+      },
+      {
+        "code" : "724700000",
+        "display" : "Volatile inhalant dependence with current use (disorder)"
+      },
+      {
+        "code" : "191826002",
+        "display" : "Hypnotic or anxiolytic dependence, episodic (disorder)"
+      },
+      {
+        "code" : "228418003",
+        "display" : "Drug habit takes priority over social obligations (finding)"
+      },
+      {
+        "code" : "712544000",
+        "display" : "Abstinent from drug misuse in protected environment (finding)"
+      },
+      {
+        "code" : "16076691000119100",
+        "display" : "Episodic polysubstance dependence (disorder)"
+      },
+      {
+        "code" : "191919001",
+        "display" : "Nondependent cocaine abuse, episodic (disorder)"
+      },
+      {
+        "code" : "191865004",
+        "display" : "Combined opioid with non-opioid drug dependence (disorder)"
+      },
+      {
+        "code" : "191931004",
+        "display" : "Nondependent antidepressant type drug abuse, episodic (disorder)"
+      },
+      {
+        "code" : "417298001",
+        "display" : "Abnormal craving for drugs (finding)"
+      },
+      {
+        "code" : "715818002",
+        "display" : "Cleans drug injection needle with bleach (finding)"
+      },
+      {
+        "code" : "191816009",
+        "display" : "Drug dependence (disorder)"
+      },
+      {
+        "code" : "6525002",
+        "display" : "Dependent drug abuse (disorder)"
+      },
+      {
+        "code" : "231461004",
+        "display" : "Hypnotic or anxiolytic abuse (disorder)"
+      },
+      {
+        "code" : "191871005",
+        "display" : "Combined drug dependence, excluding opioids (disorder)"
+      },
+      {
+        "code" : "21647008",
+        "display" : "Amphetamine dependence (disorder)"
+      },
+      {
+        "code" : "7071007",
+        "display" : "Phencyclidine abuse (disorder)"
+      },
+      {
+        "code" : "84758004",
+        "display" : "Amphetamine abuse (disorder)"
+      },
+      {
+        "code" : "231480002",
+        "display" : "Opium dependence (disorder)"
+      },
+      {
+        "code" : "417531009",
+        "display" : "Excessive craving for drugs (finding)"
+      },
+      {
+        "code" : "191812006",
+        "display" : "Episodic chronic alcoholism (disorder)"
+      },
+      {
+        "code" : "413295004",
+        "display" : "Concerned about own drug use (finding)"
+      },
+      {
+        "code" : "288031000119105",
+        "display" : "Alcohol induced disorder co-occurrent and due to alcohol dependence (disorder)"
+      },
+      {
+        "code" : "191868002",
+        "display" : "Combined opioid with non-opioid drug dependence, episodic (disorder)"
+      },
+      {
+        "code" : "10755161000119102",
+        "display" : "Drug dependence in childbirth (disorder)"
+      },
+      {
+        "code" : "426873000",
+        "display" : "Methamphetamine dependence (disorder)"
+      },
+      {
+        "code" : "51339003",
+        "display" : "Polysubstance dependence (disorder)"
+      },
+      {
+        "code" : "228440007",
+        "display" : "Drug-related offending behavior (finding)"
+      },
+      {
+        "code" : "191827006",
+        "display" : "Hypnotic or anxiolytic dependence in remission (disorder)"
+      },
+      {
+        "code" : "713775002",
+        "display" : "Novel psychoactive substance misuse (disorder)"
+      },
+      {
+        "code" : "78267003",
+        "display" : "Cocaine abuse (disorder)"
+      },
+      {
+        "code" : "280985006",
+        "display" : "Abuse of diuretics (disorder)"
+      },
+      {
+        "code" : "34111000119108",
+        "display" : "Nondependent amphetamine abuse (disorder)"
+      },
+      {
+        "code" : "228400001",
+        "display" : "Shares needles (finding)"
+      },
+      {
+        "code" : "724697004",
+        "display" : "Harmful pattern of use of nicotine (disorder)"
+      },
+      {
+        "code" : "441681009",
+        "display" : "Dependence on unknown drug (disorder)"
+      },
+      {
+        "code" : "231473004",
+        "display" : "Benzodiazepine dependence (disorder)"
+      },
+      {
+        "code" : "191882002",
+        "display" : "Nondependent alcohol abuse, continuous (disorder)"
+      },
+      {
+        "code" : "268647004",
+        "display" : "Nondependent hypnotic or anxiolytic abuse (disorder)"
+      },
+      {
+        "code" : "191819002",
+        "display" : "Continuous opioid dependence (disorder)"
+      },
+      {
+        "code" : "191837001",
+        "display" : "Cannabis dependence, continuous (disorder)"
+      },
+      {
+        "code" : "724656006",
+        "display" : "Hypnotic dependence (disorder)"
+      },
+      {
+        "code" : "713862009",
+        "display" : "Severe alcohol dependence (disorder)"
+      },
+      {
+        "code" : "228442004",
+        "display" : "Selling drugs (finding)"
+      },
+      {
+        "code" : "442406005",
+        "display" : "Stimulant dependence (disorder)"
+      },
+      {
+        "code" : "125851000119106",
+        "display" : "Continuous sedative abuse (disorder)"
+      },
+      {
+        "code" : "228366006",
+        "display" : "Finding relating to drug misuse behavior (finding)"
+      },
+      {
+        "code" : "426001001",
+        "display" : "Fentanyl dependence (disorder)"
+      },
+      {
+        "code" : "44870007",
+        "display" : "Misused drugs in past (finding)"
+      },
+      {
+        "code" : "191899001",
+        "display" : "Nondependent hallucinogen abuse, continuous (disorder)"
+      },
+      {
+        "code" : "66590003",
+        "display" : "Alcohol dependence (disorder)"
+      },
+      {
+        "code" : "191925002",
+        "display" : "Nondependent amphetamine or psychostimulant abuse, episodic (disorder)"
+      },
+      {
+        "code" : "105549004",
+        "display" : "Abuses volatile solvents (finding)"
+      },
+      {
+        "code" : "248119008",
+        "display" : "Abuse of drugs to lose weight (disorder)"
+      },
+      {
+        "code" : "75544000",
+        "display" : "Opioid dependence (disorder)"
+      },
+      {
+        "code" : "441527004",
+        "display" : "Stimulant abuse (disorder)"
+      },
+      {
+        "code" : "228441006",
+        "display" : "Dealing with drugs (finding)"
+      },
+      {
+        "code" : "5602001",
+        "display" : "Opioid abuse (disorder)"
+      },
+      {
+        "code" : "416479009",
+        "display" : "Previously injecting drug user (finding)"
+      },
+      {
+        "code" : "1461000119109",
+        "display" : "Drug dependence in remission (disorder)"
+      },
+      {
+        "code" : "417697003",
+        "display" : "Irresistible craving for drugs (finding)"
+      },
+      {
+        "code" : "361055000",
+        "display" : "Misuses drugs (finding)"
+      },
+      {
+        "code" : "724688003",
+        "display" : "Cocaine dependence with current use (disorder)"
+      },
+      {
+        "code" : "228379002",
+        "display" : "Smokes drugs through a pipe (finding)"
+      },
+      {
+        "code" : "191884001",
+        "display" : "Nondependent alcohol abuse in remission (disorder)"
+      },
+      {
+        "code" : "231469002",
+        "display" : "Mescaline dependence (disorder)"
+      },
+      {
+        "code" : "228428007",
+        "display" : "Follows same drug-related routine every day (finding)"
+      },
+      {
+        "code" : "31956009",
+        "display" : "Cocaine dependence (disorder)"
+      },
+      {
+        "code" : "724694006",
+        "display" : "Harmful pattern of use of caffeine (disorder)"
+      },
+      {
+        "code" : "191832007",
+        "display" : "Cocaine dependence, episodic (disorder)"
+      },
+      {
+        "code" : "199252002",
+        "display" : "Drug dependence during pregnancy - baby delivered (disorder)"
+      },
+      {
+        "code" : "191867007",
+        "display" : "Combined opioid with non-opioid drug dependence, continuous (disorder)"
+      },
+      {
+        "code" : "191829009",
+        "display" : "Cocaine type drug dependence (disorder)"
+      },
+      {
+        "code" : "428495004",
+        "display" : "Solvent misuse (finding)"
+      },
+      {
+        "code" : "27051000119102",
+        "display" : "Chronic abuse of laxatives (disorder)"
+      },
+      {
+        "code" : "191813001",
+        "display" : "Chronic alcoholism in remission (disorder)"
+      },
+      {
+        "code" : "70545002",
+        "display" : "Narcotic drug user (finding)"
+      },
+      {
+        "code" : "426590003",
+        "display" : "Drug abuse, continuous (disorder)"
+      },
+      {
+        "code" : "699449003",
+        "display" : "Methamphetamine abuse (disorder)"
+      },
+      {
+        "code" : "191856006",
+        "display" : "Glue sniffing dependence, episodic (disorder)"
+      },
+      {
+        "code" : "191907009",
+        "display" : "Nondependent hypnotic or anxiolytic abuse in remission (disorder)"
+      },
+      {
+        "code" : "228420000",
+        "display" : "Drug habit takes priority over financial obligations (finding)"
+      },
+      {
+        "code" : "268640002",
+        "display" : "Hypnotic or anxiolytic dependence (disorder)"
+      },
+      {
+        "code" : "361049005",
+        "display" : "Habitual drug user (finding)"
+      },
+      {
+        "code" : "428823006",
+        "display" : "Cannabis misuse (finding)"
+      },
+      {
+        "code" : "228380004",
+        "display" : "Chases the dragon (finding)"
+      },
+      {
+        "code" : "228376009",
+        "display" : "Inhales drugs (finding)"
+      },
+      {
+        "code" : "231475006",
+        "display" : "Librium dependence (disorder)"
+      },
+      {
+        "code" : "712542001",
+        "display" : "Abstinent from drug misuse (finding)"
+      },
+      {
+        "code" : "191883007",
+        "display" : "Nondependent alcohol abuse, episodic (disorder)"
+      },
+      {
+        "code" : "280986007",
+        "display" : "Abuse of antacids (disorder)"
+      },
+      {
+        "code" : "231482005",
+        "display" : "Active drug dependence (disorder)"
+      },
+      {
+        "code" : "191853003",
+        "display" : "Glue sniffing dependence (disorder)"
+      },
+      {
+        "code" : "280983004",
+        "display" : "Abuse of vitamins (disorder)"
+      },
+      {
+        "code" : "49540005",
+        "display" : "Non dependent drug abuse (disorder)"
+      },
+      {
+        "code" : "707848009",
+        "display" : "Patient denies drug use (finding)"
+      },
+      {
+        "code" : "228405006",
+        "display" : "Obtains clean needles (finding)"
+      },
+      {
+        "code" : "66214007",
+        "display" : "Substance abuse (disorder)"
+      },
+      {
+        "code" : "426095000",
+        "display" : "Continuous inhalant abuse (disorder)"
+      },
+      {
+        "code" : "191873008",
+        "display" : "Combined drug dependence, excluding opioid, continuous (disorder)"
+      },
+      {
+        "code" : "191875001",
+        "display" : "Combined drug dependence, excluding opioid, in remission (disorder)"
+      },
+      {
+        "code" : "191901005",
+        "display" : "Nondependent hallucinogen abuse in remission (disorder)"
+      },
+      {
+        "code" : "724657002",
+        "display" : "Sedative dependence with current use (disorder)"
+      },
+      {
+        "code" : "737336003",
+        "display" : "Synthetic cannabinoid abuse (disorder)"
+      },
+      {
+        "code" : "741063003",
+        "display" : "Illicit drug injection in last 12 months (finding)"
+      },
+      {
+        "code" : "231458000",
+        "display" : "Abuse of steroids (disorder)"
+      },
+      {
+        "code" : "10755041000119100",
+        "display" : "Alcohol dependence in childbirth (disorder)"
+      },
+      {
+        "code" : "428219007",
+        "display" : "Caffeine dependence (disorder)"
+      },
+      {
+        "code" : "1081000119105",
+        "display" : "Opioid dependence, on agonist therapy (disorder)"
+      },
+      {
+        "code" : "191831000",
+        "display" : "Cocaine dependence, continuous (disorder)"
+      },
+      {
+        "code" : "228382007",
+        "display" : "Misuses drugs vaginally (finding)"
+      },
+      {
+        "code" : "86401000119104",
+        "display" : "Inhalant dependence, episodic (disorder)"
+      },
+      {
+        "code" : "85005007",
+        "display" : "Cannabis dependence (disorder)"
+      },
+      {
+        "code" : "191913000",
+        "display" : "Nondependent opioid abuse, episodic (disorder)"
+      },
+      {
+        "code" : "15167005",
+        "display" : "Alcohol abuse (disorder)"
+      },
+      {
+        "code" : "723933008",
+        "display" : "Cannabis dependence with current use (disorder)"
+      },
+      {
+        "code" : "191891003",
+        "display" : "Nondependent cannabis abuse (disorder)"
+      },
+      {
+        "code" : "191893000",
+        "display" : "Nondependent cannabis abuse, continuous (disorder)"
+      },
+      {
+        "code" : "145121000119106",
+        "display" : "Intravenous nondependent opioid abuse (disorder)"
+      },
+      {
+        "code" : "724713006",
+        "display" : "Harmful use of ketamine (disorder)"
+      },
+      {
+        "code" : "228427002",
+        "display" : "Has a routine of drug-related activities (finding)"
+      },
+      {
+        "code" : "191900006",
+        "display" : "Nondependent hallucinogen abuse, episodic (disorder)"
+      },
+      {
+        "code" : "228443009",
+        "display" : "Buying drugs (finding)"
+      },
+      {
+        "code" : "7200002",
+        "display" : "Alcoholism (disorder)"
+      },
+      {
+        "code" : "425533007",
+        "display" : "Episodic drug abuse (disorder)"
+      },
+      {
+        "code" : "228377000",
+        "display" : "Smokes drugs (finding)"
+      },
+      {
+        "code" : "268646008",
+        "display" : "Nondependent hallucinogen abuse (disorder)"
+      },
+      {
+        "code" : "703885002",
+        "display" : "Misuse of analgesic (finding)"
+      },
+      {
+        "code" : "191914006",
+        "display" : "Nondependent opioid abuse in remission (disorder)"
+      },
+      {
+        "code" : "58727001",
+        "display" : "Phencyclidine dependence (disorder)"
+      },
+      {
+        "code" : "304605000",
+        "display" : "Methanol abuse (disorder)"
+      },
+      {
+        "code" : "228444003",
+        "display" : "Possession of drugs (finding)"
+      },
+      {
+        "code" : "762504005",
+        "display" : "Abuse of synthetic cathinone (disorder)"
+      },
+      {
+        "code" : "26416006",
+        "display" : "Drug abuse (disorder)"
+      },
+      {
+        "code" : "70340006",
+        "display" : "Inhalant abuse (disorder)"
+      },
+      {
+        "code" : "191938005",
+        "display" : "Nondependent mixed drug abuse in remission (disorder)"
+      },
+      {
+        "code" : "228417008",
+        "display" : "Undue priority given to drug-related activities (finding)"
+      },
+      {
+        "code" : "425841004",
+        "display" : "Phencyclidine dependence in remission (disorder)"
+      },
+      {
+        "code" : "424848002",
+        "display" : "Recreational drug user (finding)"
+      },
+      {
+        "code" : "191932006",
+        "display" : "Nondependent antidepressant type drug abuse in remission (disorder)"
+      },
+      {
+        "code" : "425885002",
+        "display" : "Continuous phencyclidine abuse (disorder)"
+      },
+      {
+        "code" : "231472009",
+        "display" : "Barbiturate dependence (disorder)"
+      },
+      {
+        "code" : "228397005",
+        "display" : "Shares drug equipment (finding)"
+      },
+      {
+        "code" : "74851005",
+        "display" : "Hallucinogen abuse (disorder)"
+      },
+      {
+        "code" : "228381000",
+        "display" : "Sniffs drugs (finding)"
+      },
+      {
+        "code" : "86391000119101",
+        "display" : "Inhalant dependence, continuous (disorder)"
+      },
+      {
+        "code" : "228438002",
+        "display" : "Craves for drugs (finding)"
+      },
+      {
+        "code" : "191849000",
+        "display" : "Hallucinogen dependence, continuous (disorder)"
+      },
+      {
+        "code" : "441668002",
+        "display" : "Drug seeking behavior (finding)"
+      },
+      {
+        "code" : "105546006",
+        "display" : "Occasional drug abuser (finding)"
+      },
+      {
+        "code" : "712543006",
+        "display" : "Abstinent from drug misuse in normal environment (finding)"
+      },
+      {
+        "code" : "268648009",
+        "display" : "Nondependent amphetamine or other psychostimulant abuse (disorder)"
+      },
+      {
+        "code" : "228399008",
+        "display" : "Shares syringes (finding)"
+      },
+      {
+        "code" : "228386005",
+        "display" : "Injects drugs subcutaneously (finding)"
+      },
+      {
+        "code" : "228373001",
+        "display" : "Drug addict (finding)"
+      },
+      {
+        "code" : "417284009",
+        "display" : "Current drug user (finding)"
+      },
+      {
+        "code" : "228372006",
+        "display" : "Poly-drug misuser (finding)"
+      },
+      {
+        "code" : "191851001",
+        "display" : "Hallucinogen dependence in remission (disorder)"
+      },
+      {
+        "code" : "11047881000119101",
+        "display" : "Cannabis hyperemesis syndrome co-occurrent and due to cannabis abuse (disorder)"
+      },
+      {
+        "code" : "191877009",
+        "display" : "Ecstasy type drug dependence (disorder)"
+      },
+      {
+        "code" : "228410005",
+        "display" : "Uses needle and syringe exchange scheme (finding)"
+      }]
+    }]
+  }
+}}####
+e: {
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:997781c6-11fb-479a-a2b1-5ab97db5ead4",
+    "timestamp" : "2021-01-26T20:18:01.467Z",
+    "parameter" : [{
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "version",
+      "valueString" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20200901"
+    }],
+    "contains" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "191905001",
+      "display" : "Nondependent hypnotic or anxiolytic abuse, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "427229002",
+      "display" : "Episodic inhalant abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "268641003",
+      "display" : "Cannabis type drug dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191937000",
+      "display" : "Nondependent mixed drug abuse, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191820008",
+      "display" : "Episodic opioid dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724658007",
+      "display" : "Hypnotic dependence with current use (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "413096007",
+      "display" : "Never injecting drug user (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "226034001",
+      "display" : "Injecting drug user (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "712545004",
+      "display" : "Abstinent from drug misuse on maintenance replacement (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191895007",
+      "display" : "Nondependent cannabis abuse in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231467000",
+      "display" : "Absinthe addiction (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "429001000124103",
+      "display" : "Catha edulis abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428623008",
+      "display" : "Barbiturate misuse (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191909007",
+      "display" : "Nondependent opioid abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191869005",
+      "display" : "Combined opioid with non-opioid drug dependence in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228378005",
+      "display" : "Smokes drugs in cigarette form (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "10741871000119101",
+      "display" : "Alcohol dependence in pregnancy (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191874002",
+      "display" : "Combined drug dependence, excluding opioid, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "429692000",
+      "display" : "Amphetamine abuse, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191894006",
+      "display" : "Nondependent cannabis abuse, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "199254001",
+      "display" : "Drug dependence during pregnancy - baby not yet delivered (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724714000",
+      "display" : "Dependence caused by dissociative substance (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231470001",
+      "display" : "Anxiolytic dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724659004",
+      "display" : "Anxiolytic dependence with current use (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191924003",
+      "display" : "Nondependent amphetamine or psychostimulant abuse, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228384008",
+      "display" : "Misuses drugs sublingually (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "713583005",
+      "display" : "Mild alcohol dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "145101000119102",
+      "display" : "Intravenous cocaine abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724703003",
+      "display" : "Harmful pattern of use of substituted amphetamine (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231481003",
+      "display" : "Controlled drug dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "267206008",
+      "display" : "Drug dependence during pregnancy, childbirth and the puerperium (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191936009",
+      "display" : "Nondependent mixed drug abuse, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "424626006",
+      "display" : "Misuse of over-the-counter medications (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "702771005",
+      "display" : "Illicit drug use unknown (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "1471000119103",
+      "display" : "Drug abuse in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "153501000119105",
+      "display" : "Drug dependence, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191930003",
+      "display" : "Nondependent antidepressant type drug abuse, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "414874007",
+      "display" : "Nondependent amphetamine or psychostimulant abuse in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228407003",
+      "display" : "Obtains clean syringes (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "38247002",
+      "display" : "Hallucinogen dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191833002",
+      "display" : "Cocaine dependence in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231459008",
+      "display" : "Abuse of nonpsychotropic analgesic drugs (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228388006",
+      "display" : "Intravenous drug user (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228398000",
+      "display" : "Frontloading (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "199253007",
+      "display" : "Drug dependence in the puerperium - baby delivered (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191825003",
+      "display" : "Hypnotic or anxiolytic dependence, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228371004",
+      "display" : "Long-term drug misuser (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "284591009",
+      "display" : "Persistent alcohol abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "110281001",
+      "display" : "Chronic drug abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191906000",
+      "display" : "Nondependent hypnotic or anxiolytic abuse, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428659002",
+      "display" : "Amphetamine misuse (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231477003",
+      "display" : "Heroin dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "365985003",
+      "display" : "Finding of drug injecting equipment hygiene (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "373613000",
+      "display" : "Cleans own needles (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191857002",
+      "display" : "Glue sniffing dependence in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "2403008",
+      "display" : "Psychoactive substance dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191821007",
+      "display" : "Opioid dependence in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228419006",
+      "display" : "Drug habit takes priority over family obligations (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "429512006",
+      "display" : "Methadone misuse (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "199255000",
+      "display" : "Drug dependence in the puerperium - baby delivered during previous episode of care (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191850000",
+      "display" : "Hallucinogen dependence, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "445273005",
+      "display" : "Polysubstance abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "5002000",
+      "display" : "Inhalant dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "280982009",
+      "display" : "Abuse of laxatives (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228402009",
+      "display" : "Cleans drug injection equipment (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "703845008",
+      "display" : "Buprenorphine dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "429782000",
+      "display" : "Cocaine misuse (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "237228001",
+      "display" : "Pregnancy and drug dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "416751004",
+      "display" : "Reduced drugs misuse (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428493006",
+      "display" : "Crack cocaine misuse (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "268645007",
+      "display" : "Nondependent alcohol abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724695007",
+      "display" : "Hallucinogen dependence with current use (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228375008",
+      "display" : "Misuses drugs orally (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228389003",
+      "display" : "Groin injector (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "365984004",
+      "display" : "Finding of drug injection behavior (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231478008",
+      "display" : "Methadone dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "91388009",
+      "display" : "Psychoactive substance abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "97571000119109",
+      "display" : "Thrombocytopenia co-occurrent and due to alcoholism (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "427327003",
+      "display" : "Sedative dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231479000",
+      "display" : "Morphine dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "153491000119103",
+      "display" : "Drug dependence, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428819003",
+      "display" : "Opiate misuse (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "144981000119109",
+      "display" : "Nondependent intraveous amphetamine abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "105550004",
+      "display" : "Misused volatile solvents in past (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428406005",
+      "display" : "Benzodiazepine misuse (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191838006",
+      "display" : "Cannabis dependence, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228395002",
+      "display" : "Shares drug injecting equipment (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191918009",
+      "display" : "Nondependent cocaine abuse, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "11048011000119103",
+      "display" : "Cannabis hyperemesis syndrome co-occurrent and due to cannabis dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "9769006",
+      "display" : "Drug habituation (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191928000",
+      "display" : "Abuse of antidepressant drug (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "762505006",
+      "display" : "Synthetic cathinone dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "737337007",
+      "display" : "Synthetic cannabinoid dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724712001",
+      "display" : "Harmful use of dissociative drug (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228387001",
+      "display" : "Injects drugs intramuscularly (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "413329000",
+      "display" : "Treated for drug use in last 12 months (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191855005",
+      "display" : "Glue sniffing dependence, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "37344009",
+      "display" : "Cannabis abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "307052004",
+      "display" : "Illicit drug use (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "712546003",
+      "display" : "Abstinent from drug misuse when receiving blocking therapy (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724704009",
+      "display" : "Methylenedioxymethamphetamine dependence with current use (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228406007",
+      "display" : "Uses needle exchange scheme (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "429299000",
+      "display" : "Combined drug dependence, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191912005",
+      "display" : "Nondependent opioid abuse, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724724008",
+      "display" : "Psychoactive substance dependence with current use (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "429179002",
+      "display" : "Antidepressant misuse (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231468005",
+      "display" : "Lysergic acid diethylamide dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231462006",
+      "display" : "Barbiturate abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "714829008",
+      "display" : "Moderate alcohol dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228374007",
+      "display" : "Notified addict (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228383002",
+      "display" : "Misuses drugs rectally (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724653003",
+      "display" : "Opioid dependence with current use (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191934007",
+      "display" : "Nondependent mixed drug abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231474005",
+      "display" : "Diazepam dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191939002",
+      "display" : "Misuse of prescription only drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191916008",
+      "display" : "Nondependent cocaine abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "427205009",
+      "display" : "Amphetamine abuse, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191920007",
+      "display" : "Nondependent cocaine abuse in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228430009",
+      "display" : "Follows drug-related rituals (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191811004",
+      "display" : "Continuous chronic alcoholism (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "64386003",
+      "display" : "Sedative abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724715004",
+      "display" : "Dependence caused by ketamine (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191839003",
+      "display" : "Cannabis dependence in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "280984005",
+      "display" : "Abuse of herbal medicine (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "145841000119107",
+      "display" : "Episodic phencyclidine abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724700000",
+      "display" : "Volatile inhalant dependence with current use (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191826002",
+      "display" : "Hypnotic or anxiolytic dependence, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228418003",
+      "display" : "Drug habit takes priority over social obligations (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "712544000",
+      "display" : "Abstinent from drug misuse in protected environment (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "16076691000119100",
+      "display" : "Episodic polysubstance dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191919001",
+      "display" : "Nondependent cocaine abuse, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191865004",
+      "display" : "Combined opioid with non-opioid drug dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191931004",
+      "display" : "Nondependent antidepressant type drug abuse, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "417298001",
+      "display" : "Abnormal craving for drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "715818002",
+      "display" : "Cleans drug injection needle with bleach (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191816009",
+      "display" : "Drug dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "6525002",
+      "display" : "Dependent drug abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231461004",
+      "display" : "Hypnotic or anxiolytic abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191871005",
+      "display" : "Combined drug dependence, excluding opioids (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "21647008",
+      "display" : "Amphetamine dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "7071007",
+      "display" : "Phencyclidine abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "84758004",
+      "display" : "Amphetamine abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231480002",
+      "display" : "Opium dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "417531009",
+      "display" : "Excessive craving for drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191812006",
+      "display" : "Episodic chronic alcoholism (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "413295004",
+      "display" : "Concerned about own drug use (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "288031000119105",
+      "display" : "Alcohol induced disorder co-occurrent and due to alcohol dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191868002",
+      "display" : "Combined opioid with non-opioid drug dependence, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "10755161000119102",
+      "display" : "Drug dependence in childbirth (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "426873000",
+      "display" : "Methamphetamine dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "51339003",
+      "display" : "Polysubstance dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228440007",
+      "display" : "Drug-related offending behavior (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191827006",
+      "display" : "Hypnotic or anxiolytic dependence in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "713775002",
+      "display" : "Novel psychoactive substance misuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "78267003",
+      "display" : "Cocaine abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "280985006",
+      "display" : "Abuse of diuretics (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "34111000119108",
+      "display" : "Nondependent amphetamine abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228400001",
+      "display" : "Shares needles (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724697004",
+      "display" : "Harmful pattern of use of nicotine (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "441681009",
+      "display" : "Dependence on unknown drug (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231473004",
+      "display" : "Benzodiazepine dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191882002",
+      "display" : "Nondependent alcohol abuse, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "268647004",
+      "display" : "Nondependent hypnotic or anxiolytic abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191819002",
+      "display" : "Continuous opioid dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191837001",
+      "display" : "Cannabis dependence, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724656006",
+      "display" : "Hypnotic dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "713862009",
+      "display" : "Severe alcohol dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228442004",
+      "display" : "Selling drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "442406005",
+      "display" : "Stimulant dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "125851000119106",
+      "display" : "Continuous sedative abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228366006",
+      "display" : "Finding relating to drug misuse behavior (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "426001001",
+      "display" : "Fentanyl dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "44870007",
+      "display" : "Misused drugs in past (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191899001",
+      "display" : "Nondependent hallucinogen abuse, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "66590003",
+      "display" : "Alcohol dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191925002",
+      "display" : "Nondependent amphetamine or psychostimulant abuse, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "105549004",
+      "display" : "Abuses volatile solvents (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "248119008",
+      "display" : "Abuse of drugs to lose weight (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "75544000",
+      "display" : "Opioid dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "441527004",
+      "display" : "Stimulant abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228441006",
+      "display" : "Dealing with drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "5602001",
+      "display" : "Opioid abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "416479009",
+      "display" : "Previously injecting drug user (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "1461000119109",
+      "display" : "Drug dependence in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "417697003",
+      "display" : "Irresistible craving for drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "361055000",
+      "display" : "Misuses drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724688003",
+      "display" : "Cocaine dependence with current use (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228379002",
+      "display" : "Smokes drugs through a pipe (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191884001",
+      "display" : "Nondependent alcohol abuse in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231469002",
+      "display" : "Mescaline dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228428007",
+      "display" : "Follows same drug-related routine every day (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "31956009",
+      "display" : "Cocaine dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724694006",
+      "display" : "Harmful pattern of use of caffeine (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191832007",
+      "display" : "Cocaine dependence, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "199252002",
+      "display" : "Drug dependence during pregnancy - baby delivered (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191867007",
+      "display" : "Combined opioid with non-opioid drug dependence, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191829009",
+      "display" : "Cocaine type drug dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428495004",
+      "display" : "Solvent misuse (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "27051000119102",
+      "display" : "Chronic abuse of laxatives (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191813001",
+      "display" : "Chronic alcoholism in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "70545002",
+      "display" : "Narcotic drug user (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "426590003",
+      "display" : "Drug abuse, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "699449003",
+      "display" : "Methamphetamine abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191856006",
+      "display" : "Glue sniffing dependence, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191907009",
+      "display" : "Nondependent hypnotic or anxiolytic abuse in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228420000",
+      "display" : "Drug habit takes priority over financial obligations (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "268640002",
+      "display" : "Hypnotic or anxiolytic dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "361049005",
+      "display" : "Habitual drug user (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428823006",
+      "display" : "Cannabis misuse (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228380004",
+      "display" : "Chases the dragon (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228376009",
+      "display" : "Inhales drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231475006",
+      "display" : "Librium dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "712542001",
+      "display" : "Abstinent from drug misuse (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191883007",
+      "display" : "Nondependent alcohol abuse, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "280986007",
+      "display" : "Abuse of antacids (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231482005",
+      "display" : "Active drug dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191853003",
+      "display" : "Glue sniffing dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "280983004",
+      "display" : "Abuse of vitamins (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "49540005",
+      "display" : "Non dependent drug abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "707848009",
+      "display" : "Patient denies drug use (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228405006",
+      "display" : "Obtains clean needles (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "66214007",
+      "display" : "Substance abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "426095000",
+      "display" : "Continuous inhalant abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191873008",
+      "display" : "Combined drug dependence, excluding opioid, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191875001",
+      "display" : "Combined drug dependence, excluding opioid, in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191901005",
+      "display" : "Nondependent hallucinogen abuse in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724657002",
+      "display" : "Sedative dependence with current use (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "737336003",
+      "display" : "Synthetic cannabinoid abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "741063003",
+      "display" : "Illicit drug injection in last 12 months (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231458000",
+      "display" : "Abuse of steroids (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "10755041000119100",
+      "display" : "Alcohol dependence in childbirth (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "428219007",
+      "display" : "Caffeine dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "1081000119105",
+      "display" : "Opioid dependence, on agonist therapy (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191831000",
+      "display" : "Cocaine dependence, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228382007",
+      "display" : "Misuses drugs vaginally (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "86401000119104",
+      "display" : "Inhalant dependence, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "85005007",
+      "display" : "Cannabis dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191913000",
+      "display" : "Nondependent opioid abuse, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "15167005",
+      "display" : "Alcohol abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "723933008",
+      "display" : "Cannabis dependence with current use (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191891003",
+      "display" : "Nondependent cannabis abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191893000",
+      "display" : "Nondependent cannabis abuse, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "145121000119106",
+      "display" : "Intravenous nondependent opioid abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "724713006",
+      "display" : "Harmful use of ketamine (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228427002",
+      "display" : "Has a routine of drug-related activities (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191900006",
+      "display" : "Nondependent hallucinogen abuse, episodic (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228443009",
+      "display" : "Buying drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "7200002",
+      "display" : "Alcoholism (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "425533007",
+      "display" : "Episodic drug abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228377000",
+      "display" : "Smokes drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "268646008",
+      "display" : "Nondependent hallucinogen abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "703885002",
+      "display" : "Misuse of analgesic (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191914006",
+      "display" : "Nondependent opioid abuse in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "58727001",
+      "display" : "Phencyclidine dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "304605000",
+      "display" : "Methanol abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228444003",
+      "display" : "Possession of drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "762504005",
+      "display" : "Abuse of synthetic cathinone (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "26416006",
+      "display" : "Drug abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "70340006",
+      "display" : "Inhalant abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191938005",
+      "display" : "Nondependent mixed drug abuse in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228417008",
+      "display" : "Undue priority given to drug-related activities (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "425841004",
+      "display" : "Phencyclidine dependence in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "424848002",
+      "display" : "Recreational drug user (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191932006",
+      "display" : "Nondependent antidepressant type drug abuse in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "425885002",
+      "display" : "Continuous phencyclidine abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "231472009",
+      "display" : "Barbiturate dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228397005",
+      "display" : "Shares drug equipment (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "74851005",
+      "display" : "Hallucinogen abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228381000",
+      "display" : "Sniffs drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "86391000119101",
+      "display" : "Inhalant dependence, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228438002",
+      "display" : "Craves for drugs (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191849000",
+      "display" : "Hallucinogen dependence, continuous (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "441668002",
+      "display" : "Drug seeking behavior (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "105546006",
+      "display" : "Occasional drug abuser (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "712543006",
+      "display" : "Abstinent from drug misuse in normal environment (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "268648009",
+      "display" : "Nondependent amphetamine or other psychostimulant abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228399008",
+      "display" : "Shares syringes (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228386005",
+      "display" : "Injects drugs subcutaneously (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228373001",
+      "display" : "Drug addict (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "417284009",
+      "display" : "Current drug user (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228372006",
+      "display" : "Poly-drug misuser (finding)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191851001",
+      "display" : "Hallucinogen dependence in remission (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "11047881000119101",
+      "display" : "Cannabis hyperemesis syndrome co-occurrent and due to cannabis abuse (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "191877009",
+      "display" : "Ecstasy type drug dependence (disorder)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "228410005",
+      "display" : "Uses needle and syringe exchange scheme (finding)"
+    }]
+  }
+},
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
