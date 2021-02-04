@@ -4,6 +4,8 @@ SET input_cache_path=%~dp0input-cache
 SET resources_path=%~dp0input\resources
 SET ig_ini_path=%~dp0ig.ini
 SET root_dir=%~dp0
+rem following line removes trailing '\'
+SET root_dir=%root_dir:~0,-1%
 SET ig_path=input\opioid-cds.xml
 
 ECHO Checking internet connection...
