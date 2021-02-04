@@ -8,10 +8,11 @@ include OpioidCDSCommonConfig version '1.2.3' called Config
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "SNOMED": 'http://snomed.info/sct'
-codesystem "Medication Request Category Codes": 'http://hl7.org/fhir/medication-request-category'
-codesystem "Medication Request Status Codes": 'http://hl7.org/fhir/medication-request-status'
-codesystem "Condition Clinical Status Codes": 'http://hl7.org/fhir/condition-clinical'
-codesystem "FHIR Condition Category Codes": 'http://hl7.org/fhir/condition-category'
+
+codesystem "Medication Request Category Codes": 'http://hl7.org/fhir/CodeSystem/medication-request-category'
+codesystem "Medication Request Status Codes": 'http://hl7.org/fhir/CodeSystem/medication-request-status'
+codesystem "Condition Clinical Status Codes": 'http://hl7.org/fhir/CodeSystem/condition-clinical'
+codesystem "FHIR Condition Category Codes": 'http://hl7.org/fhir/CodeSystem/condition-category'
 codesystem "US Core Condition Category Codes": 'http://hl7.org/fhir/us/core/CodeSystem/condition-category'
 
 // Expression-based
@@ -219,11 +220,12 @@ define "Admitted/Referred/Discharged to Hospice Care":
     [Procedure: code in "Hospice Procedure Codes"] P
       where P.status.value in { 'in-progress', 'completed' }
   )
-  union
+  // NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest
+  /* union
   (
     [ProcedureRequest: code in "Hospice Procedure Codes"] E
       where E.status.value in { 'active', 'completed', 'suspended' }
-  )
+  ) */
   union
   (
     if (Config."Hospice Findings Exclusion Enabled") then

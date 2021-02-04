@@ -32,7 +32,7 @@
           {
             "coding": [
               {
-                "system": "http://hl7.org/fhir/condition-category",
+                "system": "http://hl7.org/fhir/CodeSystem/condition-category",
                 "code": "encounter-diagnosis",
                 "display": "Encounter Diagnosis"
               },
@@ -86,7 +86,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
               "code": "246474",
               "display": "Buprenorphine 0.2 MG Sublingual Tablet"
             }

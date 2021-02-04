@@ -62,7 +62,7 @@ define "No Documented Discussions of Opioid Harms and Risks":
   Config."Opioid Harms & Risks Discussion in Past 90 Days Criteria Enabled"
     and not (
       exists ( "Documented Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today" )
-        or exists ( "Ordered Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today" )
+        //or exists ( "Ordered Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today" )
     )
 
 define "Documented Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today":
@@ -70,9 +70,10 @@ define "Documented Discussions of Opioid Harms and Risks in Past 90 Days Excludi
     where P.performed during day of "Opioid Harms & Risks Counseling Lookback Period"
       and P.status ~ 'completed'
 
-define "Ordered Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today":
+// NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest
+/* define "Ordered Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today":
   [ProcedureRequest: Common."Opioid counseling procedure"] SR
-    where SR.occurrence during day of "Opioid Harms & Risks Counseling Lookback Period"
+    where SR.occurrence during day of "Opioid Harms & Risks Counseling Lookback Period" */
 
 define "Get Indicator":
   if "Is Recommendation Applicable?"

@@ -7,7 +7,7 @@
     <status value="draft"/>
     <experimental value="false"/>
     <date value="2017-02-06"/>
-    <publisher value="Centers for Disease Control and Prevention (CDC)"/>    
+    <publisher value="Centers for Disease Control and Prevention (CDC)"/>
     <description value="Opioid Prescribing Support Implementation Guide"/>
     <fhirVersion value="3.0.2"/>
     <package>
@@ -42,7 +42,6 @@
                 <reference value="Encounter/example-rec-04-long-acting-opioid-prefetch"/>
             </sourceReference>
         </resource>
-
         <resource>
             <example value="true"/>
             <sourceReference>
@@ -607,6 +606,13 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ActivityDefinition - ProcedureRequest for opioid uring screening"/>
+            <sourceReference>
+                <reference value="ActivityDefinition/opioidcds-urine-screening-request"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="CarePlan - Example result of recommendation #5"/>
             <description value="Example result of applying the PlanDefinition for recommendation #5"/>
             <sourceReference>
@@ -619,6 +625,46 @@
             <description value="System of codes that indicate the urgency/importance of the action"/>
             <sourceReference>
                 <reference value="CodeSystem/opioidcds-indicator"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - Condition Category Codes"/>
+            <description value="Preferred value set for Condition Categories."/>
+            <sourceReference>
+                <reference value="CodeSystem/condition-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - Condition Clinical Status Codes"/>
+            <description value="Preferred value set for Condition Clinical Status."/>
+            <sourceReference>
+                <reference value="CodeSystem/condition-clinical"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - MedicationRequest Category Codes"/>
+            <description value="A coded concept identifying where the medication ordered is expected to be consumed or administered."/>
+            <sourceReference>
+                <reference value="CodeSystem/medication-request-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - MedicationRequest Status Codes"/>
+            <description value="A coded concept specifying the state of the prescribing event. Describes the lifecycle of the prescription."/>
+            <sourceReference>
+                <reference value="CodeSystem/medication-request-status"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - US Core Condition Category Extension Codes"/>
+            <description value="Set of codes that are needed for implementation of the US-Core profiles. These codes are used as extensions to the FHIR and US Core value sets."/>
+            <sourceReference>
+                <reference value="CodeSystem/uscore-condition-category"/>
             </sourceReference>
         </resource>
 

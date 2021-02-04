@@ -1,4 +1,94 @@
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "99201"
+}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known (encountered paired with code = \"99201\"); The code provided (http://www.ama-assn.org/go/cpt#99201) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "99202"
+}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known (encountered paired with code = \"99202\"); The code provided (http://www.ama-assn.org/go/cpt#99202) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "99203"
+}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known (encountered paired with code = \"99203\"); The code provided (http://www.ama-assn.org/go/cpt#99203) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "99204"
+}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known (encountered paired with code = \"99204\"); The code provided (http://www.ama-assn.org/go/cpt#99204) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "99205"
+}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known (encountered paired with code = \"99205\"); The code provided (http://www.ama-assn.org/go/cpt#99205) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "99212"
+}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known (encountered paired with code = \"99212\"); The code provided (http://www.ama-assn.org/go/cpt#99212) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "99213"
+}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known (encountered paired with code = \"99213\"); The code provided (http://www.ama-assn.org/go/cpt#99213) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "99214"
+}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known (encountered paired with code = \"99214\"); The code provided (http://www.ama-assn.org/go/cpt#99214) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.ama-assn.org/go/cpt",
+  "code" : "99215"
+}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.ama-assn.org/go/cpt\" is not known (encountered paired with code = \"99215\"); The code provided (http://www.ama-assn.org/go/cpt#99215) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
+}
+-------------------------------------------------------------------------------------
 {"hierarchical" : true, "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {
@@ -46,95 +136,5 @@
 }}####
 e: {
   "error" : "Error from server: Unable to provide support for code system http://www.ama-assn.org/go/cpt"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "99201"
-}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Attempt to use Terminology server when no Terminology server is available"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "99202"
-}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Attempt to use Terminology server when no Terminology server is available"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "99203"
-}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Attempt to use Terminology server when no Terminology server is available"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "99204"
-}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Attempt to use Terminology server when no Terminology server is available"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "99205"
-}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Attempt to use Terminology server when no Terminology server is available"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "99212"
-}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Attempt to use Terminology server when no Terminology server is available"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "99213"
-}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Attempt to use Terminology server when no Terminology server is available"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "99214"
-}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Attempt to use Terminology server when no Terminology server is available"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://www.ama-assn.org/go/cpt",
-  "code" : "99215"
-}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Attempt to use Terminology server when no Terminology server is available"
 }
 -------------------------------------------------------------------------------------
