@@ -460,9 +460,29 @@
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"
     },
+    "CodeSystem/opioidcds-condition-category": {
+      "source": "codesystem-opioidcds-condition-category.json",
+      "base": "CodeSystem-opioidcds-condition-category.html"
+    },
+    "CodeSystem/condition-clinical": {
+      "source": "codesystem-condition-clinical.json",
+      "base": "CodeSystem-condition-clinical.html"
+    },
+    "CodeSystem/medication-request-category": {
+      "source": "codesystem-medication-request-category.json",
+      "base": "CodeSystem-medication-request-category.html"
+    },
+    "CodeSystem/medication-request-status": {
+      "source": "codesystem-medication-request-status.json",
+      "base": "CodeSystem-medication-request-status.html"
+    },
     "CodeSystem/opioidcds-indicator": {
       "source": "codesystem-opioidcds-indicator.json",
       "base": "CodeSystem-opioidcds-indicator.html"
+    },
+    "CodeSystem/uscore-condition-category": {
+      "source": "codesystem-uscore-condition-category.json",
+      "base": "CodeSystem-uscore-condition-category.html"
     },
     "Library/FHIRHelpers": {
       "source": "FHIRHelpers.json",
