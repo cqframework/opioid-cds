@@ -1,16 +1,11 @@
 @ECHO OFF
 SET tooling_jar=tooling-1.3.1-SNAPSHOT-jar-with-dependencies.jar
-SET input_cache_path=.\input-cache
+SET input_cache_path=input-cache
 
 rem D:\Projects\opioid-cds\bundlegen\sourcefiles
-SET bundlegen_path=.\bundlegen
+SET bundlegen_path=%~dp0
+SET bundlegen_path=%bundlegen_path:~0,-1%
 SET sourcefiles_path=%bundlegen_path%\sourcefiles
-
-echo %~dp0
-echo "%bundlegen_path%"
-echo "%sourcefiles_path%"
-
-
 
 ECHO Checking internet connection...
 PING tx.fhir.org -n 1 -w 1000 | FINDSTR TTL && GOTO isonline
