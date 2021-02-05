@@ -17,3 +17,4 @@ input/ig-expansion-parameters.json
 input/ig-new.json
 input/ig-new.xml
 input/ig-validation-parameters.json
+bundlegen/sourcefiles/*
