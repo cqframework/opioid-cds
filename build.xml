@@ -37,7 +37,7 @@
   <target name="publish-ig" depends="dir-setup"  description="--> Run the IG build">
     <java jar="${basedir}/publisher.jar" fork="true" failonerror="true" maxmemory="1024m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
-      <arg line="-ig ${basedir}/${guidename}.json"/>
+      <arg line="-ig ${basedir}/${guidename}.xml"/>
     </java>
   </target>
   <target name="local-publish-ig" depends="local-setup, publish-ig"  description="--> Target to use when building Locally"/>
