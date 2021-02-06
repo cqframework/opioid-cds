@@ -36,7 +36,7 @@
     <get src="https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar" dest="${basedir}"/>
   </target>
   <target name="publish-ig" depends="dir-setup"  description="--> Run the IG build">
-    <java jar="${basedir}/publisher.jar" fork="true" failonerror="true" maxmemory="1024m">
+    <java jar="${basedir}/publisher.jar" fork="true" failonerror="true" maxmemory="4096m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
       <arg line="-ig ${basedir}/ig.json"/>
     </java>
