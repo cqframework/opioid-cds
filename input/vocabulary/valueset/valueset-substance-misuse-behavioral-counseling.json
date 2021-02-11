@@ -1,12 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "id": "substance-misuse-behavioral-counseling-enum",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-distributablevalueset",
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablevalueset"
-    ]
-  },
+  "id": "substance-misuse-behavioral-counseling",
   "extension": [
     {
       "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
@@ -37,12 +31,12 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling-enum",
-  "name": "Substance_Misuse_Behavioral_Counseling_Enum",
-  "title": "ValueSet - Substance Misuse Behavioral Counseling",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/substance-misuse-behavioral-counseling",
+  "name": "substance_misuse_behavioral_counseling",
+  "title": "Substance misuse behavioral counseling",
   "status": "active",
   "experimental": true,
-  "date": "2020-03-26T17:39:10-06:00",
+  "date": "2021-01-26T12:01:39-07:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "description": "Counseling and associated procedures for substance misuse",
   "jurisdiction": [
@@ -117,41 +111,35 @@
     ]
   },
   "expansion": {
-    "timestamp": "2020-03-26T17:39:10-06:00",
+    "timestamp": "2021-01-26T12:01:40-07:00",
     "contains": [
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108/version/20200301",
         "code": "313071005",
         "display": "Substance abuse counseling"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108/version/20200301",
         "code": "60112009",
         "display": "Drug addiction counseling"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108/version/20200301",
         "code": "720174008",
         "display": "Drug harm reduction program"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108/version/20200301",
         "code": "720177001",
         "display": "Drug relapse prevention program"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108/version/20200301",
         "code": "423416000",
         "display": "Substance use cessation case management"
       },
       {
         "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108/version/20200301",
         "code": "424407005",
         "display": "Substance use cessation education, guidance, and counseling"
       }
