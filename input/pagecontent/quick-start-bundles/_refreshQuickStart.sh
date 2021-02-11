@@ -45,8 +45,8 @@ cp input/vocabulary/codesystem/codesystem-uscore-condition-category.json bundleg
 
 cp input/vocabulary/valueset/valueset-benzodiazepine-medications.json bundlegen/sourcefiles/valueset-benzodiazepine-medications.json
 cp input/vocabulary/valueset/valueset-buprenorphine-and-methadone-medications.json bundlegen/sourcefiles/valueset-buprenorphine-and-methadone-medications.json
-cp input/vocabulary/valueset/valueset-cdc-malignant-cancer-conditions-enum.json bundlegen/sourcefiles/valueset-cdc-malignant-cancer-conditions-enum.json
-cp input/vocabulary/valueset/valueset-conditions-likely-terminal-for-opioid-prescribing-enum.json bundlegen/sourcefiles/valueset-conditions-likely-terminal-for-opioid-prescribing-enum.json
+cp input/vocabulary/valueset/valueset-cdc-malignant-cancer-conditions.json bundlegen/sourcefiles/valueset-cdc-malignant-cancer-conditions.json
+cp input/vocabulary/valueset/valueset-conditions-likely-terminal-for-opioid-prescribing.json bundlegen/sourcefiles/valueset-conditions-likely-terminal-for-opioid-prescribing.json
 cp input/vocabulary/valueset/valueset-conditions-documenting-substance-misuse.json bundlegen/sourcefiles/valueset-conditions-documenting-substance-misuse.json
 cp input/vocabulary/valueset/valueset-discharge-to-hospice.json bundlegen/sourcefiles/valueset-discharge-to-hospice.json
 cp input/vocabulary/valueset/valueset-end-of-life-care.json bundlegen/sourcefiles/valueset-end-of-life-care.json
@@ -55,7 +55,7 @@ cp input/vocabulary/valueset/valueset-extended-release-opioids-with-ambulatory-m
 cp input/vocabulary/valueset/valueset-hospice-disposition.xml bundlegen/sourcefiles/valueset-hospice-disposition.xml
 cp input/vocabulary/valueset/valueset-hospice-finding.json bundlegen/sourcefiles/valueset-hospice-finding.json
 cp input/vocabulary/valueset/valueset-hospice-procedure.json bundlegen/sourcefiles/valueset-hospice-procedure.json
-cp input/vocabulary/valueset/valueset-limited-life-expectancy-conditions-enum.json bundlegen/sourcefiles/valueset-limited-life-expectancy-conditions-enum.json
+cp input/vocabulary/valueset/valueset-limited-life-expectancy-conditions.json bundlegen/sourcefiles/valueset-limited-life-expectancy-conditions.json
 cp input/vocabulary/valueset/valueset-limited-life-expectancy-conditions.json bundlegen/sourcefiles/valueset-limited-life-expectancy-conditions.json
 cp input/vocabulary/valueset/valueset-long-acting-opioids.json bundlegen/sourcefiles/valueset-long-acting-opioids.json
 cp input/vocabulary/valueset/valueset-metastatic-cancer.json bundlegen/sourcefiles/valueset-metastatic-cancer.json
@@ -63,13 +63,13 @@ cp input/vocabulary/valueset/valueset-naloxone-medications.json bundlegen/source
 cp input/vocabulary/valueset/valueset-naloxone.json bundlegen/sourcefiles/valueset-naloxone.json
 cp input/vocabulary/valueset/valueset-non-opioid-illicit-drug-urine-screening.json bundlegen/sourcefiles/valueset-non-opioid-illicit-drug-urine-screening.json
 cp input/vocabulary/valueset/valueset-office-visit.json bundlegen/sourcefiles/valueset-office-visit.json
-cp input/vocabulary/valueset/valueset-oncology-specialty-designations-enum.json bundlegen/sourcefiles/valueset-oncology-specialty-designations-enum.json
+cp input/vocabulary/valueset/valueset-oncology-specialty-designations.json bundlegen/sourcefiles/valueset-oncology-specialty-designations.json
 cp input/vocabulary/valueset/valueset-opioid-abuse-assessment.json bundlegen/sourcefiles/valueset-opioid-abuse-assessment.json
 cp input/vocabulary/valueset/valueset-opioid-analgesics-with-ambulatory-misuse-potential.json bundlegen/sourcefiles/valueset-opioid-analgesics-with-ambulatory-misuse-potential.json
 cp input/vocabulary/valueset/valueset-opioid-counseling-procedure.json bundlegen/sourcefiles/valueset-opioid-counseling-procedure.json
 cp input/vocabulary/valueset/valueset-opioid-drug-urine-screening.json bundlegen/sourcefiles/valueset-opioid-drug-urine-screening.json
 cp input/vocabulary/valueset/valueset-opioid-misuse-assessment-procedure.json bundlegen/sourcefiles/valueset-opioid-misuse-assessment-procedure.json
-cp input/vocabulary/valueset/valueset-opioid-misuse-disorders-enum.json bundlegen/sourcefiles/valueset-opioid-misuse-disorders-enum.json
+cp input/vocabulary/valueset/valueset-opioid-misuse-disorders.json bundlegen/sourcefiles/valueset-opioid-misuse-disorders.json
 cp input/vocabulary/valueset/valueset-opioidcds-indicator.json bundlegen/sourcefiles/valueset-opioidcds-indicator.json
 cp input/vocabulary/valueset/valueset-opioids-abused-in-ambulatory-care.json bundlegen/sourcefiles/valueset-opioids-abused-in-ambulatory-care.json
 cp input/vocabulary/valueset/valueset-opioids.json bundlegen/sourcefiles/valueset-opioids.json
@@ -79,8 +79,8 @@ cp input/vocabulary/valueset/valueset-pdmp-data-reviewed-finding.json bundlegen/
 cp input/vocabulary/valueset/valueset-pdmp-review-procedure.json bundlegen/sourcefiles/valueset-pdmp-review-procedure.json
 cp input/vocabulary/valueset/valueset-short-acting-opioids.json bundlegen/sourcefiles/valueset-short-acting-opioids.json
 cp input/vocabulary/valueset/valueset-substance-abuse.json bundlegen/sourcefiles/valueset-substance-abuse.json
-cp input/vocabulary/valueset/valueset-substance-misuse-behavioral-counseling-enum.json bundlegen/sourcefiles/valueset-substance-misuse-behavioral-counseling-enum.json
-cp input/vocabulary/valueset/valueset-therapies-indicating-end-of-life-care-enum.json bundlegen/sourcefiles/valueset-therapies-indicating-end-of-life-care-enum.json
+cp input/vocabulary/valueset/valueset-substance-misuse-behavioral-counseling.json bundlegen/sourcefiles/valueset-substance-misuse-behavioral-counseling.json
+cp input/vocabulary/valueset/valueset-therapies-indicating-end-of-life-care.json bundlegen/sourcefiles/valueset-therapies-indicating-end-of-life-care.json
 cp input/vocabulary/valueset/external/valueset-us-core-condition-category.json bundlegen/sourcefiles/valueset-us-core-condition-category.json
 
 #cd /bundlegen
