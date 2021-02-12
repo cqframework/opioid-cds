@@ -3,6 +3,7 @@
 DEL /F /Q bundlegen\bundlegen-bundle.json
 DEL /F /Q bundlegen\sourcefiles\*
 
+COPY .\input\resources\activitydefinition\activitydefinition-opioidcds-urine-screening-request.json bundlegen\sourcefiles\
 COPY .\input\resources\plandefinition\plandefinition-OpioidCDSREC10PatientView.json bundlegen\sourcefiles\
 COPY .\input\resources\plandefinition\plandefinition-OpioidCDSREC11PatientView.json bundlegen\sourcefiles\
 COPY .\input\resources\library\FHIRHelpers.json bundlegen\sourcefiles\
