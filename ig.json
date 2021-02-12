@@ -447,7 +447,10 @@
       "source": "encounter-example-rec-11-opioid-trigger-without-benzo-context.xml",
       "base": "Encounter-example-rec-11-opioid-trigger-without-benzo-context.html"
     },
-
+    "ActivityDefinition/opioidcds-detected-issue-opioids-and-benzodiazepines": {
+      "source": "opioidcds-detected-issue-opioids-and-benzodiazepines.json",
+      "base": "opioidcds-detected-issue-opioids-and-benzodiazepines.html"
+    },
     "ActivityDefinition/opioidcds-risk-assessment-request": {
       "source": "activitydefinition-opioidcds-risk-assessment-request.json",
       "base": "ActivityDefinition-opioidcds-risk-assessment-request.html"
@@ -460,9 +463,9 @@
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"
     },
-    "CodeSystem/opioidcds-condition-category": {
-      "source": "codesystem-opioidcds-condition-category.json",
-      "base": "CodeSystem-opioidcds-condition-category.html"
+    "CodeSystem/condition-category": {
+      "source": "codesystem-condition-category.json",
+      "base": "CodeSystem-condition-category.html"
     },
     "CodeSystem/condition-clinical": {
       "source": "codesystem-condition-clinical.json",
@@ -660,7 +663,7 @@
     },
     "ValueSet/hospice-disposition": {
       "source": "valueset-hospice-disposition.json",
-      "base": "Valueset-hospice-disposition.html"
+      "base": "ValueSet-hospice-disposition.html"
     },
     "ValueSet/hospice-finding": {
       "source": "valueset-hospice-finding.json",
