@@ -2,6 +2,8 @@
 rm bundlegen/bundlegen-bundle.json
 rm bundlegen/sourcefiles/*
 
+mkdir -p bundlegen/sourcefiles
+
 cp input/resources/activitydefinition/activitydefinition-opioidcds-urine-screening-request.json bundlegen/sourcefiles/
 cp input/resources/plandefinition/plandefinition-OpioidCDSREC10PatientView.json bundlegen/sourcefiles/
 cp input/resources/plandefinition/plandefinition-OpioidCDSREC11PatientView.json bundlegen/sourcefiles/
