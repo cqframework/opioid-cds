@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "id": "2.16.840.1.113762.1.4.1108.15",
+  "id": "hospice-disposition",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablevalueset",

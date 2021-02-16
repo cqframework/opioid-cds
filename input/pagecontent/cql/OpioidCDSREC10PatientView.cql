@@ -63,7 +63,7 @@ define "Patient had Urine Screening in Last 12 Months":
 
 define "Urine Screenings during the Last 12 Months":
   (
-    [Observation: "code" in Common."Non-opioid illicit drug urine screening"] IllicitDrugScreen
+    [Observation: "code" in Common."Non-opioid drug urine screening"] IllicitDrugScreen
       where date from IllicitDrugScreen.effective in day of "Lookback Year"
         and not (IllicitDrugScreen.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
   )

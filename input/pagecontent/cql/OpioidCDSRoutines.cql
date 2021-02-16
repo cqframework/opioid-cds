@@ -31,8 +31,8 @@ context Patient
 **  treatment?              |                     |                                              |
 **  ------------------------------------------------------------------------------------------------------------------------------------
 **  Conditions Likely       | No                  | Look for patients with active conditions in  | Conditions likely terminal for opioid
-**  Terminal for opioid     |                     | the value set end-of-life-conditions         | prescribing
-**  prescribing present?    |                     |                                              |
+**  Terminal for opioid     |                     | the value set                                | prescribing
+**  prescribing present?    |                     | conditions-likely-terminal-for-opioid-prescribing |
 **  ------------------------------------------------------------------------------------------------------------------------------------
 **
 */
