@@ -8,7 +8,6 @@ include OpioidCDSCommonConfig version '1.2.3' called Config
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "SNOMED": 'http://snomed.info/sct'
-
 codesystem "Medication Request Category Codes": 'http://hl7.org/fhir/CodeSystem/medication-request-category'
 codesystem "Medication Request Status Codes": 'http://hl7.org/fhir/CodeSystem/medication-request-status'
 codesystem "Condition Clinical Status Codes": 'http://hl7.org/fhir/CodeSystem/condition-clinical'
@@ -36,7 +35,7 @@ valueset "Opioid counseling procedure": 'http://fhir.org/guides/cdc/opioid-cds/V
 
 /* Existing sets for first six recs */
 valueset "Benzodiazepine medications": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/benzodiazepine-medications'
-valueset "Non-opioid illicit drug urine screening": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-illicit-drug-urine-screening'
+valueset "Non-opioid drug urine screening": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening'
 valueset "Naloxone medications": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/naloxone-medications'
 valueset "Opioid misuse assessment procedure": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-assessment-procedure'
 valueset "Opioid drug urine screening": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening'
