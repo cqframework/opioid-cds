@@ -1,0 +1,10 @@
+{
+  "cards": [
+    {
+      "summary": "Annual Urine Screening Check",
+      "indicator": "warning",
+      "detail": "Patients on opioid therapy should have a urine drug test performed every 12 months.",
+      "source": {}
+    }
+  ]
+}

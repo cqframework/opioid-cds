@@ -6,85 +6,7 @@
   "context": {
     "userId": "Practitioner/example",
     "patientId": "Patient/example-rec-01-true-make-recommendations",
-    "selections": [ "MedicationRequest/05f8cb26-2eb6-4124-b65d-bb1f13e21c49" ],
-    "draftOrders":
-      {
-        "resourceType": "MedicationRequest",
-        "id": "05f8cb26-2eb6-4124-b65d-bb1f13e21c49",
-        "status": "active",
-        "intent": "order",
-        "category": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
-              "code": "community",
-              "display": "Community"
-            }
-          ]
-        },
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "1010603",
-              "display": "Suboxone 2 MG / 0.5 MG Sublingual Film"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/example-rec-01-true-make-recommendations"
-        },
-        "encounter": {
-          "reference": "Encounter/example-rec-01-in-outpatient-opioid-context"
-        },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today()"
-              }
-            }
-          ]
-        },
-        "dosageInstruction": [
-          {
-            "timing": {
-              "repeat": {
-                "frequency": 1,
-                "period": 1.0,
-                "periodUnit": "d"
-              }
-            },
-            "asNeededBoolean": false,
-            "doseQuantity": {
-              "value": 1.0,
-              "unit": "film"
-            }
-          }
-        ],
-        "dispenseRequest": {
-          "_validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-                "valueExpression": {
-                  "language": "text/cql",
-                  "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-                }
-              }
-            ]
-          },
-          "numberOfRepeatsAllowed": 1,
-          "expectedSupplyDuration": {
-            "value": 30,
-            "unit": "days",
-            "system": "http://unitsofmeasure.org",
-            "code": "d"
-          }
-        }
-      }
+    "selections": [ "MedicationRequest/05f8cb26-2eb6-4124-b65d-bb1f13e21c49" ]
   },
   "prefetch": {
     "item1": {
@@ -122,7 +44,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
               "code": "1010603",
               "display": "Suboxone 2 MG / 0.5 MG Sublingual Film"
             }

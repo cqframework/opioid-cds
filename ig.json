@@ -17,7 +17,8 @@
       "input/resources/plandefinition",
       "input/vocabulary",
       "input/vocabulary/codesystem",
-      "input/vocabulary/valueset"
+      "input/vocabulary/valueset",
+      "bundles/plandefinition/OpioidCDSREC04"
     ],
     "pages": "input/pagecontent",
     "temp": "temp",
@@ -448,8 +449,8 @@
       "base": "Encounter-example-rec-11-opioid-trigger-without-benzo-context.html"
     },
     "ActivityDefinition/opioidcds-detected-issue-opioids-and-benzodiazepines": {
-      "source": "opioidcds-detected-issue-opioids-and-benzodiazepines.json",
-      "base": "opioidcds-detected-issue-opioids-and-benzodiazepines.html"
+      "source": "activitydefinition-detected-issue-opioids-and-benzodiazepines.json",
+      "base": "ActivityDefinition-detected-issue-opioids-and-benzodiazepines.html"
     },
     "ActivityDefinition/opioidcds-risk-assessment-request": {
       "source": "activitydefinition-opioidcds-risk-assessment-request.json",
@@ -784,6 +785,10 @@
       "defns": "cdc-valueset-exclusion-definitions.html",
       "base": "cdc-valueset-exclusion.html",
       "source": "structuredefinition-cdc-valueset-exclusion.json"
+    },
+    "Bundle/OpioidCDSREC04-bundle": {
+      "base": "Bundle-OpioidCDSREC04.html",
+      "source": "OpioidCDSREC04-bundle.json"
     }
   }
 }

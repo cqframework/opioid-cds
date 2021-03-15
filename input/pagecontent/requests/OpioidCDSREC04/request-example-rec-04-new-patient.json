@@ -1,14 +1,13 @@
 {
   "hookInstance": "3a2ff17f-4d50-43a0-a409-20d7686b90ea",
-  "fhirServer": "http://localhost:8080/cqf-ruler-r4/fhir",
+  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
   "hook": "order-select",
+  "user": "Practitioner/example",
   "applyCql": true,
   "context": {
-    "userId": "Practitioner/example",
     "patientId": "Patient/example-rec-04-new-patient",
     "encounterId": "Encounter/example-rec-04-new-patient-context",
-    "selections": [ "MedicationRequest/example-rec-04-new-patient-context" ],
-    "draftOrders":
+    "medications": [
       {
         "resourceType": "MedicationRequest",
         "id": "example-rec-04-new-patient-context",
@@ -17,7 +16,7 @@
         "category": {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+              "system": "http://hl7.org/fhir/CodeSystem/medication-request-category",
               "code": "community"
             }
           ]
@@ -25,7 +24,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
               "code": "1049502",
               "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
             }
@@ -34,17 +33,14 @@
         "subject": {
           "reference": "Patient/example-rec-04-new-patient"
         },
-        "encounter": {
+        "context": {
           "reference": "Encounter/example-rec-04-new-patient-context"
         },
         "_authoredOn": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today()"
-              }
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today()"
             }
           ]
         },
@@ -58,35 +54,33 @@
               }
             },
             "asNeededBoolean": false,
-            "doseAndRate": [{
-              "doseQuantity": {
-                "value": 1.0,
-                "unit": "patch"
-              }
-            }]
+            "doseQuantity": {
+              "value": 1.0,
+              "unit": "patch",
+				      "system": "http://hl7.org/fhir/v3/orderableDrugForm",
+				      "code": "PATCH"
+            }
           }
         ],
         "dispenseRequest": {
-          "_validityPeriod": {
+          "validityPeriod": {
             "extension": [
               {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-                "valueExpression": {
-                  "language": "text/cql",
-                  "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-                }
+                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
               }
             ]
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
-            "value": 30,
+            "value": 30.0,
             "unit": "days",
             "system": "http://unitsofmeasure.org",
             "code": "d"
           }
         }
       }
+    ]
   },
   "prefetch": {
     "item1": null,

@@ -1203,6 +1203,45 @@
                 <reference value="StructureDefinition/cdc-valueset-exclusion"/>
             </sourceReference>
         </resource>
+        <!--
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC04-bundle"/>
+                    </sourceReference>
+                </resource>
+
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC10"/>
+                    </sourceReference>
+                </resource>
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC10PatientView"/>
+                    </sourceReference>
+                </resource>
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC11"/>
+                    </sourceReference>
+                </resource>
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC11PatientView"/>
+                    </sourceReference>
+                </resource>
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC12PatientView"/>
+                    </sourceReference>
+                </resource>
+        -->
     </package>
     <binary value="cql/OMTKData2018.cql"/>
     <binary value="cql/OMTKData2019.cql"/>

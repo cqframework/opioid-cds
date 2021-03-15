@@ -1,14 +1,13 @@
 {
   "hookInstance": "becfdcbd-0f8c-4f01-831c-a20ff695c5b3",
-  "fhirServer": "http://localhost:8080/cqf-ruler-r4/fhir",
+  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
   "hook": "order-select",
+  "user": "Practitioner/example",
   "applyCql": true,
   "context": {
-    "userId": "Practitioner/example",
     "patientId": "Patient/example-rec-08-on-naloxone",
     "encounterId": "Encounter/example-rec-08-on-naloxone-context",
-    "selections": [ "MedicationRequest/example-rec-08-on-naloxone-context" ],
-    "draftOrders":
+    "medications": [
       {
         "resourceType": "MedicationRequest",
         "id": "example-rec-08-on-naloxone-context",
@@ -17,7 +16,7 @@
         "category": {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+              "system": "http://hl7.org/fhir/CodeSystem/medication-request-category",
               "code": "community"
             }
           ]
@@ -25,7 +24,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
               "code": "197696",
               "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
             }
@@ -34,17 +33,14 @@
         "subject": {
           "reference": "Patient/example-rec-08-on-naloxone"
         },
-        "encounter": {
+        "context": {
           "reference": "Encounter/example-rec-08-on-naloxone-context"
         },
         "_authoredOn": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today()"
-              }
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today()"
             }
           ]
         },
@@ -60,19 +56,18 @@
             "asNeededBoolean": false,
             "doseQuantity": {
               "value": 1.0,
-              "unit": "patch"
+              "unit": "patch",
+				      "system": "http://hl7.org/fhir/v3/orderableDrugForm",
+				      "code": "PATCH"
             }
           }
         ],
         "dispenseRequest": {
-          "_validityPeriod": {
+          "validityPeriod": {
             "extension": [
               {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-                "valueExpression": {
-                  "language": "text/cql",
-                  "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-                }
+                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
               }
             ]
           },
@@ -85,6 +80,7 @@
           }
         }
       }
+    ]
   },
   "prefetch": {
     "item1": {
@@ -99,7 +95,7 @@
         "category": {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+              "system": "http://hl7.org/fhir/CodeSystem/medication-request-category",
               "code": "community"
             }
           ]
@@ -107,7 +103,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
               "code": "1191212",
               "display": "Naloxone Hydrochloride 0.02 MG/ML Injectable Solution"
             }
@@ -122,11 +118,8 @@
         "_authoredOn": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today() - 14 days"
-              }
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today() - 14 days"
             }
           ]
         },
@@ -147,14 +140,11 @@
           }
         ],
         "dispenseRequest": {
-          "_validityPeriod": {
+          "validityPeriod": {
             "extension": [
               {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-                "valueExpression": {
-                  "language": "text/cql",
-                  "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() + 3 months } }"
-                }
+                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() + 3 months } }"
               }
             ]
           },
@@ -182,11 +172,8 @@
         "period": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() - 14 days } }"
-              }
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() - 14 days } }"
             }
           ]
         }

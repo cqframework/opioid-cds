@@ -1,99 +1,15 @@
 {
   "hookInstance": "3078316d-e23f-4094-aec6-a6094ad29204",
-  "fhirServer": "http://localhost:8080/cqf-ruler-r4/fhir",
+  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
   "hook": "order-select",
   "applyCql": true,
   "context": {
-    "userId": "Practitioner/example",
+    "user": "Practitioner/example",
     "patientId": "Patient/example-rec-11-opioid-trigger-with-benzo",
-    "encounterId": "Encounter/example-rec-11-opioid-trigger-with-benzo-context",
-    "selections": [ "MedicationRequest/example-rec-11-opioid-trigger-with-benzo-context" ],
-    "draftOrders":
-      {
-        "resourceType": "MedicationRequest",
-        "id": "example-rec-11-opioid-trigger-with-benzo-context",
-        "status": "active",
-        "intent": "order",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
-                "code": "community"
-              }
-            ]
-          }
-        ],
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "1049502",
-              "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "example-rec-11-opioid-trigger-with-benzo-context"
-        },
-        "encounter": {
-          "reference": "Encounter/example-rec-11-opioid-trigger-with-benzo-context"
-        },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today()"
-              }
-            }
-          ]
-        },
-        "dosageInstruction": [
-          {
-            "timing": {
-              "repeat": {
-                "frequency": 1,
-                "period": 1.0,
-                "periodUnit": "d"
-              }
-            },
-            "asNeededBoolean": false,
-            "doseAndRate": [
-              {
-                "doseQuantity": {
-                  "value": 1.0,
-                  "unit": "tablet"
-                }
-              }
-            ]
-          }
-        ],
-        "dispenseRequest": {
-          "_validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-                "valueExpression": {
-                  "language": "text/cql",
-                  "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-                }
-              }
-            ]
-          },
-          "numberOfRepeatsAllowed": 3,
-          "expectedSupplyDuration": {
-            "value": 30.0,
-            "unit": "days",
-            "system": "http://unitsofmeasure.org",
-            "code": "d"
-          }
-        }
-      }
+    "encounterId": "Encounter/example-rec-11-opioid-trigger-with-benzo-context"
   },
   "prefetch": {
-    "item1": {
+  	"item1": {
       "response": {
         "status": "200 OK"
       },
@@ -104,9 +20,7 @@
         "birthDate": "1982-01-07"
       }
     },
-    "item2": null,
-    "item3": null,
-    "item4": {
+    "item2": {
       "response": {
         "status": "200 OK"
       },
@@ -115,73 +29,51 @@
         "id": "example-rec-11-opioid-trigger-with-benzo-prefetch",
         "status": "active",
         "intent": "order",
-        "category": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
-                "code": "community"
-              }
-            ]
-          }
-        ],
+        "category": {
+          "coding": [{
+            "system": "http://hl7.org/fhir/CodeSystem/medication-request-category",
+            "code": "community"
+          }]
+        },
         "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "1298088",
-              "display": "Flurazepam Hydrochloride 15 MG Oral Capsule"
-            }
-          ]
+          "coding": [{
+            "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
+            "code": "1298088",
+            "display": "Flurazepam Hydrochloride 15 MG Oral Capsule"
+          }]
         },
         "subject": {
           "reference": "Patient/example-rec-11-opioid-trigger-with-benzo"
         },
-        "encounter": {
+        "context": {
           "reference": "Encounter/example-rec-11-opioid-trigger-with-benzo-prefetch"
         },
         "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today() - 28 days"
-              }
-            }
-          ]
+          "extension": [{
+            "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+            "valueString": "Today() - 28 days"
+          }]
         },
-        "dosageInstruction": [
-          {
-            "timing": {
-              "repeat": {
-                "frequency": 1,
-                "period": 1.0,
-                "periodUnit": "d"
-              }
-            },
-            "asNeededBoolean": false,
-            "doseAndRate": [
-              {
-                "doseQuantity": {
-                  "value": 1.0,
-                  "unit": "capsule"
-                }
-              }
-            ]
+        "dosageInstruction": [{
+          "timing": {
+            "repeat": {
+              "frequency": 1,
+              "period": 1.0,
+              "periodUnit": "d"
+            }
+          },
+          "asNeededBoolean": false,
+          "doseQuantity": {
+            "value": 1.0,
+            "unit": "capsule"
           }
-        ],
+        }],
         "dispenseRequest": {
-          "_validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-                "valueExpression": {
-                  "language": "text/cql",
-                  "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 28 days }, end: FHIR.dateTime { value: Today() + 3 months } }"
-                }
-              }
-            ]
+          "validityPeriod": {
+            "extension": [{
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 28 days }, end: FHIR.dateTime { value: Today() + 3 months } }"
+            }]
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
@@ -193,9 +85,7 @@
         }
       }
     },
-    "item5": null,
-    "item6": null,
-    "item7": {
+    "item3": {
       "response": {
         "status": "200 OK"
       },
@@ -207,19 +97,12 @@
           "reference": "Patient/example-rec-11-opioid-trigger-with-benzo"
         },
         "period": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 28 days }, end: FHIR.dateTime { value: Today() - 28 days } }"
-              }
-            }
-          ]
+          "extension": [{
+            "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+            "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 28 days }, end: FHIR.dateTime { value: Today() - 28 days } }"
+          }]
         }
       }
-    },
-    "item8": null,
-    "item9": null
+    }
   }
 }
