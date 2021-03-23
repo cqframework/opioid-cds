@@ -24,7 +24,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
               "code": "197696",
               "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
             }
@@ -103,7 +103,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
               "code": "104693",
               "display": "Temazepam 20 MG Oral Tablet"
             }

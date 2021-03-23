@@ -31,7 +31,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/opioid-analgesics-with-ambulatory-misuse-potential",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential",
   "name": "opioid_analgesics_with_ambulatory_misuse_potential",
   "title": "Opioid analgesics with ambulatory misuse potential",
   "status": "active",

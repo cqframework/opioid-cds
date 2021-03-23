@@ -60,6 +60,24 @@
                 <reference value="Encounter/example-rec-04-new-patient-context"/>
             </sourceReference>
         </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-04-patient-view-new-patient"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-04-patient-view-new-patient"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-new-patient-context"/>
+            </sourceReference>
+        </resource>
 
         <resource>
             <example value="true"/>

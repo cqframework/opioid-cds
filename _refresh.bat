@@ -32,4 +32,4 @@ IF EXIST "%input_cache_path%\%tooling_jar%" (
 	ECHO CQF Tooling NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
 )
 
-input/pagecontent/quick-start-bundles/_refreshQuickStart.sh
+input/pagecontent/quick-start-bundles/_refreshQuickStart.bat

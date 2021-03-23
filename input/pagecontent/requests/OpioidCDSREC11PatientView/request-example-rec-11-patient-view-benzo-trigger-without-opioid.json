@@ -40,7 +40,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
               "code": "1298088",
               "display": "Flurazepam Hydrochloride 15 MG Oral Capsule"
             }

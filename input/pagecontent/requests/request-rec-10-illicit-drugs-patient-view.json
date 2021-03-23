@@ -26,7 +26,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
               "code": "1049502",
               "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
             }
@@ -163,7 +163,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
               "code": "197696",
               "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
             }

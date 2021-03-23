@@ -183,7 +183,7 @@
               "code": {
                 "coding": [
                   {
-                    "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
                     "code": "197696"
                   }
                 ]
@@ -208,7 +208,7 @@
               "code": {
                 "coding": [
                   {
-                    "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
                     "code": "1049502"
                   }
                 ]

@@ -84,6 +84,18 @@
       "source": "encounter-example-rec-04-new-patient-context.xml",
       "base": "Encounter-example-rec-04-new-patient-context.html"
     },
+    "Bundle/example-rec-04-patient-view-new-patient": {
+      "source": "bundle-example-rec-04-patient-view-new-patient.xml",
+      "base": "Bundle-example-rec-04-patient-view-new-patient.html"
+    },
+    "Patient/example-rec-04-patient-view-new-patient": {
+      "source": "patient-example-rec-04-patient-view-new-patient.xml",
+      "base": "Patient-example-rec-04-patient-view-new-patient.html"
+    },
+    "Encounter/example-rec-04-patient-view-new-patient-context": {
+      "source": "encounter-example-rec-04-patient-view-new-patient-context.xml",
+      "base": "Encounter-example-rec-04-patient-view-new-patient-context.html"
+    },
 
     "Bundle/example-rec-04-not-long-acting-opioid": {
       "source": "bundle-example-rec-04-not-long-acting-opioid.xml",

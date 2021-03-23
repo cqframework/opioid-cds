@@ -86,7 +86,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm",
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
               "code": "246474",
               "display": "Buprenorphine 0.2 MG Sublingual Tablet"
             }
