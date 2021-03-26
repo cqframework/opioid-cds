@@ -1,6 +1,6 @@
 {
   "hookInstance": "17ff4874-b68a-490c-abaa-b62b1a91b1bd",
-  "fhirServer": "http://localhost:8080/cqf-ruler-r4/fhir",
+  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
   "hook": "order-select",
   "applyCql": true,
   "context": {
@@ -18,11 +18,8 @@
         "_birthDate": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today() - 20 years"
-              }
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today() - 20 years"
             }
           ]
         }
@@ -36,15 +33,7 @@
       "resource": {
         "resourceType": "Condition",
         "id": "6bf0522c-e143-43e2-af80-47536d52de0c",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active",
-              "display": "Active Condition"
-            }
-          ]
-        },
+        "clinicalStatus": "active",
         "verificationStatus": {
           "code": {
             "coding": [
@@ -84,14 +73,11 @@
             }
           ]
         },
-        "_recordedDate": {
+        "_assertedDate": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today() - 60 days"
-              }
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today() - 60 days"
             }
           ]
         }

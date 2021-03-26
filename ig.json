@@ -522,6 +522,17 @@
       "source": "encounter-example-rec-11-opioid-trigger-without-benzo-context.xml",
       "base": "Encounter-example-rec-11-opioid-trigger-without-benzo-context.html"
     },
+
+    "Bundle/bundle-example-rec-12-criteria-invalid": {
+      "source": "bundle-example-rec-12-criteria-invalid.json",
+      "base": "Bundle-example-rec-12-criteria-invalid.html"
+    },
+
+    "Bundle/bundle-example-rec-12-criteria-valid": {
+      "source": "bundle-example-rec-12-criteria-valid.json",
+      "base": "Bundle-example-rec-12-criteria-valid.html"
+    },
+
     "ActivityDefinition/opioidcds-detected-issue-opioids-and-benzodiazepines": {
       "source": "activitydefinition-detected-issue-opioids-and-benzodiazepines.json",
       "base": "ActivityDefinition-detected-issue-opioids-and-benzodiazepines.html"

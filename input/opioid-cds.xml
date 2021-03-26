@@ -710,6 +710,20 @@
 
         <resource>
             <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-12-criteria-invalid"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-12-criteria-valid"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
             <name value="ActivityDefinition - ProcedureRequest for risk assessment"/>
             <sourceReference>
                 <reference value="ActivityDefinition/opioidcds-risk-assessment-request"/>
