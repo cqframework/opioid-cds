@@ -574,6 +574,54 @@
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening"
       }
     } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening"
+      }
+    } ]
   } ],
   "content": [ {
     "contentType": "text/cql",
