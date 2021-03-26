@@ -1,16 +1,16 @@
 {
   "hookInstance": "1bf95787-c6eb-42c5-aacd-405803921024",
   "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
-  "hook": "order-select",
+  "hook": "patient-view",
   "user": "Practitioner/example",
   "applyCql": true,
   "context": {
-    "patientId": "Patient/example-rec-04-opioid-with-abuse-potential",
-    "encounterId": "Encounter/example-rec-04-opioid-with-abuse-potential-context",
+    "patientId": "Patient/example-rec-04-patient-view-opioid-with-abuse-potential",
+    "encounterId": "Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-context",
     "medications": [
       {
         "resourceType": "MedicationRequest",
-        "id": "example-rec-04-opioid-with-abuse-potential-context",
+        "id": "example-rec-04-patient-view-opioid-with-abuse-potential-context",
         "status": "active",
         "intent": "order",
         "category": {
@@ -31,10 +31,10 @@
           ]
         },
         "subject": {
-          "reference": "Patient/example-rec-04-opioid-with-abuse-potential"
+          "reference": "Patient/example-rec-04-patient-view-opioid-with-abuse-potential"
         },
         "context": {
-          "reference": "Encounter/example-rec-04-opioid-with-abuse-potential-context"
+          "reference": "Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-context"
         },
         "_authoredOn": {
           "extension": [
@@ -89,7 +89,7 @@
       },
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "example-rec-04-opioid-with-abuse-potential-prefetch",
+        "id": "example-rec-04-patient-view-opioid-with-abuse-potential-prefetch",
         "status": "active",
         "intent": "order",
         "category": {
@@ -110,10 +110,10 @@
           ]
         },
         "subject": {
-          "reference": "Patient/example-rec-04-opioid-with-abuse-potential"
+          "reference": "Patient/example-rec-04-patient-view-opioid-with-abuse-potential"
         },
         "context": {
-          "reference": "Encounter/example-rec-04-opioid-with-abuse-potential-prefetch"
+          "reference": "Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch"
         },
         "_authoredOn": {
           "extension": [
@@ -164,10 +164,10 @@
       },
       "resource": {
         "resourceType": "Encounter",
-        "id": "example-rec-04-opioid-with-abuse-potential-prefetch",
+        "id": "example-rec-04-patient-view-opioid-with-abuse-potential-prefetch",
         "status": "finished",
         "subject": {
-          "reference": "Patient/example-rec-04-opioid-with-abuse-potential"
+          "reference": "Patient/example-rec-04-patient-view-opioid-with-abuse-potential"
         },
         "period": {
           "extension": [
@@ -185,7 +185,7 @@
       },
       "resource": {
         "resourceType": "Patient",
-        "id": "example-rec-04-opioid-with-abuse-potential",
+        "id": "example-rec-04-patient-view-opioid-with-abuse-potential",
         "gender": "male",
         "birthDate": "1982-01-07"
       }

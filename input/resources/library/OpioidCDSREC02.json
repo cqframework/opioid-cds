@@ -276,6 +276,270 @@
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
       }
     } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "CarePlan"
+    } ],
+    "type": "CarePlan",
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "CarePlan"
+    } ],
+    "type": "CarePlan",
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "CarePlan"
+    } ],
+    "type": "CarePlan",
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "CarePlan"
+    } ],
+    "type": "CarePlan",
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "CarePlan"
+    } ],
+    "type": "CarePlan",
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "CarePlan"
+    } ],
+    "type": "CarePlan",
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "CarePlan"
+    } ],
+    "type": "CarePlan",
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "CarePlan"
+    } ],
+    "type": "CarePlan",
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "CarePlan"
+    } ],
+    "type": "CarePlan",
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "CarePlan"
+    } ],
+    "type": "CarePlan",
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "CarePlan"
+    } ],
+    "type": "CarePlan",
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
+      }
+    } ]
   } ],
   "content": [ {
     "contentType": "text/cql",

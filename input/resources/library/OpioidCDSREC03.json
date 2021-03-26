@@ -198,6 +198,138 @@
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
       }
     } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
+      }
+    } ]
   } ],
   "content": [ {
     "contentType": "text/cql",

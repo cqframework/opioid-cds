@@ -113,6 +113,37 @@
         <resource>
             <example value="true"/>
             <sourceReference>
+                <reference value="Bundle/example-rec-04-patient-view-not-long-acting-opioid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-04-patient-view-not-long-acting-opioid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-04-patient-view-not-long-acting-opioid-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-not-long-acting-opioid-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-not-long-acting-opioid-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
                 <reference value="Bundle/example-rec-04-opioid-with-abuse-potential"/>
             </sourceReference>
         </resource>
@@ -141,6 +172,37 @@
             </sourceReference>
         </resource>
 
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-04-patient-view-opioid-with-abuse-potential"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-04-patient-view-opioid-with-abuse-potential"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch"/>
+            </sourceReference>
+        </resource>
+        
         <resource>
             <example value="true"/>
             <sourceReference>
@@ -515,6 +577,37 @@
             </sourceReference>
         </resource>
 
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-10-patient-view-no-screenings"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-10-patient-view-no-screenings"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-10-patient-view-no-screenings-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-patient-view-no-screenings-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-patient-view-no-screenings-prefetch"/>
+            </sourceReference>
+        </resource>
+        
         <resource>
             <example value="true"/>
             <sourceReference>

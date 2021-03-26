@@ -113,33 +113,50 @@
 
 <!-- Example Data/Requests -->
 <details>
-  <summary>
-    <h3>Example Data/ Requests</h3>
-      </summary>
-      <p>ToDo</p>
-   <a name="exampledatarequests"> </a>
+  <summary><h3 class="title">Example Data/Requests - order-select hook</h3></summary>
+  <a name="exampledatarequests-order-select"> </a>
   <table class="grid">
     <thead>
-      <tr>
-        <th>Description</th>
-        <th>Bundle</th>
-        <th>CDS Hooks Request</th>
-        <th>Expected Response</th>
-      </tr>
+    <tr>
+      <th>Description</th><th>Bundle</th><th>CDS Hooks Request</th><th>Expected Response</th>
+    </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="col-7">ToDo</td>
-         <td><a href="Bundle-example-rec-01-true-make-recommendations.html">Test Bundle</a></td>
-         <td><a href="requests/OpioidCDSREC01/request-example-rec-01-in-outpatient-opioid.json">Request JSON</a></td>
-         <td><a href="responses/OpioidCDSREC01/response-example-rec-01-in-outpatient-opioid.json">Response JSON</a></td>
-       </tr>
-       <tr>
-         <td class="col-7">ToDo</td>
-         <td><a href="Bundle-example-rec-01-false-due-to-inpatient-opioid.html">Test Bundle</a></td>
-         <td><a href="requests/OpioidCDSREC01/request-example-rec-01-out-inpatient-opioid.json">Request JSON</a></td>
-         <td><a href="responses/OpioidCDSREC01/response-example-rec-01-out-inpatient-opioid.json">Response JSON</a></td>
-       </tr>
+    <tr>
+      <td class="col-7">Patient 18 or older. Patient is being prescribed 72 HR Fentanyl 0.075 MG/HR Transdermal System (RxNorm code 197696), once every 12 days for 30 days. This triggers the message that urine drug screening is recommended with the following three feedback options:
+        i.	Perform the screening
+        ii.	Indicate that the prescription is not for chronic pain management and snooze for 3 months
+        iii.	Indicate that it is not applicable, log a comment and snooze for 3 months. </td>
+      <td><a href="Bundle-example-rec-10-no-screenings.html">Test Bundle</a></td>
+      <td><a href="requests/OpioidCDSREC10/request-example-rec-10-no-screenings.json">Request JSON</a></td>
+      <td><a href="responses/OpioidCDSREC10/response-example-rec-10-no-screenings.json">Response JSON</a></td>
+    </tr>
+    </tbody>
+  </table>
+</details>
+<p></p>
+<details>
+  <summary><h3 class="title">Example Data/Requests - patient-view hook</h3></summary>
+  <a name="exampledatarequests-patient-view"> </a>
+  <table class="grid">
+    <thead>
+    <tr>
+      <th>Description</th><th>Bundle</th><th>CDS Hooks Request</th><th>Expected Response</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td class="col-7">Patient 18 or older. Patient is being prescribed 72 HR Fentanyl 0.075 MG/HR Transdermal System (RxNorm code 197696), once every 12 days for 30 days. This triggers the message that urine drug screening is recommended with the following three feedback options:
+        i.	Perform the screening
+        ii.	Indicate that the prescription is not for chronic pain management and snooze for 3 months
+        iii.	Indicate that it is not applicable, log a comment and snooze for 3 months. </td>
+      <td><a href="Bundle-example-rec-10-patient-view-no-screenings.html">Test Bundle</a></td>
+      <td><a href="requests/OpioidCDSREC10PatientView/request-example-rec-10-patient-view-no-screenings.json">Request JSON</a></td>
+      <td><a href="responses/OpioidCDSREC10PatientView/response-example-rec-10-patient-view-no-screenings.json">Response JSON</a></td>
+    </tr>
+    </tbody>
+  </table>
+</details>
     </tbody>
   </table>
 </details>

@@ -277,6 +277,270 @@
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling"
       }
     } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling"
+      }
+    } ]
   } ],
   "content": [ {
     "contentType": "text/cql",

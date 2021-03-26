@@ -34932,3 +34932,23 @@ e: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "1049502"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "oxyCODONE HCl 10 MG 12HR Extended Release Oral Tablet",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "197696"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "72 HR fentaNYL 0.075 MG/HR Transdermal System",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

@@ -1196,6 +1196,1623 @@
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
       }
     } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "codeFilter": [ {
+      "path": "category",
+      "valueCoding": [ {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      } ]
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+      }
+    } ]
   } ],
   "content": [ {
     "contentType": "text/cql",

@@ -1,5 +1,5 @@
 <Bundle xmlns="http://hl7.org/fhir">
-   <id value="example-rec-04-new-patient"/>
+   <id value="example-rec-04-patient-view-new-patient"/>
    <type value="transaction"/>
    <entry>
       <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Patient/example-rec-04-patient-view-new-patient"/>
