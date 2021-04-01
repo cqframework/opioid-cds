@@ -10185,7 +10185,7 @@
         "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
         "valueCode": "phx"
       } ],
-      "url": "http://hl7.org/fhir/medication-request-category",
+      "url": "http://hl7.org/fhir/CodeSystem/medication-request-category",
       "identifier": {
         "system": "urn:ietf:rfc:3986",
         "value": "urn:oid:2.16.840.1.113883.4.642.1.349"
@@ -10888,7 +10888,7 @@
         "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
         "valueCode": "phx"
       } ],
-      "url": "http://hl7.org/fhir/medication-request-status",
+      "url": "http://hl7.org/fhir/CodeSystem/medication-request-status",
       "identifier": {
         "system": "urn:ietf:rfc:3986",
         "value": "urn:oid:2.16.840.1.113883.4.642.1.344"
@@ -11476,7 +11476,7 @@
         "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
         "valueCode": "pc"
       } ],
-      "url": "http://hl7.org/fhir/condition-category",
+      "url": "http://hl7.org/fhir/CodeSystem/condition-category",
       "identifier": {
         "system": "urn:ietf:rfc:3986",
         "value": "urn:oid:2.16.840.1.113883.4.642.1.154"
@@ -28986,7 +28986,7 @@
         "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
         "valueCode": "pc"
       } ],
-      "url": "http://hl7.org/fhir/condition-clinical",
+      "url": "http://hl7.org/fhir/CodeSystem/condition-clinical",
       "identifier": {
         "system": "urn:ietf:rfc:3986",
         "value": "urn:oid:2.16.840.1.113883.4.642.1.156"
