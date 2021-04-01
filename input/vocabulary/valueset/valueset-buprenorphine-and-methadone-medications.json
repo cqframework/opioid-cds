@@ -31,7 +31,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/buprenorphine-and-methadone-medications",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications",
   "name": "buprenorphine_and_methadone_medications",
   "title": "Buprenorphine and Methadone medications",
   "status": "active",

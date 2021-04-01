@@ -15,7 +15,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/pain-management-procedure",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure",
   "name": "pain_management_procedure",
   "title": "Pain management procedure",
   "status": "active",

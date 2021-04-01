@@ -31,7 +31,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/oncology-specialty-designations",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/oncology-specialty-designations",
   "name": "oncology_specialty_designations",
   "title": "Oncology specialty designations (NUCC)",
   "status": "active",

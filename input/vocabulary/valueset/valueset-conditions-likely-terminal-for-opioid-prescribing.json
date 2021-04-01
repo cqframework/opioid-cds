@@ -31,7 +31,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/conditions-likely-terminal-for-opioid-prescribing",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/conditions-likely-terminal-for-opioid-prescribing",
   "name": "conditions_likely_terminal_for_opioid_prescribing",
   "title": "Conditions likely terminal for opioid prescribing",
   "status": "active",

@@ -31,7 +31,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/cdc-malignant-cancer-conditions",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cdc-malignant-cancer-conditions",
   "name": "cdc_malignant_cancer_conditions",
   "title": "CDC malignant cancer conditions",
   "status": "active",
