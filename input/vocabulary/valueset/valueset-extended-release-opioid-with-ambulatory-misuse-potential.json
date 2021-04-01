@@ -3,7 +3,7 @@
   "id": "extended-release-opioid-with-ambulatory-misuse-potential",
   "extension": [
     {
-      "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
       "valueString": "Expand the value set \"Opioids with Opioid analgesic with ambulatory misuse potential\" and then remove concepts that are long acting:\nFilter the result to only select concepts that are a drug with Methadone Ingredient, or have one of the following dose forms: 316943 Extended Release Oral Capsule, 316945 Extended Release Oral Tablet, 316946 Extended Release Oral Tablet, 316987 Transdermal System. To do this filter the list by only including descriptions that have one of the following strings: \"Extended Release\" OR \"Transdermal\" OR \"Methadone\"."
     },
     {
@@ -35,7 +35,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/extended-release-opioid-with-ambulatory-misuse-potential",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/extended-release-opioid-with-ambulatory-misuse-potential",
   "name": "extended_release_opioid_with_ambulatory_misuse_potential",
   "title": "Extended release opioid with ambulatory misuse potential",
   "status": "active",

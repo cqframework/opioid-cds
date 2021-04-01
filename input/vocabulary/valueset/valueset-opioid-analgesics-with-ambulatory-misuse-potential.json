@@ -3,10 +3,6 @@
   "id": "opioid-analgesics-with-ambulatory-misuse-potential",
   "extension": [
     {
-      "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
-      "valueString": "https://mor.nlm.nih.gov/RxMix/ Script:\nStep 1a \nCreate Batch text input file (SCT-Opioids.txt) with following SCT identifier (for the concept \"Product containing opioid receptor agonist (product)\") as an input within the file: \n360204007       \n\nStep 1b\nSubmit batch job using the above SCT-Opioids.txt file to following workflow by uploading file (SCT-Opioid-wf.config) with the following in the file:  <WFE><filteredOutputs>RXCUI|name|term_type</filteredOutputs><input>NOINPUT</input><FS><service>NOINPUT</service><function>findClassById</function><level>0</level><paramSize>1</paramSize><param order ='0'>?</param></FS><FS><service>NOINPUT</service><function>getClassMembers</function><level>1</level><paramSize>5</paramSize><param order ='0'>?</param><param order ='1'>SNOMEDCT</param><param order ='2'>isa_disposition</param><param order ='3'>0</param><param order ='4'>IN,MIN,PIN</param></FS><FS><service>NOINPUT</service><function>getRelatedByType</function><level>2</level><paramSize>2</paramSize><param order ='0'>?</param><param order ='1'>BPCK,GPCK,SBD,SCD</param></FS></WFE>\nThis will produce a result file with all Opioid clinical drugs included\n\nStep 2\nTo remove all cough and bowel transit formulation codes and to remove the injectable codes filter out all codes with the following strings:\nIngredient strings: \nGuaifenesin, Chlorpheniramine, Pseudoephedrine, Brompheniramine, Phenylephrine, Phenylpropanolamine, Promethazine, Bromodiphenhydramine, guaiacolsulfonate, homatropine\nForm strings:\ninject, cartridge, syringe"
-    },
-    {
       "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
       "valueString": "All opioid clinical drugs except cough medications, antisapasmodics, or those restricted to surgical use only."
     },
@@ -35,7 +31,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/opioid-analgesics-with-ambulatory-misuse-potential",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential",
   "name": "opioid_analgesics_with_ambulatory_misuse_potential",
   "title": "Opioid analgesics with ambulatory misuse potential",
   "status": "active",

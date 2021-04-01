@@ -15,7 +15,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/conditions-documenting-substance-misuse",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/conditions-documenting-substance-misuse",
   "name": "conditions_documenting_substance_misuse",
   "title": "Conditions documenting substance misuse",
   "status": "active",

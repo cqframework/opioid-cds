@@ -31,7 +31,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/substance-misuse-behavioral-counseling",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling",
   "name": "substance_misuse_behavioral_counseling",
   "title": "Substance misuse behavioral counseling",
   "status": "active",

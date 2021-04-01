@@ -15,7 +15,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/pdmp-data-reviewed-finding",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding",
   "name": "pdmp_data_reviewed_finding",
   "title": "PDMP data reviewed finding",
   "status": "active",

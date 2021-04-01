@@ -15,7 +15,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/opioid-counseling-procedure",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure",
   "name": "opioid_counseling_procedure",
   "title": "Opioid counseling procedure",
   "status": "active",

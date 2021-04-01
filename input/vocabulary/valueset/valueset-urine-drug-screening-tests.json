@@ -15,7 +15,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/urine-drug-screening-tests",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/urine-drug-screening-tests",
   "name": "urine_drug_screening_tests",
   "title": "Urine drug screening tests",
   "status": "active",

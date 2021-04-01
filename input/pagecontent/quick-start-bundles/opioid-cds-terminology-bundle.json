@@ -15,7 +15,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/opioid-counseling-procedure",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure",
       "name": "opioid_counseling_procedure",
       "title": "Opioid counseling procedure",
       "status": "active",
@@ -67,7 +67,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/opioid-drug-urine-screening",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening",
       "name": "opioid_drug_urine_screening",
       "title": "Opioid drug urine screening",
       "status": "active",
@@ -2095,7 +2095,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/substance-misuse-behavioral-counseling",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling",
       "name": "substance_misuse_behavioral_counseling",
       "title": "Substance misuse behavioral counseling",
       "status": "active",
@@ -2201,7 +2201,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/urine-drug-screening-tests",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/urine-drug-screening-tests",
       "name": "urine_drug_screening_tests",
       "title": "Urine drug screening tests",
       "status": "active",
@@ -10127,7 +10127,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/pain-treatment-plan",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan",
       "name": "pain_treatment_plan",
       "title": "Pain treatment plan",
       "status": "active",
@@ -10185,7 +10185,7 @@
         "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
         "valueCode": "phx"
       } ],
-      "url": "http://hl7.org/fhir/medication-request-category",
+      "url": "http://hl7.org/fhir/CodeSystem/medication-request-category",
       "identifier": {
         "system": "urn:ietf:rfc:3986",
         "value": "urn:oid:2.16.840.1.113883.4.642.1.349"
@@ -10368,7 +10368,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/opioid-misuse-disorders",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-disorders",
       "name": "opioid_misuse_disorders",
       "title": "Opioid misuse disorders",
       "status": "active",
@@ -10829,7 +10829,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/opioid-misuse-assessment-procedure",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-assessment-procedure",
       "name": "opioid_misuse_assessment_procedure",
       "title": "Opioid misuse assessment procedure",
       "status": "active",
@@ -10888,7 +10888,7 @@
         "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
         "valueCode": "phx"
       } ],
-      "url": "http://hl7.org/fhir/medication-request-status",
+      "url": "http://hl7.org/fhir/CodeSystem/medication-request-status",
       "identifier": {
         "system": "urn:ietf:rfc:3986",
         "value": "urn:oid:2.16.840.1.113883.4.642.1.344"
@@ -10976,7 +10976,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/naloxone-medications",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/naloxone-medications",
       "name": "naloxone_medications",
       "title": "naloxone medications",
       "status": "active",
@@ -11476,7 +11476,7 @@
         "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
         "valueCode": "pc"
       } ],
-      "url": "http://hl7.org/fhir/condition-category",
+      "url": "http://hl7.org/fhir/CodeSystem/condition-category",
       "identifier": {
         "system": "urn:ietf:rfc:3986",
         "value": "urn:oid:2.16.840.1.113883.4.642.1.154"
@@ -11536,7 +11536,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/oncology-specialty-designations",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/oncology-specialty-designations",
       "name": "oncology_specialty_designations",
       "title": "Oncology specialty designations (NUCC)",
       "status": "active",
@@ -11664,9 +11664,6 @@
       "resourceType": "ValueSet",
       "id": "opioid-analgesics-with-ambulatory-misuse-potential",
       "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
-        "valueString": "https://mor.nlm.nih.gov/RxMix/ Script:\nStep 1a \nCreate Batch text input file (SCT-Opioids.txt) with following SCT identifier (for the concept \"Product containing opioid receptor agonist (product)\") as an input within the file: \n360204007       \n\nStep 1b\nSubmit batch job using the above SCT-Opioids.txt file to following workflow by uploading file (SCT-Opioid-wf.config) with the following in the file:  <WFE><filteredOutputs>RXCUI|name|term_type</filteredOutputs><input>NOINPUT</input><FS><service>NOINPUT</service><function>findClassById</function><level>0</level><paramSize>1</paramSize><param order ='0'>?</param></FS><FS><service>NOINPUT</service><function>getClassMembers</function><level>1</level><paramSize>5</paramSize><param order ='0'>?</param><param order ='1'>SNOMEDCT</param><param order ='2'>isa_disposition</param><param order ='3'>0</param><param order ='4'>IN,MIN,PIN</param></FS><FS><service>NOINPUT</service><function>getRelatedByType</function><level>2</level><paramSize>2</paramSize><param order ='0'>?</param><param order ='1'>BPCK,GPCK,SBD,SCD</param></FS></WFE>\nThis will produce a result file with all Opioid clinical drugs included\n\nStep 2\nTo remove all cough and bowel transit formulation codes and to remove the injectable codes filter out all codes with the following strings:\nIngredient strings: \nGuaifenesin, Chlorpheniramine, Pseudoephedrine, Brompheniramine, Phenylephrine, Phenylpropanolamine, Promethazine, Bromodiphenhydramine, guaiacolsulfonate, homatropine\nForm strings:\ninject, cartridge, syringe"
-      }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
         "valueString": "All opioid clinical drugs except cough medications, antisapasmodics, or those restricted to surgical use only."
       }, {
@@ -11688,7 +11685,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/opioid-analgesics-with-ambulatory-misuse-potential",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential",
       "name": "opioid_analgesics_with_ambulatory_misuse_potential",
       "title": "Opioid analgesics with ambulatory misuse potential",
       "status": "active",
@@ -16435,7 +16432,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/pdmp-review-procedure",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure",
       "name": "pdmp_review_procedure",
       "title": "PDMP review procedure",
       "status": "active",
@@ -16499,7 +16496,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/cdc-malignant-cancer-conditions",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cdc-malignant-cancer-conditions",
       "name": "cdc_malignant_cancer_conditions",
       "title": "CDC malignant cancer conditions",
       "status": "active",
@@ -23268,7 +23265,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/limited-life-expectancy-conditions",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions",
       "name": "limited_life_expectancy_conditions",
       "title": "Limited life expectancy conditions",
       "status": "active",
@@ -23349,7 +23346,7 @@
       "resourceType": "ValueSet",
       "id": "benzodiazepine-medications",
       "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
         "valueString": "https://mor.nlm.nih.gov/RxMix/ Script:\nStep 1a \nCreate Batch text input file (SCT-benzo.txt) with following SCT identifier (for the concept \"Product containing benzodiazepine (product)\") as an input within the file: \n16047007       \n\nStep 1b\nSubmit batch job using the above SCT-benzo.txt file to following workflow by uploading file (SCT-benzo.config) with the following in the file:  <WFE><filteredOutputs>RXCUI|name|term_type</filteredOutputs><input>NOINPUT</input><FS><service>NOINPUT</service><function>findClassById</function><level>0</level><paramSize>1</paramSize><param order ='0'>?</param></FS><FS><service>NOINPUT</service><function>getClassMembers</function><level>1</level><paramSize>5</paramSize><param order ='0'>?</param><param order ='1'>SNOMEDCT</param><param order ='2'>isa_structure</param><param order ='3'>0</param><param order ='4'>IN,MIN,PIN</param></FS><FS><service>NOINPUT</service><function>getRelatedByType</function><level>2</level><paramSize>2</paramSize><param order ='0'>?</param><param order ='1'>BPCK,GPCK,SBD,SCD</param></FS></WFE>\nThis will produce a result file with all benzodiazepine clinical drugs included."
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
@@ -23370,7 +23367,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/benzodiazepine-medications",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/benzodiazepine-medications",
       "name": "benzodiazepine_medications",
       "title": "benzodiazepine medications",
       "status": "active",
@@ -24145,7 +24142,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/buprenorphine-and-methadone-medications",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications",
       "name": "buprenorphine_and_methadone_medications",
       "title": "Buprenorphine and Methadone medications",
       "status": "active",
@@ -24863,7 +24860,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/pain-management-procedure",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure",
       "name": "pain_management_procedure",
       "title": "Pain management procedure",
       "status": "active",
@@ -24927,7 +24924,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/conditions-likely-terminal-for-opioid-prescribing",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/conditions-likely-terminal-for-opioid-prescribing",
       "name": "conditions_likely_terminal_for_opioid_prescribing",
       "title": "Conditions likely terminal for opioid prescribing",
       "status": "active",
@@ -28929,7 +28926,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/pdmp-data-reviewed-finding",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding",
       "name": "pdmp_data_reviewed_finding",
       "title": "PDMP data reviewed finding",
       "status": "active",
@@ -28989,7 +28986,7 @@
         "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
         "valueCode": "pc"
       } ],
-      "url": "http://hl7.org/fhir/condition-clinical",
+      "url": "http://hl7.org/fhir/CodeSystem/condition-clinical",
       "identifier": {
         "system": "urn:ietf:rfc:3986",
         "value": "urn:oid:2.16.840.1.113883.4.642.1.156"
@@ -29063,7 +29060,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/therapies-indicating-end-of-life-care",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/therapies-indicating-end-of-life-care",
       "name": "therapies_indicating_end_of_life_care",
       "title": "Therapies indicating end of life care",
       "status": "active",
@@ -29174,7 +29171,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/non-opioid-drug-urine-screening",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening",
       "name": "non_opioid_drug_urine_screening",
       "title": "Non-opioid drug urine screening",
       "status": "active",
@@ -35304,7 +35301,7 @@
       "resourceType": "ValueSet",
       "id": "extended-release-opioid-with-ambulatory-misuse-potential",
       "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
         "valueString": "Expand the value set \"Opioids with Opioid analgesic with ambulatory misuse potential\" and then remove concepts that are long acting:\nFilter the result to only select concepts that are a drug with Methadone Ingredient, or have one of the following dose forms: 316943 Extended Release Oral Capsule, 316945 Extended Release Oral Tablet, 316946 Extended Release Oral Tablet, 316987 Transdermal System. To do this filter the list by only including descriptions that have one of the following strings: \"Extended Release\" OR \"Transdermal\" OR \"Methadone\"."
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
@@ -35328,7 +35325,7 @@
           } ]
         }
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/extended-release-opioid-with-ambulatory-misuse-potential",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/extended-release-opioid-with-ambulatory-misuse-potential",
       "name": "extended_release_opioid_with_ambulatory_misuse_potential",
       "title": "Extended release opioid with ambulatory misuse potential",
       "status": "active",

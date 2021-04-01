@@ -15,7 +15,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/pain-treatment-plan",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan",
   "name": "pain_treatment_plan",
   "title": "Pain treatment plan",
   "status": "active",

@@ -31,7 +31,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/limited-life-expectancy-conditions",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions",
   "name": "limited_life_expectancy_conditions",
   "title": "Limited life expectancy conditions",
   "status": "active",

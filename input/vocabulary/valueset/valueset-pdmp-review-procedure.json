@@ -15,7 +15,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/pdmp-review-procedure",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure",
   "name": "pdmp_review_procedure",
   "title": "PDMP review procedure",
   "status": "active",

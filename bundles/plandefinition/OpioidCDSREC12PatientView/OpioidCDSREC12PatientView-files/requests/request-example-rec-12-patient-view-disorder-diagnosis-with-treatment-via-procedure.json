@@ -1,0 +1,104 @@
+{
+  "hookInstance": "49192bd1-f7f3-4bdd-bc5f-997dd59a950a",
+  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "hook": "patient-view",
+  "applyCql": true,
+  "context": {
+    "user": "Practitioner/example",
+    "patientId": "Patient/example-rec12pv-diagnosis-with-treatment-procedure",
+    "encounterId": "Encounter/example-rec12pv-diagnosis-with-treatment-procedure"
+  },
+  "prefetch": {
+    "item1": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-rec12pv-diagnosis-with-treatment-procedure",
+        "gender": "male",
+        "birthDate": "1982-01-07"
+      }
+    },
+    "item2": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-rec12pv-diagnosis-with-treatment-procedure",
+        "clinicalStatus": "active",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "439401001",
+                "display": "Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "version": "http://snomed.info/sct/731000124108/version/20200301",
+              "code": "191865004",
+              "display": "Combined opioid with other drug dependence"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec12pv-diagnosis-with-treatment-procedure"
+        },
+        "_assertedDate": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today() - 30 days"
+            }
+          ]
+        }
+      }
+    },
+    "item3": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-rec12pv-diagnosis-with-treatment-procedure-prefetch",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "60112009",
+              "display": "Drug addiction counselingg"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec12pv-diagnosis-with-treatment-procedure"
+        },
+        "context": {
+          "reference": "Encounter/example-rec12pv-diagnosis-with-treatment-procedure-prefetch"
+        },
+        "_performedDateTime": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today() - 30 days"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

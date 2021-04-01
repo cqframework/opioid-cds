@@ -60,6 +60,24 @@
                 <reference value="Encounter/example-rec-04-new-patient-context"/>
             </sourceReference>
         </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-04-patient-view-new-patient"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-04-patient-view-new-patient"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-new-patient-context"/>
+            </sourceReference>
+        </resource>
 
         <resource>
             <example value="true"/>
@@ -95,6 +113,37 @@
         <resource>
             <example value="true"/>
             <sourceReference>
+                <reference value="Bundle/example-rec-04-patient-view-not-long-acting-opioid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-04-patient-view-not-long-acting-opioid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-04-patient-view-not-long-acting-opioid-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-not-long-acting-opioid-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-not-long-acting-opioid-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
                 <reference value="Bundle/example-rec-04-opioid-with-abuse-potential"/>
             </sourceReference>
         </resource>
@@ -123,6 +172,37 @@
             </sourceReference>
         </resource>
 
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-04-patient-view-opioid-with-abuse-potential"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-04-patient-view-opioid-with-abuse-potential"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch"/>
+            </sourceReference>
+        </resource>
+        
         <resource>
             <example value="true"/>
             <sourceReference>
@@ -500,6 +580,37 @@
         <resource>
             <example value="true"/>
             <sourceReference>
+                <reference value="Bundle/example-rec-10-patient-view-no-screenings"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-10-patient-view-no-screenings"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-10-patient-view-no-screenings-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-patient-view-no-screenings-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-patient-view-no-screenings-prefetch"/>
+            </sourceReference>
+        </resource>
+        
+        <resource>
+            <example value="true"/>
+            <sourceReference>
                 <reference value="Bundle/example-rec-11-benzo-trigger-with-opioid"/>
             </sourceReference>
         </resource>
@@ -594,6 +705,20 @@
             <example value="true"/>
             <sourceReference>
                 <reference value="Encounter/example-rec-11-opioid-trigger-without-benzo-context"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-12-criteria-invalid"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-12-criteria-valid"/>
             </sourceReference>
         </resource>
 
@@ -1203,6 +1328,45 @@
                 <reference value="StructureDefinition/cdc-valueset-exclusion"/>
             </sourceReference>
         </resource>
+        <!--
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC04-bundle"/>
+                    </sourceReference>
+                </resource>
+
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC10"/>
+                    </sourceReference>
+                </resource>
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC10PatientView"/>
+                    </sourceReference>
+                </resource>
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC11"/>
+                    </sourceReference>
+                </resource>
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC11PatientView"/>
+                    </sourceReference>
+                </resource>
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC12PatientView"/>
+                    </sourceReference>
+                </resource>
+        -->
     </package>
     <binary value="cql/OMTKData2018.cql"/>
     <binary value="cql/OMTKData2019.cql"/>

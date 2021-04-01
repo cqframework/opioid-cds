@@ -17,7 +17,8 @@
       "input/resources/plandefinition",
       "input/vocabulary",
       "input/vocabulary/codesystem",
-      "input/vocabulary/valueset"
+      "input/vocabulary/valueset",
+      "bundles/plandefinition/OpioidCDSREC04"
     ],
     "pages": "input/pagecontent",
     "temp": "temp",
@@ -83,6 +84,18 @@
       "source": "encounter-example-rec-04-new-patient-context.xml",
       "base": "Encounter-example-rec-04-new-patient-context.html"
     },
+    "Bundle/example-rec-04-patient-view-new-patient": {
+      "source": "bundle-example-rec-04-patient-view-new-patient.xml",
+      "base": "Bundle-example-rec-04-patient-view-new-patient.html"
+    },
+    "Patient/example-rec-04-patient-view-new-patient": {
+      "source": "patient-example-rec-04-patient-view-new-patient.xml",
+      "base": "Patient-example-rec-04-patient-view-new-patient.html"
+    },
+    "Encounter/example-rec-04-patient-view-new-patient-context": {
+      "source": "encounter-example-rec-04-patient-view-new-patient-context.xml",
+      "base": "Encounter-example-rec-04-patient-view-new-patient-context.html"
+    },
 
     "Bundle/example-rec-04-not-long-acting-opioid": {
       "source": "bundle-example-rec-04-not-long-acting-opioid.xml",
@@ -104,6 +117,26 @@
       "source": "encounter-example-rec-04-not-long-acting-opioid-prefetch.xml",
       "base": "Encounter-example-rec-04-not-long-acting-opioid-prefetch.html"
     },
+    "Bundle/example-rec-04-patient-view-not-long-acting-opioid": {
+      "source": "bundle-example-rec-04-patient-view-not-long-acting-opioid.xml",
+      "base": "Bundle-example-rec-04-patient-view-not-long-acting-opioid.html"
+    },
+    "Patient/example-rec-04-patient-view-not-long-acting-opioid": {
+      "source": "patient-example-rec-04-patient-view-not-long-acting-opioid.xml",
+      "base": "Patient-example-rec-04-patient-view-not-long-acting-opioid.html"
+    },
+    "MedicationRequest/example-rec-04-patient-view-not-long-acting-opioid-prefetch": {
+      "source": "medicationrequest-example-rec-04-patient-view-not-long-acting-opioid-prefetch.xml",
+      "base": "MedicationRequest-example-rec-04-patient-view-not-long-acting-opioid-prefetch.html"
+    },
+    "Encounter/example-rec-04-patient-view-not-long-acting-opioid-context": {
+      "source": "encounter-example-rec-04-patient-view-not-long-acting-opioid-context.xml",
+      "base": "Encounter-example-rec-04-patient-view-not-long-acting-opioid-context.html"
+    },
+    "Encounter/example-rec-04-patient-view-not-long-acting-opioid-prefetch": {
+      "source": "encounter-example-rec-04-patient-view-not-long-acting-opioid-prefetch.xml",
+      "base": "Encounter-example-rec-04-patient-view-not-long-acting-opioid-prefetch.html"
+    },
 
     "Bundle/example-rec-04-opioid-with-abuse-potential": {
       "source": "bundle-example-rec-04-opioid-with-abuse-potential.xml",
@@ -124,6 +157,27 @@
     "Encounter/example-rec-04-opioid-with-abuse-potential-prefetch": {
       "source": "encounter-example-rec-04-opioid-with-abuse-potential-prefetch.xml",
       "base": "Encounter-example-rec-04-opioid-with-abuse-potential-prefetch.html"
+    },
+    
+    "Bundle/example-rec-04-patient-view-opioid-with-abuse-potential": {
+      "source": "bundle-example-rec-04-patient-view-opioid-with-abuse-potential.xml",
+      "base": "Bundle-example-rec-04-patient-view-opioid-with-abuse-potential.html"
+    },
+    "Patient/example-rec-04-patient-view-opioid-with-abuse-potential": {
+      "source": "patient-example-rec-04-patient-view-opioid-with-abuse-potential.xml",
+      "base": "Patient-example-rec-04-patient-view-opioid-with-abuse-potential.html"
+    },
+    "MedicationRequest/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch": {
+      "source": "medicationrequest-example-rec-04-patient-view-opioid-with-abuse-potential-prefetch.xml",
+      "base": "MedicationRequest-example-rec-04-patient-view-opioid-with-abuse-potential-prefetch.html"
+    },
+    "Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-context": {
+      "source": "encounter-example-rec-04-patient-view-opioid-with-abuse-potential-context.xml",
+      "base": "Encounter-example-rec-04-patient-view-opioid-with-abuse-potential-context.html"
+    },
+    "Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch": {
+      "source": "encounter-example-rec-04-patient-view-opioid-with-abuse-potential-prefetch.xml",
+      "base": "Encounter-example-rec-04-patient-view-opioid-with-abuse-potential-prefetch.html"
     },
 
     "Bundle/example-rec-05-mme-greater-than-fifty": {
@@ -380,6 +434,27 @@
       "base": "Encounter-example-rec-10-no-screenings-prefetch.html"
     },
 
+    "Bundle/example-rec-10-patient-view-no-screenings": {
+      "source": "bundle-example-rec-10-patient-view-no-screenings.xml",
+      "base": "Bundle-example-rec-10-patient-view-no-screenings.html"
+    },
+    "Patient/example-rec-10-patient-view-no-screenings": {
+      "source": "patient-example-rec-10-patient-view-no-screenings.xml",
+      "base": "Patient-example-rec-10-patient-view-no-screenings.html"
+    },
+    "MedicationRequest/example-rec-10-patient-view-no-screenings-prefetch": {
+      "source": "medicationrequest-example-rec-10-patient-view-no-screenings-prefetch.xml",
+      "base": "MedicationRequest-example-rec-10-patient-view-no-screenings-prefetch.html"
+    },
+    "Encounter/example-rec-10-patient-view-no-screenings-context": {
+      "source": "encounter-example-rec-10-patient-view-no-screenings-context.xml",
+      "base": "Encounter-example-rec-10-patient-view-no-screenings-context.html"
+    },
+    "Encounter/example-rec-10-patient-view-no-screenings-prefetch": {
+      "source": "encounter-example-rec-10-patient-view-no-screenings-prefetch.xml",
+      "base": "Encounter-example-rec-10-patient-view-no-screenings-prefetch.html"
+    },
+    
     "Bundle/example-rec-11-benzo-trigger-with-opioid": {
       "source": "bundle-example-rec-11-benzo-trigger-with-opioid.xml",
       "base": "Bundle-example-rec-11-benzo-trigger-with-opioid.html"
@@ -447,9 +522,20 @@
       "source": "encounter-example-rec-11-opioid-trigger-without-benzo-context.xml",
       "base": "Encounter-example-rec-11-opioid-trigger-without-benzo-context.html"
     },
+
+    "Bundle/bundle-example-rec-12-criteria-invalid": {
+      "source": "bundle-example-rec-12-criteria-invalid.json",
+      "base": "Bundle-example-rec-12-criteria-invalid.html"
+    },
+
+    "Bundle/bundle-example-rec-12-criteria-valid": {
+      "source": "bundle-example-rec-12-criteria-valid.json",
+      "base": "Bundle-example-rec-12-criteria-valid.html"
+    },
+
     "ActivityDefinition/opioidcds-detected-issue-opioids-and-benzodiazepines": {
-      "source": "opioidcds-detected-issue-opioids-and-benzodiazepines.json",
-      "base": "opioidcds-detected-issue-opioids-and-benzodiazepines.html"
+      "source": "activitydefinition-detected-issue-opioids-and-benzodiazepines.json",
+      "base": "ActivityDefinition-detected-issue-opioids-and-benzodiazepines.html"
     },
     "ActivityDefinition/opioidcds-risk-assessment-request": {
       "source": "activitydefinition-opioidcds-risk-assessment-request.json",
@@ -784,6 +870,10 @@
       "defns": "cdc-valueset-exclusion-definitions.html",
       "base": "cdc-valueset-exclusion.html",
       "source": "structuredefinition-cdc-valueset-exclusion.json"
+    },
+    "Bundle/OpioidCDSREC04-bundle": {
+      "base": "Bundle-OpioidCDSREC04.html",
+      "source": "OpioidCDSREC04-bundle.json"
     }
   }
 }

@@ -31,7 +31,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/opioid-misuse-disorders",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-disorders",
   "name": "opioid_misuse_disorders",
   "title": "Opioid misuse disorders",
   "status": "active",

@@ -15,7 +15,7 @@
       }
     }
   ],
-  "url": "http://fhir.org/guides/cdc/opioid-cds/opioid-misuse-assessment-procedure",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-assessment-procedure",
   "name": "opioid_misuse_assessment_procedure",
   "title": "Opioid misuse assessment procedure",
   "status": "active",
