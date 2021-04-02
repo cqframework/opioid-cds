@@ -41,4 +41,5 @@ else
 	fi
 fi
 
+sh _refreshTerminologyBundle.sh
 sh input/pagecontent/quick-start-bundles/_refreshQuickStart.sh

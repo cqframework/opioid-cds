@@ -9,6 +9,7 @@
   "paths": {
     "resources": [
       "examples",
+      "bundles",
       "input/extensions",
       "input/profiles",
       "input/resources",
@@ -51,6 +52,10 @@
     "valueset-profile-spreadsheet.xml"
   ],
   "resources": {
+    "Bundle/opioid-cds-terminology-bundle": {
+      "source": "opioid-cds-terminology-bundle.json",
+      "base": "Bundle-opioiod-cds-terminology.html"
+    },
     "Bundle/example-rec-04-long-acting-opioid": {
       "source": "bundle-example-rec-04-long-acting-opioid.xml",
       "base": "Bundle-example-rec-04-long-acting-opioid.html"
@@ -158,7 +163,7 @@
       "source": "encounter-example-rec-04-opioid-with-abuse-potential-prefetch.xml",
       "base": "Encounter-example-rec-04-opioid-with-abuse-potential-prefetch.html"
     },
-    
+
     "Bundle/example-rec-04-patient-view-opioid-with-abuse-potential": {
       "source": "bundle-example-rec-04-patient-view-opioid-with-abuse-potential.xml",
       "base": "Bundle-example-rec-04-patient-view-opioid-with-abuse-potential.html"
@@ -454,7 +459,7 @@
       "source": "encounter-example-rec-10-patient-view-no-screenings-prefetch.xml",
       "base": "Encounter-example-rec-10-patient-view-no-screenings-prefetch.html"
     },
-    
+
     "Bundle/example-rec-11-benzo-trigger-with-opioid": {
       "source": "bundle-example-rec-11-benzo-trigger-with-opioid.xml",
       "base": "Bundle-example-rec-11-benzo-trigger-with-opioid.html"
