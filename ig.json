@@ -71,6 +71,26 @@
       "source": "encounter-example-rec-04-long-acting-opioid-prefetch.xml",
       "base": "Encounter-example-rec-04-long-acting-opioid-prefetch.html"
     },
+    "Bundle/example-rec-04-patient-view-long-acting-opioid": {
+      "source": "bundle-example-rec-04-patient-view-long-acting-opioid.xml",
+      "base": "Bundle-example-rec-04-patient-view-long-acting-opioid.html"
+    },
+    "Patient/example-rec-04-patient-view-long-acting-opioid": {
+      "source": "patient-example-rec-04-patient-view-long-acting-opioid.xml",
+      "base": "Patient-example-rec-04-patient-view-long-acting-opioid.html"
+    },
+    "MedicationRequest/example-rec-04-patient-view-long-acting-opioid-prefetch": {
+      "source": "medicationrequest-example-rec-04-patient-view-long-acting-opioid-prefetch.xml",
+      "base": "MedicationRequest-example-rec-04-patient-view-long-acting-opioid-prefetch.html"
+    },
+    "Encounter/example-rec-04-patient-view-long-acting-opioid-context": {
+      "source": "encounter-example-rec-04-patient-view-long-acting-opioid-context.xml",
+      "base": "Encounter-example-rec-04-patient-view-long-acting-opioid-context.html"
+    },
+    "Encounter/example-rec-04-patient-view-long-acting-opioid-prefetch": {
+      "source": "encounter-example-rec-04-patient-view-long-acting-opioid-prefetch.xml",
+      "base": "Encounter-example-rec-04-patient-view-long-acting-opioid-prefetch.html"
+    },
 
     "Bundle/example-rec-04-new-patient": {
       "source": "bundle-example-rec-04-new-patient.xml",
