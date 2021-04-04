@@ -1,5 +1,5 @@
 #!/bin/bash
-rm bundlegen/bundlegen-bundle.json
+rm bundlegen/opioid-cds-terminology-bundle.json
 rm bundlegen/sourcefiles/*
 
 mkdir -p bundlegen/sourcefiles
@@ -45,14 +45,14 @@ do
 done
 
 # Bundle all resources from bundlegen/sourcefiles
-sh bundlegen/_bundle.sh
+sh bundlegen/_bundle.sh "opioid-cds-terminology"
 
 rm bundles/opioid-cds-terminology-bundle.json
-cp bundlegen/bundlegen-bundle.json bundles/opioid-cds-terminology-bundle.json
+cp bundlegen/opioid-cds-terminology-bundle.json bundles/opioid-cds-terminology-bundle.json
 echo 'Copied generated bundle to bundles/opioid-cds-terminology-bundle.json'
 
 echo 'Cleaning up bundlegen/sourcefiles...'
-rm bundlegen/bundlegen-bundle.json
+rm bundlegen/opioid-cds-terminology-bundle.json
 rm bundlegen/sourcefiles/*
 
 echo 'terminology bundle refresh complete.'

@@ -10,7 +10,9 @@
     "resources": [
       "examples",
       "bundles",
+      "bundles/plandefinition/OpioidCDSREC10PatientView",
       "input/extensions",
+      "input/pagecontent/quick-start-bundles",
       "input/profiles",
       "input/resources",
       "input/resources/library",
@@ -55,6 +57,10 @@
     "Bundle/opioid-cds-terminology-bundle": {
       "source": "opioid-cds-terminology-bundle.json",
       "base": "Bundle-opioiod-cds-terminology.html"
+    },
+    "Bundle/opioid-cds-recommendation10-patientview-bundle": {
+      "source": "OpioidCDSREC10PatientView-bundle.json",
+      "base": "Bundle-OpioidCDSREC10PatientView-bundle.html"
     },
     "Bundle/example-rec-04-long-acting-opioid": {
       "source": "bundle-example-rec-04-long-acting-opioid.xml",

@@ -1,6 +1,6 @@
 @ECHO OFF
 
-DEL /F /Q bundlegen\bundlegen-bundle.json
+DEL /F /Q bundlegen\opioid-cds-terminology-bundle.json
 DEL /F /Q bundlegen\sourcefiles\*
 
 if not exist bundlegen\sourcefiles mkdir bundlegen\sourcefiles
@@ -41,14 +41,14 @@ COPY input\vocabulary\valueset\valueset-urine-drug-screening-tests.json bundlege
 rem cd /bundlegen
 for %%e in (bundlegen\sourcefiles\*) Do @echo bundling %%e
 rem Bundle all resources from bundlegen/sourcefiles
-cmd /c bundlegen\_bundle.bat
+cmd /c bundlegen\_bundle.bat opioid-cds-terminology
 
 DEL /F /Q bundles\opioid-cds-terminology-bundle.json
-COPY bundlegen\bundlegen-bundle.json bundles\opioid-cds-terminology-bundle.json
+COPY bundlegen\opioid-cds-terminology-bundle.json bundles\opioid-cds-terminology-bundle.json
 echo 'Copied generated bundle to bundles\opioid-cds-terminology-bundle.json'
 
 echo 'Cleaning up bundlegen\sourcefiles...'
-DEL /F /Q bundlegen\bundlegen-bundle.json
+DEL /F /Q bundlegen\opioid-cds-terminology-bundle.json
 DEL /F /Q bundlegen\sourcefiles\*
 
 echo 'terminology bundle refresh complete.'

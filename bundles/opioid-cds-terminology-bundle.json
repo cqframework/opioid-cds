@@ -1,8 +1,8 @@
 {
   "resourceType": "Bundle",
-  "id": "opioid-cds-terminology-bundle",
+  "id": "opioid-cds-terminology",
   "type": "transaction",
-  "entry": [{
+  "entry": [ {
     "resource": {
       "resourceType": "ValueSet",
       "id": "opioid-counseling-procedure",

@@ -1,18 +1,9 @@
 #!/bin/bash
-rm bundlegen/bundlegen-bundle.json
+rm bundlegen/quickstart-medications-bundle.json
 rm bundlegen/sourcefiles/*
 
 mkdir -p bundlegen/sourcefiles
 
-cp input/resources/activitydefinition/activitydefinition-opioidcds-urine-screening-request.json bundlegen/sourcefiles/
-cp input/resources/plandefinition/plandefinition-OpioidCDSREC10PatientView.json bundlegen/sourcefiles/
-cp input/resources/library/FHIRHelpers.json bundlegen/sourcefiles/
-cp input/resources/library/OMTKData2019.json bundlegen/sourcefiles/
-cp input/resources/library/OMTKLogicCQL.json bundlegen/sourcefiles/
-cp input/resources/library/OpioidCDSCommon.json bundlegen/sourcefiles/
-cp input/resources/library/OpioidCDSCommonConfig.json bundlegen/sourcefiles/
-cp input/resources/library/OpioidCDSRoutines.json bundlegen/sourcefiles/
-cp input/resources/library/OpioidCDSREC10PatientView.json bundlegen/sourcefiles/
 cp input/pagecontent/quick-start-bundles/rec10-medication-1.json bundlegen/sourcefiles/
 cp input/pagecontent/quick-start-bundles/rec10-medication-2.json bundlegen/sourcefiles/
 
@@ -23,14 +14,14 @@ do
 done
 
 # Bundle all resources from bundlegen/sourcefiles
-sh bundlegen/_bundle.sh
+sh bundlegen/_bundle.sh quickstart-medications
 
-rm input/pagecontent/quick-start-bundles/opioid-cds-content-bundle.json
-cp bundlegen/bundlegen-bundle.json input/pagecontent/quick-start-bundles/opioid-cds-content-bundle.json
-echo 'Copied generated bundle to input/pagecontent/quick-start-bundles/opioid-cds-content-bundle.json'
+rm input/pagecontent/quick-start-bundles/quickstart-medications-bundle.json
+cp bundlegen/quickstart-medications-bundle.json input/pagecontent/quick-start-bundles/quickstart-medications-bundle.json
+echo 'Copied generated bundle to input/pagecontent/quick-start-bundles/quickstart-medications-bundle.json'
 
 echo 'Cleaning up bundlegen/sourcefiles...'
-rm bundlegen/bundlegen-bundle.json
+rm bundlegen/quickstart-medications-bundle.json
 rm bundlegen/sourcefiles/*
 
-echo 'quick start content bundle refresh complete.'
+echo 'quick start bundle refresh complete.'
