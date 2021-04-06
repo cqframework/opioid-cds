@@ -29,16 +29,17 @@ tooling=$input_cache_path/$tooling_jar
 
 if test -f "$tooling"; then
 	#JAVA -jar $tooling -RefreshIG -ini="$ig_ini_path" -cdsig -d -p $fsoption
-	JAVA -jar $tooling -RefreshIG -root-dir="$root_dir" -ig-path="$ig_path" -rp="$resources_path" -cdsig -d -p $fsoption
+	JAVA -jar $tooling -RefreshIG -root-dir="$root_dir" -ig-path="$ig_path" -rp="$resources_path" -cdsig -d -p -t $fsoption
 else
 	tooling=../$tooling_jar
 	echo $tooling
 	if test -f "$tooling"; then
 		#JAVA -jar $tooling -RefreshIG -ini="$ig_ini_path" -cdsig -d -p $fsoption
-		JAVA -jar $tooling -RefreshIG -root-dir="$root_dir" -ig-path="$ig_path"  -rp="$resources_path"  -cdsig -d -p $fsoption
+		JAVA -jar $tooling -RefreshIG -root-dir="$root_dir" -ig-path="$ig_path"  -rp="$resources_path"  -cdsig -d -p -t $fsoption
 	else
 		echo CQF Tooling NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
 	fi
 fi
 
+sh _refreshTerminologyBundle.sh
 sh input/pagecontent/quick-start-bundles/_refreshQuickStart.sh

@@ -13,7 +13,7 @@
 <h2><span class="sectioncount">8.1.0</span> CDC Opioid Prescribing Guideline - Quick Start <a href="quick-start.html#quick-start" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
 
 <p>This section provides a quick start guide to getting up and running quickly with the Clinical Quality Framework reference
-    implementation functioning as a CDS Hooks service. This quick start focuses on recommendations #10 and #11, both slightly
+    implementation functioning as a CDS Hooks service. This quick start focuses on recommendation #10, slightly
     modified to work on a "patient-view" hook.</p>
 
 <a name="approach"> </a>
@@ -80,17 +80,19 @@ GET http://localhost:8080/cqf-ruler-dstu3/cds-services
 <h3><span class="sectioncount">8.3.0</span> Loading Content <a href="quick-start.html#content-load" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
 
 <p>The next step is to load the content, i.e., the artifacts published in this implementation guide that
-    define the recommendations. For convenience, the resources for recommendations #10 and #11, patient-view
-    have all been added to the 'opioid-cds-content-bundle' and 'opioid-cds-terminology-bundle' transaction
-    bundles below that can be POSTed to the base URL of the server:</p>
+    define the recommendation. For convenience, the resources for recommendation #10, patient-view
+    have all been added to the 'opioidcds-rec10-patientview-bundle'. The test data for this particular
+    quick start test case consists of two Medication resources that also need to be posted to the FHIR server.
+    These represent the patient's Medication history, the 'quickstart-medications-bundle' contains those resources. These
+    two bundles should be POSTed to the base URL of the server:</p>
 
 <table class="list">
     <thead>
     <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
     </thead>
     <tbody>
-    <tr><td><a href="quick-start-bundles/opioid-cds-terminology-bundle.json">opioid-cds-terminology-bundle</a></td><td>Bundle</td><td>All Value Sets Referenced by the Opioid Content</td></tr>
-    <tr><td><a href="quick-start-bundles/opioid-cds-content-bundle.json">opioid-cds-content-bundle</a></td><td>Bundle</td><td>All Required Content for Recommendations #10 and #11</td></tr>
+      <tr><td><a href="data:application/json,Bundle-OpioidCDSREC10PatientView-bundle.json" download="Bundle-OpioidCDSREC10PatientView-bundle.json">opioidcds-rec10-patientview-bundle</a></td><td>Bundle</td><td>All Required Content for Recommendation #10</td></tr>
+      <tr><td><a href="data:application/json,quick-start-bundles/quickstart-medications-bundle.json" download="quickstart-medications-bundle.json">quickstart-medications-bundle</a></td><td>Bundle</td><td>Medication resources referenced by the example CDS request</td></tr>
     </tbody>
 </table>
 
@@ -110,13 +112,13 @@ GET http://localhost:8080/cqf-ruler-dstu3/cds-services
     <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
     </thead>
     <tbody>
+    <tr><td><a href="PlanDefinition-opioidcds-10-patient-view.html">PlanDefinition_Recommendation_10_Patient_View</a></td><td>PlanDefinition</td><td>Opioid Recommendation #10 (Patient View Version) PlanDefinition</td></tr>
+    <tr><td><a href="ActivityDefinition-opioidcds-urine-screening-request.html">ActivityDefinition_Urine_Screening_ProcedureRequest</a></td><td>ActivityDefinition</td><td>ActivityDefinition - Urine Screening ProcedureRequest</td></tr>
+    <tr><td><a href="Library-OpioidCDSREC10PatientView.html">OpioidCDS_REC_10_Patient_View</a></td><td>Library</td><td>Opioid Recommendation #10 (Patient View Version) Library</td></tr>
+    <tr><td><a href="Library-OpioidCDSCommon.html">OpioidCDS_Common</a></td><td>Library</td><td>Opioid Common Library</td></tr>
+    <tr><td><a href="Library-OpioidCDSRoutines.html">OpioidCDS_Routines</a></td><td>Library</td><td>Opioid Routines Library</td></tr>
     <tr><td><a href="Library-OMTKData2019.html">OMTKData</a></td><td>Library</td><td>Opioid Management Terminology Knowledge (OMTK) Data Library</td></tr>
     <tr><td><a href="Library-OMTKLogicCQL.html">OMTKLogic</a></td><td>Library</td><td>Opioid Management Terminology Knowledge (OMTK) Logic Library</td></tr>
-    <tr><td><a href="Library-OpioidCDSCommon.html">OpioidCDS_STU3_Common</a></td><td>Library</td><td>Opioid Common Library</td></tr>
-    <tr><td><a href="Library-OpioidCDSREC10PatientView.html">OpioidCDS_REC_10_Patient_View</a></td><td>Library</td><td>Opioid Recommendation #10 (Patient View Version) Library</td></tr>
-    <tr><td><a href="Library-OpioidCDSREC11PatientView.html">OpioidCDS_REC_11_Patient_View</a></td><td>Library</td><td>Opioid Recommendation #11 (Patient View Version) Library</td></tr>
-    <tr><td><a href="PlanDefinition-opioidcds-10-patient-view.html">PlanDefinition_Recommendation_10_Patient_View</a></td><td>PlanDefinition</td><td>Opioid Recommendation #10 (Patient View Version) PlanDefinition</td></tr>
-    <tr><td><a href="PlanDefinition-opioidcds-11-patient-view.html">PlanDefinition_Recommendation_11_Patient_view</a></td><td>PlanDefinition</td><td>Opioid Recommendation #11 (Patient View Version) PlanDefinition</td></tr>
     <tr><td><a href="terminology.html">Terminologies</a></td><td>ValueSet</td><td>Value sets referenced by the CQL in the Opioid Logic recommendations</td></tr>
     </tbody>
 </table>
@@ -127,7 +129,7 @@ GET http://localhost:8080/cqf-ruler-dstu3/cds-services
 
 <div class="example">
   <pre class="http">
-PUT http://localhost:8080/cqf-ruler-dstu3/fhir/Library/library-OMTKData2019
+PUT http://localhost:8080/cqf-ruler-dstu3/fhir/PlanDefinition/opioidcds-10-patient-view
   </pre>
 </div>
 
@@ -157,17 +159,6 @@ GET http://localhost:8080/cqf-ruler-dstu3/cds-services
                 "item2": "MedicationRequest?patient={{context.patientId}}",
                 "item3": "Observation?patient={{context.patientId}}&amp;code=http%3A%2F%2Floinc.org|12478-4,http%3A%2F%2Floinc.org|78813-3,snipped for brevity",
                 "item4": "Observation?patient={{context.patientId}}&amp;component-code=http%3A%2F%2Floinc.org|50542-0,http%3A%2F%2Floinc.org|19487-8,snipped for brevity"
-            }
-        },
-        {
-            "hook": "patient-view",
-            "name": "PlanDefinition_Recommendation_11_Patient_View",
-            "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 (patient-view)",
-            "description": "Concurrently prescribing opioid medications with benzodiazepines increases the risk of harm for the patient.",
-            "id": "opioidcds-11-patient-view",
-            "prefetch": {
-                "item1": "Patient?_id={{context.patientId}}",
-                "item2": "MedicationRequest?patient={{context.patientId}}"
             }
         }
     ]
@@ -211,47 +202,48 @@ POST http://localhost:8080/cqf-ruler-dstu3/cds-services/opioidcds-10-patient-vie
 
 <div class="example">
   <pre class="json">
-{
-    "cards": [
-        {
-            "summary": "Annual Urine Screening Check",
-            "indicator": "warning",
-            "detail": "Patients on opioid therapy should have a urine drug test performed every 12 months.",
-            "source": {
-                "label": "CDC guideline for prescribing opioids for chronic pain",
-                "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
-            },
-            "suggestions": [
-                {
-                    "label": "Order Urine Screening",
-                    "actions": [
-                        {
-                            "type": "create",
-                            "description": "Patients on opioid therapy should have a urine drug test performed every 12 months.",
-                            "resource": {
-                                "resourceType": "OperationOutcome",
-                                "id": "dda7917b-f6eb-4708-a851-4588cade5358",
-                                "issue": [
-                                    {
-                                        "severity": "error",
-                                        "code": "processing",
-                                        "details": {
-                                            "coding": [
-                                                {
-                                                    "display": "Unable to resolve ActivityDefinition/ActivityDefinition/opioidcds-urine-screening-request"
-                                                }
-                                            ]
-                                        }
+    {
+        "cards": [
+            {
+                "summary": "Annual Urine Screening Check",
+                "indicator": "warning",
+                "detail": "Patients on opioid therapy should have a urine drug test performed every 12 months.",
+                "source": {
+                    "label": "CDC guideline for prescribing opioids for chronic pain",
+                    "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
+                },
+                "suggestions": [
+                    {
+                        "label": "Order Urine Screening",
+                        "actions": [
+                            {
+                                "type": "create",
+                                "description": "Patients on opioid therapy should have a urine drug test performed every 12 months.",
+                                "resource": {
+                                    "resourceType": "ProcedureRequest",
+                                    "id": "29c794f0-b3e3-47d1-975c-ff0cd6de494b",
+                                    "status": "draft",
+                                    "intent": "order",
+                                    "code": {
+                                        "coding": [
+                                            {
+                                                "system": "http://snomed.info/sct",
+                                                "code": "310627008",
+                                                "display": "Urine drug screening (procedure)"
+                                            }
+                                        ]
+                                    },
+                                    "subject": {
+                                        "reference": "Patient/example-rec-10-no-screenings"
                                     }
-                                ]
+                                }
                             }
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-}  </pre>
+                        ]
+                    }
+                ]
+            }
+        ]
+    }  </pre>
 </div>
 
 <a name="api-request-and-response-cds-hooks-client"> </a>
