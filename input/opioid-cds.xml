@@ -15,6 +15,24 @@
         <resource>
             <example value="true"/>
             <sourceReference>
+                <reference value="Bundle/opioid-cds-terminology-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/quickstart-medications-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation10-patientview-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
                 <reference value="Bundle/example-rec-04-long-acting-opioid"/>
             </sourceReference>
         </resource>
@@ -202,7 +220,7 @@
                 <reference value="Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch"/>
             </sourceReference>
         </resource>
-        
+
         <resource>
             <example value="true"/>
             <sourceReference>
@@ -607,7 +625,7 @@
                 <reference value="Encounter/example-rec-10-patient-view-no-screenings-prefetch"/>
             </sourceReference>
         </resource>
-        
+
         <resource>
             <example value="true"/>
             <sourceReference>
