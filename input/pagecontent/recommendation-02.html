@@ -94,44 +94,6 @@
 </details>
 <p></p>
 
-<!-- Example Data/Requests -->
-<!--
-<details>
-  <summary>
-    <h3>Example Data/Requests</h3>
-  </summary>
-   <a name="exampledatarequests"> </a>
-
-  <table class="grid">
-    <thead>
-      <tr>
-        <th>Description</th>
-        <th>Bundle</th>
-        <th>CDS Hooks Request</th>
-        <th>Expected Response</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="col-7">Patient is 18 years or older and has an outpatient Medication Request of Suboxone 2 MG / 0.5 MG Sublingual Film (RXNorm 1010603) authored “Today” as well as an Opioid Treatment Care Plan updated 89 days prior to today.
-          Patients “Dosage Instructions” are 1 Film per day for 30 days. This patient will not trigger any cards and there should not be a recommendation message.This will result in a summary message: “Recommend creation, review or update of opioid
-          treatment plan.” CarePlan.category.code needs to be Common.”Opioid Treatment Plan…”</td>
-         <td><a href="Bundle-example-rec-02-true-make-recommendations.html">Test Bundle example-rec-02-true-make-recommendations</a></td>
-        <td><a href="requests/OpioidCDSREC02/request-example-rec-02-in-careplan-revisited.json">Request JSON example-rec-02-in-careplan-revisited</a></td>
-        <td><a href="responses/OpioidCDSREC02/response-example-rec-02-in-careplan-revisited.json">Response JSON example-rec-02-in-careplan-revisited</a></td>
-      </tr>
-      <tr>
-        <td class="col-7">Patient is 18 years or older and has an outpatient Medication Request of Suboxone 2 MG / 0.5 MG Sublingual Film (RXNorm 1010603) authored “Today” as well as a Care Plan most recently updated 120 days prior to today. Patients
-          “Dosage Instructions” are 1 Film per day for 30 days. Due to the most recent review of the Care Plan having been conducted more than 89 days prior to today this will result in a summary message: “Recommend creation, review or update of
-          opioid treatment plan. CarePlan.category.code needs to be Common.”Opioid Treatment Plan…”</td>
-         <td><a href="Bundle-example-rec-02-false-due-to-careplan-within-90-days.html">Test Bundle example-rec-02-false-due-to-careplan-within-90-days</a></td>
-        <td><a href="requests/OpioidCDSREC02/request-example-rec-02-out-careplan-not-revisited.json">Request JSON example-rec-02-out-careplan-not-revisited</a></td>
-        <td><a href="responses/OpioidCDSREC02/response-example-rec-02-out-careplan-not-revisited.json">Response JSON example-rec-02-out-careplan-not-revisited</a></td>
-      </tr>
-    </tbody>
-  </table>
-</details>
--->
 <!-- ==============END CONTENT END CONTENT=================== -->
 
 {% include container-end.html %}

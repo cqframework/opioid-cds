@@ -155,40 +155,6 @@
 
 <p></p>
 
-<!-- Example Data/Requests -->
-
-<details>
-  <summary>
-    <h3 class="title">Example Data/Requests - patient-view hook</h3>
-  </summary>
-  <a name="exampledatarequests-patient-view"> </a>
-  <table class="grid">
-    <thead>
-      <tr>
-        <th>Description</th>
-        <th>Bundle</th>
-        <th>CDS Hooks Request</th>
-        <th>Expected Response</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="col-7">(patient-view) Patient is 18 or older. Patient has a diagnosis of opioid misuse disorder in past 90 days. This will trigger the message “Recommend opioid agonist or partial agonist treatment with methadone maintenance
-          therapy or buprenorphine and/or behavioral therapy”.</td>
-        <td><a href="Bundle-example-rec-12-criteria-valid.html">Test Bundle</a></td>
-        <td><a href="requests/OpioidCDSREC12PatientView/request-example-rec-12-patient-view-in-criteria-met.json">Request JSON</a></td>
-        <td><a href="responses/OpioidCDSREC12PatientView/response-example-rec-12-in-criteria-met.json">Response JSON</a></td>
-      </tr>
-      <tr>
-        <td class="col-7">(patient-view) Patient is 18 or older. Patient has not been diagnosed with opioid misuse disorder in the past 90 days. The patient will be excluded and no message will be triggered – an empty set of cards will be returned.
-        </td>
-        <td><a href="Bundle-example-rec-12-criteria-invalid.html">Test Bundle</a></td>
-        <td><a href="requests/OpioidCDSREC12PatientView/request-example-rec-12-patient-view-out-opioid-misuse.json">Request JSON</a></td>
-        <td><a href="responses/OpioidCDSREC12PatientView/response-example-rec-12-out-opioid-misuse.json">Response JSON</a></td>
-      </tr>
-    </tbody>
-  </table>
-</details>
 <!-- ==============END CONTENT END CONTENT=================== -->
 {% include container-end.html %}
 
