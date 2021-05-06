@@ -1,20 +1,6 @@
 {
   "resourceType": "ValueSet",
   "id": "urine-drug-screening-tests",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-      "valueContactDetail": {
-        "name": "MD Partners, Inc.",
-        "telecom": [
-          {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          }
-        ]
-      }
-    }
-  ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/urine-drug-screening-tests",
   "name": "urine_drug_screening_tests",
   "title": "Urine drug screening tests",
@@ -22,6 +8,15 @@
   "experimental": true,
   "date": "2021-01-26T12:01:40-07:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [{
+    "name": "MD Partners, Inc.",
+    "telecom": [
+      {
+        "system": "email",
+        "value": "info@mdpartners.com"
+      }
+    ]
+  }],
   "description": "Individual tests and panels of tests of urine for drugs of misuse",
   "jurisdiction": [
     {

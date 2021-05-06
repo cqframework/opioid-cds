@@ -6,16 +6,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "opioid-counseling-procedure",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure",
       "name": "opioid_counseling_procedure",
       "title": "Opioid counseling procedure",
@@ -23,6 +13,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Procedure for couseling on opioid use",
       "jurisdiction": [ {
         "coding": [ {
@@ -58,16 +55,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "opioid-drug-urine-screening",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening",
       "name": "opioid_drug_urine_screening",
       "title": "Opioid drug urine screening",
@@ -75,6 +62,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Individual tests and panels of tests of urine for opioids",
       "jurisdiction": [ {
         "coding": [ {
@@ -2086,15 +2080,6 @@
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
         "valueString": "none"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling",
       "name": "substance_misuse_behavioral_counseling",
@@ -2103,6 +2088,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:39-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Counseling and associated procedures for substance misuse",
       "jurisdiction": [ {
         "coding": [ {
@@ -2192,16 +2184,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "urine-drug-screening-tests",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/urine-drug-screening-tests",
       "name": "urine_drug_screening_tests",
       "title": "Urine drug screening tests",
@@ -2209,6 +2191,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Individual tests and panels of tests of urine for drugs of misuse",
       "jurisdiction": [ {
         "coding": [ {
@@ -10118,16 +10107,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "pain-treatment-plan",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan",
       "name": "pain_treatment_plan",
       "title": "Pain treatment plan",
@@ -10135,6 +10114,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "A Pain medicine Plan of care note",
       "jurisdiction": [ {
         "coding": [ {
@@ -10231,7 +10217,7 @@
   }, {
     "resource": {
       "resourceType": "ValueSet",
-      "id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "id": "office-visit",
       "meta": {
         "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset" ]
       },
@@ -10341,7 +10327,7 @@
     },
     "request": {
       "method": "PUT",
-      "url": "ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001"
+      "url": "ValueSet/office-visit"
     }
   }, {
     "resource": {
@@ -10359,15 +10345,6 @@
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
         "valueString": "none"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-disorders",
       "name": "opioid_misuse_disorders",
@@ -10376,6 +10353,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Conditions indicating opioid misuse",
       "jurisdiction": [ {
         "coding": [ {
@@ -10820,16 +10804,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "opioid-misuse-assessment-procedure",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-assessment-procedure",
       "name": "opioid_misuse_assessment_procedure",
       "title": "Opioid misuse assessment procedure",
@@ -10837,6 +10811,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Procedure to assess the risk of opioid abuse occurring by a patient",
       "jurisdiction": [ {
         "coding": [ {
@@ -10967,15 +10948,6 @@
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
         "valueString": "None"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/naloxone-medications",
       "name": "naloxone_medications",
@@ -10984,6 +10956,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "All naloxone medications",
       "jurisdiction": [ {
         "coding": [ {
@@ -11527,15 +11506,6 @@
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
         "valueString": "none"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/oncology-specialty-designations",
       "name": "oncology_specialty_designations",
@@ -11544,6 +11514,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "NUCC oncology provider types who may provide encounters to patients with cancer",
       "jurisdiction": [ {
         "coding": [ {
@@ -11676,15 +11653,6 @@
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
         "valueString": "All medications including ingredients intended to treat cough or act as an antispasmodic. All injectable forms."
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential",
       "name": "opioid_analgesics_with_ambulatory_misuse_potential",
@@ -11693,6 +11661,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "All opioid clinical drugs except cough medications, antisapasmodics, or those restricted to surgical use only as identified by those using an injectable form.",
       "jurisdiction": [ {
         "coding": [ {
@@ -16423,16 +16398,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "pdmp-review-procedure",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure",
       "name": "pdmp_review_procedure",
       "title": "PDMP review procedure",
@@ -16440,6 +16405,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Procedure for Prescription Drug Monitoring Program (PDMP) review",
       "jurisdiction": [ {
         "coding": [ {
@@ -16487,15 +16459,6 @@
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
         "valueString": "All D50-D89 codes, D3A-D3A and descendants."
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cdc-malignant-cancer-conditions",
       "name": "cdc_malignant_cancer_conditions",
@@ -16504,6 +16467,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "All neoplastic and malignant conditions, including pain due to neoplasm.",
       "jurisdiction": [ {
         "coding": [ {
@@ -23256,15 +23226,6 @@
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
         "valueString": "Actual disease-specific conditions"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions",
       "name": "limited_life_expectancy_conditions",
@@ -23273,6 +23234,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "A finding that documents a terminal prognosis",
       "jurisdiction": [ {
         "coding": [ {
@@ -23358,15 +23326,6 @@
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
         "valueString": "All benzodiazepine-class medications"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/benzodiazepine-medications",
       "name": "benzodiazepine_medications",
@@ -23375,6 +23334,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "All benzodiazepine clinical drugs",
       "jurisdiction": [ {
         "coding": [ {
@@ -24133,15 +24099,6 @@
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
         "valueString": "None"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications",
       "name": "buprenorphine_and_methadone_medications",
@@ -24150,6 +24107,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "All Buprenorphine and Methadone medications",
       "jurisdiction": [ {
         "coding": [ {
@@ -24851,16 +24815,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "pain-management-procedure",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure",
       "name": "pain_management_procedure",
       "title": "Pain management procedure",
@@ -24868,6 +24822,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Procedure for chronic pain control management",
       "jurisdiction": [ {
         "coding": [ {
@@ -24915,15 +24876,6 @@
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
         "valueString": "Clinical conditions not thought to have a high likelyhood of near-term mortality and non-condition-specific findings."
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/conditions-likely-terminal-for-opioid-prescribing",
       "name": "conditions_likely_terminal_for_opioid_prescribing",
@@ -24932,6 +24884,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Conditions that generally are thought to have terminal prognosis",
       "jurisdiction": [ {
         "coding": [ {
@@ -28917,16 +28876,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "pdmp-data-reviewed-finding",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding",
       "name": "pdmp_data_reviewed_finding",
       "title": "PDMP data reviewed finding",
@@ -28934,6 +28883,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Finding indicating that the Prescription Drug Monitoring Program (PDMP) data was reviewed",
       "jurisdiction": [ {
         "coding": [ {
@@ -29051,15 +29007,6 @@
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
         "valueString": "None"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/therapies-indicating-end-of-life-care",
       "name": "therapies_indicating_end_of_life_care",
@@ -29068,6 +29015,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Therapeutic activities indicating end of life. Include procedures or therapies specific to a terminal patient, exclude procedures or therapies performed on a deceased patient",
       "jurisdiction": [ {
         "coding": [ {
@@ -29162,16 +29116,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "non-opioid-drug-urine-screening",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening",
       "name": "non_opioid_drug_urine_screening",
       "title": "Non-opioid drug urine screening",
@@ -29179,6 +29123,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Individual tests and panels of tests of urine for illicit drugs EXCEPT those for opioids.",
       "jurisdiction": [ {
         "coding": [ {
@@ -35316,15 +35267,6 @@
       }, {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
         "valueString": "For any drug other than methadone, any mediation that is not using a long acting formulation."
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/extended-release-opioid-with-ambulatory-misuse-potential",
       "name": "extended_release_opioid_with_ambulatory_misuse_potential",
@@ -35333,6 +35275,13 @@
       "experimental": true,
       "date": "2021-01-26T12:01:40-07:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "All opioid clinical drugs except those restricted to surgical use only, and that are in an extended release dose form code",
       "jurisdiction": [ {
         "coding": [ {

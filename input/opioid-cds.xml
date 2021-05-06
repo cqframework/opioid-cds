@@ -24,10 +24,88 @@
                 <reference value="Bundle/quickstart-medications-bundle"/>
             </sourceReference>
         </resource>
+        <!-- <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation01-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation02-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation03-bundle"/>
+            </sourceReference>
+        </resource> -->
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation04-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation05-bundle"/>
+            </sourceReference>
+        </resource>
+        <!-- <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation06-bundle"/>
+            </sourceReference>
+        </resource> -->
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation07-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation08-bundle"/>
+            </sourceReference>
+        </resource>
+        <!-- <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation09-bundle"/>
+            </sourceReference>
+        </resource> -->
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation10-bundle"/>
+            </sourceReference>
+        </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
                 <reference value="Bundle/opioid-cds-recommendation10-patientview-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation11-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation11-patientview-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation12-patientview-bundle"/>
             </sourceReference>
         </resource>
         <resource>
@@ -769,7 +847,13 @@
                 <reference value="Bundle/example-rec-12-criteria-valid"/>
             </sourceReference>
         </resource>
-
+        <resource>
+            <example value="true"/>
+            <name value="ActivityDefinition - DetectedIssue for co-prescribed opioids and benzodiazepines"/>
+            <sourceReference>
+                <reference value="ActivityDefinition/opioidcds-detected-issue-opioids-and-benzodiazepines"/>
+            </sourceReference>
+        </resource>
         <resource>
             <example value="true"/>
             <name value="ActivityDefinition - ProcedureRequest for risk assessment"/>
