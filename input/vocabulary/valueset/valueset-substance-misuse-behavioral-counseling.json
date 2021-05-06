@@ -17,18 +17,6 @@
     {
       "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
       "valueString": "none"
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-      "valueContactDetail": {
-        "name": "MD Partners, Inc.",
-        "telecom": [
-          {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          }
-        ]
-      }
     }
   ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling",
@@ -38,6 +26,15 @@
   "experimental": true,
   "date": "2021-01-26T12:01:39-07:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [{
+    "name": "MD Partners, Inc.",
+    "telecom": [
+      {
+        "system": "email",
+        "value": "info@mdpartners.com"
+      }
+    ]
+  }],
   "description": "Counseling and associated procedures for substance misuse",
   "jurisdiction": [
     {

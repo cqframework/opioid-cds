@@ -7,7 +7,36 @@
       "source": {
         "label": "CDC guideline for prescribing opioids for chronic pain",
         "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
-      }
+      },
+      "suggestions": [
+        {
+          "label": "Order Urine Screening",
+          "actions": [
+            {
+              "type": "create",
+              "description": "Patients on opioid therapy should have a urine drug test performed every 12 months.",
+              "resource": {
+                "resourceType": "ProcedureRequest",
+                "id": "ee2cecfa-84ec-4111-81fd-a6a1b39c6de5",
+                "status": "draft",
+                "intent": "order",
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "310627008",
+                      "display": "Urine drug screening (procedure)"
+                    }
+                  ]
+                },
+                "subject": {
+                  "reference": "Patient/example-rec-10-no-screenings"
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

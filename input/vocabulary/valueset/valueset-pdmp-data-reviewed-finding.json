@@ -1,20 +1,6 @@
 {
   "resourceType": "ValueSet",
   "id": "pdmp-data-reviewed-finding",
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-      "valueContactDetail": {
-        "name": "MD Partners, Inc.",
-        "telecom": [
-          {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          }
-        ]
-      }
-    }
-  ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding",
   "name": "pdmp_data_reviewed_finding",
   "title": "PDMP data reviewed finding",
@@ -22,6 +8,15 @@
   "experimental": true,
   "date": "2021-01-26T12:01:40-07:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [{
+    "name": "MD Partners, Inc.",
+    "telecom": [
+      {
+        "system": "email",
+        "value": "info@mdpartners.com"
+      }
+    ]
+  }],
   "description": "Finding indicating that the Prescription Drug Monitoring Program (PDMP) data was reviewed",
   "jurisdiction": [
     {
