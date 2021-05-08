@@ -41,17 +41,17 @@ define "Palliative Care Lookback Period":
   Interval[Today() - 90 days, Today()]
 
 define "Is Opioid Review Useful?":
-  not "Patient Age Less Than 18"
-    and not "Conditions Indicating End Of Life Present"
-    /* and not "Order For Palliative Care In Past 90 Days" */
-    and not "Is Active Cancer Treatment?"
-    and not "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present"
+  /* not "Patient Age Less Than 18" */
+    not "Conditions Indicating End Of Life Present"
+      /* and not "Order For Palliative Care In Past 90 Days" */
+      and not "Is Active Cancer Treatment?"
+      and not "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present"
 
-define "Patient Age Less Than 18":
+/* define "Patient Age Less Than 18":
   if (Config."Age Less than 18 Years Is Enabled") then
     AgeInYearsAt(Today()) < 18
   else
-    false
+    false */
 
 define "Conditions Indicating End Of Life Present":
   exists (
