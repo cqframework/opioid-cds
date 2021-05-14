@@ -2,7 +2,7 @@
    <id value="example-rec-04-new-patient"/>
    <type value="transaction"/>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Patient/example-rec-04-new-patient"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-04-new-patient"/>
       <resource>
          <Patient xmlns="http://hl7.org/fhir">
             <id value="example-rec-04-new-patient"/>
@@ -12,11 +12,11 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Patient/example-rec-04-new-patient"/>
+         <url value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-04-new-patient"/>
       </request>
    </entry>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Encounter/example-rec-04-new-patient-context"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Encounter/example-rec-04-new-patient-context"/>
       <resource>
          <Encounter xmlns="http://hl7.org/fhir">
             <id value="example-rec-04-new-patient-context"/>
@@ -33,7 +33,7 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Encounter/example-rec-04-new-patient-context"/>
+         <url value="http://localhost:8080/cqf-ruler-dstu3/fhir/Encounter/example-rec-04-new-patient-context"/>
       </request>
    </entry>
 </Bundle>

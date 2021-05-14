@@ -21,18 +21,6 @@
     {
       "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
       "valueString": "For any drug other than methadone, any mediation that is not using a long acting formulation."
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-      "valueContactDetail": {
-        "name": "MD Partners, Inc.",
-        "telecom": [
-          {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          }
-        ]
-      }
     }
   ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/extended-release-opioid-with-ambulatory-misuse-potential",
@@ -42,6 +30,15 @@
   "experimental": true,
   "date": "2021-01-26T12:01:40-07:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [{
+    "name": "MD Partners, Inc.",
+    "telecom": [
+      {
+        "system": "email",
+        "value": "info@mdpartners.com"
+      }
+    ]
+  }],
   "description": "All opioid clinical drugs except those restricted to surgical use only, and that are in an extended release dose form code",
   "jurisdiction": [
     {

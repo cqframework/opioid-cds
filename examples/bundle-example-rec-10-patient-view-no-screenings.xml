@@ -2,7 +2,7 @@
    <id value="example-rec-10-patient-view-no-screenings"/>
    <type value="transaction"/>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Patient/example-rec-10-patient-view-no-screenings"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-10-patient-view-no-screenings"/>
       <resource>
          <Patient xmlns="http://hl7.org/fhir">
             <id value="example-rec-10-patient-view-no-screenings"/>
@@ -12,11 +12,11 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Patient/example-rec-10-patient-view-no-screenings"/>
+         <url value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-10-patient-view-no-screenings"/>
       </request>
    </entry>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Encounter/example-rec-10-patient-view-no-screenings-context"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Encounter/example-rec-10-patient-view-no-screenings-context"/>
       <resource>
          <Encounter xmlns="http://hl7.org/fhir">
             <id value="example-rec-10-patient-view-no-screenings-context"/>
@@ -33,11 +33,11 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Encounter/example-rec-10-patient-view-no-screenings-context"/>
+         <url value="http://localhost:8080/cqf-ruler-dstu3/fhir/Encounter/example-rec-10-patient-view-no-screenings-context"/>
       </request>
    </entry>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Medication/371016cf-18eb-4311-bbc9-0ef2b923a8c9"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Medication/371016cf-18eb-4311-bbc9-0ef2b923a8c9"/>
       <resource>
          <Medication xmlns="http://hl7.org/fhir">
             <id value="371016cf-18eb-4311-bbc9-0ef2b923a8c9"/>
@@ -64,7 +64,7 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Medication/12bd1f88-426f-4567-85fe-db9eae37f56b"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Medication/12bd1f88-426f-4567-85fe-db9eae37f56b"/>
       <resource>
          <Medication xmlns="http://hl7.org/fhir">
             <id value="12bd1f88-426f-4567-85fe-db9eae37f56b"/>

@@ -2,7 +2,7 @@
    <id value="example-rec-08-substance-abuse"/>
    <type value="transaction"/>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Patient/example-rec-08-substance-abuse"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-08-substance-abuse"/>
       <resource>
          <Patient xmlns="http://hl7.org/fhir">
             <id value="example-rec-08-substance-abuse"/>
@@ -12,11 +12,11 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Patient/example-rec-08-substance-abuse"/>
+         <url value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-08-substance-abuse"/>
       </request>
    </entry>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Encounter/example-rec-08-substance-abuse-context"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Encounter/example-rec-08-substance-abuse-context"/>
       <resource>
          <Encounter xmlns="http://hl7.org/fhir">
             <id value="example-rec-08-substance-abuse-context"/>
@@ -33,7 +33,7 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Encounter/example-rec-08-substance-abuse-context"/>
+         <url value="http://localhost:8080/cqf-ruler-dstu3/fhir/Encounter/example-rec-08-substance-abuse-context"/>
       </request>
    </entry>
 </Bundle>
