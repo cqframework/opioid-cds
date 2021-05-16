@@ -81,9 +81,7 @@
     }
   },
   "prefetch": {
-    "item1": null,
-    "item2": null,
-    "item3": {
+    "item1": {
       "response": {
         "status": "200 OK"
       },
@@ -93,16 +91,6 @@
         "gender": "male",
         "birthDate": "1982-01-07"
       }
-    },
-    "item4": null,
-    "item5": null,
-    "item6": null,
-    "item7": null,
-    "item8": null,
-    "item9": null,
-    "item10": null,
-    "item11": null,
-    "item12": null,
-    "item13": null
+    }
   }
 }
