@@ -48,6 +48,11 @@ valueset "Pain management procedure": 'http://fhir.org/guides/cdc/opioid-cds/Val
 valueset "PDMP review procedure": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure'
 valueset "PDMP data reviewed finding": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding'
 
+valueset "Community": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-category-community'
+valueset "Active Condition": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-clinical-status-active'
+valueset "Active MedicationRequest": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-status-active'
+valueset "US Core Condition Categories": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-categories'
+
 code "Community": 'community' from "Medication Request Category Codes"
 code "Active Condition": 'active' from "Condition Clinical Status Codes"
 code "Active MedicationRequest": 'active' from "Medication Request Status Codes"
