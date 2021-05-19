@@ -29,10 +29,10 @@
   "publisher": "Alphora",
   "description": "The prescription is 'actionable', but not all actions that are implied by it have occurred yet.",
   "expansion": {
-    "timestamp": "2021-05-18T13:47:55-07:00",
+    "timestamp": "2021-05-19T13:47:55-07:00",
     "contains": [
       {
-        "system": "http://hl7.org/fhir/CodeSystem/medicationrequest-status",
+        "system": "http://hl7.org/fhir/CodeSystem/medication-request-status",
         "code": "active",
         "display": "Active"
       }

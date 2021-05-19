@@ -29,10 +29,10 @@
   "publisher": "Alphora",
   "description": "Includes requests for medications to be administered or consumed by the patient in their home (this would include long term care or nursing homes, hospices, etc.).",
   "expansion": {
-    "timestamp": "2021-05-18T13:47:55-07:00",
+    "timestamp": "2021-05-19T13:47:55-07:00",
     "contains": [
       {
-        "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+        "system": "http://hl7.org/fhir/CodeSystem/medication-request-category",
         "code": "community",
         "display": "Community"
       }
