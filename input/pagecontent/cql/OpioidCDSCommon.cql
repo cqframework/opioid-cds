@@ -128,11 +128,6 @@ define function "Get Active Ambulatory Medication Requests" (value List<Medicati
     where Rx.status.value ~ 'active'
       and Rx.category in "Community"
 
-define function "Is Ambulatory Medication Request?" (value List<MedicationRequest>) returns List<MedicationRequest>:
-  value Rx
-    where Rx.status.value ~ 'active'
-      and Rx.category in "Community"
-
 define function "Is Opioid Analgesic with Ambulatory Misuse Potential?"(value List<MedicationRequest>):
   value Rx
     let MedRef: if (Rx.medication is FHIR.Reference) then (Rx.medication as FHIR.Reference).reference else null,
