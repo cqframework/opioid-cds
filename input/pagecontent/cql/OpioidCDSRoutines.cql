@@ -74,7 +74,7 @@ define "Conditions Including Cancer To Exclude Opioid Management Indicating End-
     exists (
       Common."US Core-Categorized Conditions" EOLC
         where EOLC.code in Common."Conditions likely terminal for opioid prescribing"
-          and EOLC.clinicalStatus ~ Common."Active Condition".code
+          and EOLC.clinicalStatus in Common."Active Condition"
     )
   else
     false
