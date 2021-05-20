@@ -8,11 +8,6 @@ include OpioidCDSCommonConfig version '1.2.3' called Config
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "SNOMED": 'http://snomed.info/sct'
-codesystem "Medication Request Category Codes": 'http://hl7.org/fhir/CodeSystem/medication-request-category'
-codesystem "Medication Request Status Codes": 'http://hl7.org/fhir/CodeSystem/medication-request-status'
-codesystem "Condition Clinical Status Codes": 'http://hl7.org/fhir/CodeSystem/condition-clinical'
-codesystem "FHIR Condition Category Codes": 'http://hl7.org/fhir/CodeSystem/condition-category'
-codesystem "US Core Condition Category Codes": 'http://hl7.org/fhir/us/core/CodeSystem/condition-category'
 
 // Expression-based
 valueset "Opioid analgesics with ambulatory misuse potential": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential'
@@ -48,13 +43,10 @@ valueset "Pain management procedure": 'http://fhir.org/guides/cdc/opioid-cds/Val
 valueset "PDMP review procedure": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure'
 valueset "PDMP data reviewed finding": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding'
 
-code "Community": 'community' from "Medication Request Category Codes"
-code "Active Condition": 'active' from "Condition Clinical Status Codes"
-code "Active MedicationRequest": 'active' from "Medication Request Status Codes"
-
-code "Encounter Diagnosis": 'encounter-diagnosis' from "FHIR Condition Category Codes" display 'Encounter Diagnosis'
-code "Problem List Item": 'problem-list-item' from "FHIR Condition Category Codes" display 'Problem List Item'
-code "Health Concern": 'health-concern' from "US Core Condition Category Codes" display 'Health Concern'
+valueset "Community": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-category-community'
+valueset "Active Condition": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-clinical-status-active'
+valueset "Active MedicationRequest": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-status-active'
+valueset "US Core Condition Categories": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-categories'
 
 context Patient
 
@@ -134,18 +126,14 @@ define "Active Ambulatory Naloxone Rx":
 define function "Get Active Ambulatory Medication Requests" (value List<MedicationRequest>) returns List<MedicationRequest>:
   value Rx
     where Rx.status.value ~ 'active'
-      and FHIRHelpers.ToConcept(Rx.category) ~ "Community"
-
-define function "Is Ambulatory Medication Request?" (value List<MedicationRequest>) returns List<MedicationRequest>:
-  value Rx
-    where FHIRHelpers.ToConcept(Rx.category) ~ "Community"
+      and Rx.category in "Community"
 
 define function "Is Opioid Analgesic with Ambulatory Misuse Potential?"(value List<MedicationRequest>):
   value Rx
     let MedRef: if (Rx.medication is FHIR.Reference) then (Rx.medication as FHIR.Reference).reference else null,
       Med: if MedRef is null then (Rx.medication as FHIR.CodeableConcept) else SingletonFrom([Medication: id in (Last(Split(MedRef, '/')))] Med return Med.code)
     where Med in "Opioid analgesics with ambulatory misuse potential"
-      and FHIRHelpers.ToConcept(Rx.category) ~ "Community"
+      and Rx.category in "Community"
     return
       MedicationRequest {
         id: Rx.id,
@@ -165,7 +153,7 @@ define function "Is Benzodiazepine?"(value List<MedicationRequest>):
     let MedRef: if (Rx.medication is FHIR.Reference) then (Rx.medication as FHIR.Reference).reference else null,
       Med: if MedRef is null then (Rx.medication as FHIR.CodeableConcept) else SingletonFrom([Medication: id in (Last(Split(MedRef, '/')))] Med return Med.code)
     where Med in "Benzodiazepine medications"
-      and FHIRHelpers.ToConcept(Rx.category) ~ "Community"
+      and Rx.category in "Community"
     return
           MedicationRequest {
             id: Rx.id,
@@ -195,23 +183,19 @@ define "End of Life Assessment":
     ) */
 
 define "US Core-Categorized Conditions":
-  [Condition: category in "Encounter Diagnosis"]
-  union
-  [Condition: category in "Problem List Item"]
-  union
-  [Condition: category in "Health Concern"]
+  [Condition: category in "US Core Condition Categories"]
 
 define "Conditions Indicating End of Life or With Limited Life Expectancy":
   (
     "US Core-Categorized Conditions" C
-      where C.clinicalStatus ~ 'active'
-        and C.code in "Conditions likely terminal for opioid prescribing"
+      where C.code in "Conditions likely terminal for opioid prescribing"
+        and C.clinicalStatus in "Active Condition"
   )
   union
   (
     "US Core-Categorized Conditions" C
-      where C.clinicalStatus ~ 'active'
-        and C.code in "Limited life expectancy conditions"
+      where C.code in "Limited life expectancy conditions"
+        and C.clinicalStatus in "Active Condition"
   )
 
 define "Admitted/Referred/Discharged to Hospice Care":

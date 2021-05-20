@@ -1,13 +1,6 @@
 {
   "resourceType": "ValueSet",
   "id": "hospice-disposition",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablevalueset",
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablevalueset",
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset"
-    ]
-  },
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
