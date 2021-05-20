@@ -1,11 +1,6 @@
 {
   "resourceType": "ValueSet",
   "id": "condition-categories",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset"
-    ]
-  },
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
@@ -27,7 +22,7 @@
   "status": "active",
   "experimental": false,
   "publisher": "Alphora",
-  "description": "USD Core condition categories.",
+  "description": "US Core condition categories.",
   "expansion": {
     "timestamp": "2021-05-18T13:47:55-07:00",
     "contains": [
