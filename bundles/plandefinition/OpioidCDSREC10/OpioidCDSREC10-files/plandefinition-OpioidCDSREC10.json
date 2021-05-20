@@ -136,6 +136,12 @@
           }
         }
       ],
+      "triggerDefinition": [
+        {
+          "type": "named-event",
+          "eventName": "order-select"
+        }
+      ],
       "condition": [
         {
           "kind": "applicability",
