@@ -83,7 +83,7 @@ define "Presence of Diagnosis of Opioid Use Disorder":
 define "Diagnosis of Opioid Use Disorder":
   Common."US Core-Categorized Conditions" C
     where C.code in Common."Opioid misuse disorders"
-      and C.clinicalStatus ~ Common."Active Condition".code
+      and C.clinicalStatus in Common."Active Condition"
       and date from C.assertedDate during day of "Opioid Use Disorder Lookback Period"
 
 define "Positive Result from Opioid Use Disorder Evaluation Tool":
