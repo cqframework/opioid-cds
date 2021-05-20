@@ -57,7 +57,7 @@ define "Conditions Indicating End Of Life Present":
   exists (
     Common."US Core-Categorized Conditions" LLEC
       where LLEC.code in Common."Limited life expectancy conditions"
-        and LLEC.clinicalStatus ~ Common."Active Condition".code
+        and LLEC.clinicalStatus in Common."Active Condition"
   )
 
 // NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest
