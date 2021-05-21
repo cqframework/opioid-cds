@@ -5,6 +5,7 @@ using FHIR version '3.0.0'
 include FHIRHelpers version '3.0.0' called FHIRHelpers
 include OpioidCDSCommon version '1.2.3' called Common
 include OpioidCDSRoutines version '1.2.3' called Routines
+include OpioidCDSCommonConfig version '1.2.3' called Config
 
 /*
 **
@@ -38,11 +39,18 @@ define "Is Recommendation Applicable?":
   "Inclusion Criteria"
     and not "Exclusion Criteria"
 
+define "Patient Age Less Than 18":
+  if (Config."Age Less than 18 Years Is Enabled") then
+    AgeInYearsAt(Today()) < 18
+  else
+    false
+
 define "Inclusion Criteria":
   (
     exists (Common."Active Ambulatory Benzodiazepine Rx")
       and exists (Common."Active Ambulatory Opioid Rx")
   )
+    and not "Patient Age Less Than 18"
     and Routines."Is Opioid Review Useful?"
 
 define "Exclusion Criteria":

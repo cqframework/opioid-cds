@@ -377,42 +377,9 @@ define function GetIngredient(rxNormCode Code):
 define function GetIngredients(rxNormCodes List<Code>):
   rxNormCodes rnc return GetIngredient(rnc)
 
-define function GetMedicationNames(medications List<MedicationRequest>):
-  medications M
-    return OMTKLogic.GetMedicationConceptName(M.medication as FHIR.CodeableConcept)
-
 /*
 *  Conversion Functions
 */
-define function CodeableConceptsToString(concepts List<FHIR.CodeableConcept>):
-  concepts c return CodeableConceptToString(c)
-
-
-define function CodingToString(coding FHIR.Coding):
-  if (coding is null)
-  then null
-  else
-    'Code {' &
-      'code: ' & coding.code &
-      'system: ' & coding.system &
-      'version: ' & coding.version &
-      'display: ' & coding.display &
-    '}'
-
-define function CodeableConceptToString(concept FHIR.CodeableConcept):
-  if (concept is null or concept.coding is null)
-  then null
-  else
-    'CodeableConcept {' &
-      'Coding: [' &
-        Combine(concept.coding Coding return CodingToString(Coding), ',')
-      & ']'
-    & '}'
-
-define function ToRxNormCode(coding List<FHIR.Coding>):
-  singleton from (
-    coding C where C.system = 'http://www.nlm.nih.gov/research/umls/rxnorm'
-  )
 
 define function ToQuantity(quantity FHIR.Quantity):
   if quantity.code.value is not null
