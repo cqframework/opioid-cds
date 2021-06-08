@@ -1187,6 +1187,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 Order Sign"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10 Order Sign"/>
+            <sourceReference>
+                <reference value="PlanDefinition/OpioidCDSREC10OrderSign"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 Patient View"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10 Patient View"/>
             <sourceReference>
@@ -1266,6 +1274,30 @@
             <description value="Condition that are likely terminal for opioid prescribing codes"/>
             <sourceReference>
                 <reference value="ValueSet/conditions-likely-terminal-for-opioid-prescribing"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Encounter Diagnosis Category"/>
+            <description value="Encounter Diagnosis Condition Category"/>
+            <sourceReference>
+                <reference value="ValueSet/condition-encounter-diagnosis-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Problem List Category"/>
+            <description value="Problem List Condition Category"/>
+            <sourceReference>
+                <reference value="ValueSet/condition-problem-list-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - US Core Health Concern Condition Category"/>
+            <description value="US Core Health Concern Condition Category"/>
+            <sourceReference>
+                <reference value="ValueSet/condition-us-core-health-concern-category"/>
             </sourceReference>
         </resource>
         <resource>

@@ -29,28 +29,87 @@
     "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
   }, {
     "type": "depends-on",
+    "display": "FHIR model information",
     "resource": {
       "reference": "Library/FHIR-ModelInfo"
     }
   }, {
     "type": "depends-on",
+    "display": "Library FHIRHelpers",
     "resource": {
       "reference": "Library/FHIRHelpers"
     }
   }, {
     "type": "depends-on",
+    "display": "Library Common",
     "resource": {
       "reference": "Library/OpioidCDSCommon"
     }
   }, {
     "type": "depends-on",
+    "display": "Library Config",
     "resource": {
       "reference": "Library/OpioidCDSCommonConfig"
     }
   }, {
     "type": "depends-on",
+    "display": "Library Routines",
     "resource": {
       "reference": "Library/OpioidCDSRoutines"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Opioid analgesics with ambulatory misuse potential",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Community",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-category-community"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set PDMP review procedure",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set PDMP data reviewed finding",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Encounter Diagnosis Condition Category",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Problem List Condition Category",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/problem-list-condition-category"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set US Core Health Concern Condition Category",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/us-core-health-concern-condition-category"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Limited life expectancy conditions",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Active Condition",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-clinical-status-active"
     }
   } ],
   "parameter": [ {
@@ -135,6 +194,12 @@
   "dataRequirement": [ {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Patient"
+    } ],
+    "type": "Patient"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Procedure"
     } ],
     "type": "Procedure",
@@ -143,6 +208,11 @@
       "valueSetReference": {
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
       }
+    }, {
+      "path": "status",
+      "valueCoding": [ {
+        "code": "completed"
+      } ]
     } ]
   }, {
     "extension": [ {
@@ -159,529 +229,37 @@
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
+      "valueCode": "Condition"
     } ],
-    "type": "Procedure",
+    "type": "Condition",
     "codeFilter": [ {
-      "path": "code",
+      "path": "category",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category"
       }
     } ]
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
+      "valueCode": "Condition"
     } ],
-    "type": "Observation",
+    "type": "Condition",
     "codeFilter": [ {
-      "path": "code",
+      "path": "category",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/problem-list-condition-category"
       }
     } ]
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
+      "valueCode": "Condition"
     } ],
-    "type": "Procedure",
+    "type": "Condition",
     "codeFilter": [ {
-      "path": "code",
+      "path": "category",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/us-core-health-concern-condition-category"
       }
     } ]
   } ],

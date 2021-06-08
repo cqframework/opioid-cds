@@ -65,6 +65,7 @@
   "copyright": "© CDC 2016+.",
   "relatedArtifact": [ {
     "type": "depends-on",
+    "display": "Code system RxNorm",
     "resource": {
       "reference": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm"
     }

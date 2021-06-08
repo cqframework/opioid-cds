@@ -13111,6 +13111,41 @@
   }, {
     "resource": {
       "resourceType": "ValueSet",
+      "id": "us-core-health-concern-condition-category",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+        "valueCode": "executable"
+      }, {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+        "valueCode": "executable"
+      }, {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
+        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
+      } ],
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/us-core-health-concern-condition-category",
+      "version": "0.0.1",
+      "name": "Valueset_US_Core_health-concern-condition_category",
+      "title": "ValueSet - US Core Health Concern Condition Category",
+      "status": "active",
+      "experimental": false,
+      "publisher": "Alphora",
+      "description": "US Core Health Concern Condition Category.",
+      "expansion": {
+        "timestamp": "2021-06-02T13:47:55-07:00",
+        "contains": [ {
+          "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+          "code": "health-concern",
+          "display": "Health Concern"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "ValueSet/us-core-health-concern-condition-category"
+    }
+  }, {
+    "resource": {
+      "resourceType": "ValueSet",
       "id": "medicationrequest-status-active",
       "extension": [ {
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
@@ -23394,6 +23429,41 @@
   }, {
     "resource": {
       "resourceType": "ValueSet",
+      "id": "observation-category-procedure",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+        "valueCode": "executable"
+      }, {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+        "valueCode": "executable"
+      }, {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
+        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
+      } ],
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-procedure",
+      "version": "0.0.1",
+      "name": "Valueset_observation-categorry-procedure",
+      "title": "ValueSet - Observation Category Procedure",
+      "status": "active",
+      "experimental": false,
+      "publisher": "Alphora",
+      "description": "Procedure Observation Category",
+      "expansion": {
+        "timestamp": "2021-06-08T13:47:55-07:00",
+        "contains": [ {
+          "system": "http://hl7.org/fhir/observation-category",
+          "code": "procedure",
+          "display": "Procedure"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "ValueSet/observation-category-procedure"
+    }
+  }, {
+    "resource": {
+      "resourceType": "ValueSet",
       "id": "opioid-analgesics-with-ambulatory-misuse-potential",
       "extension": [ {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
@@ -28445,6 +28515,41 @@
   }, {
     "resource": {
       "resourceType": "ValueSet",
+      "id": "observation-category-laboratory",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+        "valueCode": "executable"
+      }, {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+        "valueCode": "executable"
+      }, {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
+        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
+      } ],
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory",
+      "version": "0.0.1",
+      "name": "Valueset_observation-categorry-laboratory",
+      "title": "ValueSet - Observation Category Laboratory",
+      "status": "active",
+      "experimental": false,
+      "publisher": "Alphora",
+      "description": "Laboratory Observation Category",
+      "expansion": {
+        "timestamp": "2021-06-08T13:47:55-07:00",
+        "contains": [ {
+          "system": "http://hl7.org/fhir/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "ValueSet/observation-category-laboratory"
+    }
+  }, {
+    "resource": {
+      "resourceType": "ValueSet",
       "id": "therapies-indicating-end-of-life-care",
       "extension": [ {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
@@ -31482,7 +31587,7 @@
   }, {
     "resource": {
       "resourceType": "ValueSet",
-      "id": "condition-categories",
+      "id": "encounter-diagnosis-condition-category",
       "extension": [ {
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
         "valueCode": "executable"
@@ -31493,34 +31598,26 @@
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
         "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
       } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-categories",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category",
       "version": "0.0.1",
-      "name": "Valueset_condition_categories",
-      "title": "ValueSet - Condition Categories",
+      "name": "Valueset_encounter_diagnosis_condition_categories",
+      "title": "ValueSet - Encounter Diagnosis Condition Categories",
       "status": "active",
       "experimental": false,
       "publisher": "Alphora",
-      "description": "US Core condition categories.",
+      "description": "Encounter Diagnosis condition category.",
       "expansion": {
-        "timestamp": "2021-05-18T13:47:55-07:00",
+        "timestamp": "2021-06-02T13:47:55-07:00",
         "contains": [ {
           "system": "http://hl7.org/fhir/CodeSystem/condition-category",
           "code": "encounter-diagnosis",
           "display": "Encounter Diagnosis"
-        }, {
-          "system": "http://hl7.org/fhir/CodeSystem/condition-category",
-          "code": "problem-list-item",
-          "display": "Problem List Item"
-        }, {
-          "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
-          "code": "health-concern",
-          "display": "Health Concern"
         } ]
       }
     },
     "request": {
       "method": "PUT",
-      "url": "ValueSet/condition-categories"
+      "url": "ValueSet/encounter-diagnosis-condition-category"
     }
   }, {
     "resource": {
@@ -32294,6 +32391,41 @@
     "request": {
       "method": "PUT",
       "url": "ValueSet/benzodiazepine-medications"
+    }
+  }, {
+    "resource": {
+      "resourceType": "ValueSet",
+      "id": "problem-list-condition-category",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+        "valueCode": "executable"
+      }, {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+        "valueCode": "executable"
+      }, {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
+        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
+      } ],
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/problem-list-condition-category",
+      "version": "0.0.1",
+      "name": "Valueset_problem_list_condition_category",
+      "title": "ValueSet - Problem List Condition Category",
+      "status": "active",
+      "experimental": false,
+      "publisher": "Alphora",
+      "description": "Problem list condition category.",
+      "expansion": {
+        "timestamp": "2021-06-02T13:47:55-07:00",
+        "contains": [ {
+          "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+          "code": "problem-list-item",
+          "display": "Problem List Item"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "ValueSet/problem-list-condition-category"
     }
   } ]
 }
