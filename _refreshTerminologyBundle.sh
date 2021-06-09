@@ -11,6 +11,14 @@ cp input/vocabulary/codesystem/codesystem-condition-clinical.json bundlegen/sour
 cp input/vocabulary/codesystem/codesystem-medication-request-category.json bundlegen/sourcefiles/codesystem-medication-request-category.json
 cp input/vocabulary/codesystem/codesystem-medication-request-status.json bundlegen/sourcefiles/codesystem-medication-request-status.json
 cp input/vocabulary/codesystem/codesystem-uscore-condition-category.json bundlegen/sourcefiles/codesystem-uscore-condition-category.json
+cp input/vocabulary/valueset/valueset-condition-clinical-status-active bunlegen/sourcefiles/valueset-condition-clinical-status-active
+cp input/vocabulary/valueset/valueset-medicationrequest-category-community bunlegen/sourcefiles/valueset-medicationrequest-category-community
+cp input/vocabulary/valueset/valueset-medicationrequest-status-active bunlegen/sourcefiles/valueset-medicationrequest-status-active
+cp input/vocabulary/valueset/valueset-condition-encounter-diagnosis-category bunlegen/sourcefiles/valueset-condition-encounter-diagnosis-category
+cp input/vocabulary/valueset/valueset-condition-problem-list-category bunlegen/sourcefiles/valueset-condition-problem-list-category
+cp input/vocabulary/valueset/valueset-condition-us-core-health-concern-category bunlegen/sourcefiles/valueset-condition-us-core-health-concern-category
+cp input/vocabulary/valueset/valueset-observation-category-laboratory bunlegen/sourcefiles/valueset-observation-category-laboratory
+cp input/vocabulary/valueset/valueset-observation-category-procedure bunlegen/sourcefiles/valueset-observation-category-procedure
 
 cp input/vocabulary/valueset/valueset-buprenorphine-and-methadone-medications.json bundlegen/sourcefiles/valueset-buprenorphine-and-methadone-medications.json
 cp input/vocabulary/valueset/valueset-cdc-malignant-cancer-conditions.json bundlegen/sourcefiles/valueset-cdc-malignant-cancer-conditions.json

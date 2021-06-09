@@ -1270,6 +1270,30 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ValueSet - Condition Clinical Status Active"/>
+            <description value="The subject is currently experiencing the condition or situation, there is evidence of the condition or situation, or considered to be a significant risk."/>
+            <sourceReference>
+                <reference value="ValueSet/condition-clinical-status-active"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - Medication Request Category Community"/>
+            <description value="Includes requests for medications to be administered or consumed by the patient in their home (this would include long term care or nursing homes, hospices, etc.)."/>
+            <sourceReference>
+                <reference value="ValueSet/medicationrequest-category-community"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - Medication Request Status Active"/>
+            <description value="The prescription is 'actionable', but not all actions that are implied by it have occurred yet."/>
+            <sourceReference>
+                <reference value="ValueSet/medicationrequest-status-active"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Likely Terminal for Opioid Prescribing"/>
             <description value="Condition that are likely terminal for opioid prescribing codes"/>
             <sourceReference>

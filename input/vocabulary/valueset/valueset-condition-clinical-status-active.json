@@ -27,7 +27,7 @@
     "timestamp": "2021-05-19T13:47:55-07:00",
     "contains": [
       {
-        "system": "http://hl7.org/fhir/CodeSystem/condition-clinical",
+        "system": "http://hl7.org/fhir/condition-clinical",
         "code": "active",
         "display": "Active"
       }
