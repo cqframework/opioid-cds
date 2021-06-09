@@ -13098,7 +13098,7 @@
       "expansion": {
         "timestamp": "2021-05-19T13:47:55-07:00",
         "contains": [ {
-          "system": "http://hl7.org/fhir/CodeSystem/condition-clinical",
+          "system": "http://hl7.org/fhir/condition-clinical",
           "code": "active",
           "display": "Active"
         } ]
@@ -13168,7 +13168,7 @@
       "expansion": {
         "timestamp": "2021-05-19T13:47:55-07:00",
         "contains": [ {
-          "system": "http://hl7.org/fhir/CodeSystem/medication-request-status",
+          "system": "http://hl7.org/fhir/medication-request-status",
           "code": "active",
           "display": "Active"
         } ]
@@ -21354,7 +21354,7 @@
       "expansion": {
         "timestamp": "2021-05-19T13:47:55-07:00",
         "contains": [ {
-          "system": "http://hl7.org/fhir/CodeSystem/medication-request-category",
+          "system": "http://hl7.org/fhir/medication-request-category",
           "code": "community",
           "display": "Community"
         } ]
@@ -31609,7 +31609,7 @@
       "expansion": {
         "timestamp": "2021-06-02T13:47:55-07:00",
         "contains": [ {
-          "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+          "system": "http://hl7.org/fhir/condition-category",
           "code": "encounter-diagnosis",
           "display": "Encounter Diagnosis"
         } ]
@@ -32417,7 +32417,7 @@
       "expansion": {
         "timestamp": "2021-06-02T13:47:55-07:00",
         "contains": [ {
-          "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+          "system": "http://hl7.org/fhir/condition-category",
           "code": "problem-list-item",
           "display": "Problem List Item"
         } ]
