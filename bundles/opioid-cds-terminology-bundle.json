@@ -28275,6 +28275,35 @@
     }
   }, {
     "resource": {
+      "resourceType": "CodeSystem",
+      "id": "opioidcds-indicator",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/CodeSystem/opioidcds-indicator",
+      "name": "CDC Opioid Indicator",
+      "status": "draft",
+      "experimental": false,
+      "description": "Indicates the urgency/importance of what this RequestGroup action conveys",
+      "caseSensitive": true,
+      "content": "complete",
+      "concept": [ {
+        "code": "info",
+        "display": "Information",
+        "definition": "Indicates that the workflow result is informational"
+      }, {
+        "code": "warning",
+        "display": "Warning",
+        "definition": "Indicates that the workflow result is a warning"
+      }, {
+        "code": "hard-stop",
+        "display": "Hard Stop",
+        "definition": "Indicates that the workflow should not be allowed to proceed"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "CodeSystem/opioidcds-indicator"
+    }
+  }, {
+    "resource": {
       "resourceType": "ValueSet",
       "id": "buprenorphine-and-methadone-medications",
       "extension": [ {

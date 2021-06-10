@@ -12,6 +12,7 @@ COPY input\vocabulary\codesystem\codesystem-medication-request-category.json bun
 COPY input\vocabulary\codesystem\codesystem-medication-request-status.json bundlegen\sourcefiles\codesystem-medication-request-status.json
 COPY input\vocabulary\codesystem\codesystem-observation-category.json bundlegen\sourcefiles\codesystem-observation-category.json
 COPY input\vocabulary\codesystem\codesystem-uscore-condition-category.json bundlegen\sourcefiles\codesystem-uscore-condition-category.json
+COPY input\vocabulary\codesystem\codesystem-opioidcds-indicator.xml bundlegen\sourcefiles\codesystem-opioidcds-indicator.xml
 
 COPY input\vocabulary\valueset\valueset-benzodiazepine-medications.json bundlegen\sourcefiles\valueset-benzodiazepine-medications.json
 COPY input\vocabulary\valueset\valueset-buprenorphine-and-methadone-medications.json bundlegen\sourcefiles\valueset-buprenorphine-and-methadone-medications.json
