@@ -27,12 +27,12 @@
     "timestamp": "2021-05-18T13:47:55-07:00",
     "contains": [
       {
-        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "system": "http://hl7.org/fhir/condition-category",
         "code": "encounter-diagnosis",
         "display": "Encounter Diagnosis"
       },
       {
-        "system": "http://hl7.org/fhir/CodeSystem/condition-category",
+        "system": "http://hl7.org/fhir/condition-category",
         "code": "problem-list-item",
         "display": "Problem List Item"
       },

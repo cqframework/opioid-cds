@@ -16,7 +16,7 @@
     }
   ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-procedure",
-  "name": "Valueset_observation-categorry-procedure",
+  "name": "Valueset_observation-category-procedure",
   "version": "0.0.1",
   "title": "ValueSet - Observation Category Procedure",
   "status": "active",

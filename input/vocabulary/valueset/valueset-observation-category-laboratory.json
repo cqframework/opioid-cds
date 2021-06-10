@@ -16,7 +16,7 @@
     }
   ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory",
-  "name": "Valueset_observation-categorry-laboratory",
+  "name": "Valueset_observation-category-laboratory",
   "version": "0.0.1",
   "title": "ValueSet - Observation Category Laboratory",
   "status": "active",
