@@ -57,9 +57,6 @@ context Patient
 
 // TODO: Capture process decisions for long-term opioid use
 
-define "Encounter With Hospice Disposition Discharge Lookback Period":
-  Interval[Today() - 1 year, Today()]
-
 define "Active Ambulatory Opioid Rx":
   /* ("Get Active Ambulatory Medication Requests"([MedicationRequest: status in "Active MedicationRequest"])) Rx */
   (
