@@ -65,11 +65,13 @@
   "copyright": "© CDC 2016+.",
   "relatedArtifact": [ {
     "type": "depends-on",
+    "display": "Library OMTKData",
     "resource": {
       "reference": "Library/OMTKData2019"
     }
   }, {
     "type": "depends-on",
+    "display": "Code system RxNorm",
     "resource": {
       "reference": "http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm"
     }

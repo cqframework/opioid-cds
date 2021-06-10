@@ -19,7 +19,7 @@
       "category": {
         "coding": [
           {
-            "system": "http://hl7.org/fhir/CodeSystem/medication-request-category",
+            "system": "http://hl7.org/fhir/medication-request-category",
             "code": "community"
           }
         ]
@@ -108,7 +108,7 @@
         "category": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/CodeSystem/medication-request-category",
+              "system": "http://hl7.org/fhir/medication-request-category",
               "code": "community"
             }
           ]

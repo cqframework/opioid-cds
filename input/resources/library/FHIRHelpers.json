@@ -41,6 +41,7 @@
   } ],
   "relatedArtifact": [ {
     "type": "depends-on",
+    "display": "FHIR model information",
     "resource": {
       "reference": "Library/FHIR-ModelInfo"
     }

@@ -60,23 +60,33 @@
   "copyright": "© CDC 2016+.",
   "relatedArtifact": [ {
     "type": "depends-on",
+    "display": "FHIR model information",
     "resource": {
       "reference": "Library/FHIR-ModelInfo"
     }
   }, {
     "type": "depends-on",
+    "display": "Library FHIRHelpers",
     "resource": {
       "reference": "Library/FHIRHelpers"
     }
   }, {
     "type": "depends-on",
+    "display": "Library OMTKLogic",
     "resource": {
       "reference": "Library/OMTKLogicCQL"
     }
   }, {
     "type": "depends-on",
+    "display": "Library Common",
     "resource": {
       "reference": "Library/OpioidCDSCommon"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Library OMTKData",
+    "resource": {
+      "reference": "Library/OMTKData2019"
     }
   } ],
   "parameter": [ {
@@ -84,6 +94,13 @@
     "use": "out",
     "min": 0,
     "max": "1",
+    "type": "Patient"
+  } ],
+  "dataRequirement": [ {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Patient"
+    } ],
     "type": "Patient"
   } ],
   "content": [ {

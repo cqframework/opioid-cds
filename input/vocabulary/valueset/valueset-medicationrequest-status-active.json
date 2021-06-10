@@ -27,7 +27,7 @@
     "timestamp": "2021-05-19T13:47:55-07:00",
     "contains": [
       {
-        "system": "http://hl7.org/fhir/CodeSystem/medication-request-status",
+        "system": "http://hl7.org/fhir/medication-request-status",
         "code": "active",
         "display": "Active"
       }

@@ -918,6 +918,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="CodeSystem - Observation Category Codes"/>
+            <description value="Preferred value set for Observation Categories."/>
+            <sourceReference>
+                <reference value="CodeSystem/observation-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="CodeSystem - US Core Condition Category Extension Codes"/>
             <description value="Set of codes that are needed for implementation of the US-Core profiles. These codes are used as extensions to the FHIR and US Core value sets."/>
             <sourceReference>
@@ -1187,6 +1195,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 Order Sign"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10 Order Sign"/>
+            <sourceReference>
+                <reference value="PlanDefinition/OpioidCDSREC10OrderSign"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 Patient View"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10 Patient View"/>
             <sourceReference>
@@ -1262,10 +1278,58 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ValueSet - Condition Clinical Status Active"/>
+            <description value="The subject is currently experiencing the condition or situation, there is evidence of the condition or situation, or considered to be a significant risk."/>
+            <sourceReference>
+                <reference value="ValueSet/condition-clinical-status-active"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - Medication Request Category Community"/>
+            <description value="Includes requests for medications to be administered or consumed by the patient in their home (this would include long term care or nursing homes, hospices, etc.)."/>
+            <sourceReference>
+                <reference value="ValueSet/medicationrequest-category-community"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - Medication Request Status Active"/>
+            <description value="The prescription is 'actionable', but not all actions that are implied by it have occurred yet."/>
+            <sourceReference>
+                <reference value="ValueSet/medicationrequest-status-active"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Likely Terminal for Opioid Prescribing"/>
             <description value="Condition that are likely terminal for opioid prescribing codes"/>
             <sourceReference>
                 <reference value="ValueSet/conditions-likely-terminal-for-opioid-prescribing"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Encounter Diagnosis Category"/>
+            <description value="Encounter Diagnosis Condition Category"/>
+            <sourceReference>
+                <reference value="ValueSet/condition-encounter-diagnosis-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Problem List Category"/>
+            <description value="Problem List Condition Category"/>
+            <sourceReference>
+                <reference value="ValueSet/condition-problem-list-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - US Core Health Concern Condition Category"/>
+            <description value="US Core Health Concern Condition Category"/>
+            <sourceReference>
+                <reference value="ValueSet/condition-us-core-health-concern-category"/>
             </sourceReference>
         </resource>
         <resource>

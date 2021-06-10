@@ -748,7 +748,10 @@
       "source": "patient-example-opioidcds.xml",
       "base": "Patient-example-opioidcds.html"
     },
-
+    "PlanDefinition/HelloWorld": {
+      "source": "HelloWorld.json",
+      "base": "PlanDefinition-HelloWorld.html"
+    },
     "PlanDefinition/OpioidCDSREC04": {
       "source": "plandefinition-OpioidCDSREC04.json",
       "base": "PlanDefinition-opioidcds-04.html"
@@ -813,6 +816,18 @@
     "ValueSet/conditions-likely-terminal-for-opioid-prescribing": {
       "source": "valueset-conditions-likely-terminal-for-opioid-prescribing.json",
       "base": "ValueSet-conditions-likely-terminal-for-opioid-prescribing.html"
+    },
+    "ValueSet/condition-encounter-diagnosis-category": {
+      "source": "valueset-condition-encounter-diagnosis-category.json",
+      "base": "ValueSet-condition-encounter-diagnosis-category.html"
+    },
+    "ValueSet/condition-problem-list-category": {
+      "source": "valueset-condition-problem-list-category.json",
+      "base": "ValueSet-condition-problem-list-category.html"
+    },
+    "ValueSet/condition-us-core-health-concern-category": {
+      "source": "valueset-condition-us-core-health-concern-category.json",
+      "base": "ValueSet-condition-us-core-health-concerns-category.html"
     },
     "ValueSet/extended-release-opioid-with-ambulatory-misuse-potential": {
       "source": "valueset-extended-release-opioid-with-ambulatory-misuse-potential.json",

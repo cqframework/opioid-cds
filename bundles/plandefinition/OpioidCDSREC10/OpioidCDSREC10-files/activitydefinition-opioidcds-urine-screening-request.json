@@ -4,7 +4,7 @@
     "url": "http://fhir.org/guides/cdc/opioid-cds/ActivityDefinition/opioidcds-urine-screening-request",
     "version": "1.2.3",
     "name": "ActivityDefinition_Urine_Screening_ProcedureRequest",
-    "title": "ActivityDefinition - Urine Screening ProcedureRequest",
+    "title": "ActivityDefinition - ProcedureRequest: Urine Screening",
     "status": "draft",
     "date": "2020-12-14",
     "publisher": "Centers for Disease Control and Prevention (CDC)",
