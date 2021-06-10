@@ -22,7 +22,7 @@
       "valueCode": "phx"
     }
   ],
-  "url": "http://hl7.org/fhir/CodeSystem/medication-request-status",
+  "url": "http://hl7.org/fhir/medication-request-status",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
     "value": "urn:oid:2.16.840.1.113883.4.642.1.344"
