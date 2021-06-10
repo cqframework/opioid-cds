@@ -918,6 +918,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="CodeSystem - Observation Category Codes"/>
+            <description value="Preferred value set for Observation Categories."/>
+            <sourceReference>
+                <reference value="CodeSystem/observation-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="CodeSystem - US Core Condition Category Extension Codes"/>
             <description value="Set of codes that are needed for implementation of the US-Core profiles. These codes are used as extensions to the FHIR and US Core value sets."/>
             <sourceReference>
