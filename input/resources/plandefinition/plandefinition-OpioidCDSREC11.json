@@ -165,7 +165,7 @@
             }
           ],
           "groupingBehavior": "visual-group",
-          "selectionBehavior": "exactly-one",
+          "selectionBehavior": "any",
           "definition": {
             "reference": "ActivityDefinition/opioidcds-detected-issue-opioids-and-benzodiazepines"
           },
