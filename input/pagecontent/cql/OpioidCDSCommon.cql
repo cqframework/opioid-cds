@@ -58,11 +58,11 @@ context Patient
 // TODO: Capture process decisions for long-term opioid use
 
 define "Active Ambulatory Opioid Rx":
-  /* ("Get Active Ambulatory Medication Requests"([MedicationRequest: status in "Active MedicationRequest"])) Rx */
   (
-    ("Get Active Ambulatory Medication Requests"([MedicationRequest])) MR
+    [MedicationRequest: status in "Active MedicationRequest"] MR
       where date from MR.authoredOn 2 years or less on or before Today()
         and MR.medication is Reference or MR.medication in "Opioid analgesics with ambulatory misuse potential"
+        and MR.category in "Community"
   ) Rx
     let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
     where not(Rx.medication is Reference) or Med.code in "Opioid analgesics with ambulatory misuse potential"
@@ -80,53 +80,48 @@ define "Active Ambulatory Opioid Rx":
         }
 
 define "Active Ambulatory Benzodiazepine Rx":
-/* ("Get Active Ambulatory Medication Requests"([MedicationRequest: status in "Active MedicationRequest"])) Rx */
-(
-  ("Get Active Ambulatory Medication Requests"([MedicationRequest])) MR
-    where date from MR.authoredOn 2 years or less on or before Today()
-      and MR.medication is Reference or MR.medication in "Benzodiazepine medications"
-) Rx
-  let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
-  where not(Rx.medication is Reference) or Med.code in "Benzodiazepine medications"
-    return
-      MedicationRequest {
-        id: Rx.id,
-        status: Rx.status,
-        intent: Rx.intent,
-        category: Rx.category,
-        medication: if Rx.medication is Reference then First(Med.code) else Rx.medication as CodeableConcept,
-        subject: Rx.subject,
-        recorder: Rx.recorder,
-        dosageInstruction: Rx.dosageInstruction,
-        dispenseRequest: Rx.dispenseRequest
-      }
+  (
+    [MedicationRequest: status in "Active MedicationRequest"] MR
+      where date from MR.authoredOn 2 years or less on or before Today()
+        and MR.medication is Reference or MR.medication in "Benzodiazepine medications"
+        and MR.category in "Community"
+  ) Rx
+    let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
+    where not(Rx.medication is Reference) or Med.code in "Benzodiazepine medications"
+      return
+        MedicationRequest {
+          id: Rx.id,
+          status: Rx.status,
+          intent: Rx.intent,
+          category: Rx.category,
+          medication: if Rx.medication is Reference then First(Med.code) else Rx.medication as CodeableConcept,
+          subject: Rx.subject,
+          recorder: Rx.recorder,
+          dosageInstruction: Rx.dosageInstruction,
+          dispenseRequest: Rx.dispenseRequest
+        }
 
 define "Active Ambulatory Naloxone Rx":
-/* ("Get Active Ambulatory Medication Requests"([MedicationRequest: status in "Active MedicationRequest"])) Rx */
-(
-  ("Get Active Ambulatory Medication Requests"([MedicationRequest])) MR
-    where date from MR.authoredOn 2 years or less on or before Today()
-      and MR.medication is Reference or MR.medication in "Naloxone medications"
-) Rx
-  let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
-  where not(Rx.medication is Reference) or Med.code in "Naloxone medications"
-    return
-      MedicationRequest {
-        id: Rx.id,
-        status: Rx.status,
-        intent: Rx.intent,
-        category: Rx.category,
-        medication: if Rx.medication is Reference then First(Med.code) else Rx.medication as CodeableConcept,
-        subject: Rx.subject,
-        recorder: Rx.recorder,
-        dosageInstruction: Rx.dosageInstruction,
-        dispenseRequest: Rx.dispenseRequest
-      }
-
-define function "Get Active Ambulatory Medication Requests" (value List<MedicationRequest>) returns List<MedicationRequest>:
-  value Rx
-    where Rx.status.value ~ 'active'
-      and Rx.category in "Community"
+  (
+    [MedicationRequest: status in "Active MedicationRequest"] MR
+      where date from MR.authoredOn 2 years or less on or before Today()
+        and MR.medication is Reference or MR.medication in "Naloxone medications"
+        and MR.category in "Community"
+  ) Rx
+    let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]
+    where not(Rx.medication is Reference) or Med.code in "Naloxone medications"
+      return
+        MedicationRequest {
+          id: Rx.id,
+          status: Rx.status,
+          intent: Rx.intent,
+          category: Rx.category,
+          medication: if Rx.medication is Reference then First(Med.code) else Rx.medication as CodeableConcept,
+          subject: Rx.subject,
+          recorder: Rx.recorder,
+          dosageInstruction: Rx.dosageInstruction,
+          dispenseRequest: Rx.dispenseRequest
+        }
 
 define function "Is Opioid Analgesic with Ambulatory Misuse Potential?"(value List<MedicationRequest>):
   value Rx

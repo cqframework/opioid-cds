@@ -157,7 +157,7 @@
         }
       ],
       "groupingBehavior": "visual-group",
-      "selectionBehavior": "exactly-one",
+      "selectionBehavior": "any",
       "dynamicValue": [
         {
           "path": "action.title",

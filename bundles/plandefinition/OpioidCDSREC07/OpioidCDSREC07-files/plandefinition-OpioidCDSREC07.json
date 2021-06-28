@@ -155,7 +155,7 @@
         "code": "create"
       },
       "groupingBehavior": "visual-group",
-      "selectionBehavior": "exactly-one",
+      "selectionBehavior": "any",
       "definition": {
         "reference": "ActivityDefinition/opioidcds-risk-assessment-request"
       },

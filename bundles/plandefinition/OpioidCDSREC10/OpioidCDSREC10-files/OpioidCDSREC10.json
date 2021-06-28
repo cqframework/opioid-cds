@@ -261,6 +261,11 @@
     } ],
     "type": "Observation",
     "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    }, {
       "path": "code",
       "valueSetReference": {
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening"
@@ -273,6 +278,11 @@
     } ],
     "type": "Observation",
     "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    }, {
       "path": "code",
       "valueSetReference": {
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening"
