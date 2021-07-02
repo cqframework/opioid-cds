@@ -32,4 +32,6 @@ Debugging information is available here:
 
 The HL7 IG Publisher is committed to this repository to make building as easy as possible. To build locally, clone the repository and issue the following command in the root:
 
-    java -jar "org.hl7.fhir.publisher.jar" -ig ig.json
+    java -jar "publisher.jar" -ig ig.json
+
+This IG has intentionally not been updated to the ini-based publishing approach because it is not supported for FHIR STU3. 

@@ -1,0 +1,107 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "1049502"
+}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "oxyCODONE HCl 10 MG 12HR Extended Release Oral Tablet",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "197696"
+}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "72 HR fentaNYL 0.075 MG/HR Transdermal System",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "1049502"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "oxyCODONE HCl 10 MG 12HR Extended Release Oral Tablet",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "197696"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "72 HR fentaNYL 0.075 MG/HR Transdermal System",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "1049502",
+  "display" : "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "oxyCODONE HCl 10 MG 12HR Extended Release Oral Tablet",
+  "severity" : "warning",
+  "error" : "The display \"12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet\" is not a valid display for the code {http://www.nlm.nih.gov/research/umls/rxnorm}1049502 - should be one of [\"oxyCODONE HCl 10 MG 12HR Extended Release Oral Tablet\",\"oxycodone hydrochloride 10 MG 12 HR Extended Release Oral Tablet\"] (from http://tx.fhir.org/r3)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "1012727",
+  "display" : "Carbinoxamine maleate 0.4 MG/ML / Hydrocodone Bitartrate 1 MG/ML / Pseudoephedrine Hydrochloride 6 MG/ML Oral Solution"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "carbinoxamine maleate 2 MG / HYDROcodone bitartrate 5 MG / pseudoephedrine hydrochloride 30 MG per 5 ML Oral Solution",
+  "severity" : "warning",
+  "error" : "The display \"Carbinoxamine maleate 0.4 MG/ML / Hydrocodone Bitartrate 1 MG/ML / Pseudoephedrine Hydrochloride 6 MG/ML Oral Solution\" is not a valid display for the code {http://www.nlm.nih.gov/research/umls/rxnorm}1012727 - should be one of [\"carbinoxamine maleate 2 MG / HYDROcodone bitartrate 5 MG / pseudoephedrine hydrochloride 30 MG per 5 ML Oral Solution\",\"carbinoxamine maleate 2 MG / hydrocodone bitartrate 5 MG / pseudoephedrine hydrochloride 30 MG per 5 ML Oral Solution\"] (from http://tx.fhir.org/r3)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "104693",
+  "display" : "Temazepam 20 MG Oral Tablet"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "temazepam 20 MG Oral Tablet",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "1191212",
+  "display" : "Naloxone Hydrochloride 0.02 MG/ML Injectable Solution"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "naloxone hydrochloride 0.02 MG/ML Injectable Solution",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "1298088",
+  "display" : "Flurazepam Hydrochloride 15 MG Oral Capsule"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "flurazepam HCl 15 MG Oral Capsule",
+  "severity" : "warning",
+  "error" : "The display \"Flurazepam Hydrochloride 15 MG Oral Capsule\" is not a valid display for the code {http://www.nlm.nih.gov/research/umls/rxnorm}1298088 - should be one of [\"flurazepam HCl 15 MG Oral Capsule\"] (from http://tx.fhir.org/r3)"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
+  "code" : "197696",
+  "display" : "72 HR Fentanyl 0.075 MG/HR Transdermal System"
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
+v: {
+  "display" : "72 HR fentaNYL 0.075 MG/HR Transdermal System",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

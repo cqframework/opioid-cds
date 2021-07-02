@@ -1,0 +1,13 @@
+{
+  "cards": [
+    {
+      "summary": "Recommend use of immediate-release opioids instead of extended release/long acting opioids when starting patient on opioids.",
+      "indicator": "warning",
+      "detail": "The following medication requests(s) release rates should be re-evaluated: 12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet",
+      "source": {
+        "label": "CDC guideline for prescribing opioids for chronic pain",
+        "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
+      }
+    }
+  ]
+}

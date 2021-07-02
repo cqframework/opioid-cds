@@ -1,0 +1,13 @@
+<Patient xmlns="http://hl7.org/fhir">
+   <id value="example-rec12pv-no-treatment-no-disorder-diagnosis"/>
+   <gender value="male"/>
+   <birthDate value="1982-01-07"/>
+</Patient>
+<!--
+{
+  "resourceType": "Patient",
+  "id": "example-rec12pv-no-treatment-no-disorder-diagnosis",
+  "gender": "male",
+  "birthDate": "1982-01-07"
+}
+-->

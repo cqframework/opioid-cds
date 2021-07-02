@@ -1,4 +1,4 @@
-library OMTKLogicStub version '1.2.2'
+library OMTKLogicStub version '1.2.3'
 
 /*
 This is a "stub" version of the OMTKLogic library that has no dependencies
@@ -8,7 +8,7 @@ Opioid artifacts can proceed while we work out how to distribute OMTK
 functionality in authoring and evaluation environments.
 */
 
-codesystem RxNorm: 'http://www.nlm.nih.gov/research/umls/rxnorm'
+codesystem RxNorm: 'http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm'
 
 /*
   Normalizes the input units to UCUM units

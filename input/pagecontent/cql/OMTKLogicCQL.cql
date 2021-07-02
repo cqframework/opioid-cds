@@ -1,4 +1,4 @@
-library OMTKLogicCQL version '1.2.2'
+library OMTKLogicCQL version '1.2.3'
 
 /*
 This version of the OMTKLogic library uses the OMTKData library as the
@@ -7,9 +7,9 @@ OMTK data source. This library has no external dependencies and so
 should be able to run in an environment that supports pure CQL.
 */
 
-include OMTKData2019 version '1.2.2' called OMTKData
+include OMTKData2019 version '1.2.3' called OMTKData
 
-codesystem RxNorm: 'http://www.nlm.nih.gov/research/umls/rxnorm'
+codesystem RxNorm: 'http://www.nlm.nih.gov/research/umls/CodeSystem/rxnorm'
 
 /*
   Normalizes the input units to UCUM units
@@ -241,6 +241,16 @@ define function GetDailyDose(ingredientCode Code, strength Quantity, doseFormCod
     else
       Quantity { value: dosesPerDay * doseQuantity.value * strength.value, unit: Substring(strength.unit, 0, PositionOf('/', strength.unit)) }
   end
+
+define function GetMedicationConceptName(concept Concept):
+  if concept.display is null then
+    First(
+      (concept.codes) C
+        where C.system = 'http://www.nlm.nih.gov/research/umls/rxnorm'
+        return GetMedicationName(C)
+    )
+  else
+    concept.display
 
 define function GetMedicationName(rxNormCode Code):
   if rxNormCode.display is null then
