@@ -85,17 +85,24 @@ define "Urine Screenings during the Last 12 Months":
         and not (LabObservations.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
   )
 
-define "No Screening In Last 12 Months Indicator":
-  if "Is Recommendation Applicable?"
-    then 'warning'
-  else null
+define "Was Screening Done?":
+  "Patient had Urine Screening in Last 12 Months"
 
-define "No Screening In Last 12 Months Summary":
-  if "Is Recommendation Applicable?"
-    then 'Annual Urine Screening Check'
-  else null
+define "Was Screening Positive for Cocaine?":
+    true
+define "Was Screening Positive for PCP?":
+    true
 
 define "No Screening In Last 12 Months Detail":
   if "Is Recommendation Applicable?"
     then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
-  else null
+
+define "No Screening In Last 12 Months Summary":
+  if "Is Recommendation Applicable?"
+    then 'Annual Urine Screening Check'
+  else 'Patient was Screened Summary'
+
+define "No Screening In Last 12 Months Indicator":
+  if "Is Recommendation Applicable?"
+    then 'warning'
+  else 'info'
