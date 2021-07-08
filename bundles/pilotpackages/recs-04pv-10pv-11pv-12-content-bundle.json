@@ -674,7 +674,7 @@
                   }
                 ],
                 "groupingBehavior": "visual-group",
-                "selectionBehavior": "exactly-one",
+                "selectionBehavior": "any",
                 "dynamicValue": [
                   {
                     "path": "action.title",
@@ -1060,7 +1060,7 @@
                   }
                 ],
                 "groupingBehavior": "visual-group",
-                "selectionBehavior": "exactly-one",
+                "selectionBehavior": "any",
                 "dynamicValue": [
                   {
                     "path": "action.description",
@@ -2001,7 +2001,7 @@
                   }
                 ],
                 "groupingBehavior": "visual-group",
-                "selectionBehavior": "exactly-one",
+                "selectionBehavior": "any",
                 "dynamicValue": [
                   {
                     "path": "action.description",

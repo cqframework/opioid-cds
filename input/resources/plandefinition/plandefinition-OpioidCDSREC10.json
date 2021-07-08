@@ -155,6 +155,7 @@
         "code": "create",
         "display": "Create"
       },
+      "selectionBehavior": "any",
       "definition": {
         "reference": "ActivityDefinition/opioidcds-urine-screening-request"
       },
