@@ -185,7 +185,7 @@
       ]
     },
     {
-      "label": "Order Positive Cocaine or PCP Screening",
+      "label": "Positive Urine Screening For Cocaine or PCP",
       "title": "Cocaine or PCP Tested Positive",
       "description": "Urine screening showed positive for cocaine or PCP",
       "documentation": [
@@ -244,9 +244,6 @@
         "system": "http://terminology.hl7.org/CodeSystem/action-type",
         "code": "create",
         "display": "Create"
-      },
-      "definition": {
-        "reference": "ActivityDefinition/opioidcds-urine-screening-request"
       },
       "dynamicValue": [
         {
