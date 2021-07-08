@@ -248,7 +248,7 @@
       "dynamicValue": [
         {
           "path": "action.description",
-          "expression": "Positive Cocaine or PCP  In Last 12 Months Detail"
+          "expression": "Summary"
         },
         {
           "path": "action.title",

@@ -112,6 +112,23 @@ define "PCP Screenings":
    and not (LabObservations.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
 )
 
+define "Positive Cocaine Dates in Lookback Period":
+  ({
+    "Cocaine Screenings" CS
+      return {
+        Drug_Code: CS.code,
+        Date: CS.effective
+    }sort by Date desc
+})
+
+define "Positive PCP Dates in Lookback Period":
+  ({
+    "PCP Screenings" PS
+      return {
+        Drug_Code: PS.code,
+        Date: PS.effective
+    }sort by Date desc
+})
 
 define "Has Positive Screening for Cocaine in Last 12 Months":
   exists "Cocaine Screenings" CS where
@@ -148,7 +165,6 @@ define "No Screening In Last 12 Months Indicator":
   else
     null
 
-
 define "Positive Cocaine or PCP  In Last 12 Months Detail":
   if ("Has Positive Screening for Cocaine in Last 12 Months" and "Has Positive Screening for PCP in Last 12 Months")
         then 'Positive both'
@@ -169,3 +185,9 @@ define "Positive Cocaine or PCP  In Last 12 Months Indicator":
   if "Applicable Because of Positive Cocaine or PCP"
     then 'warning'
   else 'info'
+
+  define "Summary":{
+    Dates:{
+      ListOfDates: "Positive PCP Dates in Lookback Period"
+    }
+  }
