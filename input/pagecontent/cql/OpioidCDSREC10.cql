@@ -7,6 +7,9 @@ include OpioidCDSCommon version '1.2.3' called Common
 include OpioidCDSRoutines version '1.2.3' called Routines
 include OpioidCDSCommonConfig version '1.2.3' called Config
 
+valueset "Cocaine Medications": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-medications'
+valueset "PCP Medications": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/pcp-medications'
+
 /*
 **  Recommendation #10
 **    When prescribing opioids for chronic pain, providers should use urine drug
@@ -62,7 +65,9 @@ define "Inclusion Criteria":
   "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential"
     and not "Patient Age Less Than 18"
     and Routines."Is Opioid Review Useful?"
-    and not "Patient had Urine Screening in Last 12 Months"
+    and (not "Patient had Urine Screening in Last 12 Months"
+      or "Has Positive Screening for Cocaine in Last 12 Months"
+      or "Has Positive Screening for PCP in Last 12 Months")
 
 define "Exclusion Criteria":
   false
@@ -84,25 +89,65 @@ define "Urine Screenings during the Last 12 Months":
         and (LabObservations.code in Common."Opioid drug urine screening")
         and not (LabObservations.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
   )
+  union "Cocaine Screenings"
+  union "PCP Screenings"
 
-define "Was Screening Done?":
-  "Patient had Urine Screening in Last 12 Months"
+/*
+every pos date in last 12 months then count # neg and report that
+most recent POS PCP/cocaine
+ then get subsequent neg date > pos based on date of each neg and pos
+*/
 
-define "Was Screening Positive for Cocaine?":
-    true
-define "Was Screening Positive for PCP?":
-    true
+define "Cocaine Screenings":
+[Observation: "category" in Common."Observation Category Laboratory"] LabObservations
+ where (date from LabObservations.effective in day of "Lookback Year"
+   and (LabObservations.code in "Cocaine Medications")
+   and not (LabObservations.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
+)
+
+define "PCP Screenings":
+[Observation: "category" in Common."Observation Category Laboratory"] LabObservations
+ where (date from LabObservations.effective in day of "Lookback Year"
+   and (LabObservations.code in "PCP Medications")
+   and not (LabObservations.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
+)
+
+
+define "Has Positive Screening for Cocaine in Last 12 Months":
+  exists "Cocaine Screenings" CS where
+     StartsWith(Lower(CS.value as FHIR.string), 'pos')
+
+define "Has Positive Screening for PCP in Last 12 Months":
+  exists "PCP Screenings" PCP where
+     StartsWith(Lower(PCP.value as FHIR.string), 'pos')
+
+define "Applicable Because of Positive Cocaine or PCP":
+ "Is Recommendation Applicable?"
+    and ("Has Positive Screening for Cocaine in Last 12 Months" or "Has Positive Screening for PCP in Last 12 Months")
+
+define "Applicable Not Because of Positive Cocaine or PCP":
+     "Is Recommendation Applicable?"
+        and not "Has Positive Screening for Cocaine in Last 12 Months"
+        and not "Has Positive Screening for PCP in Last 12 Months"
 
 define "No Screening In Last 12 Months Detail":
-  if "Is Recommendation Applicable?"
+  if "Applicable Not Because of Positive Cocaine or PCP"
     then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
+  else  if ("Has Positive Screening for Cocaine in Last 12 Months" and "Has Positive Screening for PCP in Last 12 Months")
+    then 'Positive both'
+  else if "Has Positive Screening for Cocaine in Last 12 Months"
+    then 'Will access CDS quality improvement and care coordination for prescribing opioids for chronic pain https://www.cdc.gov/drugoverdose/pdf/prescribing/CDC-DUIP-QualityImprovementAndCareCoordination-508.pdf'
+  else if "Has Positive Screening for PCP in Last 12 Months"
+    then 'Will access CDS quality improvement and care coordination for prescribing opioids for chronic pain https://www.cdc.gov/drugoverdose/pdf/prescribing/CDC-DUIP-QualityImprovementAndCareCoordination-508.pdf'
+  else
+    'Do Nothing'
 
 define "No Screening In Last 12 Months Summary":
-  if "Is Recommendation Applicable?"
+  if "Applicable Not Because of Positive Cocaine or PCP"
     then 'Annual Urine Screening Check'
   else 'Patient was Screened Summary'
 
 define "No Screening In Last 12 Months Indicator":
-  if "Is Recommendation Applicable?"
+  if "Applicable Not Because of Positive Cocaine or PCP"
     then 'warning'
   else 'info'
