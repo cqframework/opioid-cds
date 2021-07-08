@@ -133,8 +133,25 @@ define "Applicable Not Because of Positive Cocaine or PCP":
 define "No Screening In Last 12 Months Detail":
   if "Applicable Not Because of Positive Cocaine or PCP"
     then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
-  else  if ("Has Positive Screening for Cocaine in Last 12 Months" and "Has Positive Screening for PCP in Last 12 Months")
-    then 'Positive both'
+  else
+    null
+
+define "No Screening In Last 12 Months Summary":
+  if "Applicable Not Because of Positive Cocaine or PCP"
+    then 'Annual Urine Screening Check'
+  else
+    null
+
+define "No Screening In Last 12 Months Indicator":
+  if "Applicable Not Because of Positive Cocaine or PCP"
+    then 'warning'
+  else
+    null
+
+
+define "Positive Cocaine or PCP  In Last 12 Months Detail":
+  if ("Has Positive Screening for Cocaine in Last 12 Months" and "Has Positive Screening for PCP in Last 12 Months")
+        then 'Positive both'
   else if "Has Positive Screening for Cocaine in Last 12 Months"
     then 'Will access CDS quality improvement and care coordination for prescribing opioids for chronic pain https://www.cdc.gov/drugoverdose/pdf/prescribing/CDC-DUIP-QualityImprovementAndCareCoordination-508.pdf'
   else if "Has Positive Screening for PCP in Last 12 Months"
@@ -142,12 +159,12 @@ define "No Screening In Last 12 Months Detail":
   else
     'Do Nothing'
 
-define "No Screening In Last 12 Months Summary":
+define "Positive Cocaine or PCP  In Last 12 Months Summary":
   if "Applicable Not Because of Positive Cocaine or PCP"
     then 'Annual Urine Screening Check'
   else 'Patient was Screened Summary'
 
-define "No Screening In Last 12 Months Indicator":
+define "Positive Cocaine or PCP  In Last 12 Months Indicator":
   if "Applicable Not Because of Positive Cocaine or PCP"
     then 'warning'
   else 'info'
