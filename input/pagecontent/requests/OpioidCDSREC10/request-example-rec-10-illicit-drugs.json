@@ -7,9 +7,10 @@
     "userId": "Practitioner/example",
     "patientId": "Patient/example-rec-10-illicit-drugs",
     "encounterId": "Encounter/example-rec-10-illicit-drugs-context",
-    "selections": [ "MedicationRequest/example-rec-10-illicit-drugs-context" ],
-    "draftOrders":
-    {
+    "selections": [
+      "MedicationRequest/example-rec-10-illicit-drugs-context"
+    ],
+    "draftOrders": {
       "resourceType": "MedicationRequest",
       "id": "example-rec-10-illicit-drugs-context",
       "status": "active",
@@ -133,39 +134,124 @@
         "status": "200 OK"
       },
       "resource": {
-        "resourceType": "Observation",
-        "id": "example-rec-10-illicit-drugs-prefetch",
-        "status": "final",
-        "category": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/observation-category",
-              "code": "laboratory"
-            }
-          ]
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "3426-4",
-              "display": "Tetrahydrocannabinol [Presence] in Urine"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/example-rec-10-illicit-drugs"
-        },
-        "effectiveDateTime": "2021-01-22",
-        "valueString": "POS",
-        "interpretation": [
+        "resourceType": "Bundle",
+        "entry": [
           {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/v2/0078",
-                "code": "POS"
-              }
-            ]
+            "resource": {
+              "resourceType": "Observation",
+              "id": "example-rec-10-illicit-drugs-prefetch",
+              "status": "final",
+              "category": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/observation-category",
+                    "code": "laboratory"
+                  }
+                ]
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "3426-13",
+                    "display": "PCP"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "Patient/example-rec-10-illicit-drugs"
+              },
+              "effectiveDateTime": "2021-01-22",
+              "valueString": "POS",
+              "interpretation": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/v2/0078",
+                      "code": "POS"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Observation",
+              "id": "example-rec-10-illicit-drugs-prefetch",
+              "status": "final",
+              "category": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/observation-category",
+                    "code": "laboratory"
+                  }
+                ]
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "3426-13",
+                    "display": "PCP"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "Patient/example-rec-10-illicit-drugs"
+              },
+              "effectiveDateTime": "2021-03-01",
+              "valueString": "POS",
+              "interpretation": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/v2/0078",
+                      "code": "NEG"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Observation",
+              "id": "example-rec-10-illicit-drugs-prefetch",
+              "status": "final",
+              "category": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/observation-category",
+                    "code": "laboratory"
+                  }
+                ]
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "3426-13",
+                    "display": "PCP"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "Patient/example-rec-10-illicit-drugs"
+              },
+              "effectiveDateTime": "2021-02-23",
+              "valueString": "POS",
+              "interpretation": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/v2/0078",
+                      "code": "POS"
+                    }
+                  ]
+                }
+              ]
+            }
           }
         ]
       }
