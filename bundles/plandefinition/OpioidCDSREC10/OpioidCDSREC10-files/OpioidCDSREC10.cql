@@ -227,10 +227,10 @@ define "Positive Cocaine or PCP  In Last 12 Months Indicator":
 
   define "PCP Summary":
     'Positive for PCP: <br/>' +
-    'Positive lab dates:   ' + Combine("Positive PCP Dates in Lookback Period", ', \r\n') + '\t' +
+    'Positive lab dates:   ' + Combine("Positive PCP Dates in Lookback Period", ', <br/>') + '<br/>' +
     'Negative test count since last Positive: ' + ToString("Negative PCP Screenings Count Since Last Positive Screening")
 
     define "Cocaine Summary":
     'Positive for Cocaine: <br/>' +
-    'Positive lab dates:   ' + Combine("Positive Cocaine Dates in Lookback Period", '\r\n') &
-    '    Negative test count since last Positive: ' + ToString("Negative Cocaine Screenings Count Since Last Positive Screening")
+    'Positive lab dates:   ' + Combine("Positive Cocaine Dates in Lookback Period", '<br/>') + '<br/>' +
+    'Negative test count since last Positive: ' + ToString("Negative Cocaine Screenings Count Since Last Positive Screening")

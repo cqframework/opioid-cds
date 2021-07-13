@@ -232,5 +232,5 @@ define "Positive Cocaine or PCP  In Last 12 Months Indicator":
 
     define "Cocaine Summary":
     'Positive for Cocaine: <br/>' +
-    'Positive lab dates:   ' + Combine("Positive Cocaine Dates in Lookback Period", '<br/>') + '<br/>'
+    'Positive lab dates:   ' + Combine("Positive Cocaine Dates in Lookback Period", '<br/>') + '<br/>' +
     'Negative test count since last Positive: ' + ToString("Negative Cocaine Screenings Count Since Last Positive Screening")
