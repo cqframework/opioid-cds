@@ -1,0 +1,125 @@
+{
+  "resourceType": "ValueSet",
+  "id": "cocaine-medications",
+  "extension": [
+    {
+      "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
+      "valueString": "All cocaine medications"
+    },
+    {
+      "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
+      "valueString": "Medication"
+    },
+    {
+      "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
+      "valueString": "All cocaine medications"
+    },
+    {
+      "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
+      "valueString": "None"
+    }
+  ],
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-medications",
+  "name": "cocaine_medications",
+  "title": "Cocaine Medications",
+  "status": "active",
+  "experimental": true,
+  "date": "2021-01-26T12:01:40-07:00",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [{
+    "name": "MD Partners, Inc.",
+    "telecom": [
+      {
+        "system": "email",
+        "value": "info@mdpartners.com"
+      }
+    ]
+  }],
+  "description": "All cocaine medications",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        }
+      ]
+    }
+  ],
+  "purpose": "Cocaine medications for opioid management",
+  "copyright": "© CDC 2016+.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "filter": [
+          {
+            "property": "display",
+            "op": "regex",
+            "value": ".*(?i)cocaine.*"
+          },
+          {
+            "property": "tty",
+            "op": "=",
+            "value": "SCD"
+          }
+        ]
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "filter": [
+          {
+            "property": "display",
+            "op": "regex",
+            "value": ".*(?i)cocaine.*"
+          },
+          {
+            "property": "tty",
+            "op": "=",
+            "value": "SBD"
+          }
+        ]
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "filter": [
+          {
+            "property": "display",
+            "op": "regex",
+            "value": ".*(?i)cocaine.*"
+          },
+          {
+            "property": "tty",
+            "op": "=",
+            "value": "GPCK"
+          }
+        ]
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "filter": [
+          {
+            "property": "display",
+            "op": "regex",
+            "value": ".*(?i)cocaine.*"
+          },
+          {
+            "property": "tty",
+            "op": "=",
+            "value": "BPCK"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2021-01-26T12:01:40-07:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "code": "3426-4",
+        "display": "Tetrahydrocannabinol [Presence] in Urine"
+      }
+    ]
+  }
+}

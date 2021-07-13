@@ -1,0 +1,125 @@
+{
+  "resourceType": "ValueSet",
+  "id": "pcp-medications",
+  "extension": [
+    {
+      "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
+      "valueString": "All PCP medications"
+    },
+    {
+      "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
+      "valueString": "Medication"
+    },
+    {
+      "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
+      "valueString": "All PCP medications"
+    },
+    {
+      "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
+      "valueString": "None"
+    }
+  ],
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pcp-medications",
+  "name": "pcp-medications",
+  "title": "PCP Medications",
+  "status": "active",
+  "experimental": true,
+  "date": "2021-01-26T12:01:40-07:00",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [{
+    "name": "MD Partners, Inc.",
+    "telecom": [
+      {
+        "system": "email",
+        "value": "info@mdpartners.com"
+      }
+    ]
+  }],
+  "description": "All PCP medications",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        }
+      ]
+    }
+  ],
+  "purpose": "PCP medications for opioid management",
+  "copyright": "© CDC 2016+.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "filter": [
+          {
+            "property": "display",
+            "op": "regex",
+            "value": ".*(?i)pcp.*"
+          },
+          {
+            "property": "tty",
+            "op": "=",
+            "value": "SCD"
+          }
+        ]
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "filter": [
+          {
+            "property": "display",
+            "op": "regex",
+            "value": ".*(?i)pcp.*"
+          },
+          {
+            "property": "tty",
+            "op": "=",
+            "value": "SBD"
+          }
+        ]
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "filter": [
+          {
+            "property": "display",
+            "op": "regex",
+            "value": ".*(?i)pcp.*"
+          },
+          {
+            "property": "tty",
+            "op": "=",
+            "value": "GPCK"
+          }
+        ]
+      },
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "filter": [
+          {
+            "property": "display",
+            "op": "regex",
+            "value": ".*(?i)pcp.*"
+          },
+          {
+            "property": "tty",
+            "op": "=",
+            "value": "BPCK"
+          }
+        ]
+      }
+    ]
+  },
+  "expansion": {
+    "timestamp": "2021-01-26T12:01:40-07:00",
+    "contains": [
+      {
+        "system": "http://loinc.org",
+        "code": "3426-13",
+        "display": "PCP"
+      }
+    ]
+  }
+}

@@ -105,15 +105,6 @@ define "Cocaine Screenings":
    and not (LabObservations.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
 )
 
-define "Positive Cocaine Dates in Lookback Period":
-  ({
-    "Cocaine Screenings" CS
-      return {
-        Drug_Code: CS.code,
-        Date: CS.effective
-    }sort by Date desc
-})
-
 define "PCP Screenings":
 [Observation: "category" in Common."Observation Category Laboratory"] LabObservations
  where (date from LabObservations.effective in day of "Lookback Year"
@@ -147,13 +138,27 @@ define function MostRecent(ObsList List<Observation>):
     issued.value)
   )
 
-/*
-define "Negative PCP Screenings Count Since Last POS":
-  Count(
+
+define "Negative PCP Screenings Count Since Last Positive Screening":
+    4
+/*  Count(
     "Negative PCP Screenings" N where
       DateTimeText(N.effective) >  DateTimeText("MostRecent"("Positive PCP Screenings").effective)
   )
 */
+
+define "Negative Cocaine Screenings Count Since Last Positive Screening":
+    3
+/*  Count(
+    "Negative PCP Screenings" N where
+      DateTimeText(N.effective) >  DateTimeText("MostRecent"("Positive PCP Screenings").effective)
+  )
+*/
+
+define "Positive Cocaine Dates in Lookback Period":
+    "Cocaine Screenings" CS
+      return
+        DateTimeText(CS.effective)
 
 define "Positive PCP Dates in Lookback Period":
     "PCP Screenings" PS
@@ -197,9 +202,9 @@ define "No Screening In Last 12 Months Indicator":
 
 define "Positive Cocaine or PCP  In Last 12 Months Detail":
   if ("Has Positive Screening for Cocaine in Last 12 Months" and "Has Positive Screening for PCP in Last 12 Months")
-        then "PCP Summary"
+        then "Cocaine And PCP Summary"
   else if "Has Positive Screening for Cocaine in Last 12 Months"
-    then 'Will access CDS quality improvement and care coordination for prescribing opioids for chronic pain https://www.cdc.gov/drugoverdose/pdf/prescribing/CDC-DUIP-QualityImprovementAndCareCoordination-508.pdf'
+    then "Cocaine Summary"
   else if "Has Positive Screening for PCP in Last 12 Months"
     then "PCP Summary"
   else
@@ -216,6 +221,16 @@ define "Positive Cocaine or PCP  In Last 12 Months Indicator":
     then 'warning'
   else 'info'
 
+  define "Cocaine And PCP Summary":
+  'Positive for Cocaine AND PCP <br/><br/>' +
+    "Cocaine Summary" + '<br/>' + "PCP Summary"
+
   define "PCP Summary":
-    'Positive lab dates:   ' + Combine("Positive PCP Dates in Lookback Period", '\r\n') +
-    '    Negative test count since last Positive: '/* + ToString("Negative PCP Screenings Count Since Last Positive Screening") */
+    'Positive for PCP: <br/>' +
+    'Positive lab dates:   ' + Combine("Positive PCP Dates in Lookback Period", ', \r\n') + '\t' +
+    'Negative test count since last Positive: ' + ToString("Negative PCP Screenings Count Since Last Positive Screening")
+
+    define "Cocaine Summary":
+    'Positive for Cocaine: <br/>' +
+    'Positive lab dates:   ' + Combine("Positive Cocaine Dates in Lookback Period", '\r\n') &
+    '    Negative test count since last Positive: ' + ToString("Negative Cocaine Screenings Count Since Last Positive Screening")
