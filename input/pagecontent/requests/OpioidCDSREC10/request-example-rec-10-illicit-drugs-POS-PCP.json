@@ -231,9 +231,8 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "3426-13",
-                    "display": "PCP"
-                  }
+                    "code": "8237-0",
+                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"                  }
                 ]
               },
               "subject": {

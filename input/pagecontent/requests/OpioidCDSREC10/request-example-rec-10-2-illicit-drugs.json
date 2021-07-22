@@ -153,9 +153,8 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "3426-13",
-                    "display": "PCP"
-                  }
+                    "code": "70146-6",
+                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"                  }
                 ]
               },
               "subject": {
@@ -192,9 +191,8 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "3426-13",
-                    "display": "PCP"
-                  }
+                    "code": "8237-0",
+                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"                  }
                 ]
               },
               "subject": {
