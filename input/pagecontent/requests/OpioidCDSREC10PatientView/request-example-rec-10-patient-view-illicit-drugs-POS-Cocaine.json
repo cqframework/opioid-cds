@@ -5,14 +5,14 @@
   "applyCql": true,
   "context": {
     "userId": "Practitioner/example",
-    "patientId": "Patient/example-rec-10-2-illicit-POS-Cocaine-drugs",
-    "encounterId": "Encounter/example-rec-10-2-illicit-POS-Cocaine-drugs-context",
+    "patientId": "Patient/example-rec-10-illicit-drugs",
+    "encounterId": "Encounter/example-rec-10-illicit-drugs-context",
     "selections": [
-      "MedicationRequest/example-rec-10-2-illicit-POS-Cocaine-drugs-context"
+      "MedicationRequest/example-rec-10-illicit-drugs-context"
     ],
     "draftOrders": {
       "resourceType": "MedicationRequest",
-      "id": "example-rec-10-2-illicit-POS-Cocaine-drugs-context",
+      "id": "example-rec-10-illicit-drugs-context",
       "status": "active",
       "intent": "order",
       "category": {
@@ -33,10 +33,10 @@
         ]
       },
       "subject": {
-        "reference": "Patient/example-rec-10-2-illicit-POS-Cocaine-drugs"
+        "reference": "Patient/example-rec-10-illicit-drugs"
       },
       "encounter": {
-        "reference": "Encounter/example-rec-10-2-illicit-POS-Cocaine-drugs-context"
+        "reference": "Encounter/example-rec-10-illicit-drugs-context"
       },
       "_authoredOn": {
         "extension": [
@@ -95,7 +95,7 @@
       },
       "resource": {
         "resourceType": "Patient",
-        "id": "example-rec-10-2-illicit-POS-Cocaine-drugs",
+        "id": "example-rec-10-illicit-drugs",
         "gender": "female",
         "birthDate": "1982-01-07"
       }
@@ -111,10 +111,10 @@
       },
       "resource": {
         "resourceType": "Encounter",
-        "id": "example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch",
+        "id": "example-rec-10-illicit-drugs-prefetch",
         "status": "finished",
         "subject": {
-          "reference": "Patient/example-rec-10-2-illicit-POS-Cocaine-drugs"
+          "reference": "Patient/example-rec-10-illicit-drugs"
         },
         "_period": {
           "extension": [
@@ -139,7 +139,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch",
+              "id": "example-rec-10-illicit-drugs-prefetch",
               "status": "final",
               "category": {
                 "coding": [
@@ -159,7 +159,7 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-2-illicit-POS-Cocaine-drugs"
+                "reference": "Patient/example-rec-10-illicit-drugs"
               },
               "effectiveDateTime": "2021-01-22",
               "valueString": "POS",
@@ -178,7 +178,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch",
+              "id": "example-rec-10-illicit-drugs-prefetch",
               "status": "final",
               "category": {
                 "coding": [
@@ -198,7 +198,7 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-2-illicit-POS-Cocaine-drugs"
+                "reference": "Patient/example-rec-10-illicit-drugs"
               },
               "effectiveDateTime": "2021-03-01",
               "valueString": "POS",
@@ -217,7 +217,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch",
+              "id": "example-rec-10-illicit-drugs-prefetch",
               "status": "final",
               "category": {
                 "coding": [
@@ -237,7 +237,7 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-2-illicit-POS-Cocaine-drugs"
+                "reference": "Patient/example-rec-10-illicit-drugs"
               },
               "effectiveDateTime": "2021-02-23",
               "valueString": "POS",
@@ -263,7 +263,7 @@
       },
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch",
+        "id": "example-rec-10-illicit-drugs-prefetch",
         "status": "active",
         "intent": "order",
         "category": {
@@ -284,10 +284,10 @@
           ]
         },
         "subject": {
-          "reference": "Patient/example-rec-10-2-illicit-POS-Cocaine-drugs"
+          "reference": "Patient/example-rec-10-illicit-drugs"
         },
         "encounter": {
-          "reference": "Encounter/example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch"
+          "reference": "Encounter/example-rec-10-illicit-drugs-prefetch"
         },
         "_authoredOn": {
           "extension": [
