@@ -186,7 +186,6 @@
       ]
     },
     {
-      "label": "Positive Urine Screening For Cocaine or PCP",
       "title": "Cocaine or PCP Tested Positive",
       "description": "Urine screening showed positive for cocaine or PCP",
       "documentation": [
@@ -241,15 +240,11 @@
           "expression": "Applicable Because of Positive Cocaine or PCP"
         }
       ],
-      "type": {
-        "system": "http://terminology.hl7.org/CodeSystem/action-type",
-        "code": "create",
-        "display": "Create"
-      },
+      "selectionBehavior": "any",
       "dynamicValue": [
         {
           "path": "action.description",
-          "expression": "Summary"
+          "expression": "Positive Cocaine or PCP  In Last 12 Months Detail"
         },
         {
           "path": "action.title",

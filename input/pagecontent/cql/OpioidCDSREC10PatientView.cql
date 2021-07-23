@@ -194,7 +194,7 @@ define "No Screening In Last 12 Months Summary":
     null
 
 define "No Screening In Last 12 Months Indicator":
-  if "Is Recommendation Applicable?"
+  if "Applicable Not Because of Positive Cocaine or PCP"
     then 'warning'
   else
     null
