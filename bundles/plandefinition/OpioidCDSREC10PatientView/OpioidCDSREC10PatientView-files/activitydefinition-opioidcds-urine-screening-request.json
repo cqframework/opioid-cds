@@ -75,9 +75,8 @@
     "code": {
         "coding": [
             {
-                "system": "http://snomed.info/sct",
-                "code": "310627008",
-                "display": "Urine drug screening (procedure)"
+              "system": "urn:com.epic.cdshooks.action.code.system.preference-list-item",
+              "code": "1"
             }
         ]
     }
