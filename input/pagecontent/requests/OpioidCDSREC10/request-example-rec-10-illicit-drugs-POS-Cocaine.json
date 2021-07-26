@@ -201,7 +201,7 @@
                 "reference": "Patient/example-rec-10-2-illicit-POS-Cocaine-drugs"
               },
               "effectiveDateTime": "2021-03-01",
-              "valueString": "POS",
+              "valueString": "NEG",
               "interpretation": [
                 {
                   "coding": [
@@ -231,8 +231,8 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "3426-13",
-                    "display": "PCP"
+                    "code": "70146-6",
+                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
                   }
                 ]
               },

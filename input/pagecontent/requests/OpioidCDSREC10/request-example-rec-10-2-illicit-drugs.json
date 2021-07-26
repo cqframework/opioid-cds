@@ -154,7 +154,8 @@
                   {
                     "system": "http://loinc.org",
                     "code": "70146-6",
-                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"                  }
+                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
+                  }
                 ]
               },
               "subject": {
@@ -192,14 +193,15 @@
                   {
                     "system": "http://loinc.org",
                     "code": "8237-0",
-                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"                  }
+                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
+                  }
                 ]
               },
               "subject": {
                 "reference": "Patient/example-rec-10-2-illicit-drugs"
               },
               "effectiveDateTime": "2021-03-01",
-              "valueString": "POS",
+              "valueString": "NEG",
               "interpretation": [
                 {
                   "coding": [
@@ -229,47 +231,8 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "3426-13",
-                    "display": "PCP"
-                  }
-                ]
-              },
-              "subject": {
-                "reference": "Patient/example-rec-10-2-illicit-drugs"
-              },
-              "effectiveDateTime": "2021-02-23",
-              "valueString": "POS",
-              "interpretation": [
-                {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/v2/0078",
-                      "code": "POS"
-                    }
-                  ]
-                }
-              ]
-            }
-        },
-          {
-            "resource": {
-              "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-drugs-prefetch",
-              "status": "final",
-              "category": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/observation-category",
-                    "code": "laboratory"
-                  }
-                ]
-              },
-              "code": {
-                "coding": [
-                  {
-                    "system": "http://loinc.org",
-                    "code": "3426-4",
-                    "display": "Tetrahydrocannabinol [Presence] in Urine"
+                    "code": "8237-0",
+                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
                   }
                 ]
               },
