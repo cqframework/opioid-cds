@@ -153,9 +153,8 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "70146-6",
-                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
-                  }
+                    "code": "8237-0",
+                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"                  }
                 ]
               },
               "subject": {
@@ -192,16 +191,15 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "3426-13",
-                    "display": "PCP"
-                  }
+                    "code": "8237-0",
+                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"                  }
                 ]
               },
               "subject": {
                 "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-PCP"
               },
               "effectiveDateTime": "2021-03-01",
-              "valueString": "POS",
+              "valueString": "NEG",
               "interpretation": [
                 {
                   "coding": [
@@ -231,9 +229,8 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "3426-13",
-                    "display": "PCP"
-                  }
+                    "code": "8237-0",
+                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"                  }
                 ]
               },
               "subject": {

@@ -125,6 +125,14 @@ define "Negative PCP Screenings":
  "PCP Screenings" PCP where
     StartsWith(Lower(PCP.value as FHIR.string), 'neg')
 
+define "Positive Cocaine Screenings":
+  "Cocaine Screenings" Cocaine where
+    StartsWith(Lower(Cocaine.value as FHIR.string), 'pos')
+
+define "Negative Cocaine Screenings":
+ "Cocaine Screenings" Cocaine where
+    StartsWith(Lower(Cocaine.value as FHIR.string), 'neg')
+
 /*
   borrowed from CDS4CPM CDS_Connect_Commons_for_FHIRv400
   Shoudl this go into OpioidCDSCommon?
@@ -155,12 +163,12 @@ define "Negative Cocaine Screenings Count Since Last Positive Screening":
 */
 
 define "Positive Cocaine Dates in Lookback Period":
-    "Cocaine Screenings" CS
+    "Positive Cocaine Screenings" CS
       return
         DateTimeText(CS.effective)
 
 define "Positive PCP Dates in Lookback Period":
-    "PCP Screenings" PS
+    "Positive PCP Screenings" PS
       return
         DateTimeText(PS.effective)
 
