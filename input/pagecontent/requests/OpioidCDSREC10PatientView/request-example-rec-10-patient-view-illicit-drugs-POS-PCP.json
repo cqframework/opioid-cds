@@ -5,14 +5,14 @@
   "applyCql": true,
   "context": {
     "userId": "Practitioner/example",
-    "patientId": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine",
-    "encounterId": "Encounter/example-rec-10-patient-view-illicit-drugs-POS-Cocaine-context",
+    "patientId": "Patient/example-rec-10-patient-view-illicit-drugs-POS-PCP",
+    "encounterId": "Encounter/example-rec-10-patient-view-illicit-drugs-POS-PCP-context",
     "selections": [
-      "MedicationRequest/example-rec-10-patient-view-illicit-drugs-POS-Cocaine-context"
+      "MedicationRequest/example-rec-10-patient-view-illicit-drugs-POS-PCP-context"
     ],
     "draftOrders": {
       "resourceType": "MedicationRequest",
-      "id": "example-rec-10-patient-view-illicit-drugs-POS-Cocaine-context",
+      "id": "example-rec-10-patient-view-illicit-drugs-POS-PCP-context",
       "status": "active",
       "intent": "order",
       "category": {
@@ -33,10 +33,10 @@
         ]
       },
       "subject": {
-        "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine"
+        "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-PCP"
       },
       "encounter": {
-        "reference": "Encounter/example-rec-10-patient-view-illicit-drugs-POS-Cocaine-context"
+        "reference": "Encounter/example-rec-10-patient-view-illicit-drugs-POS-PCP-context"
       },
       "_authoredOn": {
         "extension": [
@@ -95,7 +95,7 @@
       },
       "resource": {
         "resourceType": "Patient",
-        "id": "example-rec-10-patient-view-illicit-drugs-POS-Cocaine",
+        "id": "example-rec-10-patient-view-illicit-drugs-POS-PCP",
         "gender": "female",
         "birthDate": "1982-01-07"
       }
@@ -111,10 +111,10 @@
       },
       "resource": {
         "resourceType": "Encounter",
-        "id": "example-rec-10-patient-view-illicit-drugs-POS-Cocaine-prefetch",
+        "id": "example-rec-10-patient-view-illicit-drugs-POS-PCP-prefetch",
         "status": "finished",
         "subject": {
-          "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine"
+          "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-PCP"
         },
         "_period": {
           "extension": [
@@ -139,7 +139,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-patient-view-illicit-drugs-POS-Cocaine-prefetch",
+              "id": "example-rec-10-patient-view-illicit-drugs-POS-PCP-prefetch",
               "status": "final",
               "category": {
                 "coding": [
@@ -159,7 +159,7 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine"
+                "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-PCP"
               },
               "effectiveDateTime": "2021-01-22",
               "valueString": "POS",
@@ -178,7 +178,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-patient-view-illicit-drugs-POS-Cocaine-prefetch",
+              "id": "example-rec-10-patient-view-illicit-drugs-POS-PCP-prefetch",
               "status": "final",
               "category": {
                 "coding": [
@@ -193,12 +193,12 @@
                   {
                     "system": "http://loinc.org",
                     "code": "3426-13",
-                    "display": "Cocaine"
+                    "display": "PCP"
                   }
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine"
+                "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-PCP"
               },
               "effectiveDateTime": "2021-03-01",
               "valueString": "POS",
@@ -217,7 +217,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-patient-view-illicit-drugs-POS-Cocaine-prefetch",
+              "id": "example-rec-10-patient-view-illicit-drugs-POS-PCP-prefetch",
               "status": "final",
               "category": {
                 "coding": [
@@ -232,12 +232,12 @@
                   {
                     "system": "http://loinc.org",
                     "code": "3426-13",
-                    "display": "Cocaine"
+                    "display": "PCP"
                   }
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine"
+                "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-PCP"
               },
               "effectiveDateTime": "2021-02-23",
               "valueString": "POS",
@@ -263,7 +263,7 @@
       },
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "example-rec-10-patient-view-illicit-drugs-POS-Cocaine-prefetch",
+        "id": "example-rec-10-patient-view-illicit-drugs-POS-PCP-prefetch",
         "status": "active",
         "intent": "order",
         "category": {
@@ -284,10 +284,10 @@
           ]
         },
         "subject": {
-          "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine"
+          "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-PCP"
         },
         "encounter": {
-          "reference": "Encounter/example-rec-10-patient-view-illicit-drugs-POS-Cocaine-prefetch"
+          "reference": "Encounter/example-rec-10-patient-view-illicit-drugs-POS-PCP-prefetch"
         },
         "_authoredOn": {
           "extension": [
