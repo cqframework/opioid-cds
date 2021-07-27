@@ -240,7 +240,6 @@
           "expression": "Applicable Because of Positive Cocaine or PCP"
         }
       ],
-      "selectionBehavior": "any",
       "dynamicValue": [
         {
           "path": "action.description",
