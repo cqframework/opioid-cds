@@ -5,15 +5,18 @@
   "applyCql": true,
   "context": {
     "userId": "Practitioner/example",
-    "patientId": "Patient/example-rec-10-2-illicit-drugs",
-    "encounterId": "Encounter/example-rec-10-2-illicit-drugs-context",
+    "patientId": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs",
+    "encounterId": "Encounter/example-rec-10-order-sign-illicit-POS-Cocaine-drugs-context",
+    "selections": [
+      "MedicationRequest/example-rec-10-order-sign-illicit-POS-Cocaine-drugs-context"
+    ],
     "draftOrders": {
       "resourceType": "Bundle",
       "entry": [
         {
           "resource": {
             "resourceType": "MedicationRequest",
-            "id": "example-rec-10-2-illicit-drugs-context",
+            "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-context",
             "status": "active",
             "intent": "order",
             "category": {
@@ -34,10 +37,10 @@
               ]
             },
             "subject": {
-              "reference": "Patient/example-rec-10-2-illicit-drugs"
+              "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
             },
             "encounter": {
-              "reference": "Encounter/example-rec-10-2-illicit-drugs-context"
+              "reference": "Encounter/example-rec-10-order-sign-illicit-POS-Cocaine-drugs-context"
             },
             "_authoredOn": {
               "extension": [
@@ -99,7 +102,7 @@
       },
       "resource": {
         "resourceType": "Patient",
-        "id": "example-rec-10-2-illicit-drugs",
+        "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs",
         "gender": "female",
         "birthDate": "1982-01-07"
       }
@@ -115,10 +118,10 @@
       },
       "resource": {
         "resourceType": "Encounter",
-        "id": "example-rec-10-2-illicit-drugs-prefetch",
+        "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-prefetch",
         "status": "finished",
         "subject": {
-          "reference": "Patient/example-rec-10-2-illicit-drugs"
+          "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
         },
         "_period": {
           "extension": [
@@ -143,7 +146,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-drugs-prefetch",
+              "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-prefetch",
               "status": "final",
               "category": {
                 "coding": [
@@ -163,7 +166,7 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-2-illicit-drugs"
+                "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
               },
               "effectiveDateTime": "2021-01-22",
               "valueString": "POS",
@@ -182,7 +185,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-drugs-prefetch",
+              "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-prefetch",
               "status": "final",
               "category": {
                 "coding": [
@@ -196,13 +199,13 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "8237-0",
-                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
+                    "code": "70146-6",
+                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
                   }
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-2-illicit-drugs"
+                "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
               },
               "effectiveDateTime": "2021-03-01",
               "valueString": "NEG",
@@ -221,7 +224,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-drugs-prefetch",
+              "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-prefetch-4",
               "status": "final",
               "category": {
                 "coding": [
@@ -235,13 +238,14 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "8237-0",
-                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
+                    "code": "70146-6",
+                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
+
                   }
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-2-illicit-drugs"
+                "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
               },
               "effectiveDateTime": "2021-02-23",
               "valueString": "POS",
@@ -263,11 +267,11 @@
     "item9": null,
     "item10": {
       "response": {
-        "status": "200 OK"
+        "status": "order-sign00 OK"
       },
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "example-rec-10-2-illicit-drugs-prefetch",
+        "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-prefetch-5",
         "status": "active",
         "intent": "order",
         "category": {
@@ -288,10 +292,10 @@
           ]
         },
         "subject": {
-          "reference": "Patient/example-rec-10-2-illicit-drugs"
+          "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
         },
         "encounter": {
-          "reference": "Encounter/example-rec-10-2-illicit-drugs-prefetch"
+          "reference": "Encounter/example-rec-10-order-sign-illicit-POS-Cocaine-drugs-context"
         },
         "_authoredOn": {
           "extension": [

@@ -5,15 +5,15 @@
   "applyCql": true,
   "context": {
     "userId": "Practitioner/example",
-    "patientId": "Patient/example-rec-10-2-illicit-drugs",
-    "encounterId": "Encounter/example-rec-10-2-illicit-drugs-context",
+    "patientId": "Patient/example-rec-10-2-illicit-POS-PCP-drugs",
+    "encounterId": "Encounter/example-rec-10-2-illicit-POS-PCP-drugs-context",
     "draftOrders": {
       "resourceType": "Bundle",
       "entry": [
         {
           "resource": {
             "resourceType": "MedicationRequest",
-            "id": "example-rec-10-2-illicit-drugs-context",
+            "id": "example-rec-10-2-illicit-POS-PCP-drugs-context",
             "status": "active",
             "intent": "order",
             "category": {
@@ -34,10 +34,10 @@
               ]
             },
             "subject": {
-              "reference": "Patient/example-rec-10-2-illicit-drugs"
+              "reference": "Patient/example-rec-10-2-illicit-POS-PCP-drugs"
             },
             "encounter": {
-              "reference": "Encounter/example-rec-10-2-illicit-drugs-context"
+              "reference": "Encounter/example-rec-10-2-illicit-POS-PCP-drugs-context"
             },
             "_authoredOn": {
               "extension": [
@@ -99,7 +99,7 @@
       },
       "resource": {
         "resourceType": "Patient",
-        "id": "example-rec-10-2-illicit-drugs",
+        "id": "example-rec-10-2-illicit-POS-PCP-drugs",
         "gender": "female",
         "birthDate": "1982-01-07"
       }
@@ -115,10 +115,10 @@
       },
       "resource": {
         "resourceType": "Encounter",
-        "id": "example-rec-10-2-illicit-drugs-prefetch",
+        "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch",
         "status": "finished",
         "subject": {
-          "reference": "Patient/example-rec-10-2-illicit-drugs"
+          "reference": "Patient/example-rec-10-2-illicit-POS-PCP-drugs"
         },
         "_period": {
           "extension": [
@@ -143,7 +143,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-drugs-prefetch",
+              "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch-obs1",
               "status": "final",
               "category": {
                 "coding": [
@@ -157,13 +157,13 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "70146-6",
-                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
+                    "code": "8237-0",
+                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
                   }
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-2-illicit-drugs"
+                "reference": "Patient/example-rec-10-2-illicit-POS-PCP-drugs"
               },
               "effectiveDateTime": "2021-01-22",
               "valueString": "POS",
@@ -182,7 +182,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-drugs-prefetch",
+              "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch-obs2",
               "status": "final",
               "category": {
                 "coding": [
@@ -202,7 +202,7 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-2-illicit-drugs"
+                "reference": "Patient/example-rec-10-2-illicit-POS-PCP-drugs"
               },
               "effectiveDateTime": "2021-03-01",
               "valueString": "NEG",
@@ -221,7 +221,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-drugs-prefetch",
+              "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch-obs3",
               "status": "final",
               "category": {
                 "coding": [
@@ -241,7 +241,7 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-2-illicit-drugs"
+                "reference": "Patient/example-rec-10-2-illicit-POS-PCP-drugs"
               },
               "effectiveDateTime": "2021-02-23",
               "valueString": "POS",
@@ -267,7 +267,7 @@
       },
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "example-rec-10-2-illicit-drugs-prefetch",
+        "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch-3",
         "status": "active",
         "intent": "order",
         "category": {
@@ -288,10 +288,10 @@
           ]
         },
         "subject": {
-          "reference": "Patient/example-rec-10-2-illicit-drugs"
+          "reference": "Patient/example-rec-10-2-illicit-POS-PCP-drugs"
         },
         "encounter": {
-          "reference": "Encounter/example-rec-10-2-illicit-drugs-prefetch"
+          "reference": "Encounter/example-rec-10-2-illicit-POS-PCP-drugs-prefetch"
         },
         "_authoredOn": {
           "extension": [
