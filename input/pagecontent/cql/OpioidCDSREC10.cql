@@ -127,7 +127,7 @@ define "Positive PCP Screenings":
     StartsWith(Lower(PCP.value as FHIR.string), 'pos')
 
 define "Negative PCP Screenings":
- "PCP Screenings" PCP where
+  "PCP Screenings" PCP where
     StartsWith(Lower(PCP.value as FHIR.string), 'neg')
 
 define "Positive Cocaine Screenings":
@@ -135,7 +135,7 @@ define "Positive Cocaine Screenings":
     StartsWith(Lower(Cocaine.value as FHIR.string), 'pos')
 
 define "Negative Cocaine Screenings":
- "Cocaine Screenings" Cocaine where
+  "Cocaine Screenings" Cocaine where
     StartsWith(Lower(Cocaine.value as FHIR.string), 'neg')
 
 /*
@@ -149,7 +149,6 @@ define function MostRecent(ObsList List<Observation>):
     (effective as FHIR.Period)."start".value,
     issued.value)
   )
-
 
 define "Negative PCP Screenings Count Since Last Positive Screening":
   Count(
