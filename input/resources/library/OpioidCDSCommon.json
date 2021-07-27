@@ -377,61 +377,74 @@
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "MedicationRequest"
     } ],
-    "type": "MedicationRequest"
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "MedicationRequest"
-    } ],
-    "type": "MedicationRequest"
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Medication"
-    } ],
-    "type": "Medication",
+    "type": "MedicationRequest",
+    "mustSupport": [ "recorder", "dosageInstruction", "authoredOn", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
     "codeFilter": [ {
-      "path": "id"
+      "path": "status",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-status-active"
+      }
     } ]
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "MedicationRequest"
     } ],
-    "type": "MedicationRequest"
+    "type": "MedicationRequest",
+    "mustSupport": [ "medication" ],
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+      }
+    } ]
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Medication"
     } ],
     "type": "Medication",
+    "mustSupport": [ "id" ],
     "codeFilter": [ {
       "path": "id"
     } ]
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "MedicationRequest"
+      "valueCode": "Medication"
     } ],
-    "type": "MedicationRequest"
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "MedicationRequest"
-    } ],
-    "type": "MedicationRequest"
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "MedicationRequest"
-    } ],
-    "type": "MedicationRequest"
+    "type": "Medication",
+    "mustSupport": [ "id" ],
+    "codeFilter": [ {
+      "path": "id"
+    } ]
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Medication"
     } ],
     "type": "Medication",
+    "mustSupport": [ "id" ],
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "mustSupport": [ "id" ],
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "mustSupport": [ "id" ],
     "codeFilter": [ {
       "path": "id"
     } ]
@@ -441,6 +454,7 @@
       "valueCode": "Condition"
     } ],
     "type": "Condition",
+    "mustSupport": [ "category" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -453,6 +467,7 @@
       "valueCode": "Condition"
     } ],
     "type": "Condition",
+    "mustSupport": [ "category" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -465,6 +480,7 @@
       "valueCode": "Condition"
     } ],
     "type": "Condition",
+    "mustSupport": [ "category" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -477,6 +493,7 @@
       "valueCode": "Procedure"
     } ],
     "type": "Procedure",
+    "mustSupport": [ "code", "status.value", "status" ],
     "codeFilter": [ {
       "path": "code",
       "valueSetReference": {
@@ -488,19 +505,8 @@
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Encounter"
     } ],
-    "type": "Encounter"
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "MedicationRequest"
-    } ],
-    "type": "MedicationRequest",
-    "codeFilter": [ {
-      "path": "medication",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
-      }
-    } ]
+    "type": "Encounter",
+    "mustSupport": [ "period.start", "period", "status.value", "status" ]
   } ],
   "content": [ {
     "contentType": "text/cql",
