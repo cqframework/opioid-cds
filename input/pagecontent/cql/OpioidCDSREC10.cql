@@ -148,20 +148,16 @@ define function MostRecent(ObsList List<Observation>):
 
 
 define "Negative PCP Screenings Count Since Last Positive Screening":
-    4
-/*  Count(
+  Count(
     "Negative PCP Screenings" N where
       DateTimeText(N.effective) >  DateTimeText("MostRecent"("Positive PCP Screenings").effective)
   )
-*/
 
 define "Negative Cocaine Screenings Count Since Last Positive Screening":
-    3
-/*  Count(
-    "Negative PCP Screenings" N where
-      DateTimeText(N.effective) >  DateTimeText("MostRecent"("Positive PCP Screenings").effective)
+  Count(
+    "Negative Cocaine Screenings" N where
+      DateTimeText(N.effective) >  DateTimeText("MostRecent"("Positive Cocaine Screenings").effective)
   )
-*/
 
 define "Positive Cocaine Dates in Lookback Period":
     "Positive Cocaine Screenings" CS
