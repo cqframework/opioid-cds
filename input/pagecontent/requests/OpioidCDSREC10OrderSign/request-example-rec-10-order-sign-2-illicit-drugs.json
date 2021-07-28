@@ -273,7 +273,7 @@
         "category": {
           "coding": [
             {
-              "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+              "system": "http://hl7.org/fhir/medication-request-category",
               "code": "community"
             }
           ]
@@ -335,7 +335,7 @@
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
-            "value": 30.0,
+            "value": 35.0,
             "unit": "days",
             "system": "http://unitsofmeasure.org",
             "code": "d"

@@ -240,19 +240,18 @@
           "expression": "Applicable Because of Positive Cocaine or PCP"
         }
       ],
-      "selectionBehavior": "any",
       "dynamicValue": [
         {
           "path": "action.description",
-          "expression": "Positive Cocaine or PCP  In Last 12 Months Detail"
+          "expression": "Positive Cocaine or PCP In Last 12 Months Detail"
         },
         {
           "path": "action.title",
-          "expression": "Positive Cocaine or PCP  In Last 12 Months Summary"
+          "expression": "Positive Cocaine or PCP In Last 12 Months Summary"
         },
         {
           "path": "action.extension",
-          "expression": "Positive Cocaine or PCP  In Last 12 Months Indicator"
+          "expression": "Positive Cocaine or PCP In Last 12 Months Indicator"
         }
       ],
       "action": [
