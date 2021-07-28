@@ -59,12 +59,6 @@
     }
   }, {
     "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": {
-      "reference": "Library/FHIRHelpers"
-    }
-  }, {
-    "type": "depends-on",
     "display": "Value set Opioid analgesics with ambulatory misuse potential",
     "resource": {
       "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
@@ -116,7 +110,7 @@
     "name": "ContextPrescriptions",
     "use": "in",
     "min": 0,
-    "max": "1",
+    "max": "*",
     "type": "MedicationRequest"
   }, {
     "name": "Patient",
@@ -203,6 +197,7 @@
       "valueCode": "Procedure"
     } ],
     "type": "Procedure",
+    "mustSupport": [ "code", "performed", "status" ],
     "codeFilter": [ {
       "path": "code",
       "valueSetReference": {
@@ -220,6 +215,7 @@
       "valueCode": "Condition"
     } ],
     "type": "Condition",
+    "mustSupport": [ "category" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -232,6 +228,7 @@
       "valueCode": "Condition"
     } ],
     "type": "Condition",
+    "mustSupport": [ "category" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -244,6 +241,7 @@
       "valueCode": "Condition"
     } ],
     "type": "Condition",
+    "mustSupport": [ "category" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {

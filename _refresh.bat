@@ -24,7 +24,7 @@ SET JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
 IF EXIST "%input_cache_path%\%tooling_jar%" (
 	ECHO running: JAVA -jar "%input_cache_path%\%tooling_jar%" -RefreshIG -root-dir="%root_dir%" -ig-path="%ig_path%" -rp="%resources_path%" -cdsig -d -p $fsoption
-	JAVA -jar "%input_cache_path%\%tooling_jar%" -RefreshIG -root-dir="%root_dir%" -ig-path="%ig_path%" -rp="%resources_path%" -d -p $fsoption
+	JAVA -jar "%input_cache_path%\%tooling_jar%" -RefreshIG -root-dir="%root_dir%" -ig-path="%ig_path%" -rp="%resources_path%" -d -p -t $fsoption
 ) ELSE If exist "..\%tooling_jar%" (
 	ECHO running: JAVA -jar "..\%tooling_jar%" -RefreshIG -root-dir="%root_dir%" -ig-path="%ig_path%" -cdsig -d -p -t %fsoption%
 	JAVA -jar "..\%tooling_jar%" -RefreshIG -root-dir="%root_dir%" -ig-path="%ig_path%" -rp="%resources_path%" -d -p -t $fsoption

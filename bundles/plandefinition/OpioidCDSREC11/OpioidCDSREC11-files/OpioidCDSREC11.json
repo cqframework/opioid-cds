@@ -98,12 +98,6 @@
     }
   }, {
     "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": {
-      "reference": "Library/FHIRHelpers"
-    }
-  }, {
-    "type": "depends-on",
     "display": "Value set Opioid analgesics with ambulatory misuse potential",
     "resource": {
       "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
@@ -161,7 +155,7 @@
     "name": "ContextPrescriptions",
     "use": "in",
     "min": 0,
-    "max": "1",
+    "max": "*",
     "type": "MedicationRequest"
   }, {
     "name": "Patient",
@@ -247,19 +241,21 @@
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "MedicationRequest"
     } ],
-    "type": "MedicationRequest"
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "MedicationRequest"
-    } ],
-    "type": "MedicationRequest"
+    "type": "MedicationRequest",
+    "mustSupport": [ "recorder", "dosageInstruction", "authoredOn", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
+    "codeFilter": [ {
+      "path": "status",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-status-active"
+      }
+    } ]
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Condition"
     } ],
     "type": "Condition",
+    "mustSupport": [ "category" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -272,6 +268,7 @@
       "valueCode": "Condition"
     } ],
     "type": "Condition",
+    "mustSupport": [ "category" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -284,6 +281,7 @@
       "valueCode": "Condition"
     } ],
     "type": "Condition",
+    "mustSupport": [ "category" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
