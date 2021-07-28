@@ -17320,6 +17320,224 @@
   }, {
     "resource": {
       "resourceType": "ValueSet",
+      "id": "cocaine-urine-drug-screening-tests",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
+        "valueString": "Step 1. Add all codes found using the following LOINC query: cocaine (=system:Urine)"
+      }, {
+        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
+        "valueContactDetail": {
+          "name": "MD Partners, Inc.",
+          "telecom": [ {
+            "system": "email",
+            "value": "info@mdpartners.com"
+          } ]
+        }
+      } ],
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-urine-drug-screening-tests",
+      "name": "cocaine_urine_drug_screening_tests",
+      "title": "Cocaine urine drug screening tests",
+      "status": "active",
+      "experimental": true,
+      "date": "2021-07-23T09:24:33-06:00",
+      "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "description": "Urine tests for cocaine and cocaine metabolites",
+      "jurisdiction": [ {
+        "coding": [ {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        } ]
+      } ],
+      "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
+      "copyright": "© CDC 2016+.",
+      "expansion": {
+        "timestamp": "2021-07-23T09:24:33-06:00",
+        "contains": [ {
+          "system": "http://loinc.org",
+          "code": "50594-1",
+          "display": "3-Hydroxybenzoylecgonine [Mass/volume] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "3394-4",
+          "display": "Benzoylecgonine [Mass/volume] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "16226-3",
+          "display": "Benzoylecgonine [Mass/volume] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "70146-6",
+          "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "3393-6",
+          "display": "Benzoylecgonine [Presence] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "14315-6",
+          "display": "Benzoylecgonine [Presence] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "8192-7",
+          "display": "Benzoylecgonine [Presence] in Urine by SAMHSA confirm method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "8193-5",
+          "display": "Benzoylecgonine [Presence] in Urine by SAMHSA screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "14314-9",
+          "display": "Benzoylecgonine [Presence] in Urine by Screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "43984-4",
+          "display": "Benzoylecgonine [Presence] in Urine by Screen method >150 ng/mL"
+        }, {
+          "system": "http://loinc.org",
+          "code": "43985-1",
+          "display": "Benzoylecgonine [Presence] in Urine by Screen method >300 ng/mL"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19065-2",
+          "display": "Benzoylecgonine cutoff [Mass/volume] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19358-1",
+          "display": "Benzoylecgonine cutoff [Mass/volume] in Urine for Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19357-3",
+          "display": "Benzoylecgonine cutoff [Mass/volume] in Urine for Screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "13479-1",
+          "display": "Benzoylecgonine/Creatinine [Mass Ratio] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19408-4",
+          "display": "Cocaethylene [Mass/volume] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "16632-2",
+          "display": "Cocaethylene [Mass/volume] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19406-8",
+          "display": "Cocaethylene [Presence] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19405-0",
+          "display": "Cocaethylene [Presence] in Urine by Screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19410-0",
+          "display": "Cocaethylene cutoff [Mass/volume] in Urine for Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19409-2",
+          "display": "Cocaethylene cutoff [Mass/volume] in Urine for Screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "86606-1",
+          "display": "Cocaethylene/Creatinine [Mass Ratio] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "3398-5",
+          "display": "Cocaine [Mass/volume] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "20519-5",
+          "display": "Cocaine [Mass/volume] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "52953-7",
+          "display": "Cocaine [Moles/volume] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "3397-7",
+          "display": "Cocaine [Presence] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19360-7",
+          "display": "Cocaine [Presence] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19359-9",
+          "display": "Cocaine [Presence] in Urine by Screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "16448-3",
+          "display": "Cocaine [Units/volume] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19363-1",
+          "display": "Cocaine cutoff [Mass/volume] in Urine for Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19362-3",
+          "display": "Cocaine cutoff [Mass/volume] in Urine for Screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "53743-1",
+          "display": "Cocaine metabolites.other [Mass/volume] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "53747-2",
+          "display": "Cocaine panel - Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "47400-7",
+          "display": "Cocaine+Benzoylecgonine [Presence] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "42241-0",
+          "display": "Cocaine+Benzoylecgonine [Presence] in Urine by Screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "82723-8",
+          "display": "Cocaine+Benzoylecgonine+Cocaethylene [Presence] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "86607-9",
+          "display": "Cocaine/Creatinine [Mass Ratio] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "5935-2",
+          "display": "Deprecated Benzoylecgonine [Mass/volume] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "5939-4",
+          "display": "Deprecated Benzoylecgonine [Presence] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19361-5",
+          "display": "Deprecated Benzoylmethylecgonine [Mass/volume] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "5937-8",
+          "display": "Deprecated Cocaine [Mass/volume] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "50592-5",
+          "display": "Ecgonine methyl ester [Mass/volume] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "80144-9",
+          "display": "Ecgonine methyl ester [Presence] in Urine by Screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "59295-6",
+          "display": "Levamisole [Mass/volume] in Urine"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "ValueSet/cocaine-urine-drug-screening-tests"
+    }
+  }, {
+    "resource": {
+      "resourceType": "ValueSet",
       "id": "conditions-likely-terminal-for-opioid-prescribing",
       "extension": [ {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
@@ -21332,6 +21550,104 @@
   }, {
     "resource": {
       "resourceType": "ValueSet",
+      "id": "phencyclidine-urine-drug-screening-tests",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
+        "valueString": "Step 1. Add all codes found using the following LOINC query: Phencyclidine (=system:Urine)"
+      }, {
+        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
+        "valueContactDetail": {
+          "name": "MD Partners, Inc.",
+          "telecom": [ {
+            "system": "email",
+            "value": "info@mdpartners.com"
+          } ]
+        }
+      } ],
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/phencyclidine-urine-drug-screening-tests",
+      "name": "phencyclidine_urine_drug_screening_tests",
+      "title": "Phencyclidine urine drug screening tests",
+      "status": "active",
+      "experimental": true,
+      "date": "2021-07-23T09:24:33-06:00",
+      "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "description": "Urine tests for phencyclidine",
+      "jurisdiction": [ {
+        "coding": [ {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        } ]
+      } ],
+      "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
+      "copyright": "© CDC 2016+.",
+      "expansion": {
+        "timestamp": "2021-07-23T09:24:33-06:00",
+        "contains": [ {
+          "system": "http://loinc.org",
+          "code": "3937-0",
+          "display": "Phencyclidine [Mass/volume] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "16254-5",
+          "display": "Phencyclidine [Mass/volume] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "72825-3",
+          "display": "Phencyclidine [Mass/volume] in Urine by Screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "52951-1",
+          "display": "Phencyclidine [Moles/volume] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "3936-2",
+          "display": "Phencyclidine [Presence] in Urine"
+        }, {
+          "system": "http://loinc.org",
+          "code": "14311-5",
+          "display": "Phencyclidine [Presence] in Urine by Confirm method >20 ng/mL"
+        }, {
+          "system": "http://loinc.org",
+          "code": "18392-1",
+          "display": "Phencyclidine [Presence] in Urine by Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "8237-0",
+          "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "8238-8",
+          "display": "Phencyclidine [Presence] in Urine by SAMHSA screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19659-2",
+          "display": "Phencyclidine [Presence] in Urine by Screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "14310-7",
+          "display": "Phencyclidine [Presence] in Urine by Screen method >25 ng/mL"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19661-8",
+          "display": "Phencyclidine cutoff [Mass/volume] in Urine for Confirmatory method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "19660-0",
+          "display": "Phencyclidine cutoff [Mass/volume] in Urine for Screen method"
+        }, {
+          "system": "http://loinc.org",
+          "code": "58397-1",
+          "display": "Phencyclidine/Creatinine [Mass Ratio] in Urine"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "ValueSet/phencyclidine-urine-drug-screening-tests"
+    }
+  }, {
+    "resource": {
+      "resourceType": "ValueSet",
       "id": "medicationrequest-category-community",
       "extension": [ {
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
@@ -23425,106 +23741,6 @@
     "request": {
       "method": "PUT",
       "url": "ValueSet/opioid-counseling-procedure"
-    }
-  }, {
-    "resource": {
-      "resourceType": "ValueSet",
-      "id": "pcp-medications",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "All PCP medications"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Medication"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "All PCP medications"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "None"
-      } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pcp-medications",
-      "name": "pcp-medications",
-      "title": "PCP Medications",
-      "status": "active",
-      "experimental": true,
-      "date": "2021-01-26T12:01:40-07:00",
-      "publisher": "Centers for Disease Control and Prevention (CDC)",
-      "contact": [ {
-        "name": "MD Partners, Inc.",
-        "telecom": [ {
-          "system": "email",
-          "value": "info@mdpartners.com"
-        } ]
-      } ],
-      "description": "All PCP medications",
-      "jurisdiction": [ {
-        "coding": [ {
-          "system": "urn:iso:std:iso:3166",
-          "code": "US"
-        } ]
-      } ],
-      "purpose": "PCP medications for opioid management",
-      "copyright": "© CDC 2016+.",
-      "compose": {
-        "include": [ {
-          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-          "filter": [ {
-            "property": "display",
-            "op": "regex",
-            "value": ".*(?i)pcp.*"
-          }, {
-            "property": "tty",
-            "op": "=",
-            "value": "SCD"
-          } ]
-        }, {
-          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-          "filter": [ {
-            "property": "display",
-            "op": "regex",
-            "value": ".*(?i)pcp.*"
-          }, {
-            "property": "tty",
-            "op": "=",
-            "value": "SBD"
-          } ]
-        }, {
-          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-          "filter": [ {
-            "property": "display",
-            "op": "regex",
-            "value": ".*(?i)pcp.*"
-          }, {
-            "property": "tty",
-            "op": "=",
-            "value": "GPCK"
-          } ]
-        }, {
-          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-          "filter": [ {
-            "property": "display",
-            "op": "regex",
-            "value": ".*(?i)pcp.*"
-          }, {
-            "property": "tty",
-            "op": "=",
-            "value": "BPCK"
-          } ]
-        } ]
-      },
-      "expansion": {
-        "timestamp": "2021-01-26T12:01:40-07:00",
-        "contains": [ {
-          "system": "http://loinc.org",
-          "code": "3426-13",
-          "display": "PCP"
-        } ]
-      }
-    },
-    "request": {
-      "method": "PUT",
-      "url": "ValueSet/pcp-medications"
     }
   }, {
     "resource": {
@@ -28611,106 +28827,6 @@
     "request": {
       "method": "PUT",
       "url": "ValueSet/pain-management-procedure"
-    }
-  }, {
-    "resource": {
-      "resourceType": "ValueSet",
-      "id": "cocaine-medications",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "All cocaine medications"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Medication"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "All cocaine medications"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "None"
-      } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-medications",
-      "name": "cocaine_medications",
-      "title": "Cocaine Medications",
-      "status": "active",
-      "experimental": true,
-      "date": "2021-01-26T12:01:40-07:00",
-      "publisher": "Centers for Disease Control and Prevention (CDC)",
-      "contact": [ {
-        "name": "MD Partners, Inc.",
-        "telecom": [ {
-          "system": "email",
-          "value": "info@mdpartners.com"
-        } ]
-      } ],
-      "description": "All cocaine medications",
-      "jurisdiction": [ {
-        "coding": [ {
-          "system": "urn:iso:std:iso:3166",
-          "code": "US"
-        } ]
-      } ],
-      "purpose": "Cocaine medications for opioid management",
-      "copyright": "© CDC 2016+.",
-      "compose": {
-        "include": [ {
-          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-          "filter": [ {
-            "property": "display",
-            "op": "regex",
-            "value": ".*(?i)cocaine.*"
-          }, {
-            "property": "tty",
-            "op": "=",
-            "value": "SCD"
-          } ]
-        }, {
-          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-          "filter": [ {
-            "property": "display",
-            "op": "regex",
-            "value": ".*(?i)cocaine.*"
-          }, {
-            "property": "tty",
-            "op": "=",
-            "value": "SBD"
-          } ]
-        }, {
-          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-          "filter": [ {
-            "property": "display",
-            "op": "regex",
-            "value": ".*(?i)cocaine.*"
-          }, {
-            "property": "tty",
-            "op": "=",
-            "value": "GPCK"
-          } ]
-        }, {
-          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-          "filter": [ {
-            "property": "display",
-            "op": "regex",
-            "value": ".*(?i)cocaine.*"
-          }, {
-            "property": "tty",
-            "op": "=",
-            "value": "BPCK"
-          } ]
-        } ]
-      },
-      "expansion": {
-        "timestamp": "2021-01-26T12:01:40-07:00",
-        "contains": [ {
-          "system": "http://loinc.org",
-          "code": "3426-4",
-          "display": "Tetrahydrocannabinol [Presence] in Urine"
-        } ]
-      }
-    },
-    "request": {
-      "method": "PUT",
-      "url": "ValueSet/cocaine-medications"
     }
   }, {
     "resource": {
