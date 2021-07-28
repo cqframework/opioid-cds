@@ -7,9 +7,6 @@ include OpioidCDSCommon version '1.2.3' called Common
 include OpioidCDSRoutines version '1.2.3' called Routines
 include OpioidCDSCommonConfig version '1.2.3' called Config
 
-valueset "Cocaine Urine Tests": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-urine-drug-screening-tests'
-valueset "PCP Urine Tests": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/phencyclidine-urine-drug-screening-tests'
-
 code "Urine Drug Screening": '310627008' from Common.SNOMED display 'Urine drug screening (procedure)'
 
 /*
@@ -64,9 +61,7 @@ define "Inclusion Criteria":
   "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential"
     and not "Patient Age Less Than 18"
     and Routines."Is Opioid Review Useful?"
-    and (not "Patient had Urine Screening in Last 12 Months"
-      or "Has Positive Screening for Cocaine in Last 12 Months"
-      or "Has Positive Screening for PCP in Last 12 Months")
+    and not "Patient had Urine Screening in Last 12 Months"
 
 define "Exclusion Criteria":
   false
@@ -200,10 +195,9 @@ define "No Screening In Last 12 Months Summary":
     null
 
 define "No Screening In Last 12 Months Indicator":
-  if "Applicable Not Because of Positive Cocaine or PCP"
+  if "Is Recommendation Applicable?"
     then 'warning'
-  else
-    null
+  else null
 
 define "Positive Cocaine or PCP In Last 12 Months Detail":
   if ("Has Positive Screening for Cocaine in Last 12 Months" and "Has Positive Screening for PCP in Last 12 Months")

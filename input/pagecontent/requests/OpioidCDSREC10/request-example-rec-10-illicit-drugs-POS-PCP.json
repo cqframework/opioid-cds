@@ -139,7 +139,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch-1",
+              "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch-obs1",
               "status": "final",
               "category": {
                 "coding": [
@@ -178,7 +178,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch-2",
+              "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch-obs2",
               "status": "final",
               "category": {
                 "coding": [
@@ -217,7 +217,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch-3",
+              "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch-obs3",
               "status": "final",
               "category": {
                 "coding": [
@@ -232,7 +232,8 @@
                   {
                     "system": "http://loinc.org",
                     "code": "8237-0",
-                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"                  }
+                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
+                  }
                 ]
               },
               "subject": {
@@ -262,7 +263,7 @@
       },
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch",
+        "id": "example-rec-10-2-illicit-POS-PCP-drugs-prefetch-3",
         "status": "active",
         "intent": "order",
         "category": {

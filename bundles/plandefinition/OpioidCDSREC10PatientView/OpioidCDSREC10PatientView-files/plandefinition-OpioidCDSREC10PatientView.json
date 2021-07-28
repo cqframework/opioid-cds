@@ -147,7 +147,7 @@
           "kind": "applicability",
           "description": "Patient has not had a urine screening in the past 12 months",
           "language": "text/cql",
-          "expression": "Applicable Not Because of Positive Cocaine or PCP"
+          "expression": "Is Recommendation Applicable?"
         }
       ],
       "type":
@@ -241,7 +241,6 @@
           "expression": "Applicable Because of Positive Cocaine or PCP"
         }
       ],
-      "selectionBehavior": "any",
       "dynamicValue": [
         {
           "path": "action.description",

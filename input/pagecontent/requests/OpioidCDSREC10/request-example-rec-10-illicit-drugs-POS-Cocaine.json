@@ -192,8 +192,8 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "3426-13",
-                    "display": "PCP"
+                    "code": "70146-6",
+                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
                   }
                 ]
               },
@@ -217,7 +217,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch",
+              "id": "example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch-4",
               "status": "final",
               "category": {
                 "coding": [
@@ -263,7 +263,7 @@
       },
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch",
+        "id": "example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch-5",
         "status": "active",
         "intent": "order",
         "category": {
@@ -287,7 +287,7 @@
           "reference": "Patient/example-rec-10-2-illicit-POS-Cocaine-drugs"
         },
         "encounter": {
-          "reference": "Encounter/example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch"
+          "reference": "Encounter/example-rec-10-2-illicit-POS-Cocaine-drugs-context"
         },
         "_authoredOn": {
           "extension": [

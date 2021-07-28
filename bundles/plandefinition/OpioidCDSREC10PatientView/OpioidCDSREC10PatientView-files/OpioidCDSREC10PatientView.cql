@@ -7,9 +7,6 @@ include OpioidCDSCommon version '1.2.3' called Common
 include OpioidCDSRoutines version '1.2.3' called Routines
 include OpioidCDSCommonConfig version '1.2.3' called Config
 
-valueset "Cocaine Urine Tests": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-urine-drug-screening-tests'
-valueset "PCP Urine Tests": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/phencyclidine-urine-drug-screening-tests'
-
 code "Urine Drug Screening": '310627008' from Common.SNOMED display 'Urine drug screening (procedure)'
 
 /*
@@ -64,9 +61,7 @@ define "Inclusion Criteria":
   "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential"
     and not "Patient Age Less Than 18"
     and Routines."Is Opioid Review Useful?"
-    and (not "Patient had Urine Screening in Last 12 Months"
-      or "Has Positive Screening for Cocaine in Last 12 Months"
-      or "Has Positive Screening for PCP in Last 12 Months")
+    and not "Patient had Urine Screening in Last 12 Months"
 
 define "Exclusion Criteria":
   false
@@ -150,7 +145,6 @@ define function MostRecent(ObsList List<Observation>):
     issued.value)
   )
 
-
 define "Negative PCP Screenings Count Since Last Positive Screening":
   Count(
     "Negative PCP Screenings" N where
@@ -164,14 +158,12 @@ define "Negative Cocaine Screenings Count Since Last Positive Screening":
   )
 
 define "Positive Cocaine Dates in Lookback Period":
-    "Positive Cocaine Screenings" CS
-      return
-        DateTimeText(CS.effective)
+  "Positive Cocaine Screenings" CS
+    return DateTimeText(CS.effective)
 
 define "Positive PCP Dates in Lookback Period":
-    "Positive PCP Screenings" PS
-      return
-        DateTimeText(PS.effective)
+  "Positive PCP Screenings" PS
+    return DateTimeText(PS.effective)
 
 define "Has Positive Screening for Cocaine in Last 12 Months":
   exists "Cocaine Screenings" CS where
@@ -182,13 +174,13 @@ define "Has Positive Screening for PCP in Last 12 Months":
      StartsWith(Lower(PCP.value as FHIR.string), 'pos')
 
 define "Applicable Because of Positive Cocaine or PCP":
- "Is Recommendation Applicable?"
+  "Is Recommendation Applicable?"
     and ("Has Positive Screening for Cocaine in Last 12 Months" or "Has Positive Screening for PCP in Last 12 Months")
 
 define "Applicable Not Because of Positive Cocaine or PCP":
-     "Is Recommendation Applicable?"
-        and not "Has Positive Screening for Cocaine in Last 12 Months"
-        and not "Has Positive Screening for PCP in Last 12 Months"
+  "Is Recommendation Applicable?"
+    and not "Has Positive Screening for Cocaine in Last 12 Months"
+    and not "Has Positive Screening for PCP in Last 12 Months"
 
 define "No Screening In Last 12 Months Detail":
   if "Applicable Not Because of Positive Cocaine or PCP"
@@ -203,14 +195,13 @@ define "No Screening In Last 12 Months Summary":
     null
 
 define "No Screening In Last 12 Months Indicator":
-  if "Applicable Not Because of Positive Cocaine or PCP"
+  if "Is Recommendation Applicable?"
     then 'warning'
-  else
-    null
+  else null
 
 define "Positive Cocaine or PCP In Last 12 Months Detail":
   if ("Has Positive Screening for Cocaine in Last 12 Months" and "Has Positive Screening for PCP in Last 12 Months")
-        then "Cocaine And PCP Summary"
+    then "Cocaine And PCP Summary"
   else if "Has Positive Screening for Cocaine in Last 12 Months"
     then "Cocaine Summary"
   else if "Has Positive Screening for PCP in Last 12 Months"
@@ -222,7 +213,7 @@ define "Positive Cocaine or PCP In Last 12 Months Summary":
   if "Applicable Because of Positive Cocaine or PCP"
     then 'Positive Cocaine or PCP in Urine Screening'
   else
-   null
+    null
 
 define "Positive Cocaine or PCP In Last 12 Months Indicator":
   if "Applicable Because of Positive Cocaine or PCP"
@@ -255,16 +246,16 @@ define function ToCoding(code System.Code):
     display: FHIR.string { value: code.display }
   }
 
-  define "Cocaine And PCP Summary":
+define "Cocaine And PCP Summary":
   'Positive for Cocaine AND PCP <br/><br/>' +
     "Cocaine Summary" + '<br/>' + "PCP Summary"
 
-  define "PCP Summary":
-    'Positive for PCP: <br/>' +
-    'Positive lab dates: <br/>' + Combine("Positive PCP Dates in Lookback Period", ', <br/>') + '<br/>' +
-    'Negative test count since last Positive: ' + ToString("Negative PCP Screenings Count Since Last Positive Screening")
+define "PCP Summary":
+  'Positive for PCP: <br/>' +
+  'Positive lab dates: <br/>' + Combine("Positive PCP Dates in Lookback Period", ', <br/>') + '<br/>' +
+  'Negative test count since last Positive: ' + ToString("Negative PCP Screenings Count Since Last Positive Screening")
 
-    define "Cocaine Summary":
-    'Positive for Cocaine: <br/>' +
-    'Positive lab dates: <br/>' + Combine("Positive Cocaine Dates in Lookback Period", '<br/>') + '<br/>' +
-    'Negative test count since last Positive: ' + ToString("Negative Cocaine Screenings Count Since Last Positive Screening")
+define "Cocaine Summary":
+  'Positive for Cocaine: <br/>' +
+  'Positive lab dates: <br/>' + Combine("Positive Cocaine Dates in Lookback Period", '<br/>') + '<br/>' +
+  'Negative test count since last Positive: ' + ToString("Negative Cocaine Screenings Count Since Last Positive Screening")
