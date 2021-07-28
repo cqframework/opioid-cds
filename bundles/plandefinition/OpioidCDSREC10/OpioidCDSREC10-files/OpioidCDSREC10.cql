@@ -207,7 +207,7 @@ define "No Screening In Last 12 Months Indicator":
   else
     null
 
-define "Positive Cocaine or PCP  In Last 12 Months Detail":
+define "Positive Cocaine or PCP In Last 12 Months Detail":
   if ("Has Positive Screening for Cocaine in Last 12 Months" and "Has Positive Screening for PCP in Last 12 Months")
     then "Cocaine And PCP Summary"
   else if "Has Positive Screening for Cocaine in Last 12 Months"
@@ -217,13 +217,13 @@ define "Positive Cocaine or PCP  In Last 12 Months Detail":
   else
     'Do Nothing'
 
-define "Positive Cocaine or PCP  In Last 12 Months Summary":
+define "Positive Cocaine or PCP In Last 12 Months Summary":
   if "Applicable Because of Positive Cocaine or PCP"
     then 'Positive Cocaine or PCP in Urine Screening'
   else
     null
 
-define "Positive Cocaine or PCP  In Last 12 Months Indicator":
+define "Positive Cocaine or PCP In Last 12 Months Indicator":
   if "Applicable Because of Positive Cocaine or PCP"
     then 'warning'
   else 'info'
