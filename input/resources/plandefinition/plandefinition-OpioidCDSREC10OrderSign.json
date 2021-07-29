@@ -163,15 +163,15 @@
       "dynamicValue": [
         {
           "path": "action.description",
-          "expression": "No Screening In Last 12 Months Detail"
+          "expression": "Detail"
         },
         {
           "path": "action.title",
-          "expression": "No Screening In Last 12 Months Summary"
+          "expression": "Summary"
         },
         {
           "path": "action.extension",
-          "expression": "No Screening In Last 12 Months Indicator"
+          "expression": "Indicator"
         }
       ],
       "action": [
@@ -244,15 +244,15 @@
       "dynamicValue": [
         {
           "path": "action.description",
-          "expression": "Positive Cocaine or PCP In Last 12 Months Detail"
+          "expression": "Detail"
         },
         {
           "path": "action.title",
-          "expression": "Positive Cocaine or PCP In Last 12 Months Summary"
+          "expression": "Summary"
         },
         {
           "path": "action.extension",
-          "expression": "Positive Cocaine or PCP In Last 12 Months Indicator"
+          "expression": "Indicator"
         }
       ],
       "action": [

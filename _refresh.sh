@@ -6,7 +6,7 @@ resources_path=/input/resources
 root_dir=$PWD
 ig_path=/input/opioid-cds.xml
 
-# echo ${root_dir}s
+# echo ${root_dir}
 # echo ${ig_path}
 
 set -e

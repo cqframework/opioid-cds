@@ -189,44 +189,32 @@ define "Applicable Not Because of Positive Cocaine or PCP":
     and not "Has Positive Screening for Cocaine in Last 12 Months"
     and not "Has Positive Screening for PCP in Last 12 Months"
 
-define "No Screening In Last 12 Months Detail":
-  if "Applicable Not Because of Positive Cocaine or PCP"
+define "Detail":
+  if "Applicable Because of Positive Cocaine or PCP"
+    then
+      (
+        if ("Has Positive Screening for Cocaine in Last 12 Months" and "Has Positive Screening for PCP in Last 12 Months")
+          then "Cocaine And PCP Summary"
+        else if "Has Positive Screening for Cocaine in Last 12 Months"
+          then "Cocaine Summary"
+        else if "Has Positive Screening for PCP in Last 12 Months"
+          then "PCP Summary"
+        else
+          'No Details Available'
+      )
+  else if "Applicable Not Because of Positive Cocaine or PCP"
     then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
-  else
-    null
+    else null
 
-define "No Screening In Last 12 Months Summary":
-  if "Applicable Not Because of Positive Cocaine or PCP"
-    then 'Annual Urine Screening Check'
-  else
-    null
+define "Indicator":
+  'warning'
 
-define "No Screening In Last 12 Months Indicator":
-  if "Applicable Not Because of Positive Cocaine or PCP"
-    then 'warning'
-  else
-    null
-
-define "Positive Cocaine or PCP In Last 12 Months Detail":
-  if ("Has Positive Screening for Cocaine in Last 12 Months" and "Has Positive Screening for PCP in Last 12 Months")
-    then "Cocaine And PCP Summary"
-  else if "Has Positive Screening for Cocaine in Last 12 Months"
-    then "Cocaine Summary"
-  else if "Has Positive Screening for PCP in Last 12 Months"
-    then "PCP Summary"
-  else
-    'Do Nothing'
-
-define "Positive Cocaine or PCP In Last 12 Months Summary":
+define "Summary":
   if "Applicable Because of Positive Cocaine or PCP"
     then 'Positive Cocaine or PCP in Urine Screening'
-  else
-    null
-
-define "Positive Cocaine or PCP In Last 12 Months Indicator":
-  if "Applicable Because of Positive Cocaine or PCP"
-    then 'warning'
-  else 'info'
+  else if "Applicable Not Because of Positive Cocaine or PCP"
+    then 'Annual Urine Screening Check'
+  else null
 
 define "Cocaine And PCP Summary":
   'Positive for Cocaine AND PCP <br/><br/>' +
