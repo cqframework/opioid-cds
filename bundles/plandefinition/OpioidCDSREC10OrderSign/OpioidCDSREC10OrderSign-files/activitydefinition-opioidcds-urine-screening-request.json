@@ -71,6 +71,11 @@
         }
     ],
     "copyright": "© CDC 2016+.",
+    "library": [
+      {
+        "reference": "Library/OpioidCDSREC10PatientView"
+      }
+    ],
     "kind": "ProcedureRequest",
     "code": {
         "coding": [
@@ -79,5 +84,11 @@
               "code": "1"
             }
         ]
-    }
+    },
+    "dynamicValue": [
+      {
+        "path": "category",
+        "expression": "Urine Drug Screening ProcedureRequest Category"
+      }
+    ]
 }

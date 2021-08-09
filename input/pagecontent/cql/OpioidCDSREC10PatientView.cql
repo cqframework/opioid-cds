@@ -12,6 +12,9 @@ valueset "PCP Urine Tests": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/phen
 
 code "Urine Drug Screening": '310627008' from Common.SNOMED display 'Urine drug screening (procedure)'
 
+// This is meant to be the concept for the Suggestion's ProcedureRequest.category
+code "Urine Drug Screening Category": '310627008' from Common.SNOMED display 'Urine drug screening (procedure) Category'
+
 /*
 **  Recommendation #10
 **    When prescribing opioids for chronic pain, providers should use urine drug
@@ -214,6 +217,10 @@ define "Summary":
     then 'Annual Urine Screening Check'
   else null
 
+define "Urine Drug Screening ProcedureRequest Category":
+  'adam testing'
+  /* FHIR.CodeableConcept { coding: { ToCoding("Urine Drug Screening Category") } } */
+
 // Service Request - Urine Screening
 // NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest
 /* define "Urine Drug Screening Request":
@@ -232,13 +239,13 @@ define "Summary":
     //reasonCode: { FHIR.CodeableConcept { text: FHIR.string { value: 'https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#10_When_prescribing_opioids' } } }
   } */
 
-/* define function ToCoding(code System.Code):
+define function ToCoding(code System.Code):
   FHIR.Coding {
     code: FHIR.code { value: code.code },
     system: FHIR.uri { value: code.system },
     version: FHIR.string { value: code.version },
     display: FHIR.string { value: code.display }
-  } */
+  }
 
 define "Cocaine And PCP Summary":
   'Positive for Cocaine AND PCP <br/><br/>' +
