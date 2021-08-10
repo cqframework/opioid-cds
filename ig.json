@@ -15,6 +15,7 @@
       "bundles/plandefinition/OpioidCDSREC07",
       "bundles/plandefinition/OpioidCDSREC08",
       "bundles/plandefinition/OpioidCDSREC10",
+      "bundles/plandefinition/OpioidCDSREC10OrderSign",
       "bundles/plandefinition/OpioidCDSREC10PatientView",
       "bundles/plandefinition/OpioidCDSREC11",
       "bundles/plandefinition/OpioidCDSREC11PatientView",
@@ -85,6 +86,10 @@
     "Bundle/opioid-cds-recommendation10-bundle": {
       "source": "OpioidCDSREC10-bundle.json",
       "base": "Bundle-OpioidCDSREC10-bundle.html"
+    },
+    "Bundle/opioid-cds-recommendation10-ordersign-bundle": {
+      "source": "OpioidCDSREC10OrderSign-bundle.json",
+      "base": "Bundle-OpioidCDSREC10OrderSign-bundle.html"
     },
     "Bundle/opioid-cds-recommendation10-patientview-bundle": {
       "source": "OpioidCDSREC10PatientView-bundle.json",
@@ -775,6 +780,10 @@
     "PlanDefinition/OpioidCDSREC10": {
       "source": "plandefinition-OpioidCDSREC10.json",
       "base": "PlanDefinition-opioidcds-10.html"
+    },
+    "PlanDefinition/OpioidCDSREC10OrderSign": {
+      "source": "plandefinition-OpioidCDSREC10OrderSign.json",
+      "base": "PlanDefinition-opioidcds-10-order-sign.html"
     },
     "PlanDefinition/OpioidCDSREC10PatientView": {
       "source": "plandefinition-OpioidCDSREC10PatientView.json",
