@@ -218,7 +218,15 @@ define "Summary":
   else null
 
 define "Urine Drug Screening ProcedureRequest Category":
-  'adam testing'
+  FHIR.CodeableConcept {
+    coding: {
+      First(
+        [Encounter] E
+          where E.period starts same day as Today()
+          sort by start of period desc
+      ).class
+    }
+  }
   /* FHIR.CodeableConcept { coding: { ToCoding("Urine Drug Screening Category") } } */
 
 // Service Request - Urine Screening
