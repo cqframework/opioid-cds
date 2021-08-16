@@ -216,6 +216,18 @@ define "Summary":
     then 'Annual Urine Screening Check'
   else null
 
+define "Urine Drug Screening ProcedureRequest Category":
+  FHIR.CodeableConcept {
+    coding: {
+      First(
+        [Encounter] E
+          where E.period starts same day as Today()
+          sort by start of period desc
+      ).class
+    }
+  }
+  /* FHIR.CodeableConcept { coding: { ToCoding("Urine Drug Screening Category") } } */
+
 define "Cocaine And PCP Summary":
   'Positive for Cocaine AND PCP <br/><br/>' +
     "Cocaine Summary" + '<br/>' + "PCP Summary"

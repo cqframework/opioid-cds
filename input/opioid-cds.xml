@@ -863,9 +863,23 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ActivityDefinition - ProcedureRequest for opioid uring screening"/>
+            <name value="ActivityDefinition - ProcedureRequest for opioid uring screening (order-select)"/>
             <sourceReference>
-                <reference value="ActivityDefinition/opioidcds-urine-screening-request"/>
+                <reference value="ActivityDefinition/opioidcds-urine-screening-request-order-select"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ActivityDefinition - ProcedureRequest for opioid uring screening (order-sign)"/>
+            <sourceReference>
+                <reference value="ActivityDefinition/opioidcds-urine-screening-request-order-sign"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ActivityDefinition - ProcedureRequest for opioid uring screening (patient-view)"/>
+            <sourceReference>
+                <reference value="ActivityDefinition/opioidcds-urine-screening-request-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
@@ -956,14 +970,6 @@
             <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic Stub"/>
             <sourceReference>
                 <reference value="Library/OMTKLogicStub"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="Library - OMTK Data 2018"/>
-            <description value="Opioid Management Terminology Knowledge Base v0.0.2 Data (2018)"/>
-            <sourceReference>
-                <reference value="Library/OMTKData2018"/>
             </sourceReference>
         </resource>
         <resource>
