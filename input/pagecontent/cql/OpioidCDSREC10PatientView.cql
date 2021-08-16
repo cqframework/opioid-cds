@@ -227,6 +227,7 @@ define "Urine Drug Screening ProcedureRequest Category":
       ).class
     }
   }
+
   /* FHIR.CodeableConcept { coding: { ToCoding("Urine Drug Screening Category") } } */
 
 // Service Request - Urine Screening
@@ -247,13 +248,13 @@ define "Urine Drug Screening ProcedureRequest Category":
     //reasonCode: { FHIR.CodeableConcept { text: FHIR.string { value: 'https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#10_When_prescribing_opioids' } } }
   } */
 
-define function ToCoding(code System.Code):
+/* define function ToCoding(code System.Code):
   FHIR.Coding {
     code: FHIR.code { value: code.code },
     system: FHIR.uri { value: code.system },
     version: FHIR.string { value: code.version },
     display: FHIR.string { value: code.display }
-  }
+  } */
 
 define "Cocaine And PCP Summary":
   'Positive for Cocaine AND PCP <br/><br/>' +

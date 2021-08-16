@@ -158,7 +158,7 @@
       },
       "selectionBehavior": "any",
       "definition": {
-        "reference": "ActivityDefinition/opioidcds-urine-screening-request"
+        "reference": "ActivityDefinition/opioidcds-urine-screening-request-order-sign"
       },
       "dynamicValue": [
         {

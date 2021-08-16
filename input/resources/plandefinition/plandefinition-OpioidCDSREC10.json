@@ -95,6 +95,7 @@
   ],
   "action": [
     {
+      "label": "Order Urine Screening",
       "title": "Annual Urine Screening Check",
       "description": "Patient has not had a urine screening in the past 12 months",
       "documentation": [
@@ -154,8 +155,9 @@
         "code": "create",
         "display": "Create"
       },
+      "selectionBehavior": "any",
       "definition": {
-        "reference": "ActivityDefinition/opioidcds-urine-screening-request"
+        "reference": "ActivityDefinition/opioidcds-urine-screening-request-order-select"
       },
       "dynamicValue": [
         {
