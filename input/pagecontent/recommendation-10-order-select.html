@@ -18,7 +18,7 @@
 </ul>
 
 <a name="rec10"> </a>
-<h2><span class="sectioncount">8.10.0</span> Recommendation #10 Order Select - Urine Drug Testing <a href="recommendation-10.html#rec10" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h2>
+<h2><span class="sectioncount">8.10.0</span> Recommendation #10 Order Select - Urine Drug Testing <a href="recommendation-10-order-select.html#rec10" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h2>
 
 <p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#10_When_prescribing_opioids" target="_blank">Recommendation #10:</a></p>
 <p>
@@ -31,7 +31,7 @@
 <details open>
   <a name="funcdesc"> </a>
   <summary>
-    <h3><span class="sectioncount">8.10.1</span> Functional Description <a href="recommendation-10.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+    <h3><span class="sectioncount">8.10.1</span> Functional Description <a href="recommendation-10-order-select.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
   <p style="background-color: gold; border:1px solid maroon; padding: 5px; max-width: 790px;">
     The GetDrugNamesFromScreeningCodes(value List&lt;FHIR.Coding&gt;) function extracts
@@ -71,36 +71,11 @@
 <details>
   <a name="content"> </a>
   <summary>
-    <h3><span class="sectioncount">8.10.2</span> Content <a href="recommendation-10.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+    <h3><span class="sectioncount">8.10.2</span> Content <a href="recommendation-10-order-select.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
 
-  <h4><a href="common.html" title="link to here" class="self-link">Artifact Packages</a></h4>
-  <p>Artifacts to install additional libraries</p>
-  <table class="list">
-    <thead>
-    <tr>
-      <th>Resource</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td><a href="Bundle-OpioidCDSREC10-bundle.html">CDC Opioid Prescribing Guideline Recommendation #10 Artifact Bundle</a></td>
-      <td><a href="{{site.data.fhir.path}}bundle.html">Bundle</a></td>
-      <td>Artifacts to use in evaluating recommendation</td>
-    </tr>
-    <tr>
-      <td><a href="Bundle-opioid-cds-terminology.html">Opioid CDS Terminology Bundle</a></td>
-      <td><a href="{{site.data.fhir.path}}bundle.html">Bundle</a></td>
-      <td>Terminology artifacts to use in evaluating recommendation</td>
-    </tr>
-    </tbody>
-  </table>
-
-  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
-
-  <h4><a href="common.html" title="link to here" class="self-link">Common Libraries</a></h4>
+  <h4>Artifact Package</a></h4>
+  <p>The <a href="Bundle-OpioidCDSREC10-bundle.html" title="link to here" class="self-link">Recommendation 10 (order-select) Artifact Package</a> is a FHIR Bundle resource containing the following artifacts that formalize the description of the logic and behavior defined by this recommendation:</p>
 
   <table class="list">
     <thead>
@@ -121,6 +96,7 @@
         <td><a href="{{site.data.fhir.path}}library.html">Library</a></td>
         <td>Defines the data requirements to support evaluation of recommendation #10</td>
       </tr>
+      {% include common-libraries.html %}
       {% include routines-library-table-row.html %}
     </tbody>
   </table>
