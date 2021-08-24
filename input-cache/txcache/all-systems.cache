@@ -142,7 +142,7 @@ v: {
   }
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
 v: {
-  "display" : "day",
+  "display" : "天",
   "severity" : null,
   "error" : ""
 }

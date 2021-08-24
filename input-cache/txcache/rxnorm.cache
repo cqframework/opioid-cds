@@ -47,7 +47,7 @@ v: {
 v: {
   "display" : "oxyCODONE HCl 10 MG 12HR Extended Release Oral Tablet",
   "severity" : "warning",
-  "error" : "The display \"12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet\" is not a valid display for the code {http://www.nlm.nih.gov/research/umls/rxnorm}1049502 - should be one of [\"oxyCODONE HCl 10 MG 12HR Extended Release Oral Tablet\",\"oxycodone hydrochloride 10 MG 12 HR Extended Release Oral Tablet\"] (from http://tx.fhir.org/r3)"
+  "error" : "The display \"12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet\" is not a valid display for the code {http://www.nlm.nih.gov/research/umls/rxnorm}1049502 - should be one of [oxyCODONE HCl 10 MG 12HR Extended Release Oral Tablet, oxycodone hydrochloride 10 MG 12 HR Extended Release Oral Tablet] (from http://tx.fhir.org/r3)"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -58,7 +58,7 @@ v: {
 v: {
   "display" : "carbinoxamine maleate 2 MG / HYDROcodone bitartrate 5 MG / pseudoephedrine hydrochloride 30 MG per 5 ML Oral Solution",
   "severity" : "warning",
-  "error" : "The display \"Carbinoxamine maleate 0.4 MG/ML / Hydrocodone Bitartrate 1 MG/ML / Pseudoephedrine Hydrochloride 6 MG/ML Oral Solution\" is not a valid display for the code {http://www.nlm.nih.gov/research/umls/rxnorm}1012727 - should be one of [\"carbinoxamine maleate 2 MG / HYDROcodone bitartrate 5 MG / pseudoephedrine hydrochloride 30 MG per 5 ML Oral Solution\",\"carbinoxamine maleate 2 MG / hydrocodone bitartrate 5 MG / pseudoephedrine hydrochloride 30 MG per 5 ML Oral Solution\"] (from http://tx.fhir.org/r3)"
+  "error" : "The display \"Carbinoxamine maleate 0.4 MG/ML / Hydrocodone Bitartrate 1 MG/ML / Pseudoephedrine Hydrochloride 6 MG/ML Oral Solution\" is not a valid display for the code {http://www.nlm.nih.gov/research/umls/rxnorm}1012727 - should be one of [carbinoxamine maleate 2 MG / HYDROcodone bitartrate 5 MG / pseudoephedrine hydrochloride 30 MG per 5 ML Oral Solution, carbinoxamine maleate 2 MG / hydrocodone bitartrate 5 MG / pseudoephedrine hydrochloride 30 MG per 5 ML Oral Solution] (from http://tx.fhir.org/r3)"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -91,7 +91,7 @@ v: {
 v: {
   "display" : "flurazepam HCl 15 MG Oral Capsule",
   "severity" : "warning",
-  "error" : "The display \"Flurazepam Hydrochloride 15 MG Oral Capsule\" is not a valid display for the code {http://www.nlm.nih.gov/research/umls/rxnorm}1298088 - should be one of [\"flurazepam HCl 15 MG Oral Capsule\"] (from http://tx.fhir.org/r3)"
+  "error" : "The display \"Flurazepam Hydrochloride 15 MG Oral Capsule\" is not a valid display for the code {http://www.nlm.nih.gov/research/umls/rxnorm}1298088 - should be one of [flurazepam HCl 15 MG Oral Capsule] (from http://tx.fhir.org/r3)"
 }
 -------------------------------------------------------------------------------------
 {"code" : {

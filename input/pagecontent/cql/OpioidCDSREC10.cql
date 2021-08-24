@@ -81,33 +81,26 @@ define "Urine Screenings during the Last 12 Months":
     union "Cocaine Screenings"
     union "PCP Screenings"
 
-/*
-every pos date in last 12 months then count # neg and report that
-most recent POS PCP/cocaine
- then get subsequent neg date > pos based on date of each neg and pos
-*/
+define "Laboratory Observations":
+    [Observation: "category" in Common."Observation Category Laboratory"]
 
 define "Non-opioid Screenings":
-  GetRelevantScreenings(
-    [Observation: "category" in Common."Observation Category Laboratory"] LabObservations
+  GetRelevantScreenings("Laboratory Observations" LabObservations
       where (LabObservations.code in Common."Non-opioid drug urine screening")
   )
 
 define "Opioid Screenings":
-  GetRelevantScreenings(
-    [Observation: "category" in Common."Observation Category Laboratory"] LabObservations
+  GetRelevantScreenings("Laboratory Observations" LabObservations
       where (LabObservations.code in Common."Opioid drug urine screening")
   )
 
 define "Cocaine Screenings":
-  GetRelevantScreenings(
-    [Observation: "category" in Common."Observation Category Laboratory"] LabObservations
+  GetRelevantScreenings("Laboratory Observations" LabObservations
       where (LabObservations.code in "Cocaine Urine Tests")
   )
 
 define "PCP Screenings":
-  GetRelevantScreenings(
-    [Observation: "category" in Common."Observation Category Laboratory"] LabObservations
+  GetRelevantScreenings("Laboratory Observations" LabObservations
       where (LabObservations.code in "PCP Urine Tests")
   )
 
@@ -219,14 +212,18 @@ define "Summary":
 define "Urine Drug Screening ProcedureRequest Category":
   FHIR.CodeableConcept {
     coding: {
-      First(
-        [Encounter] E
-          where E.period starts same day as Today()
-          sort by start of period desc
-      ).class
+      FHIR.Coding {
+        system: FHIR.uri { value: 'http://terminology.hl7.org/CodeSystem/medicationrequest-category' },
+        code: FHIR.code { value: 'outpatient' },
+        display: FHIR.string { value: 'Outpatient' }
+      }
     }
   }
-  /* FHIR.CodeableConcept { coding: { ToCoding("Urine Drug Screening Category") } } */
+  /* singleton from (First(
+    [Encounter] E
+      where E.period starts same day as Today()
+      sort by start of period desc
+  ).type) */
 
 define "Cocaine And PCP Summary":
   'Positive for Cocaine AND PCP <br/><br/>' +

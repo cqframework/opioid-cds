@@ -220,15 +220,18 @@ define "Summary":
 define "Urine Drug Screening ProcedureRequest Category":
   FHIR.CodeableConcept {
     coding: {
-      First(
-        [Encounter] E
-          where E.period starts same day as Today()
-          sort by start of period desc
-      ).class
+      FHIR.Coding {
+        system: FHIR.uri { value: 'http://terminology.hl7.org/CodeSystem/medicationrequest-category' },
+        code: FHIR.code { value: 'outpatient' },
+        display: FHIR.string { value: 'Outpatient' }
+      }
     }
   }
-
-  /* FHIR.CodeableConcept { coding: { ToCoding("Urine Drug Screening Category") } } */
+  /* singleton from (First(
+    [Encounter] E
+      where E.period starts same day as Today()
+      sort by start of period desc
+  ).type) */
 
 // Service Request - Urine Screening
 // NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest

@@ -536,10 +536,11 @@ v: {
 e: {
   "valueSet" : {
   "resourceType" : "ValueSet",
+  "language" : "en",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:6905754c-614a-49ba-ad09-c0d5abc5b556",
-    "timestamp" : "2021-05-06T04:17:48.064Z",
+    "identifier" : "urn:uuid:ad4f0d8c-ff32-414f-979d-cd87d60df2bb",
+    "timestamp" : "2021-08-21T02:53:40.802Z",
     "parameter" : [{
       "name" : "version",
       "valueString" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20210301"
@@ -552,17 +553,17 @@ e: {
     {
       "system" : "http://snomed.info/sct",
       "code" : "448451000124101",
-      "display" : "Transition from self-care to hospice"
+      "display" : "Transition from self-care to hospice (finding)"
     },
     {
       "system" : "http://snomed.info/sct",
       "code" : "1891000124102",
-      "display" : "Transition from acute care to hospice"
+      "display" : "Transition from acute care to hospice (finding)"
     },
     {
       "system" : "http://snomed.info/sct",
       "code" : "1951000124104",
-      "display" : "Transition from long-term care to hospice"
+      "display" : "Transition from long-term care to hospice (finding)"
     }]
   }
 },
@@ -592,10 +593,11 @@ e: {
 e: {
   "valueSet" : {
   "resourceType" : "ValueSet",
+  "language" : "en",
   "status" : "active",
   "expansion" : {
-    "identifier" : "urn:uuid:42e08524-95bd-451c-abe6-ffa21edd7203",
-    "timestamp" : "2021-05-06T04:17:49.455Z",
+    "identifier" : "urn:uuid:d4e3427c-9c24-4113-ac65-9e843c0476dd",
+    "timestamp" : "2021-08-21T02:53:41.052Z",
     "parameter" : [{
       "name" : "version",
       "valueString" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20210301"
@@ -618,7 +620,7 @@ e: {
     {
       "system" : "http://snomed.info/sct",
       "code" : "428371000124100",
-      "display" : "Discharge to healthcare facility for hospice care"
+      "display" : "Discharge to healthcare facility for hospice care (procedure)"
     }]
   }
 },
