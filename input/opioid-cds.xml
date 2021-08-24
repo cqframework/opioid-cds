@@ -863,23 +863,9 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ActivityDefinition - ProcedureRequest for opioid uring screening (order-select)"/>
+            <name value="ActivityDefinition - ProcedureRequest for opioid uring screening"/>
             <sourceReference>
-                <reference value="ActivityDefinition/opioidcds-urine-screening-request-order-select"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ActivityDefinition - ProcedureRequest for opioid uring screening (order-sign)"/>
-            <sourceReference>
-                <reference value="ActivityDefinition/opioidcds-urine-screening-request-order-sign"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ActivityDefinition - ProcedureRequest for opioid uring screening (patient-view)"/>
-            <sourceReference>
-                <reference value="ActivityDefinition/opioidcds-urine-screening-request-patient-view"/>
+                <reference value="ActivityDefinition/opioidcds-urine-screening-request"/>
             </sourceReference>
         </resource>
         <resource>
