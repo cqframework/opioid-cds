@@ -11,6 +11,8 @@
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "text/cql",
+  "code" : "text/cql",
+  "system" : "urn:ietf:bcp:13",
   "severity" : null,
   "error" : ""
 }
@@ -27,6 +29,8 @@ v: {
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "application/elm+xml",
+  "code" : "application/elm+xml",
+  "system" : "urn:ietf:bcp:13",
   "severity" : null,
   "error" : ""
 }
@@ -43,6 +47,8 @@ v: {
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "application/xml",
+  "code" : "application/xml",
+  "system" : "urn:ietf:bcp:13",
   "severity" : null,
   "error" : ""
 }
@@ -142,7 +148,9 @@ v: {
   }
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
 v: {
-  "display" : "day",
+  "display" : "天",
+  "code" : "d",
+  "system" : "http://unitsofmeasure.org",
   "severity" : null,
   "error" : ""
 }
