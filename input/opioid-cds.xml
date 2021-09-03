@@ -87,6 +87,12 @@
         <resource>
             <example value="true"/>
             <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation10-ordersign-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
                 <reference value="Bundle/opioid-cds-recommendation10-patientview-bundle"/>
             </sourceReference>
         </resource>
