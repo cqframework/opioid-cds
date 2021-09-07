@@ -1,56 +1,48 @@
 {
   "resourceType": "ValueSet",
   "id": "opioid-misuse-assessment-procedure",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
+    "valueContactDetail": {
+      "name": "MD Partners, Inc.",
+      "telecom": [ {
+        "system": "email",
+        "value": "info@mdpartners.com"
+      } ]
+    }
+  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-assessment-procedure",
   "name": "opioid_misuse_assessment_procedure",
   "title": "Opioid misuse assessment procedure",
   "status": "active",
   "experimental": true,
-  "date": "2021-01-26T12:01:40-07:00",
+  "date": "2021-09-07T11:10:16-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
-  "contact": [{
-    "name": "MD Partners, Inc.",
-    "telecom": [
-      {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      }
-    ]
-  }],
   "description": "Procedure to assess the risk of opioid abuse occurring by a patient",
-  "jurisdiction": [
-    {
-      "coding": [
-        {
-          "system": "urn:iso:std:iso:3166",
-          "code": "US"
-        }
-      ]
-    }
-  ],
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
   "purpose": "Risk assessment to occur when considering opioid therapy",
   "copyright": "© CDC 2016+.",
   "compose": {
-    "include": [
-      {
-        "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108",
-        "concept": [
-          {
-            "code": "454281000124100"
-          }
-        ]
-      }
-    ]
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "concept": [ {
+        "code": "454281000124100"
+      } ]
+    } ]
   },
   "expansion": {
-    "timestamp": "2021-01-26T12:01:40-07:00",
-    "contains": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "454281000124100",
-        "display": "Assessment of risk for opioid abuse (procedure)"
-      }
-    ]
+    "identifier": "6466d0a4-c0bc-447e-9c4b-783d6bfea3f1",
+    "timestamp": "2021-09-07T11:10:16-06:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "code": "454281000124100",
+      "display": "Assessment of risk for opioid abuse (procedure)"
+    } ]
   }
 }

@@ -1,39 +1,107 @@
 {
   "resourceType": "ValueSet",
   "id": "hospice-finding",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
-      "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset"
-    ]
-  },
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
-      "valueMarkdown": "Note that the terminologies included in this implementation guide will need to be updated, because the ideal mechanism for distribution (as an expression) is not currently supported by the content logical definition constructs available in the FHIR ValueSet resource and all known implementations of it. Before use in a production environment, ensure you have the latest value sets based on the definitions for each value set (as defined in the inclusion/exclusion criteria for each one)."
+  "extension": [ {
+    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
+    "valueString": "Finding codes for receiving hospice care"
+  }, {
+    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
+    "valueString": "Finding"
+  }, {
+    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
+    "valueString": "Codes related"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
+    "valueContactDetail": {
+      "name": "MD Partners, Inc.",
+      "telecom": [ {
+        "system": "email",
+        "value": "info@mdpartners.com"
+      } ]
     }
-  ],
+  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding",
+  "name": "hospice_finding",
+  "title": "Hospice Finding",
   "status": "active",
+  "experimental": true,
+  "date": "2021-09-07T11:10:15-06:00",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "description": "Finding codes for receiving hospice care",
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
+  "purpose": "Initially created to identify conditions for exclusions in CDC Opioid guidelines",
+  "copyright": "© CDC 2016+.",
   "compose": {
-    "include": [
-      {
-        "system": "http://snomed.info/sct",
-        "concept": [
-          {
-            "code": "170935008"
-          },
-          {
-            "code": "448451000124101"
-          },
-          {
-            "code": "1891000124102"
-          },
-          {
-            "code": "1951000124104"
-          }
-        ]
-      }
-    ]
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "170935008"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "448451000124101"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "1891000124102"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "1951000124104"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "305911006"
+      } ]
+    } ]
+  },
+  "expansion": {
+    "identifier": "3f7ac775-9e74-46c9-ba66-24283faf03f4",
+    "timestamp": "2021-09-07T11:10:15-06:00",
+    "contains": [ {
+      "system": "SNOMED CT",
+      "code": "170935008",
+      "display": "Full care by hospice (finding)"
+    }, {
+      "system": "SNOMED CT",
+      "code": "448451000124101",
+      "display": "Transition from self-care to hospice (finding)"
+    }, {
+      "system": "SNOMED CT",
+      "code": "1891000124102",
+      "display": "Transition from acute care to hospice (finding)"
+    }, {
+      "system": "SNOMED CT",
+      "code": "1951000124104",
+      "display": "Transition from long-term care to hospice (finding)"
+    }, {
+      "system": "SNOMED CT",
+      "code": "305911006",
+      "display": "Seen in hospice"
+    } ]
   }
 }

@@ -1,56 +1,48 @@
 {
   "resourceType": "ValueSet",
   "id": "pain-management-procedure",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
+    "valueContactDetail": {
+      "name": "MD Partners, Inc.",
+      "telecom": [ {
+        "system": "email",
+        "value": "info@mdpartners.com"
+      } ]
+    }
+  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure",
   "name": "pain_management_procedure",
   "title": "Pain management procedure",
   "status": "active",
   "experimental": true,
-  "date": "2021-01-26T12:01:40-07:00",
+  "date": "2021-09-07T11:10:15-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
-  "contact": [{
-    "name": "MD Partners, Inc.",
-    "telecom": [
-      {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      }
-    ]
-  }],
   "description": "Procedure for chronic pain control management",
-  "jurisdiction": [
-    {
-      "coding": [
-        {
-          "system": "urn:iso:std:iso:3166",
-          "code": "US"
-        }
-      ]
-    }
-  ],
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
   "purpose": "A procedure to provide chronic pain control management",
   "copyright": "© CDC 2016+.",
   "compose": {
-    "include": [
-      {
-        "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108",
-        "concept": [
-          {
-            "code": "408957008"
-          }
-        ]
-      }
-    ]
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "concept": [ {
+        "code": "408957008"
+      } ]
+    } ]
   },
   "expansion": {
-    "timestamp": "2021-01-26T12:01:40-07:00",
-    "contains": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "408957008",
-        "display": "Chronic pain control management (procedure)"
-      }
-    ]
+    "identifier": "e1f8c611-7c64-425c-b0d5-43d3a6a9bfb0",
+    "timestamp": "2021-09-07T11:10:15-06:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "code": "408957008",
+      "display": "Chronic pain control management (procedure)"
+    } ]
   }
 }

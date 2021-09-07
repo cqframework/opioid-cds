@@ -1,56 +1,48 @@
 {
   "resourceType": "ValueSet",
   "id": "pdmp-data-reviewed-finding",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
+    "valueContactDetail": {
+      "name": "MD Partners, Inc.",
+      "telecom": [ {
+        "system": "email",
+        "value": "info@mdpartners.com"
+      } ]
+    }
+  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding",
   "name": "pdmp_data_reviewed_finding",
   "title": "PDMP data reviewed finding",
   "status": "active",
   "experimental": true,
-  "date": "2021-01-26T12:01:40-07:00",
+  "date": "2021-09-07T11:10:16-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
-  "contact": [{
-    "name": "MD Partners, Inc.",
-    "telecom": [
-      {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      }
-    ]
-  }],
   "description": "Finding indicating that the Prescription Drug Monitoring Program (PDMP) data was reviewed",
-  "jurisdiction": [
-    {
-      "coding": [
-        {
-          "system": "urn:iso:std:iso:3166",
-          "code": "US"
-        }
-      ]
-    }
-  ],
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
   "purpose": "Finding indicating that the Prescription Drug Monitoring Program (PDMP) data was reviewed",
   "copyright": "© CDC 2016+.",
   "compose": {
-    "include": [
-      {
-        "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108",
-        "concept": [
-          {
-            "code": "461651000124104"
-          }
-        ]
-      }
-    ]
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "concept": [ {
+        "code": "461651000124104"
+      } ]
+    } ]
   },
   "expansion": {
-    "timestamp": "2021-01-26T12:01:40-07:00",
-    "contains": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "461651000124104",
-        "display": "Review of prescription drug monitoring program record done (situation)"
-      }
-    ]
+    "identifier": "4c838882-5fa5-4aa8-bb4e-340ec9d10f39",
+    "timestamp": "2021-09-07T11:10:16-06:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "code": "461651000124104",
+      "display": "Review of prescription drug monitoring program record done (situation)"
+    } ]
   }
 }

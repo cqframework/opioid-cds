@@ -1,0 +1,201 @@
+{
+  "resourceType": "ValueSet",
+  "id": "opiate-specific-urine-drug-screening-tests",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
+    "valueString": "Step 1. Add all codes found using the following LOINC query: morphine (=system:Urine)?Step 2. Remove codes containing 6-Monoacetylmorphine or diamorphine in their description"
+  }, {
+    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
+    "valueString": "Urine tests for naturally occuring opioids (i.e. opiates) that are specific to a particular natually occurring opioid and therefore do not have the general word 'opiates' in the long name."
+  }, {
+    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
+    "valueString": "Urine test"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
+    "valueContactDetail": {
+      "name": "MD Partners, Inc.",
+      "telecom": [ {
+        "system": "email",
+        "value": "info@mdpartners.com"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode": "structured"
+  } ],
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opiate-specific-urine-drug-screening-tests",
+  "name": "opiate_specific_urine_drug_screening_tests",
+  "title": "Opiate specific urine drug screening tests",
+  "status": "active",
+  "experimental": true,
+  "date": "2021-09-07T11:10:16-06:00",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "description": "Urine tests for naturally occuring opioids (i.e. opiates) that are specific to a particular natually occurring opioid and therefore do not have the general word 'opiates' in the long name.",
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
+  "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
+  "copyright": "© CDC 2016+.",
+  "expansion": {
+    "identifier": "d2527804-2d1d-4369-943a-dcf220e4897e",
+    "timestamp": "2021-09-07T11:10:16-06:00",
+    "contains": [ {
+      "system": "LOINC",
+      "code": "3508-9",
+      "display": "Codeine [Mass/volume] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "16250-3",
+      "display": "Codeine [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "LOINC",
+      "code": "70206-8",
+      "display": "Codeine [Moles/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "LOINC",
+      "code": "3507-1",
+      "display": "Codeine [Presence] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "16197-6",
+      "display": "Codeine [Presence] in Urine by Confirmatory method"
+    }, {
+      "system": "LOINC",
+      "code": "13641-6",
+      "display": "Codeine [Presence] in Urine by SAMHSA confirm method"
+    }, {
+      "system": "LOINC",
+      "code": "19411-8",
+      "display": "Codeine [Presence] in Urine by Screen method"
+    }, {
+      "system": "LOINC",
+      "code": "19414-2",
+      "display": "Codeine cutoff [Mass/volume] in Urine for Confirmatory method"
+    }, {
+      "system": "LOINC",
+      "code": "19413-4",
+      "display": "Codeine cutoff [Mass/volume] in Urine for Screen method"
+    }, {
+      "system": "LOINC",
+      "code": "51739-1",
+      "display": "Codeine Free [Mass/volume] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "89310-7",
+      "display": "Codeine-6-glucuronide [Presence] in Urine by Screen method"
+    }, {
+      "system": "LOINC",
+      "code": "58391-4",
+      "display": "Codeine/Creatinine [Mass Ratio] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "21050-0",
+      "display": "Deprecated Acetylmorphine [Mass/volume] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "27073-6",
+      "display": "Deprecated acetylmorphine [Presence] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "19594-1",
+      "display": "Deprecated Monoacetylmorphine [Mass/volume] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "14845-2",
+      "display": "Deprecated Monoacetylmorphine [Presence] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "3829-9",
+      "display": "Morphine Free [Mass/volume] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "20550-0",
+      "display": "Morphine Free [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "LOINC",
+      "code": "3828-1",
+      "display": "Morphine Free [Presence] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "19602-2",
+      "display": "Morphine Free [Presence] in Urine by Confirmatory method"
+    }, {
+      "system": "LOINC",
+      "code": "19601-4",
+      "display": "Morphine Free [Presence] in Urine by Screen method"
+    }, {
+      "system": "LOINC",
+      "code": "19604-8",
+      "display": "Morphine Free cutoff [Mass/volume] in Urine for Confirmatory method"
+    }, {
+      "system": "LOINC",
+      "code": "19603-0",
+      "display": "Morphine Free cutoff [Mass/volume] in Urine for Screen method"
+    }, {
+      "system": "LOINC",
+      "code": "3832-3",
+      "display": "Morphine [Mass/time] in 24 hour Urine"
+    }, {
+      "system": "LOINC",
+      "code": "3831-5",
+      "display": "Morphine [Mass/volume] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "78768-9",
+      "display": "Morphine [Mass/volume] in Urine -- adjusted for lean body mass+urine creatinine"
+    }, {
+      "system": "LOINC",
+      "code": "16251-1",
+      "display": "Morphine [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "LOINC",
+      "code": "70210-0",
+      "display": "Morphine [Moles/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "LOINC",
+      "code": "3830-7",
+      "display": "Morphine [Presence] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "16196-8",
+      "display": "Morphine [Presence] in Urine by Confirmatory method"
+    }, {
+      "system": "LOINC",
+      "code": "13648-1",
+      "display": "Morphine [Presence] in Urine by SAMHSA confirm method"
+    }, {
+      "system": "LOINC",
+      "code": "19597-4",
+      "display": "Morphine [Presence] in Urine by Screen method"
+    }, {
+      "system": "LOINC",
+      "code": "78861-2",
+      "display": "Morphine [Z-score] in Urine"
+    }, {
+      "system": "LOINC",
+      "code": "19600-6",
+      "display": "Morphine cutoff [Mass/volume] in Urine for Confirmatory method"
+    }, {
+      "system": "LOINC",
+      "code": "19599-0",
+      "display": "Morphine cutoff [Mass/volume] in Urine for Screen method"
+    }, {
+      "system": "LOINC",
+      "code": "89308-1",
+      "display": "Morphine-6-Glucuronide [Presence] in Urine by Screen method"
+    }, {
+      "system": "LOINC",
+      "code": "58392-2",
+      "display": "Morphine/Creatinine [Mass Ratio] in Urine"
+    } ]
+  }
+}
