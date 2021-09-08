@@ -73,7 +73,7 @@
     "type": "depends-on",
     "display": "Value set Encounter Diagnosis Condition Category",
     "resource": {
-      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category"
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis"
     }
   }, {
     "type": "depends-on",
@@ -183,7 +183,7 @@
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis"
       }
     } ]
   }, {

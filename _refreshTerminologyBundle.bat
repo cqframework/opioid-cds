@@ -21,7 +21,7 @@ COPY input\vocabulary\valueset\valueset-cocaine-urine-drug-screening-tests.json 
 COPY input\vocabulary\valueset\valueset-conditions-documenting-substance-misuse.json bundlegen\sourcefiles\valueset-conditions-documenting-substance-misuse.json
 COPY input\vocabulary\valueset\valueset-conditions-likely-terminal-for-opioid-prescribing.json bundlegen\sourcefiles\valueset-conditions-likely-terminal-for-opioid-prescribing.json
 COPY input\vocabulary\valueset\valueset-condition-clinical-status-active.json bundlegen\sourcefiles\valueset-condition-clinical-status-active.json
-COPY input\vocabulary\valueset\valueset-condition-encounter-diagnosis-category.json bundlegen\sourcefiles\valueset-condition-encounter-diagnosis-category.json
+COPY input\vocabulary\valueset\valueset-condition-category-encounter-diagnosis.json bundlegen\sourcefiles\valueset-condition-category-encounter-diagnosis.json
 COPY input\vocabulary\valueset\valueset-condition-problem-list-category.json bundlegen\sourcefiles\valueset-condition-problem-list-category.json
 COPY input\vocabulary\valueset\valueset-condition-us-core-health-concern-category.json bundlegen\sourcefiles\valueset-condition-us-core-health-concern-category.json
 COPY input\vocabulary\valueset\valueSet-extended-release-opioid-with-ambulatory-misuse-potential.json bundlegen\sourcefiles\valueSet-extended-release-opioid-with-ambulatory-misuse-potential.json

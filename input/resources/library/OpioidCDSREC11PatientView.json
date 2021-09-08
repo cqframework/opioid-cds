@@ -124,7 +124,7 @@
     "type": "depends-on",
     "display": "Value set Encounter Diagnosis Condition Category",
     "resource": {
-      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category"
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis"
     }
   }, {
     "type": "depends-on",
@@ -228,6 +228,19 @@
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "mustSupport": [ "recorder", "authoredOn", "dosageInstruction", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
+    "codeFilter": [ {
+      "path": "status",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-status-active"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Condition"
     } ],
     "type": "Condition",
@@ -235,7 +248,7 @@
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis"
       }
     } ]
   }, {

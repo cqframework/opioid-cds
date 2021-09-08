@@ -1325,7 +1325,7 @@
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Encounter Diagnosis Category"/>
             <description value="Encounter Diagnosis Condition Category"/>
             <sourceReference>
-                <reference value="ValueSet/condition-encounter-diagnosis-category"/>
+                <reference value="ValueSet/condition-category-encounter-diagnosis"/>
             </sourceReference>
         </resource>
         <resource>

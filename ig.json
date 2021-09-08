@@ -834,9 +834,9 @@
       "source": "valueset-condition-clinical-status-active.json",
       "base": "ValueSet-condition-clinical-status-active.html"
     },
-    "ValueSet/condition-encounter-diagnosis-category": {
-      "source": "valueset-condition-encounter-diagnosis-category.json",
-      "base": "ValueSet-condition-encounter-diagnosis-category.html"
+    "ValueSet/condition-category-encounter-diagnosis": {
+      "source": "valueset-condition-category-encounter-diagnosis.json",
+      "base": "ValueSet-condition-category-encounter-diagnosis.html"
     },
     "ValueSet/condition-problem-list-category": {
       "source": "valueset-condition-problem-list-category.json",

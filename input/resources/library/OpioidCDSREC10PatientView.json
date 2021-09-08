@@ -148,7 +148,7 @@
     "type": "depends-on",
     "display": "Value set Encounter Diagnosis Condition Category",
     "resource": {
-      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category"
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis"
     }
   }, {
     "type": "depends-on",
@@ -399,11 +399,6 @@
       "valueSetReference": {
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
       }
-    }, {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening"
-      }
     } ]
   }, {
     "extension": [ {
@@ -417,10 +412,18 @@
       "valueSetReference": {
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
       }
-    }, {
-      "path": "code",
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
       }
     } ]
   }, {
@@ -435,11 +438,6 @@
       "valueSetReference": {
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
       }
-    }, {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-urine-drug-screening-tests"
-      }
     } ]
   }, {
     "extension": [ {
@@ -453,10 +451,18 @@
       "valueSetReference": {
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
       }
-    }, {
-      "path": "code",
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/phencyclidine-urine-drug-screening-tests"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
       }
     } ]
   }, {
@@ -469,7 +475,7 @@
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis"
       }
     } ]
   }, {
@@ -496,6 +502,110 @@
       "path": "category",
       "valueSetReference": {
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/us-core-health-concern-condition-category"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
       }
     } ]
   }, {
