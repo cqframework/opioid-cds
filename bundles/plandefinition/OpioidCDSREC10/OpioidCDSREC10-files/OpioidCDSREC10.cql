@@ -7,9 +7,6 @@ include OpioidCDSCommon version '1.2.3' called Common
 include OpioidCDSRoutines version '1.2.3' called Routines
 include OpioidCDSCommonConfig version '1.2.3' called Config
 
-valueset "Cocaine Urine Tests": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-urine-drug-screening-tests'
-valueset "PCP Urine Tests": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/phencyclidine-urine-drug-screening-tests'
-
 /*
 **  Recommendation #10
 **    When prescribing opioids for chronic pain, providers should use urine drug
@@ -96,12 +93,12 @@ define "Opioid Screenings":
 
 define "Cocaine Screenings":
   GetRelevantScreenings("Laboratory Observations" LabObservations
-      where (LabObservations.code in "Cocaine Urine Tests")
+      where (LabObservations.code in Common."Cocaine Urine Tests")
   )
 
 define "PCP Screenings":
   GetRelevantScreenings("Laboratory Observations" LabObservations
-      where (LabObservations.code in "PCP Urine Tests")
+      where (LabObservations.code in Common."PCP Urine Tests")
   )
 
 define function GetRelevantScreenings(obsList List<Observation>):

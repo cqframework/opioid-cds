@@ -308,7 +308,7 @@
       "valueCode": "MedicationRequest"
     } ],
     "type": "MedicationRequest",
-    "mustSupport": [ "recorder", "authoredOn", "dosageInstruction", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
+    "mustSupport": [ "recorder", "dosageInstruction", "authoredOn", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
     "codeFilter": [ {
       "path": "status",
       "valueSetReference": {
