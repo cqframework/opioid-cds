@@ -13,6 +13,8 @@
 }, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"CHECK_MEMERSHIP_ONLY"}####
 v: {
   "display" : "",
+  "code" : "",
+  "system" : "",
   "severity" : "error",
   "error" : "The code system \"\" is not known (encountered paired with code = \"outpatient\"); The code provided (#outpatient) is not valid in the value set 'MedicationRequestCategory' (from http://tx.fhir.org/r3)"
 }
