@@ -223,8 +223,11 @@ define "Active Cancer Diagnoses":
 define "Oncologist Practitioner Roles":
   [PractitionerRole: specialty in Common."Oncology specialty designations (NUCC)"] PractitionerRole
 
+define "Ambulatory Encounters":
+  [Encounter: Common."Office Visit"]
+
 define "Encounters with Cancer Diagnosis During Encounter Period":
-  [Encounter: Common."Office Visit"] Encounter
+  "Ambulatory Encounters" Encounter
     where date from Encounter.period."start".value in day of "Encounter Period"
       and exists (
         Encounter.diagnosis EncounterDiagnosis

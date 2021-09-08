@@ -7,13 +7,7 @@ include OpioidCDSCommon version '1.2.3' called Common
 include OpioidCDSRoutines version '1.2.3' called Routines
 include OpioidCDSCommonConfig version '1.2.3' called Config
 
-valueset "Cocaine Urine Tests": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-urine-drug-screening-tests'
-valueset "PCP Urine Tests": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/phencyclidine-urine-drug-screening-tests'
-
 code "Urine Drug Screening": '310627008' from Common.SNOMED display 'Urine drug screening (procedure)'
-
-// This is meant to be the concept for the Suggestion's ProcedureRequest.category
-code "Urine Drug Screening Category": '310627008' from Common.SNOMED display 'Urine drug screening (procedure) Category'
 
 /*
 **  Recommendation #10
@@ -83,36 +77,28 @@ define "Urine Screenings during the Last 12 Months":
     union "Cocaine Screenings"
     union "PCP Screenings"
 
-/*
-every pos date in last 12 months then count # neg and report that
-most recent POS PCP/cocaine
- then get subsequent neg date > pos based on date of each neg and pos
-*/
+define "Laboratory Observations":
+  [Observation: "category" in Common."Observation Category Laboratory"]
 
 define "Non-opioid Screenings":
-  GetRelevantScreenings(
-    [Observation: "category" in Common."Observation Category Laboratory"] LabObservations
+  GetRelevantScreenings("Laboratory Observations" LabObservations
       where (LabObservations.code in Common."Non-opioid drug urine screening")
   )
 
 define "Opioid Screenings":
-  GetRelevantScreenings(
-    [Observation: "category" in Common."Observation Category Laboratory"] LabObservations
+  GetRelevantScreenings("Laboratory Observations" LabObservations
       where (LabObservations.code in Common."Opioid drug urine screening")
   )
 
 define "Cocaine Screenings":
-  GetRelevantScreenings(
-    [Observation: "category" in Common."Observation Category Laboratory"] LabObservations
-      where (LabObservations.code in "Cocaine Urine Tests")
+  GetRelevantScreenings("Laboratory Observations" LabObservations
+      where (LabObservations.code in Common."Cocaine Urine Tests")
   )
 
 define "PCP Screenings":
-  GetRelevantScreenings(
-    [Observation: "category" in Common."Observation Category Laboratory"] LabObservations
-      where (LabObservations.code in "PCP Urine Tests")
+  GetRelevantScreenings("Laboratory Observations" LabObservations
+      where (LabObservations.code in Common."PCP Urine Tests")
   )
-
 
 define function GetRelevantScreenings(obsList List<Observation>):
   obsList LabObservations
@@ -220,15 +206,18 @@ define "Summary":
 define "Urine Drug Screening ProcedureRequest Category":
   FHIR.CodeableConcept {
     coding: {
-      First(
-        [Encounter] E
-          where E.period starts same day as Today()
-          sort by start of period desc
-      ).class
+      FHIR.Coding {
+        system: FHIR.uri { value: 'http://terminology.hl7.org/CodeSystem/medicationrequest-category' },
+        code: FHIR.code { value: 'outpatient' },
+        display: FHIR.string { value: 'Outpatient' }
+      }
     }
   }
-
-  /* FHIR.CodeableConcept { coding: { ToCoding("Urine Drug Screening Category") } } */
+  /* singleton from (First(
+    [Encounter] E
+      where E.period starts same day as Today()
+      sort by start of period desc
+  ).type) */
 
 // Service Request - Urine Screening
 // NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest

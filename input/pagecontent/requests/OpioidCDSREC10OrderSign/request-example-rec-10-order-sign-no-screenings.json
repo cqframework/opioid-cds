@@ -7,7 +7,7 @@
   "context": {
     "userId": "Practitioner/123",
     "patientId": "Patient/example-rec-10-no-screenings",
-    "encounterId": "example-rec-10-no-screenings-context",
+    "encounterId": "example-rec-10-no-screenings-pefetch",
     "draftOrders": {
       "resourceType": "Bundle",
       "entry": [{
@@ -151,7 +151,19 @@
         }
       }
     },
-    "item3": {
+    "item3": null,
+    "item4": null,
+    "item5": null,
+    "item6": null,
+    "item7": null,
+    "item8": null,
+    "item9": null,
+    "item10": null,
+    "item11": null,
+    "item12": null,
+    "item13": null,
+    "item14": null,
+    "item15": {
       "response": {
         "status": "200 OK"
       },
@@ -159,13 +171,29 @@
         "resourceType": "Encounter",
         "id": "example-rec-10-no-screenings-prefetch",
         "status": "finished",
+        "class": {
+            "system": "http://hl7.org/fhir/v3/ActCode",
+            "code": "IMP",
+            "display": "inpatient encounter"
+        },
+        "type": [
+            {
+                "coding": [
+                    {
+                    "system": "http://snomed.info/sct",
+                    "code": "367336001",
+                    "display": "Chemotherapy"
+                    }
+                ]
+            }
+        ],
         "subject": {
           "reference": "Patient/example-rec-10-no-screenings"
         },
         "period": {
           "extension": [{
             "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-            "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() - 90 days } }"
+            "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() } }"
           }]
         }
       }

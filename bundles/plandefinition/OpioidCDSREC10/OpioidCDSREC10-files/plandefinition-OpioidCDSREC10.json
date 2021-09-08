@@ -157,7 +157,7 @@
       },
       "selectionBehavior": "any",
       "definition": {
-        "reference": "ActivityDefinition/opioidcds-urine-screening-request-order-select"
+        "reference": "ActivityDefinition/opioidcds-urine-screening-request"
       },
       "dynamicValue": [
         {
@@ -171,6 +171,12 @@
         {
           "path": "action.extension",
           "expression": "Indicator"
+        },
+        {
+          "description": "Category for the ProcedureRequest Suggestion",
+          "path": "category",
+          "language": "text/cql",
+          "expression": "Urine Drug Screening ProcedureRequest Category"
         }
       ],
       "action": [
