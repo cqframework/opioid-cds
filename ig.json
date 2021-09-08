@@ -830,6 +830,10 @@
       "source": "valueset-conditions-likely-terminal-for-opioid-prescribing.json",
       "base": "ValueSet-conditions-likely-terminal-for-opioid-prescribing.html"
     },
+    "ValueSet/condition-clinical-status-active": {
+      "source": "valueset-condition-clinical-status-active.json",
+      "base": "ValueSet-condition-clinical-status-active.html"
+    },
     "ValueSet/condition-encounter-diagnosis-category": {
       "source": "valueset-condition-encounter-diagnosis-category.json",
       "base": "ValueSet-condition-encounter-diagnosis-category.html"
@@ -862,6 +866,14 @@
       "source": "valueset-limited-life-expectancy-conditions.json",
       "base": "ValueSet-limited-life-expectancy-conditions.html"
     },
+    "ValueSet/medicationrequest-category-community": {
+      "source": "valueset-medicationrequest-category-community.json",
+      "base": "ValueSet-medicationrequest-category-community.html"
+    },
+    "ValueSet/medicationrequest-status-active": {
+      "source": "valueset-medicationrequest-status-active.json",
+      "base": "ValueSet-medicationrequest-status-active.html"
+    },
     "ValueSet/naloxone-medications": {
       "source": "valueset-naloxone-medications.json",
       "base": "ValueSet-naloxone-medications.html"
@@ -873,6 +885,14 @@
     "ValueSet/office-visit": {
       "source": "valueset-office-visit.json",
       "base": "ValueSet-office-visit.html"
+    },
+    "ValueSet/observation-category-laboratory": {
+      "source": "valueset-observation-category-laboratory.json",
+      "base": "ValueSet-observation-category-laboratory.html"
+    },
+    "ValueSet/observation-category-procedure": {
+      "source": "valueset-observation-category-procedure.json",
+      "base": "ValueSet-observation-category-procedure.html"
     },
     "ValueSet/oncology-specialty-designations": {
       "source": "valueset-oncology-specialty-designations.json",
