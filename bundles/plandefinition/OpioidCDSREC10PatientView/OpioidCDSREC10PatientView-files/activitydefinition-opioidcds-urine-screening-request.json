@@ -1,10 +1,10 @@
 {
     "resourceType": "ActivityDefinition",
-    "id": "opioidcds-urine-screening-request-patient-view",
-    "url": "http://fhir.org/guides/cdc/opioid-cds/ActivityDefinition/opioidcds-urine-screening-request-patient-view",
+    "id": "opioidcds-urine-screening-request",
+    "url": "http://fhir.org/guides/cdc/opioid-cds/ActivityDefinition/opioidcds-urine-screening-request",
     "version": "1.2.3",
-    "name": "ActivityDefinition_Urine_Screening_ProcedureRequest_Patient_View",
-    "title": "ActivityDefinition - ProcedureRequest: Urine Screening (patient-view)",
+    "name": "ActivityDefinition_Urine_Screening_ProcedureRequest",
+    "title": "ActivityDefinition - ProcedureRequest: Urine Screening",
     "status": "draft",
     "date": "2020-12-14",
     "publisher": "Centers for Disease Control and Prevention (CDC)",
@@ -73,7 +73,7 @@
     "copyright": "© CDC 2016+.",
     "library": [
       {
-        "reference": "Library/OpioidCDSREC10PatientView"
+        "reference": "Library/OpioidCDSREC10"
       }
     ],
     "kind": "ProcedureRequest",
@@ -84,13 +84,5 @@
               "code": "1"
             }
         ]
-    },
-    "dynamicValue": [
-      {
-        "description": "Category for the ProcedureRequest Suggestion",
-        "path": "category",
-        "language": "text/cql",
-        "expression": "OpioidCDSREC10PatientView.\"Urine Drug Screening ProcedureRequest Category\""
-      }
-    ]
+    }
 }

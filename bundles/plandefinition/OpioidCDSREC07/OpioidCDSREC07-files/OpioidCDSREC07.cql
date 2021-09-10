@@ -88,7 +88,7 @@ define "Opioid Risk Assessment in Past 90 Days":
 define "Prescribed Opioids for 7 of Past 10 Days with an Encounter":
   Common."Days on Opioids during Period"("Previous 10 Days Interval") >= 7
     and exists (
-      [Encounter: Common."Office Visit"] AmbulatoryEncounter
+      Routines."Ambulatory Encounters" AmbulatoryEncounter
         where AmbulatoryEncounter.period during "Encounter Interval"
     )
 
