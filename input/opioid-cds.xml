@@ -1388,6 +1388,22 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ValueSet - Observation Category Laboratory"/>
+            <description value="Observation laboratory codes"/>
+            <sourceReference>
+                <reference value="ValueSet/observation-category-laboratory"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - Observation Category Procedure"/>
+            <description value="Observation procedure codes"/>
+            <sourceReference>
+                <reference value="ValueSet/observation-category-procedure"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Office Visit"/>
             <description value="Office visit codes"/>
             <sourceReference>

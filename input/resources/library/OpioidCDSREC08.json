@@ -4,7 +4,7 @@
   "extension": [ {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
     "valueReference": {
-      "reference": "cqf-tooling"
+      "reference": "Device/cqf-tooling"
     }
   } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSREC08",
@@ -144,7 +144,7 @@
     "type": "depends-on",
     "display": "Value set Problem List Condition Category",
     "resource": {
-      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/problem-list-condition-category"
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-problem-list-category"
     }
   }, {
     "type": "depends-on",
@@ -292,7 +292,7 @@
       "valueCode": "MedicationRequest"
     } ],
     "type": "MedicationRequest",
-    "mustSupport": [ "recorder", "authoredOn", "dosageInstruction", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
+    "mustSupport": [ "recorder", "dosageInstruction", "authoredOn", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
     "codeFilter": [ {
       "path": "status",
       "valueSetReference": {
@@ -348,7 +348,7 @@
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/problem-list-condition-category"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-problem-list-category"
       }
     } ]
   }, {
@@ -370,7 +370,7 @@
       "valueCode": "MedicationRequest"
     } ],
     "type": "MedicationRequest",
-    "mustSupport": [ "recorder", "authoredOn", "dosageInstruction", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
+    "mustSupport": [ "recorder", "dosageInstruction", "authoredOn", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
     "codeFilter": [ {
       "path": "status",
       "valueSetReference": {

@@ -5,8 +5,6 @@
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "",
-  "code" : "",
-  "system" : "",
   "severity" : "error",
   "error" : "The code \"C00-C96\" is not valid in the system http://hl7.org/fhir/sid/icd-10-cm; The code provided (http://hl7.org/fhir/sid/icd-10-cm#C00-C96) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
 }
@@ -16,11 +14,9 @@ v: {
   "code" : "D03"
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
-  "display" : "Melanoma in situ",
-  "code" : "D03",
-  "system" : "http://hl7.org/fhir/sid/icd-10-cm",
-  "severity" : null,
-  "error" : ""
+  "display" : "",
+  "severity" : "error",
+  "error" : "Error sending HTTP Post/Put Payload: tx.fhir.org:80 failed to respond"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -29,8 +25,6 @@ v: {
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "",
-  "code" : "",
-  "system" : "",
   "severity" : "error",
   "error" : "The code \"D37-D48\" is not valid in the system http://hl7.org/fhir/sid/icd-10-cm; The code provided (http://hl7.org/fhir/sid/icd-10-cm#D37-D48) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
 }
@@ -41,8 +35,6 @@ v: {
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "",
-  "code" : "",
-  "system" : "",
   "severity" : "error",
   "error" : "The code \"D49-D49\" is not valid in the system http://hl7.org/fhir/sid/icd-10-cm; The code provided (http://hl7.org/fhir/sid/icd-10-cm#D49-D49) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
 }
@@ -52,11 +44,9 @@ v: {
   "code" : "G89.3"
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
-  "display" : "Neoplasm related pain (acute) (chronic)",
-  "code" : "G89.3",
-  "system" : "http://hl7.org/fhir/sid/icd-10-cm",
-  "severity" : null,
-  "error" : ""
+  "display" : "",
+  "severity" : "error",
+  "error" : "Error sending HTTP Post/Put Payload: tx.fhir.org:80 failed to respond"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -65,8 +55,6 @@ v: {
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "",
-  "code" : "",
-  "system" : "",
   "severity" : "error",
   "error" : "The code \"D3A-D3A\" is not valid in the system http://hl7.org/fhir/sid/icd-10-cm; The code provided (http://hl7.org/fhir/sid/icd-10-cm#D3A-D3A) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
 }
@@ -77,8 +65,6 @@ v: {
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "Alcohol abuse counseling and surveillance",
-  "code" : "Z71.4",
-  "system" : "http://hl7.org/fhir/sid/icd-10-cm",
   "severity" : null,
   "error" : ""
 }
@@ -89,8 +75,6 @@ v: {
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "Drug abuse counseling and surveillance",
-  "code" : "Z71.5",
-  "system" : "http://hl7.org/fhir/sid/icd-10-cm",
   "severity" : null,
   "error" : ""
 }
@@ -100,11 +84,9 @@ v: {
   "code" : "F55"
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
-  "display" : "Abuse of non-psychoactive substances",
-  "code" : "F55",
-  "system" : "http://hl7.org/fhir/sid/icd-10-cm",
-  "severity" : null,
-  "error" : ""
+  "display" : "",
+  "severity" : "error",
+  "error" : "Error sending HTTP Post/Put Payload: tx.fhir.org:80 failed to respond"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -113,10 +95,8 @@ v: {
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "",
-  "code" : "",
-  "system" : "",
   "severity" : "error",
-  "error" : "The code \"F10-F19\" is not valid in the system http://hl7.org/fhir/sid/icd-10-cm; The code provided (http://hl7.org/fhir/sid/icd-10-cm#F10-F19) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
+  "error" : "Error sending HTTP Post/Put Payload: tx.fhir.org:80 failed to respond"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -125,8 +105,6 @@ v: {
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "Nicotine dependence",
-  "code" : "F17",
-  "system" : "http://hl7.org/fhir/sid/icd-10-cm",
   "severity" : null,
   "error" : ""
 }
@@ -137,8 +115,6 @@ v: {
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "",
-  "code" : "",
-  "system" : "",
   "severity" : "error",
   "error" : "The code \"C76-C80\" is not valid in the system http://hl7.org/fhir/sid/icd-10-cm; The code provided (http://hl7.org/fhir/sid/icd-10-cm#C76-C80) is not valid in the value set 'All codes known to the system' (from http://tx.fhir.org/r3)"
 }
@@ -149,8 +125,6 @@ v: {
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "Malignant neoplasm of pancreas",
-  "code" : "C25",
-  "system" : "http://hl7.org/fhir/sid/icd-10-cm",
   "severity" : null,
   "error" : ""
 }
@@ -161,8 +135,6 @@ v: {
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "Alcoholic hepatic failure",
-  "code" : "K70.4",
-  "system" : "http://hl7.org/fhir/sid/icd-10-cm",
   "severity" : null,
   "error" : ""
 }
@@ -173,8 +145,6 @@ v: {
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "Hepatic failure, not elsewhere classified",
-  "code" : "K72",
-  "system" : "http://hl7.org/fhir/sid/icd-10-cm",
   "severity" : null,
   "error" : ""
 }
@@ -184,10 +154,8 @@ v: {
   "code" : "F11"
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
-  "display" : "Opioid related disorders",
-  "code" : "F11",
-  "system" : "http://hl7.org/fhir/sid/icd-10-cm",
-  "severity" : null,
-  "error" : ""
+  "display" : "",
+  "severity" : "error",
+  "error" : "Error sending HTTP Post/Put Payload: tx.fhir.org:80 failed to respond"
 }
 -------------------------------------------------------------------------------------

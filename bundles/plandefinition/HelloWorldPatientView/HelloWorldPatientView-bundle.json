@@ -9,7 +9,7 @@
       "extension": [ {
         "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
         "valueReference": {
-          "reference": "cqf-tooling"
+          "reference": "Device/cqf-tooling"
         }
       } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/Library/HelloWorldPatientView",
@@ -143,7 +143,7 @@
       "extension": [ {
         "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
         "valueReference": {
-          "reference": "cqf-tooling"
+          "reference": "Device/cqf-tooling"
         }
       } ],
       "url": "http://hl7.org/fhir/Library/FHIR-ModelInfo",
@@ -279,7 +279,7 @@
       "extension": [ {
         "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
         "valueReference": {
-          "reference": "cqf-tooling"
+          "reference": "Device/cqf-tooling"
         }
       } ],
       "url": "http://hl7.org/fhir/Library/FHIRHelpers",

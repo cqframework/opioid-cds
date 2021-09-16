@@ -5,8 +5,6 @@
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet",
-  "code" : "1049502",
-  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
   "severity" : null,
   "error" : ""
 }
@@ -17,8 +15,6 @@ v: {
 }, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "72 HR fentanyl 0.075 MG/HR Transdermal System",
-  "code" : "197696",
-  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
   "severity" : null,
   "error" : ""
 }
@@ -29,8 +25,6 @@ v: {
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet",
-  "code" : "1049502",
-  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
   "severity" : null,
   "error" : ""
 }
@@ -40,11 +34,9 @@ v: {
   "code" : "197696"
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
-  "display" : "72 HR fentanyl 0.075 MG/HR Transdermal System",
-  "code" : "197696",
-  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
-  "severity" : null,
-  "error" : ""
+  "display" : "",
+  "severity" : "error",
+  "error" : "Error sending HTTP Post/Put Payload: tx.fhir.org:80 failed to respond"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -54,8 +46,6 @@ v: {
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet",
-  "code" : "1049502",
-  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
   "severity" : null,
   "error" : ""
 }
@@ -67,8 +57,6 @@ v: {
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "carbinoxamine maleate 0.4 MG/ML / hydrocodone bitartrate 1 MG/ML / pseudoephedrine hydrochloride 6 MG/ML Oral Solution",
-  "code" : "1012727",
-  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
   "severity" : null,
   "error" : ""
 }
@@ -80,8 +68,6 @@ v: {
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "temazepam 20 MG Oral Tablet",
-  "code" : "104693",
-  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
   "severity" : null,
   "error" : ""
 }
@@ -93,8 +79,6 @@ v: {
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "naloxone hydrochloride 0.02 MG/ML Injectable Solution",
-  "code" : "1191212",
-  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
   "severity" : null,
   "error" : ""
 }
@@ -106,8 +90,6 @@ v: {
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "flurazepam hydrochloride 15 MG Oral Capsule",
-  "code" : "1298088",
-  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
   "severity" : null,
   "error" : ""
 }
@@ -119,8 +101,6 @@ v: {
 }, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "72 HR fentanyl 0.075 MG/HR Transdermal System",
-  "code" : "197696",
-  "system" : "http://www.nlm.nih.gov/research/umls/rxnorm",
   "severity" : null,
   "error" : ""
 }
