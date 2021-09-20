@@ -1,35 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "opioid-misuse-disorders",
-  "extension": [ {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-    "valueString": "Conditions indicating opioid misuse"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-    "valueString": "Condition"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-    "valueString": "Conditions indicating opioid misuse"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-    "valueString": "none"
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-disorders",
   "name": "opioid_misuse_disorders",
   "title": "Opioid misuse disorders",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:16-06:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Conditions indicating opioid misuse",
   "jurisdiction": [ {
     "coding": [ {
@@ -98,8 +83,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "d04a2012-c1da-4d54-af97-553413fc5487",
-    "timestamp": "2021-09-07T11:10:16-06:00",
+    "identifier": "379a6721-eb89-47a7-94ad-827cf79b2813",
+    "timestamp": "2021-09-17T12:27:32-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "code": "191865004",

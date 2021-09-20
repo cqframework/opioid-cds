@@ -1,23 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "pain-management-procedure",
-  "extension": [ {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure",
   "name": "pain_management_procedure",
   "title": "Pain management procedure",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:15-06:00",
+  "date": "2021-09-17T12:27:31-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Procedure for chronic pain control management",
   "jurisdiction": [ {
     "coding": [ {
@@ -37,8 +34,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "e1f8c611-7c64-425c-b0d5-43d3a6a9bfb0",
-    "timestamp": "2021-09-07T11:10:15-06:00",
+    "identifier": "63194a61-c33e-465f-8bfd-22a36932e4e4",
+    "timestamp": "2021-09-17T12:27:31-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "code": "408957008",

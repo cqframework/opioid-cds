@@ -1,44 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "benzodiazepine-medications",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
-  },
-  "extension": [ {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
-    "valueString": "https://mor.nlm.nih.gov/RxMix/ Script:?Step 1a ?Create Batch text input file (SCT-benzo.txt) with following SCT identifier (for the concept \"Product containing benzodiazepine (product)\") as an input within the file: ?16047007       ??Step 1b?Submit batch job using the above SCT-benzo.txt file to following workflow by uploading file (SCT-benzo.config) with the following in the file:  <WFE><filteredOutputs>RXCUI|name|term_type</filteredOutputs><input>NOINPUT</input><FS><service>NOINPUT</service><function>findClassById</function><level>0</level><paramSize>1</paramSize><param order ='0'>?</param></FS><FS><service>NOINPUT</service><function>getClassMembers</function><level>1</level><paramSize>5</paramSize><param order ='0'>?</param><param order ='1'>SNOMEDCT</param><param order ='2'>isa_structure</param><param order ='3'>0</param><param order ='4'>IN,MIN,PIN</param></FS><FS><service>NOINPUT</service><function>getRelatedByType</function><level>2</level><paramSize>2</paramSize><param order ='0'>?</param><param order ='1'>BPCK,GPCK,SBD,SCD</param></FS></WFE>?This will produce a result file with all benzodiazepine clinical drugs included."
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-    "valueString": "All benzodiazepine clinical drugs"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-    "valueString": "Medication"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-    "valueString": "All benzodiazepine-class medications"
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-    "valueCode": "computable"
-  }, {
-    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-    "valueCode": "structured"
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/benzodiazepine-medications",
   "name": "benzodiazepine_medications",
   "title": "benzodiazepine medications",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:16-06:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "All benzodiazepine clinical drugs",
   "jurisdiction": [ {
     "coding": [ {
@@ -49,8 +25,8 @@
   "purpose": "Benzodiazepine medications for opioid management",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "3faea915-332c-45b0-a624-1d055f59dd2d",
-    "timestamp": "2021-09-07T11:10:16-06:00",
+    "identifier": "bac15843-3427-448d-baa2-f1926c45df5e",
+    "timestamp": "2021-09-17T12:27:32-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "code": "141927",

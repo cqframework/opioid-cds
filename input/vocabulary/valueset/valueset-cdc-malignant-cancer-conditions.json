@@ -1,35 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "cdc-malignant-cancer-conditions",
-  "extension": [ {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-    "valueString": "All neoplastic and malignant conditions, including Neoplasm related pain"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-    "valueString": "Condition"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-    "valueString": "All C and D codes and G893 Neoplasm related pain (acute) (chronic)"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-    "valueString": "All D50-D89 codes, D3A-D3A and descendants."
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cdc-malignant-cancer-conditions",
   "name": "cdc_malignant_cancer_conditions",
   "title": "CDC malignant cancer conditions",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:15-06:00",
+  "date": "2021-09-17T12:27:31-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "All neoplastic and malignant conditions, including pain due to neoplasm.",
   "jurisdiction": [ {
     "coding": [ {
@@ -86,8 +71,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "584e730c-4d96-4bbb-819e-303c2f8e0b46",
-    "timestamp": "2021-09-07T11:10:15-06:00",
+    "identifier": "1a233442-29fe-4fac-85a6-34cea9c25633",
+    "timestamp": "2021-09-17T12:27:31-06:00",
     "contains": [ {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
       "code": "C00-C14",

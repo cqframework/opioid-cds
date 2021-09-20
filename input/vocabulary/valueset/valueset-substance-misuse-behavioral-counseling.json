@@ -1,35 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "substance-misuse-behavioral-counseling",
-  "extension": [ {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-    "valueString": "Counseling and associated procedures for substance misuse"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-    "valueString": "Procedure"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-    "valueString": "Counseling and associated procedures for substance misuse"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-    "valueString": "none"
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling",
   "name": "substance_misuse_behavioral_counseling",
   "title": "Substance misuse behavioral counseling",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:13-06:00",
+  "date": "2021-09-17T12:27:28-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Counseling and associated procedures for substance misuse",
   "jurisdiction": [ {
     "coding": [ {
@@ -83,8 +68,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "f159bfff-30dd-442f-8997-5014cd92eeae",
-    "timestamp": "2021-09-07T11:10:15-06:00",
+    "identifier": "dffc627e-04ca-4af4-8754-c59cad297de3",
+    "timestamp": "2021-09-17T12:27:31-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "code": "313071005",

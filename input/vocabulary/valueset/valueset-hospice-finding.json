@@ -1,32 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "hospice-finding",
-  "extension": [ {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-    "valueString": "Finding codes for receiving hospice care"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-    "valueString": "Finding"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-    "valueString": "Codes related"
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding",
   "name": "hospice_finding",
   "title": "Hospice Finding",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:15-06:00",
+  "date": "2021-09-17T12:27:31-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Finding codes for receiving hospice care",
   "jurisdiction": [ {
     "coding": [ {
@@ -80,26 +68,26 @@
     } ]
   },
   "expansion": {
-    "identifier": "3f7ac775-9e74-46c9-ba66-24283faf03f4",
-    "timestamp": "2021-09-07T11:10:15-06:00",
+    "identifier": "a4ca64f6-abf9-4009-b37d-901895b08cd4",
+    "timestamp": "2021-09-17T12:27:31-06:00",
     "contains": [ {
-      "system": "SNOMED CT",
+      "system": "http://snomed.info/sct",
       "code": "170935008",
       "display": "Full care by hospice (finding)"
     }, {
-      "system": "SNOMED CT",
+      "system": "http://snomed.info/sct",
       "code": "448451000124101",
       "display": "Transition from self-care to hospice (finding)"
     }, {
-      "system": "SNOMED CT",
+      "system": "http://snomed.info/sct",
       "code": "1891000124102",
       "display": "Transition from acute care to hospice (finding)"
     }, {
-      "system": "SNOMED CT",
+      "system": "http://snomed.info/sct",
       "code": "1951000124104",
       "display": "Transition from long-term care to hospice (finding)"
     }, {
-      "system": "SNOMED CT",
+      "system": "http://snomed.info/sct",
       "code": "305911006",
       "display": "Seen in hospice"
     } ]

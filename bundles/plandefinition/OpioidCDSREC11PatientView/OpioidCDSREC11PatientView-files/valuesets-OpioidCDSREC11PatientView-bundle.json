@@ -6,31 +6,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "office-visit",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "shareable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "narrative"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "publishable"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion",
-        "valueString": "Includes concepts that represent an encounter for the comprehensive history, evaluation, and management of a patient presenting with minor to high severity problems."
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion",
-        "valueString": "No exclusions."
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/office-visit",
       "version": "20180310",
       "name": "office_visit",
@@ -41,6 +16,7 @@
       "description": "Codes specifying outpatient encounters",
       "purpose": "Codes specifying outpatient encounters",
       "expansion": {
+        "identifier": "office-visit-valueset-expansion",
         "timestamp": "2021-02-10T11:13:44-07:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
@@ -118,31 +94,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "hospice-disposition",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "shareable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "narrative"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "publishable"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion",
-        "valueString": "Includes only relevant concepts associated with hospice care concepts."
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion",
-        "valueString": "Excludes concepts for palliative care or comfort measures."
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-disposition",
       "version": "0.2.0",
       "title": "ValueSet - Hospice Disposition",
@@ -152,6 +103,7 @@
       "description": "This value set contains concepts that represent patients receiving hospice care outside of a hospital or long term care facility.",
       "purpose": "This value set may use the Quality Data Model (QDM) datatype related to Procedure, Order or Intervention, Order. The intent of this value set is to identify all patients receiving hospice care outside of a hospital or long term care facility.",
       "expansion": {
+        "identifier": "hospice-disposition-valueset-expansion",
         "timestamp": "2021-02-10T11:06:37-07:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
@@ -174,35 +126,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "cdc-malignant-cancer-conditions",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "All neoplastic and malignant conditions, including Neoplasm related pain"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Condition"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "All C and D codes and G893 Neoplasm related pain (acute) (chronic)"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "All D50-D89 codes, D3A-D3A and descendants."
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cdc-malignant-cancer-conditions",
       "name": "cdc_malignant_cancer_conditions",
       "title": "CDC malignant cancer conditions",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:15-06:00",
+      "date": "2021-09-17T12:27:31-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "All neoplastic and malignant conditions, including pain due to neoplasm.",
       "jurisdiction": [ {
         "coding": [ {
@@ -259,8 +196,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "584e730c-4d96-4bbb-819e-303c2f8e0b46",
-        "timestamp": "2021-09-07T11:10:15-06:00",
+        "identifier": "1a233442-29fe-4fac-85a6-34cea9c25633",
+        "timestamp": "2021-09-17T12:27:31-06:00",
         "contains": [ {
           "system": "http://hl7.org/fhir/sid/icd-10-cm",
           "code": "C00-C14",
@@ -6944,23 +6881,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "non-opioid-drug-urine-screening",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening",
       "name": "non_opioid_drug_urine_screening",
       "title": "Non-opioid drug urine screening",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Individual tests and panels of tests of urine for illicit drugs EXCEPT those for opioids.",
       "jurisdiction": [ {
         "coding": [ {
@@ -7096,8 +7030,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "b41d32a2-b23b-4c27-abca-16b424409812",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "ea51a623-19c7-41c8-b2ba-d9e98bf63f0e",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://loinc.org",
           "version": "2.68",
@@ -13084,16 +13018,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "condition-clinical-status-active",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-clinical-status-active",
       "version": "0.0.1",
       "name": "Valueset_condition_clinicalstatus_active",
@@ -13103,6 +13027,7 @@
       "publisher": "Alphora",
       "description": "The subject is currently experiencing the condition or situation, there is evidence of the condition or situation, or considered to be a significant risk.",
       "expansion": {
+        "identifier": "condition-clinical-status-active-valueset-expansion",
         "timestamp": "2021-05-19T13:47:55-07:00",
         "contains": [ {
           "system": "http://hl7.org/fhir/condition-clinical",
@@ -13118,18 +13043,8 @@
   }, {
     "resource": {
       "resourceType": "ValueSet",
-      "id": "us-core-health-concern-condition-category",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/us-core-health-concern-condition-category",
+      "id": "condition-us-core-health-concern-category",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-us-core-health-concern-category",
       "version": "0.0.1",
       "name": "Valueset_US_Core_health-concern-condition_category",
       "title": "ValueSet - US Core Health Concern Condition Category",
@@ -13138,6 +13053,7 @@
       "publisher": "Alphora",
       "description": "US Core Health Concern Condition Category.",
       "expansion": {
+        "identifier": "condition-us-core-health-concern-category-valueset-expansion",
         "timestamp": "2021-06-02T13:47:55-07:00",
         "contains": [ {
           "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
@@ -13148,22 +13064,12 @@
     },
     "request": {
       "method": "PUT",
-      "url": "ValueSet/us-core-health-concern-condition-category"
+      "url": "ValueSet/condition-us-core-health-concern-category"
     }
   }, {
     "resource": {
       "resourceType": "ValueSet",
       "id": "medicationrequest-status-active",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-status-active",
       "version": "0.0.1",
       "name": "Valueset_medicationrequest_status_active",
@@ -13173,6 +13079,7 @@
       "publisher": "Alphora",
       "description": "The prescription is 'actionable', but not all actions that are implied by it have occurred yet.",
       "expansion": {
+        "identifier": "medicationrequest-status-active-valueset-expansion",
         "timestamp": "2021-05-19T13:47:55-07:00",
         "contains": [ {
           "system": "http://hl7.org/fhir/medication-request-status",
@@ -13189,23 +13096,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "pain-treatment-plan",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan",
       "name": "pain_treatment_plan",
       "title": "Pain treatment plan",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "A Pain medicine Plan of care note",
       "jurisdiction": [ {
         "coding": [ {
@@ -13224,8 +13128,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "8a566699-5262-427a-a3a0-e542eb028533",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "927a0782-6fa3-4f7e-8b29-9e932b23c3ac",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://loinc.org",
           "code": "80764-4",
@@ -13241,16 +13145,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "condition-problem-list-category",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-problem-list-category",
       "version": "0.0.1",
       "name": "Valueset_problem_list_condition_category",
@@ -13260,6 +13154,7 @@
       "publisher": "Alphora",
       "description": "Problem list condition category.",
       "expansion": {
+        "identifier": "condition-problem-list-category-valueset-expansion",
         "timestamp": "2021-06-02T13:47:55-07:00",
         "contains": [ {
           "system": "http://hl7.org/fhir/condition-category",
@@ -13276,23 +13171,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "conditions-documenting-substance-misuse",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/conditions-documenting-substance-misuse",
       "name": "conditions_documenting_substance_misuse",
       "title": "Conditions documenting substance misuse",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Any finding or condition that indicate problematic misuse of a substance other than tobacco",
       "jurisdiction": [ {
         "coding": [ {
@@ -13550,8 +13442,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "23df8e60-7a52-49e0-a318-f9d39de4b6f7",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "93b84d6f-0af9-4cdd-823b-5ad08d7fe6de",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
           "code": "417298001",
@@ -17507,16 +17399,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "condition-category-encounter-diagnosis",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis",
       "version": "0.0.1",
       "name": "Valueset_encounter_diagnosis_condition_categories",
@@ -17526,6 +17408,7 @@
       "publisher": "Alphora",
       "description": "Encounter Diagnosis condition category.",
       "expansion": {
+        "identifier": "condition-category-encounter-diagnosis-valueseet-expansion",
         "timestamp": "2021-06-02T13:47:55-07:00",
         "contains": [ {
           "system": "http://hl7.org/fhir/condition-category",
@@ -17542,38 +17425,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "cocaine-urine-drug-screening-tests",
-      "meta": {
-        "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
-      },
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
-        "valueString": "Step 1. Add all codes found using the following LOINC query: cocaine (=system:Urine)"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "Urine tests for cocaine and cocaine metabolites"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "computable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "structured"
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-urine-drug-screening-tests",
       "name": "cocaine_urine_drug_screening_tests",
       "title": "Cocaine urine drug screening tests",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:15-06:00",
+      "date": "2021-09-17T12:27:31-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Urine tests for cocaine and cocaine metabolites",
       "jurisdiction": [ {
         "coding": [ {
@@ -17584,182 +17449,182 @@
       "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
       "copyright": "© CDC 2016+.",
       "expansion": {
-        "identifier": "a223789d-3264-46ba-aefe-01000f55301a",
-        "timestamp": "2021-09-07T11:10:15-06:00",
+        "identifier": "fb3c1866-f6b5-4c83-a530-411b6fd28225",
+        "timestamp": "2021-09-17T12:27:31-06:00",
         "contains": [ {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "50594-1",
           "display": "3-Hydroxybenzoylecgonine [Mass/volume] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "3394-4",
           "display": "Benzoylecgonine [Mass/volume] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "16226-3",
           "display": "Benzoylecgonine [Mass/volume] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "70146-6",
           "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "3393-6",
           "display": "Benzoylecgonine [Presence] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "14315-6",
           "display": "Benzoylecgonine [Presence] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "8192-7",
           "display": "Benzoylecgonine [Presence] in Urine by SAMHSA confirm method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "8193-5",
           "display": "Benzoylecgonine [Presence] in Urine by SAMHSA screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "14314-9",
           "display": "Benzoylecgonine [Presence] in Urine by Screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "43984-4",
           "display": "Benzoylecgonine [Presence] in Urine by Screen method >150 ng/mL"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "43985-1",
           "display": "Benzoylecgonine [Presence] in Urine by Screen method >300 ng/mL"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19065-2",
           "display": "Benzoylecgonine cutoff [Mass/volume] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19358-1",
           "display": "Benzoylecgonine cutoff [Mass/volume] in Urine for Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19357-3",
           "display": "Benzoylecgonine cutoff [Mass/volume] in Urine for Screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "13479-1",
           "display": "Benzoylecgonine/Creatinine [Mass Ratio] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19408-4",
           "display": "Cocaethylene [Mass/volume] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "16632-2",
           "display": "Cocaethylene [Mass/volume] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19406-8",
           "display": "Cocaethylene [Presence] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19405-0",
           "display": "Cocaethylene [Presence] in Urine by Screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19410-0",
           "display": "Cocaethylene cutoff [Mass/volume] in Urine for Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19409-2",
           "display": "Cocaethylene cutoff [Mass/volume] in Urine for Screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "86606-1",
           "display": "Cocaethylene/Creatinine [Mass Ratio] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "3398-5",
           "display": "Cocaine [Mass/volume] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "20519-5",
           "display": "Cocaine [Mass/volume] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "52953-7",
           "display": "Cocaine [Moles/volume] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "3397-7",
           "display": "Cocaine [Presence] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19360-7",
           "display": "Cocaine [Presence] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19359-9",
           "display": "Cocaine [Presence] in Urine by Screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "16448-3",
           "display": "Cocaine [Units/volume] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19363-1",
           "display": "Cocaine cutoff [Mass/volume] in Urine for Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19362-3",
           "display": "Cocaine cutoff [Mass/volume] in Urine for Screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "53743-1",
           "display": "Cocaine metabolites.other [Mass/volume] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "53747-2",
           "display": "Cocaine panel - Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "47400-7",
           "display": "Cocaine+Benzoylecgonine [Presence] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "42241-0",
           "display": "Cocaine+Benzoylecgonine [Presence] in Urine by Screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "82723-8",
           "display": "Cocaine+Benzoylecgonine+Cocaethylene [Presence] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "86607-9",
           "display": "Cocaine/Creatinine [Mass Ratio] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "5935-2",
           "display": "Deprecated Benzoylecgonine [Mass/volume] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "5939-4",
           "display": "Deprecated Benzoylecgonine [Presence] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19361-5",
           "display": "Deprecated Benzoylmethylecgonine [Mass/volume] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "5937-8",
           "display": "Deprecated Cocaine [Mass/volume] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "50592-5",
           "display": "Ecgonine methyl ester [Mass/volume] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "80144-9",
           "display": "Ecgonine methyl ester [Presence] in Urine by Screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "59295-6",
           "display": "Levamisole [Mass/volume] in Urine"
         } ]
@@ -17773,35 +17638,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "conditions-likely-terminal-for-opioid-prescribing",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "Conditions that generally are thought to have terminal prognosis"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Condition"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "Conditions due to Malignancies, pancreatic cancer, hepatic failure that are often associated with chronic pain."
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "Clinical conditions not thought to have a high likelyhood of near-term mortality and non-condition-specific findings."
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/conditions-likely-terminal-for-opioid-prescribing",
       "name": "conditions_likely_terminal_for_opioid_prescribing",
       "title": "Conditions likely terminal for opioid prescribing",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Conditions that generally are thought to have terminal prognosis",
       "jurisdiction": [ {
         "coding": [ {
@@ -17867,8 +17717,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "dea07cff-9b71-4953-b0c0-42c7521ec927",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "74f369b3-9c3d-4481-9f32-7b8e8e1b8c2d",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
           "version": "2021-03",
@@ -22692,44 +22542,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "phencyclidine-urine-drug-screening-tests",
-      "meta": {
-        "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
-      },
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
-        "valueString": "Step 1. Add all codes found using the following LOINC query: Phencyclidine (=system:Urine)"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "Urine tests for phencyclidine"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Urine test"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "Codes"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "computable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "structured"
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/phencyclidine-urine-drug-screening-tests",
       "name": "phencyclidine_urine_drug_screening_tests",
       "title": "Phencyclidine urine drug screening tests",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:15-06:00",
+      "date": "2021-09-17T12:27:31-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Urine tests for phencyclidine",
       "jurisdiction": [ {
         "coding": [ {
@@ -22740,62 +22566,62 @@
       "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
       "copyright": "© CDC 2016+.",
       "expansion": {
-        "identifier": "7cc49747-c0e2-4d0a-9121-df3fcf6b6734",
-        "timestamp": "2021-09-07T11:10:15-06:00",
+        "identifier": "7d41ce9f-ae79-49f1-a30d-b99dd021e94b",
+        "timestamp": "2021-09-17T12:27:31-06:00",
         "contains": [ {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "3937-0",
           "display": "Phencyclidine [Mass/volume] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "16254-5",
           "display": "Phencyclidine [Mass/volume] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "72825-3",
           "display": "Phencyclidine [Mass/volume] in Urine by Screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "52951-1",
           "display": "Phencyclidine [Moles/volume] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "3936-2",
           "display": "Phencyclidine [Presence] in Urine"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "14311-5",
           "display": "Phencyclidine [Presence] in Urine by Confirm method >20 ng/mL"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "18392-1",
           "display": "Phencyclidine [Presence] in Urine by Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "8237-0",
           "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "8238-8",
           "display": "Phencyclidine [Presence] in Urine by SAMHSA screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19659-2",
           "display": "Phencyclidine [Presence] in Urine by Screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "14310-7",
           "display": "Phencyclidine [Presence] in Urine by Screen method >25 ng/mL"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19661-8",
           "display": "Phencyclidine cutoff [Mass/volume] in Urine for Confirmatory method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "19660-0",
           "display": "Phencyclidine cutoff [Mass/volume] in Urine for Screen method"
         }, {
-          "system": "LOINC",
+          "system": "http://loinc.org",
           "code": "58397-1",
           "display": "Phencyclidine/Creatinine [Mass Ratio] in Urine"
         } ]
@@ -22809,16 +22635,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "medicationrequest-category-community",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-category-community",
       "version": "0.0.1",
       "name": "Valueset_medicationrequest_category_community",
@@ -22828,6 +22644,7 @@
       "publisher": "Alphora",
       "description": "Includes requests for medications to be administered or consumed by the patient in their home (this would include long term care or nursing homes, hospices, etc.).",
       "expansion": {
+        "identifier": "medicationrequest-category-community-valueset-expansion",
         "timestamp": "2021-05-19T13:47:55-07:00",
         "contains": [ {
           "system": "http://hl7.org/fhir/medication-request-category",
@@ -22844,23 +22661,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "opioid-drug-urine-screening",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening",
       "name": "opioid_drug_urine_screening",
       "title": "Opioid drug urine screening",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:15-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Individual tests and panels of tests of urine for opioids",
       "jurisdiction": [ {
         "coding": [ {
@@ -22943,8 +22757,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "470b7084-4efa-46ca-b4af-0f05b9d6c648",
-        "timestamp": "2021-09-07T11:10:15-06:00",
+        "identifier": "a95296c2-dc1b-4d9f-9cee-7f081caeb10e",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://loinc.org",
           "version": "2.68",
@@ -24861,23 +24675,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "opioid-counseling-procedure",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure",
       "name": "opioid_counseling_procedure",
       "title": "Opioid counseling procedure",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Procedure for couseling on opioid use",
       "jurisdiction": [ {
         "coding": [ {
@@ -24897,8 +24708,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "108f4416-a9f4-4fdb-9187-95880950a3c0",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "b54944fe-b2e1-48d4-a3d2-154f12bb1d82",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
           "code": "460831000124102",
@@ -24914,16 +24725,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "observation-category-procedure",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-procedure",
       "version": "0.0.1",
       "name": "Valueset_observation-category-procedure",
@@ -24933,6 +24734,7 @@
       "publisher": "Alphora",
       "description": "Procedure Observation Category",
       "expansion": {
+        "identifier": "observation-category-procedure-valueset-expansion",
         "timestamp": "2021-06-08T13:47:55-07:00",
         "contains": [ {
           "system": "http://hl7.org/fhir/observation-category",
@@ -24949,47 +24751,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "opioid-analgesics-with-ambulatory-misuse-potential",
-      "meta": {
-        "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
-      },
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
-        "valueString": "https://mor.nlm.nih.gov/RxMix/ Script:?Step 1a ?Create Batch text input file (SCT-Opioids.txt) with following SCT identifier (for the concept \"Product containing opioid receptor agonist (product)\") as an input within the file: ?360204007       ??Step 1b?Submit batch job using the above SCT-Opioids.txt file to following workflow by uploading file (SCT-Opioid-wf.config) with the following in the file:  <WFE><filteredOutputs>RXCUI|name|term_type</filteredOutputs><input>NOINPUT</input><FS><service>NOINPUT</service><function>findClassById</function><level>0</level><paramSize>1</paramSize><param order ='0'>?</param></FS><FS><service>NOINPUT</service><function>getClassMembers</function><level>1</level><paramSize>5</paramSize><param order ='0'>?</param><param order ='1'>SNOMEDCT</param><param order ='2'>isa_disposition</param><param order ='3'>0</param><param order ='4'>IN,MIN,PIN</param></FS><FS><service>NOINPUT</service><function>getRelatedByType</function><level>2</level><paramSize>2</paramSize><param order ='0'>?</param><param order ='1'>BPCK,GPCK,SBD,SCD</param></FS></WFE>?This will produce a result file with all Opioid clinical drugs included??Step 2?To remove all cough and bowel transit formulation codes and to remove the injectable codes filter out all codes with the following strings:?Ingredient strings: ?Guaifenesin, Chlorpheniramine, Pseudoephedrine, Brompheniramine, Phenylephrine, Phenylpropanolamine, Promethazine, Bromodiphenhydramine, guaiacolsulfonate, homatropine?Form strings:?inject, cartridge, syringe"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "All opioid clinical drugs except cough medications, antisapasmodics, or those restricted to surgical use only."
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Medication"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "All opioid-class medications"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "All medications including ingredients intended to treat cough or act as an antispasmodic. All injectable forms."
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "computable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "structured"
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential",
       "name": "opioid_analgesics_with_ambulatory_misuse_potential",
       "title": "Opioid analgesics with ambulatory misuse potential",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "All opioid clinical drugs except cough medications, antisapasmodics, or those restricted to surgical use only as identified by those using an injectable form.",
       "jurisdiction": [ {
         "coding": [ {
@@ -25000,8 +24775,8 @@
       "purpose": "Opioid medications that should have opioid management CDS",
       "copyright": "© CDC 2016+.",
       "expansion": {
-        "identifier": "4564ee27-0666-4490-a3ba-63718d0fbced",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "f021cc9e-312b-4401-9962-0f692855963d",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
           "code": "564334",
@@ -29733,32 +29508,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "hospice-finding",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "Finding codes for receiving hospice care"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Finding"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "Codes related"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding",
       "name": "hospice_finding",
       "title": "Hospice Finding",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:15-06:00",
+      "date": "2021-09-17T12:27:31-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Finding codes for receiving hospice care",
       "jurisdiction": [ {
         "coding": [ {
@@ -29812,26 +29575,26 @@
         } ]
       },
       "expansion": {
-        "identifier": "3f7ac775-9e74-46c9-ba66-24283faf03f4",
-        "timestamp": "2021-09-07T11:10:15-06:00",
+        "identifier": "a4ca64f6-abf9-4009-b37d-901895b08cd4",
+        "timestamp": "2021-09-17T12:27:31-06:00",
         "contains": [ {
-          "system": "SNOMED CT",
+          "system": "http://snomed.info/sct",
           "code": "170935008",
           "display": "Full care by hospice (finding)"
         }, {
-          "system": "SNOMED CT",
+          "system": "http://snomed.info/sct",
           "code": "448451000124101",
           "display": "Transition from self-care to hospice (finding)"
         }, {
-          "system": "SNOMED CT",
+          "system": "http://snomed.info/sct",
           "code": "1891000124102",
           "display": "Transition from acute care to hospice (finding)"
         }, {
-          "system": "SNOMED CT",
+          "system": "http://snomed.info/sct",
           "code": "1951000124104",
           "display": "Transition from long-term care to hospice (finding)"
         }, {
-          "system": "SNOMED CT",
+          "system": "http://snomed.info/sct",
           "code": "305911006",
           "display": "Seen in hospice"
         } ]
@@ -29845,23 +29608,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "pdmp-review-procedure",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure",
       "name": "pdmp_review_procedure",
       "title": "PDMP review procedure",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:15-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Procedure for Prescription Drug Monitoring Program (PDMP) review",
       "jurisdiction": [ {
         "coding": [ {
@@ -29881,8 +29641,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "9dc07533-d4d9-4cc0-a837-a7a9e6eb102f",
-        "timestamp": "2021-09-07T11:10:15-06:00",
+        "identifier": "0214a110-f236-4217-88a2-16903e32ca33",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
           "code": "461621000124108",
@@ -29898,35 +29658,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "oncology-specialty-designations",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "Provider type indentifiers for oncology care"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "provider type"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "NUCC provider types with the word \"oncology\" in the description"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "none"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/oncology-specialty-designations",
       "name": "oncology_specialty_designations",
       "title": "Oncology specialty designations (NUCC)",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "NUCC oncology provider types who may provide encounters to patients with cancer",
       "jurisdiction": [ {
         "coding": [ {
@@ -29947,8 +29692,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "c35bf647-ab82-4db8-b385-818d2cc16869",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "7147b647-0fe4-48df-8f31-807c053a57ac",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://nucc.org/provider-taxonomy",
           "code": "207VX0201X",
@@ -30016,23 +29761,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "pdmp-data-reviewed-finding",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding",
       "name": "pdmp_data_reviewed_finding",
       "title": "PDMP data reviewed finding",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Finding indicating that the Prescription Drug Monitoring Program (PDMP) data was reviewed",
       "jurisdiction": [ {
         "coding": [ {
@@ -30052,8 +29794,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "4c838882-5fa5-4aa8-bb4e-340ec9d10f39",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "50860a62-4d76-4736-bb62-8b8418f00a22",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
           "code": "461651000124104",
@@ -30069,23 +29811,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "pain-management-procedure",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure",
       "name": "pain_management_procedure",
       "title": "Pain management procedure",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:15-06:00",
+      "date": "2021-09-17T12:27:31-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Procedure for chronic pain control management",
       "jurisdiction": [ {
         "coding": [ {
@@ -30105,8 +29844,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "e1f8c611-7c64-425c-b0d5-43d3a6a9bfb0",
-        "timestamp": "2021-09-07T11:10:15-06:00",
+        "identifier": "63194a61-c33e-465f-8bfd-22a36932e4e4",
+        "timestamp": "2021-09-17T12:27:31-06:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
           "code": "408957008",
@@ -30122,16 +29861,6 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "observation-category-laboratory",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory",
       "version": "0.0.1",
       "name": "Valueset_observation-category-laboratory",
@@ -30141,6 +29870,7 @@
       "publisher": "Alphora",
       "description": "Laboratory Observation Category",
       "expansion": {
+        "identifier": "observation-category-laboratory-valueset-expansion",
         "timestamp": "2021-06-08T13:47:55-07:00",
         "contains": [ {
           "system": "http://hl7.org/fhir/observation-category",
@@ -30157,35 +29887,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "therapies-indicating-end-of-life-care",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "Therapeutic activities indicating end of life. Include procedures or therapies specific to a terminal patient, exclude procedures or therapies performed on a deceased patient"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Procedures"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "Selected concepts focused on care in a terminal condition"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "None"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/therapies-indicating-end-of-life-care",
       "name": "therapies_indicating_end_of_life_care",
       "title": "Therapies indicating end of life care",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Therapeutic activities indicating end of life. Include procedures or therapies specific to a terminal patient, exclude procedures or therapies performed on a deceased patient",
       "jurisdiction": [ {
         "coding": [ {
@@ -30232,8 +29947,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "3b8ff948-4627-4f48-ae72-b60741f7726e",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "79fe984c-5fdb-4d1d-9ef2-999bbdc9ea06",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
           "code": "443761007",
@@ -30281,35 +29996,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "naloxone-medications",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "All naloxone medications"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Medication"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "All naloxone medications"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "None"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/naloxone-medications",
       "name": "naloxone_medications",
       "title": "naloxone medications",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:15-06:00",
+      "date": "2021-09-17T12:27:31-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "All naloxone medications",
       "jurisdiction": [ {
         "coding": [ {
@@ -30367,8 +30067,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "f16009ec-d075-451b-ae69-cf50ecb06b0f",
-        "timestamp": "2021-09-07T11:10:15-06:00",
+        "identifier": "e1351621-4ce5-4146-a6d8-20180c32c17e",
+        "timestamp": "2021-09-17T12:27:31-06:00",
         "contains": [ {
           "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
           "code": "1010600",
@@ -30688,35 +30388,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "buprenorphine-and-methadone-medications",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "Buprenorphine and Methadone medications"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Medication"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "All Buprenorphine and Methadone medications"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "None"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications",
       "name": "buprenorphine_and_methadone_medications",
       "title": "Buprenorphine and Methadone medications",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "All Buprenorphine and Methadone medications",
       "jurisdiction": [ {
         "coding": [ {
@@ -30818,8 +30503,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "7b956cb4-f7f7-4d09-a803-31913ef51d52",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "7db646ac-7f6a-46a2-8298-698ca845b84a",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
           "code": "1010600",
@@ -31419,23 +31104,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "opioid-misuse-assessment-procedure",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-assessment-procedure",
       "name": "opioid_misuse_assessment_procedure",
       "title": "Opioid misuse assessment procedure",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Procedure to assess the risk of opioid abuse occurring by a patient",
       "jurisdiction": [ {
         "coding": [ {
@@ -31455,8 +31137,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "6466d0a4-c0bc-447e-9c4b-783d6bfea3f1",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "cf54c450-b69c-4937-9a8b-5ff956006da0",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
           "code": "454281000124100",
@@ -31472,29 +31154,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "hospice-procedure",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "Procedure codes for referral, admission, or transfer to a hospice"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Procedure"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure",
       "name": "hospice_procedure",
       "title": "Hospice Procedure",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Procedure codes for referral, admission, or transfer to a hospice",
       "jurisdiction": [ {
         "coding": [ {
@@ -31555,30 +31228,30 @@
         } ]
       },
       "expansion": {
-        "identifier": "0c08bbd9-adbb-4fde-92a3-b845b01f151f",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "956d8791-5975-427e-aece-43eea370526c",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
-          "system": "SNOMED CT",
+          "system": "http://snomed.info/sct",
           "code": "306205009",
           "display": "Referral to hospice (procedure)"
         }, {
-          "system": "SNOMED CT",
+          "system": "http://snomed.info/sct",
           "code": "305336008",
           "display": "Admission to hospice (procedure)"
         }, {
-          "system": "SNOMED CT",
+          "system": "http://snomed.info/sct",
           "code": "183919006",
           "display": "Urgent admission to hospice (procedure)"
         }, {
-          "system": "SNOMED CT",
+          "system": "http://snomed.info/sct",
           "code": "428371000124100",
           "display": "Discharge to healthcare facility for hospice care"
         }, {
-          "system": "SNOMED CT",
+          "system": "http://snomed.info/sct",
           "code": "183920000",
           "display": "Routine admission to hospice"
         }, {
-          "system": "SNOMED CT",
+          "system": "http://snomed.info/sct",
           "code": "183921001",
           "display": "Admission to hospice for respite"
         } ]
@@ -31592,35 +31265,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "opioid-misuse-disorders",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "Conditions indicating opioid misuse"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Condition"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "Conditions indicating opioid misuse"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "none"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-disorders",
       "name": "opioid_misuse_disorders",
       "title": "Opioid misuse disorders",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Conditions indicating opioid misuse",
       "jurisdiction": [ {
         "coding": [ {
@@ -31689,8 +31347,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "d04a2012-c1da-4d54-af97-553413fc5487",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "379a6721-eb89-47a7-94ad-827cf79b2813",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
           "code": "191865004",
@@ -32034,35 +31692,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "substance-misuse-behavioral-counseling",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "Counseling and associated procedures for substance misuse"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Procedure"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "Counseling and associated procedures for substance misuse"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "none"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling",
       "name": "substance_misuse_behavioral_counseling",
       "title": "Substance misuse behavioral counseling",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:13-06:00",
+      "date": "2021-09-17T12:27:28-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "Counseling and associated procedures for substance misuse",
       "jurisdiction": [ {
         "coding": [ {
@@ -32116,8 +31759,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "f159bfff-30dd-442f-8997-5014cd92eeae",
-        "timestamp": "2021-09-07T11:10:15-06:00",
+        "identifier": "dffc627e-04ca-4af4-8754-c59cad297de3",
+        "timestamp": "2021-09-17T12:27:31-06:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
           "code": "313071005",
@@ -32153,35 +31796,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "limited-life-expectancy-conditions",
-      "extension": [ {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "A finding that documents a terminal prognosis"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Condition"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "Specific terminal condition findings that do not indicate the clinical disease at cause."
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "Actual disease-specific conditions"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions",
       "name": "limited_life_expectancy_conditions",
       "title": "Limited life expectancy conditions",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:15-06:00",
+      "date": "2021-09-17T12:27:31-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "A finding that documents a terminal prognosis",
       "jurisdiction": [ {
         "coding": [ {
@@ -32219,8 +31847,8 @@
         } ]
       },
       "expansion": {
-        "identifier": "4f4a5b56-e6e9-4f0e-8559-f26a47421c6d",
-        "timestamp": "2021-09-07T11:10:15-06:00",
+        "identifier": "3f901524-c18c-43e3-b559-2837914a5974",
+        "timestamp": "2021-09-17T12:27:31-06:00",
         "contains": [ {
           "system": "http://snomed.info/sct",
           "code": "111947009",
@@ -32256,47 +31884,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "extended-release-opioid-with-ambulatory-misuse-potential",
-      "meta": {
-        "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
-      },
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
-        "valueString": "Step 1:?Expand the value set \"Opioids with Opioid analgesic with ambulatory misuse potential\" and then remove concepts that are long acting:??Step 2:?Filter the result to only select concepts that are a drug with Methadone Ingredient, or have one of the following dose forms: 316943 Extended Release Oral Capsule, 316945 Extended Release Oral Tablet, 316946 Extended Release Oral Tablet, 316987 Transdermal System. To do this filter the list by only including descriptions that have one of the following strings: \"Extended Release\" OR \"Transdermal\" OR \"Methadone\"."
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "All opioid clinical drugs except those restricted to surgical use only, and that are in an extended release dose form code"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Medication"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "All opioid clinical drugs except those used in anti-tussives or antispasmodics, or are restricted to surgical use only."
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-        "valueString": "For any drug other than methadone, any mediation that is not using a long acting formulation."
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "computable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "structured"
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/extended-release-opioid-with-ambulatory-misuse-potential",
       "name": "extended_release_opioid_with_ambulatory_misuse_potential",
       "title": "Extended release opioid with ambulatory misuse potential",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "All opioid clinical drugs except those restricted to surgical use only, and that are in an extended release dose form code",
       "jurisdiction": [ {
         "coding": [ {
@@ -32307,8 +31908,8 @@
       "purpose": "Identify medication orders for long-acting opioids",
       "copyright": "© CDC 2016+.",
       "expansion": {
-        "identifier": "c0ea5269-e8cb-446a-823c-72833d90baf7",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "24eff7de-c5b5-40b0-b4c8-80f17247261b",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
           "code": "849561",
@@ -33148,44 +32749,20 @@
     "resource": {
       "resourceType": "ValueSet",
       "id": "benzodiazepine-medications",
-      "meta": {
-        "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
-      },
-      "extension": [ {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
-        "valueString": "https://mor.nlm.nih.gov/RxMix/ Script:?Step 1a ?Create Batch text input file (SCT-benzo.txt) with following SCT identifier (for the concept \"Product containing benzodiazepine (product)\") as an input within the file: ?16047007       ??Step 1b?Submit batch job using the above SCT-benzo.txt file to following workflow by uploading file (SCT-benzo.config) with the following in the file:  <WFE><filteredOutputs>RXCUI|name|term_type</filteredOutputs><input>NOINPUT</input><FS><service>NOINPUT</service><function>findClassById</function><level>0</level><paramSize>1</paramSize><param order ='0'>?</param></FS><FS><service>NOINPUT</service><function>getClassMembers</function><level>1</level><paramSize>5</paramSize><param order ='0'>?</param><param order ='1'>SNOMEDCT</param><param order ='2'>isa_structure</param><param order ='3'>0</param><param order ='4'>IN,MIN,PIN</param></FS><FS><service>NOINPUT</service><function>getRelatedByType</function><level>2</level><paramSize>2</paramSize><param order ='0'>?</param><param order ='1'>BPCK,GPCK,SBD,SCD</param></FS></WFE>?This will produce a result file with all benzodiazepine clinical drugs included."
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-        "valueString": "All benzodiazepine clinical drugs"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-        "valueString": "Medication"
-      }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-        "valueString": "All benzodiazepine-class medications"
-      }, {
-        "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-        "valueContactDetail": {
-          "name": "MD Partners, Inc.",
-          "telecom": [ {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          } ]
-        }
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "computable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "structured"
-      } ],
       "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/benzodiazepine-medications",
       "name": "benzodiazepine_medications",
       "title": "benzodiazepine medications",
       "status": "active",
       "experimental": true,
-      "date": "2021-09-07T11:10:16-06:00",
+      "date": "2021-09-17T12:27:32-06:00",
       "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
       "description": "All benzodiazepine clinical drugs",
       "jurisdiction": [ {
         "coding": [ {
@@ -33196,8 +32773,8 @@
       "purpose": "Benzodiazepine medications for opioid management",
       "copyright": "© CDC 2016+.",
       "expansion": {
-        "identifier": "3faea915-332c-45b0-a624-1d055f59dd2d",
-        "timestamp": "2021-09-07T11:10:16-06:00",
+        "identifier": "bac15843-3427-448d-baa2-f1926c45df5e",
+        "timestamp": "2021-09-17T12:27:32-06:00",
         "contains": [ {
           "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
           "code": "141927",

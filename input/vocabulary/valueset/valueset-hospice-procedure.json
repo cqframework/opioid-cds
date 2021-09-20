@@ -1,29 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "hospice-procedure",
-  "extension": [ {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-    "valueString": "Procedure codes for referral, admission, or transfer to a hospice"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-    "valueString": "Procedure"
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure",
   "name": "hospice_procedure",
   "title": "Hospice Procedure",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:16-06:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Procedure codes for referral, admission, or transfer to a hospice",
   "jurisdiction": [ {
     "coding": [ {
@@ -84,30 +75,30 @@
     } ]
   },
   "expansion": {
-    "identifier": "0c08bbd9-adbb-4fde-92a3-b845b01f151f",
-    "timestamp": "2021-09-07T11:10:16-06:00",
+    "identifier": "956d8791-5975-427e-aece-43eea370526c",
+    "timestamp": "2021-09-17T12:27:32-06:00",
     "contains": [ {
-      "system": "SNOMED CT",
+      "system": "http://snomed.info/sct",
       "code": "306205009",
       "display": "Referral to hospice (procedure)"
     }, {
-      "system": "SNOMED CT",
+      "system": "http://snomed.info/sct",
       "code": "305336008",
       "display": "Admission to hospice (procedure)"
     }, {
-      "system": "SNOMED CT",
+      "system": "http://snomed.info/sct",
       "code": "183919006",
       "display": "Urgent admission to hospice (procedure)"
     }, {
-      "system": "SNOMED CT",
+      "system": "http://snomed.info/sct",
       "code": "428371000124100",
       "display": "Discharge to healthcare facility for hospice care"
     }, {
-      "system": "SNOMED CT",
+      "system": "http://snomed.info/sct",
       "code": "183920000",
       "display": "Routine admission to hospice"
     }, {
-      "system": "SNOMED CT",
+      "system": "http://snomed.info/sct",
       "code": "183921001",
       "display": "Admission to hospice for respite"
     } ]

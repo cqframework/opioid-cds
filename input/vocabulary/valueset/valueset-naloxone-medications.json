@@ -1,35 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "naloxone-medications",
-  "extension": [ {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-    "valueString": "All naloxone medications"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-    "valueString": "Medication"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-    "valueString": "All naloxone medications"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-    "valueString": "None"
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/naloxone-medications",
   "name": "naloxone_medications",
   "title": "naloxone medications",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:15-06:00",
+  "date": "2021-09-17T12:27:31-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "All naloxone medications",
   "jurisdiction": [ {
     "coding": [ {
@@ -87,8 +72,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "f16009ec-d075-451b-ae69-cf50ecb06b0f",
-    "timestamp": "2021-09-07T11:10:15-06:00",
+    "identifier": "e1351621-4ce5-4146-a6d8-20180c32c17e",
+    "timestamp": "2021-09-17T12:27:31-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "code": "1010600",

@@ -1268,6 +1268,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ValueSet - Cocaine urine drug screening tests"/>
+            <description value="Urine tests for cocaine and cocaine metabolites"/>
+            <sourceReference>
+                <reference value="ValueSet/cocaine-urine-drug-screening-tests"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Documenting Substance Misuse"/>
             <description value="Conditions that indicate problematic misuse of a substance other than tobacco"/>
             <sourceReference>
@@ -1488,6 +1496,14 @@
             <description value="PDMP review procedure codes"/>
             <sourceReference>
                 <reference value="ValueSet/pdmp-review-procedure"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - Phencyclidine urine drug screening tests"/>
+            <description value="Urine tests for phencyclidine"/>
+            <sourceReference>
+                <reference value="ValueSet/phencyclidine-urine-drug-screening-tests"/>
             </sourceReference>
         </resource>
         <resource>

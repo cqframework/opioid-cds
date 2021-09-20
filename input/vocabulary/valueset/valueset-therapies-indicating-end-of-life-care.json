@@ -1,35 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "therapies-indicating-end-of-life-care",
-  "extension": [ {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-    "valueString": "Therapeutic activities indicating end of life. Include procedures or therapies specific to a terminal patient, exclude procedures or therapies performed on a deceased patient"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-    "valueString": "Procedures"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-    "valueString": "Selected concepts focused on care in a terminal condition"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-    "valueString": "None"
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/therapies-indicating-end-of-life-care",
   "name": "therapies_indicating_end_of_life_care",
   "title": "Therapies indicating end of life care",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:16-06:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Therapeutic activities indicating end of life. Include procedures or therapies specific to a terminal patient, exclude procedures or therapies performed on a deceased patient",
   "jurisdiction": [ {
     "coding": [ {
@@ -76,8 +61,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "3b8ff948-4627-4f48-ae72-b60741f7726e",
-    "timestamp": "2021-09-07T11:10:16-06:00",
+    "identifier": "79fe984c-5fdb-4d1d-9ef2-999bbdc9ea06",
+    "timestamp": "2021-09-17T12:27:32-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "code": "443761007",

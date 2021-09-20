@@ -641,6 +641,10 @@
       "source": "codesystem-medication-request-status.json",
       "base": "CodeSystem-medication-request-status.html"
     },
+    "CodeSystem/observation-category": {
+      "source": "codesystem-observation-category.json",
+      "base": "CodeSystem-observation-category.html"
+    },
     "CodeSystem/opioidcds-indicator": {
       "source": "codesystem-opioidcds-indicator.json",
       "base": "CodeSystem-opioidcds-indicator.html"
@@ -814,6 +818,10 @@
       "source": "valueset-cdc-malignant-cancer-conditions.json",
       "base": "ValueSet-cdc-malignant-cancer-conditions.html"
     },
+    "ValueSet/cocaine-urine-drug-screening-tests": {
+      "source": "valueset-cocaine-urine-drug-screening-tests.json",
+      "base": "ValueSet-cocaine-urine-drug-screening-tests.html"
+    },
     "ValueSet/conditions-documenting-substance-misuse": {
       "source": "valueset-conditions-documenting-substance-misuse.json",
       "base": "ValueSet-conditions-documenting-substance-misuse.html"
@@ -925,6 +933,10 @@
     "ValueSet/pdmp-review-procedure": {
       "source": "valueset-pdmp-review-procedure.json",
       "base": "ValueSet-pdmp-review-procedure.html"
+    },
+    "ValueSet/phencyclidine-urine-drug-screening-tests": {
+      "source": "valueset-phencyclidine-urine-drug-screening-tests.json",
+      "base": "ValueSet-phencyclidine-urine-drug-screening-tests.html"
     },
     "ValueSet/substance-misuse-behavioral-counseling": {
       "source": "valueset-substance-misuse-behavioral-counseling.json",

@@ -1,23 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "opioid-misuse-assessment-procedure",
-  "extension": [ {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-assessment-procedure",
   "name": "opioid_misuse_assessment_procedure",
   "title": "Opioid misuse assessment procedure",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:16-06:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Procedure to assess the risk of opioid abuse occurring by a patient",
   "jurisdiction": [ {
     "coding": [ {
@@ -37,8 +34,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "6466d0a4-c0bc-447e-9c4b-783d6bfea3f1",
-    "timestamp": "2021-09-07T11:10:16-06:00",
+    "identifier": "cf54c450-b69c-4937-9a8b-5ff956006da0",
+    "timestamp": "2021-09-17T12:27:32-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "code": "454281000124100",

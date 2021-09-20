@@ -1,35 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "conditions-likely-terminal-for-opioid-prescribing",
-  "extension": [ {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-    "valueString": "Conditions that generally are thought to have terminal prognosis"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-    "valueString": "Condition"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-    "valueString": "Conditions due to Malignancies, pancreatic cancer, hepatic failure that are often associated with chronic pain."
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-    "valueString": "Clinical conditions not thought to have a high likelyhood of near-term mortality and non-condition-specific findings."
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/conditions-likely-terminal-for-opioid-prescribing",
   "name": "conditions_likely_terminal_for_opioid_prescribing",
   "title": "Conditions likely terminal for opioid prescribing",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:16-06:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Conditions that generally are thought to have terminal prognosis",
   "jurisdiction": [ {
     "coding": [ {
@@ -95,8 +80,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "dea07cff-9b71-4953-b0c0-42c7521ec927",
-    "timestamp": "2021-09-07T11:10:16-06:00",
+    "identifier": "74f369b3-9c3d-4481-9f32-7b8e8e1b8c2d",
+    "timestamp": "2021-09-17T12:27:32-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "2021-03",

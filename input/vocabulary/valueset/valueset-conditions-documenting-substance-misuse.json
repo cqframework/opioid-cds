@@ -1,23 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "conditions-documenting-substance-misuse",
-  "extension": [ {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/conditions-documenting-substance-misuse",
   "name": "conditions_documenting_substance_misuse",
   "title": "Conditions documenting substance misuse",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:16-06:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Any finding or condition that indicate problematic misuse of a substance other than tobacco",
   "jurisdiction": [ {
     "coding": [ {
@@ -275,8 +272,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "23df8e60-7a52-49e0-a318-f9d39de4b6f7",
-    "timestamp": "2021-09-07T11:10:16-06:00",
+    "identifier": "93b84d6f-0af9-4cdd-823b-5ad08d7fe6de",
+    "timestamp": "2021-09-17T12:27:32-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "code": "417298001",

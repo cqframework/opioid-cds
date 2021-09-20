@@ -1,47 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "extended-release-opioid-with-ambulatory-misuse-potential",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
-  },
-  "extension": [ {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
-    "valueString": "Step 1:?Expand the value set \"Opioids with Opioid analgesic with ambulatory misuse potential\" and then remove concepts that are long acting:??Step 2:?Filter the result to only select concepts that are a drug with Methadone Ingredient, or have one of the following dose forms: 316943 Extended Release Oral Capsule, 316945 Extended Release Oral Tablet, 316946 Extended Release Oral Tablet, 316987 Transdermal System. To do this filter the list by only including descriptions that have one of the following strings: \"Extended Release\" OR \"Transdermal\" OR \"Methadone\"."
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-    "valueString": "All opioid clinical drugs except those restricted to surgical use only, and that are in an extended release dose form code"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-    "valueString": "Medication"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-    "valueString": "All opioid clinical drugs except those used in anti-tussives or antispasmodics, or are restricted to surgical use only."
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-    "valueString": "For any drug other than methadone, any mediation that is not using a long acting formulation."
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-    "valueCode": "computable"
-  }, {
-    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-    "valueCode": "structured"
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/extended-release-opioid-with-ambulatory-misuse-potential",
   "name": "extended_release_opioid_with_ambulatory_misuse_potential",
   "title": "Extended release opioid with ambulatory misuse potential",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:16-06:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "All opioid clinical drugs except those restricted to surgical use only, and that are in an extended release dose form code",
   "jurisdiction": [ {
     "coding": [ {
@@ -52,8 +25,8 @@
   "purpose": "Identify medication orders for long-acting opioids",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "c0ea5269-e8cb-446a-823c-72833d90baf7",
-    "timestamp": "2021-09-07T11:10:16-06:00",
+    "identifier": "24eff7de-c5b5-40b0-b4c8-80f17247261b",
+    "timestamp": "2021-09-17T12:27:32-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "code": "849561",

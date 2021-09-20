@@ -1,23 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "pain-treatment-plan",
-  "extension": [ {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan",
   "name": "pain_treatment_plan",
   "title": "Pain treatment plan",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:16-06:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "A Pain medicine Plan of care note",
   "jurisdiction": [ {
     "coding": [ {
@@ -36,8 +33,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "8a566699-5262-427a-a3a0-e542eb028533",
-    "timestamp": "2021-09-07T11:10:16-06:00",
+    "identifier": "927a0782-6fa3-4f7e-8b29-9e932b23c3ac",
+    "timestamp": "2021-09-17T12:27:32-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "code": "80764-4",

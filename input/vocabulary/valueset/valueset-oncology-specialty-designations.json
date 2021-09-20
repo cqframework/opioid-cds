@@ -1,35 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "oncology-specialty-designations",
-  "extension": [ {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-    "valueString": "Provider type indentifiers for oncology care"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-    "valueString": "provider type"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-    "valueString": "NUCC provider types with the word \"oncology\" in the description"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-    "valueString": "none"
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/oncology-specialty-designations",
   "name": "oncology_specialty_designations",
   "title": "Oncology specialty designations (NUCC)",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:16-06:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "NUCC oncology provider types who may provide encounters to patients with cancer",
   "jurisdiction": [ {
     "coding": [ {
@@ -50,8 +35,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "c35bf647-ab82-4db8-b385-818d2cc16869",
-    "timestamp": "2021-09-07T11:10:16-06:00",
+    "identifier": "7147b647-0fe4-48df-8f31-807c053a57ac",
+    "timestamp": "2021-09-17T12:27:32-06:00",
     "contains": [ {
       "system": "http://nucc.org/provider-taxonomy",
       "code": "207VX0201X",

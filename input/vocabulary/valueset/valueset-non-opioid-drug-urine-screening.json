@@ -1,23 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "non-opioid-drug-urine-screening",
-  "extension": [ {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening",
   "name": "non_opioid_drug_urine_screening",
   "title": "Non-opioid drug urine screening",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:16-06:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Individual tests and panels of tests of urine for illicit drugs EXCEPT those for opioids.",
   "jurisdiction": [ {
     "coding": [ {
@@ -153,8 +150,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "b41d32a2-b23b-4c27-abca-16b424409812",
-    "timestamp": "2021-09-07T11:10:16-06:00",
+    "identifier": "ea51a623-19c7-41c8-b2ba-d9e98bf63f0e",
+    "timestamp": "2021-09-17T12:27:32-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.68",

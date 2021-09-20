@@ -1,23 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "opioid-drug-urine-screening",
-  "extension": [ {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening",
   "name": "opioid_drug_urine_screening",
   "title": "Opioid drug urine screening",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:15-06:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Individual tests and panels of tests of urine for opioids",
   "jurisdiction": [ {
     "coding": [ {
@@ -100,8 +97,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "470b7084-4efa-46ca-b4af-0f05b9d6c648",
-    "timestamp": "2021-09-07T11:10:15-06:00",
+    "identifier": "a95296c2-dc1b-4d9f-9cee-7f081caeb10e",
+    "timestamp": "2021-09-17T12:27:32-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.68",

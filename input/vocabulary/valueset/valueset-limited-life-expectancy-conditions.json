@@ -1,35 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "limited-life-expectancy-conditions",
-  "extension": [ {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
-    "valueString": "A finding that documents a terminal prognosis"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-dataelement-scope",
-    "valueString": "Condition"
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion-criteria",
-    "valueString": "Specific terminal condition findings that do not indicate the clinical disease at cause."
-  }, {
-    "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion-criteria",
-    "valueString": "Actual disease-specific conditions"
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions",
   "name": "limited_life_expectancy_conditions",
   "title": "Limited life expectancy conditions",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-07T11:10:15-06:00",
+  "date": "2021-09-17T12:27:31-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "A finding that documents a terminal prognosis",
   "jurisdiction": [ {
     "coding": [ {
@@ -67,8 +52,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "4f4a5b56-e6e9-4f0e-8559-f26a47421c6d",
-    "timestamp": "2021-09-07T11:10:15-06:00",
+    "identifier": "3f901524-c18c-43e3-b559-2837914a5974",
+    "timestamp": "2021-09-17T12:27:31-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "code": "111947009",
