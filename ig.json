@@ -844,7 +844,7 @@
     },
     "ValueSet/condition-us-core-health-concern-category": {
       "source": "valueset-condition-us-core-health-concern-category.json",
-      "base": "ValueSet-condition-us-core-health-concerns-category.html"
+      "base": "ValueSet-condition-us-core-health-concern-category.html"
     },
     "ValueSet/extended-release-opioid-with-ambulatory-misuse-potential": {
       "source": "valueset-extended-release-opioid-with-ambulatory-misuse-potential.json",
@@ -993,10 +993,6 @@
       "defns": "cdc-valueset-exclusion-definitions.html",
       "base": "cdc-valueset-exclusion.html",
       "source": "structuredefinition-cdc-valueset-exclusion.json"
-    },
-    "Bundle/OpioidCDSREC04-bundle": {
-      "base": "Bundle-OpioidCDSREC04.html",
-      "source": "OpioidCDSREC04-bundle.json"
     }
   }
 }
