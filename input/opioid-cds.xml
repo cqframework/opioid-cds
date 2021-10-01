@@ -45,13 +45,13 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/opioid-cds-recommendation04-bundle"/>
+                <reference value="Bundle/OpioidCDSREC04-bundle"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/opioid-cds-recommendation05-bundle"/>
+                <reference value="Bundle/OpioidCDSREC05-bundle"/>
             </sourceReference>
         </resource>
         <!-- <resource>
@@ -63,13 +63,13 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/opioid-cds-recommendation07-bundle"/>
+                <reference value="Bundle/OpioidCDSREC07-bundle"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/opioid-cds-recommendation08-bundle"/>
+                <reference value="Bundle/OpioidCDSREC08-bundle"/>
             </sourceReference>
         </resource>
         <!-- <resource>
@@ -81,37 +81,37 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/opioid-cds-recommendation10-bundle"/>
+                <reference value="Bundle/OpioidCDSREC10-bundle"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/opioid-cds-recommendation10-ordersign-bundle"/>
+                <reference value="Bundle/OpioidCDSREC10OrderSign-bundle"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/opioid-cds-recommendation10-patientview-bundle"/>
+                <reference value="Bundle/OpioidCDSREC10PatientView-bundle"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/opioid-cds-recommendation11-bundle"/>
+                <reference value="Bundle/OpioidCDSREC11-bundle"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/opioid-cds-recommendation11-patientview-bundle"/>
+                <reference value="Bundle/OpioidCDSREC11PatientView-bundle"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/opioid-cds-recommendation12-patientview-bundle"/>
+                <reference value="Bundle/OpioidCDSREC12PatientView-bundle"/>
             </sourceReference>
         </resource>
         <resource>
