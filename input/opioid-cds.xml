@@ -1436,7 +1436,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Counseling Procedure "/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Counseling Procedure"/>
             <description value="Opioid counseling procedure codes"/>
             <sourceReference>
                 <reference value="ValueSet/opioid-counseling-procedure"/>
