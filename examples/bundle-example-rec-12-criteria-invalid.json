@@ -11,11 +11,8 @@
                 "_birthDate": {
                     "extension": [
                         {
-                            "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-                            "valueExpression": {
-                                "language": "text/cql",
-                                "expression": "Today() - 20 years"
-                            }
+                            "url": "ttp://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                            "valueString": "Today() - 20 years"
                         }
                     ]
                 }
