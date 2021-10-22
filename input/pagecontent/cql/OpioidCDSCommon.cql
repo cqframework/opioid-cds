@@ -59,6 +59,9 @@ context Patient
 
 // TODO: Capture process decisions for long-term opioid use
 
+define "Opioid Other Than Synthetic Ordered In Last 12 Months":
+    true
+
 define "Active Ambulatory Opioid Rx":
   (
     [MedicationRequest: status in "Active MedicationRequest"] MR

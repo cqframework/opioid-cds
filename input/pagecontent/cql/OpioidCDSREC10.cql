@@ -64,7 +64,8 @@ define "Inclusion Criteria":
     and Routines."Is Opioid Review Useful?"
     and (not "Patient had Urine Screening in Last 12 Months"
       or "Has Positive Screening for Cocaine in Last 12 Months"
-      or "Has Positive Screening for PCP in Last 12 Months")
+      or "Has Positive Screening for PCP in Last 12 Months"
+      or "Has Positive Screening for Opiates in Last 12 Months")
 
 define "Exclusion Criteria":
   false
@@ -170,6 +171,10 @@ define "Has Positive Screening for PCP in Last 12 Months":
   exists "PCP Screenings" PCP where
     StartsWith(Lower(PCP.value as FHIR.string), 'pos')
 
+define "Has Positive Screening for Opiates in Last 12 Months":
+  exists "Opioid Screenings" Opioid where
+    StartsWith(Lower(Opioid.value as FHIR.string), 'pos')
+
 define "Applicable Because of Positive Cocaine or PCP":
   "Is Recommendation Applicable?"
     and ("Has Positive Screening for Cocaine in Last 12 Months" or "Has Positive Screening for PCP in Last 12 Months")
@@ -232,6 +237,32 @@ define "PCP Summary":
   'Negative test count since last Positive: ' + ToString("Negative PCP Screenings Count Since Last Positive Screening")
 
 define "Cocaine Summary":
+
   'Positive for Cocaine: <br/>' +
   'Positive lab dates: <br/>' + Combine("Positive Cocaine Dates in Lookback Period", '<br/>') + '<br/>' +
   'Negative test count since last Positive: ' + ToString("Negative Cocaine Screenings Count Since Last Positive Screening")
+
+define "Kick off Sequence":
+  if Common."Opioid Other Than Synthetic Ordered In Last 12 Months"
+    then 
+      if(Common."Opioid Other Than Synthetic Ordered In Last 12 Months")
+        then "Detail"// any urine test in last 12 months pos for cocaine or pcp? then current results
+      else 'publish false'
+  else 'publish false'//Is there any urine test in last 12 months with a positive result for opiates, cocaine, or PCP?
+
+/*
+Opioid rec 10 new logic (10/13/2021)
+Opioid analgesiac other than synthetic opioid ordered in last 12 months?
+    if YES then
+        Is there any urine test in last 12 months with a positive result for cocaine, or PCP?
+        if NO then STOP
+        if YES then
+            current alerts/cql
+    if NO then
+        Is there any urine test in last 12 months with a positive result for opiates, cocaine, or PCP?
+            if NO then STYOP
+            if YES then new report logic
+                List ALL positive test dates for each drug in ascending order with last positive date followed by count of all subsequent negative tests
+
+
+ */
