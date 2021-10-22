@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "id": "non-synthetic-opioids",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-synthetic-opioids",
+  "name": "non-synthetic-opioids",
+  "title": "Non-synthetic opioids",
+  "status": "active",
+  "experimental": true,
+  "date": "2021-10-22T12:27:32-06:00",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
+  "description": "All non-synthetic opioid clinical drugs.",
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
+  "purpose": "Non-synthetic opioid medications that should have opioid management CDS",
+  "copyright": "© CDC 2016+.",
+  "expansion": {
+    "identifier": "f021cc9e-312b-4401-9962-0f692855963d",
+    "timestamp": "2021-09-17T12:27:32-06:00",
+    "contains": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "code": "non-synthetic-opioid",
+      "display": "A generic non-synthetic opioid drug"
+    } ]
+  }
+}
