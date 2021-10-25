@@ -198,7 +198,7 @@ define "Applicable Because of Positive Cocaine or PCP or Opiates":
   "Is Recommendation Applicable?"
     and ("Has Positive Screening for Cocaine in Last 12 Months" or "Has Positive Screening for PCP in Last 12 Months" or "Has Positive Screening for Opiates in Last 12 Months")
 
-define "Applicable Not Because of Positive Cocaine or PCP":
+define "Applicable Not Because of Positive Cocaine or PCP or Opiates":
   "Is Recommendation Applicable?"
     and not "Has Positive Screening for Cocaine in Last 12 Months"
     and not "Has Positive Screening for PCP in Last 12 Months"
@@ -222,13 +222,25 @@ define "PCP Detail":
 define "Detail":
   if "Applicable Because of Positive Cocaine or PCP or Opiates"
     then
-        "Cocaine Detail"
-        "Opiates Detail"
+    
+        "Cocaine Detail"+
+        "Opiates Detail"+
         "PCP Detail"
-  else 
-    if "Applicable Not Because of Positive Cocaine or PCP"
-    then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
-    else null
+/*
+      if ("Has Positive Screening for PCP in Last 12 Months")
+        then "PCP Summary"
+        else null
+      if ("Has Positive Screening for Opiates in Last 12 Months")
+        then "Opiates Summary"
+        else null
+      if ("Has Positive Screening for Cocaine in Last 12 Months")
+        then "Cocaine Summary"
+        else null
+*/        
+    else 
+      if "Applicable Not Because of Positive Cocaine or PCP or Opiates"
+        then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
+        else null
 
 define "Indicator":
   'warning'
@@ -236,7 +248,7 @@ define "Indicator":
 define "Summary":
   if "Applicable Because of Positive Cocaine or PCP or Opiates"
     then 'Positive Cocaine or PCP in Urine Screening'
-  else if "Applicable Not Because of Positive Cocaine or PCP"
+  else if "Applicable Not Because of Positive Cocaine or PCP or Opiates"
     then 'Annual Urine Screening Check'
   else null
 
