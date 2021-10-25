@@ -247,7 +247,7 @@ define "Indicator":
 
 define "Summary":
   if "Applicable Because of Positive Cocaine or PCP or Opiates"
-    then 'Positive Cocaine or PCP in Urine Screening'
+    then 'Positive Cocaine or PCP or Opiates in Urine Screening'
   else if "Applicable Not Because of Positive Cocaine or PCP or Opiates"
     then 'Annual Urine Screening Check'
   else null
