@@ -13,6 +13,7 @@ codesystem "SNOMED": 'http://snomed.info/sct'
 valueset "Opioid analgesics with ambulatory misuse potential": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential'
 valueset "Extended release opioid analgesics with ambulatory misuse potential": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/extended-release-opioid-with-ambulatory-misuse-potential'
 valueset "Buprenorphine and methadone medications": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications'
+valueset "Non-synthetic opioid drugs": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-synthetic-opioids'
 
 // Enumerated-compose
 valueset "Limited life expectancy conditions": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions'
@@ -49,15 +50,21 @@ valueset "Community": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/medication
 valueset "Active Condition": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-clinical-status-active'
 valueset "Active MedicationRequest": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-status-active'
 /* valueset "US Core Condition Categories": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-categories' */
-valueset "Encounter Diagnosis Condition Category": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category'
-valueset "Problem List Condition Category": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/problem-list-condition-category'
-valueset "US Core Health Concern Condition Category": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/us-core-health-concern-condition-category'
+valueset "Encounter Diagnosis Condition Category": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis'
+valueset "Problem List Condition Category": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-problem-list-category'
+valueset "US Core Health Concern Condition Category": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-us-core-health-concern-category'
 
 context Patient
 
 // TODO: code "Nonpharmacologic therapy and nonopioid pharmocologic": 'TODO' from "TODO"
 
 // TODO: Capture process decisions for long-term opioid use
+
+define "Opioid Other Than Synthetic Ordered In Last 12 Months":
+  [MedicationRequest: status in "Active MedicationRequest"] MR
+      where date from MR.authoredOn 1 year or less on or before Today()
+      and MR.medication is Reference or (MR.medication in "Opioid analgesics with ambulatory misuse potential"
+      and not (MR.medication in "Non-synthetic opioid drugs"))
 
 define "Active Ambulatory Opioid Rx":
   (

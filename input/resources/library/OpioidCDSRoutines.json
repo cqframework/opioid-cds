@@ -4,7 +4,7 @@
   "extension": [ {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
     "valueReference": {
-      "reference": "cqf-tooling"
+      "reference": "Device/cqf-tooling"
     }
   } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSRoutines",
@@ -47,19 +47,19 @@
     "type": "depends-on",
     "display": "Value set Encounter Diagnosis Condition Category",
     "resource": {
-      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category"
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis"
     }
   }, {
     "type": "depends-on",
     "display": "Value set Problem List Condition Category",
     "resource": {
-      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/problem-list-condition-category"
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-problem-list-category"
     }
   }, {
     "type": "depends-on",
     "display": "Value set US Core Health Concern Condition Category",
     "resource": {
-      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/us-core-health-concern-condition-category"
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-us-core-health-concern-category"
     }
   }, {
     "type": "depends-on",
@@ -247,7 +247,7 @@
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis"
       }
     } ]
   }, {
@@ -260,7 +260,7 @@
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/problem-list-condition-category"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-problem-list-category"
       }
     } ]
   }, {
@@ -273,7 +273,7 @@
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/us-core-health-concern-condition-category"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-us-core-health-concern-category"
       }
     } ]
   }, {
@@ -282,7 +282,7 @@
       "valueCode": "Encounter"
     } ],
     "type": "Encounter",
-    "mustSupport": [ "period.start", "period", "diagnosis", "type", "period.start.value", "participant" ],
+    "mustSupport": [ "type" ],
     "codeFilter": [ {
       "path": "type",
       "valueSetReference": {
@@ -300,6 +300,19 @@
       "path": "specialty",
       "valueSetReference": {
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/oncology-specialty-designations"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter",
+    "mustSupport": [ "period.start", "period", "diagnosis", "type", "period.start.value", "participant" ],
+    "codeFilter": [ {
+      "path": "type",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/office-visit"
       }
     } ]
   }, {
@@ -327,11 +340,6 @@
       "valueSetReference": {
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
       }
-    }, {
-      "path": "status",
-      "valueCoding": [ {
-        "code": "completed"
-      } ]
     } ]
   } ],
   "content": [ {

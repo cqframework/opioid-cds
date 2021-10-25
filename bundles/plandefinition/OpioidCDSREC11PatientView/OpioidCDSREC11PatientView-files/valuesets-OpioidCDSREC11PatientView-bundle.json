@@ -13111,18 +13111,8 @@
   }, {
     "resource": {
       "resourceType": "ValueSet",
-      "id": "us-core-health-concern-condition-category",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/us-core-health-concern-condition-category",
+      "id": "condition-us-core-health-concern-category",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-us-core-health-concern-category",
       "version": "0.0.1",
       "name": "Valueset_US_Core_health-concern-condition_category",
       "title": "ValueSet - US Core Health Concern Condition Category",
@@ -13131,6 +13121,7 @@
       "publisher": "Alphora",
       "description": "US Core Health Concern Condition Category.",
       "expansion": {
+        "identifier": "condition-us-core-health-concern-category-valueset-expansion",
         "timestamp": "2021-06-02T13:47:55-07:00",
         "contains": [ {
           "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
@@ -13141,7 +13132,7 @@
     },
     "request": {
       "method": "PUT",
-      "url": "ValueSet/us-core-health-concern-condition-category"
+      "url": "ValueSet/condition-us-core-health-concern-category"
     }
   }, {
     "resource": {
@@ -13225,6 +13216,32 @@
     "request": {
       "method": "PUT",
       "url": "ValueSet/pain-treatment-plan"
+    }
+  }, {
+    "resource": {
+      "resourceType": "ValueSet",
+      "id": "condition-problem-list-category",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-problem-list-category",
+      "version": "0.0.1",
+      "name": "Valueset_problem_list_condition_category",
+      "title": "ValueSet - Problem List Condition Category",
+      "status": "active",
+      "experimental": false,
+      "publisher": "Alphora",
+      "description": "Problem list condition category.",
+      "expansion": {
+        "identifier": "condition-problem-list-category-valueset-expansion",
+        "timestamp": "2021-06-02T13:47:55-07:00",
+        "contains": [ {
+          "system": "http://hl7.org/fhir/condition-category",
+          "code": "problem-list-item",
+          "display": "Problem List Item"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "ValueSet/condition-problem-list-category"
     }
   }, {
     "resource": {
@@ -17316,6 +17333,32 @@
     "request": {
       "method": "PUT",
       "url": "ValueSet/conditions-documenting-substance-misuse"
+    }
+  }, {
+    "resource": {
+      "resourceType": "ValueSet",
+      "id": "condition-category-encounter-diagnosis",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis",
+      "version": "0.0.1",
+      "name": "Valueset_encounter_diagnosis_condition_categories",
+      "title": "ValueSet - Encounter Diagnosis Condition Categories",
+      "status": "active",
+      "experimental": false,
+      "publisher": "Alphora",
+      "description": "Encounter Diagnosis condition category.",
+      "expansion": {
+        "identifier": "condition-category-encounter-diagnosis-valueseet-expansion",
+        "timestamp": "2021-06-02T13:47:55-07:00",
+        "contains": [ {
+          "system": "http://hl7.org/fhir/condition-category",
+          "code": "encounter-diagnosis",
+          "display": "Encounter Diagnosis"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "ValueSet/condition-category-encounter-diagnosis"
     }
   }, {
     "resource": {
@@ -28987,6 +29030,47 @@
   }, {
     "resource": {
       "resourceType": "ValueSet",
+      "id": "non-synthetic-opioids",
+      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-synthetic-opioids",
+      "name": "non-synthetic-opioids",
+      "title": "Non-synthetic opioids",
+      "status": "active",
+      "experimental": true,
+      "date": "2021-10-22T12:27:32-06:00",
+      "publisher": "Centers for Disease Control and Prevention (CDC)",
+      "contact": [ {
+        "name": "MD Partners, Inc.",
+        "telecom": [ {
+          "system": "email",
+          "value": "info@mdpartners.com"
+        } ]
+      } ],
+      "description": "All non-synthetic opioid clinical drugs.",
+      "jurisdiction": [ {
+        "coding": [ {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        } ]
+      } ],
+      "purpose": "Non-synthetic opioid medications that should have opioid management CDS",
+      "copyright": "© CDC 2016+.",
+      "expansion": {
+        "identifier": "f021cc9e-312b-4401-9962-0f692855963d",
+        "timestamp": "2021-09-17T12:27:32-06:00",
+        "contains": [ {
+          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "code": "non-synthetic-opioid",
+          "display": "A generic non-synthetic opioid drug"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "ValueSet/non-synthetic-opioids"
+    }
+  }, {
+    "resource": {
+      "resourceType": "ValueSet",
       "id": "naloxone-medications",
       "extension": [ {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-clinical-focus",
@@ -31903,41 +31987,6 @@
   }, {
     "resource": {
       "resourceType": "ValueSet",
-      "id": "encounter-diagnosis-condition-category",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/encounter-diagnosis-condition-category",
-      "version": "0.0.1",
-      "name": "Valueset_encounter_diagnosis_condition_categories",
-      "title": "ValueSet - Encounter Diagnosis Condition Categories",
-      "status": "active",
-      "experimental": false,
-      "publisher": "Alphora",
-      "description": "Encounter Diagnosis condition category.",
-      "expansion": {
-        "timestamp": "2021-06-02T13:47:55-07:00",
-        "contains": [ {
-          "system": "http://hl7.org/fhir/condition-category",
-          "code": "encounter-diagnosis",
-          "display": "Encounter Diagnosis"
-        } ]
-      }
-    },
-    "request": {
-      "method": "PUT",
-      "url": "ValueSet/encounter-diagnosis-condition-category"
-    }
-  }, {
-    "resource": {
-      "resourceType": "ValueSet",
       "id": "benzodiazepine-medications",
       "extension": [ {
         "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
@@ -32707,41 +32756,6 @@
     "request": {
       "method": "PUT",
       "url": "ValueSet/benzodiazepine-medications"
-    }
-  }, {
-    "resource": {
-      "resourceType": "ValueSet",
-      "id": "problem-list-condition-category",
-      "extension": [ {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-        "valueCode": "executable"
-      }, {
-        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
-        "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
-      } ],
-      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/problem-list-condition-category",
-      "version": "0.0.1",
-      "name": "Valueset_problem_list_condition_category",
-      "title": "ValueSet - Problem List Condition Category",
-      "status": "active",
-      "experimental": false,
-      "publisher": "Alphora",
-      "description": "Problem list condition category.",
-      "expansion": {
-        "timestamp": "2021-06-02T13:47:55-07:00",
-        "contains": [ {
-          "system": "http://hl7.org/fhir/condition-category",
-          "code": "problem-list-item",
-          "display": "Problem List Item"
-        } ]
-      }
-    },
-    "request": {
-      "method": "PUT",
-      "url": "ValueSet/problem-list-condition-category"
     }
   } ]
 }

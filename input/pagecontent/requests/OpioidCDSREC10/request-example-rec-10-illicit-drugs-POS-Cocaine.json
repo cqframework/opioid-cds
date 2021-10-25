@@ -100,36 +100,7 @@
         "birthDate": "1982-01-07"
       }
     },
-    "item2": null,
-    "item3": null,
-    "item4": null,
-    "item5": null,
-    "item6": null,
-    "item7": {
-      "response": {
-        "status": "200 OK"
-      },
-      "resource": {
-        "resourceType": "Encounter",
-        "id": "example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch",
-        "status": "finished",
-        "subject": {
-          "reference": "Patient/example-rec-10-2-illicit-POS-Cocaine-drugs"
-        },
-        "_period": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() - 90 days } }"
-              }
-            }
-          ]
-        }
-      }
-    },
-    "item8": {
+    "item2": {
       "response": {
         "status": "200 OK"
       },
@@ -256,6 +227,35 @@
         ]
       }
     },
+    "item3": null,
+    "item4": null,
+    "item5": null,
+    "item6": null,
+    "item7": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-rec-10-2-illicit-POS-Cocaine-drugs-prefetch",
+        "status": "finished",
+        "subject": {
+          "reference": "Patient/example-rec-10-2-illicit-POS-Cocaine-drugs"
+        },
+        "_period": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() - 90 days } }"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "item8": null,
     "item9": null,
     "item10": {
       "response": {
