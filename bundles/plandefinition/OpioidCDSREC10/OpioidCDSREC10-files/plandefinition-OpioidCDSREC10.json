@@ -192,8 +192,8 @@
       ]
     },
     {
-      "title": "Cocaine or PCP Tested Positive",
-      "description": "Urine screening showed positive for cocaine or PCP",
+      "title": "Tested Positive for Cocaine, Opiates, or PCP",
+      "description": "Urine screening showed positive for cocaine, opiates or PCP",
       "documentation": [
         {
           "type": "documentation",
@@ -241,7 +241,7 @@
       "condition": [
         {
           "kind": "applicability",
-          "description": "Urine screening tested positive for cocaine or PCP",
+          "description": "Urine screening tested positive for cocaine, opiates or PCP",
           "language": "text/cql",
           "expression": "Applicable Because of Positive Cocaine or PCP or Opiates"
         }
