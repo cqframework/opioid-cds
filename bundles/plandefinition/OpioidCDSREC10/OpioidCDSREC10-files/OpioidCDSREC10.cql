@@ -48,7 +48,7 @@ define "Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescript
 define "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential":
   exists ("Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions")
 
-define "Is Recommendation Applicable?":
+define "Is Perform Drug Screen Recommendation Applicable?":
   "Inclusion Criteria"
     and not "Exclusion Criteria"
 
@@ -62,22 +62,14 @@ define "Inclusion Criteria":
   "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential"
     and not "Patient Age Less Than 18"
     and Routines."Is Opioid Review Useful?"
-    and (not "Patient had Urine Screening in Last 12 Months"
-      or "Has Positive Screening for Cocaine in Last 12 Months"
-      or "Has Positive Screening for PCP in Last 12 Months"
-      or "Has Positive Screening for Opiates in Last 12 Months")
+    and (not "Patient had Urine Screening in Last 12 Months")
 
 define "Exclusion Criteria":
   false
 
 define "Patient had Urine Screening in Last 12 Months":
-  exists ("Urine Screenings during the Last 12 Months")
-
-define "Urine Screenings during the Last 12 Months":
-  "Non-opioid Screenings"
-    union "Opiate Screenings"
-    union "Cocaine Screenings"
-    union "PCP Screenings"
+   (exists"Non-opioid Screenings" or exists "Cocaine Screenings" or exists "PCP Screenings") and
+    exists "Opiate Screenings"
 
 define "Laboratory Observations":
     [Observation: "category" in Common."Observation Category Laboratory"]
@@ -195,11 +187,14 @@ define "Has Positive Screening for Opiates in Last 12 Months":
     StartsWith(Lower(Opioid.value as FHIR.string), 'pos')
 
 define "Applicable Because of Positive Cocaine or PCP or Opiates":
-  "Is Recommendation Applicable?"
-    and ("Has Positive Screening for Cocaine in Last 12 Months" or "Has Positive Screening for PCP in Last 12 Months" or "Has Positive Screening for Opiates in Last 12 Months")
+    if exists (Common."Opioid Other Than Synthetic Ordered In Last 12 Months")
+    then
+        "Has Positive Screening for Cocaine in Last 12 Months" or "Has Positive Screening for PCP in Last 12 Months"
+    else
+        "Has Positive Screening for Cocaine in Last 12 Months" or "Has Positive Screening for PCP in Last 12 Months" or "Has Positive Screening for Opiates in Last 12 Months"
 
 define "Applicable Not Because of Positive Cocaine or PCP or Opiates":
-  "Is Recommendation Applicable?"
+  "Is Perform Drug Screen Recommendation Applicable?"
     and not "Has Positive Screening for Cocaine in Last 12 Months"
     and not "Has Positive Screening for PCP in Last 12 Months"
     and not "Has Positive Screening for Opiates in Last 12 Months"
@@ -220,27 +215,32 @@ define "PCP Detail":
     else null
 
 define "Detail":
-  if "Applicable Because of Positive Cocaine or PCP or Opiates"
-    then
-    
-       "Cocaine Detail"&
-        "Opiates Detail"&
-        "PCP Detail"&
-        '<br/>Note: result may be false positive result or indicate patient is occasional user or addicted to the illicit drug.'
-    else 
-      if "Applicable Not Because of Positive Cocaine or PCP or Opiates"
-        then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
-        else null
+    if "Is Perform Drug Screen Recommendation Applicable?"
+        then
+            'Patients on opioid therapy should have a urine drug test performed every 12 months.'
+        else
+            if "Applicable Because of Positive Cocaine or PCP or Opiates"
+            then
+                "Cocaine Detail"&
+                "Opiates Detail"&
+                "PCP Detail"&
+                '<br/>Note: result may be false positive result or indicate patient is occasional user or addicted to the illicit drug.'
+            else
+                null
 
 define "Indicator":
   'warning'
 
+    /*
+        Used only in PlanDefinition
+     */
 define "Summary":
-  if "Applicable Because of Positive Cocaine or PCP or Opiates"
-    then 'Positive Cocaine or PCP or Opiates in Urine Screening'
-  else if "Applicable Not Because of Positive Cocaine or PCP or Opiates"
-    then 'Annual Urine Screening Check'
-  else null
+    if "Is Perform Drug Screen Recommendation Applicable?"
+        then 'Annual Urine Screening Check'
+        else
+        if "Applicable Because of Positive Cocaine or PCP or Opiates"
+            then 'Positive Cocaine or PCP or Opiates in Urine Screening'
+        else null
 
 define "Urine Drug Screening ProcedureRequest Category":
   FHIR.CodeableConcept {
@@ -263,15 +263,19 @@ define "Cocaine And PCP Summary":
     "Cocaine Summary" + '<br/>' + "PCP Summary"
 
 define "Opiates Summary":
-    if "Negative Opiate Screenings Count Since Last Positive Screening" > 0
+    if not exists Common."Opioid Other Than Synthetic Ordered In Last 12 Months"
     then
-      '<br/>*Positive for Opiates: ' +
-        Combine("Positive Opiate Dates in Lookback Period", ', ') +
-        '  (' + ToString("Negative Opiate Screenings Count Since Last Positive Screening") +
-        ' negative since)'
+        if "Negative Opiate Screenings Count Since Last Positive Screening" > 0
+        then
+          '<br/>*Positive for Opiates: ' +
+            Combine("Positive Opiate Dates in Lookback Period", ', ') +
+            '  (' + ToString("Negative Opiate Screenings Count Since Last Positive Screening") +
+            ' negative since)'
+        else
+          '<br/>*Positive for Opiates: ' +
+            Combine("Positive Opiate Dates in Lookback Period", ', ')
     else
-      '<br/>*Positive for Opiates: ' +
-        Combine("Positive Opiate Dates in Lookback Period", ', ')
+        null
 
 define "PCP Summary":
     if "Negative PCP Screenings Count Since Last Positive Screening" > 0
