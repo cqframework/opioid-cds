@@ -145,6 +145,45 @@
                 }
               ]
             }
+          },{
+            "resource": {
+              "resourceType": "Observation",
+              "id": "example-rec-10-2-illicit-drugs-prefetch",
+              "status": "final",
+              "category": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/observation-category",
+                    "code": "laboratory"
+                  }
+                ]
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "version": "2.68",
+                    "code": "11246-6",
+                    "display": "oxyCODONE (U) [Mass/Vol]"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "Patient/example-rec-10-2-illicit--drugs"
+              },
+              "effectiveDateTime": "2021-01-22",
+              "valueString": "NEG",
+              "interpretation": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/v2/0078",
+                      "code": "NEG"
+                    }
+                  ]
+                }
+              ]
+            }
           },
           {
             "resource": {
