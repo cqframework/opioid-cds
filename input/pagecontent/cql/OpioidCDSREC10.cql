@@ -65,7 +65,7 @@ define "Inclusion Criteria":
     and (not "Patient had Urine Screening in Last 12 Months")
 
 define "Exclusion Criteria":
-  false
+  "End of Life Assessment"
 
 define "Patient had Urine Screening in Last 12 Months":
    (exists"Non-opioid Screenings" or exists "Cocaine Screenings" or exists "PCP Screenings") and
