@@ -16,6 +16,6 @@ v: {
   "code" : "",
   "system" : "",
   "severity" : "error",
-  "error" : "The code system \"\" is not known (encountered paired with code = \"outpatient\"); The code provided (#outpatient) is not valid in the value set 'MedicationRequestCategory' (from http://tx.fhir.org/r3)"
+  "error" : "The code system '' is not known (encountered paired with code = 'outpatient'); The code provided (#outpatient) is not valid in the value set 'MedicationRequestCategory' (from http://tx.fhir.org/r3)"
 }
 -------------------------------------------------------------------------------------

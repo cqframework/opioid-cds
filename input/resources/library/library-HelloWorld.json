@@ -1,0 +1,77 @@
+{
+  "resourceType": "Library",
+  "id": "library-HelloWorld",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
+  } ],
+  "url": "http://fhir.org/guides/cdc/opioid-cds/Library/HelloWorld",
+  "version": "1.0.0",
+  "name": "HelloWorld",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Info",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Warning",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Critical",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Main Action Condition Expression Is True",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Get Title",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Get Description",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Get Indicator",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  } ],
+  "content": [ {
+    "contentType": "text/cql",
+    "data": "bGlicmFyeSBIZWxsb1dvcmxkIHZlcnNpb24gJzEuMC4wJw0KDQp1c2luZyBGSElSIHZlcnNpb24gJzMuMC4wJw0KDQppbmNsdWRlIEZISVJIZWxwZXJzIHZlcnNpb24gJzMuMC4wJw0KDQpjb250ZXh0IFBhdGllbnQNCg0KZGVmaW5lICJJbmZvIjoNCiAgJ2luZm8nDQoNCmRlZmluZSAiV2FybmluZyI6DQogICd3YXJuaW5nJw0KDQpkZWZpbmUgIkNyaXRpY2FsIjoNCiAgJ2NyaXRpY2FsJw0KDQpkZWZpbmUgIk1haW4gQWN0aW9uIENvbmRpdGlvbiBFeHByZXNzaW9uIElzIFRydWUiOg0KICB0cnVlDQoNCmRlZmluZSAiR2V0IFRpdGxlIjoNCiAgJ0hlbGxvIFdvcmxkIScNCg0KZGVmaW5lICJHZXQgRGVzY3JpcHRpb24iOg0KICAnVGhlIENEUyBTZXJ2aWNlIGlzIGFsaXZlIGFuZCBjb21tdW5pY2F0aW5nIHN1Y2Nlc3NmdWxseSEnDQoNCmRlZmluZSAiR2V0IEluZGljYXRvciI6DQogICdpbmZvJw0K"
+  } ]
+}

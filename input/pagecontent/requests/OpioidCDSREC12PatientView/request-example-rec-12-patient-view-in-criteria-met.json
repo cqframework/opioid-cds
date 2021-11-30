@@ -18,7 +18,7 @@
         "_birthDate": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
               "valueString": "Today() - 20 years"
             }
           ]
@@ -76,7 +76,7 @@
         "_assertedDate": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
               "valueString": "Today() - 60 days"
             }
           ]

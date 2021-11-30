@@ -1,0 +1,418 @@
+{
+  "resourceType": "Library",
+  "id": "library-OpioidCDSREC10",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
+  } ],
+  "url": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSREC10",
+  "version": "2.0.1",
+  "name": "OpioidCDSREC10",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers"
+  }, {
+    "type": "depends-on",
+    "display": "Library Common"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config"
+  }, {
+    "type": "depends-on",
+    "display": "Library Routines"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Opioid analgesics with ambulatory misuse potential"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Community"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Observation Category Laboratory"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Non-opioid drug urine screening"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Opioid drug urine screening"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Cocaine Urine Tests"
+  }, {
+    "type": "depends-on",
+    "display": "Value set PCP Urine Tests"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Encounter Diagnosis Condition Category"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Problem List Condition Category"
+  }, {
+    "type": "depends-on",
+    "display": "Value set US Core Health Concern Condition Category"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Limited life expectancy conditions"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Active Condition"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Therapies indicating end of life care"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Conditions likely terminal for opioid prescribing"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Hospice Procedure Codes"
+  } ],
+  "parameter": [ {
+    "name": "ContextPrescriptions",
+    "use": "in",
+    "min": 0,
+    "max": "*",
+    "type": "MedicationRequest"
+  }, {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Lookback Year",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Period"
+  }, {
+    "name": "Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "MedicationRequest"
+  }, {
+    "name": "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Patient Age Less Than 18",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Non-opioid Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Opioid Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Cocaine Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "PCP Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Urine Screenings during the Last 12 Months",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Patient had Urine Screening in Last 12 Months",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Has Positive Screening for Cocaine in Last 12 Months",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Has Positive Screening for PCP in Last 12 Months",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Inclusion Criteria",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Exclusion Criteria",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Is Recommendation Applicable?",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Positive PCP Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Negative PCP Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Positive Cocaine Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Negative Cocaine Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Negative PCP Screenings Count Since Last Positive Screening",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "integer"
+  }, {
+    "name": "Negative Cocaine Screenings Count Since Last Positive Screening",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "integer"
+  }, {
+    "name": "Positive Cocaine Dates in Lookback Period",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "string"
+  }, {
+    "name": "Positive PCP Dates in Lookback Period",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "string"
+  }, {
+    "name": "Applicable Because of Positive Cocaine or PCP",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Applicable Not Because of Positive Cocaine or PCP",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Cocaine Summary",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "PCP Summary",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Cocaine And PCP Summary",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Detail",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Indicator",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Summary",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "category" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "category" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "category" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "category" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "category" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status.value", "status" ],
+    "codeFilter": [ {
+      "path": "code"
+    } ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "status.value", "status" ],
+    "codeFilter": [ {
+      "path": "code"
+    } ]
+  }, {
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+    "mustSupport": [ "period.start", "period", "status.value", "status" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category"
+    } ]
+  } ],
+  "content": [ {
+    "contentType": "text/cql",
+    "data": "bGlicmFyeSBPcGlvaWRDRFNSRUMxMCB2ZXJzaW9uICcxLjIuMycKCnVzaW5nIEZISVIgdmVyc2lvbiAnMy4wLjAnCgppbmNsdWRlIEZISVJIZWxwZXJzIHZlcnNpb24gJzMuMC4wJyBjYWxsZWQgRkhJUkhlbHBlcnMKaW5jbHVkZSBPcGlvaWRDRFNDb21tb24gdmVyc2lvbiAnMS4yLjMnIGNhbGxlZCBDb21tb24KaW5jbHVkZSBPcGlvaWRDRFNSb3V0aW5lcyB2ZXJzaW9uICcxLjIuMycgY2FsbGVkIFJvdXRpbmVzCmluY2x1ZGUgT3Bpb2lkQ0RTQ29tbW9uQ29uZmlnIHZlcnNpb24gJzEuMi4zJyBjYWxsZWQgQ29uZmlnCgovKgoqKiAgUmVjb21tZW5kYXRpb24gIzEwCioqICAgIFdoZW4gcHJlc2NyaWJpbmcgb3Bpb2lkcyBmb3IgY2hyb25pYyBwYWluLCBwcm92aWRlcnMgc2hvdWxkIHVzZSB1cmluZSBkcnVnCioqICAgIHRlc3RpbmcgYmVmb3JlIHN0YXJ0aW5nIG9waW9pZCB0aGVyYXB5IGFuZCBjb25zaWRlciB1cmluZSBkcnVnIHRlc3RpbmcgYXQKKiogICAgbGVhc3QgYW5udWFsbHkgdG8gYXNzZXNzIGZvciBwcmVzY3JpYmVkIG1lZGljYXRpb25zIGFzIHdlbGwgYXMgb3RoZXIgY29udHJvbGxlZAoqKiAgICBwcmVzY3JpcHRpb24gZHJ1Z3MgYW5kIGlsbGljaXQgZHJ1Z3MgKHJlY29tbWVuZGF0aW9uIGNhdGVnb3J5OiBCLCBldmlkZW5jZSB0eXBlOiA0KQoqKgoqKiAgV2hlbgoqKiAgICBQcm92aWRlciBpcyBwcmVzY3JpYmluZyBhbiBvcGlvaWQgYW5hbGdlc2ljIHdpdGggYW1idWxhdG9yeSBtaXN1c2UgcG90ZW50aWFsIGluIHRoZSBvdXRwYXRpZW50IHNldHRpbmcKKiogICAgUHJlc2NyaXB0aW9uIGlzIGZvciB0cmVhdGluZyBjaHJvbmljIHBhaW4uCioqICAgIE9waW9pZCByZXZpZXcgaXMgdXNlZnVsIGZvciB0aGlzIHBhdGllbnQ6CioqICAgICAgUGF0aWVudCBpcyAxOCBvciBvdmVyCioqICAgICAgUGF0aWVudCBkb2VzIG5vdCBoYXZlIGZpbmRpbmdzIGluZGljYXRpbmcgbGltaXRlZCBsaWZlIGV4cGVjdGFuY3kKKiogICAgICBQYXRpZW50IGRvZXMgbm90IGhhdmUgb3JkZXJzIGZvciB0aGVyYXBpZXMgaW5kaWNhdGluZyBlbmQgb2YgbGlmZSBjYXJlCioqICAgICAgUGF0aWVudCBpcyBub3QgdW5kZXJnb2luZyBhY3RpdmUgY2FuY2VyIHRyZWF0bWVudDoKKiogICAgICAgIFBhdGllbnQgaGFzIGhhZCBhdCBsZWFzdCAyIGVuY291bnRlcnMgd2l0aGluIHRoZSBwYXN0IHllYXIgd2l0aCBhbnkgZGlhZ25vc2lzIG9mIGNhbmNlcgoqKiAgICBVcmluZSBkcnVnIHNjcmVlbmluZyBoYXMgbm90IGJlZW4gcGVyZm9ybWVkIGluIGxhc3QgMTIgbW9udGhzCioqICBUaGVuCioqICAgIFJlY29tbWVuZCB1cmluZSBkcnVnIHNjcmVlbmluZwoqKiAgICAgIFdpbGwgcGVyZm9ybSB1cmluZSBzY3JlZW5pbmcKKiogICAgICBOb3QgZm9yIGNocm9uaWMgcGFpbiBtYW5hZ2VtZW50LCBzbm9vemUgMyBtb250aHMKKiogICAgICBOL0EgLSBzZWUgY29tbWVudCwgc25vb3plIDMgbW9udGhzCioqCiovCgovLyBNRVRBOiBQbGFuIERlZmluaXRpb246IGh0dHA6Ly9maGlyLm9yZy9ndWlkZXMvY2RjL29waW9pZC1jZHMvUGxhbkRlZmluaXRpb24vb3Bpb2lkLWNkcy0xMAoKcGFyYW1ldGVyIENvbnRleHRQcmVzY3JpcHRpb25zIExpc3Q8TWVkaWNhdGlvblJlcXVlc3Q+Cgpjb250ZXh0IFBhdGllbnQKCmRlZmluZSAiTG9va2JhY2sgWWVhciI6CiAgSW50ZXJ2YWxbVG9kYXkoKSAtIDEyIG1vbnRocyAtIDEgZGF5cywgVG9kYXkoKSAtIDEgZGF5XQoKZGVmaW5lICJDaHJvbmljIFBhaW4gT3Bpb2lkIEFuYWxnZXNpYyB3aXRoIEFtYnVsYXRvcnkgTWlzdXNlIFBvdGVudGlhbCBQcmVzY3JpcHRpb25zIjoKICAoQ29tbW9uLiJJcyBPcGlvaWQgQW5hbGdlc2ljIHdpdGggQW1idWxhdG9yeSBNaXN1c2UgUG90ZW50aWFsPyIoQ29udGV4dFByZXNjcmlwdGlvbnMpKSBBbWJ1bGF0b3J5T3Bpb2lkUHJlc2NyaXB0aW9uCiAgICB3aGVyZSBSb3V0aW5lcy4iSXMgQ2hyb25pYyBQYWluIFByZXNjcmlwdGlvbj8iKEFtYnVsYXRvcnlPcGlvaWRQcmVzY3JpcHRpb24pCgpkZWZpbmUgIlBhdGllbnQgSXMgQmVpbmcgUHJlc2NyaWJlZCBPcGlvaWQgQW5hbGdlc2ljIHdpdGggQW1idWxhdG9yeSBNaXN1c2UgUG90ZW50aWFsIjoKICBleGlzdHMgKCJDaHJvbmljIFBhaW4gT3Bpb2lkIEFuYWxnZXNpYyB3aXRoIEFtYnVsYXRvcnkgTWlzdXNlIFBvdGVudGlhbCBQcmVzY3JpcHRpb25zIikKCmRlZmluZSAiSXMgUmVjb21tZW5kYXRpb24gQXBwbGljYWJsZT8iOgogICJJbmNsdXNpb24gQ3JpdGVyaWEiCiAgICBhbmQgbm90ICJFeGNsdXNpb24gQ3JpdGVyaWEiCgpkZWZpbmUgIlBhdGllbnQgQWdlIExlc3MgVGhhbiAxOCI6CiAgaWYgKENvbmZpZy4iQWdlIExlc3MgdGhhbiAxOCBZZWFycyBJcyBFbmFibGVkIikgdGhlbgogICAgQWdlSW5ZZWFyc0F0KFRvZGF5KCkpIDwgMTgKICBlbHNlCiAgICBmYWxzZQoKZGVmaW5lICJJbmNsdXNpb24gQ3JpdGVyaWEiOgogICJQYXRpZW50IElzIEJlaW5nIFByZXNjcmliZWQgT3Bpb2lkIEFuYWxnZXNpYyB3aXRoIEFtYnVsYXRvcnkgTWlzdXNlIFBvdGVudGlhbCIKICAgIGFuZCBub3QgIlBhdGllbnQgQWdlIExlc3MgVGhhbiAxOCIKICAgIGFuZCBSb3V0aW5lcy4iSXMgT3Bpb2lkIFJldmlldyBVc2VmdWw/IgogICAgYW5kIChub3QgIlBhdGllbnQgaGFkIFVyaW5lIFNjcmVlbmluZyBpbiBMYXN0IDEyIE1vbnRocyIKICAgICAgb3IgIkhhcyBQb3NpdGl2ZSBTY3JlZW5pbmcgZm9yIENvY2FpbmUgaW4gTGFzdCAxMiBNb250aHMiCiAgICAgIG9yICJIYXMgUG9zaXRpdmUgU2NyZWVuaW5nIGZvciBQQ1AgaW4gTGFzdCAxMiBNb250aHMiKQoKZGVmaW5lICJFeGNsdXNpb24gQ3JpdGVyaWEiOgogIGZhbHNlCgpkZWZpbmUgIlBhdGllbnQgaGFkIFVyaW5lIFNjcmVlbmluZyBpbiBMYXN0IDEyIE1vbnRocyI6CiAgZXhpc3RzICgiVXJpbmUgU2NyZWVuaW5ncyBkdXJpbmcgdGhlIExhc3QgMTIgTW9udGhzIikKCmRlZmluZSAiVXJpbmUgU2NyZWVuaW5ncyBkdXJpbmcgdGhlIExhc3QgMTIgTW9udGhzIjoKICAiTm9uLW9waW9pZCBTY3JlZW5pbmdzIgogICAgdW5pb24gIk9waW9pZCBTY3JlZW5pbmdzIgogICAgdW5pb24gIkNvY2FpbmUgU2NyZWVuaW5ncyIKICAgIHVuaW9uICJQQ1AgU2NyZWVuaW5ncyIKCmRlZmluZSAiTGFib3JhdG9yeSBPYnNlcnZhdGlvbnMiOgogICAgW09ic2VydmF0aW9uOiAiY2F0ZWdvcnkiIGluIENvbW1vbi4iT2JzZXJ2YXRpb24gQ2F0ZWdvcnkgTGFib3JhdG9yeSJdCgpkZWZpbmUgIk5vbi1vcGlvaWQgU2NyZWVuaW5ncyI6CiAgR2V0UmVsZXZhbnRTY3JlZW5pbmdzKCJMYWJvcmF0b3J5IE9ic2VydmF0aW9ucyIgTGFiT2JzZXJ2YXRpb25zCiAgICAgIHdoZXJlIChMYWJPYnNlcnZhdGlvbnMuY29kZSBpbiBDb21tb24uIk5vbi1vcGlvaWQgZHJ1ZyB1cmluZSBzY3JlZW5pbmciKQogICkKCmRlZmluZSAiT3Bpb2lkIFNjcmVlbmluZ3MiOgogIEdldFJlbGV2YW50U2NyZWVuaW5ncygiTGFib3JhdG9yeSBPYnNlcnZhdGlvbnMiIExhYk9ic2VydmF0aW9ucwogICAgICB3aGVyZSAoTGFiT2JzZXJ2YXRpb25zLmNvZGUgaW4gQ29tbW9uLiJPcGlvaWQgZHJ1ZyB1cmluZSBzY3JlZW5pbmciKQogICkKCmRlZmluZSAiQ29jYWluZSBTY3JlZW5pbmdzIjoKICBHZXRSZWxldmFudFNjcmVlbmluZ3MoIkxhYm9yYXRvcnkgT2JzZXJ2YXRpb25zIiBMYWJPYnNlcnZhdGlvbnMKICAgICAgd2hlcmUgKExhYk9ic2VydmF0aW9ucy5jb2RlIGluIENvbW1vbi4iQ29jYWluZSBVcmluZSBUZXN0cyIpCiAgKQoKZGVmaW5lICJQQ1AgU2NyZWVuaW5ncyI6CiAgR2V0UmVsZXZhbnRTY3JlZW5pbmdzKCJMYWJvcmF0b3J5IE9ic2VydmF0aW9ucyIgTGFiT2JzZXJ2YXRpb25zCiAgICAgIHdoZXJlIChMYWJPYnNlcnZhdGlvbnMuY29kZSBpbiBDb21tb24uIlBDUCBVcmluZSBUZXN0cyIpCiAgKQoKZGVmaW5lIGZ1bmN0aW9uIEdldFJlbGV2YW50U2NyZWVuaW5ncyhvYnNMaXN0IExpc3Q8T2JzZXJ2YXRpb24+KToKICBvYnNMaXN0IExhYk9ic2VydmF0aW9ucwogICAgIHdoZXJlIGRhdGUgZnJvbSBMYWJPYnNlcnZhdGlvbnMuZWZmZWN0aXZlIGluIGRheSBvZiAiTG9va2JhY2sgWWVhciIKICAgICAgIGFuZCBub3QgKExhYk9ic2VydmF0aW9ucy5zdGF0dXMudmFsdWUgaW4geyAndW5rbm93bicsICdlbnRlcmVkLWluLWVycm9yJywgJ2NhbmNlbGxlZCcgfSkKCi8vIFJldHVybnMgYSB0ZXh0IHJlcHJlc2VudGF0aW9uIG9mIGEgZGF0ZVRpbWUgdXNpbmcgdGhlIENRTCBgVG9TdHJpbmdgIGZ1bmN0aW9uLgovLyBAcGFyYW0gZCAtIGEgRkhJUiBkYXRlVGltZSB0byBnZXQgdGV4dCBmb3IKLy8gQHJldHVybnMge1N5c3RlbS5TdHJpbmd9IHRoZSB0ZXh0IHJlcHJlc2VudGF0aW9uIG9mIHRoZSBkYXRlVGltZQpkZWZpbmUgZnVuY3Rpb24gRGF0ZVRpbWVUZXh0KGQgRkhJUi5kYXRlVGltZSk6CiAgVG9TdHJpbmcoZC52YWx1ZSkKCmRlZmluZSAiUG9zaXRpdmUgUENQIFNjcmVlbmluZ3MiOgogICJQQ1AgU2NyZWVuaW5ncyIgUENQIHdoZXJlCiAgICBTdGFydHNXaXRoKExvd2VyKFBDUC52YWx1ZSBhcyBGSElSLnN0cmluZyksICdwb3MnKQoKZGVmaW5lICJOZWdhdGl2ZSBQQ1AgU2NyZWVuaW5ncyI6CiAgIlBDUCBTY3JlZW5pbmdzIiBQQ1Agd2hlcmUKICAgIFN0YXJ0c1dpdGgoTG93ZXIoUENQLnZhbHVlIGFzIEZISVIuc3RyaW5nKSwgJ25lZycpCgpkZWZpbmUgIlBvc2l0aXZlIENvY2FpbmUgU2NyZWVuaW5ncyI6CiAgIkNvY2FpbmUgU2NyZWVuaW5ncyIgQ29jYWluZSB3aGVyZQogICAgU3RhcnRzV2l0aChMb3dlcihDb2NhaW5lLnZhbHVlIGFzIEZISVIuc3RyaW5nKSwgJ3BvcycpCgpkZWZpbmUgIk5lZ2F0aXZlIENvY2FpbmUgU2NyZWVuaW5ncyI6CiAgIkNvY2FpbmUgU2NyZWVuaW5ncyIgQ29jYWluZSB3aGVyZQogICAgU3RhcnRzV2l0aChMb3dlcihDb2NhaW5lLnZhbHVlIGFzIEZISVIuc3RyaW5nKSwgJ25lZycpCgovKgogIGJvcnJvd2VkIGZyb20gQ0RTNENQTSBDRFNfQ29ubmVjdF9Db21tb25zX2Zvcl9GSElSdjQwMAogIFNob3VkbCB0aGlzIGdvIGludG8gT3Bpb2lkQ0RTQ29tbW9uPwoqLwpkZWZpbmUgZnVuY3Rpb24gTW9zdFJlY2VudChPYnNMaXN0IExpc3Q8T2JzZXJ2YXRpb24+KToKICBMYXN0KE9ic0xpc3QgTyBzb3J0IGJ5IENvYWxlc2NlKAogICAgKGVmZmVjdGl2ZSBhcyBGSElSLmRhdGVUaW1lKS52YWx1ZSwKICAgIChlZmZlY3RpdmUgYXMgRkhJUi5QZXJpb2QpLiJlbmQiLnZhbHVlLAogICAgKGVmZmVjdGl2ZSBhcyBGSElSLlBlcmlvZCkuInN0YXJ0Ii52YWx1ZSwKICAgIGlzc3VlZC52YWx1ZSkKICApCgpkZWZpbmUgIk5lZ2F0aXZlIFBDUCBTY3JlZW5pbmdzIENvdW50IFNpbmNlIExhc3QgUG9zaXRpdmUgU2NyZWVuaW5nIjoKICBDb3VudCgKICAgICJOZWdhdGl2ZSBQQ1AgU2NyZWVuaW5ncyIgTiB3aGVyZQogICAgICBEYXRlVGltZVRleHQoTi5lZmZlY3RpdmUpID4gIERhdGVUaW1lVGV4dCgiTW9zdFJlY2VudCIoIlBvc2l0aXZlIFBDUCBTY3JlZW5pbmdzIikuZWZmZWN0aXZlKQogICkKCmRlZmluZSAiTmVnYXRpdmUgQ29jYWluZSBTY3JlZW5pbmdzIENvdW50IFNpbmNlIExhc3QgUG9zaXRpdmUgU2NyZWVuaW5nIjoKICBDb3VudCgKICAgICJOZWdhdGl2ZSBDb2NhaW5lIFNjcmVlbmluZ3MiIE4gd2hlcmUKICAgICAgRGF0ZVRpbWVUZXh0KE4uZWZmZWN0aXZlKSA+ICBEYXRlVGltZVRleHQoIk1vc3RSZWNlbnQiKCJQb3NpdGl2ZSBDb2NhaW5lIFNjcmVlbmluZ3MiKS5lZmZlY3RpdmUpCiAgKQoKZGVmaW5lICJQb3NpdGl2ZSBDb2NhaW5lIERhdGVzIGluIExvb2tiYWNrIFBlcmlvZCI6CiAgIlBvc2l0aXZlIENvY2FpbmUgU2NyZWVuaW5ncyIgQ1MKICAgIHJldHVybgogICAgICBEYXRlVGltZVRleHQoQ1MuZWZmZWN0aXZlKQoKZGVmaW5lICJQb3NpdGl2ZSBQQ1AgRGF0ZXMgaW4gTG9va2JhY2sgUGVyaW9kIjoKICAiUG9zaXRpdmUgUENQIFNjcmVlbmluZ3MiIFBTCiAgICByZXR1cm4KICAgICAgRGF0ZVRpbWVUZXh0KFBTLmVmZmVjdGl2ZSkKCmRlZmluZSAiSGFzIFBvc2l0aXZlIFNjcmVlbmluZyBmb3IgQ29jYWluZSBpbiBMYXN0IDEyIE1vbnRocyI6CiAgZXhpc3RzICJDb2NhaW5lIFNjcmVlbmluZ3MiIENTIHdoZXJlCiAgICAgU3RhcnRzV2l0aChMb3dlcihDUy52YWx1ZSBhcyBGSElSLnN0cmluZyksICdwb3MnKQoKZGVmaW5lICJIYXMgUG9zaXRpdmUgU2NyZWVuaW5nIGZvciBQQ1AgaW4gTGFzdCAxMiBNb250aHMiOgogIGV4aXN0cyAiUENQIFNjcmVlbmluZ3MiIFBDUCB3aGVyZQogICAgU3RhcnRzV2l0aChMb3dlcihQQ1AudmFsdWUgYXMgRkhJUi5zdHJpbmcpLCAncG9zJykKCmRlZmluZSAiQXBwbGljYWJsZSBCZWNhdXNlIG9mIFBvc2l0aXZlIENvY2FpbmUgb3IgUENQIjoKICAiSXMgUmVjb21tZW5kYXRpb24gQXBwbGljYWJsZT8iCiAgICBhbmQgKCJIYXMgUG9zaXRpdmUgU2NyZWVuaW5nIGZvciBDb2NhaW5lIGluIExhc3QgMTIgTW9udGhzIiBvciAiSGFzIFBvc2l0aXZlIFNjcmVlbmluZyBmb3IgUENQIGluIExhc3QgMTIgTW9udGhzIikKCmRlZmluZSAiQXBwbGljYWJsZSBOb3QgQmVjYXVzZSBvZiBQb3NpdGl2ZSBDb2NhaW5lIG9yIFBDUCI6CiAgIklzIFJlY29tbWVuZGF0aW9uIEFwcGxpY2FibGU/IgogICAgYW5kIG5vdCAiSGFzIFBvc2l0aXZlIFNjcmVlbmluZyBmb3IgQ29jYWluZSBpbiBMYXN0IDEyIE1vbnRocyIKICAgIGFuZCBub3QgIkhhcyBQb3NpdGl2ZSBTY3JlZW5pbmcgZm9yIFBDUCBpbiBMYXN0IDEyIE1vbnRocyIKCmRlZmluZSAiRGV0YWlsIjoKICBpZiAiQXBwbGljYWJsZSBCZWNhdXNlIG9mIFBvc2l0aXZlIENvY2FpbmUgb3IgUENQIgogICAgdGhlbgogICAgICAoCiAgICAgICAgaWYgKCJIYXMgUG9zaXRpdmUgU2NyZWVuaW5nIGZvciBDb2NhaW5lIGluIExhc3QgMTIgTW9udGhzIiBhbmQgIkhhcyBQb3NpdGl2ZSBTY3JlZW5pbmcgZm9yIFBDUCBpbiBMYXN0IDEyIE1vbnRocyIpCiAgICAgICAgICB0aGVuICJDb2NhaW5lIEFuZCBQQ1AgU3VtbWFyeSIKICAgICAgICBlbHNlIGlmICJIYXMgUG9zaXRpdmUgU2NyZWVuaW5nIGZvciBDb2NhaW5lIGluIExhc3QgMTIgTW9udGhzIgogICAgICAgICAgdGhlbiAiQ29jYWluZSBTdW1tYXJ5IgogICAgICAgIGVsc2UgaWYgIkhhcyBQb3NpdGl2ZSBTY3JlZW5pbmcgZm9yIFBDUCBpbiBMYXN0IDEyIE1vbnRocyIKICAgICAgICAgIHRoZW4gIlBDUCBTdW1tYXJ5IgogICAgICAgIGVsc2UKICAgICAgICAgICdObyBEZXRhaWxzIEF2YWlsYWJsZScKICAgICAgKQogIGVsc2UgaWYgIkFwcGxpY2FibGUgTm90IEJlY2F1c2Ugb2YgUG9zaXRpdmUgQ29jYWluZSBvciBQQ1AiCiAgICB0aGVuICdQYXRpZW50cyBvbiBvcGlvaWQgdGhlcmFweSBzaG91bGQgaGF2ZSBhIHVyaW5lIGRydWcgdGVzdCBwZXJmb3JtZWQgZXZlcnkgMTIgbW9udGhzLicKICAgIGVsc2UgbnVsbAoKZGVmaW5lICJJbmRpY2F0b3IiOgogICd3YXJuaW5nJwoKZGVmaW5lICJTdW1tYXJ5IjoKICBpZiAiQXBwbGljYWJsZSBCZWNhdXNlIG9mIFBvc2l0aXZlIENvY2FpbmUgb3IgUENQIgogICAgdGhlbiAnUG9zaXRpdmUgQ29jYWluZSBvciBQQ1AgaW4gVXJpbmUgU2NyZWVuaW5nJwogIGVsc2UgaWYgIkFwcGxpY2FibGUgTm90IEJlY2F1c2Ugb2YgUG9zaXRpdmUgQ29jYWluZSBvciBQQ1AiCiAgICB0aGVuICdBbm51YWwgVXJpbmUgU2NyZWVuaW5nIENoZWNrJwogIGVsc2UgbnVsbAoKZGVmaW5lICJVcmluZSBEcnVnIFNjcmVlbmluZyBQcm9jZWR1cmVSZXF1ZXN0IENhdGVnb3J5IjoKICBGSElSLkNvZGVhYmxlQ29uY2VwdCB7CiAgICBjb2Rpbmc6IHsKICAgICAgRkhJUi5Db2RpbmcgewogICAgICAgIHN5c3RlbTogRkhJUi51cmkgeyB2YWx1ZTogJ2h0dHA6Ly90ZXJtaW5vbG9neS5obDcub3JnL0NvZGVTeXN0ZW0vbWVkaWNhdGlvbnJlcXVlc3QtY2F0ZWdvcnknIH0sCiAgICAgICAgY29kZTogRkhJUi5jb2RlIHsgdmFsdWU6ICdvdXRwYXRpZW50JyB9LAogICAgICAgIGRpc3BsYXk6IEZISVIuc3RyaW5nIHsgdmFsdWU6ICdPdXRwYXRpZW50JyB9CiAgICAgIH0KICAgIH0KICB9CiAgLyogc2luZ2xldG9uIGZyb20gKEZpcnN0KAogICAgW0VuY291bnRlcl0gRQogICAgICB3aGVyZSBFLnBlcmlvZCBzdGFydHMgc2FtZSBkYXkgYXMgVG9kYXkoKQogICAgICBzb3J0IGJ5IHN0YXJ0IG9mIHBlcmlvZCBkZXNjCiAgKS50eXBlKSAqLwoKZGVmaW5lICJDb2NhaW5lIEFuZCBQQ1AgU3VtbWFyeSI6CiAgJ1Bvc2l0aXZlIGZvciBDb2NhaW5lIEFORCBQQ1AgPGJyLz48YnIvPicgKwogICAgIkNvY2FpbmUgU3VtbWFyeSIgKyAnPGJyLz4nICsgIlBDUCBTdW1tYXJ5IgoKZGVmaW5lICJQQ1AgU3VtbWFyeSI6CiAgJ1Bvc2l0aXZlIGZvciBQQ1A6IDxici8+JyArCiAgJ1Bvc2l0aXZlIGxhYiBkYXRlczogPGJyLz4nICsgQ29tYmluZSgiUG9zaXRpdmUgUENQIERhdGVzIGluIExvb2tiYWNrIFBlcmlvZCIsICcsIDxici8+JykgKyAnPGJyLz4nICsKICAnTmVnYXRpdmUgdGVzdCBjb3VudCBzaW5jZSBsYXN0IFBvc2l0aXZlOiAnICsgVG9TdHJpbmcoIk5lZ2F0aXZlIFBDUCBTY3JlZW5pbmdzIENvdW50IFNpbmNlIExhc3QgUG9zaXRpdmUgU2NyZWVuaW5nIikKCmRlZmluZSAiQ29jYWluZSBTdW1tYXJ5IjoKICAnUG9zaXRpdmUgZm9yIENvY2FpbmU6IDxici8+JyArCiAgJ1Bvc2l0aXZlIGxhYiBkYXRlczogPGJyLz4nICsgQ29tYmluZSgiUG9zaXRpdmUgQ29jYWluZSBEYXRlcyBpbiBMb29rYmFjayBQZXJpb2QiLCAnPGJyLz4nKSArICc8YnIvPicgKwogICdOZWdhdGl2ZSB0ZXN0IGNvdW50IHNpbmNlIGxhc3QgUG9zaXRpdmU6ICcgKyBUb1N0cmluZygiTmVnYXRpdmUgQ29jYWluZSBTY3JlZW5pbmdzIENvdW50IFNpbmNlIExhc3QgUG9zaXRpdmUgU2NyZWVuaW5nIikK"
+  } ]
+}
