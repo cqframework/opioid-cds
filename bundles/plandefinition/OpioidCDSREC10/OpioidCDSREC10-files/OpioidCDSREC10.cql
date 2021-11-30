@@ -34,12 +34,16 @@ include OpioidCDSCommonConfig version '1.2.3' called Config
 
 // META: Plan Definition: http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioid-cds-10
 
-parameter ContextPrescriptions List<MedicationRequest>
+parameter DraftOrders List<Choice<MedicationRequest, ProcedureRequest, ReferralRequest, VisionPrescription, NutritionOrder>>
 
 context Patient
 
 define "Lookback Year":
   Interval[Today() - 12 months - 1 days, Today() - 1 day]
+
+define "ContextPrescriptions":
+  DraftOrders O
+  where O is MedicationRequest
 
 define "Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions":
   (Common."Is Opioid Analgesic with Ambulatory Misuse Potential?"(ContextPrescriptions)) AmbulatoryOpioidPrescription
