@@ -1,0 +1,234 @@
+{
+  "hookInstance": "c2522428-1181-11ec-90bf-450207e71723",
+  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "hook": "order-sign",
+  "context": {
+    "patientId": "Patient/example-rec-10-no-screenings",
+    "encounterId": "example-rec-10-no-screenings-pefetch",
+    "userId": "Practitioner/123",
+    "draftOrders": {
+      "resourceType": "Bundle",
+      "type": "collection",
+      "entry": [
+        {
+          "resource": {
+            "resourceType": "MedicationRequest",
+            "id": "eBOePB3LqyVnSE1-qMQzbiB5FBN1S3KtcoEjuiPB.2LMtdUvgUgX-4xmoVVNbRe2vCrX9CckZ.iU4Qxqrybft-bEtiwdSPaSt1qBbuaOPPrwfIaSq6yUxkjBQU9wpjUuToP4YTJ5N3Z-hEwJ2VUXWJVeJtEc8C6WH2n2rrzGdJ3LKwMrRbaUGAahkKKNvI0imbGIaBBoJcSQ6zyf3hnFdqQ3",
+            "status": "draft",
+            "intent": "order",
+            "category": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/medication-request-category",
+                  "code": "community",
+                  "display": "Community"
+                }
+              ],
+              "text": "Community"
+            },
+            "medicationReference": {
+              "reference": "https://fhirnp.ynhh.org/FHIR_POC/api/FHIR/STU3/Medication/eK0wnGRY2XS1N9z6Ctueryw3",
+              "display": "FENTANYL 75 MCG/HR TRANSDERMAL PATCH"
+            },
+            "subject": {
+              "reference": "Patient/example-rec-10-no-screenings"
+            },
+            "context": {
+              "reference": "Encounter/example-rec-10-no-screenings-context"
+            },
+            "dosageInstruction": [
+              {
+                "extension": [
+                  {
+                    "valueQuantity": {
+                      "value": 1,
+                      "unit": "patch",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "{patch}"
+                    },
+                    "url": "https://open.epic.com/fhir/extensions/admin-amount"
+                  },
+                  {
+                    "valueQuantity": {
+                      "value": 1,
+                      "unit": "patch",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "{patch}"
+                    },
+                    "url": "https://open.epic.com/fhir/extensions/ordered-dose"
+                  }
+                ],
+                "text": "Place 1 patch onto the skin every third day.",
+                "patientInstruction": "Place 1 patch onto the skin every third day.",
+                "timing": {
+                  "repeat": {
+                    "boundsPeriod": {
+                      "start": "2021-09-09T04:00:00Z"
+                    },
+                    "frequency": 1,
+                    "period": 72,
+                    "periodUnit": "h"
+                  },
+                  "code": {
+                    "text": "every 72 hours"
+                  }
+                },
+                "route": {
+                  "coding": [
+                    {
+                      "system": "urn:oid:1.2.840.114350.1.13.301.3.7.4.798268.7025",
+                      "code": "20",
+                      "display": "Transdermal"
+                    }
+                  ],
+                  "text": "Transdermal"
+                },
+                "doseQuantity": {
+                  "value": 1,
+                  "unit": "patch",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{patch}"
+                }
+              }
+            ],
+            "dispenseRequest": {
+              "validityPeriod": {
+                "start": "2021-09-09T04:00:00Z"
+              },
+              "quantity": {
+                "value": 30,
+                "unit": "patch"
+              },
+              "expectedSupplyDuration": {
+                "value": 90,
+                "unit": "Day",
+                "system": "http://unitsofmeasure.org",
+                "code": "d"
+              }
+            }
+          }
+        },
+        {
+          "resource": {
+            "resourceType": "ProcedureRequest",
+            "id": "eTdZ1pHtdKSrlRH2MKxPhqHYZwilf2uYfZ6Is-Ucc2cf-z8Ow3RLI8YFpOpcvAphCEpLZ7-V-BUzeplJxtpVK0RPTCibkeJpWq-uAGxM1GreZoyfW3.HIEgq6c9fznAGB1ddCxuDOptqHhg67kuDB9vBpcOGToWqNgWkemH2Q6fUktHGkOat-kApcJqHJ9koR16cAeX7qLYG0zGD2JtNIyg3",
+            "status": "draft",
+            "intent": "order",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "80100",
+                  "display": "CHG DRUG SCREEN MULT CLASSES"
+                }
+              ],
+              "text": "Toxicology screen, urine     (BH L)"
+            },
+            "subject": {
+              "reference": "Patient/example-rec-10-no-screenings"
+            },
+            "context": {
+              "reference": "Encounter/example-rec-10-no-screenings-context"
+            },
+            "occurrenceTiming": {
+              "repeat": {
+                "boundsPeriod": {
+                  "start": "2021-09-09T04:00:00Z"
+                },
+                "count": 1
+              }
+            },
+            "reasonCode": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "287047008",
+                    "display": "Pain in left lower limb (finding)"
+                  },
+                  {
+                    "system": "http://hl7.org/fhir/sid/icd-9-cm/diagnosis",
+                    "code": "729.5",
+                    "display": "Left leg pain"
+                  },
+                  {
+                    "system": "urn:oid:2.16.840.1.113883.6.90",
+                    "code": "M79.605",
+                    "display": "Left leg pain"
+                  }
+                ],
+                "text": "Left leg pain"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "prefetch": {
+    "item1": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-rec-10-no-screenings",
+        "gender": "female",
+        "birthDate": "1982-01-07"
+      }
+    },
+    "item2": {
+      "resourceType": "Encounter",
+      "id": "el15nHmlpC6swOLXyqqQ0VQ3",
+      "identifier": [
+        {
+          "use": "usual",
+          "system": "urn:oid:1.2.840.114350.1.13.301.3.7.3.698084.8",
+          "value": "80314531"
+        }
+      ],
+      "status": "finished",
+      "class": {
+        "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.696784.13260",
+        "code": "13",
+        "display": "Support OP Encounter"
+      },
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.840.114350.1.13.301.3.7.10.698084.30",
+              "code": "111",
+              "display": "Orders Only"
+            }
+          ],
+          "text": "Orders Only"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/example-rec-10-no-screenings"
+      },
+      "period": {
+        "start": "2021-09-09",
+        "end": "2021-09-09"
+      },
+      "location": [
+        {
+          "location": {
+            "reference": "https://fhirnp.ynhh.org/FHIR_POC/api/FHIR/STU3/Location/eUJa-ONUJGso1xg2ZcB8dAM5I6WNb4VxIihrc59qiiLU3",
+            "display": "Winchester Chest Clinic Devine St"
+          }
+        }
+      ]
+    }
+  },
+  "extension": {
+    "com.epic.cdshooks.request.bpa-trigger-action": "23",
+    "com.epic.cdshooks.request.cds-hooks-specification-version": "1.0",
+    "com.epic.cdshooks.request.fhir-version": "STU3",
+    "com.epic.cdshooks.request.criteria-id": "3573",
+    "com.epic.cdshooks.request.epic-version": "9.6",
+    "com.epic.cdshooks.request.cds-hooks-implementation-version": "1.0",
+    "com.epic.cdshooks.request.cds-hooks-su-version": "0"
+  }
+}
