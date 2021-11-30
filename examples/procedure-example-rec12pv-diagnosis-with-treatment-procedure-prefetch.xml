@@ -15,7 +15,7 @@
       <reference value="Encounter/example-rec12pv-diagnosis-with-treatment-procedure-prefetch"/>
    </context>
    <performedDateTime>
-     <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
+     <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
         <valueString value="Today() - 4 weeks"/>
      </extension>
    </performedDateTime>
@@ -43,7 +43,7 @@
   "performedDateTime": {
     "extension": [
       {
-        "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
         "valueString": "Today() - 4 weeks"
       }
     ]

@@ -58,7 +58,7 @@
     {
       "code": "vital-signs",
       "display": "Vital Signs",
-      "definition": " Clinical observations measure the body's basic functions such as such as blood pressure, heart rate, respiratory rate, height, weight, body mass index, head circumference, pulse oximetry, temperature, and body surface area."
+      "definition": "Clinical observations measure the body's basic functions such as such as blood pressure, heart rate, respiratory rate, height, weight, body mass index, head circumference, pulse oximetry, temperature, and body surface area."
     },
     {
       "code": "imaging",

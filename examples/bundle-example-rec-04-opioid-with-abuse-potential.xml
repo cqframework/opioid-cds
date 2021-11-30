@@ -25,7 +25,7 @@
                <reference value="Patient/example-rec-04-opioid-with-abuse-potential"/>
             </subject>
             <period>
-               <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
+               <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
                   <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() } }"/>
                </extension>
             </period>

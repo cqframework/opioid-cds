@@ -5,7 +5,7 @@
       <reference value="Patient/example-rec-07-sixtythree-of-past-ninety-days"/>
    </subject>
    <period>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
+      <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
          <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() - 90 days } }"/>
       </extension>
    </period>
