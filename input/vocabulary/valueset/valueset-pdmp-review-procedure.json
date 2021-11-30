@@ -6,51 +6,40 @@
   "title": "PDMP review procedure",
   "status": "active",
   "experimental": true,
-  "date": "2021-01-26T12:01:40-07:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
-  "contact": [{
+  "contact": [ {
     "name": "MD Partners, Inc.",
-    "telecom": [
-      {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      }
-    ]
-  }],
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Procedure for Prescription Drug Monitoring Program (PDMP) review",
-  "jurisdiction": [
-    {
-      "coding": [
-        {
-          "system": "urn:iso:std:iso:3166",
-          "code": "US"
-        }
-      ]
-    }
-  ],
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
   "purpose": "A procedure to review the prescription drug monitoring program data",
   "copyright": "© CDC 2016+.",
   "compose": {
-    "include": [
-      {
-        "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108",
-        "concept": [
-          {
-            "code": "461621000124108"
-          }
-        ]
-      }
-    ]
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "concept": [ {
+        "code": "461621000124108"
+      } ]
+    } ]
   },
   "expansion": {
-    "timestamp": "2021-01-26T12:01:40-07:00",
-    "contains": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "461621000124108",
-        "display": "Review of prescription drug monitoring program record (procedure)"
-      }
-    ]
+    "identifier": "0214a110-f236-4217-88a2-16903e32ca33",
+    "timestamp": "2021-09-17T12:27:32-06:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "code": "461621000124108",
+      "display": "Review of prescription drug monitoring program record (procedure)"
+    } ]
   }
 }

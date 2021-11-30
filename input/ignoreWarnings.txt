@@ -1,0 +1,4 @@
+== Suppressed Messages ==
+
+ERROR: Bundle/OpioidCDSREC04-bundle: Bundle.entry[11].resource.ofType(Library).extension[0]: The extension http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem is unknown, and not allowed here
+ERROR: Bundle/OpioidCDSREC04-bundle: Bundle.entry[11].resource.ofType(Library).extension[0].url: URL value 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem' does not resolve

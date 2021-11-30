@@ -6,51 +6,40 @@
   "title": "Opioid counseling procedure",
   "status": "active",
   "experimental": true,
-  "date": "2021-01-26T12:01:40-07:00",
+  "date": "2021-09-17T12:27:32-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
-  "contact": [{
+  "contact": [ {
     "name": "MD Partners, Inc.",
-    "telecom": [
-      {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      }
-    ]
-  }],
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Procedure for couseling on opioid use",
-  "jurisdiction": [
-    {
-      "coding": [
-        {
-          "system": "urn:iso:std:iso:3166",
-          "code": "US"
-        }
-      ]
-    }
-  ],
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
   "purpose": "Identify a procedure for opioid use couseling to the patient",
   "copyright": "© CDC 2016+.",
   "compose": {
-    "include": [
-      {
-        "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108",
-        "concept": [
-          {
-            "code": "460831000124102"
-          }
-        ]
-      }
-    ]
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "concept": [ {
+        "code": "460831000124102"
+      } ]
+    } ]
   },
   "expansion": {
-    "timestamp": "2021-01-26T12:01:40-07:00",
-    "contains": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "460831000124102",
-        "display": "Counseling about opioid safety (procedure)"
-      }
-    ]
+    "identifier": "b54944fe-b2e1-48d4-a3d2-154f12bb1d82",
+    "timestamp": "2021-09-17T12:27:32-06:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "code": "460831000124102",
+      "display": "Counseling about opioid safety (procedure)"
+    } ]
   }
 }

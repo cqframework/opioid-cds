@@ -1,26 +1,20 @@
 {
   "resourceType": "ValueSet",
   "id": "cocaine-urine-drug-screening-tests",
-  "extension": [ {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-rules-text",
-    "valueString": "Step 1. Add all codes found using the following LOINC query: cocaine (=system:Urine)"
-  }, {
-    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-    "valueContactDetail": {
-      "name": "MD Partners, Inc.",
-      "telecom": [ {
-        "system": "email",
-        "value": "info@mdpartners.com"
-      } ]
-    }
-  } ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-urine-drug-screening-tests",
   "name": "cocaine_urine_drug_screening_tests",
   "title": "Cocaine urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2021-07-23T09:24:33-06:00",
+  "date": "2021-09-17T12:27:31-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Urine tests for cocaine and cocaine metabolites",
   "jurisdiction": [ {
     "coding": [ {
@@ -31,7 +25,8 @@
   "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "timestamp": "2021-07-23T09:24:33-06:00",
+    "identifier": "fb3c1866-f6b5-4c83-a530-411b6fd28225",
+    "timestamp": "2021-09-17T12:27:31-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "code": "50594-1",
