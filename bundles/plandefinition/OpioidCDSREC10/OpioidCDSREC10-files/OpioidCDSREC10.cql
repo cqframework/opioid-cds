@@ -69,7 +69,7 @@ define "Inclusion Criteria":
     and (not "Patient had Urine Screening in Last 12 Months")
 
 define "Exclusion Criteria":
-  false
+  Common."End of Life Assessment"
 
 define "Patient had Urine Screening in Last 12 Months":
    (exists"Non-opioid Screenings" or exists "Cocaine Screenings" or exists "PCP Screenings") and
@@ -220,17 +220,17 @@ define "PCP Detail":
 
 define "Detail":
     if "Is Perform Drug Screen Recommendation Applicable?"
+    then
+        'Patients on opioid therapy should have a urine drug test performed every 12 months.'
+    else
+        if "Applicable Because of Positive Cocaine or PCP or Opiates"
         then
-            'Patients on opioid therapy should have a urine drug test performed every 12 months.'
+            "Cocaine Detail"&
+            "Opiates Detail"&
+            "PCP Detail"&
+            '<br/>Note: result may be false positive result or indicate patient is occasional user or addicted to the illicit drug.'
         else
-            if "Applicable Because of Positive Cocaine or PCP or Opiates"
-            then
-                "Cocaine Detail"&
-                "Opiates Detail"&
-                "PCP Detail"&
-                '<br/>Note: result may be false positive result or indicate patient is occasional user or addicted to the illicit drug.'
-            else
-                null
+            null
 
 define "Indicator":
   'warning'
