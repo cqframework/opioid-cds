@@ -14,7 +14,12 @@
    </subject>
    <assertedDate>
       <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
-         <valueString value="Today() - 30 days"/>
+         <extension url="language">
+           <valueUri value="text/cql" />
+         </extension>
+         <extension url="expression">
+           <valueString value="Today() - 30 days"/>
+         </extension>
       </extension>
    </assertedDate>
 </Condition>
