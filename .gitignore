@@ -18,3 +18,5 @@ input/ig-new.json
 input/ig-new.xml
 input/ig-validation-parameters.json
 bundlegen/sourcefiles/*
+bundles/plandefinition/*
+!/bundles/plandefinition/OpioidCDSREC10PatientView
