@@ -10,16 +10,7 @@
     "resources": [
       "examples",
       "bundles",
-      "bundles/plandefinition/OpioidCDSREC04",
-      "bundles/plandefinition/OpioidCDSREC05",
-      "bundles/plandefinition/OpioidCDSREC07",
-      "bundles/plandefinition/OpioidCDSREC08",
-      "bundles/plandefinition/OpioidCDSREC10",
-      "bundles/plandefinition/OpioidCDSREC10OrderSign",
       "bundles/plandefinition/OpioidCDSREC10PatientView",
-      "bundles/plandefinition/OpioidCDSREC11",
-      "bundles/plandefinition/OpioidCDSREC11PatientView",
-      "bundles/plandefinition/OpioidCDSREC12PatientView",
       "input/extensions",
       "input/pagecontent/quick-start-bundles",
       "input/profiles",
@@ -29,8 +20,7 @@
       "input/resources/plandefinition",
       "input/vocabulary",
       "input/vocabulary/codesystem",
-      "input/vocabulary/valueset",
-      "bundles/plandefinition/OpioidCDSREC04"
+      "input/vocabulary/valueset"
     ],
     "pages": "input/pagecontent",
     "temp": "temp",
@@ -67,45 +57,9 @@
       "source": "opioid-cds-terminology-bundle.json",
       "base": "Bundle-opioiod-cds-terminology.html"
     },
-    "Bundle/opioid-cds-recommendation04-bundle": {
-      "source": "OpioidCDSREC04-bundle.json",
-      "base": "Bundle-OpioidCDSREC04-bundle.html"
-    },
-    "Bundle/opioid-cds-recommendation05-bundle": {
-      "source": "OpioidCDSREC05-bundle.json",
-      "base": "Bundle-OpioidCDSREC05-bundle.html"
-    },
-    "Bundle/opioid-cds-recommendation07-bundle": {
-      "source": "OpioidCDSREC07-bundle.json",
-      "base": "Bundle-OpioidCDSREC07-bundle.html"
-    },
-    "Bundle/opioid-cds-recommendation08-bundle": {
-      "source": "OpioidCDSREC08-bundle.json",
-      "base": "Bundle-OpioidCDSREC08-bundle.html"
-    },
-    "Bundle/opioid-cds-recommendation10-bundle": {
-      "source": "OpioidCDSREC10-bundle.json",
-      "base": "Bundle-OpioidCDSREC10-bundle.html"
-    },
-    "Bundle/opioid-cds-recommendation10-ordersign-bundle": {
-      "source": "OpioidCDSREC10OrderSign-bundle.json",
-      "base": "Bundle-OpioidCDSREC10OrderSign-bundle.html"
-    },
     "Bundle/opioid-cds-recommendation10-patientview-bundle": {
       "source": "OpioidCDSREC10PatientView-bundle.json",
       "base": "Bundle-OpioidCDSREC10PatientView-bundle.html"
-    },
-    "Bundle/opioid-cds-recommendation11-bundle": {
-      "source": "OpioidCDSREC11-bundle.json",
-      "base": "Bundle-OpioidCDSREC11-bundle.html"
-    },
-    "Bundle/opioid-cds-recommendation11-patientview-bundle": {
-      "source": "OpioidCDSREC11PatientView-bundle.json",
-      "base": "Bundle-OpioidCDSREC11PatientView-bundle.html"
-    },
-    "Bundle/opioid-cds-recommendation12-patientview-bundle": {
-      "source": "OpioidCDSREC12PatientView-bundle.json",
-      "base": "Bundle-OpioidCDSREC12PatientView-bundle.html"
     },
     "Bundle/example-rec-04-long-acting-opioid": {
       "source": "bundle-example-rec-04-long-acting-opioid.xml",
