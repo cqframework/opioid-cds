@@ -42,7 +42,7 @@
             "_authoredOn": {
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
                   "valueString": "Today()"
                 }
               ]
@@ -335,7 +335,7 @@
         "_authoredOn": {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
               "valueString": "Today() - 90 days"
             }
           ]

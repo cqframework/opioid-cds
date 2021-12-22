@@ -4,6 +4,7 @@
    <intent value="order"/>
    <category>
       <coding>
+        <system value="http://hl7.org/fhir/medication-request-category"/>
          <code value="outpatient"/>
       </coding>
    </category>
@@ -21,8 +22,13 @@
       <reference value="Encounter/example-rec-07-sixtythree-of-past-ninety-days-prefetch"/>
    </context>
    <authoredOn>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="Today() - 90 days"/>
+      <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
+         <extension url="language">
+           <valueUri value="text/cql" />
+         </extension>
+         <extension url="expression">
+           <valueString value="Today() - 90 days"/>
+         </extension>
       </extension>
    </authoredOn>
    <dosageInstruction>
@@ -41,8 +47,13 @@
    </dosageInstruction>
    <dispenseRequest>
       <validityPeriod>
-         <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-            <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() } }"/>
+         <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
+            <extension url="language">
+              <valueUri value="text/cql" />
+            </extension>
+            <extension url="expression">
+              <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() } }"/>
+            </extension>
          </extension>
       </validityPeriod>
       <numberOfRepeatsAllowed value="1"/>

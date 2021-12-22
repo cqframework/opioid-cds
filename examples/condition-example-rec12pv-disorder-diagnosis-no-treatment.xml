@@ -13,8 +13,13 @@
       <reference value="Patient/example-rec12pv-diagnosis-no-treatment"/>
    </subject>
    <assertedDate>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="Today() - 30 days"/>
+      <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
+         <extension url="language">
+           <valueUri value="text/cql" />
+         </extension>
+         <extension url="expression">
+           <valueString value="Today() - 30 days"/>
+         </extension>
       </extension>
    </assertedDate>
 </Condition>
@@ -39,7 +44,7 @@
   "_assertedDate": {
     "extension": [
       {
-        "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
         "valueString": "Today() - 30 days"
       }
     ]

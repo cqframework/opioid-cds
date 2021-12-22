@@ -45,7 +45,7 @@
             "_authoredOn": {
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
                   "valueString": "Today()"
                 }
               ]
@@ -107,7 +107,36 @@
         "birthDate": "1982-01-07"
       }
     },
-    "item2": {
+    "item2": null,
+    "item3": null,
+    "item4": null,
+    "item5": null,
+    "item6": null,
+    "item7": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-prefetch",
+        "status": "finished",
+        "subject": {
+          "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
+        },
+        "_period": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() - 90 days } }"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "item8": {
       "response": {
         "status": "200 OK"
       },
@@ -170,45 +199,6 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "version": "2.68",
-                    "code": "11246-6",
-                    "display": "oxyCODONE (U) [Mass/Vol]"
-                  }
-                ]
-              },
-              "subject": {
-                "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
-              },
-              "effectiveDateTime": "2021-01-22",
-              "valueString": "NEG",
-              "interpretation": [
-                {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/v2/0078",
-                      "code": "NEG"
-                    }
-                  ]
-                }
-              ]
-            }
-          },          {
-            "resource": {
-              "resourceType": "Observation",
-              "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-prefetch",
-              "status": "final",
-              "category": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/observation-category",
-                    "code": "laboratory"
-                  }
-                ]
-              },
-              "code": {
-                "coding": [
-                  {
-                    "system": "http://loinc.org",
                     "code": "70146-6",
                     "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
                   }
@@ -250,6 +240,7 @@
                     "system": "http://loinc.org",
                     "code": "70146-6",
                     "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
+
                   }
                 ]
               },
@@ -271,6 +262,89 @@
             }
           }
         ]
+      }
+    },
+    "item9": null,
+    "item10": {
+      "response": {
+        "status": "order-sign00 OK"
+      },
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-prefetch-5",
+        "status": "active",
+        "intent": "order",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/medication-request-category",
+              "code": "community"
+            }
+          ]
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049502",
+              "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
+        },
+        "encounter": {
+          "reference": "Encounter/example-rec-10-order-sign-illicit-POS-Cocaine-drugs-context"
+        },
+        "_authoredOn": {
+          "extension": [
+            {
+              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
+              "valueString": "Today() - 90 days"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 3,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 1.0,
+                  "unit": "tablet"
+                }
+              }
+            ]
+          }
+        ],
+        "dispenseRequest": {
+          "_validityPeriod": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                "valueExpression": {
+                  "language": "text/cql",
+                  "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() } }"
+                }
+              }
+            ]
+          },
+          "numberOfRepeatsAllowed": 3,
+          "expectedSupplyDuration": {
+            "value": 35.0,
+            "unit": "days",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+          }
+        }
       }
     }
   }

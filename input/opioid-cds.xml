@@ -42,7 +42,7 @@
                 <reference value="Bundle/opioid-cds-recommendation03-bundle"/>
             </sourceReference>
         </resource> -->
-        <resource>
+        <!-- <resource>
             <example value="true"/>
             <sourceReference>
                 <reference value="Bundle/OpioidCDSREC04-bundle"/>
@@ -53,14 +53,14 @@
             <sourceReference>
                 <reference value="Bundle/OpioidCDSREC05-bundle"/>
             </sourceReference>
-        </resource>
+        </resource> -->
         <!-- <resource>
             <example value="true"/>
             <sourceReference>
                 <reference value="Bundle/opioid-cds-recommendation06-bundle"/>
             </sourceReference>
         </resource> -->
-        <resource>
+        <!-- <resource>
             <example value="true"/>
             <sourceReference>
                 <reference value="Bundle/OpioidCDSREC07-bundle"/>
@@ -71,14 +71,14 @@
             <sourceReference>
                 <reference value="Bundle/OpioidCDSREC08-bundle"/>
             </sourceReference>
-        </resource>
+        </resource> -->
         <!-- <resource>
             <example value="true"/>
             <sourceReference>
                 <reference value="Bundle/opioid-cds-recommendation09-bundle"/>
             </sourceReference>
         </resource> -->
-        <resource>
+        <!-- <resource>
             <example value="true"/>
             <sourceReference>
                 <reference value="Bundle/OpioidCDSREC10-bundle"/>
@@ -89,14 +89,15 @@
             <sourceReference>
                 <reference value="Bundle/OpioidCDSREC10OrderSign-bundle"/>
             </sourceReference>
-        </resource>
+        </resource>-->
         <resource>
             <example value="true"/>
             <sourceReference>
                 <reference value="Bundle/OpioidCDSREC10PatientView-bundle"/>
             </sourceReference>
         </resource>
-        <resource>
+
+        <!--<resource>
             <example value="true"/>
             <sourceReference>
                 <reference value="Bundle/OpioidCDSREC11-bundle"/>
@@ -113,7 +114,7 @@
             <sourceReference>
                 <reference value="Bundle/OpioidCDSREC12PatientView-bundle"/>
             </sourceReference>
-        </resource>
+        </resource> -->
         <resource>
             <example value="true"/>
             <sourceReference>
