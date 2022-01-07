@@ -5,14 +5,14 @@
   "applyCql": true,
   "context": {
     "userId": "Practitioner/example",
-    "patientId": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs",
-    "encounterId": "Encounter/example-rec-10-order-sign-illicit-POS-Cocaine-drugs-context",
+    "patientId": "Patient/example-rec-10-2-order-sign-illicit-POS-Opiates-drugs",
+    "encounterId": "Encounter/example-rec-10-2-order-sign-illicit-POS-Opiates-drugs-context",
     "selections": [
-      "MedicationRequest/example-rec-10-order-sign-illicit-POS-Cocaine-drugs-context"
+      "MedicationRequest/example-rec-10-2-order-sign-illicit-POS-Opiates-drugs-context"
     ],
     "draftOrders": {
       "resourceType": "MedicationRequest",
-      "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-context",
+      "id": "example-rec-10-2-order-sign-illicit-POS-Opiates-drugs-context",
       "status": "active",
       "intent": "order",
       "category": {
@@ -33,10 +33,10 @@
         ]
       },
       "subject": {
-        "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
+        "reference": "Patient/example-rec-10-2-order-sign-illicit-POS-Opiates-drugs"
       },
       "encounter": {
-        "reference": "Encounter/example-rec-10-order-sign-illicit-POS-Cocaine-drugs-context"
+        "reference": "Encounter/example-rec-10-2-order-sign-illicit-POS-Opiates-drugs-context"
       },
       "_authoredOn": {
         "extension": [
@@ -95,7 +95,7 @@
       },
       "resource": {
         "resourceType": "Patient",
-        "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs",
+        "id": "example-rec-10-2-order-sign-illicit-POS-Opiates-drugs",
         "gender": "female",
         "birthDate": "1982-01-07"
       }
@@ -110,46 +110,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-prefetch",
-              "status": "final",
-              "category": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/observation-category",
-                    "code": "laboratory"
-                  }
-                ]
-              },
-              "code": {
-                "coding": [
-                  {
-                    "system": "http://loinc.org",
-                    "code": "70146-6",
-                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
-                  }
-                ]
-              },
-              "subject": {
-                "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
-              },
-              "effectiveDateTime": "2021-01-22",
-              "valueString": "POS",
-              "interpretation": [
-                {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/v2/0078",
-                      "code": "POS"
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "resource": {
-              "resourceType": "Observation",
-              "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-prefetch",
+              "id": "example-rec-10-2-order-sign-illicit-POS-Opiates-drugs-prefetch-obs1",
               "status": "final",
               "category": {
                 "coding": [
@@ -170,16 +131,16 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
+                "reference": "Patient/example-rec-10-2-order-sign-illicit-POS-Opiates-drugs"
               },
               "effectiveDateTime": "2021-01-22",
-              "valueString": "NEG",
+              "valueString": "POS",
               "interpretation": [
                 {
                   "coding": [
                     {
                       "system": "http://hl7.org/fhir/v2/0078",
-                      "code": "NEG"
+                      "code": "POS"
                     }
                   ]
                 }
@@ -189,7 +150,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-prefetch",
+              "id": "example-rec-10-2-order-sign-illicit-POS-Opiates-drugs-prefetch-obs2",
               "status": "final",
               "category": {
                 "coding": [
@@ -203,13 +164,14 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "70146-6",
-                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
+                    "version": "2.68",
+                    "code": "11246-6",
+                    "display": "oxyCODONE (U) [Mass/Vol]"
                   }
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
+                "reference": "Patient/example-rec-10-2-order-sign-illicit-POS-Opiates-drugs"
               },
               "effectiveDateTime": "2021-03-01",
               "valueString": "NEG",
@@ -224,11 +186,10 @@
                 }
               ]
             }
-          },
-          {
+          },{
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-order-sign-illicit-POS-Cocaine-drugs-prefetch-4",
+              "id": "example-rec-10-order-sign-POS-Opiates-drugs-prefetch-obs3",
               "status": "final",
               "category": {
                 "coding": [
@@ -242,13 +203,53 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "70146-6",
-                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
+                    "code": "8237-0",
+                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
                   }
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-order-sign-illicit-POS-Cocaine-drugs"
+                "reference": "Patient/example-rec-10-order-sign-POS-Opiates-drugs"
+              },
+              "effectiveDateTime": "2021-02-23",
+              "valueString": "NEG",
+              "interpretation": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/v2/0078",
+                      "code": "NEG"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Observation",
+              "id": "example-rec-10-2-order-sign-illicit-POS-Opiates-drugs-prefetch-obs3",
+              "status": "final",
+              "category": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/observation-category",
+                    "code": "laboratory"
+                  }
+                ]
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "version": "2.68",
+                    "code": "11246-6",
+                    "display": "oxyCODONE (U) [Mass/Vol]"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "Patient/example-rec-10-2-order-sign-illicit-POS-Opiates-drugs"
               },
               "effectiveDateTime": "2021-02-23",
               "valueString": "POS",
@@ -266,6 +267,14 @@
           }
         ]
       }
-    }
+    },
+    "item3": null,
+    "item4": null,
+    "item5": null,
+    "item6": null,
+    "item7": null,
+    "item8": null,
+    "item9": null,
+    "item10": null
   }
 }
