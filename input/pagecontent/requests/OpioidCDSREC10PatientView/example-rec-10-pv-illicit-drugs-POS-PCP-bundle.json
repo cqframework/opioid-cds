@@ -1,0 +1,365 @@
+{
+  "resourceType": "Bundle",
+  "id": "request-example-rec10-pv-illicit-drugs-POS-PCP-bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-rec-10-illicit-pv-POS-PCP-drugs-medreq1",
+        "status": "active",
+        "intent": "order",
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+              "code": "community"
+            }
+          ]
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197696",
+              "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-10-pv-illicit-POS-PCP-drugs"
+        },
+        "encounter": {
+          "reference": "Encounter/example-rec-10-pv-illicit-POS-PCP-drugs-encounter"
+        },
+        "_authoredOn": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today()"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 12.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 1.0,
+                  "unit": "patch"
+                }
+              }
+            ]
+          }
+        ],
+        "dispenseRequest": {
+          "_validityPeriod": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
+              }
+            ]
+          },
+          "numberOfRepeatsAllowed": 3,
+          "expectedSupplyDuration": {
+            "value": 30.0,
+            "unit": "days",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/example-rec-10-pv-illicit-POS-PCP-drugs-medreq1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-rec-10-pv-illicit-drugs-POS-PCP-drugs-encounter",
+        "status": "finished",
+        "subject": {
+          "reference": "Patient/example-rec-10-pv-illicit-POS-PCP-drugs"
+        },
+        "_period": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() - 90 days } }"
+              }
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Encounter/example-rec-10-pv-illicit-drugs-POS-PCP-drugs-encounter"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-rec-10-pv-illicit-POS-PCP-drugs-obs1",
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "laboratory"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8237-0",
+              "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-10-pv-illicit-POS-PCP-drugs"
+        },
+        "effectiveDateTime": "2021-01-22",
+        "valueString": "POS",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/v2/0078",
+                "code": "POS"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/example-rec-10-pv-illicit-POS-PCP-drugs-obs1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-rec-10-pv-POS-PCP-drugs-obs2",
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "laboratory"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "version": "2.68",
+              "code": "11246-6",
+              "display": "oxyCODONE (U) [Mass/Vol]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-10-pv-illicit-POS-PCP-drugs"
+        },
+        "effectiveDateTime": "2021-01-22",
+        "valueString": "NEG",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/v2/0078",
+                "code": "NEG"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/example-rec-10-pv-POS-PCP-drugs-obs2"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-rec-10-pv-POS-PCP-drugs-obs3",
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "laboratory"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8237-0",
+              "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-10-pv-illicit-POS-PCP-drugs"
+        },
+        "effectiveDateTime": "2021-03-01",
+        "valueString": "NEG",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/v2/0078",
+                "code": "NEG"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/example-rec-10-pv-POS-PCP-drugs-obs3"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-rec-10-pv-illicit-POS-PCP-drugs-obs4",
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "laboratory"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8237-0",
+              "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-10-pv-illicit-POS-PCP-drugs"
+        },
+        "effectiveDateTime": "2021-02-23",
+        "valueString": "POS",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/v2/0078",
+                "code": "POS"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/example-rec-10-pv-illicit-POS-PCP-drugs-obs4"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-rec-10-pv-illicit-POS-PCP-drugs-medreq2",
+        "status": "active",
+        "intent": "order",
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+              "code": "community"
+            }
+          ]
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049502",
+              "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-10-pv-illicit-POS-PCP-drugs"
+        },
+        "encounter": {
+          "reference": "Encounter/example-rec-10-pv-illicit-POS-PCP-drugs-encounter"
+        },
+        "_authoredOn": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+              "valueString": "Today() - 90 days"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 3,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 1.0,
+                  "unit": "tablet"
+                }
+              }
+            ]
+          }
+        ],
+        "dispenseRequest": {
+          "_validityPeriod": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() } }"
+              }
+            ]
+          },
+          "numberOfRepeatsAllowed": 3,
+          "expectedSupplyDuration": {
+            "value": 30.0,
+            "unit": "days",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/example-rec-10-pv-illicit-POS-PCP-drugs-medreq2"
+      }
+    }
+  ]
+}
