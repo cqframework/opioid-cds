@@ -32,14 +32,7 @@
         "encounter": {
           "reference": "Encounter/example-rec-10-patient-view-illicit-drugs-POS-Cocaine-encounter"
         },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "Today()"
-            }
-          ]
-        },
+        "authoredOn": "2022-01-19",
         "dosageInstruction": [
           {
             "timing": {
@@ -61,13 +54,9 @@
           }
         ],
         "dispenseRequest": {
-          "_validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+          "validityPeriod": {
+            "start": "2022-01-19",
+            "end": "2022-04-19"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
@@ -91,16 +80,9 @@
         "subject": {
           "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine"
         },
-        "_period": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() - 90 days } }"
-              }
-            }
-          ]
+        "period": {
+          "start": "2021-10-19",
+          "end": "2021-10-19"
         }
       },
       "request": {
@@ -133,7 +115,7 @@
         "subject": {
           "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine"
         },
-        "effectiveDateTime": "2021-01-22",
+        "effectiveDateTime": "2021-09-22",
         "valueString": "POS",
         "interpretation": [
           {
@@ -176,7 +158,7 @@
         "subject": {
           "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine"
         },
-        "effectiveDateTime": "2021-03-01",
+        "effectiveDateTime": "2021-12-01",
         "valueString": "NEG",
         "interpretation": [
           {
@@ -219,7 +201,7 @@
         "subject": {
           "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine"
         },
-        "effectiveDateTime": "2021-02-23",
+        "effectiveDateTime": "2021-11-23",
         "valueString": "POS",
         "interpretation": [
           {
@@ -235,6 +217,50 @@
       "request": {
         "method": "PUT",
         "url": "Observation/example-rec-10-pv-illicit-drugs-POS-Cocaine-observation2"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-rec-10-pv-illicit-drugs-POS-Cocaine-observation3",
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "laboratory"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "version": "2.68",
+              "code": "11246-6",
+              "display": "oxyCODONE (U) [Mass/Vol]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine"
+        },
+        "effectiveDateTime": "2021-09-22",
+        "valueString": "NEG",
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/v2/0078",
+                "code": "NEG"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/example-rec-10-pv-illicit-drugs-POS-Cocaine-observation3"
       }
     },
     {
@@ -266,14 +292,7 @@
         "encounter": {
           "reference": "Encounter/example-rec-10-patient-view-illicit-drugs-POS-Cocaine-prefetch"
         },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "Today() - 90 days"
-            }
-          ]
-        },
+        "authoredOn": "2021-09-19",
         "dosageInstruction": [
           {
             "timing": {
@@ -295,13 +314,9 @@
           }
         ],
         "dispenseRequest": {
-          "_validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() } }"
-              }
-            ]
+          "validityPeriod": {
+            "start": "2021-10-19",
+            "end": "2022-01-19"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {

@@ -8,7 +8,7 @@
     "patientId": "Patient/example-rec-10-patient-view-illicit-drugs-POS-Cocaine",
     "encounterId": "Encounter/example-rec-10-patient-view-illicit-drugs-POS-Cocaine-context",
     "selections": [
-      "MedicationRequest/example-rec-10-patient-view-illicit-drugs-POS-Cocaine-context"
+      "MedicationRequest/example-rec-10-patient-view-illicit-drugs-POS-Cocaine-medreq1"
     ]
   },
   "prefetch": {
