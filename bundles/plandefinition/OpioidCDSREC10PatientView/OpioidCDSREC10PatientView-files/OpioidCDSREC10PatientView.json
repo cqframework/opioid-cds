@@ -1,0 +1,635 @@
+{
+  "resourceType": "Library",
+  "id": "OpioidCDSREC10PatientView",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table class=\"grid dict\"><tr><th scope=\"row\"><b>Id: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\">library-OpioidCDSREC10PatientView</td></tr><tr><th scope=\"row\"><b>Type: </b></th><td style=\"padding-right: 25px;\"> Logic Library </td></tr><tr><th scope=\"row\"><b>Status: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\">active</td></tr><tr style=\"vertical-align: top;\"><th rowspan=\"3\" scope=\"row\"><b>Related: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>http://fhir.org/guides/cdc/opioid-cds/Library/FHIRHelpers</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>http://fhir.org/guides/cdc/opioid-cds/Library/library-OpioidCDSCommon</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><p style=\"margin-bottom: 5px;\"><b>type: </b><span>depends-on</span></p><p style=\"margin-bottom: 5px;\"><b>Resource: </b><br/><span><span style=\"padding-left: 25px;\"><b>reference: </b><span>http://fhir.org/guides/cdc/opioid-cds/Library/library-OpioidCDSRoutines</span></span></span></p></td></tr><tr style=\"vertical-align: top;\"><th rowspan=\"2\" scope=\"row\"><b>Data Requirements: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><div><p style=\"margin-bottom: 5px;\"><b>type: </b><span>Observation</span></p><p style=\"margin-bottom: 5px;\"><b>code filter:</b><br/><span style=\"padding-left: 25px;\"><b>path: </b><span>code</span></span><br/><span style=\"padding-left: 25px;\"><b>valueset: </b><span>org.hl7.fhir.dstu3.model.Reference@c8943360</span></span></p></div></td></tr><tr style=\"vertical-align: top;\"><td style=\"padding-left: 25px; padding-right: 25px;\"><div><p style=\"margin-bottom: 5px;\"><b>type: </b><span>Observation</span></p><p style=\"margin-bottom: 5px;\"><b>code filter:</b><br/><span style=\"padding-left: 25px;\"><b>path: </b><span>code</span></span><br/><span style=\"padding-left: 25px;\"><b>valueset: </b><span>org.hl7.fhir.dstu3.model.Reference@d64bad99</span></span></p></div></td></tr><tr style=\"vertical-align: top;\"><th scope=\"row\"><b>Content: </b></th><td style=\"padding-left: 25px; padding-right: 25px;\"><b>type: </b><span>text/cql</span></td></tr><tr><td colspan=\"2\" style=\"padding-left: 25px; padding-right: 25px;\"><pre><code class=\"language-cql\">library OpioidCDSREC10PatientView version '1.2.3'\n\nusing FHIR version '3.0.0'\n\ninclude FHIRHelpers version '3.0.0' called FHIRHelpers\ninclude OpioidCDSCommon version '1.2.3' called Common\ninclude OpioidCDSRoutines version '1.2.3' called Routines\n\ncode &quot;Urine Drug Screening&quot;: '310627008' from Common.SNOMED display 'Urine drug screening (procedure)'\n\n/*\n**  Recommendation #10\n**    When prescribing opioids for chronic pain, providers should use urine drug\n**    testing before starting opioid therapy and consider urine drug testing at\n**    least annually to assess for prescribed medications as well as other controlled\n**    prescription drugs and illicit drugs (recommendation category: B, evidence type: 4)\n**\n**  When\n**    Provider is prescribing an opioid analgesic with ambulatory misuse potential in the outpatient setting\n**    Prescription is for treating chronic pain.\n**    Opioid review is useful for this patient:\n**      Patient is 18 or over\n**      Patient does not have findings indicating limited life expectancy\n**      Patient does not have orders for therapies indicating end of life care\n**      Patient is not undergoing active cancer treatment:\n**        Patient has had at least 2 encounters within the past year with any diagnosis of cancer\n**    Urine drug screening has not been performed in last 12 months\n**  Then\n**    Recommend urine drug screening\n**      Will perform urine screening\n**      Not for chronic pain management, snooze 3 months\n**      N/A - see comment, snooze 3 months\n**\n*/\n\n// META: Plan Definition: http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioid-cds-10-patient-view\n\ncontext Patient\n\ndefine &quot;Lookback Year&quot;:\n  Interval[Today() - 12 months - 1 days, Today() - 1 day]\n\ndefine &quot;Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential&quot;:\n  exists (\n    Common.&quot;Active Ambulatory Opioid Rx&quot; AmbulatoryOpioidPrescription\n      where Routines.&quot;Is Chronic Pain Prescription?&quot;(AmbulatoryOpioidPrescription)\n  )\n\ndefine &quot;Is Recommendation Applicable?&quot;:\n  &quot;Inclusion Criteria&quot;\n    and not &quot;Exclusion Criteria&quot;\n\ndefine &quot;Inclusion Criteria&quot;:\n  &quot;Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential&quot;\n    and Routines.&quot;Is Opioid Review Useful?&quot;\n    and not &quot;Patient had Urine Screening in Last 12 Months&quot;\n\ndefine &quot;Exclusion Criteria&quot;:\n  false \n\ndefine &quot;Patient had Urine Screening in Last 12 Months&quot;:\n  exists( &quot;Urine Screenings during the Last 12 Months&quot; )\n\ndefine &quot;Urine Screenings during the Last 12 Months&quot;:\n  (\n    [Observation: &quot;code&quot; in Common.&quot;Non-opioid illicit drug urine screening&quot;] IllicitDrugScreen\n      where date from IllicitDrugScreen.effective in day of &quot;Lookback Year&quot;\n        and not (IllicitDrugScreen.status.value in { 'unknown', 'entered-in-error', 'cancelled' })\n  )\n  union\n  (\n    [Observation: &quot;code&quot; in Common.&quot;Opioid drug urine screening&quot;] OpioidDrugScreen\n      where date from OpioidDrugScreen.effective in day of &quot;Lookback Year&quot;\n        and not (OpioidDrugScreen.status.value in { 'unknown', 'entered-in-error', 'cancelled' })\n  )\n\ndefine &quot;No Screening In Last 12 Months Indicator&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then 'warning'\n  else null\n\ndefine &quot;No Screening In Last 12 Months Summary&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then 'Annual Urine Screening Check'\n  else null\n\ndefine &quot;No Screening In Last 12 Months Detail&quot;:\n  if &quot;Is Recommendation Applicable?&quot;\n    then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'\n  else null\n\n// Service Request - Urine Screening\ndefine &quot;Urine Drug Screening Request&quot;:\n  ProcedureRequest {\n    //identifier:,\n    definition: { FHIR.Reference { reference: FHIR.string { value: 'http://fhir.org/guides/cdc/activitydefinition/urine-screening-request' } } },\n    status: FHIR.RequestStatus { value: 'draft' },\n    intent: FHIR.RequestIntent { value: 'proposal' },\n    priority: FHIR.RequestPriority { value: 'routine' },\n    code: FHIR.CodeableConcept { coding: { ToCoding(&quot;Urine Drug Screening&quot;) } },\n    subject: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },\n    occurrence: FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 7 days } },\n    authoredOn: FHIR.dateTime { value: Now() },\n    reasonCode: { FHIR.CodeableConcept { text: FHIR.string { value: &quot;No Screening In Last 12 Months Detail&quot; } } }\n    // doesn't really work, need a relatedArtifact here...\n    //reasonCode: { FHIR.CodeableConcept { text: FHIR.string { value: 'https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#10_When_prescribing_opioids' } } }\n  }\n\ndefine function ToCoding(code System.Code):\n  FHIR.Coding {\n    code: FHIR.code { value: code.code },\n    system: FHIR.uri { value: code.system },\n    version: FHIR.string { value: code.version },\n    display: FHIR.string { value: code.display }\n  }\n</code></pre>\n                    \n                    \n                </td>\n            </tr>\n        \n    </table>\n</div>"
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
+  } ],
+  "url": "http://fhir.org/guides/cdc/opioid-cds/Library/OpioidCDSREC10PatientView",
+  "version": "1.2.3",
+  "name": "OpioidCDSREC10PatientView",
+  "title": "Library - Opioid CDS Logic for recommendation #10 (patient-view)",
+  "status": "active",
+  "experimental": true,
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/library-type",
+      "code": "logic-library"
+    } ]
+  },
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "description": "Opioid decision support logic to evaluate whether the patient has had a urine screening in the past 12 months and provide analysis.",
+  "purpose": "The purpose of this library is to determine whether the patient has had a urine screening in the past 12 months. Is so, then check the results for missing opioids that are prescribed, present opioids that aren't prescribed or present illicit drugs.",
+  "usage": "This library is used to notify the prescriber/user whether the patient has had a urine screening in the past 12 months and to provide analysis if true.",
+  "useContext": [ {
+    "code": {
+      "system": "http://hl7.org/fhir/usage-context-type",
+      "code": "focus",
+      "display": "Clinical Focus"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "182888003",
+        "display": "Medication requested (situation)"
+      } ]
+    }
+  }, {
+    "code": {
+      "system": "http://hl7.org/fhir/usage-context-type",
+      "code": "focus",
+      "display": "Clinical Focus"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "82423001",
+        "display": "Chronic pain (finding)"
+      } ]
+    }
+  } ],
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US",
+      "display": "United States of America"
+    } ]
+  } ],
+  "copyright": "© CDC 2016+.",
+  "relatedArtifact": [ {
+    "type": "documentation",
+    "display": "CDC guideline for prescribing opioids for chronic pain",
+    "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
+  }, {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": {
+      "reference": "Library/FHIR-ModelInfo"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": {
+      "reference": "Library/FHIRHelpers"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Library Common",
+    "resource": {
+      "reference": "Library/OpioidCDSCommon"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Library Routines",
+    "resource": {
+      "reference": "Library/OpioidCDSRoutines"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": {
+      "reference": "Library/OpioidCDSCommonConfig"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Active MedicationRequest",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-status-active"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Opioid analgesics with ambulatory misuse potential",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Community",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-category-community"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Observation Category Laboratory",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Non-opioid drug urine screening",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Opioid drug urine screening",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Cocaine Urine Tests",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-urine-drug-screening-tests"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set PCP Urine Tests",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/phencyclidine-urine-drug-screening-tests"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Encounter Diagnosis Condition Category",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Problem List Condition Category",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-problem-list-category"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set US Core Health Concern Condition Category",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-us-core-health-concern-category"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Limited life expectancy conditions",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions"
+    }
+  }, {
+    "type": "depends-on",
+    "display": "Value set Active Condition",
+    "resource": {
+      "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-clinical-status-active"
+    }
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Lookback Year",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Period"
+  }, {
+    "name": "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Patient Age Less Than 18",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Laboratory Observations",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Non-opioid Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Opioid Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Cocaine Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "PCP Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Urine Screenings during the Last 12 Months",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Patient had Urine Screening in Last 12 Months",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Has Positive Screening for Cocaine in Last 12 Months",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Has Positive Screening for PCP in Last 12 Months",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Inclusion Criteria",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Exclusion Criteria",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Is Recommendation Applicable?",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Positive PCP Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Negative PCP Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Positive Cocaine Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Negative Cocaine Screenings",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "Observation"
+  }, {
+    "name": "Negative PCP Screenings Count Since Last Positive Screening",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "integer"
+  }, {
+    "name": "Negative Cocaine Screenings Count Since Last Positive Screening",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "integer"
+  }, {
+    "name": "Positive Cocaine Dates in Lookback Period",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "string"
+  }, {
+    "name": "Positive PCP Dates in Lookback Period",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "string"
+  }, {
+    "name": "Applicable Because of Positive Cocaine or PCP",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Applicable Not Because of Positive Cocaine or PCP",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Cocaine Summary",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "PCP Summary",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Cocaine And PCP Summary",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Detail",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Indicator",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Summary",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  }, {
+    "name": "Urine Drug Screening ProcedureRequest Category",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "CodeableConcept"
+  } ],
+  "dataRequirement": [ {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Patient"
+    } ],
+    "type": "Patient"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "MedicationRequest"
+    } ],
+    "type": "MedicationRequest",
+    "mustSupport": [ "recorder", "dosageInstruction", "authoredOn", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
+    "codeFilter": [ {
+      "path": "status",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-status-active"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "category" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "code", "category" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "code", "category" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "mustSupport": [ "category" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "mustSupport": [ "category" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-problem-list-category"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Condition"
+    } ],
+    "type": "Condition",
+    "mustSupport": [ "category" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-us-core-health-concern-category"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "effective", "code", "category", "value" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  } ],
+  "content": [ {
+    "contentType": "text/cql",
+    "data": "bGlicmFyeSBPcGlvaWRDRFNSRUMxMFBhdGllbnRWaWV3IHZlcnNpb24gJzEuMi4zJwoKdXNpbmcgRkhJUiB2ZXJzaW9uICczLjAuMCcKCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnMy4wLjAnIGNhbGxlZCBGSElSSGVscGVycwppbmNsdWRlIE9waW9pZENEU0NvbW1vbiB2ZXJzaW9uICcxLjIuMycgY2FsbGVkIENvbW1vbgppbmNsdWRlIE9waW9pZENEU1JvdXRpbmVzIHZlcnNpb24gJzEuMi4zJyBjYWxsZWQgUm91dGluZXMKaW5jbHVkZSBPcGlvaWRDRFNDb21tb25Db25maWcgdmVyc2lvbiAnMS4yLjMnIGNhbGxlZCBDb25maWcKCmNvZGUgIlVyaW5lIERydWcgU2NyZWVuaW5nIjogJzMxMDYyNzAwOCcgZnJvbSBDb21tb24uU05PTUVEIGRpc3BsYXkgJ1VyaW5lIGRydWcgc2NyZWVuaW5nIChwcm9jZWR1cmUpJwoKLyoKKiogIFJlY29tbWVuZGF0aW9uICMxMAoqKiAgICBXaGVuIHByZXNjcmliaW5nIG9waW9pZHMgZm9yIGNocm9uaWMgcGFpbiwgcHJvdmlkZXJzIHNob3VsZCB1c2UgdXJpbmUgZHJ1ZwoqKiAgICB0ZXN0aW5nIGJlZm9yZSBzdGFydGluZyBvcGlvaWQgdGhlcmFweSBhbmQgY29uc2lkZXIgdXJpbmUgZHJ1ZyB0ZXN0aW5nIGF0CioqICAgIGxlYXN0IGFubnVhbGx5IHRvIGFzc2VzcyBmb3IgcHJlc2NyaWJlZCBtZWRpY2F0aW9ucyBhcyB3ZWxsIGFzIG90aGVyIGNvbnRyb2xsZWQKKiogICAgcHJlc2NyaXB0aW9uIGRydWdzIGFuZCBpbGxpY2l0IGRydWdzIChyZWNvbW1lbmRhdGlvbiBjYXRlZ29yeTogQiwgZXZpZGVuY2UgdHlwZTogNCkKKioKKiogIFdoZW4KKiogICAgUHJvdmlkZXIgaXMgcHJlc2NyaWJpbmcgYW4gb3Bpb2lkIGFuYWxnZXNpYyB3aXRoIGFtYnVsYXRvcnkgbWlzdXNlIHBvdGVudGlhbCBpbiB0aGUgb3V0cGF0aWVudCBzZXR0aW5nCioqICAgIFByZXNjcmlwdGlvbiBpcyBmb3IgdHJlYXRpbmcgY2hyb25pYyBwYWluLgoqKiAgICBPcGlvaWQgcmV2aWV3IGlzIHVzZWZ1bCBmb3IgdGhpcyBwYXRpZW50OgoqKiAgICAgIFBhdGllbnQgaXMgMTggb3Igb3ZlcgoqKiAgICAgIFBhdGllbnQgZG9lcyBub3QgaGF2ZSBmaW5kaW5ncyBpbmRpY2F0aW5nIGxpbWl0ZWQgbGlmZSBleHBlY3RhbmN5CioqICAgICAgUGF0aWVudCBkb2VzIG5vdCBoYXZlIG9yZGVycyBmb3IgdGhlcmFwaWVzIGluZGljYXRpbmcgZW5kIG9mIGxpZmUgY2FyZQoqKiAgICAgIFBhdGllbnQgaXMgbm90IHVuZGVyZ29pbmcgYWN0aXZlIGNhbmNlciB0cmVhdG1lbnQ6CioqICAgICAgICBQYXRpZW50IGhhcyBoYWQgYXQgbGVhc3QgMiBlbmNvdW50ZXJzIHdpdGhpbiB0aGUgcGFzdCB5ZWFyIHdpdGggYW55IGRpYWdub3NpcyBvZiBjYW5jZXIKKiogICAgVXJpbmUgZHJ1ZyBzY3JlZW5pbmcgaGFzIG5vdCBiZWVuIHBlcmZvcm1lZCBpbiBsYXN0IDEyIG1vbnRocwoqKiAgVGhlbgoqKiAgICBSZWNvbW1lbmQgdXJpbmUgZHJ1ZyBzY3JlZW5pbmcKKiogICAgICBXaWxsIHBlcmZvcm0gdXJpbmUgc2NyZWVuaW5nCioqICAgICAgTm90IGZvciBjaHJvbmljIHBhaW4gbWFuYWdlbWVudCwgc25vb3plIDMgbW9udGhzCioqICAgICAgTi9BIC0gc2VlIGNvbW1lbnQsIHNub296ZSAzIG1vbnRocwoqKgoqLwoKLy8gTUVUQTogUGxhbiBEZWZpbml0aW9uOiBodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2NkYy9vcGlvaWQtY2RzL1BsYW5EZWZpbml0aW9uL29waW9pZC1jZHMtMTAtcGF0aWVudC12aWV3Cgpjb250ZXh0IFBhdGllbnQKCmRlZmluZSAiTG9va2JhY2sgWWVhciI6CiAgSW50ZXJ2YWxbVG9kYXkoKSAtIDEyIG1vbnRocyAtIDEgZGF5cywgVG9kYXkoKSAtIDEgZGF5XQoKLypkZWZpbmUgIkNocm9uaWMgUGFpbiBPcGlvaWQgQW5hbGdlc2ljIHdpdGggQW1idWxhdG9yeSBNaXN1c2UgUG90ZW50aWFsIFByZXNjcmlwdGlvbnMiOgogIChDb21tb24uIklzIE9waW9pZCBBbmFsZ2VzaWMgd2l0aCBBbWJ1bGF0b3J5IE1pc3VzZSBQb3RlbnRpYWw/IihbTWVkaWNhdGlvblJlcXVlc3RdKSkgQW1idWxhdG9yeU9waW9pZFByZXNjcmlwdGlvbgogICAgd2hlcmUgUm91dGluZXMuIklzIENocm9uaWMgUGFpbiBQcmVzY3JpcHRpb24/IihBbWJ1bGF0b3J5T3Bpb2lkUHJlc2NyaXB0aW9uKQoKZGVmaW5lICJQYXRpZW50IElzIEJlaW5nIFByZXNjcmliZWQgT3Bpb2lkIEFuYWxnZXNpYyB3aXRoIEFtYnVsYXRvcnkgTWlzdXNlIFBvdGVudGlhbCI6CiAgZXhpc3RzICgiQ2hyb25pYyBQYWluIE9waW9pZCBBbmFsZ2VzaWMgd2l0aCBBbWJ1bGF0b3J5IE1pc3VzZSBQb3RlbnRpYWwgUHJlc2NyaXB0aW9ucyIpCiovLyoqLwpkZWZpbmUgIlBhdGllbnQgSXMgQmVpbmcgUHJlc2NyaWJlZCBPcGlvaWQgQW5hbGdlc2ljIHdpdGggQW1idWxhdG9yeSBNaXN1c2UgUG90ZW50aWFsIjoKICBleGlzdHMgKAogICAgQ29tbW9uLiJBY3RpdmUgQW1idWxhdG9yeSBPcGlvaWQgUngiIEFtYnVsYXRvcnlPcGlvaWRQcmVzY3JpcHRpb24KICAgICAgd2hlcmUgUm91dGluZXMuIklzIENocm9uaWMgUGFpbiBQcmVzY3JpcHRpb24/IihBbWJ1bGF0b3J5T3Bpb2lkUHJlc2NyaXB0aW9uKQogICkKIC8qKi8KZGVmaW5lICJJcyBQZXJmb3JtIERydWcgU2NyZWVuIFJlY29tbWVuZGF0aW9uIEFwcGxpY2FibGU/IjoKICAiSW5jbHVzaW9uIENyaXRlcmlhIgogICAgYW5kIG5vdCAiRXhjbHVzaW9uIENyaXRlcmlhIgoKZGVmaW5lICJQYXRpZW50IEFnZSBMZXNzIFRoYW4gMTgiOgogIGlmIChDb25maWcuIkFnZSBMZXNzIHRoYW4gMTggWWVhcnMgSXMgRW5hYmxlZCIpIHRoZW4KICAgIEFnZUluWWVhcnNBdChUb2RheSgpKSA8IDE4CiAgZWxzZQogICAgZmFsc2UKCmRlZmluZSAiSW5jbHVzaW9uIENyaXRlcmlhIjoKICAiUGF0aWVudCBJcyBCZWluZyBQcmVzY3JpYmVkIE9waW9pZCBBbmFsZ2VzaWMgd2l0aCBBbWJ1bGF0b3J5IE1pc3VzZSBQb3RlbnRpYWwiCiAgICBhbmQgbm90ICJQYXRpZW50IEFnZSBMZXNzIFRoYW4gMTgiCiAgICBhbmQgUm91dGluZXMuIklzIE9waW9pZCBSZXZpZXcgVXNlZnVsPyIKICAgIGFuZCAobm90ICJQYXRpZW50IGhhZCBVcmluZSBTY3JlZW5pbmcgaW4gTGFzdCAxMiBNb250aHMiKQoKZGVmaW5lICJFeGNsdXNpb24gQ3JpdGVyaWEiOgogIENvbW1vbi4iRW5kIG9mIExpZmUgQXNzZXNzbWVudCIKCmRlZmluZSAiUGF0aWVudCBoYWQgVXJpbmUgU2NyZWVuaW5nIGluIExhc3QgMTIgTW9udGhzIjoKICAgKGV4aXN0cyJOb24tb3Bpb2lkIFNjcmVlbmluZ3MiIG9yIGV4aXN0cyAiQ29jYWluZSBTY3JlZW5pbmdzIiBvciBleGlzdHMgIlBDUCBTY3JlZW5pbmdzIikgYW5kCiAgICBleGlzdHMgIk9waWF0ZSBTY3JlZW5pbmdzIgoKZGVmaW5lICJMYWJvcmF0b3J5IE9ic2VydmF0aW9ucyI6CiAgW09ic2VydmF0aW9uOiAiY2F0ZWdvcnkiIGluIENvbW1vbi4iT2JzZXJ2YXRpb24gQ2F0ZWdvcnkgTGFib3JhdG9yeSJdCgpkZWZpbmUgIk5vbi1vcGlvaWQgU2NyZWVuaW5ncyI6CiAgR2V0UmVsZXZhbnRTY3JlZW5pbmdzKCJMYWJvcmF0b3J5IE9ic2VydmF0aW9ucyIgTGFiT2JzZXJ2YXRpb25zCiAgICAgIHdoZXJlIChMYWJPYnNlcnZhdGlvbnMuY29kZSBpbiBDb21tb24uIk5vbi1vcGlvaWQgZHJ1ZyB1cmluZSBzY3JlZW5pbmciKQogICkKCmRlZmluZSAiT3BpYXRlIFNjcmVlbmluZ3MiOgogIEdldFJlbGV2YW50U2NyZWVuaW5ncygiTGFib3JhdG9yeSBPYnNlcnZhdGlvbnMiIExhYk9ic2VydmF0aW9ucwogICAgICB3aGVyZSAoTGFiT2JzZXJ2YXRpb25zLmNvZGUgaW4gQ29tbW9uLiJPcGlvaWQgZHJ1ZyB1cmluZSBzY3JlZW5pbmciKQogICkKCmRlZmluZSAiQ29jYWluZSBTY3JlZW5pbmdzIjoKICBHZXRSZWxldmFudFNjcmVlbmluZ3MoIkxhYm9yYXRvcnkgT2JzZXJ2YXRpb25zIiBMYWJPYnNlcnZhdGlvbnMKICAgICAgd2hlcmUgKExhYk9ic2VydmF0aW9ucy5jb2RlIGluIENvbW1vbi4iQ29jYWluZSBVcmluZSBUZXN0cyIpCiAgKQoKZGVmaW5lICJQQ1AgU2NyZWVuaW5ncyI6CiAgR2V0UmVsZXZhbnRTY3JlZW5pbmdzKCJMYWJvcmF0b3J5IE9ic2VydmF0aW9ucyIgTGFiT2JzZXJ2YXRpb25zCiAgICAgIHdoZXJlIChMYWJPYnNlcnZhdGlvbnMuY29kZSBpbiBDb21tb24uIlBDUCBVcmluZSBUZXN0cyIpCiAgKQoKZGVmaW5lIGZ1bmN0aW9uIEdldFJlbGV2YW50U2NyZWVuaW5ncyhvYnNMaXN0IExpc3Q8T2JzZXJ2YXRpb24+KToKICBvYnNMaXN0IExhYk9ic2VydmF0aW9ucwogICAgIHdoZXJlIGRhdGUgZnJvbSBMYWJPYnNlcnZhdGlvbnMuZWZmZWN0aXZlIGluIGRheSBvZiAiTG9va2JhY2sgWWVhciIKICAgICAgIGFuZCBub3QgKExhYk9ic2VydmF0aW9ucy5zdGF0dXMudmFsdWUgaW4geyAndW5rbm93bicsICdlbnRlcmVkLWluLWVycm9yJywgJ2NhbmNlbGxlZCcgfSkKCi8vIFJldHVybnMgYSB0ZXh0IHJlcHJlc2VudGF0aW9uIG9mIGEgZGF0ZVRpbWUgdXNpbmcgdGhlIENRTCBgVG9TdHJpbmdgIGZ1bmN0aW9uLgovLyBAcGFyYW0gZCAtIGEgRkhJUiBkYXRlVGltZSB0byBnZXQgdGV4dCBmb3IKLy8gQHJldHVybnMge1N5c3RlbS5TdHJpbmd9IHRoZSB0ZXh0IHJlcHJlc2VudGF0aW9uIG9mIHRoZSBkYXRlVGltZQpkZWZpbmUgZnVuY3Rpb24gRGF0ZVRpbWVUZXh0KGQgRkhJUi5kYXRlVGltZSk6CiAgVG9TdHJpbmcoZC52YWx1ZSkKCmRlZmluZSAiUG9zaXRpdmUgT3BpYXRlIFNjcmVlbmluZ3MiOgogICJPcGlhdGUgU2NyZWVuaW5ncyIgT3BpYXRlIHdoZXJlCiAgICBTdGFydHNXaXRoKExvd2VyKE9waWF0ZS52YWx1ZSBhcyBGSElSLnN0cmluZyksICdwb3MnKQoKZGVmaW5lICJOZWdhdGl2ZSBPcGlhdGUgU2NyZWVuaW5ncyI6CiAgIk9waWF0ZSBTY3JlZW5pbmdzIiBPcGlhdGUgd2hlcmUKICAgIFN0YXJ0c1dpdGgoTG93ZXIoT3BpYXRlLnZhbHVlIGFzIEZISVIuc3RyaW5nKSwgJ25lZycpCgpkZWZpbmUgIlBvc2l0aXZlIFBDUCBTY3JlZW5pbmdzIjoKICAiUENQIFNjcmVlbmluZ3MiIFBDUCB3aGVyZQogICAgU3RhcnRzV2l0aChMb3dlcihQQ1AudmFsdWUgYXMgRkhJUi5zdHJpbmcpLCAncG9zJykKCmRlZmluZSAiTmVnYXRpdmUgUENQIFNjcmVlbmluZ3MiOgogICJQQ1AgU2NyZWVuaW5ncyIgUENQIHdoZXJlCiAgICBTdGFydHNXaXRoKExvd2VyKFBDUC52YWx1ZSBhcyBGSElSLnN0cmluZyksICduZWcnKQoKZGVmaW5lICJQb3NpdGl2ZSBDb2NhaW5lIFNjcmVlbmluZ3MiOgogICJDb2NhaW5lIFNjcmVlbmluZ3MiIENvY2FpbmUgd2hlcmUKICAgIFN0YXJ0c1dpdGgoTG93ZXIoQ29jYWluZS52YWx1ZSBhcyBGSElSLnN0cmluZyksICdwb3MnKQoKZGVmaW5lICJOZWdhdGl2ZSBDb2NhaW5lIFNjcmVlbmluZ3MiOgogICJDb2NhaW5lIFNjcmVlbmluZ3MiIENvY2FpbmUgd2hlcmUKICAgIFN0YXJ0c1dpdGgoTG93ZXIoQ29jYWluZS52YWx1ZSBhcyBGSElSLnN0cmluZyksICduZWcnKQoKLyoKICBib3Jyb3dlZCBmcm9tIENEUzRDUE0gQ0RTX0Nvbm5lY3RfQ29tbW9uc19mb3JfRkhJUnY0MDAKICBTaG91ZGwgdGhpcyBnbyBpbnRvIE9waW9pZENEU0NvbW1vbj8KKi8KZGVmaW5lIGZ1bmN0aW9uIE1vc3RSZWNlbnQoT2JzTGlzdCBMaXN0PE9ic2VydmF0aW9uPik6CiAgTGFzdChPYnNMaXN0IE8gc29ydCBieSBDb2FsZXNjZSgKICAgIChlZmZlY3RpdmUgYXMgRkhJUi5kYXRlVGltZSkudmFsdWUsCiAgICAoZWZmZWN0aXZlIGFzIEZISVIuUGVyaW9kKS4iZW5kIi52YWx1ZSwKICAgIChlZmZlY3RpdmUgYXMgRkhJUi5QZXJpb2QpLiJzdGFydCIudmFsdWUsCiAgICBpc3N1ZWQudmFsdWUpCiAgKQoKZGVmaW5lICJOZWdhdGl2ZSBQQ1AgU2NyZWVuaW5ncyBDb3VudCBTaW5jZSBMYXN0IFBvc2l0aXZlIFNjcmVlbmluZyI6CiAgQ291bnQoCiAgICAiTmVnYXRpdmUgUENQIFNjcmVlbmluZ3MiIE4gd2hlcmUKICAgICAgRGF0ZVRpbWVUZXh0KE4uZWZmZWN0aXZlKSA+ICBEYXRlVGltZVRleHQoIk1vc3RSZWNlbnQiKCJQb3NpdGl2ZSBQQ1AgU2NyZWVuaW5ncyIpLmVmZmVjdGl2ZSkKICApCgpkZWZpbmUgIk5lZ2F0aXZlIE9waWF0ZSBTY3JlZW5pbmdzIENvdW50IFNpbmNlIExhc3QgUG9zaXRpdmUgU2NyZWVuaW5nIjoKICBDb3VudCgKICAgICJOZWdhdGl2ZSBPcGlhdGUgU2NyZWVuaW5ncyIgTiB3aGVyZQogICAgICBEYXRlVGltZVRleHQoTi5lZmZlY3RpdmUpID4gIERhdGVUaW1lVGV4dCgiTW9zdFJlY2VudCIoIlBvc2l0aXZlIE9waWF0ZSBTY3JlZW5pbmdzIikuZWZmZWN0aXZlKQogICkKCmRlZmluZSAiTmVnYXRpdmUgQ29jYWluZSBTY3JlZW5pbmdzIENvdW50IFNpbmNlIExhc3QgUG9zaXRpdmUgU2NyZWVuaW5nIjoKICBDb3VudCgKICAgICJOZWdhdGl2ZSBDb2NhaW5lIFNjcmVlbmluZ3MiIE4gd2hlcmUKICAgICAgRGF0ZVRpbWVUZXh0KE4uZWZmZWN0aXZlKSA+ICBEYXRlVGltZVRleHQoIk1vc3RSZWNlbnQiKCJQb3NpdGl2ZSBDb2NhaW5lIFNjcmVlbmluZ3MiKS5lZmZlY3RpdmUpCiAgKQoKZGVmaW5lICJQb3NpdGl2ZSBPcGlhdGUgRGF0ZXMgaW4gTG9va2JhY2sgUGVyaW9kIjoKICAiUG9zaXRpdmUgT3BpYXRlIFNjcmVlbmluZ3MiIE9waWF0ZQogICAgcmV0dXJuCiAgICAgIERhdGVUaW1lVGV4dChPcGlhdGUuZWZmZWN0aXZlKQoKZGVmaW5lICJQb3NpdGl2ZSBDb2NhaW5lIERhdGVzIGluIExvb2tiYWNrIFBlcmlvZCI6CiAgIlBvc2l0aXZlIENvY2FpbmUgU2NyZWVuaW5ncyIgQ1MKICAgIHJldHVybiBEYXRlVGltZVRleHQoQ1MuZWZmZWN0aXZlKQoKZGVmaW5lICJQb3NpdGl2ZSBQQ1AgRGF0ZXMgaW4gTG9va2JhY2sgUGVyaW9kIjoKICAiUG9zaXRpdmUgUENQIFNjcmVlbmluZ3MiIFBTCiAgICByZXR1cm4gRGF0ZVRpbWVUZXh0KFBTLmVmZmVjdGl2ZSkKCmRlZmluZSAiSGFzIFBvc2l0aXZlIFNjcmVlbmluZyBmb3IgQ29jYWluZSBpbiBMYXN0IDEyIE1vbnRocyI6CiAgZXhpc3RzICJDb2NhaW5lIFNjcmVlbmluZ3MiIENTIHdoZXJlCiAgICAgU3RhcnRzV2l0aChMb3dlcihDUy52YWx1ZSBhcyBGSElSLnN0cmluZyksICdwb3MnKQoKZGVmaW5lICJIYXMgUG9zaXRpdmUgU2NyZWVuaW5nIGZvciBQQ1AgaW4gTGFzdCAxMiBNb250aHMiOgogIGV4aXN0cyAiUENQIFNjcmVlbmluZ3MiIFBDUCB3aGVyZQogICAgIFN0YXJ0c1dpdGgoTG93ZXIoUENQLnZhbHVlIGFzIEZISVIuc3RyaW5nKSwgJ3BvcycpCgpkZWZpbmUgIkhhcyBQb3NpdGl2ZSBTY3JlZW5pbmcgZm9yIE9waWF0ZXMgaW4gTGFzdCAxMiBNb250aHMiOgogIGV4aXN0cyAiT3BpYXRlIFNjcmVlbmluZ3MiIE9waW9pZCB3aGVyZQogICAgU3RhcnRzV2l0aChMb3dlcihPcGlvaWQudmFsdWUgYXMgRkhJUi5zdHJpbmcpLCAncG9zJykKCmRlZmluZSAiQXBwbGljYWJsZSBCZWNhdXNlIG9mIFBvc2l0aXZlIENvY2FpbmUgb3IgUENQIG9yIE9waWF0ZXMiOgogICAgaWYgZXhpc3RzIChDb21tb24uIk9waW9pZCBPdGhlciBUaGFuIFN5bnRoZXRpYyBPcmRlcmVkIEluIExhc3QgMTIgTW9udGhzIikKICAgIHRoZW4KICAgICAgICAiSGFzIFBvc2l0aXZlIFNjcmVlbmluZyBmb3IgQ29jYWluZSBpbiBMYXN0IDEyIE1vbnRocyIgb3IgIkhhcyBQb3NpdGl2ZSBTY3JlZW5pbmcgZm9yIFBDUCBpbiBMYXN0IDEyIE1vbnRocyIKICAgIGVsc2UKICAgICAgICAiSGFzIFBvc2l0aXZlIFNjcmVlbmluZyBmb3IgQ29jYWluZSBpbiBMYXN0IDEyIE1vbnRocyIgb3IgIkhhcyBQb3NpdGl2ZSBTY3JlZW5pbmcgZm9yIFBDUCBpbiBMYXN0IDEyIE1vbnRocyIgb3IgIkhhcyBQb3NpdGl2ZSBTY3JlZW5pbmcgZm9yIE9waWF0ZXMgaW4gTGFzdCAxMiBNb250aHMiCgpkZWZpbmUgIkFwcGxpY2FibGUgTm90IEJlY2F1c2Ugb2YgUG9zaXRpdmUgQ29jYWluZSBvciBQQ1Agb3IgT3BpYXRlcyI6CiAgIklzIFBlcmZvcm0gRHJ1ZyBTY3JlZW4gUmVjb21tZW5kYXRpb24gQXBwbGljYWJsZT8iCiAgICBhbmQgbm90ICJIYXMgUG9zaXRpdmUgU2NyZWVuaW5nIGZvciBDb2NhaW5lIGluIExhc3QgMTIgTW9udGhzIgogICAgYW5kIG5vdCAiSGFzIFBvc2l0aXZlIFNjcmVlbmluZyBmb3IgUENQIGluIExhc3QgMTIgTW9udGhzIgogICAgYW5kIG5vdCAiSGFzIFBvc2l0aXZlIFNjcmVlbmluZyBmb3IgT3BpYXRlcyBpbiBMYXN0IDEyIE1vbnRocyIKCmRlZmluZSAiQ29jYWluZSBEZXRhaWwiOgogIGlmICJIYXMgUG9zaXRpdmUgU2NyZWVuaW5nIGZvciBDb2NhaW5lIGluIExhc3QgMTIgTW9udGhzIgogICAgdGhlbiAiQ29jYWluZSBTdW1tYXJ5IgogICAgZWxzZSBudWxsCgpkZWZpbmUgIk9waWF0ZXMgRGV0YWlsIjoKICBpZiAiSGFzIFBvc2l0aXZlIFNjcmVlbmluZyBmb3IgT3BpYXRlcyBpbiBMYXN0IDEyIE1vbnRocyIKICAgIHRoZW4gIk9waWF0ZXMgU3VtbWFyeSIKICAgIGVsc2UgbnVsbAoKZGVmaW5lICJQQ1AgRGV0YWlsIjoKICBpZiAiSGFzIFBvc2l0aXZlIFNjcmVlbmluZyBmb3IgUENQIGluIExhc3QgMTIgTW9udGhzIgogICAgdGhlbiAiUENQIFN1bW1hcnkiCiAgICBlbHNlIG51bGwKCmRlZmluZSAiRGV0YWlsIjoKICAgIGlmICJJcyBQZXJmb3JtIERydWcgU2NyZWVuIFJlY29tbWVuZGF0aW9uIEFwcGxpY2FibGU/IgogICAgdGhlbgogICAgICAgICdQYXRpZW50cyBvbiBvcGlvaWQgdGhlcmFweSBzaG91bGQgaGF2ZSBhIHVyaW5lIGRydWcgdGVzdCBwZXJmb3JtZWQgZXZlcnkgMTIgbW9udGhzLicKICAgIGVsc2UKICAgICAgICBpZiAiQXBwbGljYWJsZSBCZWNhdXNlIG9mIFBvc2l0aXZlIENvY2FpbmUgb3IgUENQIG9yIE9waWF0ZXMiCiAgICAgICAgdGhlbgogICAgICAgICAgICAiQ29jYWluZSBEZXRhaWwiJgogICAgICAgICAgICAiT3BpYXRlcyBEZXRhaWwiJgogICAgICAgICAgICAiUENQIERldGFpbCImCiAgICAgICAgICAgICc8YnIvPk5vdGU6IHJlc3VsdCBtYXkgYmUgZmFsc2UgcG9zaXRpdmUgcmVzdWx0IG9yIGluZGljYXRlIHBhdGllbnQgaXMgb2NjYXNpb25hbCB1c2VyIG9yIGFkZGljdGVkIHRvIHRoZSBpbGxpY2l0IGRydWcuJwogICAgICAgIGVsc2UKICAgICAgICAgICAgbnVsbAoKZGVmaW5lICJJbmRpY2F0b3IiOgogICd3YXJuaW5nJwoKICAgIC8qCiAgICAgICAgVXNlZCBvbmx5IGluIFBsYW5EZWZpbml0aW9uCiAgICAgKi8KZGVmaW5lICJTdW1tYXJ5IjoKICAgIGlmICJJcyBQZXJmb3JtIERydWcgU2NyZWVuIFJlY29tbWVuZGF0aW9uIEFwcGxpY2FibGU/IgogICAgICAgIHRoZW4gJ0FubnVhbCBVcmluZSBTY3JlZW5pbmcgQ2hlY2snCiAgICAgICAgZWxzZQogICAgICAgIGlmICJBcHBsaWNhYmxlIEJlY2F1c2Ugb2YgUG9zaXRpdmUgQ29jYWluZSBvciBQQ1Agb3IgT3BpYXRlcyIKICAgICAgICAgICAgdGhlbiAnUG9zaXRpdmUgQ29jYWluZSBvciBQQ1Agb3IgT3BpYXRlcyBpbiBVcmluZSBTY3JlZW5pbmcnCiAgICAgICAgZWxzZSBudWxsCgpkZWZpbmUgIlVyaW5lIERydWcgU2NyZWVuaW5nIFByb2NlZHVyZVJlcXVlc3QgQ2F0ZWdvcnkiOgogIEZISVIuQ29kZWFibGVDb25jZXB0IHsKICAgIGNvZGluZzogewogICAgICBGSElSLkNvZGluZyB7CiAgICAgICAgc3lzdGVtOiBGSElSLnVyaSB7IHZhbHVlOiAnaHR0cDovL3Rlcm1pbm9sb2d5LmhsNy5vcmcvQ29kZVN5c3RlbS9tZWRpY2F0aW9ucmVxdWVzdC1jYXRlZ29yeScgfSwKICAgICAgICBjb2RlOiBGSElSLmNvZGUgeyB2YWx1ZTogJ291dHBhdGllbnQnIH0sCiAgICAgICAgZGlzcGxheTogRkhJUi5zdHJpbmcgeyB2YWx1ZTogJ091dHBhdGllbnQnIH0KICAgICAgfQogICAgfQogIH0KICAvKiBzaW5nbGV0b24gZnJvbSAoRmlyc3QoCiAgICBbRW5jb3VudGVyXSBFCiAgICAgIHdoZXJlIEUucGVyaW9kIHN0YXJ0cyBzYW1lIGRheSBhcyBUb2RheSgpCiAgICAgIHNvcnQgYnkgc3RhcnQgb2YgcGVyaW9kIGRlc2MKICApLnR5cGUpICovCgovLyBTZXJ2aWNlIFJlcXVlc3QgLSBVcmluZSBTY3JlZW5pbmcKLy8gTk9URTogRGlzYWJsZWQgZHVlIHRvIEZISVIuQWxsVHlwZXMgbm90IHN1cHBvcnRpbmcgUHJvY2VkdXJlUmVxdWVzdAovKiBkZWZpbmUgIlVyaW5lIERydWcgU2NyZWVuaW5nIFJlcXVlc3QiOgogIFByb2NlZHVyZVJlcXVlc3QgewogICAgLy9pZGVudGlmaWVyOiwKICAgIGRlZmluaXRpb246IHsgRkhJUi5SZWZlcmVuY2UgeyByZWZlcmVuY2U6IEZISVIuc3RyaW5nIHsgdmFsdWU6ICdodHRwOi8vZmhpci5vcmcvZ3VpZGVzL2NkYy9hY3Rpdml0eWRlZmluaXRpb24vdXJpbmUtc2NyZWVuaW5nLXJlcXVlc3QnIH0gfSB9LAogICAgc3RhdHVzOiBGSElSLlJlcXVlc3RTdGF0dXMgeyB2YWx1ZTogJ2RyYWZ0JyB9LAogICAgaW50ZW50OiBGSElSLlJlcXVlc3RJbnRlbnQgeyB2YWx1ZTogJ3Byb3Bvc2FsJyB9LAogICAgcHJpb3JpdHk6IEZISVIuUmVxdWVzdFByaW9yaXR5IHsgdmFsdWU6ICdyb3V0aW5lJyB9LAogICAgY29kZTogRkhJUi5Db2RlYWJsZUNvbmNlcHQgeyBjb2Rpbmc6IHsgVG9Db2RpbmcoIlVyaW5lIERydWcgU2NyZWVuaW5nIikgfSB9LAogICAgc3ViamVjdDogRkhJUi5SZWZlcmVuY2UgeyByZWZlcmVuY2U6IEZISVIuc3RyaW5nIHsgdmFsdWU6ICdQYXRpZW50LycgKyBQYXRpZW50LmlkIH0gfSwKICAgIG9jY3VycmVuY2U6IEZISVIuUGVyaW9kIHsgc3RhcnQ6IEZISVIuZGF0ZVRpbWUgeyB2YWx1ZTogVG9kYXkoKSB9LCBlbmQ6IEZISVIuZGF0ZVRpbWUgeyB2YWx1ZTogVG9kYXkoKSArIDcgZGF5cyB9IH0sCiAgICBhdXRob3JlZE9uOiBGSElSLmRhdGVUaW1lIHsgdmFsdWU6IE5vdygpIH0sCiAgICByZWFzb25Db2RlOiB7IEZISVIuQ29kZWFibGVDb25jZXB0IHsgdGV4dDogRkhJUi5zdHJpbmcgeyB2YWx1ZTogIk5vIFNjcmVlbmluZyBJbiBMYXN0IDEyIE1vbnRocyBEZXRhaWwiIH0gfSB9CiAgICAvLyBkb2Vzbid0IHJlYWxseSB3b3JrLCBuZWVkIGEgcmVsYXRlZEFydGlmYWN0IGhlcmUuLi4KICAgIC8vcmVhc29uQ29kZTogeyBGSElSLkNvZGVhYmxlQ29uY2VwdCB7IHRleHQ6IEZISVIuc3RyaW5nIHsgdmFsdWU6ICdodHRwczovL3d3dy5jZGMuZ292L21td3Ivdm9sdW1lcy82NS9yci9ycjY1MDFlMS5odG0jMTBfV2hlbl9wcmVzY3JpYmluZ19vcGlvaWRzJyB9IH0gfQogIH0gKi8KCi8qIGRlZmluZSBmdW5jdGlvbiBUb0NvZGluZyhjb2RlIFN5c3RlbS5Db2RlKToKICBGSElSLkNvZGluZyB7CiAgICBjb2RlOiBGSElSLmNvZGUgeyB2YWx1ZTogY29kZS5jb2RlIH0sCiAgICBzeXN0ZW06IEZISVIudXJpIHsgdmFsdWU6IGNvZGUuc3lzdGVtIH0sCiAgICB2ZXJzaW9uOiBGSElSLnN0cmluZyB7IHZhbHVlOiBjb2RlLnZlcnNpb24gfSwKICAgIGRpc3BsYXk6IEZISVIuc3RyaW5nIHsgdmFsdWU6IGNvZGUuZGlzcGxheSB9CiAgfSAqLwoKZGVmaW5lICJDb2NhaW5lIEFuZCBQQ1AgU3VtbWFyeSI6CiAgJ1Bvc2l0aXZlIGZvciBDb2NhaW5lIEFORCBQQ1AgPGJyLz48YnIvPicgKwogICAgIkNvY2FpbmUgU3VtbWFyeSIgKyAnPGJyLz4nICsgIlBDUCBTdW1tYXJ5IgoKZGVmaW5lICJPcGlhdGVzIFN1bW1hcnkiOgogICAgaWYgbm90IGV4aXN0cyBDb21tb24uIk9waW9pZCBPdGhlciBUaGFuIFN5bnRoZXRpYyBPcmRlcmVkIEluIExhc3QgMTIgTW9udGhzIgogICAgdGhlbgogICAgICAgIGlmICJOZWdhdGl2ZSBPcGlhdGUgU2NyZWVuaW5ncyBDb3VudCBTaW5jZSBMYXN0IFBvc2l0aXZlIFNjcmVlbmluZyIgPiAwCiAgICAgICAgdGhlbgogICAgICAgICAgJzxici8+KlBvc2l0aXZlIGZvciBPcGlhdGVzOiAnICsKICAgICAgICAgICAgQ29tYmluZSgiUG9zaXRpdmUgT3BpYXRlIERhdGVzIGluIExvb2tiYWNrIFBlcmlvZCIsICcsICcpICsKICAgICAgICAgICAgJyAgKCcgKyBUb1N0cmluZygiTmVnYXRpdmUgT3BpYXRlIFNjcmVlbmluZ3MgQ291bnQgU2luY2UgTGFzdCBQb3NpdGl2ZSBTY3JlZW5pbmciKSArCiAgICAgICAgICAgICcgbmVnYXRpdmUgc2luY2UpJwogICAgICAgIGVsc2UKICAgICAgICAgICc8YnIvPipQb3NpdGl2ZSBmb3IgT3BpYXRlczogJyArCiAgICAgICAgICAgIENvbWJpbmUoIlBvc2l0aXZlIE9waWF0ZSBEYXRlcyBpbiBMb29rYmFjayBQZXJpb2QiLCAnLCAnKQogICAgZWxzZQogICAgICAgIG51bGwKCmRlZmluZSAiUENQIFN1bW1hcnkiOgogICAgaWYgIk5lZ2F0aXZlIFBDUCBTY3JlZW5pbmdzIENvdW50IFNpbmNlIExhc3QgUG9zaXRpdmUgU2NyZWVuaW5nIiA+IDAKICAgIHRoZW4KICAgICAgJzxici8+KlBvc2l0aXZlIGZvciBQQ1A6IDxici8+JyArCiAgICAgICAgQ29tYmluZSgiUG9zaXRpdmUgUENQIERhdGVzIGluIExvb2tiYWNrIFBlcmlvZCIsICcsICcpICsKICAgICAgICAnICAoJyArIFRvU3RyaW5nKCJOZWdhdGl2ZSBQQ1AgU2NyZWVuaW5ncyBDb3VudCBTaW5jZSBMYXN0IFBvc2l0aXZlIFNjcmVlbmluZyIpICsKICAgICAgICAnIG5lZ2F0aXZlIHNpbmNlKScKICAgIGVsc2UKICAgICAgJzxici8+KlBvc2l0aXZlIGZvciBQQ1A6IDxici8+JyArCiAgICAgICAgQ29tYmluZSgiUG9zaXRpdmUgUENQIERhdGVzIGluIExvb2tiYWNrIFBlcmlvZCIsICcsICcpCgpkZWZpbmUgIkNvY2FpbmUgU3VtbWFyeSI6CiAgICBpZiAiTmVnYXRpdmUgQ29jYWluZSBTY3JlZW5pbmdzIENvdW50IFNpbmNlIExhc3QgUG9zaXRpdmUgU2NyZWVuaW5nIiA+IDAKICAgIHRoZW4KICAgICAgJzxici8+KlBvc2l0aXZlIGZvciBDb2NhaW5lOiA8YnIvPicgKwogICAgICAgIENvbWJpbmUoIlBvc2l0aXZlIENvY2FpbmUgRGF0ZXMgaW4gTG9va2JhY2sgUGVyaW9kIiwgJywgJykgKwogICAgICAgICcgICgnICsgVG9TdHJpbmcoIk5lZ2F0aXZlIENvY2FpbmUgU2NyZWVuaW5ncyBDb3VudCBTaW5jZSBMYXN0IFBvc2l0aXZlIFNjcmVlbmluZyIpICsKICAgICAgICAnIG5lZ2F0aXZlIHNpbmNlKScKICAgIGVsc2UKICAgICAgJzxici8+KlBvc2l0aXZlIGZvciBDb2NhaW5lOiA8YnIvPicgKwogICAgICBDb21iaW5lKCJQb3NpdGl2ZSBDb2NhaW5lIERhdGVzIGluIExvb2tiYWNrIFBlcmlvZCIsICcsICcpCg=="
+  } ]
+}
