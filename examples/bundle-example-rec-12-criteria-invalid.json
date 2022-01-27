@@ -10,10 +10,19 @@
                 "id": "example-rec-12-criteria-invalid",
                 "_birthDate": {
                     "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                            "valueString": "Today() - 20 years"
-                        }
+                      {
+                        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
+                        "extension": [
+                          {
+                            "url": "language",
+                            "valueUri": "text/cql"
+                          },
+                          {
+                              "url": "expression",
+                              "valueString": "Today() - 20 years"
+                          }
+                        ]
+                      }
                     ]
                 }
             },

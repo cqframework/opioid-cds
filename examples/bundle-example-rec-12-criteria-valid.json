@@ -9,12 +9,21 @@
                 "resourceType": "Patient",
                 "id": "example-rec-12-criteria-valid",
                 "_birthDate": {
-                    "extension": [
+                  "extension": [
+                    {
+                      "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
+                      "extension": [
                         {
-                            "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
+                          "url": "language",
+                          "valueUri": "text/cql"
+                        },
+                        {
+                            "url": "expression",
                             "valueString": "Today() - 20 years"
                         }
-                    ]
+                      ]
+                    }
+                  ]
                 }
             },
             "request": {
