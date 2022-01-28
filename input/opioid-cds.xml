@@ -15,7 +15,7 @@
         <resource>
             <example value="true"/>
             <sourceReference>
-                <reference value="Bundle/opioid-cds-terminology-bundle"/>
+                <reference value="Bundle/opioid-cds-terminology"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1157,7 +1157,7 @@
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #4"/>
             <sourceReference>
-                <reference value="PlanDefinition/OpioidCDSREC04"/>
+                <reference value="PlanDefinition/opioidcds-04"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1165,7 +1165,7 @@
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4 Patient View"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #4 Patient View"/>
             <sourceReference>
-                <reference value="PlanDefinition/OpioidCDSREC04PatientView"/>
+                <reference value="PlanDefinition/opioidcds-04-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1173,7 +1173,7 @@
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #5"/>
             <sourceReference>
-                <reference value="PlanDefinition/OpioidCDSREC05"/>
+                <reference value="PlanDefinition/opioidcds-05"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1181,7 +1181,7 @@
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #7"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #7"/>
             <sourceReference>
-                <reference value="PlanDefinition/OpioidCDSREC07"/>
+                <reference value="PlanDefinition/opioidcds-07"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1189,7 +1189,7 @@
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #8"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #8"/>
             <sourceReference>
-                <reference value="PlanDefinition/OpioidCDSREC08"/>
+                <reference value="PlanDefinition/opioidcds-08"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1197,7 +1197,7 @@
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10"/>
             <sourceReference>
-                <reference value="PlanDefinition/OpioidCDSREC10"/>
+                <reference value="PlanDefinition/opioidcds-10"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1205,7 +1205,7 @@
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 Order Sign"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10 Order Sign"/>
             <sourceReference>
-                <reference value="PlanDefinition/OpioidCDSREC10OrderSign"/>
+                <reference value="PlanDefinition/opioidcds-10-order-sign"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1213,7 +1213,7 @@
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 Patient View"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10 Patient View"/>
             <sourceReference>
-                <reference value="PlanDefinition/OpioidCDSREC10PatientView"/>
+                <reference value="PlanDefinition/opioidcds-10-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1221,7 +1221,7 @@
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #11"/>
             <sourceReference>
-                <reference value="PlanDefinition/OpioidCDSREC11"/>
+                <reference value="PlanDefinition/opioidcds-11"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1229,7 +1229,7 @@
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 Patient View"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #11 Patient View"/>
             <sourceReference>
-                <reference value="PlanDefinition/OpioidCDSREC11PatientView"/>
+                <reference value="PlanDefinition/opioidcds-11-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1237,7 +1237,7 @@
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #12 Patient View"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #12 Patient View"/>
             <sourceReference>
-                <reference value="PlanDefinition/OpioidCDSREC12PatientView"/>
+                <reference value="PlanDefinition/opioidcds-12-patient-view"/>
             </sourceReference>
         </resource>
 
@@ -1401,6 +1401,14 @@
             <description value="Urine analysis for non opioid drugs"/>
             <sourceReference>
                 <reference value="ValueSet/non-opioid-drug-urine-screening"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines non-synthetic opioid clinical drugs"/>
+            <description value="Non-synthetic opioid clinical drugs"/>
+            <sourceReference>
+                <reference value="ValueSet/non-synthetic-opioids"/>
             </sourceReference>
         </resource>
         <resource>
