@@ -33,7 +33,8 @@
     "Encounter.period",
     "MedicationRequest.authoredOn",
     "MedicationRequest.dispenseRequest.validityPeriod",
-    "Patient.birthDate"
+    "Patient.birthDate",
+    "Procedure.performed.ofType(Period).start"
   ],
   "type": "Extension",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
