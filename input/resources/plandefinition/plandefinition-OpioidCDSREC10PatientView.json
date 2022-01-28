@@ -101,11 +101,6 @@
       "documentation": [
         {
           "type": "documentation",
-          "display": "CDC guideline for prescribing opioids for chronic pain",
-          "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
-        },
-        {
-          "type": "documentation",
           "document": {
             "extension": [
               {
@@ -132,7 +127,9 @@
                   ]
                 }
               }
-            ]
+            ],
+            "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
+            "title": "CDC guideline for prescribing opioids for chronic pain"
           }
         }
       ],
@@ -198,11 +195,6 @@
       "documentation": [
         {
           "type": "documentation",
-          "display": "CDC guideline for prescribing opioids for chronic pain",
-          "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
-        },
-        {
-          "type": "documentation",
           "document": {
             "extension": [
               {
@@ -229,7 +221,9 @@
                   ]
                 }
               }
-            ]
+            ],
+            "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
+            "title": "CDC guideline for prescribing opioids for chronic pain"
           }
         }
       ],
