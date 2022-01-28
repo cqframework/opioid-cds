@@ -951,6 +951,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="Library - FHIR-ModelInfo"/>
+            <description value="FHIR-ModelInfo Logic"/>
+            <sourceReference>
+                <reference value="Library/FHIR-ModelInfo"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="Library - OMTK Logic CQL"/>
             <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic CQL"/>
             <sourceReference>

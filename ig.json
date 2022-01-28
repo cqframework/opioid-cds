@@ -611,6 +611,10 @@
       "source": "FHIRHelpers.json",
       "base": "Library-FHIRHelpers.html"
     },
+    "Library/FHIR-ModelInfo": {
+      "source": "FHIR-ModelInfo.json",
+      "base": "Library-FHIR-ModelInfo.html"
+    },
     "Library/OMTKLogicCQL": {
       "source": "OMTKLogicCQL.json",
       "base": "Library-OMTKLogicCQL.html"

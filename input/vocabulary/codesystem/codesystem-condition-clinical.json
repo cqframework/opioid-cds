@@ -48,6 +48,7 @@
   "description": "Preferred value set for Condition Clinical Status.",
   "caseSensitive": true,
   "valueSet": "http://hl7.org/fhir/ValueSet/condition-clinical",
+  "hierarchyMeaning": "grouped-by",
   "content": "complete",
   "concept": [
     {
