@@ -5,7 +5,7 @@
 r=snapshots
 g=org.opencds.cqf
 a=tooling
-v=1.3.1-SNAPSHOT
+v=1.4.1-SNAPSHOT
 c=jar-with-dependencies
 
 dlurl='https://oss.sonatype.org/service/local/artifact/maven/redirect?r='${r}'&g='${g}'&a='${a}'&v='${v}'&c='${c}''
