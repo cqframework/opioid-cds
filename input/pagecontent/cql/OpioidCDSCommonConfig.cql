@@ -56,7 +56,7 @@ define "PDMP Data Not Reviewed in Past 90 Days Criteria Enabled":
   true
 
 // Recommendation 10
-define "Opiate Urine Screening Applicable":
+define "Opiate Urine Screening Check Enabled":
   true
 
 // Recommendation 12
