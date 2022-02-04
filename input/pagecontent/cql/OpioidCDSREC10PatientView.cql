@@ -75,7 +75,10 @@ define "Exclusion Criteria":
 
 define "Patient had Urine Screening in Last 12 Months":
    (exists"Non-opioid Screenings" or exists "Cocaine Screenings" or exists "PCP Screenings") and
-    exists "Opiate Screenings"
+        if Config."Opiate Urine Screening Applicable" then
+            exists "Opiate Screenings"
+        else
+            true
 
 define "Laboratory Observations":
   [Observation: "category" in Common."Observation Category Laboratory"]
@@ -187,15 +190,21 @@ define "Has Positive Screening for PCP in Last 12 Months":
      StartsWith(Lower(PCP.value as FHIR.string), 'pos')
 
 define "Has Positive Screening for Opiates in Last 12 Months":
-  exists "Opiate Screenings" Opioid where
-    StartsWith(Lower(Opioid.value as FHIR.string), 'pos')
+    if Config."Opiate Urine Screening Applicable"
+        then exists "Opiate Screenings" Opioid where
+        StartsWith(Lower(Opioid.value as FHIR.string), 'pos')
+    else
+        false
 
 define "Applicable Because of Positive Cocaine or PCP or Opiates":
     if exists (Common."Opioid Other Than Synthetic Ordered In Last 12 Months")
     then
         "Has Positive Screening for Cocaine in Last 12 Months" or "Has Positive Screening for PCP in Last 12 Months"
     else
-        "Has Positive Screening for Cocaine in Last 12 Months" or "Has Positive Screening for PCP in Last 12 Months" or "Has Positive Screening for Opiates in Last 12 Months"
+        "Has Positive Screening for Cocaine in Last 12 Months" or "Has Positive Screening for PCP in Last 12 Months"
+        or if Config."Opiate Urine Screening Applicable"
+            then "Has Positive Screening for Opiates in Last 12 Months"
+            else false
 
 define "Applicable Not Because of Positive Cocaine or PCP or Opiates":
   "Is Perform Drug Screen Recommendation Applicable?"
@@ -243,8 +252,11 @@ define "Summary":
         then 'Annual Urine Screening Check'
         else
         if "Applicable Because of Positive Cocaine or PCP or Opiates"
-            then 'Positive Cocaine or PCP or Opiates in Urine Screening'
-        else null
+            then
+                if Config."Opiate Urine Screening Applicable"
+                then 'Positive Cocaine or PCP or Opiates in Urine Screening'
+                else 'Positive Cocaine or PCP in Urine Screening'
+            else null
 
 define "Urine Drug Screening ProcedureRequest Category":
   FHIR.CodeableConcept {
