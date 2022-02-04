@@ -73,7 +73,10 @@ define "Exclusion Criteria":
 
 define "Patient had Urine Screening in Last 12 Months":
    (exists"Non-opioid Screenings" or exists "Cocaine Screenings" or exists "PCP Screenings") and
-    exists "Opiate Screenings"
+        if Config."Opiate Urine Screening Applicable" then
+            exists "Opiate Screenings"
+        else
+            true
 
 define "Laboratory Observations":
     [Observation: "category" in Common."Observation Category Laboratory"]
@@ -187,8 +190,11 @@ define "Has Positive Screening for PCP in Last 12 Months":
     StartsWith(Lower(PCP.value as FHIR.string), 'pos')
 
 define "Has Positive Screening for Opiates in Last 12 Months":
-  exists "Opiate Screenings" Opioid where
-    StartsWith(Lower(Opioid.value as FHIR.string), 'pos')
+    if Config."Opiate Urine Screening Applicable"
+        then exists "Opiate Screenings" Opioid where
+        StartsWith(Lower(Opioid.value as FHIR.string), 'pos')
+    else
+        false
 
 define "Applicable Because of Positive Cocaine or PCP or Opiates":
     if exists (Common."Opioid Other Than Synthetic Ordered In Last 12 Months")
@@ -303,27 +309,3 @@ define "Cocaine Summary":
       '<br/>*Positive for Cocaine: <br/>' +
       Combine("Positive Cocaine Dates in Lookback Period", ', ')
 
-/*
-define "Kick off Sequence":
-  if Common."Opioid Other Than Synthetic Ordered In Last 12 Months"
-    then
-        "Detail"
-    else
-        if "Any urine drug screenings in past 12 months"
-*/
-/*
-Opioid rec 10 new logic (10/13/2021)
-Opioid analgesiac other than synthetic opioid ordered in last 12 months?
-    if YES then
-        Is there any urine test in last 12 months with a positive result for cocaine, or PCP?
-        if NO then STOP
-        if YES then
-            current alerts/cql
-    if NO then
-        Is there any urine test in last 12 months with a positive result for opiates, cocaine, or PCP?
-            if NO then STYOP
-            if YES then new report logic
-                List ALL positive test dates for each drug in ascending order with last positive date followed by count of all subsequent negative tests
-
-
- */

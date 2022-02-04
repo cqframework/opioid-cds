@@ -55,6 +55,10 @@ define "Evidence of Naloxone Enabled":
 define "PDMP Data Not Reviewed in Past 90 Days Criteria Enabled":
   true
 
+// Recommendation 10
+define "Opiate Urine Screening Applicable":
+  true
+
 // Recommendation 12
 define "Evidence Based Treatment Criteria For Opioid Use Disorder":
   true
