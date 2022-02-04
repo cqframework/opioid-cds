@@ -125,14 +125,14 @@
                   {
                     "system": "http://loinc.org",
                     "code": "70146-6",
-                    "display": "Benzoylecgonine [Mass/volume] in Urine by Screen method"
+                    "display": "Benzoylecgonine [Mass/volfobsedrvationume] in Urine by Screen method"
                   }
                 ]
               },
               "subject": {
                 "reference": "Patient/example-rec-10-2-illicit-drugs"
               },
-              "effectiveDateTime": "2021-01-22",
+              "effectiveDateTime": "2021-10-22",
               "valueString": "POS",
               "interpretation": [
                 {
@@ -171,7 +171,7 @@
               "subject": {
                 "reference": "Patient/example-rec-10-2-illicit--drugs"
               },
-              "effectiveDateTime": "2021-01-22",
+              "effectiveDateTime": "2021-10-22",
               "valueString": "NEG",
               "interpretation": [
                 {
@@ -249,7 +249,7 @@
               "subject": {
                 "reference": "Patient/example-rec-10-2-illicit-drugs"
               },
-              "effectiveDateTime": "2021-02-23",
+              "effectiveDateTime": "2021-09-23",
               "valueString": "POS",
               "interpretation": [
                 {
