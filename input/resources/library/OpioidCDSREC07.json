@@ -256,16 +256,22 @@
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Encounter"
+      "valueCode": "Procedure"
     } ],
-    "type": "Encounter",
-    "mustSupport": [ "period", "type" ],
+    "type": "Procedure",
+    "mustSupport": [ "code", "performed" ],
     "codeFilter": [ {
-      "path": "type",
+      "path": "code",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/office-visit"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-assessment-procedure"
       }
     } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Patient"
+    } ],
+    "type": "Patient"
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
@@ -308,16 +314,10 @@
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Patient"
-    } ],
-    "type": "Patient"
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Encounter"
     } ],
     "type": "Encounter",
-    "mustSupport": [ "type" ],
+    "mustSupport": [ "period", "type" ],
     "codeFilter": [ {
       "path": "type",
       "valueSetReference": {
@@ -340,14 +340,14 @@
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
+      "valueCode": "Encounter"
     } ],
-    "type": "Procedure",
-    "mustSupport": [ "code", "performed" ],
+    "type": "Encounter",
+    "mustSupport": [ "type" ],
     "codeFilter": [ {
-      "path": "code",
+      "path": "type",
       "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-assessment-procedure"
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/office-visit"
       }
     } ]
   } ],

@@ -182,6 +182,16 @@
   "dataRequirement": [ {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Medication"
+    } ],
+    "type": "Medication",
+    "mustSupport": [ "id" ],
+    "codeFilter": [ {
+      "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Procedure"
     } ],
     "type": "Procedure",
@@ -191,16 +201,6 @@
       "valueSetReference": {
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure"
       }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Medication"
-    } ],
-    "type": "Medication",
-    "mustSupport": [ "id" ],
-    "codeFilter": [ {
-      "path": "id"
     } ]
   }, {
     "extension": [ {

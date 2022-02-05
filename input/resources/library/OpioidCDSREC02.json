@@ -204,6 +204,12 @@
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Patient"
+    } ],
+    "type": "Patient"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Condition"
     } ],
     "type": "Condition",
@@ -243,9 +249,16 @@
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Patient"
+      "valueCode": "Procedure"
     } ],
-    "type": "Patient"
+    "type": "Procedure",
+    "mustSupport": [ "code", "performer", "performed" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
+      }
+    } ]
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
@@ -257,19 +270,6 @@
       "path": "category",
       "valueSetReference": {
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "mustSupport": [ "code", "performer", "performed" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure"
       }
     } ]
   } ],

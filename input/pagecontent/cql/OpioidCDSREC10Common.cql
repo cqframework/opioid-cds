@@ -46,16 +46,15 @@ define "Patient Age Less Than 18":
     false
 
 define "Applicable Because of Positive Cocaine or PCP or Opiates":
-  if exists (Common."Opioid Other Than Synthetic Ordered In Last 12 Months")
-    then
-      "Has Positive Screening for Cocaine in Last 12 Months"
-        or "Has Positive Screening for PCP in Last 12 Months"
+  if exists (Common."Opioid Other Than Synthetic Ordered In Last 12 Months") then
+    "Has Positive Screening for Cocaine in Last 12 Months"
+    or "Has Positive Screening for PCP in Last 12 Months"
   else
     "Has Positive Screening for Cocaine in Last 12 Months"
       or "Has Positive Screening for PCP in Last 12 Months"
       or
-        if Config."Opiate Urine Screening Check Enabled"
-          then "Has Positive Screening for Opiates in Last 12 Months"
+        if Config."Opiate Urine Screening Check Enabled" then
+          "Has Positive Screening for Opiates in Last 12 Months"
         else false
 
 define "Inclusion Criteria":
@@ -182,18 +181,6 @@ define "Has Positive Screening for Opiates in Last 12 Months":
   if Config."Opiate Urine Screening Check Enabled" then
     exists ("Opiate Screenings" Opioid where StartsWith(Lower(Opioid.value as FHIR.string), 'pos'))
   else false
-
-define "Applicable Because of Positive Cocaine or PCP or Opiates":
-  if exists (Common."Opioid Other Than Synthetic Ordered In Last 12 Months") then
-    "Has Positive Screening for Cocaine in Last 12 Months"
-    or "Has Positive Screening for PCP in Last 12 Months"
-  else
-    "Has Positive Screening for Cocaine in Last 12 Months"
-      or "Has Positive Screening for PCP in Last 12 Months"
-      or
-        if Config."Opiate Urine Screening Check Enabled" then
-          "Has Positive Screening for Opiates in Last 12 Months"
-        else false
 
 define "Cocaine Detail":
   if "Has Positive Screening for Cocaine in Last 12 Months" then
