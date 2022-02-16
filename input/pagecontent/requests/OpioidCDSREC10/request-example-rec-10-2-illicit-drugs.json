@@ -210,7 +210,7 @@
               "subject": {
                 "reference": "Patient/example-rec-10-2-illicit-drugs"
               },
-              "effectiveDateTime": "2021-03-01",
+              "effectiveDateTime": "2021-09-30",
               "valueString": "NEG",
               "interpretation": [
                 {
