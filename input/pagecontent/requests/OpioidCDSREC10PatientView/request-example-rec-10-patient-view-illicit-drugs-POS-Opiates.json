@@ -1,0 +1,27 @@
+{
+  "hookInstance": "31c74cfc-747c-4afc-82e4-bdd3b7a0a58c",
+  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "hook": "patient-view",
+  "applyCql": true,
+  "context": {
+    "userId": "Practitioner/example",
+    "patientId": "Patient/example-rec-10-pv-illicit-POS-Opiates-drugs",
+    "encounterId": "Encounter/example-rec-10-pv-illicit-POS-Opiates-drugs-encounter",
+    "selections": [
+      "MedicationRequest/example-rec-10-pv-illicit-POS-Opiates-drugs-medreq"
+    ],
+    "prefetch": {
+      "item1": {
+        "response": {
+          "status": "200 OK"
+        },
+        "resource": {
+          "resourceType": "Patient",
+          "id": "example-rec-10-pv-illicit-POS-Opiates-drugs",
+          "gender": "female",
+          "birthDate": "1982-01-07"
+        }
+      }
+    }
+  }
+}
