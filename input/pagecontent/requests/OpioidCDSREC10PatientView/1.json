@@ -1,0 +1,55 @@
+{
+  "resourceType": "Bundle",
+  "id": "request-example-rec10-patient-view-2-illicit-drugs-bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+      },
+      "request": {
+        "method": "PUT",
+        "url": ""
+      }
+    },
+    {
+      "resource": {
+      },
+      "request": {
+        "method": "PUT",
+        "url": ""
+      }
+    },
+    {
+      "resource": {
+      },
+      "request": {
+        "method": "PUT",
+        "url": ""
+      }
+    },
+    {
+      "resource": {
+      },
+      "request": {
+        "method": "PUT",
+        "url": ""
+      }
+    },
+    {
+      "resource": {
+      },
+      "request": {
+        "method": "PUT",
+        "url": ""
+      }
+    },
+    {
+      "resource": {
+      },
+      "request": {
+        "method": "PUT",
+        "url": ""
+      }
+    }
+  ]
+}

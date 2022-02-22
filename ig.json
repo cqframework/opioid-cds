@@ -731,6 +731,10 @@
       "source": "plandefinition-OpioidCDSREC08.json",
       "base": "PlanDefinition-opioidcds-08.html"
     },
+    "PlanDefinition/opioidcds-08-order-sign": {
+      "source": "plandefinition-OpioidCDSREC08-order-sign.json",
+      "base": "PlanDefinition-opioidcds-08-order-sign.html"
+    },
     "PlanDefinition/OpioidCDSREC10": {
       "source": "plandefinition-OpioidCDSREC10.json",
       "base": "PlanDefinition-opioidcds-10.html"
