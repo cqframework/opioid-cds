@@ -5,10 +5,10 @@
   "applyCql": true,
   "context": {
     "userId": "Practitioner/example",
-    "patientId": "Patient/example-rec-10-patient-view-2-illicit-drugs-POS",
-    "encounterId": "Encounter/example-rec-10-patient-view-2-illicit-drugs-POS-context",
+    "patientId": "Patient/example-rec-10-pv-2-illicit-drugs-POS",
+    "encounterId": "Encounter/example-rec-10-pv-2-illicit-drugs-POS-encounter",
     "selections": [
-      "MedicationRequest/example-rec-10-patient-view-illicit-2-drugs-POS-context"
+      "MedicationRequest/example-rec-10-pv-illicit-2-drugs-POS-context"
     ],
     "draftOrders": {
       "resourceType": "MedicationRequest",
@@ -111,10 +111,10 @@
       },
       "resource": {
         "resourceType": "Encounter",
-        "id": "example-rec-10-patient-view-illicit-drugs-POS-PCP-prefetch",
+        "id": "example-rec-10-pv-illicit-drugs-POS-PCP-prefetch",
         "status": "finished",
         "subject": {
-          "reference": "Patient/example-rec-10-patient-view-illicit-drugs-POS-PCP"
+          "reference": "Patient/example-rec-10-pv-illicit-drugs-POS-PCP"
         },
         "_period": {
           "extension": [
@@ -139,7 +139,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-patient-view-2-illicit-drugs-POS-prefetch",
+              "id": "example-rec-10-pv-2-illicit-drugs-POS-prefetch",
               "status": "final",
               "category": {
                 "coding": [
@@ -158,9 +158,9 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-patient-view-2-illicit-drugs-POS"
+                "reference": "Patient/example-rec-10-pv-2-illicit-drugs-POS"
               },
-              "effectiveDateTime": "2021-01-22",
+              "effectiveDateTime": "2021-09-22",
               "valueString": "POS",
               "interpretation": [
                 {
@@ -177,7 +177,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-patient-view-2-illicit-drugs-POS-prefetch",
+              "id": "example-rec-10-pv-2-illicit-drugs-POS-prefetch",
               "status": "final",
               "category": {
                 "coding": [
@@ -196,9 +196,9 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-patient-view-2-illicit-drugs-POS"
+                "reference": "Patient/example-rec-10-pv-2-illicit-drugs-POS"
               },
-              "effectiveDateTime": "2021-03-01",
+              "effectiveDateTime": "2021-11-01",
               "valueString": "NEG",
               "interpretation": [
                 {
@@ -215,7 +215,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-patient-view-2-illicit-drugs-POS-prefetch",
+              "id": "example-rec-10-pv-2-illicit-drugs-POS-prefetch",
               "status": "final",
               "category": {
                 "coding": [
@@ -234,9 +234,9 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-patient-view-2-illicit-drugs-POS"
+                "reference": "Patient/example-rec-10-pv-2-illicit-drugs-POS"
               },
-              "effectiveDateTime": "2021-02-23",
+              "effectiveDateTime": "2021-10-23",
               "valueString": "POS",
               "interpretation": [
                 {
@@ -253,7 +253,7 @@
           {
             "resource": {
               "resourceType": "Observation",
-              "id": "example-rec-10-patient-view-2-illicit-drugs-POS-prefetch",
+              "id": "example-rec-10-pv-2-illicit-drugs-POS-prefetch",
               "status": "final",
               "category": {
                 "coding": [
@@ -273,9 +273,9 @@
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-patient-view-2-illicit-drugs-POS"
+                "reference": "Patient/example-rec-10-pv-2-illicit-drugs-POS"
               },
-              "effectiveDateTime": "2021-02-23",
+              "effectiveDateTime": "2021-10-23",
               "valueString": "POS",
               "interpretation": [
                 {
@@ -299,7 +299,7 @@
       },
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "example-rec-10-patient-view-2-illicit-drugs-POS-prefetch",
+        "id": "example-rec-10-pv-2-illicit-drugs-POS-prefetch",
         "status": "active",
         "intent": "order",
         "category": {
@@ -320,10 +320,10 @@
           ]
         },
         "subject": {
-          "reference": "Patient/example-rec-10-patient-view-2-illicit-drugs-POS"
+          "reference": "Patient/example-rec-10-pv-2-illicit-drugs-POS"
         },
         "encounter": {
-          "reference": "Encounter/example-rec-10-patient-view-2-illicit-drugs-POS-prefetch"
+          "reference": "Encounter/example-rec-10-pv-2-illicit-drugs-POS-prefetch"
         },
         "_authoredOn": {
           "extension": [

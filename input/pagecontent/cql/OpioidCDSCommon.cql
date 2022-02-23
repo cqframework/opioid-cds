@@ -13,6 +13,7 @@ codesystem "SNOMED": 'http://snomed.info/sct'
 valueset "Opioid analgesics with ambulatory misuse potential": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential'
 valueset "Extended release opioid analgesics with ambulatory misuse potential": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/extended-release-opioid-with-ambulatory-misuse-potential'
 valueset "Buprenorphine and methadone medications": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications'
+valueset "Non-synthetic opioid drugs": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-synthetic-opioids'
 
 // Enumerated-compose
 valueset "Limited life expectancy conditions": 'http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions'
@@ -58,6 +59,12 @@ context Patient
 // TODO: code "Nonpharmacologic therapy and nonopioid pharmocologic": 'TODO' from "TODO"
 
 // TODO: Capture process decisions for long-term opioid use
+
+define "Opioid Other Than Synthetic Ordered In Last 12 Months":
+  [MedicationRequest: status in "Active MedicationRequest"] MR
+      where date from MR.authoredOn 1 year or less on or before Today()
+      and MR.medication is Reference or (MR.medication in "Opioid analgesics with ambulatory misuse potential"
+      and not (MR.medication in "Non-synthetic opioid drugs"))
 
 define "Active Ambulatory Opioid Rx":
   (

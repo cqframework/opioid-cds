@@ -2,6 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "cdc-requestgroup-action-indicator",
   "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-requestgroup-action-indicator",
+  "version": "0.0.1",
   "name": "action-indicator",
   "title": "CDC Opioid Indicator Extension",
   "status": "draft",

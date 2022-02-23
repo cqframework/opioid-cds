@@ -21,7 +21,7 @@ COPY input\vocabulary\valueset\valueset-cocaine-urine-drug-screening-tests.json 
 COPY input\vocabulary\valueset\valueset-conditions-documenting-substance-misuse.json bundlegen\sourcefiles\valueset-conditions-documenting-substance-misuse.json
 COPY input\vocabulary\valueset\valueset-conditions-likely-terminal-for-opioid-prescribing.json bundlegen\sourcefiles\valueset-conditions-likely-terminal-for-opioid-prescribing.json
 COPY input\vocabulary\valueset\valueset-condition-clinical-status-active.json bundlegen\sourcefiles\valueset-condition-clinical-status-active.json
-COPY input\vocabulary\valueset\valueset-condition-category-encounter-diagnosis.json bundlegen\sourcefiles\valueset-condition-category-encounter-diagnosis.json
+COPY input\vocabulary\valueset\valueset-condition-encounter-diagnosis-category.json bundlegen\sourcefiles\valueset-condition-encounter-diagnosis-category.json
 COPY input\vocabulary\valueset\valueset-condition-problem-list-category.json bundlegen\sourcefiles\valueset-condition-problem-list-category.json
 COPY input\vocabulary\valueset\valueset-condition-us-core-health-concern-category.json bundlegen\sourcefiles\valueset-condition-us-core-health-concern-category.json
 COPY input\vocabulary\valueset\valueSet-extended-release-opioid-with-ambulatory-misuse-potential.json bundlegen\sourcefiles\valueSet-extended-release-opioid-with-ambulatory-misuse-potential.json
@@ -30,7 +30,7 @@ COPY input\vocabulary\valueset\valueset-hospice-finding.json bundlegen\sourcefil
 COPY input\vocabulary\valueset\valueset-hospice-procedure.json bundlegen\sourcefiles\valueset-hospice-procedure.json
 COPY input\vocabulary\valueset\valueset-limited-life-expectancy-conditions.json bundlegen\sourcefiles\valueset-limited-life-expectancy-conditions.json
 COPY input\vocabulary\valueset\valueset-medicationrequest-category-community.json bundlegen\sourcefiles\valueset-medicationrequest-category-community.json
-COPY input\vocabulary\valueset\valueset-medicationrequest-status-active bundlegen\sourcefiles\valueset-medicationrequest-status-active
+COPY input\vocabulary\valueset\valueset-medicationrequest-status-active.json bundlegen\sourcefiles\valueset-medicationrequest-status-active.json
 COPY input\vocabulary\valueset\valueset-naloxone-medications.json bundlegen\sourcefiles\valueset-naloxone-medications.json
 COPY input\vocabulary\valueset\valueset-non-opioid-drug-urine-screening.json bundlegen\sourcefiles\valueset-non-opioid-drug-urine-screening.json
 COPY input\vocabulary\valueset\valueset-office-visit.json bundlegen\sourcefiles\valueset-office-visit.json

@@ -2,6 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "cdc-valueset-exclusion",
   "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion",
+  "version": "0.0.1",
   "name": "valueset-exclusion",
   "title": "CDC Opioid Guidance Exclusion Extension",
   "status": "draft",

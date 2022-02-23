@@ -100,36 +100,7 @@
         "birthDate": "1982-01-07"
       }
     },
-    "item2": null,
-    "item3": null,
-    "item4": null,
-    "item5": null,
-    "item6": null,
-    "item7": {
-      "response": {
-        "status": "200 OK"
-      },
-      "resource": {
-        "resourceType": "Encounter",
-        "id": "example-rec-10-2-illicit-drugs-prefetch",
-        "status": "finished",
-        "subject": {
-          "reference": "Patient/example-rec-10-2-illicit-drugs"
-        },
-        "_period": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() - 90 days } }"
-              }
-            }
-          ]
-        }
-      }
-    },
-    "item8": {
+    "item2": {
       "response": {
         "status": "200 OK"
       },
@@ -161,7 +132,7 @@
               "subject": {
                 "reference": "Patient/example-rec-10-2-illicit-drugs"
               },
-              "effectiveDateTime": "2021-01-22",
+              "effectiveDateTime": "2021-10-22",
               "valueString": "POS",
               "interpretation": [
                 {
@@ -174,8 +145,7 @@
                 }
               ]
             }
-          },
-          {
+          },{
             "resource": {
               "resourceType": "Observation",
               "id": "example-rec-10-2-illicit-drugs-prefetch",
@@ -192,15 +162,16 @@
                 "coding": [
                   {
                     "system": "http://loinc.org",
-                    "code": "8237-0",
-                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
+                    "version": "2.68",
+                    "code": "11246-6",
+                    "display": "oxyCODONE (U) [Mass/Vol]"
                   }
                 ]
               },
               "subject": {
-                "reference": "Patient/example-rec-10-2-illicit-drugs"
+                "reference": "Patient/example-rec-10-2-illicit--drugs"
               },
-              "effectiveDateTime": "2021-03-01",
+              "effectiveDateTime": "2021-10-22",
               "valueString": "NEG",
               "interpretation": [
                 {
@@ -239,7 +210,46 @@
               "subject": {
                 "reference": "Patient/example-rec-10-2-illicit-drugs"
               },
-              "effectiveDateTime": "2021-02-23",
+              "effectiveDateTime": "2021-09-30",
+              "valueString": "NEG",
+              "interpretation": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/v2/0078",
+                      "code": "NEG"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "resource": {
+              "resourceType": "Observation",
+              "id": "example-rec-10-2-illicit-drugs-prefetch",
+              "status": "final",
+              "category": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/observation-category",
+                    "code": "laboratory"
+                  }
+                ]
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "8237-0",
+                    "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "Patient/example-rec-10-2-illicit-drugs"
+              },
+              "effectiveDateTime": "2021-09-23",
               "valueString": "POS",
               "interpretation": [
                 {
@@ -256,6 +266,35 @@
         ]
       }
     },
+    "item3": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-rec-10-2-illicit-drugs-prefetch",
+        "status": "finished",
+        "subject": {
+          "reference": "Patient/example-rec-10-2-illicit-drugs"
+        },
+        "_period": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() - 90 days } }"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "item4": null,
+    "item5": null,
+    "item6": null,
+    "item7": null,
+    "item8": null,
     "item9": null,
     "item10": {
       "response": {

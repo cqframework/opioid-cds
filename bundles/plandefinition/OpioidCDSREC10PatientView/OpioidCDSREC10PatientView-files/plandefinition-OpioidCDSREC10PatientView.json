@@ -101,11 +101,6 @@
       "documentation": [
         {
           "type": "documentation",
-          "display": "CDC guideline for prescribing opioids for chronic pain",
-          "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
-        },
-        {
-          "type": "documentation",
           "document": {
             "extension": [
               {
@@ -132,7 +127,9 @@
                   ]
                 }
               }
-            ]
+            ],
+            "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
+            "title": "CDC guideline for prescribing opioids for chronic pain"
           }
         }
       ],
@@ -147,7 +144,7 @@
           "kind": "applicability",
           "description": "Patient has not had a urine screening in the past 12 months",
           "language": "text/cql",
-          "expression": "Applicable Not Because of Positive Cocaine or PCP"
+          "expression": "Is Perform Drug Screen Recommendation Applicable?"
         }
       ],
       "type":
@@ -193,14 +190,9 @@
       ]
     },
     {
-      "title": "Cocaine or PCP Tested Positive",
-      "description": "Urine screening showed positive for cocaine or PCP",
+      "title": "Tested Positive for Cocaine, Opiates, or PCP",
+      "description": "Urine screening showed positive for cocaine, opiates or PCP",
       "documentation": [
-        {
-          "type": "documentation",
-          "display": "CDC guideline for prescribing opioids for chronic pain",
-          "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
-        },
         {
           "type": "documentation",
           "document": {
@@ -229,7 +221,9 @@
                   ]
                 }
               }
-            ]
+            ],
+            "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
+            "title": "CDC guideline for prescribing opioids for chronic pain"
           }
         }
       ],
@@ -242,9 +236,9 @@
       "condition": [
         {
           "kind": "applicability",
-          "description": "Urine screening tested positive for cocaine or PCP",
+          "description": "Urine screening tested positive for cocaine, opiates or PCP",
           "language": "text/cql",
-          "expression": "Applicable Because of Positive Cocaine or PCP"
+          "expression": "Applicable Because of Positive Cocaine or PCP or Opiates"
         }
       ],
       "dynamicValue": [

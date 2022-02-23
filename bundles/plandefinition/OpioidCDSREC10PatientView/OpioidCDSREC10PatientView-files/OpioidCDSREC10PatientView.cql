@@ -4,6 +4,7 @@ using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
 include OpioidCDSCommon version '1.2.3' called Common
+include OpioidCDSREC10Common version '1.2.3' called Rec10Common
 include OpioidCDSRoutines version '1.2.3' called Routines
 include OpioidCDSCommonConfig version '1.2.3' called Config
 
@@ -41,183 +42,32 @@ context Patient
 define "Lookback Year":
   Interval[Today() - 12 months - 1 days, Today() - 1 day]
 
+define "Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions":
+  Common."Active Ambulatory Opioid Rx" AmbulatoryOpioidPrescription
+    where Routines."Is Chronic Pain Prescription?"(AmbulatoryOpioidPrescription)
+
 define "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential":
-  exists (
-    Common."Active Ambulatory Opioid Rx" AmbulatoryOpioidPrescription
-      where Routines."Is Chronic Pain Prescription?"(AmbulatoryOpioidPrescription)
-  )
+  exists ("Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions")
 
-define "Is Recommendation Applicable?":
-  "Inclusion Criteria"
-    and not "Exclusion Criteria"
-
-define "Patient Age Less Than 18":
-  if (Config."Age Less than 18 Years Is Enabled") then
-    AgeInYearsAt(Today()) < 18
-  else
-    false
-
-define "Inclusion Criteria":
+define "Is Perform Drug Screen Recommendation Applicable?":
   "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential"
-    and not "Patient Age Less Than 18"
-    and Routines."Is Opioid Review Useful?"
-    and (not "Patient had Urine Screening in Last 12 Months"
-      or "Has Positive Screening for Cocaine in Last 12 Months"
-      or "Has Positive Screening for PCP in Last 12 Months")
+    and Rec10Common."Inclusion Criteria"
+    and not Rec10Common."Exclusion Criteria"
 
-define "Exclusion Criteria":
-  false
-
-define "Patient had Urine Screening in Last 12 Months":
-  exists( "Urine Screenings during the Last 12 Months" )
-
-define "Urine Screenings during the Last 12 Months":
-  "Non-opioid Screenings"
-    union "Opioid Screenings"
-    union "Cocaine Screenings"
-    union "PCP Screenings"
-
-define "Laboratory Observations":
-  [Observation: "category" in Common."Observation Category Laboratory"]
-
-define "Non-opioid Screenings":
-  GetRelevantScreenings("Laboratory Observations" LabObservations
-      where (LabObservations.code in Common."Non-opioid drug urine screening")
-  )
-
-define "Opioid Screenings":
-  GetRelevantScreenings("Laboratory Observations" LabObservations
-      where (LabObservations.code in Common."Opioid drug urine screening")
-  )
-
-define "Cocaine Screenings":
-  GetRelevantScreenings("Laboratory Observations" LabObservations
-      where (LabObservations.code in Common."Cocaine Urine Tests")
-  )
-
-define "PCP Screenings":
-  GetRelevantScreenings("Laboratory Observations" LabObservations
-      where (LabObservations.code in Common."PCP Urine Tests")
-  )
-
-define function GetRelevantScreenings(obsList List<Observation>):
-  obsList LabObservations
-     where date from LabObservations.effective in day of "Lookback Year"
-       and not (LabObservations.status.value in { 'unknown', 'entered-in-error', 'cancelled' })
-
-// Returns a text representation of a dateTime using the CQL `ToString` function.
-// @param d - a FHIR dateTime to get text for
-// @returns {System.String} the text representation of the dateTime
-define function DateTimeText(d FHIR.dateTime):
-  ToString(d.value)
-
-define "Positive PCP Screenings":
-  "PCP Screenings" PCP where
-    StartsWith(Lower(PCP.value as FHIR.string), 'pos')
-
-define "Negative PCP Screenings":
-  "PCP Screenings" PCP where
-    StartsWith(Lower(PCP.value as FHIR.string), 'neg')
-
-define "Positive Cocaine Screenings":
-  "Cocaine Screenings" Cocaine where
-    StartsWith(Lower(Cocaine.value as FHIR.string), 'pos')
-
-define "Negative Cocaine Screenings":
-  "Cocaine Screenings" Cocaine where
-    StartsWith(Lower(Cocaine.value as FHIR.string), 'neg')
-
-/*
-  borrowed from CDS4CPM CDS_Connect_Commons_for_FHIRv400
-  Shoudl this go into OpioidCDSCommon?
-*/
-define function MostRecent(ObsList List<Observation>):
-  Last(ObsList O sort by Coalesce(
-    (effective as FHIR.dateTime).value,
-    (effective as FHIR.Period)."end".value,
-    (effective as FHIR.Period)."start".value,
-    issued.value)
-  )
-
-define "Negative PCP Screenings Count Since Last Positive Screening":
-  Count(
-    "Negative PCP Screenings" N where
-      DateTimeText(N.effective) >  DateTimeText("MostRecent"("Positive PCP Screenings").effective)
-  )
-
-define "Negative Cocaine Screenings Count Since Last Positive Screening":
-  Count(
-    "Negative Cocaine Screenings" N where
-      DateTimeText(N.effective) >  DateTimeText("MostRecent"("Positive Cocaine Screenings").effective)
-  )
-
-define "Positive Cocaine Dates in Lookback Period":
-  "Positive Cocaine Screenings" CS
-    return DateTimeText(CS.effective)
-
-define "Positive PCP Dates in Lookback Period":
-  "Positive PCP Screenings" PS
-    return DateTimeText(PS.effective)
-
-define "Has Positive Screening for Cocaine in Last 12 Months":
-  exists "Cocaine Screenings" CS where
-     StartsWith(Lower(CS.value as FHIR.string), 'pos')
-
-define "Has Positive Screening for PCP in Last 12 Months":
-  exists "PCP Screenings" PCP where
-     StartsWith(Lower(PCP.value as FHIR.string), 'pos')
-
-define "Applicable Because of Positive Cocaine or PCP":
-  "Is Recommendation Applicable?"
-    and ("Has Positive Screening for Cocaine in Last 12 Months" or "Has Positive Screening for PCP in Last 12 Months")
-
-define "Applicable Not Because of Positive Cocaine or PCP":
-  "Is Recommendation Applicable?"
-    and not "Has Positive Screening for Cocaine in Last 12 Months"
-    and not "Has Positive Screening for PCP in Last 12 Months"
-
-define "Detail":
-  if "Applicable Because of Positive Cocaine or PCP"
-    then
-      (
-        if ("Has Positive Screening for Cocaine in Last 12 Months" and "Has Positive Screening for PCP in Last 12 Months")
-          then "Cocaine And PCP Summary"
-        else if "Has Positive Screening for Cocaine in Last 12 Months"
-          then "Cocaine Summary"
-        else if "Has Positive Screening for PCP in Last 12 Months"
-          then "PCP Summary"
-        else
-          'No Details Available'
-      )
-  else if "Applicable Not Because of Positive Cocaine or PCP"
-    then 'Patients on opioid therapy should have a urine drug test performed every 12 months.'
-    else null
-
-define "Indicator":
-  'warning'
-
-define "Summary":
-  if "Applicable Because of Positive Cocaine or PCP"
-    then 'Positive Cocaine or PCP in Urine Screening'
-  else if "Applicable Not Because of Positive Cocaine or PCP"
-    then 'Annual Urine Screening Check'
-  else null
+define "Applicable Because of Positive Cocaine or PCP or Opiates":
+  Rec10Common."Applicable Because of Positive Cocaine or PCP or Opiates"
 
 define "Urine Drug Screening ProcedureRequest Category":
-  FHIR.CodeableConcept {
-    coding: {
-      FHIR.Coding {
-        system: FHIR.uri { value: 'http://terminology.hl7.org/CodeSystem/medicationrequest-category' },
-        code: FHIR.code { value: 'outpatient' },
-        display: FHIR.string { value: 'Outpatient' }
-      }
-    }
-  }
-  /* singleton from (First(
-    [Encounter] E
-      where E.period starts same day as Today()
-      sort by start of period desc
-  ).type) */
+  Rec10Common."Urine Drug Screening ProcedureRequest Category"
+
+define "Detail":
+  Rec10Common."Get Detail" ("Is Perform Drug Screen Recommendation Applicable?")
+
+define "Indicator":
+  Rec10Common."Indicator"
+
+define "Summary":
+  Rec10Common."Get Summary" ("Is Perform Drug Screen Recommendation Applicable?")
 
 // Service Request - Urine Screening
 // NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest
@@ -244,17 +94,3 @@ define "Urine Drug Screening ProcedureRequest Category":
     version: FHIR.string { value: code.version },
     display: FHIR.string { value: code.display }
   } */
-
-define "Cocaine And PCP Summary":
-  'Positive for Cocaine AND PCP <br/><br/>' +
-    "Cocaine Summary" + '<br/>' + "PCP Summary"
-
-define "PCP Summary":
-  'Positive for PCP: <br/>' +
-  'Positive lab dates: <br/>' + Combine("Positive PCP Dates in Lookback Period", ', <br/>') + '<br/>' +
-  'Negative test count since last Positive: ' + ToString("Negative PCP Screenings Count Since Last Positive Screening")
-
-define "Cocaine Summary":
-  'Positive for Cocaine: <br/>' +
-  'Positive lab dates: <br/>' + Combine("Positive Cocaine Dates in Lookback Period", '<br/>') + '<br/>' +
-  'Negative test count since last Positive: ' + ToString("Negative Cocaine Screenings Count Since Last Positive Screening")
