@@ -1,7 +1,7 @@
 {
   "hookInstance": "b32cab7a-75ea-4cd1-9514-20ebf473cac9",
   "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
-  "hook": "order-select",
+  "hook": "order-sign",
   "user": "Practitioner/example",
   "applyCql": true,
   "context": {

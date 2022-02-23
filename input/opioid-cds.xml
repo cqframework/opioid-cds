@@ -1194,6 +1194,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #8 Order Sign"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #8 Order Sign"/>
+            <sourceReference>
+                <reference value="PlanDefinition/OpioidCDSREC08OrderSign"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10"/>
             <sourceReference>
