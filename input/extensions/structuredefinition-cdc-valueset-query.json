@@ -2,6 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "cdc-valueset-query",
   "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
+  "version": "0.0.1",
   "name": "valueset-query",
   "title": "CDC Opioid Guidance Query Extension",
   "status": "draft",
@@ -33,7 +34,8 @@
     "Encounter.period",
     "MedicationRequest.authoredOn",
     "MedicationRequest.dispenseRequest.validityPeriod",
-    "Patient.birthDate"
+    "Patient.birthDate",
+    "Procedure.performed.ofType(Period).start"
   ],
   "type": "Extension",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",

@@ -133,7 +133,7 @@
               "subject": {
                 "reference": "Patient/example-rec-10-2-illicit-POS-Opiates-drugs"
               },
-              "effectiveDateTime": "2021-01-22",
+              "effectiveDateTime": "2021-09-22",
               "valueString": "POS",
               "interpretation": [
                 {
@@ -173,7 +173,7 @@
               "subject": {
                 "reference": "Patient/example-rec-10-2-illicit-POS-Opiates-drugs"
               },
-              "effectiveDateTime": "2021-03-01",
+              "effectiveDateTime": "2021-11-01",
               "valueString": "NEG",
               "interpretation": [
                 {
@@ -211,7 +211,7 @@
               "subject": {
                 "reference": "Patient/example-rec-10-POS-PCP-drugs"
               },
-              "effectiveDateTime": "2021-02-23",
+              "effectiveDateTime": "2021-10-23",
               "valueString": "NEG",
               "interpretation": [
                 {
@@ -251,7 +251,7 @@
               "subject": {
                 "reference": "Patient/example-rec-10-2-illicit-POS-Opiates-drugs"
               },
-              "effectiveDateTime": "2021-02-23",
+              "effectiveDateTime": "2021-10-23",
               "valueString": "POS",
               "interpretation": [
                 {
