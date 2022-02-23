@@ -1,6 +1,6 @@
 #!/bin/bash
 #DO NOT EDIT WITH WINDOWS
-tooling_jar=tooling-1.3.1-SNAPSHOT-jar-with-dependencies.jar
+tooling_jar=tooling-1.4.1-SNAPSHOT-jar-with-dependencies.jar
 input_cache_path=./input-cache
 resources_path=/input/resources
 root_dir=$PWD
@@ -27,12 +27,12 @@ echo "$fsoption"
 tooling=$input_cache_path/$tooling_jar
 
 if test -f "$tooling"; then
-	JAVA -jar $tooling -RefreshIG -root-dir="$root_dir" -ig-path="$ig_path" -rp="$resources_path" -d -p -t $fsoption
+	JAVA -jar $tooling -RefreshIG -root-dir="$root_dir" -ig-path="$ig_path" -rp="$resources_path" -d -p -t -ss="false" $fsoption
 else
 	tooling=../$tooling_jar
 	echo $tooling
 	if test -f "$tooling"; then
-		JAVA -jar $tooling -RefreshIG -root-dir="$root_dir" -ig-path="$ig_path"  -rp="$resources_path" -d -p -t $fsoption
+		JAVA -jar $tooling -RefreshIG -root-dir="$root_dir" -ig-path="$ig_path"  -rp="$resources_path" -d -p -t -ss="false" $fsoption
 	else
 		echo CQF Tooling NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
 	fi

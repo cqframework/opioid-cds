@@ -8,13 +8,11 @@
       "system" : "urn:ietf:bcp:13"
     }]
   }
-}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
+}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
 v: {
   "display" : "text/cql",
   "code" : "text/cql",
-  "system" : "urn:ietf:bcp:13",
-  "severity" : null,
-  "error" : ""
+  "system" : "urn:ietf:bcp:13"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -26,13 +24,11 @@ v: {
       "system" : "urn:ietf:bcp:13"
     }]
   }
-}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
+}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
 v: {
   "display" : "application/elm+xml",
   "code" : "application/elm+xml",
-  "system" : "urn:ietf:bcp:13",
-  "severity" : null,
-  "error" : ""
+  "system" : "urn:ietf:bcp:13"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -44,13 +40,11 @@ v: {
       "system" : "urn:ietf:bcp:13"
     }]
   }
-}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
+}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
 v: {
   "display" : "application/xml",
   "code" : "application/xml",
-  "system" : "urn:ietf:bcp:13",
-  "severity" : null,
-  "error" : ""
+  "system" : "urn:ietf:bcp:13"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -146,12 +140,10 @@ v: {
       }]
     }]
   }
-}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS"}####
+}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"true", "valueSetMode":"ALL_CHECKS", "versionFlexible":"true"}####
 v: {
   "display" : "天",
   "code" : "d",
-  "system" : "http://unitsofmeasure.org",
-  "severity" : null,
-  "error" : ""
+  "system" : "http://unitsofmeasure.org"
 }
 -------------------------------------------------------------------------------------

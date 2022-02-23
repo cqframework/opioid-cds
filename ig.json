@@ -53,7 +53,7 @@
     "valueset-profile-spreadsheet.xml"
   ],
   "resources": {
-    "Bundle/opioid-cds-terminology-bundle": {
+    "Bundle/opioid-cds-terminology": {
       "source": "opioid-cds-terminology-bundle.json",
       "base": "Bundle-opioiod-cds-terminology.html"
     },
@@ -611,6 +611,10 @@
       "source": "FHIRHelpers.json",
       "base": "Library-FHIRHelpers.html"
     },
+    "Library/FHIR-ModelInfo": {
+      "source": "FHIR-ModelInfo.json",
+      "base": "Library-FHIR-ModelInfo.html"
+    },
     "Library/OMTKLogicCQL": {
       "source": "OMTKLogicCQL.json",
       "base": "Library-OMTKLogicCQL.html"
@@ -711,23 +715,23 @@
       "source": "HelloWorld.json",
       "base": "PlanDefinition-HelloWorld.html"
     },
-    "PlanDefinition/OpioidCDSREC04": {
+    "PlanDefinition/opioidcds-04": {
       "source": "plandefinition-OpioidCDSREC04.json",
       "base": "PlanDefinition-opioidcds-04.html"
     },
-    "PlanDefinition/OpioidCDSREC04PatientView": {
+    "PlanDefinition/opioidcds-04-patient-view": {
       "source": "plandefinition-OpioidCDSREC04PatientView.json",
       "base": "PlanDefinition-opioidcds-04-patient-view.html"
     },
-    "PlanDefinition/OpioidCDSREC05": {
+    "PlanDefinition/opioidcds-05": {
       "source": "plandefinition-OpioidCDSREC05.json",
       "base": "PlanDefinition-opioidcds-05.html"
     },
-    "PlanDefinition/OpioidCDSREC07": {
+    "PlanDefinition/opioidcds-07": {
       "source": "plandefinition-OpioidCDSREC07.json",
       "base": "PlanDefinition-opioidcds-07.html"
     },
-    "PlanDefinition/OpioidCDSREC08": {
+    "PlanDefinition/opioidcds-08": {
       "source": "plandefinition-OpioidCDSREC08.json",
       "base": "PlanDefinition-opioidcds-08.html"
     },
@@ -735,27 +739,27 @@
       "source": "plandefinition-OpioidCDSREC08-order-sign.json",
       "base": "PlanDefinition-opioidcds-08-order-sign.html"
     },
-    "PlanDefinition/OpioidCDSREC10": {
+    "PlanDefinition/opioidcds-10": {
       "source": "plandefinition-OpioidCDSREC10.json",
       "base": "PlanDefinition-opioidcds-10.html"
     },
-    "PlanDefinition/OpioidCDSREC10OrderSign": {
+    "PlanDefinition/opioidcds-10-order-sign": {
       "source": "plandefinition-OpioidCDSREC10OrderSign.json",
       "base": "PlanDefinition-opioidcds-10-order-sign.html"
     },
-    "PlanDefinition/OpioidCDSREC10PatientView": {
+    "PlanDefinition/opioidcds-10-patient-view": {
       "source": "plandefinition-OpioidCDSREC10PatientView.json",
       "base": "PlanDefinition-opioidcds-10-patient-view.html"
     },
-    "PlanDefinition/OpioidCDSREC11": {
+    "PlanDefinition/opioidcds-11": {
       "source": "plandefinition-OpioidCDSREC11.json",
       "base": "PlanDefinition-opioidcds-11.html"
     },
-    "PlanDefinition/OpioidCDSREC11PatientView": {
+    "PlanDefinition/opioidcds-11-patient-view": {
       "source": "plandefinition-OpioidCDSREC11PatientView.json",
       "base": "PlanDefinition-opioidcds-11-patient-view.html"
     },
-    "PlanDefinition/OpioidCDSREC12PatientView": {
+    "PlanDefinition/opioidcds-12-patient-view": {
       "source": "plandefinition-OpioidCDSREC12PatientView.json",
       "base": "PlanDefinition-opioidcds-12-patient-view.html"
     },
@@ -839,6 +843,10 @@
     "ValueSet/non-opioid-drug-urine-screening": {
       "source": "valueset-non-opioid-drug-urine-screening.json",
       "base": "ValueSet-non-opioid-drug-urine-screening.html"
+    },
+    "ValueSet/non-synthetic-opioids": {
+      "source": "valueset-non-synthetic-opioids.json",
+      "base": "ValueSet-non-synthetic-opioids.html"
     },
     "ValueSet/office-visit": {
       "source": "valueset-office-visit.json",

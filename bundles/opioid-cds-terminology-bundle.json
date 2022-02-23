@@ -2225,9 +2225,7 @@
       "copyright": "© CDC 2016+.",
       "compose": {
         "include": [ {
-          "valueSet": [ "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-illicit-drug-urine-screening" ]
-        }, {
-          "valueSet": [ "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening" ]
+          "valueSet": [ "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening", "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening" ]
         } ]
       },
       "expansion": {
@@ -10119,32 +10117,6 @@
     "request": {
       "method": "PUT",
       "url": "ValueSet/urine-drug-screening-tests"
-    }
-  }, {
-    "resource": {
-      "resourceType": "ValueSet",
-      "id": "condition-category-encounter-diagnosis",
-      "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-category-encounter-diagnosis",
-      "version": "0.0.1",
-      "name": "Valueset_encounter_diagnosis_condition_categories",
-      "title": "ValueSet - Encounter Diagnosis Condition Categories",
-      "status": "active",
-      "experimental": false,
-      "publisher": "Alphora",
-      "description": "Encounter Diagnosis condition category.",
-      "expansion": {
-        "identifier": "condition-category-encounter-diagnosis-valueseet-expansion",
-        "timestamp": "2021-06-02T13:47:55-07:00",
-        "contains": [ {
-          "system": "http://hl7.org/fhir/condition-category",
-          "code": "encounter-diagnosis",
-          "display": "Encounter Diagnosis"
-        } ]
-      }
-    },
-    "request": {
-      "method": "PUT",
-      "url": "ValueSet/condition-category-encounter-diagnosis"
     }
   }, {
     "resource": {
@@ -34403,6 +34375,7 @@
       "description": "Preferred value set for Condition Clinical Status.",
       "caseSensitive": true,
       "valueSet": "http://hl7.org/fhir/ValueSet/condition-clinical",
+      "hierarchyMeaning": "grouped-by",
       "content": "complete",
       "concept": [ {
         "code": "active",

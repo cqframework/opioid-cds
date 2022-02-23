@@ -26,9 +26,10 @@
   "copyright": "© CDC 2016+.",
   "compose": {
     "include": [ {
-      "valueSet": [ "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-illicit-drug-urine-screening" ]
-    }, {
-      "valueSet": [ "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening" ]
+      "valueSet": [
+        "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening",
+        "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening"
+      ]
     } ]
   },
   "expansion": {
