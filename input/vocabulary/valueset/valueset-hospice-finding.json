@@ -2,11 +2,12 @@
   "resourceType": "ValueSet",
   "id": "hospice-finding",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding",
+  "version": "0.0.1",
   "name": "hospice_finding",
   "title": "Hospice Finding",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-17T12:27:31-06:00",
+  "date": "2022-03-23T12:32:34-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -68,26 +69,31 @@
     } ]
   },
   "expansion": {
-    "identifier": "a4ca64f6-abf9-4009-b37d-901895b08cd4",
-    "timestamp": "2021-09-17T12:27:31-06:00",
+    "identifier": "c8801abe-f5e3-4cd3-9ade-5d84f92a5fd0",
+    "timestamp": "2022-03-23T12:32:34-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "170935008",
       "display": "Full care by hospice (finding)"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "448451000124101",
       "display": "Transition from self-care to hospice (finding)"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "1891000124102",
       "display": "Transition from acute care to hospice (finding)"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "1951000124104",
       "display": "Transition from long-term care to hospice (finding)"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "305911006",
       "display": "Seen in hospice"
     } ]

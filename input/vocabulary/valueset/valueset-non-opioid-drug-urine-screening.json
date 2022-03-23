@@ -2,11 +2,12 @@
   "resourceType": "ValueSet",
   "id": "non-opioid-drug-urine-screening",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/non-opioid-drug-urine-screening",
+  "version": "0.0.1",
   "name": "non_opioid_drug_urine_screening",
   "title": "Non-opioid drug urine screening",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-17T12:27:32-06:00",
+  "date": "2022-03-23T12:32:34-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -150,8 +151,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "ea51a623-19c7-41c8-b2ba-d9e98bf63f0e",
-    "timestamp": "2021-09-17T12:27:32-06:00",
+    "identifier": "298e6e8f-8f06-4c1c-bf6f-25d922cca587",
+    "timestamp": "2022-03-23T12:32:34-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.68",

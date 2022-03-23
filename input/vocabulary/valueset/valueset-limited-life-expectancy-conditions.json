@@ -2,11 +2,12 @@
   "resourceType": "ValueSet",
   "id": "limited-life-expectancy-conditions",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions",
+  "version": "0.0.1",
   "name": "limited_life_expectancy_conditions",
   "title": "Limited life expectancy conditions",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-17T12:27:31-06:00",
+  "date": "2022-03-23T12:32:34-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -52,30 +53,36 @@
     } ]
   },
   "expansion": {
-    "identifier": "3f901524-c18c-43e3-b559-2837914a5974",
-    "timestamp": "2021-09-17T12:27:31-06:00",
+    "identifier": "1822465e-e34e-4f0d-9b67-49cb67fcbda2",
+    "timestamp": "2022-03-23T12:32:34-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "111947009",
       "display": "Functional disorder present, condition terminal"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "27143004",
       "display": "Patient status determination, pre-terminal"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "170969009",
       "display": "Prognosis bad"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "300936002",
       "display": "Terminal illness"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "162607003",
       "display": "Terminal illness - early stage"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "162608008",
       "display": "Terminal illness - late stage"
     } ]

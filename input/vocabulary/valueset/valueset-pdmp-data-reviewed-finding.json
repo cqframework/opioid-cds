@@ -2,11 +2,12 @@
   "resourceType": "ValueSet",
   "id": "pdmp-data-reviewed-finding",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding",
+  "version": "0.0.1",
   "name": "pdmp_data_reviewed_finding",
   "title": "PDMP data reviewed finding",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-17T12:27:32-06:00",
+  "date": "2022-03-23T12:32:34-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -34,10 +35,11 @@
     } ]
   },
   "expansion": {
-    "identifier": "50860a62-4d76-4736-bb62-8b8418f00a22",
-    "timestamp": "2021-09-17T12:27:32-06:00",
+    "identifier": "ebdfefc8-674c-4351-8fac-e5a9e7fa66b5",
+    "timestamp": "2022-03-23T12:32:34-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "461651000124104",
       "display": "Review of prescription drug monitoring program record done (situation)"
     } ]
