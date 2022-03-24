@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "cocaine-urine-drug-screening-tests",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cocaine-urine-drug-screening-tests",
-  "version": "0.0.1",
   "name": "cocaine_urine_drug_screening_tests",
   "title": "Cocaine urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -26,8 +25,8 @@
   "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "851be292-bd7b-47bb-a20b-13645ac5a8b0",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "7577f066-ff14-489e-a464-a25931497ae9",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.69",

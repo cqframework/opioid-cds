@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "opioid-misuse-assessment-procedure",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-assessment-procedure",
-  "version": "0.0.1",
   "name": "opioid_misuse_assessment_procedure",
   "title": "Opioid misuse assessment procedure",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -35,8 +34,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "759ebc68-2d2e-43e4-a11f-d1d85bbea1d3",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "27a98092-745f-41da-a535-400d0e69ae16",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "substance-misuse-behavioral-counseling",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/substance-misuse-behavioral-counseling",
-  "version": "0.0.1",
   "name": "substance_misuse_behavioral_counseling",
   "title": "Substance misuse behavioral counseling",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:33-06:00",
+  "date": "2022-03-24T08:25:39-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -69,8 +68,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "957b8782-d2de-4e12-97eb-9a449860b957",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "a86c7a1d-675e-4e67-8191-cd85693a6320",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

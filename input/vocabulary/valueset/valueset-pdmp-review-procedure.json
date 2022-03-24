@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "pdmp-review-procedure",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure",
-  "version": "0.0.1",
   "name": "pdmp_review_procedure",
   "title": "PDMP review procedure",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -35,8 +34,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "01f23e79-d46d-4ba2-b517-317fcf0dfe29",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "99d89058-3b3c-4ee0-b7cb-0cd57246dd6e",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

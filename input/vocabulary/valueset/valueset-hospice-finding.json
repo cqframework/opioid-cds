@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "hospice-finding",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-finding",
-  "version": "0.0.1",
   "name": "hospice_finding",
   "title": "Hospice Finding",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -69,8 +68,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "c8801abe-f5e3-4cd3-9ade-5d84f92a5fd0",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "8ddbf839-7240-49de-a79a-e962f9ec3f70",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

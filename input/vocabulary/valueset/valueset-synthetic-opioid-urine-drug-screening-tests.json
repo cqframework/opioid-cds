@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "synthetic-opioid-urine-drug-screening-tests",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/synthetic-opioid-urine-drug-screening-tests",
-  "version": "0.0.1",
   "name": "synthetic_opioid_urine_drug_screening_tests",
   "title": "Synthetic opioid urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -36,8 +35,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "93f79f55-bf2a-489d-818f-7899075dabf9",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "ff3116d5-c15b-4cad-932a-6ddf9d15049d",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.69",

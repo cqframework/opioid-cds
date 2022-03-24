@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "therapies-indicating-end-of-life-care",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/therapies-indicating-end-of-life-care",
-  "version": "0.0.1",
   "name": "therapies_indicating_end_of_life_care",
   "title": "Therapies indicating end of life care",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -62,8 +61,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "a9331179-9ffd-425e-9133-ad5325272e3d",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "71ad2428-24ae-40d6-8623-0885defcdef7",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "conditions-documenting-substance-misuse",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/conditions-documenting-substance-misuse",
-  "version": "0.0.1",
   "name": "conditions_documenting_substance_misuse",
   "title": "Conditions documenting substance misuse",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -281,8 +280,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "87875479-d9d1-420b-96de-b3de8aa0bc47",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "3674b3b7-83ee-4ec6-9e88-8ac1132ab430",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "opioid-counseling-procedure",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-counseling-procedure",
-  "version": "0.0.1",
   "name": "opioid_counseling_procedure",
   "title": "Opioid counseling procedure",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -35,8 +34,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "f0edfd6d-3e6e-48c9-8ce8-bfd004780a05",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "6e8a1f7f-c96a-4cd5-9f38-7bd1ec40a2eb",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

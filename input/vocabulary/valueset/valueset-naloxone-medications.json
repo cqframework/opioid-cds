@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "naloxone-medications",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/naloxone-medications",
-  "version": "0.0.1",
   "name": "naloxone_medications",
   "title": "naloxone medications",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -73,8 +72,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "c3783cc4-64f7-4258-b12b-bc5a6ec87a39",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "125a1b45-422d-4e1e-a62a-ba67549df1ed",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "version": "01-Mar-2021",

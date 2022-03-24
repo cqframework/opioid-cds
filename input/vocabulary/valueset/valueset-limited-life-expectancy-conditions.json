@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "limited-life-expectancy-conditions",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions",
-  "version": "0.0.1",
   "name": "limited_life_expectancy_conditions",
   "title": "Limited life expectancy conditions",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -53,8 +52,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "1822465e-e34e-4f0d-9b67-49cb67fcbda2",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "aeb6b515-8c5b-4d80-a242-523087c969e3",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

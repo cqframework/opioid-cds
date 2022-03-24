@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "pain-treatment-plan",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-treatment-plan",
-  "version": "0.0.1",
   "name": "pain_treatment_plan",
   "title": "Pain treatment plan",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -34,8 +33,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "1cddb5c0-5e0a-4bf2-ae34-63ac210df988",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "13fb00d3-de0d-4bc2-a5ff-66dbf5df8d55",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.69",

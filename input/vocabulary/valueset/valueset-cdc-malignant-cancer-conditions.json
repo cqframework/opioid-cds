@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "cdc-malignant-cancer-conditions",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/cdc-malignant-cancer-conditions",
-  "version": "0.0.1",
   "name": "cdc_malignant_cancer_conditions",
   "title": "CDC malignant cancer conditions",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -72,8 +71,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "5c4c551e-70ef-4d61-9a58-c656a304b296",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "738c2e11-c39b-4f2d-996d-58dbcc76ba70",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
       "version": "FY2021",

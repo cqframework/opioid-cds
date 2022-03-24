@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "general-opiate-urine-drug-screening-tests",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/general-opiate-urine-drug-screening-tests",
-  "version": "0.0.1",
   "name": "general_opiate_urine_drug_screening_tests",
   "title": "General opiate urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -26,8 +25,8 @@
   "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "537ed5c6-a6a6-446b-923f-6affdaf44114",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "7ff3c927-54cc-4bb5-8a01-1f073832e2a3",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.69",

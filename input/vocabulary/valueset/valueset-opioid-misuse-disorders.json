@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "opioid-misuse-disorders",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-misuse-disorders",
-  "version": "0.0.1",
   "name": "opioid_misuse_disorders",
   "title": "Opioid misuse disorders",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -84,8 +83,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "6840fb31-4028-4c29-9e72-1e2a50e39d1b",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "2c8356f0-b6bb-4f8a-b3b4-2cdc3770de13",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

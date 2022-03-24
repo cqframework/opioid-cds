@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "phencyclidine-urine-drug-screening-tests",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/phencyclidine-urine-drug-screening-tests",
-  "version": "0.0.1",
   "name": "phencyclidine_urine_drug_screening_tests",
   "title": "Phencyclidine urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -26,8 +25,8 @@
   "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "c19abc9b-7b5f-42cd-8be6-00fd97313b98",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "823908f4-1291-47f5-8744-071d2c744399",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.69",

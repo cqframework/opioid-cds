@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "pain-management-procedure",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pain-management-procedure",
-  "version": "0.0.1",
   "name": "pain_management_procedure",
   "title": "Pain management procedure",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -35,8 +34,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "3745828e-0fbe-42c0-bf0f-1ba636d31cee",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "641f22b3-c3e5-448b-baaf-64f897908608",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

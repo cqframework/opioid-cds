@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "conditions-likely-terminal-for-opioid-prescribing",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/conditions-likely-terminal-for-opioid-prescribing",
-  "version": "0.0.1",
   "name": "conditions_likely_terminal_for_opioid_prescribing",
   "title": "Conditions likely terminal for opioid prescribing",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -81,8 +80,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "447d1042-96cd-4aaa-ad39-944c1dabad39",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "74dabf8b-79fe-415d-8d40-5c4cf1580408",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "2021-03",

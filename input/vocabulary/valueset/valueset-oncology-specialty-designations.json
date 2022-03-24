@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "oncology-specialty-designations",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/oncology-specialty-designations",
-  "version": "0.0.1",
   "name": "oncology_specialty_designations",
   "title": "Oncology specialty designations (NUCC)",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -36,8 +35,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "ac0ae92c-1d3a-4169-b4cf-398aec558997",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "a60058f8-f90b-4183-9489-7a70cd22c111",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://nucc.org/provider-taxonomy",
       "version": "20",

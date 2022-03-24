@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "opioid-drug-urine-screening",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-drug-urine-screening",
-  "version": "0.0.1",
   "name": "opioid_drug_urine_screening",
   "title": "Opioid drug urine screening",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -98,8 +97,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "2b2fd16f-ea65-412f-a430-e5cd6f195834",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "661452d6-a13f-40b7-bbc9-da4544a42ea2",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.68",

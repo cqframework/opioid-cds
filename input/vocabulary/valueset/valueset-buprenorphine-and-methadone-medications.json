@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "buprenorphine-and-methadone-medications",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/buprenorphine-and-methadone-medications",
-  "version": "0.0.1",
   "name": "buprenorphine_and_methadone_medications",
   "title": "Buprenorphine and Methadone medications",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -117,8 +116,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "2ad836c8-eaf9-4637-8b92-fc2cdd48eb05",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "512a3c21-11e0-482c-9c70-f5f7c065bedd",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "version": "01-Mar-2021",

@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "benzodiazepine-medications",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/benzodiazepine-medications",
-  "version": "0.0.1",
   "name": "benzodiazepine_medications",
   "title": "benzodiazepine medications",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -26,8 +25,8 @@
   "purpose": "Benzodiazepine medications for opioid management",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "5b489316-3584-4a3e-b39a-0db3c80cc412",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "58d753c3-34fc-4d63-a499-f768537b25d6",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "version": "01-Mar-2021",

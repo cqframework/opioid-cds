@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "opioid-analgesics-with-ambulatory-misuse-potential",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/opioid-analgesics-with-ambulatory-misuse-potential",
-  "version": "0.0.1",
   "name": "opioid_analgesics_with_ambulatory_misuse_potential",
   "title": "Opioid analgesics with ambulatory misuse potential",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -26,8 +25,8 @@
   "purpose": "Opioid medications that should have opioid management CDS",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "9c6d9b04-1ca9-4866-a4aa-48ce341835d7",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "2a12e18f-a214-4ee7-a4cc-4171a02c6186",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "version": "01-Mar-2021",

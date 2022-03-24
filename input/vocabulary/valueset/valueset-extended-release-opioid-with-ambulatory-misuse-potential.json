@@ -2,12 +2,11 @@
   "resourceType": "ValueSet",
   "id": "extended-release-opioid-with-ambulatory-misuse-potential",
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/extended-release-opioid-with-ambulatory-misuse-potential",
-  "version": "0.0.1",
   "name": "extended_release_opioid_with_ambulatory_misuse_potential",
   "title": "Extended release opioid with ambulatory misuse potential",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-23T12:32:34-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -26,8 +25,8 @@
   "purpose": "Identify medication orders for long-acting opioids",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "8a8c8b46-7993-4af8-8411-0e4ea6ea4c82",
-    "timestamp": "2022-03-23T12:32:34-06:00",
+    "identifier": "4f13ff4d-4f8c-492b-8ba4-c1987f62d891",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "version": "01-Mar-2021",
