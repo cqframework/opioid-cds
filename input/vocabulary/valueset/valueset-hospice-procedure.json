@@ -6,7 +6,7 @@
   "title": "Hospice Procedure",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-24T08:25:41-06:00",
+  "date": "2022-03-29T11:44:38-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -75,8 +75,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "33892dfd-eb5a-4bab-8bbb-9aa36cfa27f2",
-    "timestamp": "2022-03-24T08:25:41-06:00",
+    "identifier": "b6194b23-8136-4f6a-8fe4-071103b8a135",
+    "timestamp": "2022-03-29T11:44:38-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

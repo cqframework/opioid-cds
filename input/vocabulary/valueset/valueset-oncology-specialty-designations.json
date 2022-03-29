@@ -6,7 +6,7 @@
   "title": "Oncology specialty designations (NUCC)",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-24T08:25:40-06:00",
+  "date": "2022-03-29T11:44:38-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -35,8 +35,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "a60058f8-f90b-4183-9489-7a70cd22c111",
-    "timestamp": "2022-03-24T08:25:40-06:00",
+    "identifier": "94962677-9392-48aa-bcf7-dec08d2004d9",
+    "timestamp": "2022-03-29T11:44:38-06:00",
     "contains": [ {
       "system": "http://nucc.org/provider-taxonomy",
       "version": "20",
