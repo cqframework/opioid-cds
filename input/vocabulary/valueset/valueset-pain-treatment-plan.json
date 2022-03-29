@@ -6,7 +6,7 @@
   "title": "Pain treatment plan",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-17T12:27:32-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -33,10 +33,11 @@
     } ]
   },
   "expansion": {
-    "identifier": "927a0782-6fa3-4f7e-8b29-9e932b23c3ac",
-    "timestamp": "2021-09-17T12:27:32-06:00",
+    "identifier": "13fb00d3-de0d-4bc2-a5ff-66dbf5df8d55",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://loinc.org",
+      "version": "2.69",
       "code": "80764-4",
       "display": "Pain medicine Plan of care note"
     } ]

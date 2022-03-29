@@ -6,7 +6,7 @@
   "title": "Hospice Finding",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-17T12:27:31-06:00",
+  "date": "2022-03-24T08:25:40-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -68,26 +68,31 @@
     } ]
   },
   "expansion": {
-    "identifier": "a4ca64f6-abf9-4009-b37d-901895b08cd4",
-    "timestamp": "2021-09-17T12:27:31-06:00",
+    "identifier": "8ddbf839-7240-49de-a79a-e962f9ec3f70",
+    "timestamp": "2022-03-24T08:25:40-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "170935008",
       "display": "Full care by hospice (finding)"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "448451000124101",
       "display": "Transition from self-care to hospice (finding)"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "1891000124102",
       "display": "Transition from acute care to hospice (finding)"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "1951000124104",
       "display": "Transition from long-term care to hospice (finding)"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "305911006",
       "display": "Seen in hospice"
     } ]

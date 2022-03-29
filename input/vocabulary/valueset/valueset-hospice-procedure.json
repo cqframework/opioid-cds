@@ -6,7 +6,7 @@
   "title": "Hospice Procedure",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-17T12:27:32-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -75,30 +75,36 @@
     } ]
   },
   "expansion": {
-    "identifier": "956d8791-5975-427e-aece-43eea370526c",
-    "timestamp": "2021-09-17T12:27:32-06:00",
+    "identifier": "33892dfd-eb5a-4bab-8bbb-9aa36cfa27f2",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "306205009",
       "display": "Referral to hospice (procedure)"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "305336008",
       "display": "Admission to hospice (procedure)"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "183919006",
       "display": "Urgent admission to hospice (procedure)"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "428371000124100",
       "display": "Discharge to healthcare facility for hospice care"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "183920000",
       "display": "Routine admission to hospice"
     }, {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "183921001",
       "display": "Admission to hospice for respite"
     } ]

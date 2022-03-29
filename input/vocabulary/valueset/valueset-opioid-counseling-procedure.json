@@ -6,7 +6,7 @@
   "title": "Opioid counseling procedure",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-17T12:27:32-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -34,10 +34,11 @@
     } ]
   },
   "expansion": {
-    "identifier": "b54944fe-b2e1-48d4-a3d2-154f12bb1d82",
-    "timestamp": "2021-09-17T12:27:32-06:00",
+    "identifier": "6e8a1f7f-c96a-4cd5-9f38-7bd1ec40a2eb",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
       "code": "460831000124102",
       "display": "Counseling about opioid safety (procedure)"
     } ]

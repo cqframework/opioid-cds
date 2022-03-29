@@ -6,7 +6,7 @@
   "title": "Conditions likely terminal for opioid prescribing",
   "status": "active",
   "experimental": true,
-  "date": "2021-09-17T12:27:32-06:00",
+  "date": "2022-03-24T08:25:41-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -80,8 +80,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "74f369b3-9c3d-4481-9f32-7b8e8e1b8c2d",
-    "timestamp": "2021-09-17T12:27:32-06:00",
+    "identifier": "74dabf8b-79fe-415d-8d40-5c4cf1580408",
+    "timestamp": "2022-03-24T08:25:41-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "2021-03",
@@ -4269,554 +4269,692 @@
       "display": "Widespread metastatic malignant neoplastic disease"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C25.0",
       "display": "Malignant neoplasm of head of pancreas"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C25.1",
       "display": "Malignant neoplasm of body of pancreas"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C25.2",
       "display": "Malignant neoplasm of tail of pancreas"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C25.3",
       "display": "Malignant neoplasm of pancreatic duct"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C25.4",
       "display": "Malignant neoplasm of endocrine pancreas"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C25.7",
       "display": "Malignant neoplasm of other parts of pancreas"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C25.8",
       "display": "Malignant neoplasm of overlapping sites of pancreas"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C25.9",
       "display": "Malignant neoplasm of pancreas, unspecified"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C25",
       "display": "Malignant neoplasm of pancreas"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.0",
       "display": "Malignant neoplasm of head, face and neck"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.1",
       "display": "Malignant neoplasm of thorax"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.2",
       "display": "Malignant neoplasm of abdomen"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.3",
       "display": "Malignant neoplasm of pelvis"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.40",
       "display": "Malignant neoplasm of unspecified upper limb"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.41",
       "display": "Malignant neoplasm of right upper limb"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.42",
       "display": "Malignant neoplasm of left upper limb"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.4",
       "display": "Malignant neoplasm of upper limb"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.50",
       "display": "Malignant neoplasm of unspecified lower limb"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.51",
       "display": "Malignant neoplasm of right lower limb"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.52",
       "display": "Malignant neoplasm of left lower limb"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.5",
       "display": "Malignant neoplasm of lower limb"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76.8",
       "display": "Malignant neoplasm of other specified ill-defined sites"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C76",
       "display": "Malignant neoplasm of other and ill-defined sites"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C77.0",
       "display": "Secondary and unspecified malignant neoplasm of lymph nodes of head, face and neck"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C77.1",
       "display": "Secondary and unspecified malignant neoplasm of intrathoracic lymph nodes"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C77.2",
       "display": "Secondary and unspecified malignant neoplasm of intra-abdominal lymph nodes"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C77.3",
       "display": "Secondary and unspecified malignant neoplasm of axilla and upper limb lymph nodes"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C77.4",
       "display": "Secondary and unspecified malignant neoplasm of inguinal and lower limb lymph nodes"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C77.5",
       "display": "Secondary and unspecified malignant neoplasm of intrapelvic lymph nodes"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C77.8",
       "display": "Secondary and unspecified malignant neoplasm of lymph nodes of multiple regions"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C77.9",
       "display": "Secondary and unspecified malignant neoplasm of lymph node, unspecified"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C77",
       "display": "Secondary and unspecified malignant neoplasm of lymph nodes"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.00",
       "display": "Secondary malignant neoplasm of unspecified lung"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.01",
       "display": "Secondary malignant neoplasm of right lung"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.02",
       "display": "Secondary malignant neoplasm of left lung"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.0",
       "display": "Secondary malignant neoplasm of lung"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.1",
       "display": "Secondary malignant neoplasm of mediastinum"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.2",
       "display": "Secondary malignant neoplasm of pleura"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.30",
       "display": "Secondary malignant neoplasm of unspecified respiratory organ"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.39",
       "display": "Secondary malignant neoplasm of other respiratory organs"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.3",
       "display": "Secondary malignant neoplasm of other and unspecified respiratory organs"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.4",
       "display": "Secondary malignant neoplasm of small intestine"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.5",
       "display": "Secondary malignant neoplasm of large intestine and rectum"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.6",
       "display": "Secondary malignant neoplasm of retroperitoneum and peritoneum"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.7",
       "display": "Secondary malignant neoplasm of liver and intrahepatic bile duct"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.80",
       "display": "Secondary malignant neoplasm of unspecified digestive organ"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.89",
       "display": "Secondary malignant neoplasm of other digestive organs"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78.8",
       "display": "Secondary malignant neoplasm of other and unspecified digestive organs"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C78",
       "display": "Secondary malignant neoplasm of respiratory and digestive organs"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.00",
       "display": "Secondary malignant neoplasm of unspecified kidney and renal pelvis"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.01",
       "display": "Secondary malignant neoplasm of right kidney and renal pelvis"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.02",
       "display": "Secondary malignant neoplasm of left kidney and renal pelvis"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.0",
       "display": "Secondary malignant neoplasm of kidney and renal pelvis"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.10",
       "display": "Secondary malignant neoplasm of unspecified urinary organs"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.11",
       "display": "Secondary malignant neoplasm of bladder"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.19",
       "display": "Secondary malignant neoplasm of other urinary organs"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.1",
       "display": "Secondary malignant neoplasm of bladder and other and unspecified urinary organs"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.2",
       "display": "Secondary malignant neoplasm of skin"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.31",
       "display": "Secondary malignant neoplasm of brain"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.32",
       "display": "Secondary malignant neoplasm of cerebral meninges"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.3",
       "display": "Secondary malignant neoplasm of brain and cerebral meninges"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.40",
       "display": "Secondary malignant neoplasm of unspecified part of nervous system"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.49",
       "display": "Secondary malignant neoplasm of other parts of nervous system"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.4",
       "display": "Secondary malignant neoplasm of other and unspecified parts of nervous system"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.51",
       "display": "Secondary malignant neoplasm of bone"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.52",
       "display": "Secondary malignant neoplasm of bone marrow"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.5",
       "display": "Secondary malignant neoplasm of bone and bone marrow"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.60",
       "display": "Secondary malignant neoplasm of unspecified ovary"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.61",
       "display": "Secondary malignant neoplasm of right ovary"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.62",
       "display": "Secondary malignant neoplasm of left ovary"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.6",
       "display": "Secondary malignant neoplasm of ovary"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.70",
       "display": "Secondary malignant neoplasm of unspecified adrenal gland"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.71",
       "display": "Secondary malignant neoplasm of right adrenal gland"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.72",
       "display": "Secondary malignant neoplasm of left adrenal gland"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.7",
       "display": "Secondary malignant neoplasm of adrenal gland"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.81",
       "display": "Secondary malignant neoplasm of breast"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.82",
       "display": "Secondary malignant neoplasm of genital organs"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.89",
       "display": "Secondary malignant neoplasm of other specified sites"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.8",
       "display": "Secondary malignant neoplasm of other specified sites"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79.9",
       "display": "Secondary malignant neoplasm of unspecified site"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C79",
       "display": "Secondary malignant neoplasm of other and unspecified sites"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A-C7A",
       "display": "Malignant neuroendocrine tumors (C7A)"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.00",
       "display": "Malignant carcinoid tumor of unspecified site"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.010",
       "display": "Malignant carcinoid tumor of the duodenum"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.011",
       "display": "Malignant carcinoid tumor of the jejunum"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.012",
       "display": "Malignant carcinoid tumor of the ileum"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.019",
       "display": "Malignant carcinoid tumor of the small intestine, unspecified portion"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.01",
       "display": "Malignant carcinoid tumors of the small intestine"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.020",
       "display": "Malignant carcinoid tumor of the appendix"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.021",
       "display": "Malignant carcinoid tumor of the cecum"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.022",
       "display": "Malignant carcinoid tumor of the ascending colon"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.023",
       "display": "Malignant carcinoid tumor of the transverse colon"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.024",
       "display": "Malignant carcinoid tumor of the descending colon"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.025",
       "display": "Malignant carcinoid tumor of the sigmoid colon"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.026",
       "display": "Malignant carcinoid tumor of the rectum"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.029",
       "display": "Malignant carcinoid tumor of the large intestine, unspecified portion"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.02",
       "display": "Malignant carcinoid tumors of the appendix, large intestine, and rectum"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.090",
       "display": "Malignant carcinoid tumor of the bronchus and lung"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.091",
       "display": "Malignant carcinoid tumor of the thymus"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.092",
       "display": "Malignant carcinoid tumor of the stomach"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.093",
       "display": "Malignant carcinoid tumor of the kidney"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.094",
       "display": "Malignant carcinoid tumor of the foregut, unspecified"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.095",
       "display": "Malignant carcinoid tumor of the midgut, unspecified"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.096",
       "display": "Malignant carcinoid tumor of the hindgut, unspecified"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.098",
       "display": "Malignant carcinoid tumors of other sites"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.09",
       "display": "Malignant carcinoid tumors of other sites"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.0",
       "display": "Malignant carcinoid tumors"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.1",
       "display": "Malignant poorly differentiated neuroendocrine tumors"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A.8",
       "display": "Other malignant neuroendocrine tumors"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7A",
       "display": "Malignant neuroendocrine tumors"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7B-C7B",
       "display": "Secondary neuroendocrine tumors (C7B)"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7B.00",
       "display": "Secondary carcinoid tumors, unspecified site"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7B.01",
       "display": "Secondary carcinoid tumors of distant lymph nodes"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7B.02",
       "display": "Secondary carcinoid tumors of liver"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7B.03",
       "display": "Secondary carcinoid tumors of bone"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7B.04",
       "display": "Secondary carcinoid tumors of peritoneum"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7B.09",
       "display": "Secondary carcinoid tumors of other sites"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7B.0",
       "display": "Secondary carcinoid tumors"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7B.1",
       "display": "Secondary Merkel cell carcinoma"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7B.8",
       "display": "Other secondary neuroendocrine tumors"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C7B",
       "display": "Secondary neuroendocrine tumors"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C80.0",
       "display": "Disseminated malignant neoplasm, unspecified"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C80.1",
       "display": "Malignant (primary) neoplasm, unspecified"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C80.2",
       "display": "Malignant neoplasm associated with transplanted organ"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "C80",
       "display": "Malignant neoplasm without specification of site"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K70.40",
       "display": "Alcoholic hepatic failure without coma"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K70.41",
       "display": "Alcoholic hepatic failure with coma"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K70.4",
       "display": "Alcoholic hepatic failure"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K72.00",
       "display": "Acute and subacute hepatic failure without coma"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K72.01",
       "display": "Acute and subacute hepatic failure with coma"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K72.0",
       "display": "Acute and subacute hepatic failure"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K72.10",
       "display": "Chronic hepatic failure without coma"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K72.11",
       "display": "Chronic hepatic failure with coma"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K72.1",
       "display": "Chronic hepatic failure"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K72.90",
       "display": "Hepatic failure, unspecified without coma"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K72.91",
       "display": "Hepatic failure, unspecified with coma"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K72.9",
       "display": "Hepatic failure, unspecified"
     }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "FY2021",
       "code": "K72",
       "display": "Hepatic failure, not elsewhere classified"
     }, {
