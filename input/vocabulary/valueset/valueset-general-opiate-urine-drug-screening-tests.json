@@ -6,7 +6,7 @@
   "title": "General opiate urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-24T08:25:40-06:00",
+  "date": "2022-03-29T11:44:37-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -25,8 +25,8 @@
   "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "7ff3c927-54cc-4bb5-8a01-1f073832e2a3",
-    "timestamp": "2022-03-24T08:25:40-06:00",
+    "identifier": "1aa55094-3175-416e-bc1a-94b68ed8e9b7",
+    "timestamp": "2022-03-29T11:44:37-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.69",

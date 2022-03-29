@@ -6,7 +6,7 @@
   "title": "naloxone medications",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-24T08:25:40-06:00",
+  "date": "2022-03-29T11:44:37-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -72,8 +72,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "125a1b45-422d-4e1e-a62a-ba67549df1ed",
-    "timestamp": "2022-03-24T08:25:40-06:00",
+    "identifier": "c0d21eb4-db19-4321-8bc7-1f18de5e3154",
+    "timestamp": "2022-03-29T11:44:37-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "version": "01-Mar-2021",

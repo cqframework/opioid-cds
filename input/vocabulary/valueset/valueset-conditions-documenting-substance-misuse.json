@@ -6,7 +6,7 @@
   "title": "Conditions documenting substance misuse",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-24T08:25:41-06:00",
+  "date": "2022-03-29T11:44:38-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -280,8 +280,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "3674b3b7-83ee-4ec6-9e88-8ac1132ab430",
-    "timestamp": "2022-03-24T08:25:41-06:00",
+    "identifier": "de05344b-aa62-4757-8edc-79f255c9acf6",
+    "timestamp": "2022-03-29T11:44:38-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",
@@ -5205,42 +5205,42 @@
     }, {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",
-      "code": "2.88761E+14",
+      "code": "288761000119104",
       "display": "History of amphetamine abuse (situation)"
     }, {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",
-      "code": "2.88771E+14",
+      "code": "288771000119105",
       "display": "History of anxiolytic abuse (situation)"
     }, {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",
-      "code": "2.88781E+14",
+      "code": "288781000119108",
       "display": "History of cannabis abuse (situation)"
     }, {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",
-      "code": "2.88791E+14",
+      "code": "288791000119106",
       "display": "History of cocaine abuse (situation)"
     }, {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",
-      "code": "2.88801E+14",
+      "code": "288801000119107",
       "display": "History of hallucinogen abuse (situation)"
     }, {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",
-      "code": "2.88811E+14",
+      "code": "288811000119105",
       "display": "History of heroin abuse (situation)"
     }, {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",
-      "code": "2.88831E+14",
+      "code": "288831000119100",
       "display": "History of opioid abuse (situation)"
     }, {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",
-      "code": "2.88841E+14",
+      "code": "288841000119109",
       "display": "History of sedative hypnotic abuse (situation)"
     }, {
       "system": "http://snomed.info/sct",

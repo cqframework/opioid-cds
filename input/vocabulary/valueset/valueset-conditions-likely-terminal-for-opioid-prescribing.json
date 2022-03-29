@@ -6,7 +6,7 @@
   "title": "Conditions likely terminal for opioid prescribing",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-24T08:25:41-06:00",
+  "date": "2022-03-29T11:44:38-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -80,8 +80,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "74dabf8b-79fe-415d-8d40-5c4cf1580408",
-    "timestamp": "2022-03-24T08:25:41-06:00",
+    "identifier": "40027ee8-9bb3-472e-bfa9-abf7c91758df",
+    "timestamp": "2022-03-29T11:44:38-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "2021-03",

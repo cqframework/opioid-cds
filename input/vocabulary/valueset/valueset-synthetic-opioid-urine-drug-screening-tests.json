@@ -6,7 +6,7 @@
   "title": "Synthetic opioid urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-24T08:25:40-06:00",
+  "date": "2022-03-29T11:44:38-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -35,8 +35,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "ff3116d5-c15b-4cad-932a-6ddf9d15049d",
-    "timestamp": "2022-03-24T08:25:40-06:00",
+    "identifier": "1615ae5c-e806-402f-8209-415db657eaf0",
+    "timestamp": "2022-03-29T11:44:38-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.69",

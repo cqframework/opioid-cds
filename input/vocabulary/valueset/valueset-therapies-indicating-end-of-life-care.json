@@ -6,7 +6,7 @@
   "title": "Therapies indicating end of life care",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-24T08:25:41-06:00",
+  "date": "2022-03-29T11:44:38-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -61,8 +61,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "71ad2428-24ae-40d6-8623-0885defcdef7",
-    "timestamp": "2022-03-24T08:25:41-06:00",
+    "identifier": "fa020dc4-2466-4648-a532-3a572ce536f6",
+    "timestamp": "2022-03-29T11:44:38-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

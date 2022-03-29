@@ -6,7 +6,7 @@
   "title": "Phencyclidine urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-24T08:25:40-06:00",
+  "date": "2022-03-29T11:44:38-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -25,8 +25,8 @@
   "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "823908f4-1291-47f5-8744-071d2c744399",
-    "timestamp": "2022-03-24T08:25:40-06:00",
+    "identifier": "ffb498e1-44e9-4f6b-8fce-4582ecc2e731",
+    "timestamp": "2022-03-29T11:44:38-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.69",
