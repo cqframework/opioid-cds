@@ -812,6 +812,14 @@
       "source": "valueset-extended-release-opioid-with-ambulatory-misuse-potential.json",
       "base": "ValueSet-extended-release-opioid-with-ambulatory-misuse-potential.html"
     },
+    "ValueSet/fentanyl-type-medications": {
+      "source": "valueSet-fentanyl-type-medications.json",
+      "base": "ValueSet-fentanyl-type-medications.html"
+    },
+    "ValueSet/fentanyl-type-urine-drug-screening-tests": {
+      "source": "valueSet-fentanyl-type-urine-drug-screening-tests.json",
+      "base": "ValueSet-fentanyl-type-urine-drug-screening-tests.html"
+    },
     "ValueSet/hospice-disposition": {
       "source": "valueset-hospice-disposition.json",
       "base": "ValueSet-hospice-disposition.html"
