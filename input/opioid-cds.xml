@@ -1416,7 +1416,7 @@
             <name value="ValueSet - CDC Opioid Prescribing Guidelines non-synthetic opioid clinical drugs"/>
             <description value="Non-synthetic opioid clinical drugs"/>
             <sourceReference>
-                <reference value="ValueSet/non-synthetic-opioids"/>
+                <reference value="ValueSet/non-synthetic-opioid-medications"/>
             </sourceReference>
         </resource>
         <resource>

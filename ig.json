@@ -844,9 +844,9 @@
       "source": "valueset-non-opioid-drug-urine-screening.json",
       "base": "ValueSet-non-opioid-drug-urine-screening.html"
     },
-    "ValueSet/non-synthetic-opioids": {
-      "source": "valueset-non-synthetic-opioids.json",
-      "base": "ValueSet-non-synthetic-opioids.html"
+    "ValueSet/non-synthetic-opioid-medications": {
+      "source": "valueset-non-synthetic-opioid-medications.json",
+      "base": "ValueSet-non-synthetic-opioid-medications.html"
     },
     "ValueSet/office-visit": {
       "source": "valueset-office-visit.json",
