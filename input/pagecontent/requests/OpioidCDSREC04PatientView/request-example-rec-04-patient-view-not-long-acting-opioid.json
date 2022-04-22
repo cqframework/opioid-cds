@@ -1,9 +1,8 @@
 {
   "hookInstance": "e9f6b9a0-366c-47af-b11b-f6d54797030a",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://localhost:8080/fhir",
   "hook": "order-select",
   "user": "Practitioner/example",
-  "applyCql": true,
   "context": {
     "user": "Practitioner/example",
     "patientId": "Patient/example-rec-04-patient-view-not-long-acting-opioid",
@@ -42,14 +41,7 @@
         "context": {
           "reference": "Encounter/example-rec-04-patient-view-not-long-acting-opioid-prefetch"
         },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "Today() - 4 months"
-            }
-          ]
-        },
+        "authoredOn": "2021-12-08",
         "dosageInstruction": [
           {
             "timing": {
@@ -70,12 +62,8 @@
         ],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 4 months }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+            "start": "2021-12-08",
+            "end": "2022-07-08"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {

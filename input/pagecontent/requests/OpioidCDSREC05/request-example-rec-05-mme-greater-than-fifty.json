@@ -1,9 +1,8 @@
 {
   "hookInstance": "4676f1ae-65c0-4935-9833-35a123e4767a",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://localhost:8080/fhir",
   "hook": "order-select",
   "user": "Practitioner/example",
-  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-05-mme-greater-than-fifty",
     "encounterId": "Encounter/example-rec-05-mme-greater-than-fifty-context",
@@ -36,14 +35,7 @@
         "context": {
           "reference": "Encounter/example-rec-05-mme-greater-than-fifty-context"
         },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "Today()"
-            }
-          ]
-        },
+        "authoredOn": "2022-04-08",
         "dosageInstruction": [
           {
             "timing": {
@@ -64,12 +56,8 @@
         ],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 6 months } }"
-              }
-            ]
+            "start": "2022-04-08",
+            "end": "2022-10-08"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {

@@ -1,9 +1,8 @@
 {
   "hookInstance": "1bf95787-c6eb-42c5-aacd-405803921024",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://localhost:8080/fhir",
   "hook": "patient-view",
   "user": "Practitioner/example",
-  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-04-patient-view-opioid-with-abuse-potential",
     "encounterId": "Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-context",
@@ -36,14 +35,7 @@
         "context": {
           "reference": "Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-context"
         },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "Today()"
-            }
-          ]
-        },
+        "authoredOn": "2022-04-08",
         "dosageInstruction": [
           {
             "timing": {
@@ -64,12 +56,8 @@
         ],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+            "start": "2022-04-08",
+            "end": "2022-07-08"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
@@ -115,14 +103,7 @@
         "context": {
           "reference": "Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch"
         },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "Today() - 14 days"
-            }
-          ]
-        },
+        "authoredOn": "2022-03-25",
         "dosageInstruction": [
           {
             "timing": {
@@ -141,12 +122,8 @@
         ],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+            "start": "2022-03-25",
+            "end": "2022-07-08"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
@@ -170,12 +147,8 @@
           "reference": "Patient/example-rec-04-patient-view-opioid-with-abuse-potential"
         },
         "period": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() - 14 days } }"
-            }
-          ]
+          "start": "2022-03-25",
+          "end": "2022-03-25"
         }
       }
     },
