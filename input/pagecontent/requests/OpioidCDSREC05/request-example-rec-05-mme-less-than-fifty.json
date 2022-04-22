@@ -6,7 +6,7 @@
   "context": {
     "patientId": "Patient/example-rec-05-mme-less-than-fifty",
     "encounterId": "Encounter/example-rec-05-mme-less-than-fifty-context",
-    "medications": [
+    "draftOrders":
       {
         "resourceType": "MedicationRequest",
         "id": "example-rec-05-mme-less-than-fifty-context",
@@ -68,7 +68,6 @@
           }
         }
       }
-    ]
   },
   "prefetch": {
     "item1": null,

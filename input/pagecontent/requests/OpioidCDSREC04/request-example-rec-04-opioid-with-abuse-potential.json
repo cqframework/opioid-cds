@@ -124,7 +124,7 @@
         "dispenseRequest": {
           "validityPeriod": {
             "start": "2022-03-25",
-            "end": "2022-7-08"
+            "end": "2022-07-08"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {

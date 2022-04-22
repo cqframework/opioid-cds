@@ -1,7 +1,7 @@
 {
   "hookInstance": "9d02e4d7-2d5b-492f-8f77-d76edb47168b",
   "fhirServer": "http://localhost:8080/fhir",
-  "hook": "order-select",
+  "hook": "patient-view",
   "user": "Practitioner/example",
   "context": {
     "user": "Practitioner/example",
