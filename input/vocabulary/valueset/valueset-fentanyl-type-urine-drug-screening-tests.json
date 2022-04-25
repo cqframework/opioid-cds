@@ -1,0 +1,281 @@
+{
+  "resourceType": "ValueSet",
+  "id": "fentanyl-type-urine-drug-screening-tests",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/fentanyl-type-urine-drug-screening-tests",
+  "name": "fentanyl_type_urine_drug_screening_tests",
+  "title": "Fentanyl-type urine drug screening tests",
+  "status": "active",
+  "experimental": true,
+  "date": "2022-04-25T10:57:51-06:00",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
+  "description": "Urine tests for fentanyl-type drugs and metabolites",
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
+  "copyright": "© CDC 2016+.",
+  "compose": {
+    "include": [ {
+      "system": "http://loinc.org",
+      "filter": [ {
+        "property": "Component",
+        "op": "regex",
+        "value": ".*ntanyl.*"
+      }, {
+        "property": "System",
+        "op": "=",
+        "value": "Urine"
+      } ]
+    }, {
+      "system": "http://loinc.org",
+      "filter": [ {
+        "property": "Component",
+        "op": "regex",
+        "value": ".*ntanil.*"
+      }, {
+        "property": "System",
+        "op": "=",
+        "value": "Urine"
+      } ]
+    } ]
+  },
+  "expansion": {
+    "identifier": "322d1b7e-ea99-4ac4-9be5-cf1c3efb283d",
+    "timestamp": "2022-04-25T10:57:51-06:00",
+    "contains": [ {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93465-3",
+      "display": "3-Methylfentanyl [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93469-5",
+      "display": "4-Fluorobutyrylfentanyl [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93464-6",
+      "display": "p-Fluorofentanyl [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93461-2",
+      "display": "4-Methoxybutyrylfentanyl [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93472-9",
+      "display": "4-Methylphenethylacetylfentanyl [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "74372-4",
+      "display": "Acetyl fentanyl [Mass/volume] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "74810-3",
+      "display": "Acetyl fentanyl [Presence] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93471-1",
+      "display": "Acetyl norfentanyl [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93468-7",
+      "display": "Acrylfentanyl [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "99079-6",
+      "display": "Acrylfentanyl [Presence] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "16334-5",
+      "display": "Alfentanil [Mass/volume] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "18383-0",
+      "display": "Alfentanil [Presence] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "86604-6",
+      "display": "Alfentanil/Creatinine [Mass Ratio] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93473-7",
+      "display": "Beta hydroxythiofentanyl [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "11073-4",
+      "display": "Despropionylfentanyl [Mass/volume] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "26867-2",
+      "display": "fentaNYL [Units/volume] in 24 hour Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "3637-6",
+      "display": "fentaNYL [Mass/volume] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "58381-5",
+      "display": "fentaNYL [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "11235-9",
+      "display": "fentaNYL [Presence] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "40839-3",
+      "display": "fentaNYL [Presence] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "59673-4",
+      "display": "fentaNYL [Presence] in Urine by Screen method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "78828-1",
+      "display": "fentaNYL [Z-score] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "67822-7",
+      "display": "fentaNYL and Norfentanyl panel - Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "79259-8",
+      "display": "fentaNYL cutoff [Mass/volume] in Urine for Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "79260-6",
+      "display": "fentaNYL cutoff [Mass/volume] in Urine for Screen method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "58380-7",
+      "display": "fentaNYL/Creatinine [Mass Ratio] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "78766-3",
+      "display": "fentaNYL [Mass/volume] in Urine -- adjusted for lean body mass+urine creatinine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "66129-8",
+      "display": "fentaNYL+Norfentanyl [Presence] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "58379-9",
+      "display": "fentaNYL+Norfentanyl [Presence] in Urine by Screen method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93470-3",
+      "display": "Furanylfentanyl [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "99081-2",
+      "display": "Furanylfentanyl [Presence] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93467-9",
+      "display": "Butyrylfentanyl [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93462-0",
+      "display": "Norcarfentanil [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "11075-9",
+      "display": "Norfentanyl [Mass/volume] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "58383-1",
+      "display": "Norfentanyl [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "43199-9",
+      "display": "Norfentanyl [Presence] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "43200-5",
+      "display": "Norfentanyl [Presence] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "95797-7",
+      "display": "Norfentanyl [Presence] in Urine by Screen method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "77775-5",
+      "display": "Norfentanyl cutoff [Mass/volume] in Urine for Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "58382-3",
+      "display": "Norfentanyl/Creatinine [Mass Ratio] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93463-8",
+      "display": "Ocfentanil [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "9396-3",
+      "display": "SUFentanil [Mass/volume] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "18435-8",
+      "display": "SUFentanil [Presence] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "86610-3",
+      "display": "SUFentanil/Creatinine [Mass Ratio] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.72",
+      "code": "93466-1",
+      "display": "Valerylfentanyl [Mass/volume] in Urine by Confirmatory method"
+    } ]
+  }
+}
