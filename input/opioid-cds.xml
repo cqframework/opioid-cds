@@ -1397,6 +1397,22 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Fentanyl-type Medication"/>
+            <description value="Fentanyl medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/fentanyl-type-medications"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Fentanyl-type Drug Urine Screening"/>
+            <description value="Urine analysis for fentanyl-type drugs"/>
+            <sourceReference>
+                <reference value="ValueSet/fentanyl-type-urine-drug-screening-tests"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Naloxone Medication"/>
             <description value="Naloxone medication codes"/>
             <sourceReference>
