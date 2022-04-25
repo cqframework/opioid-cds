@@ -959,6 +959,11 @@
       "defns": "cdc-valueset-exclusion-definitions.html",
       "base": "cdc-valueset-exclusion.html",
       "source": "structuredefinition-cdc-valueset-exclusion.json"
+    },
+    "StructureDefinition/dataDateRoller": {
+      "defns": "dataDateRoller-definitions.html",
+      "base": "dataDataRoller.html",
+      "source": "structuredefinition-data-date-roller-extension.json"
     }
   }
 }

@@ -1,0 +1,116 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "dataDateRoller",
+  "url" : "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+  "version" : "0.0.1",
+  "name" : "DataDateRollerExtension",
+  "title" : "Data Date-Roller Extension",
+  "status" : "draft",
+  "description" : "Declares the DateLastUpdated and Frequency arguments to be used by the Data Date Roller for maintaining/rolling test data dates to keep them from going stale.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "fhirVersion" : "3.0.2",
+  "kind" : "complex-type",
+  "abstract" : false,
+  "contextType" : "resource",
+  "context": [ "Element"],
+  "type" : "Extension",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "Data Date Roller Arguments",
+      "definition" : "The DateLastUpdated and Frequency arguments for the data date roller.",
+      "min" : 0,
+      "max" : "*"
+    },
+    {
+      "id" : "Extension.extension:dateLastUpdated",
+      "path" : "Extension.extension",
+      "sliceName" : "dateLastUpdated",
+      "short" : "Date that datetime-valued elements were last updated",
+      "definition" : "The date that datetime-valued elements of the resource were last updated.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension"
+      }]
+    },
+    {
+      "id" : "Extension.extension:dateLastUpdated.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:dateLastUpdated.url",
+      "path" : "Extension.extension.url",
+      "type" : [{
+        "code" : "uri"
+      }],
+      "fixedUri" : "dateLastUpdated"
+    },
+    {
+      "id" : "Extension.extension:dateLastUpdated.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "dateTime"
+      }]
+    },
+    {
+      "id" : "Extension.extension:frequency",
+      "path" : "Extension.extension",
+      "sliceName" : "frequency",
+      "short" : "How often and by what offset the dateTime values should be adjusted forward",
+      "definition" : "Frequency is used to specify how often the dateTime-valued elements within the resource should have their values updated and also, the offset or duration by which they should be adjusted forward. The determination for when to update the values and by how much should be made by comparing the current dateTime to the value of dateLastUpdated. If the duration specified by frequency has elapsed since the dateLastUpdated value, then the dateTime-valued elements within the resource should all be updated - their value incremented by the duration specified in the frequency value.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension"
+      }]
+    },
+    {
+      "id" : "Extension.extension:frequency.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:frequency.url",
+      "path" : "Extension.extension.url",
+      "type" : [{
+        "code" : "uri"
+      }],
+      "fixedUri" : "frequency"
+    },
+    {
+      "id" : "Extension.extension:frequency.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "Duration"
+      }]
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "min" : 0,
+      "max" : "0"
+    }]
+  }
+}

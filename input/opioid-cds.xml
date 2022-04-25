@@ -1579,6 +1579,14 @@
                 <reference value="StructureDefinition/cdc-valueset-exclusion"/>
             </sourceReference>
         </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Extension - Data Date Roller"/>
+            <description value="Extension for parameters to the Data Data Roller tooling."/>
+            <sourceReference>
+                <reference value="StructureDefinition/dataDateRoller"/>
+            </sourceReference>
+        </resource>
         <!--
                 <resource>
                     <example value="true"/>
