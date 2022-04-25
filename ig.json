@@ -736,7 +736,7 @@
       "base": "PlanDefinition-opioidcds-08.html"
     },
     "PlanDefinition/opioidcds-08-order-sign": {
-      "source": "plandefinition-OpioidCDSREC08-order-sign.json",
+      "source": "plandefinition-OpioidCDSREC08OrderSign.json",
       "base": "PlanDefinition-opioidcds-08-order-sign.html"
     },
     "PlanDefinition/opioidcds-10": {
@@ -970,7 +970,7 @@
     },
     "StructureDefinition/dataDateRoller": {
       "defns": "dataDateRoller-definitions.html",
-      "base": "dataDataRoller.html",
+      "base": "dataDateRoller.html",
       "source": "structuredefinition-data-date-roller-extension.json"
     }
   }
