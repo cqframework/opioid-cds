@@ -1,11 +1,11 @@
-library OpioidCDSREC03 version '1.2.2'
+library OpioidCDSREC03 version '1.2.3'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDSCommon version '1.2.2' called Common
-include OpioidCDSCommonConfig version '1.2.2' called Config
-include OpioidCDSRoutines version '1.2.2' called Routines
+include OpioidCDSCommon version '1.2.3' called Common
+include OpioidCDSCommonConfig version '1.2.3' called Config
+include OpioidCDSRoutines version '1.2.3' called Routines
 
 /*
 **
@@ -53,8 +53,15 @@ define "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Pote
 define "Is Recommendation Applicable?":
   "Inclusion Criteria"
 
+define "Patient Age Less Than 18":
+  if (Config."Age Less than 18 Years Is Enabled") then
+    AgeInYearsAt(Today()) < 18
+  else
+    false
+
 define "Inclusion Criteria":
   "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential"
+    and not "Patient Age Less Than 18"
     and Routines."Is Opioid Review Useful?"
     and "No Documented Discussions of Opioid Harms and Risks"
 
@@ -62,7 +69,7 @@ define "No Documented Discussions of Opioid Harms and Risks":
   Config."Opioid Harms & Risks Discussion in Past 90 Days Criteria Enabled"
     and not (
       exists ( "Documented Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today" )
-        or exists ( "Ordered Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today" )
+        //or exists ( "Ordered Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today" )
     )
 
 define "Documented Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today":
@@ -70,9 +77,10 @@ define "Documented Discussions of Opioid Harms and Risks in Past 90 Days Excludi
     where P.performed during day of "Opioid Harms & Risks Counseling Lookback Period"
       and P.status ~ 'completed'
 
-define "Ordered Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today":
+// NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest
+/* define "Ordered Discussions of Opioid Harms and Risks in Past 90 Days Excluding Today":
   [ProcedureRequest: Common."Opioid counseling procedure"] SR
-    where SR.occurrence during day of "Opioid Harms & Risks Counseling Lookback Period"
+    where SR.occurrence during day of "Opioid Harms & Risks Counseling Lookback Period" */
 
 define "Get Indicator":
   if "Is Recommendation Applicable?"
@@ -86,5 +94,7 @@ define "Get Summary":
 
 define "Get Detail":
   if "Is Recommendation Applicable?"
-    then 'Medication requests(s): ' + Combine( flatten( Common.GetMedicationNames( "Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions" ) ), ', ' )
+    then 'Medication requests(s): '
+      + Combine(("Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions" M
+          return Coalesce(M.medication.text, '<Unable to determine medication name>')), ', ')
   else null

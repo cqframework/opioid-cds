@@ -1,68 +1,46 @@
 {
   "resourceType": "ValueSet",
   "id": "pdmp-review-procedure",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-distributablevalueset",
-      "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablevalueset"
-    ]
-  },
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
-      "valueContactDetail": {
-        "name": "MD Partners, Inc.",
-        "telecom": [
-          {
-            "system": "email",
-            "value": "info@mdpartners.com"
-          }
-        ]
-      }
-    }
-  ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure",
-  "name": "Pdmp_Review_Procedure",
-  "title": "ValueSet - Pdmp Review Procedure",
+  "name": "pdmp_review_procedure",
+  "title": "PDMP review procedure",
   "status": "active",
   "experimental": true,
-  "date": "2020-03-26T17:39:10-06:00",
+  "date": "2022-03-29T11:44:38-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
   "description": "Procedure for Prescription Drug Monitoring Program (PDMP) review",
-  "jurisdiction": [
-    {
-      "coding": [
-        {
-          "system": "urn:iso:std:iso:3166",
-          "code": "US"
-        }
-      ]
-    }
-  ],
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
   "purpose": "A procedure to review the prescription drug monitoring program data",
   "copyright": "© CDC 2016+.",
   "compose": {
-    "include": [
-      {
-        "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108",
-        "concept": [
-          {
-            "code": "461621000124108"
-          }
-        ]
-      }
-    ]
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "concept": [ {
+        "code": "461621000124108"
+      } ]
+    } ]
   },
   "expansion": {
-    "timestamp": "2020-03-26T17:39:10-06:00",
-    "contains": [
-      {
-        "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108/version/20200301",
-        "code": "461621000124108",
-        "display": "Review of prescription drug monitoring program record (procedure)"
-      }
-    ]
+    "identifier": "6afc44e4-d167-4990-b260-946e0fded927",
+    "timestamp": "2022-03-29T11:44:38-06:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
+      "code": "461621000124108",
+      "display": "Review of prescription drug monitoring program record (procedure)"
+    } ]
   }
 }

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="org.hl7.fhir.tools" default="local-publish-ig">
-  <property name="guidename" value="???"/>
-  <property name="spec" value="http://hl7.org/fhir/2016Sep/"/>
+  <property name="guidename" value="opioid-cds.xml"/>
+  <property name="spec" value="http://hl7.org/fhir/STU3/"/>
   <!-- Where the main FHIR build publish folder is -->
   <property name="dir.publish" value="../../publish"/>
   <!-- Working area -->
+  <property name="dir.input" value="input"/>
   <property name="dir.pages" value="pages"/>
   <property name="dir.pageassets" value="${dir.pages}/assets"/>
   <property name="dir.pagedata" value="${dir.pages}/_data"/>
@@ -29,15 +30,16 @@
     <mkdir dir="${dir.output}"/>
   </target>
   <target name="local-setup" depends="dir-setup" description="--> grabs igpublisher from local build">
-    <copy file="${dir.publish}/org.hl7.fhir.igpublisher.jar" todir="${basedir}"/>
+    <copy file="${dir.publish}/publisher.jar" todir="${basedir}"/>
   </target>
   <target name="travis-setup" depends="dir-setup" description="--> Installs Jekyll, grabs publisher from CI website">
-    <get src="http://hl7.org/fhir/2016Sep/org.hl7.fhir.igpublisher.jar" dest="${basedir}"/>
+    <get src="https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar" dest="${basedir}"/>
   </target>
   <target name="publish-ig" depends="dir-setup"  description="--> Run the IG build">
-    <java jar="${basedir}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="1024m">
+    <java jar="${basedir}/publisher.jar" fork="true" failonerror="true" maxmemory="4096m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
-      <arg line="-ig ${basedir}/${guidename}.json"/>
+      <arg line="-ig ${basedir}/ig.json"/>
+      <arg line="-tx n/a"/>
     </java>
   </target>
   <target name="local-publish-ig" depends="local-setup, publish-ig"  description="--> Target to use when building Locally"/>

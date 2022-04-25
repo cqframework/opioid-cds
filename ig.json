@@ -9,7 +9,10 @@
   "paths": {
     "resources": [
       "examples",
+      "bundles",
+      "bundles/plandefinition/OpioidCDSREC10PatientView",
       "input/extensions",
+      "input/pagecontent/quick-start-bundles",
       "input/profiles",
       "input/resources",
       "input/resources/library",
@@ -50,6 +53,14 @@
     "valueset-profile-spreadsheet.xml"
   ],
   "resources": {
+    "Bundle/opioid-cds-terminology": {
+      "source": "opioid-cds-terminology-bundle.json",
+      "base": "Bundle-opioiod-cds-terminology.html"
+    },
+    "Bundle/opioid-cds-recommendation10-patientview-bundle": {
+      "source": "OpioidCDSREC10PatientView-bundle.json",
+      "base": "Bundle-OpioidCDSREC10PatientView-bundle.html"
+    },
     "Bundle/example-rec-04-long-acting-opioid": {
       "source": "bundle-example-rec-04-long-acting-opioid.xml",
       "base": "Bundle-example-rec-04-long-acting-opioid.html"
@@ -70,6 +81,26 @@
       "source": "encounter-example-rec-04-long-acting-opioid-prefetch.xml",
       "base": "Encounter-example-rec-04-long-acting-opioid-prefetch.html"
     },
+    "Bundle/example-rec-04-patient-view-long-acting-opioid": {
+      "source": "bundle-example-rec-04-patient-view-long-acting-opioid.xml",
+      "base": "Bundle-example-rec-04-patient-view-long-acting-opioid.html"
+    },
+    "Patient/example-rec-04-patient-view-long-acting-opioid": {
+      "source": "patient-example-rec-04-patient-view-long-acting-opioid.xml",
+      "base": "Patient-example-rec-04-patient-view-long-acting-opioid.html"
+    },
+    "MedicationRequest/example-rec-04-patient-view-long-acting-opioid-prefetch": {
+      "source": "medicationrequest-example-rec-04-patient-view-long-acting-opioid-prefetch.xml",
+      "base": "MedicationRequest-example-rec-04-patient-view-long-acting-opioid-prefetch.html"
+    },
+    "Encounter/example-rec-04-patient-view-long-acting-opioid-context": {
+      "source": "encounter-example-rec-04-patient-view-long-acting-opioid-context.xml",
+      "base": "Encounter-example-rec-04-patient-view-long-acting-opioid-context.html"
+    },
+    "Encounter/example-rec-04-patient-view-long-acting-opioid-prefetch": {
+      "source": "encounter-example-rec-04-patient-view-long-acting-opioid-prefetch.xml",
+      "base": "Encounter-example-rec-04-patient-view-long-acting-opioid-prefetch.html"
+    },
 
     "Bundle/example-rec-04-new-patient": {
       "source": "bundle-example-rec-04-new-patient.xml",
@@ -82,6 +113,18 @@
     "Encounter/example-rec-04-new-patient-context": {
       "source": "encounter-example-rec-04-new-patient-context.xml",
       "base": "Encounter-example-rec-04-new-patient-context.html"
+    },
+    "Bundle/example-rec-04-patient-view-new-patient": {
+      "source": "bundle-example-rec-04-patient-view-new-patient.xml",
+      "base": "Bundle-example-rec-04-patient-view-new-patient.html"
+    },
+    "Patient/example-rec-04-patient-view-new-patient": {
+      "source": "patient-example-rec-04-patient-view-new-patient.xml",
+      "base": "Patient-example-rec-04-patient-view-new-patient.html"
+    },
+    "Encounter/example-rec-04-patient-view-new-patient-context": {
+      "source": "encounter-example-rec-04-patient-view-new-patient-context.xml",
+      "base": "Encounter-example-rec-04-patient-view-new-patient-context.html"
     },
 
     "Bundle/example-rec-04-not-long-acting-opioid": {
@@ -104,6 +147,26 @@
       "source": "encounter-example-rec-04-not-long-acting-opioid-prefetch.xml",
       "base": "Encounter-example-rec-04-not-long-acting-opioid-prefetch.html"
     },
+    "Bundle/example-rec-04-patient-view-not-long-acting-opioid": {
+      "source": "bundle-example-rec-04-patient-view-not-long-acting-opioid.xml",
+      "base": "Bundle-example-rec-04-patient-view-not-long-acting-opioid.html"
+    },
+    "Patient/example-rec-04-patient-view-not-long-acting-opioid": {
+      "source": "patient-example-rec-04-patient-view-not-long-acting-opioid.xml",
+      "base": "Patient-example-rec-04-patient-view-not-long-acting-opioid.html"
+    },
+    "MedicationRequest/example-rec-04-patient-view-not-long-acting-opioid-prefetch": {
+      "source": "medicationrequest-example-rec-04-patient-view-not-long-acting-opioid-prefetch.xml",
+      "base": "MedicationRequest-example-rec-04-patient-view-not-long-acting-opioid-prefetch.html"
+    },
+    "Encounter/example-rec-04-patient-view-not-long-acting-opioid-context": {
+      "source": "encounter-example-rec-04-patient-view-not-long-acting-opioid-context.xml",
+      "base": "Encounter-example-rec-04-patient-view-not-long-acting-opioid-context.html"
+    },
+    "Encounter/example-rec-04-patient-view-not-long-acting-opioid-prefetch": {
+      "source": "encounter-example-rec-04-patient-view-not-long-acting-opioid-prefetch.xml",
+      "base": "Encounter-example-rec-04-patient-view-not-long-acting-opioid-prefetch.html"
+    },
 
     "Bundle/example-rec-04-opioid-with-abuse-potential": {
       "source": "bundle-example-rec-04-opioid-with-abuse-potential.xml",
@@ -124,6 +187,27 @@
     "Encounter/example-rec-04-opioid-with-abuse-potential-prefetch": {
       "source": "encounter-example-rec-04-opioid-with-abuse-potential-prefetch.xml",
       "base": "Encounter-example-rec-04-opioid-with-abuse-potential-prefetch.html"
+    },
+
+    "Bundle/example-rec-04-patient-view-opioid-with-abuse-potential": {
+      "source": "bundle-example-rec-04-patient-view-opioid-with-abuse-potential.xml",
+      "base": "Bundle-example-rec-04-patient-view-opioid-with-abuse-potential.html"
+    },
+    "Patient/example-rec-04-patient-view-opioid-with-abuse-potential": {
+      "source": "patient-example-rec-04-patient-view-opioid-with-abuse-potential.xml",
+      "base": "Patient-example-rec-04-patient-view-opioid-with-abuse-potential.html"
+    },
+    "MedicationRequest/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch": {
+      "source": "medicationrequest-example-rec-04-patient-view-opioid-with-abuse-potential-prefetch.xml",
+      "base": "MedicationRequest-example-rec-04-patient-view-opioid-with-abuse-potential-prefetch.html"
+    },
+    "Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-context": {
+      "source": "encounter-example-rec-04-patient-view-opioid-with-abuse-potential-context.xml",
+      "base": "Encounter-example-rec-04-patient-view-opioid-with-abuse-potential-context.html"
+    },
+    "Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch": {
+      "source": "encounter-example-rec-04-patient-view-opioid-with-abuse-potential-prefetch.xml",
+      "base": "Encounter-example-rec-04-patient-view-opioid-with-abuse-potential-prefetch.html"
     },
 
     "Bundle/example-rec-05-mme-greater-than-fifty": {
@@ -380,6 +464,27 @@
       "base": "Encounter-example-rec-10-no-screenings-prefetch.html"
     },
 
+    "Bundle/example-rec-10-patient-view-no-screenings": {
+      "source": "bundle-example-rec-10-patient-view-no-screenings.xml",
+      "base": "Bundle-example-rec-10-patient-view-no-screenings.html"
+    },
+    "Patient/example-rec-10-patient-view-no-screenings": {
+      "source": "patient-example-rec-10-patient-view-no-screenings.xml",
+      "base": "Patient-example-rec-10-patient-view-no-screenings.html"
+    },
+    "MedicationRequest/example-rec-10-patient-view-no-screenings-prefetch": {
+      "source": "medicationrequest-example-rec-10-patient-view-no-screenings-prefetch.xml",
+      "base": "MedicationRequest-example-rec-10-patient-view-no-screenings-prefetch.html"
+    },
+    "Encounter/example-rec-10-patient-view-no-screenings-context": {
+      "source": "encounter-example-rec-10-patient-view-no-screenings-context.xml",
+      "base": "Encounter-example-rec-10-patient-view-no-screenings-context.html"
+    },
+    "Encounter/example-rec-10-patient-view-no-screenings-prefetch": {
+      "source": "encounter-example-rec-10-patient-view-no-screenings-prefetch.xml",
+      "base": "Encounter-example-rec-10-patient-view-no-screenings-prefetch.html"
+    },
+
     "Bundle/example-rec-11-benzo-trigger-with-opioid": {
       "source": "bundle-example-rec-11-benzo-trigger-with-opioid.xml",
       "base": "Bundle-example-rec-11-benzo-trigger-with-opioid.html"
@@ -448,77 +553,151 @@
       "base": "Encounter-example-rec-11-opioid-trigger-without-benzo-context.html"
     },
 
+    "Bundle/bundle-example-rec-12-criteria-invalid": {
+      "source": "bundle-example-rec-12-criteria-invalid.json",
+      "base": "Bundle-example-rec-12-criteria-invalid.html"
+    },
+
+    "Bundle/bundle-example-rec-12-criteria-valid": {
+      "source": "bundle-example-rec-12-criteria-valid.json",
+      "base": "Bundle-example-rec-12-criteria-valid.html"
+    },
+
+    "ActivityDefinition/opioidcds-detected-issue-opioids-and-benzodiazepines": {
+      "source": "activitydefinition-detected-issue-opioids-and-benzodiazepines.json",
+      "base": "ActivityDefinition-detected-issue-opioids-and-benzodiazepines.html"
+    },
     "ActivityDefinition/opioidcds-risk-assessment-request": {
       "source": "activitydefinition-opioidcds-risk-assessment-request.json",
       "base": "ActivityDefinition-opioidcds-risk-assessment-request.html"
+    },
+    "ActivityDefinition/opioidcds-urine-screening-request": {
+      "source": "activitydefinition-opioidcds-urine-screening-request.json",
+      "base": "ActivityDefinition-opioidcds-urine-screening-request.html"
     },
     "CarePlan/example-opioidcds": {
       "source": "careplan-example-opioidcds.xml",
       "base": "CarePlan-example-opioidcds.html"
     },
+    "CodeSystem/condition-category": {
+      "source": "codesystem-condition-category.json",
+      "base": "CodeSystem-condition-category.html"
+    },
+    "CodeSystem/condition-clinical": {
+      "source": "codesystem-condition-clinical.json",
+      "base": "CodeSystem-condition-clinical.html"
+    },
+    "CodeSystem/medication-request-category": {
+      "source": "codesystem-medication-request-category.json",
+      "base": "CodeSystem-medication-request-category.html"
+    },
+    "CodeSystem/medication-request-status": {
+      "source": "codesystem-medication-request-status.json",
+      "base": "CodeSystem-medication-request-status.html"
+    },
+    "CodeSystem/observation-category": {
+      "source": "codesystem-observation-category.json",
+      "base": "CodeSystem-observation-category.html"
+    },
     "CodeSystem/opioidcds-indicator": {
       "source": "codesystem-opioidcds-indicator.json",
       "base": "CodeSystem-opioidcds-indicator.html"
     },
-    "Library/fhir-helpers": {
-      "source": "library-FHIRHelpers.json",
+    "CodeSystem/uscore-condition-category": {
+      "source": "codesystem-uscore-condition-category.json",
+      "base": "CodeSystem-uscore-condition-category.html"
+    },
+    "Library/FHIRHelpers": {
+      "source": "FHIRHelpers.json",
       "base": "Library-FHIRHelpers.html"
     },
-    "Library/omtklogiccql": {
-      "source": "library-OMTKLogicCQL.json",
+    "Library/FHIR-ModelInfo": {
+      "source": "FHIR-ModelInfo.json",
+      "base": "Library-FHIR-ModelInfo.html"
+    },
+    "Library/OMTKLogicCQL": {
+      "source": "OMTKLogicCQL.json",
       "base": "Library-OMTKLogicCQL.html"
     },
-    "Library/omtklogicstub": {
-      "source": "library-OMTKLogicStub.json",
+    "Library/OMTKLogicStub": {
+      "source": "OMTKLogicStub.json",
       "base": "Library-OMTKLogicStub.html"
     },
-    "Library/omtkdata2018": {
-      "source": "library-OMTKData2018.json",
-      "base": "Library-OMTKData2018.html"
-    },
-    "Library/omtkdata2019": {
-      "source": "library-OMTKData2019.json",
+    "Library/OMTKData2019": {
+      "source": "OMTKData2019.json",
       "base": "Library-OMTKData2019.html"
     },
-    "Library/omtkdata2020": {
-      "source": "library-OMTKData2020.json",
+    "Library/OMTKData2020": {
+      "source": "OMTKData2020.json",
       "base": "Library-OMTKData2020.html"
     },
-    "Library/opioidcds-common": {
-      "source": "library-OpioidCDSCommon.json",
+    "Library/OpioidCDSCommon": {
+      "source": "OpioidCDSCommon.json",
       "base": "Library-OpioidCDSCommon.html"
     },
-    "Library/opioidcds-recommendation-04": {
-      "source": "library-opioidcds-recommendation-04.json",
-      "base": "Library-opioidcds-recommendation-04.html"
+    "Library/OpioidCDSRoutines": {
+      "source": "OpioidCDSRoutines.json",
+      "base": "Library-OpioidCDSRoutines.html"
     },
-    "Library/opioidcds-recommendation-05": {
-      "source": "library-opioidcds-recommendation-05.json",
-      "base": "Library-opioidcds-recommendation-05.html"
+    "Library/OpioidCDSREC01": {
+      "source": "OpioidCDSREC01.json",
+      "base": "Library-OpioidCDSREC01.html"
     },
-    "Library/opioidcds-recommendation-07": {
-      "source": "library-opioidcds-recommendation-07.json",
-      "base": "Library-opioidcds-recommendation-07.html"
+    "Library/OpioidCDSREC02": {
+      "source": "OpioidCDSREC02.json",
+      "base": "Library-OpioidCDSREC02.html"
     },
-    "Library/opioidcds-recommendation-08": {
-      "source": "library-opioidcds-recommendation-08.json",
-      "base": "Library-opioidcds-recommendation-08.html"
+    "Library/OpioidCDSREC03": {
+      "source": "OpioidCDSREC03.json",
+      "base": "Library-OpioidCDSREC03.html"
     },
-    "Library/opioidcds-recommendation-10": {
-      "source": "library-opioidcds-recommendation-10.json",
-      "base": "Library-opioidcds-recommendation-10.html"
+    "Library/OpioidCDSREC04": {
+      "source": "OpioidCDSREC04.json",
+      "base": "Library-OpioidCDSREC04.html"
     },
-    "Library/library-opioidcds-recommendation-10-patient-view": {
-      "source": "library-opioidcds-recommendation-10-patient-view.json",
-      "base": "Library-opioidcds-recommendation-10-patient-view.html"
+    "Library/OpioidCDSREC04PatientView": {
+      "source": "OpioidCDSREC04PatientView.json",
+      "base": "Library-OpioidCDSREC04PatientView.html"
     },
-    "Library/opioidcds-recommendation-11": {
-      "source": "library-opioidcds-recommendation-11.json",
-      "base": "Library-opioidcds-recommendation-11.html"
+    "Library/OpioidCDSREC05": {
+      "source": "OpioidCDSREC05.json",
+      "base": "Library-OpioidCDSREC05.html"
     },
-    "Library/library-opioidcds-recommendation-11-patient-view": {
-      "source": "library-opioidcds-recommendation-11-patient-view.json",
-      "base": "Library-opioidcds-recommendation-11-patient-view.html"
+    "Library/OpioidCDSREC06": {
+      "source": "OpioidCDSREC06.json",
+      "base": "Library-OpioidCDSREC06.html"
+    },
+    "Library/OpioidCDSREC07": {
+      "source": "OpioidCDSREC07.json",
+      "base": "Library-OpioidCDSREC07.html"
+    },
+    "Library/OpioidCDSREC08": {
+      "source": "OpioidCDSREC08.json",
+      "base": "Library-OpioidCDSREC08.html"
+    },
+    "Library/OpioidCDSREC09": {
+      "source": "OpioidCDSREC09.json",
+      "base": "Library-OpioidCDSREC09.html"
+    },
+    "Library/OpioidCDSREC10": {
+      "source": "OpioidCDSREC10.json",
+      "base": "Library-OpioidCDSREC10.html"
+    },
+    "Library/OpioidCDSREC10PatientView": {
+      "source": "OpioidCDSREC10PatientView.json",
+      "base": "Library-OpioidCDSREC10PatientView.html"
+    },
+    "Library/OpioidCDSREC11": {
+      "source": "OpioidCDSREC11.json",
+      "base": "Library-OpioidCDSREC11.html"
+    },
+    "Library/OpioidCDSREC11PatientView": {
+      "source": "OpioidCDSREC11PatientView.json",
+      "base": "Library-OpioidCDSREC11PatientView.html"
+    },
+    "Library/OpioidCDSREC12PatientView": {
+      "source": "OpioidCDSREC12PatientView.json",
+      "base": "Library-OpioidCDSREC12PatientView.html"
     },
     "MedicationRequest/example-opioidcds": {
       "source": "medicationrequest-example-opioidcds.xml",
@@ -532,9 +711,17 @@
       "source": "patient-example-opioidcds.xml",
       "base": "Patient-example-opioidcds.html"
     },
+    "PlanDefinition/HelloWorld": {
+      "source": "HelloWorld.json",
+      "base": "PlanDefinition-HelloWorld.html"
+    },
     "PlanDefinition/opioidcds-04": {
       "source": "plandefinition-OpioidCDSREC04.json",
       "base": "PlanDefinition-opioidcds-04.html"
+    },
+    "PlanDefinition/opioidcds-04-patient-view": {
+      "source": "plandefinition-OpioidCDSREC04PatientView.json",
+      "base": "PlanDefinition-opioidcds-04-patient-view.html"
     },
     "PlanDefinition/opioidcds-05": {
       "source": "plandefinition-OpioidCDSREC05.json",
@@ -548,9 +735,17 @@
       "source": "plandefinition-OpioidCDSREC08.json",
       "base": "PlanDefinition-opioidcds-08.html"
     },
+    "PlanDefinition/opioidcds-08-order-sign": {
+      "source": "plandefinition-OpioidCDSREC08-order-sign.json",
+      "base": "PlanDefinition-opioidcds-08-order-sign.html"
+    },
     "PlanDefinition/opioidcds-10": {
       "source": "plandefinition-OpioidCDSREC10.json",
       "base": "PlanDefinition-opioidcds-10.html"
+    },
+    "PlanDefinition/opioidcds-10-order-sign": {
+      "source": "plandefinition-OpioidCDSREC10OrderSign.json",
+      "base": "PlanDefinition-opioidcds-10-order-sign.html"
     },
     "PlanDefinition/opioidcds-10-patient-view": {
       "source": "plandefinition-OpioidCDSREC10PatientView.json",
@@ -564,6 +759,11 @@
       "source": "plandefinition-OpioidCDSREC11PatientView.json",
       "base": "PlanDefinition-opioidcds-11-patient-view.html"
     },
+    "PlanDefinition/opioidcds-12-patient-view": {
+      "source": "plandefinition-OpioidCDSREC12PatientView.json",
+      "base": "PlanDefinition-opioidcds-12-patient-view.html"
+    },
+
     "RequestGroup/example-opioidcds": {
       "source": "requestgroup-example-opioidcds.xml",
       "base": "RequestGroup-example-opioidcds.html"
@@ -576,32 +776,44 @@
       "source": "valueset-buprenorphine-and-methadone-medications.json",
       "base": "ValueSet-buprenorphine-and-methadone-medications.html"
     },
-    "ValueSet/cdc-malignant-cancer-conditions-enum": {
-      "source": "valueset-cdc-malignant-cancer-conditions-enum.json",
-      "base": "ValueSet-cdc-malignant-cancer-conditions-enum.html"
+    "ValueSet/cdc-malignant-cancer-conditions": {
+      "source": "valueset-cdc-malignant-cancer-conditions.json",
+      "base": "ValueSet-cdc-malignant-cancer-conditions.html"
     },
-    "ValueSet/conditions-likely-terminal-for-opioid-prescribing-enum": {
-      "source": "valueset-conditions-likely-terminal-for-opioid-prescribing-enum.json",
-      "base": "ValueSet-conditions-likely-terminal-for-opioid-prescribing-enum.html"
+    "ValueSet/cocaine-urine-drug-screening-tests": {
+      "source": "valueset-cocaine-urine-drug-screening-tests.json",
+      "base": "ValueSet-cocaine-urine-drug-screening-tests.html"
     },
-    "ValueSet/discharge-to-hospice": {
-      "source": "valueset-discharge-to-hospice.json",
-      "base": "ValueSet-discharge-to-hospice.html"
+    "ValueSet/conditions-documenting-substance-misuse": {
+      "source": "valueset-conditions-documenting-substance-misuse.json",
+      "base": "ValueSet-conditions-documenting-substance-misuse.html"
     },
-    "ValueSet/end-of-life-care": {
-      "source": "valueset-end-of-life-care.json",
-      "base": "ValueSet-end-of-life-care.html"
+    "ValueSet/conditions-likely-terminal-for-opioid-prescribing": {
+      "source": "valueset-conditions-likely-terminal-for-opioid-prescribing.json",
+      "base": "ValueSet-conditions-likely-terminal-for-opioid-prescribing.html"
     },
-    "ValueSet/end-of-life-conditions": {
-      "source": "valueset-end-of-life-conditions.json",
-      "base": "ValueSet-end-of-life-conditions.html"
+    "ValueSet/condition-clinical-status-active": {
+      "source": "valueset-condition-clinical-status-active.json",
+      "base": "ValueSet-condition-clinical-status-active.html"
     },
-    "ValueSet/extended-release-opioids-with-ambulatory-misuse-potential": {
-      "source": "valueset-extended-release-opioids-with-ambulatory-misuse-potential.json",
-      "base": "ValueSet-extended-release-opioids-with-ambulatory-misuse-potential.html"
+    "ValueSet/condition-category-encounter-diagnosis": {
+      "source": "valueset-condition-category-encounter-diagnosis.json",
+      "base": "ValueSet-condition-category-encounter-diagnosis.html"
+    },
+    "ValueSet/condition-problem-list-category": {
+      "source": "valueset-condition-problem-list-category.json",
+      "base": "ValueSet-condition-problem-list-category.html"
+    },
+    "ValueSet/condition-us-core-health-concern-category": {
+      "source": "valueset-condition-us-core-health-concern-category.json",
+      "base": "ValueSet-condition-us-core-health-concern-category.html"
+    },
+    "ValueSet/extended-release-opioid-with-ambulatory-misuse-potential": {
+      "source": "valueset-extended-release-opioid-with-ambulatory-misuse-potential.json",
+      "base": "ValueSet-extended-release-opioid-with-ambulatory-misuse-potential.html"
     },
     "ValueSet/hospice-disposition": {
-      "source": "valueset-hospice-disposition.xml",
+      "source": "valueset-hospice-disposition.json",
       "base": "ValueSet-hospice-disposition.html"
     },
     "ValueSet/hospice-finding": {
@@ -612,45 +824,45 @@
       "source": "valueset-hospice-procedure.json",
       "base": "ValueSet-hospice-procedure.html"
     },
-    "ValueSet/limited-life-expectancy-conditions-enum": {
-      "source": "valueset-limited-life-expectancy-conditions-enum.json",
-      "base": "ValueSet-limited-life-expectancy-conditions-enum.html"
-    },
     "ValueSet/limited-life-expectancy-conditions": {
       "source": "valueset-limited-life-expectancy-conditions.json",
       "base": "ValueSet-limited-life-expectancy-conditions.html"
     },
-    "ValueSet/long-acting-opioids": {
-      "source": "valueset-long-acting-opioids.json",
-      "base": "ValueSet-long-acting-opioids.html"
+    "ValueSet/medicationrequest-category-community": {
+      "source": "valueset-medicationrequest-category-community.json",
+      "base": "ValueSet-medicationrequest-category-community.html"
     },
-    "ValueSet/metastatic-cancer": {
-      "source": "valueset-metastatic-cancer.json",
-      "base": "ValueSet-metastatic-cancer.html"
+    "ValueSet/medicationrequest-status-active": {
+      "source": "valueset-medicationrequest-status-active.json",
+      "base": "ValueSet-medicationrequest-status-active.html"
     },
     "ValueSet/naloxone-medications": {
       "source": "valueset-naloxone-medications.json",
       "base": "ValueSet-naloxone-medications.html"
     },
-    "ValueSet/naloxone": {
-      "source": "valueset-naloxone.json",
-      "base": "ValueSet-naloxone.html"
+    "ValueSet/non-opioid-drug-urine-screening": {
+      "source": "valueset-non-opioid-drug-urine-screening.json",
+      "base": "ValueSet-non-opioid-drug-urine-screening.html"
     },
-    "ValueSet/non-opioid-illicit-drug-urine-screening": {
-      "source": "valueset-non-opioid-illicit-drug-urine-screening.json",
-      "base": "ValueSet-non-opioid-illicit-drug-urine-screening.html"
+    "ValueSet/non-synthetic-opioids": {
+      "source": "valueset-non-synthetic-opioids.json",
+      "base": "ValueSet-non-synthetic-opioids.html"
     },
     "ValueSet/office-visit": {
       "source": "valueset-office-visit.json",
       "base": "ValueSet-office-visit.html"
     },
-    "ValueSet/oncology-specialty-designation-enum": {
-      "source": "valueset-oncology-specialty-designation-enum.json",
-      "base": "ValueSet-oncology-specialty-designation-enum.html"
+    "ValueSet/observation-category-laboratory": {
+      "source": "valueset-observation-category-laboratory.json",
+      "base": "ValueSet-observation-category-laboratory.html"
     },
-    "ValueSet/opioid-abuse-assessment": {
-      "source": "valueset-opioid-abuse-assessment.json",
-      "base": "ValueSet-opioid-abuse-assessment.html"
+    "ValueSet/observation-category-procedure": {
+      "source": "valueset-observation-category-procedure.json",
+      "base": "ValueSet-observation-category-procedure.html"
+    },
+    "ValueSet/oncology-specialty-designations": {
+      "source": "valueset-oncology-specialty-designations.json",
+      "base": "ValueSet-oncology-specialty-designations.html"
     },
     "ValueSet/opioid-analgesics-with-ambulatory-misuse-potential": {
       "source": "valueset-opioid-analgesics-with-ambulatory-misuse-potential.json",
@@ -668,21 +880,9 @@
       "source": "valueset-opioid-misuse-assessment-procedure.json",
       "base": "ValueSet-opioid-misuse-assessment-procedure.html"
     },
-    "ValueSet/opioid-misuse-disorders-enum": {
-      "source": "valueset-opioid-misuse-disorders-enum.json",
-      "base": "ValueSet-opioid-misuse-disorders-enum.html"
-    },
-    "ValueSet/opioidcds-indicator": {
-      "source": "valueset-opioidcds-indicator.json",
-      "base": "ValueSet-opioidcds-indicator.html"
-    },
-    "ValueSet/opioids-abused-in-ambulatory-care": {
-      "source": "valueset-opioids-abused-in-ambulatory-care.json",
-      "base": "ValueSet-opioids-abused-in-ambulatory-care.html"
-    },
-    "ValueSet/opioids": {
-      "source": "valueset-opioids.json",
-      "base": "ValueSet-opioids.html"
+    "ValueSet/opioid-misuse-disorders": {
+      "source": "valueset-opioid-misuse-disorders.json",
+      "base": "ValueSet-opioid-misuse-disorders.html"
     },
     "ValueSet/pain-management-procedure": {
       "source": "valueset-pain-management-procedure.json",
@@ -700,23 +900,22 @@
       "source": "valueset-pdmp-review-procedure.json",
       "base": "ValueSet-pdmp-review-procedure.html"
     },
-    "ValueSet/short-acting-opioids": {
-      "source": "valueset-short-acting-opioids.json",
-      "base": "ValueSet-short-acting-opioids.html"
+    "ValueSet/phencyclidine-urine-drug-screening-tests": {
+      "source": "valueset-phencyclidine-urine-drug-screening-tests.json",
+      "base": "ValueSet-phencyclidine-urine-drug-screening-tests.html"
     },
-    "ValueSet/substance-abuse": {
-      "source": "valueset-substance-abuse.json",
-      "base": "ValueSet-substance-abuse.html"
+    "ValueSet/substance-misuse-behavioral-counseling": {
+      "source": "valueset-substance-misuse-behavioral-counseling.json",
+      "base": "ValueSet-substance-misuse-behavioral-counseling.html"
     },
-    "ValueSet/substance-misuse-behavioral-counseling-enum": {
-      "source": "valueset-substance-misuse-behavioral-counseling-enum.json",
-      "base": "ValueSet-substance-misuse-behavioral-counseling-enum.html"
+    "ValueSet/therapies-indicating-end-of-life-care": {
+      "source": "valueset-therapies-indicating-end-of-life-care.json",
+      "base": "ValueSet-therapies-indicating-end-of-life-care.html"
     },
-    "ValueSet/therapies-indicating-end-of-life-care-enum": {
-      "source": "valueset-therapies-indicating-end-of-life-care-enum.json",
-      "base": "ValueSet-therapies-indicating-end-of-life-care-enum.html"
+    "ValueSet/urine-drug-screening-tests": {
+      "source": "valueset-urine-drug-screening-tests.json",
+      "base": "ValueSet-urine-drug-screening-tests.html"
     },
-
     "StructureDefinition/cdc-careplan": {
       "defns": "cdc-careplan-definitions.html",
       "base": "cdc-careplan.html"
@@ -760,6 +959,11 @@
       "defns": "cdc-valueset-exclusion-definitions.html",
       "base": "cdc-valueset-exclusion.html",
       "source": "structuredefinition-cdc-valueset-exclusion.json"
+    },
+    "StructureDefinition/dataDateRoller": {
+      "defns": "dataDateRoller-definitions.html",
+      "base": "dataDataRoller.html",
+      "source": "structuredefinition-data-date-roller-extension.json"
     }
   }
 }

@@ -1,0 +1,102 @@
+{
+  "resourceType": "ValueSet",
+  "id": "phencyclidine-urine-drug-screening-tests",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/phencyclidine-urine-drug-screening-tests",
+  "name": "phencyclidine_urine_drug_screening_tests",
+  "title": "Phencyclidine urine drug screening tests",
+  "status": "active",
+  "experimental": true,
+  "date": "2022-03-29T11:44:38-06:00",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
+  "description": "Urine tests for phencyclidine",
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
+  "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
+  "copyright": "© CDC 2016+.",
+  "expansion": {
+    "identifier": "ffb498e1-44e9-4f6b-8fce-4582ecc2e731",
+    "timestamp": "2022-03-29T11:44:38-06:00",
+    "contains": [ {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "3937-0",
+      "display": "Phencyclidine [Mass/volume] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "16254-5",
+      "display": "Phencyclidine [Mass/volume] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "72825-3",
+      "display": "Phencyclidine [Mass/volume] in Urine by Screen method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "52951-1",
+      "display": "Phencyclidine [Moles/volume] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "3936-2",
+      "display": "Phencyclidine [Presence] in Urine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "14311-5",
+      "display": "Phencyclidine [Presence] in Urine by Confirm method >20 ng/mL"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "18392-1",
+      "display": "Phencyclidine [Presence] in Urine by Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "8237-0",
+      "display": "Phencyclidine [Presence] in Urine by SAMHSA confirm method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "8238-8",
+      "display": "Phencyclidine [Presence] in Urine by SAMHSA screen method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "19659-2",
+      "display": "Phencyclidine [Presence] in Urine by Screen method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "14310-7",
+      "display": "Phencyclidine [Presence] in Urine by Screen method >25 ng/mL"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "19661-8",
+      "display": "Phencyclidine cutoff [Mass/volume] in Urine for Confirmatory method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "19660-0",
+      "display": "Phencyclidine cutoff [Mass/volume] in Urine for Screen method"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "58397-1",
+      "display": "Phencyclidine/Creatinine [Mass Ratio] in Urine"
+    } ]
+  }
+}

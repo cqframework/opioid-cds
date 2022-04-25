@@ -1,0 +1,189 @@
+{
+  "resourceType": "Bundle",
+  "id": "example-rec-10-uofu-no-screenings-bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-rec-10-uofu-no-screenings-medreq1",
+        "status": "active",
+        "intent": "order",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/medication-request-category",
+              "code": "community"
+            }
+          ]
+        },
+        "medicationReference": {
+          "reference": "Medication/12bd1f88-426f-4567-85fe-db9eae37f56b",
+          "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
+        },
+        "subject": {
+          "reference": "Patient/example-rec-10-uofu-no-screenings"
+        },
+        "context": {
+          "reference": "Encounter/example-rec-10-uofu-no-screenings-context"
+        },
+        "authoredOn": "2022-01-19",
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 12.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseQuantity": {
+              "value": 1.0,
+              "unit": "patch",
+              "system": "http://hl7.org/fhir/v3/orderableDrugForm",
+              "code": "PATCH"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "validityPeriod": {
+            "start": "2022-01-19",
+            "end": "2022-04-19"
+          },
+          "numberOfRepeatsAllowed": 3,
+          "expectedSupplyDuration": {
+            "value": 30.0,
+            "unit": "days",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/example-rec-10-uofu-no-screenings-medreq1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-rec-10-uofu-no-screenings-medreq2",
+        "status": "active",
+        "intent": "order",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/medication-request-category",
+              "code": "community"
+            }
+          ]
+        },
+        "medicationReference": {
+          "reference": "Medication/371016cf-18eb-4311-bbc9-0ef2b923a8c9",
+          "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
+        },
+        "subject": {
+          "reference": "Patient/example-rec-uofu-10-no-screenings"
+        },
+        "context": {
+          "reference": "Encounter/example-rec-10-uofu-no-screenings-prefetch"
+        },
+        "authoredOn": "2021-10-19",
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 3,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseQuantity": {
+              "value": 1.0,
+              "unit": "tablet",
+              "system": "http://hl7.org/fhir/v3/orderableDrugForm",
+              "code": "TAB"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "validityPeriod": {
+            "start": "2021-10-19",
+            "end": "2022-01-19"
+          },
+          "numberOfRepeatsAllowed": 3,
+          "expectedSupplyDuration": {
+            "value": 30.0,
+            "unit": "days",
+            "system": "http://unitsofmeasure.org",
+            "code": "d"
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/example-rec-10-uofu-no-screenings-medreq2"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "12bd1f88-426f-4567-85fe-db9eae37f56b",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197696"
+            }
+          ]
+        },
+        "isBrand": false,
+        "isOverTheCounter": false,
+        "form": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.698288.310",
+              "code": "tablet",
+              "display": "tablet"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Medication/12bd1f88-426f-4567-85fe-db9eae37f56b"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "371016cf-18eb-4311-bbc9-0ef2b923a8c9",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049502"
+            }
+          ]
+        },
+        "isBrand": false,
+        "isOverTheCounter": false,
+        "form": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.840.114350.1.13.90.3.7.4.698288.310",
+              "code": "tablet",
+              "display": "tablet"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Medication/371016cf-18eb-4311-bbc9-0ef2b923a8c9"
+      }
+    }
+  ]
+}

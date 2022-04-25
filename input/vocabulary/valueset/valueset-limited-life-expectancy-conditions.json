@@ -1,52 +1,89 @@
 {
   "resourceType": "ValueSet",
   "id": "limited-life-expectancy-conditions",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
-      "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset"
-    ]
-  },
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
-      "valueMarkdown": "Note that the terminologies included in this implementation guide will need to be updated, because the ideal mechanism for distribution (as an expression) is not currently supported by the content logical definition constructs available in the FHIR ValueSet resource and all known implementations of it. Before use in a production environment, ensure you have the latest value sets based on the definitions for each value set (as defined in the inclusion/exclusion criteria for each one)."
-    }
-  ],
   "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/limited-life-expectancy-conditions",
-  "identifier": [
-    {
-      "value": "2.16.840.1.113883.3.526.3.1259"
-    }
-  ],
+  "name": "limited_life_expectancy_conditions",
+  "title": "Limited life expectancy conditions",
   "status": "active",
+  "experimental": true,
+  "date": "2022-03-29T11:44:37-06:00",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "contact": [ {
+    "name": "MD Partners, Inc.",
+    "telecom": [ {
+      "system": "email",
+      "value": "info@mdpartners.com"
+    } ]
+  } ],
+  "description": "A finding that documents a terminal prognosis",
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US"
+    } ]
+  } ],
+  "purpose": "Provide terminology for conditions to be used as exclusions for opioid use recommendations",
+  "copyright": "© CDC 2016+.",
   "compose": {
-    "include": [
-      {
-        "system": "http://snomed.info/sct",
-        "concept": [
-          {
-            "code": "162607003",
-            "display": "Terminal illness - early stage (finding)"
-          },
-          {
-            "code": "162608008",
-            "display": "Terminal illness - late stage (finding)"
-          },
-          {
-            "code": "170969009",
-            "display": "Prognosis bad (finding)"
-          },
-          {
-            "code": "27143004",
-            "display": "Patient status determination, pre-terminal (finding)"
-          },
-          {
-            "code": "300936002",
-            "display": "Terminal illness (finding)"
-          }
-        ]
-      }
-    ]
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "300936002"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "170969009"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "27143004"
+      } ]
+    } ]
+  },
+  "expansion": {
+    "identifier": "7d36e32a-160a-4768-83ed-962996c67a8c",
+    "timestamp": "2022-03-29T11:44:37-06:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
+      "code": "111947009",
+      "display": "Functional disorder present, condition terminal"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
+      "code": "27143004",
+      "display": "Patient status determination, pre-terminal"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
+      "code": "170969009",
+      "display": "Prognosis bad"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
+      "code": "300936002",
+      "display": "Terminal illness"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
+      "code": "162607003",
+      "display": "Terminal illness - early stage"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20210901",
+      "code": "162608008",
+      "display": "Terminal illness - late stage"
+    } ]
   }
 }

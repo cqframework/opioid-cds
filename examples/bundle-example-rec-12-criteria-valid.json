@@ -1,0 +1,60 @@
+{
+    "resourceType": "Bundle",
+    "id": "example-rec-12-criteria-valid",
+    "type": "transaction",
+    "entry": [
+        {
+            "fullUrl": "http://localhost:8080/cqf-ruler-r4/fhir/Patient/example-rec-12-criteria-valid",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "example-rec-12-criteria-valid",
+                "_birthDate": {
+                  "extension": [
+                    {
+                      "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
+                      "extension": [
+                        {
+                          "url": "language",
+                          "valueUri": "text/cql"
+                        },
+                        {
+                            "url": "expression",
+                            "valueString": "Today() - 20 years"
+                        }
+                      ]
+                    }
+                  ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Patient/example-rec-12-criteria-valid"
+            }
+        },
+        {
+            "fullUrl": "http://localhost:8080/cqf-ruler-r4/fhir/Condition/example-rec-12-criteria-valid",
+            "resource": {
+                "resourceType": "Condition",
+                "id": "example-rec-12-criteria-valid",
+                "clinicalStatus": "active",
+                "verificationStatus": "confirmed",
+                "subject": {
+                    "reference": "Patient/example-rec-12-criteria-valid"
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "191865004",
+                            "display": "Combined opioid with other drug dependence"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Condition/example-rec-12-criteria-valid"
+            }
+        }
+    ]
+}

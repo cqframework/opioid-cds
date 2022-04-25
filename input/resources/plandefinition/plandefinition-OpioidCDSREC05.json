@@ -2,7 +2,7 @@
   "resourceType": "PlanDefinition",
   "id": "opioidcds-05",
   "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-05",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "name": "PlanDefinition_Recommendation_5",
   "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5",
   "type": {
@@ -97,7 +97,7 @@
   ],
   "library": [
     {
-      "reference": "Library/library-OpioidCDSREC05"
+      "reference": "Library/OpioidCDSREC05"
     }
   ],
   "action": [
@@ -105,11 +105,6 @@
       "title": "High risk for opioid overdose.",
       "description": "Total morphine milligram equivalent (MME) exceeds recommended amount. Taper to less than 50.",
       "documentation": [
-        {
-          "type": "documentation",
-          "display": "CDC guideline for prescribing opioids for chronic pain",
-          "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
-        },
         {
           "type": "documentation",
           "document": {
@@ -138,7 +133,9 @@
                   ]
                 }
               }
-            ]
+            ],
+            "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
+            "title": "CDC guideline for prescribing opioids for chronic pain"
           }
         }
       ],
@@ -157,7 +154,7 @@
         }
       ],
       "groupingBehavior": "visual-group",
-      "selectionBehavior": "exactly-one",
+      "selectionBehavior": "any",
       "dynamicValue": [
         {
           "path": "action.title",

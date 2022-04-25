@@ -1,0 +1,57 @@
+<Procedure xmlns="http://hl7.org/fhir">
+   <id value="example-rec12pv-diagnosis-with-treatment-procedure-prefetch"/>
+   <status value="completed"/>
+   <code>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <code value="60112009"/>
+         <display value="Drug addiction counseling"/>
+      </coding>
+   </code>
+   <subject>
+      <reference value="Patient/example-rec12pv-diagnosis-with-treatment-procedure"/>
+   </subject>
+   <context>
+      <reference value="Encounter/example-rec12pv-diagnosis-with-treatment-procedure-prefetch"/>
+   </context>
+   <performedDateTime>
+     <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
+        <extension url="language">
+          <valueUri value="text/cql" />
+        </extension>
+        <extension url="expression">
+          <valueString value="Today() - 4 weeks"/>
+        </extension>
+     </extension>
+   </performedDateTime>
+</Procedure>
+<!--
+{
+  "resourceType": "Procedure",
+  "id": "example-rec12pv-diagnosis-with-treatment-procedure-prefetch",
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "60112009",
+        "display": "Drug addiction counseling"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example-rec12pv-diagnosis-with-treatment-procedure"
+  },
+  "context": {
+    "reference": "Encounter/example-rec12pv-diagnosis-with-treatment-procedure-prefetch"
+  },
+  "performedDateTime": {
+    "extension": [
+      {
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
+        "valueString": "Today() - 4 weeks"
+      }
+    ]
+  }
+}
+-->

@@ -1,0 +1,23 @@
+{
+  "resourceType": "ValueSet",
+  "id": "observation-category-laboratory",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory",
+  "name": "Valueset_observation-category-laboratory",
+  "version": "0.0.1",
+  "title": "ValueSet - Observation Category Laboratory",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Alphora",
+  "description": "Laboratory Observation Category",
+  "expansion": {
+    "identifier": "observation-category-laboratory-valueset-expansion",
+    "timestamp": "2021-06-08T13:47:55-07:00",
+    "contains": [
+      {
+        "system": "http://hl7.org/fhir/observation-category",
+        "code": "laboratory",
+        "display": "Laboratory"
+      }
+    ]
+  }
+}

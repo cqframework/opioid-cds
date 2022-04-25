@@ -1,0 +1,30 @@
+{
+  "resourceType": "ValueSet",
+  "id": "hospice-disposition",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-disposition",
+  "version": "0.2.0",
+  "title": "ValueSet - Hospice Disposition",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Mathematica",
+  "description": "This value set contains concepts that represent patients receiving hospice care outside of a hospital or long term care facility.",
+  "purpose": "This value set may use the Quality Data Model (QDM) datatype related to Procedure, Order or Intervention, Order. The intent of this value set is to identify all patients receiving hospice care outside of a hospital or long term care facility.",
+  "expansion": {
+    "identifier": "hospice-disposition-valueset-expansion",
+    "timestamp": "2021-02-10T11:06:37-07:00",
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020-09",
+        "code": "385763009",
+        "display": "Hospice care (regime/therapy)"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020-09",
+        "code": "385765002",
+        "display": "Hospice care management (procedure)"
+      }
+    ]
+  }
+}

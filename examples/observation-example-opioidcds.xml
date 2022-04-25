@@ -13,7 +13,7 @@
     <effectiveDateTime value="2017-12-12"/>
     <interpretation>
         <coding>
-            <system value="https://www.hl7.org/fhir/v2/0078"/>
+            <system value="http://www.hl7.org/fhir/v2/0078"/>
             <code value="POS"/>
         </coding>
     </interpretation>

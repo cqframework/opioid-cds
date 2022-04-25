@@ -2,7 +2,7 @@
   "resourceType": "PlanDefinition",
   "id": "opioidcds-04",
   "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-04",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "name": "PlanDefinition_Recommendation_4",
   "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4",
   "type": {
@@ -90,7 +90,7 @@
   "copyright": "© CDC 2016+.",
   "library": [
     {
-      "reference": "Library/library-OpioidCDSREC04"
+      "reference": "Library/OpioidCDSREC04"
     }
   ],
   "action": [
@@ -98,11 +98,6 @@
       "title": "Extended-release opioid prescription triggered.",
       "description": "Checking if the trigger prescription meets the inclusion criteria for recommendation #4 workflow.",
       "documentation": [
-        {
-          "type": "documentation",
-          "display": "CDC guideline for prescribing opioids for chronic pain",
-          "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
-        },
         {
           "type": "documentation",
           "document": {
@@ -131,7 +126,9 @@
                   ]
                 }
               }
-            ]
+            ],
+            "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
+            "title": "CDC guideline for prescribing opioids for chronic pain"
           }
         }
       ],
@@ -150,7 +147,7 @@
         }
       ],
       "groupingBehavior": "visual-group",
-      "selectionBehavior": "exactly-one",
+      "selectionBehavior": "any",
       "dynamicValue": [
         {
           "path": "action.title",

@@ -1,0 +1,63 @@
+<Condition xmlns="http://hl7.org/fhir">
+   <id value="example-rec12pv-diagnosis-with-treatment-medrequest"/>  
+   <clinicalStatus value="active"/>
+   <code>
+      <coding>
+         <system value="http://snomed.info/sct"/>
+         <version value="http://snomed.info/sct/731000124108/version/20200301"/>
+         <code value="191865004"/>
+         <display value="Combined opioid with other drug dependence"/>
+      </coding>
+   </code>
+   <subject>
+      <reference value="Patient/example-rec12pv-diagnosis-with-treatment-medrequest"/>
+   </subject>
+   <assertedDate>
+      <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
+         <extension url="language">
+           <valueUri value="text/cql" />
+         </extension>
+         <extension url="expression">
+           <valueString value="Today() - 30 days"/>
+         </extension>
+      </extension>
+   </assertedDate>
+</Condition>
+<!--
+{
+  "resourceType": "Condition",
+  "id": "example-rec12pv-diagnosis-with-treatment-medrequest",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hapifhir.io/fhir/StructureDefinition/resource-meta-source",
+        "valueUri": "#1P7M4nPnlbM7IoFG"
+      }
+    ],
+    "versionId": "1",
+    "lastUpdated": "2020-06-27T02:55:44.894+00:00"
+  },
+  "clinicalStatus": "active",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/731000124108/version/20200301",
+        "code": "191865004",
+        "display": "Combined opioid with other drug dependence"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example-rec12pv-diagnosis-with-treatment-medrequest"
+  },
+  "_assertedDate": {
+    "extension": [
+      {
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
+        "valueString": "Today() - 30 days"
+      }
+    ]
+  }
+}
+-->

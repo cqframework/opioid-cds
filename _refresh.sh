@@ -1,13 +1,17 @@
 #!/bin/bash
 #DO NOT EDIT WITH WINDOWS
-tooling_jar=tooling-1.1.0-SNAPSHOT-jar-with-dependencies.jar
+tooling_jar=tooling-1.4.1-SNAPSHOT-jar-with-dependencies.jar
 input_cache_path=./input-cache
-resources_path=$PWD/input/resources
-ig_resource_path=./input/opioid-cds.xml
+resources_path=/input/resources
+root_dir=$PWD
+ig_path=/input/opioid-cds.xml
+
+# echo ${root_dir}
+# echo ${ig_path}
 
 set -e
 echo Checking internet connection...
-wget -q --spider tx.fhir.org
+# wget -q --spider tx.fhir.org
 
 if [ $? -eq 0 ]; then
 	echo "Online"
@@ -21,14 +25,18 @@ fi
 echo "$fsoption"
 
 tooling=$input_cache_path/$tooling_jar
+
 if test -f "$tooling"; then
-	JAVA -jar $tooling -RefreshIG -ip="$PWD" -igrp="$ig_resource_path" -rp="$resources_path" -iv=fhir3 -t -d -p $fsoption
+	JAVA -jar $tooling -RefreshIG -root-dir="$root_dir" -ig-path="$ig_path" -rp="$resources_path" -d -p -t -ss="false" $fsoption
 else
 	tooling=../$tooling_jar
 	echo $tooling
 	if test -f "$tooling"; then
-		JAVA -jar $tooling -RefreshIG -ip="$PWD" -igrp="$ig_resource_path" -rp="$resources_path" -iv=fhir3 -t -d -p $fsoption
+		JAVA -jar $tooling -RefreshIG -root-dir="$root_dir" -ig-path="$ig_path"  -rp="$resources_path" -d -p -t -ss="false" $fsoption
 	else
-		echo IG Refresh NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
+		echo CQF Tooling NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
 	fi
 fi
+
+sh _refreshTerminologyBundle.sh
+sh input/pagecontent/quick-start-bundles/_refreshQuickStart.sh

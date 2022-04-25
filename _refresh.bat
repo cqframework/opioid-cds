@@ -1,8 +1,12 @@
 @ECHO OFF
-SET tooling_jar=tooling-1.1.0-SNAPSHOT-jar-with-dependencies.jar
+SET tooling_jar=tooling-1.4.1-SNAPSHOT-jar-with-dependencies.jar
 SET input_cache_path=%~dp0input-cache
-SET resources_path=%~dp0/input/resources
-SET ig_resource_path=%~dp0/input/opioid-cds.xml
+SET resources_path=%~dp0input\resources
+SET ig_ini_path=%~dp0ig.ini
+SET root_dir=%~dp0
+rem following line removes trailing '\'
+SET root_dir=%root_dir:~0,-1%
+SET ig_path=input\opioid-cds.xml
 
 ECHO Checking internet connection...
 PING tx.fhir.org -n 1 -w 1000 | FINDSTR TTL && GOTO isonline
@@ -19,13 +23,14 @@ SET fsoption=
 SET JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
 IF EXIST "%input_cache_path%\%tooling_jar%" (
-	ECHO running: JAVA -jar "%input_cache_path%\%tooling_jar%" -RefreshIG -ip=%~dp0 -rp="%resources_path%" -igrp="%ig_resource_path%" -iv=fhir3 -t -d -p %fsoption%
-	JAVA -jar "%input_cache_path%\%tooling_jar%" -RefreshIG -ip=%~dp0 -rp="%resources_path%" -igrp="%ig_resource_path%" -iv=fhir3 -t -d -p %fsoption%
+	ECHO running: JAVA -jar "%input_cache_path%\%tooling_jar%" -RefreshIG -root-dir="%root_dir%" -ig-path="%ig_path%" -rp="%resources_path%" -cdsig -d -p $fsoption
+	JAVA -jar "%input_cache_path%\%tooling_jar%" -RefreshIG -root-dir="%root_dir%" -ig-path="%ig_path%" -rp="%resources_path%" -d -p -t $fsoption
 ) ELSE If exist "..\%tooling_jar%" (
-	ECHO running: JAVA -jar "..\%tooling_jar%" -RefreshIG -ip=%~dp0 -rp="%resources_path%" -igrp="%ig_resource_path%" -iv=fhir3 -t -d -p %fsoption%
-	JAVA -jar "..\%tooling_jar%" -RefreshIG -ip=%~dp0 -rp="%resources_path%" -igrp="%ig_resource_path%" -iv=fhir3 -t -d -p %fsoption%
+	ECHO running: JAVA -jar "..\%tooling_jar%" -RefreshIG -root-dir="%root_dir%" -ig-path="%ig_path%" -cdsig -d -p -t %fsoption%
+	JAVA -jar "..\%tooling_jar%" -RefreshIG -root-dir="%root_dir%" -ig-path="%ig_path%" -rp="%resources_path%" -d -p -t $fsoption
 ) ELSE (
-	ECHO IG Refresh NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
+	ECHO CQF Tooling NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
 )
 
-PAUSE
+_refreshTerminologyBundle.bat
+input/pagecontent/quick-start-bundles/_refreshQuickStart.bat

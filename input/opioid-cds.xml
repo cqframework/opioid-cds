@@ -2,7 +2,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
     <id value="fhir.cdc.opioid-cds"/>
     <url value="http://fhir.org/guides/cdc/opioid-cds/ImplementationGuide/fhir.cdc.opioid-cds"/>
-    <version value="1.2.2"/>
+    <version value="1.2.3"/>
     <name value="Opioid Prescribing Support Implementation Guide"/>
     <status value="draft"/>
     <experimental value="false"/>
@@ -12,6 +12,109 @@
     <fhirVersion value="3.0.2"/>
     <package>
         <name value="Opioid Prescribing Support Implementation Guide Package"/>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-terminology"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/quickstart-medications-bundle"/>
+            </sourceReference>
+        </resource>
+        <!-- <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation01-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation02-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation03-bundle"/>
+            </sourceReference>
+        </resource> -->
+        <!-- <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/OpioidCDSREC04-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/OpioidCDSREC05-bundle"/>
+            </sourceReference>
+        </resource> -->
+        <!-- <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation06-bundle"/>
+            </sourceReference>
+        </resource> -->
+        <!-- <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/OpioidCDSREC07-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/OpioidCDSREC08-bundle"/>
+            </sourceReference>
+        </resource> -->
+        <!-- <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/opioid-cds-recommendation09-bundle"/>
+            </sourceReference>
+        </resource> -->
+        <!-- <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/OpioidCDSREC10-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/OpioidCDSREC10OrderSign-bundle"/>
+            </sourceReference>
+        </resource>-->
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/OpioidCDSREC10PatientView-bundle"/>
+            </sourceReference>
+        </resource>
+
+        <!--<resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/OpioidCDSREC11-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/OpioidCDSREC11PatientView-bundle"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/OpioidCDSREC12PatientView-bundle"/>
+            </sourceReference>
+        </resource> -->
         <resource>
             <example value="true"/>
             <sourceReference>
@@ -42,7 +145,36 @@
                 <reference value="Encounter/example-rec-04-long-acting-opioid-prefetch"/>
             </sourceReference>
         </resource>
-
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-04-patient-view-long-acting-opioid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-04-patient-view-long-acting-opioid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-04-patient-view-long-acting-opioid-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-long-acting-opioid-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-long-acting-opioid-prefetch"/>
+            </sourceReference>
+        </resource>
         <resource>
             <example value="true"/>
             <sourceReference>
@@ -59,6 +191,24 @@
             <example value="true"/>
             <sourceReference>
                 <reference value="Encounter/example-rec-04-new-patient-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-04-patient-view-new-patient"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-04-patient-view-new-patient"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-new-patient-context"/>
             </sourceReference>
         </resource>
 
@@ -96,6 +246,37 @@
         <resource>
             <example value="true"/>
             <sourceReference>
+                <reference value="Bundle/example-rec-04-patient-view-not-long-acting-opioid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-04-patient-view-not-long-acting-opioid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-04-patient-view-not-long-acting-opioid-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-not-long-acting-opioid-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-not-long-acting-opioid-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
                 <reference value="Bundle/example-rec-04-opioid-with-abuse-potential"/>
             </sourceReference>
         </resource>
@@ -121,6 +302,37 @@
             <example value="true"/>
             <sourceReference>
                 <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-04-patient-view-opioid-with-abuse-potential"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-04-patient-view-opioid-with-abuse-potential"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-04-patient-view-opioid-with-abuse-potential-prefetch"/>
             </sourceReference>
         </resource>
 
@@ -501,6 +713,37 @@
         <resource>
             <example value="true"/>
             <sourceReference>
+                <reference value="Bundle/example-rec-10-patient-view-no-screenings"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Patient/example-rec-10-patient-view-no-screenings"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="MedicationRequest/example-rec-10-patient-view-no-screenings-prefetch"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-patient-view-no-screenings-context"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Encounter/example-rec-10-patient-view-no-screenings-prefetch"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
                 <reference value="Bundle/example-rec-11-benzo-trigger-with-opioid"/>
             </sourceReference>
         </resource>
@@ -600,9 +843,36 @@
 
         <resource>
             <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-12-criteria-invalid"/>
+            </sourceReference>
+        </resource>
+
+        <resource>
+            <example value="true"/>
+            <sourceReference>
+                <reference value="Bundle/example-rec-12-criteria-valid"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ActivityDefinition - DetectedIssue for co-prescribed opioids and benzodiazepines"/>
+            <sourceReference>
+                <reference value="ActivityDefinition/opioidcds-detected-issue-opioids-and-benzodiazepines"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="ActivityDefinition - ProcedureRequest for risk assessment"/>
             <sourceReference>
                 <reference value="ActivityDefinition/opioidcds-risk-assessment-request"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ActivityDefinition - ProcedureRequest for opioid uring screening"/>
+            <sourceReference>
+                <reference value="ActivityDefinition/opioidcds-urine-screening-request"/>
             </sourceReference>
         </resource>
         <resource>
@@ -623,6 +893,56 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="CodeSystem - Condition Category Codes"/>
+            <description value="Preferred value set for Condition Categories."/>
+            <sourceReference>
+                <reference value="CodeSystem/condition-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - Condition Clinical Status Codes"/>
+            <description value="Preferred value set for Condition Clinical Status."/>
+            <sourceReference>
+                <reference value="CodeSystem/condition-clinical"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - MedicationRequest Category Codes"/>
+            <description value="A coded concept identifying where the medication ordered is expected to be consumed or administered."/>
+            <sourceReference>
+                <reference value="CodeSystem/medication-request-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - MedicationRequest Status Codes"/>
+            <description value="A coded concept specifying the state of the prescribing event. Describes the lifecycle of the prescription."/>
+            <sourceReference>
+                <reference value="CodeSystem/medication-request-status"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - Observation Category Codes"/>
+            <description value="Preferred value set for Observation Categories."/>
+            <sourceReference>
+                <reference value="CodeSystem/observation-category"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="CodeSystem - US Core Condition Category Extension Codes"/>
+            <description value="Set of codes that are needed for implementation of the US-Core profiles. These codes are used as extensions to the FHIR and US Core value sets."/>
+            <sourceReference>
+                <reference value="CodeSystem/uscore-condition-category"/>
+            </sourceReference>
+        </resource>
+
+        <!-- Libraries -->
+        <resource>
+            <example value="true"/>
             <name value="Library - FHIRHelpers Logic"/>
             <description value="FHIRHelpers Logic"/>
             <sourceReference>
@@ -631,10 +951,18 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="Library - FHIR-ModelInfo"/>
+            <description value="FHIR-ModelInfo Logic"/>
+            <sourceReference>
+                <reference value="Library/FHIR-ModelInfo"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="Library - OMTK Logic CQL"/>
             <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic CQL"/>
             <sourceReference>
-                <reference value="Library/library-OMTKLogicCQL"/>
+                <reference value="Library/OMTKLogicCQL"/>
             </sourceReference>
         </resource>
         <resource>
@@ -642,15 +970,7 @@
             <name value="Library - OMTK Logic Stub"/>
             <description value="Opioid Management Terminology Knowledge Base v0.0.1 Logic Stub"/>
             <sourceReference>
-                <reference value="Library/library-OMTKLogicStub"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="Library - OMTK Data 2018"/>
-            <description value="Opioid Management Terminology Knowledge Base v0.0.2 Data (2018)"/>
-            <sourceReference>
-                <reference value="Library/library-OMTKData2018"/>
+                <reference value="Library/OMTKLogicStub"/>
             </sourceReference>
         </resource>
         <resource>
@@ -658,7 +978,7 @@
             <name value="Library - OMTK Data 2019"/>
             <description value="Opioid Management Terminology Knowledge Base v0.0.2 Data (2019)"/>
             <sourceReference>
-                <reference value="Library/library-OMTKData2019"/>
+                <reference value="Library/OMTKData2019"/>
             </sourceReference>
         </resource>
         <resource>
@@ -666,7 +986,7 @@
             <name value="Library - OMTK Data 2020"/>
             <description value="Opioid Management Terminology Knowledge Base v0.0.2 Data (2020)"/>
             <sourceReference>
-                <reference value="Library/library-OMTKData2020"/>
+                <reference value="Library/OMTKData2020"/>
             </sourceReference>
         </resource>
         <resource>
@@ -674,7 +994,39 @@
             <name value="Library - Opioid CDS Common"/>
             <description value="Opioid Management Decision Support Logic Common"/>
             <sourceReference>
-                <reference value="Library/library-OpioidCDSCommon"/>
+                <reference value="Library/OpioidCDSCommon"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Routines"/>
+            <description value="Opioid Management Decision Support Logic Routines"/>
+            <sourceReference>
+                <reference value="Library/OpioidCDSRoutines"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #1"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #1"/>
+            <sourceReference>
+                <reference value="Library/OpioidCDSREC01"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #2"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #2"/>
+            <sourceReference>
+                <reference value="Library/OpioidCDSREC02"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #3"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #3"/>
+            <sourceReference>
+                <reference value="Library/OpioidCDSREC03"/>
             </sourceReference>
         </resource>
         <resource>
@@ -682,7 +1034,15 @@
             <name value="Library - Opioid CDS Recommendation #4"/>
             <description value="Opioid Management Decision Support Logic for recommendation #4"/>
             <sourceReference>
-                <reference value="Library/library-OpioidCDSREC04"/>
+                <reference value="Library/OpioidCDSREC04"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #4 Patient View"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #4 Patient View"/>
+            <sourceReference>
+                <reference value="Library/OpioidCDSREC04PatientView"/>
             </sourceReference>
         </resource>
         <resource>
@@ -690,7 +1050,15 @@
             <name value="Library - Opioid CDS Recommendation #5"/>
             <description value="Opioid Management Decision Support Logic for recommendation #5"/>
             <sourceReference>
-                <reference value="Library/library-OpioidCDSREC05"/>
+                <reference value="Library/OpioidCDSREC05"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #6"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #6"/>
+            <sourceReference>
+                <reference value="Library/OpioidCDSREC06"/>
             </sourceReference>
         </resource>
         <resource>
@@ -698,7 +1066,7 @@
             <name value="Library - Opioid CDS Recommendation #7"/>
             <description value="Opioid Management Decision Support Logic for recommendation #7"/>
             <sourceReference>
-                <reference value="Library/library-OpioidCDSREC07"/>
+                <reference value="Library/OpioidCDSREC07"/>
             </sourceReference>
         </resource>
         <resource>
@@ -706,7 +1074,15 @@
             <name value="Library - Opioid CDS Recommendation #8"/>
             <description value="Opioid Management Decision Support Logic for recommendation #8"/>
             <sourceReference>
-                <reference value="Library/library-OpioidCDSREC08"/>
+                <reference value="Library/OpioidCDSREC08"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #9"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #9"/>
+            <sourceReference>
+                <reference value="Library/OpioidCDSREC09"/>
             </sourceReference>
         </resource>
         <resource>
@@ -714,7 +1090,7 @@
             <name value="Library - Opioid CDS Recommendation #10"/>
             <description value="Opioid Management Decision Support Logic for recommendation #10"/>
             <sourceReference>
-                <reference value="Library/library-OpioidCDSREC10"/>
+                <reference value="Library/OpioidCDSREC10"/>
             </sourceReference>
         </resource>
         <resource>
@@ -722,7 +1098,7 @@
             <name value="Library - Opioid CDS Recommendation #10 Patient View"/>
             <description value="Opioid Management Decision Support Logic for recommendation #10 Patient View"/>
             <sourceReference>
-                <reference value="Library/library-OpioidCDSREC10PatientView"/>
+                <reference value="Library/OpioidCDSREC10PatientView"/>
             </sourceReference>
         </resource>
         <resource>
@@ -730,7 +1106,7 @@
             <name value="Library - Opioid CDS Recommendation #11"/>
             <description value="Opioid Management Decision Support Logic for recommendation #11"/>
             <sourceReference>
-                <reference value="Library/library-OpioidCDSREC11"/>
+                <reference value="Library/OpioidCDSREC11"/>
             </sourceReference>
         </resource>
         <resource>
@@ -738,9 +1114,18 @@
             <name value="Library - Opioid CDS Recommendation #11 Patient View"/>
             <description value="Opioid Management Decision Support Logic for recommendation #11 Patient View"/>
             <sourceReference>
-                <reference value="Library/library-OpioidCDSREC11PatientView"/>
+                <reference value="Library/OpioidCDSREC11PatientView"/>
             </sourceReference>
         </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Library - Opioid CDS Recommendation #12 Patient View"/>
+            <description value="Opioid Management Decision Support Logic for recommendation #12 Patient View"/>
+            <sourceReference>
+                <reference value="Library/OpioidCDSREC12PatientView"/>
+            </sourceReference>
+        </resource>
+
         <resource>
             <example value="true"/>
             <name value="MedicationRequest - CDC Opioid Prescribing Guideline Recommendation #5"/>
@@ -765,12 +1150,22 @@
                 <reference value="Patient/example-opioidcds"/>
             </sourceReference>
         </resource>
+
+        <!-- PlanDefinition -->
         <resource>
             <example value="true"/>
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #4"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-04"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4 Patient View"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #4 Patient View"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-04-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
@@ -799,10 +1194,26 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #8 Order Sign"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #8 Order Sign"/>
+            <sourceReference>
+                <reference value="PlanDefinition/OpioidCDSREC08OrderSign"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-10"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 Order Sign"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10 Order Sign"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-10-order-sign"/>
             </sourceReference>
         </resource>
         <resource>
@@ -829,6 +1240,15 @@
                 <reference value="PlanDefinition/opioidcds-11-patient-view"/>
             </sourceReference>
         </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #12 Patient View"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #12 Patient View"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-12-patient-view"/>
+            </sourceReference>
+        </resource>
+
         <resource>
             <example value="true"/>
             <name value="RequestGroup - CDC Opioid Prescribing Guideline Example for Recommendation #5"/>
@@ -860,53 +1280,93 @@
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Malignant Cancer Conditions"/>
             <description value="Malignant cancer Condition codes"/>
             <sourceReference>
-                <reference value="ValueSet/cdc-malignant-cancer-conditions-enum"/>
+                <reference value="ValueSet/cdc-malignant-cancer-conditions"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Likey Terminal for Opioid Prescribing"/>
+            <name value="ValueSet - Cocaine urine drug screening tests"/>
+            <description value="Urine tests for cocaine and cocaine metabolites"/>
+            <sourceReference>
+                <reference value="ValueSet/cocaine-urine-drug-screening-tests"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Documenting Substance Misuse"/>
+            <description value="Conditions that indicate problematic misuse of a substance other than tobacco"/>
+            <sourceReference>
+                <reference value="ValueSet/conditions-documenting-substance-misuse"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - Condition Clinical Status Active"/>
+            <description value="The subject is currently experiencing the condition or situation, there is evidence of the condition or situation, or considered to be a significant risk."/>
+            <sourceReference>
+                <reference value="ValueSet/condition-clinical-status-active"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - Medication Request Category Community"/>
+            <description value="Includes requests for medications to be administered or consumed by the patient in their home (this would include long term care or nursing homes, hospices, etc.)."/>
+            <sourceReference>
+                <reference value="ValueSet/medicationrequest-category-community"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - Medication Request Status Active"/>
+            <description value="The prescription is 'actionable', but not all actions that are implied by it have occurred yet."/>
+            <sourceReference>
+                <reference value="ValueSet/medicationrequest-status-active"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Likely Terminal for Opioid Prescribing"/>
             <description value="Condition that are likely terminal for opioid prescribing codes"/>
             <sourceReference>
-                <reference value="ValueSet/conditions-likely-terminal-for-opioid-prescribing-enum"/>
+                <reference value="ValueSet/conditions-likely-terminal-for-opioid-prescribing"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Discharge to Hospice"/>
-            <description value="Hospice encounter discharge disposition codes"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Encounter Diagnosis Category"/>
+            <description value="Encounter Diagnosis Condition Category"/>
             <sourceReference>
-                <reference value="ValueSet/discharge-to-hospice"/>
+                <reference value="ValueSet/condition-category-encounter-diagnosis"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines End Of Life Care"/>
-            <description value="End of life care procedure codes"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Problem List Category"/>
+            <description value="Problem List Condition Category"/>
             <sourceReference>
-                <reference value="ValueSet/end-of-life-care"/>
+                <reference value="ValueSet/condition-problem-list-category"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines End Of Life Conditions"/>
-            <description value="End of life condition codes"/>
+            <name value="ValueSet - US Core Health Concern Condition Category"/>
+            <description value="US Core Health Concern Condition Category"/>
             <sourceReference>
-                <reference value="ValueSet/end-of-life-conditions"/>
+                <reference value="ValueSet/condition-us-core-health-concern-category"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Extended Release Opioids with Ambulatory Misuse Potential Medications"/>
-            <description value="Opioids with ambulatory misuse potential medication codes"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Extended Release Opioid with Ambulatory Misuse Potential Medications"/>
+            <description value="Opioid with ambulatory misuse potential medication codes"/>
             <sourceReference>
-                <reference value="ValueSet/extended-release-opioids-with-ambulatory-misuse-potential"/>
+                <reference value="ValueSet/extended-release-opioid-with-ambulatory-misuse-potential"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Hospice Disposition"/>
-            <description value="Hospice disposition finding codes"/>
+            <description value="Hospice disposition codes"/>
             <sourceReference>
                 <reference value="ValueSet/hospice-disposition"/>
             </sourceReference>
@@ -914,7 +1374,7 @@
         <resource>
             <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Hospice Finding"/>
-            <description value="Hospice observation finding codes"/>
+            <description value="Hospice finding codes"/>
             <sourceReference>
                 <reference value="ValueSet/hospice-finding"/>
             </sourceReference>
@@ -927,36 +1387,12 @@
                 <reference value="ValueSet/hospice-procedure"/>
             </sourceReference>
         </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Limited Life Expectancy Conditions - Enumerated"/>
-            <description value="Limited life expectancy condition codes enumerated"/>
-            <sourceReference>
-                <reference value="ValueSet/limited-life-expectancy-conditions-enum"/>
-            </sourceReference>
-        </resource>
-        <resource>
+         <resource>
             <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Limited Life Expectancy Conditions"/>
             <description value="Limited life expectancy condition codes"/>
             <sourceReference>
                 <reference value="ValueSet/limited-life-expectancy-conditions"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Long Acting Opioid Medication"/>
-            <description value="Long acting opioid medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/long-acting-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Metastatic Cancer"/>
-            <description value="Metastatic cancer codes"/>
-            <sourceReference>
-                <reference value="ValueSet/metastatic-cancer"/>
             </sourceReference>
         </resource>
         <resource>
@@ -969,18 +1405,34 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Naloxone Medication"/>
-            <description value="Naloxone medication codes"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Non Opioid Drug Urine Screening"/>
+            <description value="Urine analysis for non opioid drugs"/>
             <sourceReference>
-                <reference value="ValueSet/naloxone"/>
+                <reference value="ValueSet/non-opioid-drug-urine-screening"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Non Opioid Illicit Drugs Urine Screening"/>
-            <description value="Urine analysis for non opioid illicit drugs"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines non-synthetic opioid clinical drugs"/>
+            <description value="Non-synthetic opioid clinical drugs"/>
             <sourceReference>
-                <reference value="ValueSet/non-opioid-illicit-drug-urine-screening"/>
+                <reference value="ValueSet/non-synthetic-opioids"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - Observation Category Laboratory"/>
+            <description value="Observation laboratory codes"/>
+            <sourceReference>
+                <reference value="ValueSet/observation-category-laboratory"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - Observation Category Procedure"/>
+            <description value="Observation procedure codes"/>
+            <sourceReference>
+                <reference value="ValueSet/observation-category-procedure"/>
             </sourceReference>
         </resource>
         <resource>
@@ -996,15 +1448,7 @@
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Oncology Specialty Designation"/>
             <description value="Oncology specialty designation codes"/>
             <sourceReference>
-                <reference value="ValueSet/oncology-specialty-designation-enum"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Abuse Assessment"/>
-            <description value="Opiate therapy risk assessment codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioid-abuse-assessment"/>
+                <reference value="ValueSet/oncology-specialty-designations"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1017,7 +1461,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Counseling Procedure "/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Counseling Procedure"/>
             <description value="Opioid counseling procedure codes"/>
             <sourceReference>
                 <reference value="ValueSet/opioid-counseling-procedure"/>
@@ -1044,31 +1488,7 @@
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Misuse Disorders"/>
             <description value="Opioid misuse disorder codes"/>
             <sourceReference>
-                <reference value="ValueSet/opioid-misuse-disorders-enum"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Indicator"/>
-            <description value="Indicates urgency/importance of the action"/>
-            <sourceReference>
-                <reference value="ValueSet/opioidcds-indicator"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioids Abused in Ambulatory Care Medication"/>
-            <description value="Opioids abused in ambulatory care medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioids-abused-in-ambulatory-care"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Medication"/>
-            <description value="Opioid medication codes"/>
-            <sourceReference>
-                <reference value="ValueSet/opioids"/>
+                <reference value="ValueSet/opioid-misuse-disorders"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1105,18 +1525,10 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Short Acting Opioids Medication"/>
-            <description value="Short acting opioids medication codes"/>
+            <name value="ValueSet - Phencyclidine urine drug screening tests"/>
+            <description value="Urine tests for phencyclidine"/>
             <sourceReference>
-                <reference value="ValueSet/short-acting-opioids"/>
-            </sourceReference>
-        </resource>
-        <resource>
-            <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Substance Abuse"/>
-            <description value="Substance abuse codes"/>
-            <sourceReference>
-                <reference value="ValueSet/substance-abuse"/>
+                <reference value="ValueSet/phencyclidine-urine-drug-screening-tests"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1124,7 +1536,7 @@
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Substance Misuse Behavioral Counseling"/>
             <description value="Substance misuse behavioral counseling codes"/>
             <sourceReference>
-                <reference value="ValueSet/substance-misuse-behavioral-counseling-enum"/>
+                <reference value="ValueSet/substance-misuse-behavioral-counseling"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1132,7 +1544,15 @@
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Therapies Indicating End of Life Care"/>
             <description value="Therapies indication end of life care codes"/>
             <sourceReference>
-                <reference value="ValueSet/therapies-indicating-end-of-life-care-enum"/>
+                <reference value="ValueSet/therapies-indicating-end-of-life-care"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Urine drug screening tests"/>
+            <description value="Individual tests and panels of tests of urine for drugs of misuse"/>
+            <sourceReference>
+                <reference value="ValueSet/urine-drug-screening-tests"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1159,6 +1579,53 @@
                 <reference value="StructureDefinition/cdc-valueset-exclusion"/>
             </sourceReference>
         </resource>
+        <resource>
+            <example value="true"/>
+            <name value="Extension - Data Date Roller"/>
+            <description value="Extension for parameters to the Data Data Roller tooling."/>
+            <sourceReference>
+                <reference value="StructureDefinition/dataDateRoller"/>
+            </sourceReference>
+        </resource>
+        <!--
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC04-bundle"/>
+                    </sourceReference>
+                </resource>
+
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC10"/>
+                    </sourceReference>
+                </resource>
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC10PatientView"/>
+                    </sourceReference>
+                </resource>
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC11"/>
+                    </sourceReference>
+                </resource>
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC11PatientView"/>
+                    </sourceReference>
+                </resource>
+                <resource>
+                    <example value="true"/>
+                    <sourceReference>
+                        <reference value="Bundle/OpioidCDSREC12PatientView"/>
+                    </sourceReference>
+                </resource>
+        -->
     </package>
     <binary value="cql/OMTKData2018.cql"/>
     <binary value="cql/OMTKData2019.cql"/>

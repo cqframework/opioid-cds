@@ -1,10 +1,11 @@
-library OpioidCDSREC04PatientView version '1.2.2'
+library OpioidCDSREC04PatientView version '1.2.3'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDSCommon version '1.2.2' called Common
-include OpioidCDSRoutines version '1.2.2' called Routines
+include OpioidCDSCommon version '1.2.3' called Common
+include OpioidCDSRoutines version '1.2.3' called Routines
+include OpioidCDSCommonConfig version '1.2.3' called Config
 
 /*
 **
@@ -34,12 +35,6 @@ include OpioidCDSRoutines version '1.2.2' called Routines
 
 context Patient
 
-define "Inclusion Period":
-  Interval[Today() - 91 days, Today() - 1 days]
-
-define "Encounter Period":
-  Interval[Today() - 12 months - 1 days, Today() - 1 days]
-
 define "Chronic Pain Extended Release Opioid Analgesic with Ambulatory Misuse Potential Prescriptions":
   Common."Active Ambulatory Opioid Rx" AmbulatoryOpioidPrescription
     where Routines."Is Chronic Pain Prescription?"(AmbulatoryOpioidPrescription)
@@ -52,8 +47,15 @@ define "Is Recommendation Applicable?":
   "Inclusion Criteria"
     and not "Exclusion Criteria"
 
+define "Patient Age Less Than 18":
+  if (Config."Age Less than 18 Years Is Enabled") then
+    AgeInYearsAt(Today()) < 18
+  else
+    false
+
 define "Inclusion Criteria":
   "Patient Is Being Prescribed Extended Release Opioid Analgesic with Ambulatory Misuse Potential"
+    and not "Patient Age Less Than 18"
     and Routines."Is Opioid Review Useful?"
     and Routines."Is Opioid Naive?"
 
@@ -72,5 +74,26 @@ define "Get Summary":
 
 define "Get Detail":
   if "Is Recommendation Applicable?"
-    then 'The following medication requests(s) release rates should be re-evaluated: ' + Combine(flatten(Common.GetMedicationNames("Chronic Pain Extended Release Opioid Analgesic with Ambulatory Misuse Potential Prescriptions")), ', ')
+    then 'The following medication requests(s) release rates should be re-evaluated: '
+      + Combine(("Chronic Pain Extended Release Opioid Analgesic with Ambulatory Misuse Potential Prescriptions" M
+          return Coalesce(M.medication.text, '<Unable to determine medication name>')), ', ')
   else null
+
+  // Detected Issue - Prescribe immediate-release opioids instead of extended-release/long-acting (ER/LA) opioids
+
+  define "Extended Release Opioid Prescription Issue":
+    DetectedIssue {
+      //identifier:,
+      status: FHIR.ObservationStatus { value: 'preliminary' },
+      category: FHIR.CodeableConcept { text: FHIR.string { value: "Get Summary" } },
+      severity: FHIR.DetectedIssueSeverity { value: 'moderate' },
+      patient: FHIR.Reference { reference: FHIR.string { value: 'Patient/' + Patient.id } },
+      date: FHIR.dateTime { value: Now() },
+      // TODO: Device representation...
+      // author:,
+      implicated:
+        ("Chronic Pain Extended Release Opioid Analgesic with Ambulatory Misuse Potential Prescriptions") M
+          return FHIR.Reference { reference: FHIR.string { value: 'MedicationRequest/' + M.id } },
+      detail: FHIR.string { value: "Get Detail" },
+      reference: FHIR.uri { value: 'http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-04-patient-view'}
+    }

@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "id": "condition-categories",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-categories",
+  "name": "Valueset_condition_categories",
+  "version": "0.0.1",
+  "title": "ValueSet - Condition Categories",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Alphora",
+  "description": "US Core condition categories.",
+  "expansion": {
+    "timestamp": "2021-05-18T13:47:55-07:00",
+    "contains": [
+      {
+        "system": "http://hl7.org/fhir/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      },
+      {
+        "system": "http://hl7.org/fhir/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      },
+      {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      }
+    ]
+  }
+}

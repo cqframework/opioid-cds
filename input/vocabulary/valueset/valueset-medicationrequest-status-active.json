@@ -1,0 +1,23 @@
+{
+  "resourceType": "ValueSet",
+  "id": "medicationrequest-status-active",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/medicationrequest-status-active",
+  "name": "Valueset_medicationrequest_status_active",
+  "version": "0.0.1",
+  "title": "ValueSet - Medication Request Status Active",
+  "status": "active",
+  "experimental": true,
+  "publisher": "Alphora",
+  "description": "The prescription is 'actionable', but not all actions that are implied by it have occurred yet.",
+  "expansion": {
+    "identifier": "medicationrequest-status-active-valueset-expansion",
+    "timestamp": "2021-05-19T13:47:55-07:00",
+    "contains": [
+      {
+        "system": "http://hl7.org/fhir/medication-request-status",
+        "code": "active",
+        "display": "Active"
+      }
+    ]
+  }
+}

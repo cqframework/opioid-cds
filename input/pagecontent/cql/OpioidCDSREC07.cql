@@ -1,10 +1,11 @@
-library OpioidCDSREC07 version '1.2.2'
+library OpioidCDSREC07 version '1.2.3'
 
 using FHIR version '3.0.0'
 
 include FHIRHelpers version '3.0.0' called FHIRHelpers
-include OpioidCDSCommon version '1.2.2' called Common
-include OpioidCDSRoutines version '1.2.2' called Routines
+include OpioidCDSCommon version '1.2.3' called Common
+include OpioidCDSRoutines version '1.2.3' called Routines
+include OpioidCDSCommonConfig version '1.2.3' called Config
 
 /*
 **
@@ -61,8 +62,15 @@ define "Is Recommendation Applicable?":
   "Inclusion Criteria"
     and not "Exclusion Criteria"
 
+define "Patient Age Less Than 18":
+  if (Config."Age Less than 18 Years Is Enabled") then
+    AgeInYearsAt(Today()) < 18
+  else
+    false
+
 define "Inclusion Criteria":
   "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential"
+    and not "Patient Age Less Than 18"
     and Routines."Is Opioid Review Useful?"
     and not exists ( "Opioid Risk Assessment in Past 90 Days" )
     and (
@@ -80,7 +88,7 @@ define "Opioid Risk Assessment in Past 90 Days":
 define "Prescribed Opioids for 7 of Past 10 Days with an Encounter":
   Common."Days on Opioids during Period"("Previous 10 Days Interval") >= 7
     and exists (
-      [Encounter: Common."Office Visit"] AmbulatoryEncounter
+      Routines."Ambulatory Encounters" AmbulatoryEncounter
         where AmbulatoryEncounter.period during "Encounter Interval"
     )
 

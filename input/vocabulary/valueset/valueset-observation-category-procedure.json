@@ -1,0 +1,23 @@
+{
+  "resourceType": "ValueSet",
+  "id": "observation-category-procedure",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-procedure",
+  "name": "Valueset_observation-category-procedure",
+  "version": "0.0.1",
+  "title": "ValueSet - Observation Category Procedure",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Alphora",
+  "description": "Procedure Observation Category",
+  "expansion": {
+    "identifier": "observation-category-procedure-valueset-expansion",
+    "timestamp": "2021-06-08T13:47:55-07:00",
+    "contains": [
+      {
+        "system": "http://hl7.org/fhir/observation-category",
+        "code": "procedure",
+        "display": "Procedure"
+      }
+    ]
+  }
+}

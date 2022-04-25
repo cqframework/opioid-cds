@@ -1,0 +1,23 @@
+{
+  "resourceType": "ValueSet",
+  "id": "condition-us-core-health-concern-category",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-us-core-health-concern-category",
+  "name": "Valueset_US_Core_health-concern-condition_category",
+  "version": "0.0.1",
+  "title": "ValueSet - US Core Health Concern Condition Category",
+  "status": "active",
+  "experimental": false,
+  "publisher": "Alphora",
+  "description": "US Core Health Concern Condition Category.",
+  "expansion": {
+    "timestamp": "2021-06-02T13:47:55-07:00",
+    "identifier": "condition-us-core-health-concern-category-valueset-expansion",
+    "contains": [
+      {
+        "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+        "code": "health-concern",
+        "display": "Health Concern"
+      }
+    ]
+  }
+}

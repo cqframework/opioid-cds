@@ -2,8 +2,8 @@
   "resourceType": "PlanDefinition",
   "id": "opioidcds-04-patient-view",
   "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-04-patient-view",
-  "version": "1.2.2",
-  "name": "PlanDefinition_Recommendation_4",
+  "version": "1.2.3",
+  "name": "PlanDefinition_Recommendation_04_Patient_View",
   "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4 (patient-view)",
   "type": {
     "coding": [
@@ -90,51 +90,11 @@
   "copyright": "© CDC 2016+.",
   "library": [
     {
-      "reference": "Library/library-OpioidCDSREC04PatientView"
+      "reference": "Library/OpioidCDSREC04PatientView"
     }
   ],
   "action": [
     {
-      "title": "Extended-release opioid prescription triggered.",
-      "description": "Checking if the trigger prescription meets the inclusion criteria for recommendation #4 workflow.",
-      "documentation": [
-        {
-          "type": "documentation",
-          "display": "CDC guideline for prescribing opioids for chronic pain",
-          "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
-        },
-        {
-          "type": "documentation",
-          "document": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/recommendation-strength",
-                      "code": "strong",
-                      "display": "Strong"
-                    }
-                  ]
-                }
-              },
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/evidence-quality",
-                      "code": "very-low",
-                      "display": "Very Low quality"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        }
-      ],
       "triggerDefinition": [
         {
           "type": "named-event",
@@ -144,36 +104,90 @@
       "condition": [
         {
           "kind": "applicability",
-          "description": "Check whether the opioid prescription for the existing patient is extended-release without any opioids-with-abuse-potential prescribed in the past 90 days.",
           "language": "text/cql",
           "expression": "Inclusion Criteria"
         }
       ],
-      "groupingBehavior": "visual-group",
-      "selectionBehavior": "exactly-one",
-      "dynamicValue": [
-        {
-          "path": "action.title",
-          "expression": "Get Summary"
-        },
-        {
-          "path": "action.description",
-          "expression": "Get Detail"
-        },
-        {
-          "path": "activity.extension",
-          "expression": "Get Indicator"
-        }
-      ],
       "action": [
         {
-          "description": "Will precribe immediate release"
-        },
-        {
-          "description": "Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo"
-        },
-        {
-          "description": "N/A - see comment; snooze 3 mo"
+          "title": "Extended-release opioid prescription triggered.",
+          "description": "Checking if the trigger prescription meets the inclusion criteria for recommendation #4 workflow.",
+          "documentation": [
+            {
+              "type": "documentation",
+              "document": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://hl7.org/fhir/recommendation-strength",
+                          "code": "strong",
+                          "display": "Strong"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://hl7.org/fhir/evidence-quality",
+                          "code": "very-low",
+                          "display": "Very Low quality"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
+                "title": "CDC guideline for prescribing opioids for chronic pain"
+              }
+            }
+          ],
+          "triggerDefinition": [
+            {
+              "type": "named-event",
+              "eventName": "patient-view"
+            }
+          ],
+          "condition": [
+            {
+              "kind": "applicability",
+              "description": "Check whether the opioid prescription for the existing patient is extended-release without any opioids-with-abuse-potential prescribed in the past 90 days.",
+              "language": "text/cql",
+              "expression": "Is Recommendation Applicable?"
+            }
+          ],
+          "groupingBehavior": "visual-group",
+          "selectionBehavior": "any",
+          "dynamicValue": [
+            {
+              "path": "action.title",
+              "expression": "Get Summary"
+            },
+            {
+              "path": "action.description",
+              "expression": "Get Detail"
+            },
+            {
+              "path": "activity.extension",
+              "expression": "Get Indicator"
+            }
+          ],
+          "action": [
+            {
+              "description": "Will precribe immediate release"
+            },
+            {
+              "description": "Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo"
+            },
+            {
+              "description": "N/A - see comment; snooze 3 mo"
+            }
+          ]
         }
       ]
     }

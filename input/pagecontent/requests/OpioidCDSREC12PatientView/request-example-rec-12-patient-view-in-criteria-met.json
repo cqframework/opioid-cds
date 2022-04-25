@@ -1,0 +1,89 @@
+{
+  "hookInstance": "17ff4874-b68a-490c-abaa-b62b1a91b1bd",
+  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "hook": "order-select",
+  "applyCql": true,
+  "context": {
+    "userId": "Practitioner/example",
+    "patientId": "Patient/example-rec-12-criteria-valid"
+  },
+  "prefetch": {
+    "item1": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-rec-12-criteria-valid",
+        "_birthDate": {
+          "extension": [
+            {
+              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
+              "valueString": "Today() - 20 years"
+            }
+          ]
+        }
+      }
+    },
+    "item2": null,
+    "item3": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Condition",
+        "id": "6bf0522c-e143-43e2-af80-47536d52de0c",
+        "clinicalStatus": "active",
+        "verificationStatus": {
+          "code": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/condition-ver-status",
+                "code": "confirmed",
+                "display": "Confirmed"
+              }
+            ]
+          }
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "439401001",
+                "display": "Diagnosis"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/example-rec-12-criteria-valid"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "191865004",
+              "display": "Combined opioid with other drug dependence"
+            }
+          ]
+        },
+        "_assertedDate": {
+          "extension": [
+            {
+              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
+              "valueString": "Today() - 60 days"
+            }
+          ]
+        }
+      }
+    },
+    "item4": null,
+    "item5": null
+  }
+}

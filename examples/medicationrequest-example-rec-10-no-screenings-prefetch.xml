@@ -1,9 +1,23 @@
 <MedicationRequest xmlns="http://hl7.org/fhir">
    <id value="example-rec-10-no-screenings-prefetch"/>
+   <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+     <extension url="dateLastUpdated">
+       <valueDateTime value="2022-04-22" />
+     </extension>
+     <extension url="frequency">
+       <valueDuration>
+         <value value="30.0" />
+         <unit value="days" />
+         <system value="http://unitsofmeasure.org" />
+         <code value="d" />
+       </valueDuration>
+     </extension>
+   </extension>
    <status value="active"/>
    <intent value="order"/>
    <category>
       <coding>
+        <system value="http://hl7.org/fhir/medication-request-category"/>
          <code value="outpatient"/>
       </coding>
    </category>
@@ -20,11 +34,7 @@
    <context>
       <reference value="Encounter/example-rec-10-no-screenings-prefetch"/>
    </context>
-   <authoredOn>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="Today() - 90 days"/>
-      </extension>
-   </authoredOn>
+   <authoredOn value="2022-04-22" />
    <dosageInstruction>
       <timing>
          <repeat>
@@ -41,9 +51,8 @@
    </dosageInstruction>
    <dispenseRequest>
       <validityPeriod>
-         <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-            <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() } }"/>
-         </extension>
+         <start value="2022-01-22" />
+         <end value="2022-04-22" />            
       </validityPeriod>
       <numberOfRepeatsAllowed value="3"/>
       <expectedSupplyDuration>
