@@ -1,9 +1,8 @@
 {
   "hookInstance": "becfdcbd-0f8c-4f01-831c-a20ff695c5b3",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://localhost:8080/fhir",
   "hook": "order-select",
   "user": "Practitioner/example",
-  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-08-on-naloxone",
     "encounterId": "Encounter/example-rec-08-on-naloxone-context",
@@ -36,11 +35,11 @@
         "context": {
           "reference": "Encounter/example-rec-08-on-naloxone-context"
         },
-        "_authoredOn": {
+        "authoredOn": {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "Today()"
+              "valueString": "2022-04-22"
             }
           ]
         },
@@ -64,12 +63,8 @@
         ],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+            "start" : "2022-04-22",
+            "end" : "2022-07-22"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
@@ -115,11 +110,11 @@
         "context": {
           "reference": "Encounter/example-rec-08-on-naloxone-prefetch"
         },
-        "_authoredOn": {
+        "authoredOn": {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "Today() - 14 days"
+              "valueString": "2022-04-08"
             }
           ]
         },
@@ -141,12 +136,8 @@
         ],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+            "start" : "2022-04-08",
+            "end" : "2022-07-22"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
@@ -170,12 +161,8 @@
           "reference": "Patient/example-rec-08-on-naloxone"
         },
         "period": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() - 14 days } }"
-            }
-          ]
+          "start" : "2022-04-08",
+          "end" : "2022-04-08"
         }
       }
     },

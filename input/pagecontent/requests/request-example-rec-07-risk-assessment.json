@@ -1,9 +1,8 @@
 {
   "hookInstance": "f4a85598-bc39-4c4f-a944-c876eb0e984e",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://localhost:8080/fhir",
   "hook": "order-select",
   "user": "Practitioner/example",
-  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-07-risk-assessment",
     "encounterId": "Encounter/example-rec-07-risk-assessment-context",
@@ -36,11 +35,11 @@
         "context": {
           "reference": "Encounter/example-rec-07-risk-assessment-context"
         },
-        "_authoredOn": {
+        "authoredOn": {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "Today()"
+              "valueString": "2022-04-22"
             }
           ]
         },
@@ -64,12 +63,8 @@
         ],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+            "start" : "2022-04-22",
+            "end" : "2022-07-22"
           },
           "numberOfRepeatsAllowed": 1,
           "expectedSupplyDuration": {
@@ -96,12 +91,8 @@
           "reference": "Patient/example-rec-07-risk-assessment"
         },
         "period": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() - 14 days } }"
-            }
-          ]
+          "start" : "2022-04-08",
+          "end" : "2022-04-08"
         }
       }
     },
@@ -140,12 +131,8 @@
           "reference": "Encounter/example-rec-07-risk-assessment-prefetch"
         },
         "performedPeriod": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() - 14 days } }"
-            }
-          ]
+          "start" : "2022-04-08",
+          "end" : "2022-04-08"
         }
       }
     },

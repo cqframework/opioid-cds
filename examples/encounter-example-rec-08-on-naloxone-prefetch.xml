@@ -5,8 +5,7 @@
       <reference value="Patient/example-rec-08-on-naloxone"/>
    </subject>
    <period>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 2 weeks }, end: FHIR.dateTime { value: Today() - 2 weeks } }"/>
-      </extension>
+                  <start>2022-04-11</start>
+                  <end>2022-04-11</end>
    </period>
 </Encounter>

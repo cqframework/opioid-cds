@@ -1,8 +1,7 @@
 {
   "hookInstance": "49192bd1-f7f3-4bdd-bc5f-997dd59a950a",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://localhost:8080/fhir",
   "hook": "patient-view",
-  "applyCql": true,
   "context": {
     "user": "Practitioner/example",
     "patientId": "Patient/example-rec-11-patient-view-opioid-trigger-without-benzo",
@@ -52,11 +51,11 @@
         "context": {
           "reference": "Encounter/example-rec-11-patient-view-opioid-trigger-without-benzo-context"
         },
-        "_authoredOn": {
+        "authoredOn": {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "Today()"
+              "valueString": "2022-04-22"
             }
           ]
         },
@@ -80,12 +79,8 @@
         ],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+            "start" : "2022-04-22",
+            "end" : "2022-07-22"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {

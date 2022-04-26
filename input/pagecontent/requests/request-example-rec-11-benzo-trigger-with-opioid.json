@@ -1,9 +1,8 @@
 {
   "hookInstance": "b266185d-c26a-40dd-a024-70b5b6222170",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://localhost:8080/fhir",
   "hook": "order-select",
   "user": "Practitioner/example",
-  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-11-benzo-trigger-with-opioid",
     "encounterId": "Encounter/example-rec-11-benzo-trigger-with-opioid-context",
@@ -40,11 +39,11 @@
                "context": {
                  "reference": "Encounter/example-rec-11-benzo-trigger-with-opioid-context"
                },
-               "_authoredOn": {
+               "authoredOn": {
                  "extension": [
                    {
                      "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                     "valueString": "Today()"
+                     "valueString": "2022-04-22"
                    }
                  ]
                },
@@ -66,12 +65,8 @@
                ],
                "dispenseRequest": {
                  "validityPeriod": {
-                   "extension": [
-                     {
-                       "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                       "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-                     }
-                   ]
+                  "start" : "2022-04-22",
+                  "end" : "2022-07-22"
                  },
                  "numberOfRepeatsAllowed": 3,
                  "expectedSupplyDuration": {
@@ -130,11 +125,11 @@
         "context": {
           "reference": "Encounter/example-rec-11-benzo-trigger-with-opioid-prefetch"
         },
-        "_authoredOn": {
+        "authoredOn": {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "Today() - 28 days"
+              "valueString": "2022-03-25"
             }
           ]
         },
@@ -158,12 +153,8 @@
         ],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 28 days }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+            "start" : "2022-03-25",
+            "end" : "2022-07-22"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
@@ -187,12 +178,8 @@
           "reference": "Patient/example-rec-11-benzo-trigger-with-opioid"
         },
         "period": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 28 days }, end: FHIR.dateTime { value: Today() - 28 days } }"
-            }
-          ]
+          "start" : "2022-03-25",
+          "end" : "2022-03-25"
         }
       }
     }

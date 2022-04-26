@@ -1,9 +1,8 @@
 {
   "hookInstance": "a172a2ce-38e7-4a21-a411-522cf481d5d1",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://localhost:8080/fhir",
   "hook": "order-select",
   "user": "Practitioner/example",
-  "applyCql": true,
   "context": {
     "userId": "Practitioner/123",
     "patientId": "Patient/example-rec-10-no-screenings",
@@ -36,10 +35,10 @@
           "context": {
             "reference": "Encounter/example-rec-10-no-screenings-context"
           },
-          "_authoredOn": {
+          "authoredOn": {
             "extension": [{
               "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "Today()"
+              "valueString": "2022-04-22"
             }]
           },
           "dosageInstruction": [{
@@ -60,10 +59,8 @@
           }],
           "dispenseRequest": {
             "validityPeriod": {
-              "extension": [{
-                "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }]
+              "start" : "2022-04-22",
+              "end" : "2022-07-22"
             },
             "numberOfRepeatsAllowed": 3,
             "expectedSupplyDuration": {
@@ -117,10 +114,10 @@
         "context": {
           "reference": "Encounter/example-rec-10-no-screenings-prefetch"
         },
-        "_authoredOn": {
+        "authoredOn": {
           "extension": [{
             "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-            "valueString": "Today() - 90 days"
+            "valueString": "2022-01-22"
           }]
         },
         "dosageInstruction": [{
@@ -141,10 +138,8 @@
         }],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [{
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() } }"
-            }]
+            "start" : "2022-01-22",
+            "end" : "2022-04-22"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
@@ -168,10 +163,8 @@
           "reference": "Patient/example-rec-10-no-screenings"
         },
         "period": {
-          "extension": [{
-            "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-            "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() - 90 days } }"
-          }]
+          "start" : "2022-01-22",
+          "end" : "2022-01-22"
         }
       }
     }

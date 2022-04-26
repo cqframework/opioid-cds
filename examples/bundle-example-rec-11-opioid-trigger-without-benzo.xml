@@ -2,7 +2,7 @@
    <id value="example-rec-11-opioid-trigger-without-benzo"/>
    <type value="transaction"/>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Patient/example-rec-11-opioid-trigger-without-benzo"/>
+      <fullUrl value="http://measure.eval.kanvix.com/fhir/Patient/example-rec-11-opioid-trigger-without-benzo"/>
       <resource>
          <Patient xmlns="http://hl7.org/fhir">
             <id value="example-rec-11-opioid-trigger-without-benzo"/>
@@ -12,11 +12,11 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Patient/example-rec-11-opioid-trigger-without-benzo"/>
+         <url value="http://measure.eval.kanvix.com/fhir/Patient/example-rec-11-opioid-trigger-without-benzo"/>
       </request>
    </entry>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Encounter/example-rec-11-opioid-trigger-without-benzo-context"/>
+      <fullUrl value="http://measure.eval.kanvix.com/fhir/Encounter/example-rec-11-opioid-trigger-without-benzo-context"/>
       <resource>
          <Encounter xmlns="http://hl7.org/fhir">
             <id value="example-rec-11-opioid-trigger-without-benzo-context"/>
@@ -25,15 +25,14 @@
                <reference value="Patient/example-rec-11-opioid-trigger-without-benzo"/>
             </subject>
             <period>
-               <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-                  <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() } }"/>
-               </extension>
+                  <start>2022-04-25</start>
+                  <end>2022-04-25</end>
             </period>
          </Encounter>
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/cqf-ruler-dstu3/fhir/Encounter/example-rec-11-opioid-trigger-without-benzo-context"/>
+         <url value="http://measure.eval.kanvix.com/fhir/Encounter/example-rec-11-opioid-trigger-without-benzo-context"/>
       </request>
    </entry>
 </Bundle>

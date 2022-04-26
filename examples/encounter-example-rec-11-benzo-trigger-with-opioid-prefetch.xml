@@ -5,8 +5,7 @@
       <reference value="Patient/example-rec-11-benzo-trigger-with-opioid"/>
    </subject>
    <period>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 4 weeks }, end: FHIR.dateTime { value: Today() - 4 weeks } }"/>
-      </extension>
+                  <start>2022-03-28</start>
+                  <end>2022-03-28</end>
    </period>
 </Encounter>

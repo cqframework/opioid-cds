@@ -5,8 +5,7 @@
       <reference value="Patient/example-rec-07-end-of-life-exclusion"/>
    </subject>
    <period>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 6 weeks }, end: FHIR.dateTime { value: Today() - 6 weeks } }"/>
-      </extension>
+                  <start>2022-03-14</start>
+                  <end>2022-03-14</end>
    </period>
 </Encounter>

@@ -22,7 +22,7 @@
    </context>
    <authoredOn>
       <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="Today() - 6 weeks"/>
+         <valueString value="2022-03-14"/>
       </extension>
    </authoredOn>
    <dosageInstruction>
@@ -41,9 +41,8 @@
    </dosageInstruction>
    <dispenseRequest>
       <validityPeriod>
-         <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-            <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 6 weeks }, end: FHIR.dateTime { value: Today() + 6 weeks } }"/>
-         </extension>
+                  <start>2022-03-14</start>
+                  <end>2022-06-06</end>
       </validityPeriod>
       <numberOfRepeatsAllowed value="3"/>
       <expectedSupplyDuration>

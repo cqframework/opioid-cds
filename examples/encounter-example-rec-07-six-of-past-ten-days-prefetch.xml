@@ -5,8 +5,7 @@
       <reference value="Patient/example-rec-07-six-of-past-ten-days"/>
    </subject>
    <period>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 10 days }, end: FHIR.dateTime { value: Today() - 10 days } }"/>
-      </extension>
+                  <start>2022-04-15</start>
+                  <end>2022-04-15</end>
    </period>
 </Encounter>
