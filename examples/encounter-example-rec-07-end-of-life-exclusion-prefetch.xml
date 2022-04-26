@@ -5,6 +5,7 @@
       <reference value="Patient/example-rec-07-end-of-life-exclusion"/>
    </subject>
    <period>
-      value= "{start:2022/02/25 end:2022/02/25}"
+      <start>2022-02-25</start>
+      <end>2022-02-25</end>
    </period>
 </Encounter>

@@ -25,7 +25,8 @@
                <reference value="Patient/example-rec-04-patient-view-new-patient"/>
             </subject>
             <period>
-              value= "{start:2022/04/08 end:2022/04/08}"
+              <start>2022-04-08</start> 
+              <end>2022-04-08</end>
             </period>
          </Encounter>
       </resource>

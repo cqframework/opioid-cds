@@ -38,7 +38,8 @@
    </dosageInstruction>
    <dispenseRequest>
       <validityPeriod>
-         value= "{start:2022/03/29 end:2022/04/08}"
+         <start>2022-03-29</start>
+         <end>2022-04-08</end>
       </validityPeriod>
       <numberOfRepeatsAllowed value="1"/>
       <expectedSupplyDuration>
