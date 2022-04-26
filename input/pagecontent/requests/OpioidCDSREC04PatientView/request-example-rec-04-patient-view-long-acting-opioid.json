@@ -17,6 +17,26 @@
       "resource": {
         "resourceType": "Patient",
         "id": "example-rec-04-patient-view-long-acting-opioid",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-08"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "gender": "male",
         "birthDate": "1982-01-07"
       }
@@ -28,6 +48,26 @@
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "example-rec-04-patient-view-long-acting-opioid-prefetch",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-08"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "status": "active",
         "intent": "order",
         "category": {
@@ -105,6 +145,26 @@
       "resource": {
         "resourceType": "Encounter",
         "id": "example-rec-04-patient-view-long-acting-opioid-prefetch",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-08"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "status": "finished",
         "subject": {
           "reference": "Patient/example-rec-04-patient-view-long-acting-opioid"

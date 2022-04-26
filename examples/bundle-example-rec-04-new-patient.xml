@@ -1,5 +1,18 @@
 <Bundle xmlns="http://hl7.org/fhir">
    <id value="example-rec-04-new-patient"/>
+   <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+     <extension url="dateLastUpdated">
+       <valueDateTime value="2022-04-08" />
+     </extension>
+     <extension url="frequency">
+       <valueDuration>
+         <value value="30.0" />
+         <unit value="days" />
+         <system value="http://unitsofmeasure.org" />
+         <code value="d" />
+       </valueDuration>
+     </extension>
+   </extension>
    <type value="transaction"/>
    <entry>
       <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-04-new-patient"/>

@@ -16,6 +16,26 @@
             "resource": {
                 "resourceType": "Patient",
                 "id": "example-rec-06-with-extended-release-for-27-days",
+                "extension": [
+                    {
+                      "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+                      "extension": [
+                        {
+                          "url": "dateLastUpdated",
+                          "valueDateTime": "2022-04-08"
+                        },
+                        {
+                          "url": "frequency",
+                          "valueDuration": {
+                            "value": 30.0,
+                            "unit": "days",
+                            "system": "http://unitsofmeasure.org",
+                            "code": "d"
+                          }
+                        }
+                      ]
+                    }
+                  ],
                 "_birthDate": {
                     "extension": [
                         {

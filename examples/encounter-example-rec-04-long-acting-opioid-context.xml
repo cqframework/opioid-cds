@@ -1,5 +1,18 @@
 <Encounter xmlns="http://hl7.org/fhir">
    <id value="example-rec-04-long-acting-opioid-context"/>
+   <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+     <extension url="dateLastUpdated">
+       <valueDateTime value="2022-04-08" />
+     </extension>
+     <extension url="frequency">
+       <valueDuration>
+         <value value="30.0" />
+         <unit value="days" />
+         <system value="http://unitsofmeasure.org" />
+         <code value="d" />
+       </valueDuration>
+     </extension>
+   </extension>
    <status value="finished"/>
    <subject>
       <reference value="Patient/example-rec-04-long-acting-opioid"/>

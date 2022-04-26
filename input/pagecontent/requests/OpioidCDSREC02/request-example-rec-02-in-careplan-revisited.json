@@ -36,6 +36,26 @@
       "resource": {
         "resourceType": "CarePlan",
         "id": "1446d540-3b44-4af9-934b-3a694d8abffc",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-08"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "meta": {
           "_lastUpdated": {
             "extension": [
