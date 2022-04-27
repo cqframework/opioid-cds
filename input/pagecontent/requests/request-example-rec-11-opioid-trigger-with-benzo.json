@@ -34,10 +34,8 @@
             "reference": "Encounter/example-rec-11-opioid-trigger-with-benzo-context"
           },
           "authoredOn": {
-            "extension": [{
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "2022-04-22"
-            }]
+            "start" : "2022-04-22",
+            "end" : "2022-04-22"
           },
           "dosageInstruction": [{
             "timing": {
@@ -113,10 +111,8 @@
           "reference": "Encounter/example-rec-11-opioid-trigger-with-benzo-prefetch"
         },
         "authoredOn": {
-          "extension": [{
-            "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-            "valueString": "2022-03-25"
-          }]
+          "start" : "2022-03-25",
+          "end" : "2022-03-25"
         },
         "dosageInstruction": [{
           "timing": {

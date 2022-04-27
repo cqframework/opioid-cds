@@ -52,12 +52,8 @@
                 "reference": "Encounter/example-rec-10-patient-view-no-screenings-context"
               },
               "authoredOn": {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                    "valueString": "2022-04-22"
-                  }
-                ]
+                "start" : "2022-04-22",
+                "end" : "2022-04-22"
               },
               "dosageInstruction": [
                 {
@@ -116,13 +112,9 @@
               "context": {
                 "reference": "Encounter/example-rec-10-patient-view-no-screenings-prefetch"
               },
-              "_authoredOn": {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                    "valueString": "2022-01-22"
-                  }
-                ]
+              "authoredOn": {
+                "start" : "2022-01-22",
+                "end" : "2022-01-22"
               },
               "dosageInstruction": [
                 {

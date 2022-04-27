@@ -36,12 +36,8 @@
           "reference": "Encounter/example-rec-07-end-of-life-exclusion-context"
         },
         "authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "2022-04-22"
-            }
-          ]
+          "start" : "2022-04-22",
+          "end" : "2022-04-22" 
         },
         "dosageInstruction": [
           {
@@ -111,12 +107,8 @@
           "reference": "Encounter/example-rec-07-end-of-life-exclusion-prefetch"
         },
         "authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "2022-03-11"
-            }
-          ]
+          "start" : "2022-03-11",
+          "end" : "2022-03-11"
         },
         "dosageInstruction": [
           {

@@ -2,7 +2,7 @@
    <id value="example-rec-07-seven-of-past-ten-days"/>
    <type value="transaction"/>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/fhir/Patient/example-rec-07-seven-of-past-ten-days"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-07-seven-of-past-ten-days"/>
       <resource>
          <Patient xmlns="http://hl7.org/fhir">
             <id value="example-rec-07-seven-of-past-ten-days"/>
@@ -12,11 +12,11 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/fhir/Patient/example-rec-07-seven-of-past-ten-days"/>
+         <url value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-07-seven-of-past-ten-days"/>
       </request>
    </entry>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/fhir/Encounter/example-rec-07-seven-of-past-ten-days-context"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Encounter/example-rec-07-seven-of-past-ten-days-context"/>
       <resource>
          <Encounter xmlns="http://hl7.org/fhir">
             <id value="example-rec-07-seven-of-past-ten-days-context"/>
@@ -32,7 +32,7 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/fhir/Encounter/example-rec-07-seven-of-past-ten-days-context"/>
+         <url value="http://localhost:8080/cqf-ruler-dstu3/fhir/Encounter/example-rec-07-seven-of-past-ten-days-context"/>
       </request>
    </entry>
 </Bundle>

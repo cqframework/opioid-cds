@@ -36,12 +36,8 @@
           "reference": "Encounter/example-rec-08-on-benzodiazepine-context"
         },
         "authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "2022-04-22"
-            }
-          ]
+          "start" : "2022-04-22",
+          "end" : "2022-04-22"
         },
         "dosageInstruction": [
           {
@@ -111,12 +107,8 @@
           "reference": "Encounter/example-rec-08-on-benzodiazepine-prefetch"
         },
         "authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "2022-04-08"
-            }
-          ]
+          "start" : "2022-04-08",
+          "end" : "2022-04-08"
         },
         "dosageInstruction": [
           {

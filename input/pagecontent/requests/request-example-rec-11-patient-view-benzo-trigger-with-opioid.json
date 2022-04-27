@@ -56,12 +56,8 @@
                 "reference": "Encounter/example-rec-11-patient-view-benzo-trigger-with-opioid-context"
               },
               "authoredOn": {
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-                    "valueString": "2022-04-22"
-                  }
-                ]
+                "start" : "2022-04-22",
+                "end" : "2022-04-22"
               },
               "dosageInstruction": [
                 {

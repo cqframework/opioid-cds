@@ -2,7 +2,7 @@
    <id value="example-rec-11-opioid-trigger-without-benzo"/>
    <type value="transaction"/>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/fhir/Patient/example-rec-11-opioid-trigger-without-benzo"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-11-opioid-trigger-without-benzo"/>
       <resource>
          <Patient xmlns="http://hl7.org/fhir">
             <id value="example-rec-11-opioid-trigger-without-benzo"/>
@@ -12,11 +12,11 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/fhir/Patient/example-rec-11-opioid-trigger-without-benzo"/>
+         <url value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-11-opioid-trigger-without-benzo"/>
       </request>
    </entry>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/fhir/Encounter/example-rec-11-opioid-trigger-without-benzo-context"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Encounter/example-rec-11-opioid-trigger-without-benzo-context"/>
       <resource>
          <Encounter xmlns="http://hl7.org/fhir">
             <id value="example-rec-11-opioid-trigger-without-benzo-context"/>
@@ -32,7 +32,7 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/fhir/Encounter/example-rec-11-opioid-trigger-without-benzo-context"/>
+         <url value="http://localhost:8080/cqf-ruler-dstu3/fhir/Encounter/example-rec-11-opioid-trigger-without-benzo-context"/>
       </request>
    </entry>
 </Bundle>

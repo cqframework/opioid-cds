@@ -21,9 +21,8 @@
       <reference value="Encounter/example-rec-08-on-benzodiazepine-prefetch"/>
    </context>
    <authoredOn>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="2022-04-11"/>
-      </extension>
+                  <start>2022-04-11</start>
+                  <end>2022-04-11</end>
    </authoredOn>
    <dosageInstruction>
       <timing>
