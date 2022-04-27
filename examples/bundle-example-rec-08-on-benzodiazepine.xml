@@ -2,7 +2,7 @@
    <id value="example-rec-08-on-benzodiazepine"/>
    <type value="transaction"/>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/fhir/Patient/example-rec-08-on-benzodiazepine"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-08-on-benzodiazepine"/>
       <resource>
          <Patient xmlns="http://hl7.org/fhir">
             <id value="example-rec-08-on-benzodiazepine"/>
@@ -12,14 +12,27 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/fhir/Patient/example-rec-08-on-benzodiazepine"/>
+         <url value="http://localhost:8080/cqf-ruler-dstu3/fhir/Patient/example-rec-08-on-benzodiazepine"/>
       </request>
    </entry>
    <entry>
-      <fullUrl value="http://measure.eval.kanvix.com/fhir/Encounter/example-rec-08-on-benzodiazepine-context"/>
+      <fullUrl value="http://localhost:8080/cqf-ruler-dstu3/fhir/Encounter/example-rec-08-on-benzodiazepine-context"/>
       <resource>
          <Encounter xmlns="http://hl7.org/fhir">
             <id value="example-rec-08-on-benzodiazepine-context"/>
+                        <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+               <extension url="dateLastUpdated">
+                  <valueDateTime value="2022-04-08" />
+               </extension>
+               <extension url="frequency">
+                  <valueDuration>
+                     <value value="30.0" />
+                     <unit value="days" />
+                     <system value="http://unitsofmeasure.org" />
+                     <code value="d" />
+                  </valueDuration>
+               </extension>
+            </extension>
             <status value="finished"/>
             <subject>
                <reference value="Patient/example-rec-08-on-benzodiazepine"/>
@@ -32,7 +45,7 @@
       </resource>
       <request>
          <method value="PUT"/>
-         <url value="http://measure.eval.kanvix.com/fhir/Encounter/example-rec-08-on-benzodiazepine-context"/>
+         <url value="http://localhost:8080/cqf-ruler-dstu3/fhir/Encounter/example-rec-08-on-benzodiazepine-context"/>
       </request>
    </entry>
 </Bundle>

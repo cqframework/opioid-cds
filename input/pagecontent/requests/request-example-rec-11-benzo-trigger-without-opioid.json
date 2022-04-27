@@ -12,6 +12,26 @@
         "resource": {
           "resourceType": "MedicationRequest",
           "id": "example-rec-11-benzo-trigger-without-opioid-context",
+          "extension": [
+            {
+              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+              "extension": [
+                {
+                  "url": "dateLastUpdated",
+                  "valueDateTime": "2022-04-22"
+                },
+                {
+                  "url": "frequency",
+                  "valueDuration": {
+                    "value": 30.0,
+                    "unit": "days",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "d"
+                  }
+                }
+              ]
+            }
+          ],
           "status": "active",
           "intent": "order",
           "category": {

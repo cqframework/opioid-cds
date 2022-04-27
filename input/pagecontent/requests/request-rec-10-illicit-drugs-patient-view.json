@@ -15,6 +15,26 @@
       "resource": {
         "resourceType": "MedicationOrder",
         "id": "order-oxy-rec-10-illicit-drugs-patient-view",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-22"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "dateWritten": "2018-12-21",
         "status": "active",
         "patient": {
@@ -83,6 +103,26 @@
       "resource": {
         "resourceType": "Observation",
         "id": "observation-rec-10-illicit-drugs-patient-view",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-22"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -118,6 +158,26 @@
             "resource": {
               "resourceType": "Encounter",
               "id": "encounter-context-rec-10-illicit-drugs-patient-view",
+              "extension": [
+                {
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+                  "extension": [
+                    {
+                      "url": "dateLastUpdated",
+                      "valueDateTime": "2022-04-22"
+                    },
+                    {
+                      "url": "frequency",
+                      "valueDuration": {
+                        "value": 30.0,
+                        "unit": "days",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                      }
+                    }
+                  ]
+                }
+              ],
               "status": "finished",
               "patient": {
                 "reference": "Patient/patient-rec-10-illicit-drugs-patient-view"
@@ -132,6 +192,26 @@
             "resource": {
               "resourceType": "Encounter",
               "id": "encounter-prefetch-rec-10-illicit-drugs-patient-view",
+              "extension": [
+                {
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+                  "extension": [
+                    {
+                      "url": "dateLastUpdated",
+                      "valueDateTime": "2022-04-22"
+                    },
+                    {
+                      "url": "frequency",
+                      "valueDuration": {
+                        "value": 30.0,
+                        "unit": "days",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                      }
+                    }
+                  ]
+                }
+              ],
               "status": "finished",
               "patient": {
                 "reference": "Patient/patient-rec-10-illicit-drugs-patient-view"
@@ -152,6 +232,26 @@
       "resource": {
         "resourceType": "MedicationOrder",
         "id": "order-fentanyl-rec-10-illicit-drugs-patient-view",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-22"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "dateWritten": "2018-12-11",
         "status": "active",
         "patient": {
