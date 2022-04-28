@@ -34,9 +34,7 @@
       <reference value="Encounter/example-rec-10-no-screenings-prefetch"/>
    </context>
    <authoredOn>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="2022-01-25"/>
-      </extension>
+<authoredOn value= "2022-01-25"/>
    </authoredOn>
    <dosageInstruction>
       <timing>

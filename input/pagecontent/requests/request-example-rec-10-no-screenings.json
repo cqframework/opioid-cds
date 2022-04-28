@@ -55,12 +55,7 @@
           "context": {
             "reference": "Encounter/example-rec-10-no-screenings-context"
           },
-          "authoredOn": {
-            "extension": [{
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "2022-04-22"
-            }]
-          },
+          "authoredOn": "2022-04-22",
           "dosageInstruction": [{
             "timing": {
               "repeat": {
@@ -154,12 +149,7 @@
         "context": {
           "reference": "Encounter/example-rec-10-no-screenings-prefetch"
         },
-        "authoredOn": {
-          "extension": [{
-            "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-            "valueString": "2022-01-22"
-          }]
-        },
+        "authoredOn": "2022-01-22",
         "dosageInstruction": [{
           "timing": {
             "repeat": {

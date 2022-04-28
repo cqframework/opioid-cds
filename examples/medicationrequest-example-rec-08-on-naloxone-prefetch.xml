@@ -34,9 +34,7 @@
       <reference value="Encounter/example-rec-08-on-naloxone-prefetch"/>
    </context>
    <authoredOn>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="2022-04-11"/>
-      </extension>
+<authoredOn value= "2022-04-11"/>
    </authoredOn>
    <dosageInstruction>
       <timing>

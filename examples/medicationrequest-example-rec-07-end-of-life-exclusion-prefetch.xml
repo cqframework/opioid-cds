@@ -34,9 +34,7 @@
       <reference value="Encounter/example-rec-07-end-of-life-exclusion-prefetch"/>
    </context>
    <authoredOn>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="2022-03-14"/>
-      </extension>
+       <authoredOn value= "2022-03-14"/>
    </authoredOn>
    <dosageInstruction>
       <timing>

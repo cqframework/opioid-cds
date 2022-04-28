@@ -34,9 +34,7 @@
       <reference value="Encounter/example-rec-11-benzo-trigger-with-opioid-prefetch"/>
    </context>
    <authoredOn>
-      <extension url="http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression">
-         <valueString value="2022-03-28"/>
-      </extension>
+<authoredOn value= "2022-03-28"
    </authoredOn>
    <dosageInstruction>
       <timing>

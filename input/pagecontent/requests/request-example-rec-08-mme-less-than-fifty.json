@@ -55,14 +55,7 @@
         "context": {
           "reference": "Encounter/example-rec-08-mme-less-than-fifty-context"
         },
-        "authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "2022-04-22"
-            }
-          ]
-        },
+        "authoredOn": "2022-04-22",
         "dosageInstruction": [
           {
             "timing": {

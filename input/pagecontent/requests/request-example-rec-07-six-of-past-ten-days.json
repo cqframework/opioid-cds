@@ -55,14 +55,7 @@
         "context": {
           "reference": "Encounter/example-rec-07-six-of-past-ten-days-context"
         },
-        "authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "2022-04-22"
-            }
-          ]
-        },
+        "authoredOn": "2022-04-22",
         "dosageInstruction": [
           {
             "timing": {
@@ -150,14 +143,7 @@
         "context": {
           "reference": "Encounter/example-rec-07-six-of-past-ten-days-prefetch"
         },
-        "authoredOn": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqif-cqlExpression",
-              "valueString": "2022-04-12"
-            }
-          ]
-        },
+        "authoredOn": "2022-04-12",
         "dosageInstruction": [
           {
             "timing": {
