@@ -1,8 +1,7 @@
 {
   "hookInstance": "32a89854-a395-4f0e-8fa7-a660c7c9dd3d",
-  "fhirServer": "http://localhost:8080/cqf-ruler-r4/fhir",
+  "fhirServer": "http://localhost:8080/fhir",
   "hook": "order-select",
-  "applyCql": true,
   "context": {
     "userId": "Practitioner/example",
     "patientId": "Patient/example-rec-01-false-due-to-inpatient-opioid",
@@ -36,17 +35,7 @@
             ]
           }
         ],
-        "_birthDate": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today() - 20 years"
-              }
-            }
-          ]
-        }
+        "birthDate": "2002-04-08"
       }
     },
     "item3": null,

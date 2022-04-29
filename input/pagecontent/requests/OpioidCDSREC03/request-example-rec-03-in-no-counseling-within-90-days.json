@@ -1,8 +1,7 @@
 {
   "hookInstance": "53a6848f-0d7a-467a-9d6e-0c612a7ddb15",
-  "fhirServer": "http://localhost:8080/cqf-ruler-r4/fhir",
+  "fhirServer": "http://localhost:8080/fhir",
   "hook": "order-select",
-  "applyCql": true,
   "context": {
     "userId": "Practitioner/example",
     "patientId": "Patient/example-rec-03-true-make-recommendations",
@@ -37,17 +36,7 @@
             ]
           }
         ],
-        "_birthDate": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today() - 20 years"
-              }
-            }
-          ]
-        }
+        "birthDate": "2002-04-08"
       }
     },
     "item2": {
@@ -91,15 +80,8 @@
           "reference": "Patient/example-rec-03-true-make-recommendations"
         },
         "_performedPeriod": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 121 days }, end: FHIR.dateTime { value: Today() - 91 days } }"
-              }
-            }
-          ]
+          "start": "2021-12-08",
+          "end": "2022-01-07"
         }
       }
     },

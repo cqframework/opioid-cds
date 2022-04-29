@@ -1,8 +1,7 @@
 {
   "hookInstance": "95e3c637-8c92-4d48-9e00-fa223b072506",
-  "fhirServer": "http://localhost:8080/cqf-ruler-r4/fhir",
+  "fhirServer": "http://localhost:8080/fhir",
   "hook": "order-select",
-  "applyCql": true,
   "context": {
     "userId": "Practitioner/example",
     "patientId": "Patient/example-rec-02-false-due-to-careplan-within-90-days",
@@ -36,17 +35,7 @@
             ]
           }
         ],
-        "_birthDate": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today() - 20 years"
-              }
-            }
-          ]
-        }
+        "birthDate": "2002-04-08"
       }
     },
     "item2": {
@@ -77,34 +66,14 @@
           }
         ],
         "meta": {
-          "_lastUpdated": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-                "valueExpression": {
-                  "language": "text/cql",
-                  "expression": "Today() - 89 days"
-                }
-              }
-            ]
-          }
+          "lastUpdated": "2022-01-09"
         },
         "status": "active",
         "intent": "plan",
         "subject": {
           "reference": "Patient/example-rec-02-false-due-to-careplan-within-90-days"
         },
-        "_created": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today() - 120 days"
-              }
-            }
-          ]
-        },
+        "created": "2021-12-09",
         "author": {
           "reference": "Practitioner/example"
         }

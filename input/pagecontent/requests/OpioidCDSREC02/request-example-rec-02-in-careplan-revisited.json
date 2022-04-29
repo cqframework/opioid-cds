@@ -1,8 +1,7 @@
 {
   "hookInstance": "2c7a36a1-1e82-4608-87be-fc13f730ec49",
-  "fhirServer": "http://localhost:8080/cqf-ruler-r4/fhir",
+  "fhirServer": "http://localhost:8080/fhir",
   "hook": "order-select",
-  "applyCql": true,
   "context": {
     "userId": "Practitioner/example",
     "patientId": "Patient/example-rec-02-true-make-recommendations",
@@ -16,17 +15,7 @@
       "resource": {
         "resourceType": "Patient",
         "id": "example-rec-02-true-make-recommendations",
-        "_birthDate": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today() - 20 years"
-              }
-            }
-          ]
-        }
+        "birthDate": "2002-04-08"
       }
     },
     "item2": {
@@ -57,34 +46,14 @@
           }
         ],
         "meta": {
-          "_lastUpdated": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-                "valueExpression": {
-                  "language": "text/cql",
-                  "expression": "Today() - 120 days"
-                }
-              }
-            ]
-          }
+          "lastUpdated": "2021-12-09"
         },
         "status": "active",
         "intent": "plan",
         "subject": {
           "reference": "Patient/example-rec-02-true-make-recommendations"
         },
-        "_created": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today() - 150 days"
-              }
-            }
-          ]
-        },
+        "created": "2021-11-09",
         "author": {
           "reference": "Practitioner/example"
         }
