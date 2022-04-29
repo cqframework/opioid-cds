@@ -15,7 +15,7 @@
    <context>
       <reference value="Encounter/example-rec-04-patient-view-not-long-acting-opioid-prefetch"/>
    </context>
-   <authoredOn value="2021/12/08"/>
+   <authoredOn value="2021-12-08"/>
    <dosageInstruction>
       <timing>
          <repeat>

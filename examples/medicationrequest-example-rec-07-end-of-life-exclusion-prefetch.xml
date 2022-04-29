@@ -21,7 +21,7 @@
    <context>
       <reference value="Encounter/example-rec-07-end-of-life-exclusion-prefetch"/>
    </context>
-   <authoredOn value="2022/02/25"/>
+   <authoredOn value="2022-02-25"/>
    <dosageInstruction>
       <timing>
          <repeat>

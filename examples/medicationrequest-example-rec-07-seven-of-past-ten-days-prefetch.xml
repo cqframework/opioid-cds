@@ -21,7 +21,7 @@
    <context>
       <reference value="Encounter/example-rec-07-seven-of-past-ten-days-prefetch"/>
    </context>
-   <authoredOn value="2022/03/29"/>
+   <authoredOn value="2022-03-29"/>
    <dosageInstruction>
       <timing>
          <repeat>

@@ -16,7 +16,7 @@
    </context>
    <performedPeriod>
       <start>
-         value= "{start:2022/03/25 end:2022/03/25}"
+         value= "{start:2022-03-25 end:2022-03-25}"
       </start>
    </performedPeriod>
 </Procedure>

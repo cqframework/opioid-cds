@@ -15,7 +15,7 @@
    <context>
       <reference value="Encounter/example-rec-04-opioid-with-abuse-potential-prefetch"/>
    </context>
-   <authoredOn value="2022/03/25"/>
+   <authoredOn value="2022-03-25"/>
    <dosageInstruction>
       <timing>
          <repeat>
