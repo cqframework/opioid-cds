@@ -1,5 +1,18 @@
 <Procedure xmlns="http://hl7.org/fhir">
    <id value="example-rec12pv-diagnosis-with-treatment-procedure-prefetch"/>
+   <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+      <extension url="dateLastUpdated">
+         <valueDateTime value="2022-04-28"/>
+      </extension>
+      <extension url="frequency">
+         <valueDuration>
+            <value value="30.0"/>
+            <unit value="days"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="d"/>
+         </valueDuration>
+      </extension>
+   </extension>
    <status value="completed"/>
    <code>
       <coding>
@@ -14,16 +27,7 @@
    <context>
       <reference value="Encounter/example-rec12pv-diagnosis-with-treatment-procedure-prefetch"/>
    </context>
-   <performedDateTime>
-     <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
-        <extension url="language">
-          <valueUri value="text/cql" />
-        </extension>
-        <extension url="expression">
-          <valueString value="Today() - 4 weeks"/>
-        </extension>
-     </extension>
-   </performedDateTime>
+   <performedDateTime value="2022-03-31"/>
 </Procedure>
 <!--
 {
