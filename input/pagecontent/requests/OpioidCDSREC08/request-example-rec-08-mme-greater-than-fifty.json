@@ -1,9 +1,8 @@
 {
   "hookInstance": "229a709f-ee1c-4954-b7fd-72e6c46706dd",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://cqf-ruler.localhost:8080/fhir",
   "hook": "order-select",
   "user": "Practitioner/example",
-  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-08-mme-greater-than-fifty",
     "encounterId": "Encounter/example-rec-08-mme-greater-than-fifty-context",
@@ -13,6 +12,26 @@
     "draftOrders": {
       "resourceType": "MedicationRequest",
       "id": "example-rec-08-mme-greater-than-fifty-context",
+      "extension": [
+        {
+          "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+          "extension": [
+            {
+              "url": "dateLastUpdated",
+              "valueDateTime": "2022-04-28"
+            },
+            {
+              "url": "frequency",
+              "valueDuration": {
+                "value": 30.0,
+                "unit": "days",
+                "system": "http://unitsofmeasure.org",
+                "code": "d"
+              }
+            }
+          ]
+        }
+      ],
       "status": "active",
       "intent": "order",
       "category": {
@@ -38,14 +57,7 @@
       "context": {
         "reference": "Encounter/example-rec-08-mme-greater-than-fifty-context"
       },
-      "_authoredOn": {
-        "extension": [
-          {
-            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-            "valueString": "Today()"
-          }
-        ]
-      },
+      "authoredOn": "2022-04-28",
       "dosageInstruction": [
         {
           "timing": {
@@ -66,12 +78,8 @@
       ],
       "dispenseRequest": {
         "validityPeriod": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-            }
-          ]
+          "start": "2022-04-28",
+          "end": "2022-07-28"
         },
         "numberOfRepeatsAllowed": 3,
         "expectedSupplyDuration": {

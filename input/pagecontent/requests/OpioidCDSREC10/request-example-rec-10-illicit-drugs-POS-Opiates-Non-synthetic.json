@@ -12,6 +12,26 @@
     "draftOrders": {
       "resourceType": "MedicationRequest",
       "id": "example-rec-10-non-synthetic-drugs-context",
+      "extension": [
+        {
+          "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+          "extension": [
+            {
+              "url": "dateLastUpdated",
+              "valueDateTime": "2022-04-22"
+            },
+            {
+              "url": "frequency",
+              "valueDuration": {
+                "value": 30.0,
+                "unit": "days",
+                "system": "http://unitsofmeasure.org",
+                "code": "d"
+              }
+            }
+          ]
+        }
+      ],
       "status": "active",
       "intent": "order",
       "category": {
@@ -96,6 +116,26 @@
             "resource": {
               "resourceType": "Observation",
               "id": "example-rec-10-non-synthetic-drugs-prefetch-obs1",
+              "extension": [
+                {
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+                  "extension": [
+                    {
+                      "url": "dateLastUpdated",
+                      "valueDateTime": "2022-04-22"
+                    },
+                    {
+                      "url": "frequency",
+                      "valueDuration": {
+                        "value": 30.0,
+                        "unit": "days",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                      }
+                    }
+                  ]
+                }
+              ],
               "status": "final",
               "category": {
                 "coding": [
@@ -136,6 +176,26 @@
             "resource": {
               "resourceType": "Observation",
               "id": "example-rec-10-non-synthetic-drugs-prefetch-obs2",
+              "extension": [
+                {
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+                  "extension": [
+                    {
+                      "url": "dateLastUpdated",
+                      "valueDateTime": "2022-04-22"
+                    },
+                    {
+                      "url": "frequency",
+                      "valueDuration": {
+                        "value": 30.0,
+                        "unit": "days",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                      }
+                    }
+                  ]
+                }
+              ],
               "status": "final",
               "category": {
                 "coding": [
@@ -176,6 +236,46 @@
             "resource": {
               "resourceType": "Observation",
               "id": "example-rec-10-POS-PCP-drugs-prefetch-obs3",
+              "extension": [
+                {
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+                  "extension": [
+                    {
+                      "url": "dateLastUpdated",
+                      "valueDateTime": "2022-04-22"
+                    },
+                    {
+                      "url": "frequency",
+                      "valueDuration": {
+                        "value": 30.0,
+                        "unit": "days",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+                  "extension": [
+                    {
+                      "url": "dateLastUpdated",
+                      "valueDateTime": "2022-04-22"
+                    },
+                    {
+                      "url": "frequency",
+                      "valueDuration": {
+                        "value": 30.0,
+                        "unit": "days",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                      }
+                    }
+                  ]
+                }
+              ],
               "status": "final",
               "category": {
                 "coding": [
@@ -215,6 +315,26 @@
             "resource": {
               "resourceType": "Observation",
               "id": "example-rec-10-non-synthetic-drugs-prefetch-obs3",
+              "extension": [
+                {
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+                  "extension": [
+                    {
+                      "url": "dateLastUpdated",
+                      "valueDateTime": "2022-04-22"
+                    },
+                    {
+                      "url": "frequency",
+                      "valueDuration": {
+                        "value": 30.0,
+                        "unit": "days",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                      }
+                    }
+                  ]
+                }
+              ],
               "status": "final",
               "category": {
                 "coding": [
@@ -264,6 +384,26 @@
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "example-rec-10-non-synthetic-drugs-medreq-non-synthetic",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-22"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "status": "active",
         "intent": "order",
         "category": {

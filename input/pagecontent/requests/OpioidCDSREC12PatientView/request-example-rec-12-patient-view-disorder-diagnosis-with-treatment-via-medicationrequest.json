@@ -1,8 +1,7 @@
 {
   "hookInstance": "49192bd1-f7f3-4bdd-bc5f-997dd59a950a",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://cqf-ruler.localhost:8080/fhir",
   "hook": "patient-view",
-  "applyCql": true,
   "context": {
     "user": "Practitioner/example",
     "patientId": "Patient/example-rec12pv-diagnosis-with-treatment-medrequest",
@@ -27,6 +26,26 @@
       "resource": {
         "resourceType": "Condition",
         "id": "example-rec12pv-diagnosis-with-treatment-medrequest",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "clinicalStatus": "active",
         "category": [
           {
@@ -57,14 +76,7 @@
         "subject": {
           "reference": "Patient/example-rec12pv-diagnosis-with-treatment-medrequest"
         },
-        "_assertedDate": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "Today() - 30 days"
-            }
-          ]
-        }
+        "assertedDate": "2022-03-31"
       }
     },
     "item3": {
@@ -74,6 +86,26 @@
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "example-rec12pv-diagnosis-with-treatment-medrequest-prefetch",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "status": "active",
         "intent": "order",
         "category": {
@@ -98,14 +130,7 @@
         "context": {
           "reference": "Encounter/example-rec12pv-diagnosis-with-treatment-medrequest-prefetch"
         },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "Today() - 4 weeks"
-            }
-          ]
-        },
+        "authoredOn": "2022-03-31",
         "dosageInstruction": [
           {
             "timing": {
@@ -124,12 +149,8 @@
         ],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 4 weeks }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+            "start": "2022-03-31",
+            "end": "2022-07-28"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
