@@ -1,7 +1,7 @@
 <Encounter xmlns="http://hl7.org/fhir">
     <extension>
         <url/>
-        <url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
+        <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
         <extension url="dateLastUpdated">
             <valueDateTime value="2022-04-28"/>
         </extension>
