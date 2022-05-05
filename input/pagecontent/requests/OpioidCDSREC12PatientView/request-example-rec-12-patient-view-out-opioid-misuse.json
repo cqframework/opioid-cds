@@ -1,89 +1,101 @@
 {
-    "hookInstance": "3d75f421-9eeb-46d0-aa18-9aa9c720833a",
-    "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
-    "hook": "order-select",
-    "applyCql": true,
-    "context": {
-      "userId": "Practitioner/example",
-        "patientId": "Patient/example-rec-12-criteria-invalid"
+  "hookInstance": "3d75f421-9eeb-46d0-aa18-9aa9c720833a",
+  "fhirServer": "http://cqf-ruler.localhost:8080/fhir",
+  "hook": "order-select",
+  "context": {
+    "userId": "Practitioner/example",
+    "patientId": "Patient/example-rec-12-criteria-invalid"
+  },
+  "prefetch": {
+    "item1": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-rec-12-criteria-invalid",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
+        "birthDate": "2002-04-28"
+      }
     },
-    "prefetch": {
-        "item1": {
-            "response": {
-                "status": "200 OK"
-            },
-            "resource": {
-                "resourceType": "Patient",
-                "id": "example-rec-12-criteria-invalid",
-                "_birthDate": {
-                    "extension": [
-                        {
-                            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-                          "valueString": "Today() - 20 years"
-                        }
-                    ]
-                }
+    "item2": null,
+    "item3": {
+      "response": {
+        "status": "200 OK"
+      },
+      "resource": {
+        "resourceType": "Condition",
+        "id": "64615597-1124-44bf-b0a5-ae5e45b45ea8",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-clinical",
+              "code": "active",
+              "display": "Active Condition"
             }
+          ]
         },
-        "item2": null,
-        "item3": {
-            "response": {
-                "status": "200 OK"
-            },
-            "resource": {
-                "resourceType": "Condition",
-                "id": "64615597-1124-44bf-b0a5-ae5e45b45ea8",
-                "clinicalStatus": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/condition-clinical",
-                      "code": "active",
-                      "display": "Active Condition"
-                    }
-                  ]
-                },
-                "verificationStatus": {
-                    "code": {
-                        "coding": [
-                            {
-                                "system": "http://hl7.org/fhir/condition-ver-status",
-                                "code": "confirmed",
-                                "display": "Confirmed"
-                            }
-                        ]
-                    }
-                },
-                "category": [
-                  {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/condition-category",
-                        "code": "encounter-diagnosis",
-                        "display": "Encounter Diagnosis"
-                      },
-                      {
-                        "system": "http://snomed.info/sct",
-                        "code": "439401001",
-                        "display": "Diagnosis"
-                      }
-                    ]
-                  }
-                ],
-                "subject": {
-                    "reference": "Patient/example-rec-12-criteria-invalid"
-                },
-                "code": {
-                    "coding": [
-                        {
-                            "system": "TODO",
-                            "code": "Not In VS",
-                            "display": "Opioid Misuse Disorders"
-                        }
-                    ]
-                }
+        "verificationStatus": {
+          "code": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/condition-ver-status",
+                "code": "confirmed",
+                "display": "Confirmed"
+              }
+            ]
+          }
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "439401001",
+                "display": "Diagnosis"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/example-rec-12-criteria-invalid"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "TODO",
+              "code": "Not In VS",
+              "display": "Opioid Misuse Disorders"
             }
-        },
-        "item4": null,
-        "item5": null
-    }
+          ]
+        }
+      }
+    },
+    "item4": null,
+    "item5": null
+  }
 }

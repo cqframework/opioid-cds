@@ -1,9 +1,8 @@
 {
   "hookInstance": "b32cab7a-75ea-4cd1-9514-20ebf473cac9",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://cqf-ruler.localhost:8080/fhir",
   "hook": "order-sign",
   "user": "Practitioner/example",
-  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-08-substance-abuse",
     "encounterId": "Encounter/example-rec-08-substance-abuse-context",
@@ -11,77 +10,86 @@
       "MedicationRequest/example-rec-08-substance-abuse-context"
     ],
     "draftOrders": {
-        "resourceType": "MedicationRequest",
-        "id": "example-rec-08-substance-abuse-context",
-        "status": "active",
-        "intent": "order",
-        "category": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/medication-request-category",
-              "code": "community"
-            }
-          ]
-        },
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "197696",
-              "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/example-rec-08-substance-abuse"
-        },
-        "context": {
-          "reference": "Encounter/example-rec-08-substance-abuse-context"
-        },
-        "_authoredOn": {
+      "resourceType": "MedicationRequest",
+      "id": "example-rec-08-substance-abuse-context",
+      "extension": [
+        {
+          "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
           "extension": [
             {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "Today()"
+              "url": "dateLastUpdated",
+              "valueDateTime": "2022-04-28"
+            },
+            {
+              "url": "frequency",
+              "valueDuration": {
+                "value": 30.0,
+                "unit": "days",
+                "system": "http://unitsofmeasure.org",
+                "code": "d"
+              }
             }
           ]
-        },
-        "dosageInstruction": [
+        }
+      ],
+      "status": "active",
+      "intent": "order",
+      "category": {
+        "coding": [
           {
-            "timing": {
-              "repeat": {
-                "frequency": 1,
-                "period": 12.0,
-                "periodUnit": "d"
-              }
-            },
-            "asNeededBoolean": false,
-            "doseQuantity": {
-              "value": 1.0,
-              "unit": "patch",
-				      "system": "http://hl7.org/fhir/v3/orderableDrugForm",
-				      "code": "PATCH"
-            }
+            "system": "http://hl7.org/fhir/medication-request-category",
+            "code": "community"
           }
-        ],
-        "dispenseRequest": {
-          "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+        ]
+      },
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "197696",
+            "display": "72 HR Fentanyl 0.075 MG/HR Transdermal System"
+          }
+        ]
+      },
+      "subject": {
+        "reference": "Patient/example-rec-08-substance-abuse"
+      },
+      "context": {
+        "reference": "Encounter/example-rec-08-substance-abuse-context"
+      },
+      "authoredOn": "2022-04-28",
+      "dosageInstruction": [
+        {
+          "timing": {
+            "repeat": {
+              "frequency": 1,
+              "period": 12.0,
+              "periodUnit": "d"
+            }
           },
-          "numberOfRepeatsAllowed": 3,
-          "expectedSupplyDuration": {
-            "value": 30.0,
-            "unit": "days",
-            "system": "http://unitsofmeasure.org",
-            "code": "d"
+          "asNeededBoolean": false,
+          "doseQuantity": {
+            "value": 1.0,
+            "unit": "patch",
+            "system": "http://hl7.org/fhir/v3/orderableDrugForm",
+            "code": "PATCH"
           }
         }
+      ],
+      "dispenseRequest": {
+        "validityPeriod": {
+          "start": "2022-04-28",
+          "end": "2022-07-28"
+        },
+        "numberOfRepeatsAllowed": 3,
+        "expectedSupplyDuration": {
+          "value": 30.0,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        }
       }
+    }
   },
   "prefetch": {
     "item1": null,
@@ -92,17 +100,33 @@
       "resource": {
         "resourceType": "Encounter",
         "id": "example-rec-08-substance-abuse-prefetch",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "status": "finished",
         "subject": {
           "reference": "Patient/example-rec-08-substance-abuse"
         },
         "period": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() - 14 days } }"
-            }
-          ]
+          "start": "2022-04-14",
+          "end": "2022-04-14"
         }
       }
     },
@@ -124,6 +148,26 @@
       "resource": {
         "resourceType": "Condition",
         "id": "example-rec-08-substance-abuse-condition",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "clinicalStatus": "active",
         "category": [
           {
@@ -154,14 +198,7 @@
         "subject": {
           "reference": "Patient/example-rec-08-substance-abuse"
         },
-        "_assertedDate": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "Today() - 30 days"
-            }
-          ]
-        }
+        "_assertedDate": "2022-03-29"
       }
     },
     "item5": null,

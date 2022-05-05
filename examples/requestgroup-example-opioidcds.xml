@@ -5,7 +5,8 @@
     <action>
         <selectionBehavior value="exactly-one"/>
         <action>
-            <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-requestgroup-action-indicator">
+            <extension
+                    url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-requestgroup-action-indicator">
                 <valueCode value="warning"/>
             </extension>
             <title value="High risk for opioid overdose - taper now"/>

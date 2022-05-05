@@ -1,53 +1,58 @@
 <Condition xmlns="http://hl7.org/fhir">
-   <id value="example-rec12pv-diagnosis-no-treatment"/>
-   <clinicalStatus value="active"/>
-   <code>
-      <coding>
-         <system value="http://snomed.info/sct"/>
-         <version value="http://snomed.info/sct/731000124108/version/20200301"/>
-         <code value="191865004"/>
-         <display value="Combined opioid with other drug dependence"/>
-      </coding>
-   </code>
-   <subject>
-      <reference value="Patient/example-rec12pv-diagnosis-no-treatment"/>
-   </subject>
-   <assertedDate>
-      <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
-         <extension url="language">
-           <valueUri value="text/cql" />
-         </extension>
-         <extension url="expression">
-           <valueString value="Today() - 30 days"/>
-         </extension>
-      </extension>
-   </assertedDate>
+    <id value="example-rec12pv-diagnosis-no-treatment"/>
+    <extension url ="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+        <extension url="dateLastUpdated">
+            <valueDateTime value="2022-04-28"/>
+        </extension>
+        <extension>
+            <url value="frequency"/>
+            <valueDuration>
+                <value value="30.0"/>
+                <unit value="days"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="d"/>
+            </valueDuration>
+        </extension>
+    </extension>
+    <clinicalStatus value="active"/>
+    <code>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <version value="http://snomed.info/sct/731000124108/version/20200301"/>
+            <code value="191865004"/>
+            <display value="Combined opioid with other drug dependence"/>
+        </coding>
+    </code>
+    <subject>
+        <reference value="Patient/example-rec12pv-diagnosis-no-treatment"/>
+    </subject>
+    <assertedDate value="2022-03-31"/>
 </Condition>
-<!--
-{
-  "resourceType": "Condition",
-  "id": "example-rec12pv-diagnosis-no-treatment",
-  "clinicalStatus": "active",
-  "code": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "version": "http://snomed.info/sct/731000124108/version/20200301",
-        "code": "191865004",
-        "display": "Combined opioid with other drug dependence"
-      }
-    ]
-  },
-  "subject": {
-    "reference": "Patient/example-rec12pv-diagnosis-no-treatment"
-  },
-  "_assertedDate": {
-    "extension": [
-      {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-        "valueString": "Today() - 30 days"
-      }
-    ]
-  }
-}
--->
+        <!--
+        {
+          "resourceType": "Condition",
+          "id": "example-rec12pv-diagnosis-no-treatment",
+          "clinicalStatus": "active",
+          "code": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "version": "http://snomed.info/sct/731000124108/version/20200301",
+                "code": "191865004",
+                "display": "Combined opioid with other drug dependence"
+              }
+            ]
+          },
+          "subject": {
+            "reference": "Patient/example-rec12pv-diagnosis-no-treatment"
+          },
+          "_assertedDate": {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
+                "valueString": "Today() - 30 days"
+              }
+            ]
+          }
+        }
+        -->

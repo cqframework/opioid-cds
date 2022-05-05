@@ -1,16 +1,34 @@
 {
   "hookInstance": "3078316d-e23f-4094-aec6-a6094ad29204",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://cqf-ruler.localhost:8080/fhir",
   "hook": "order-select",
-  "applyCql": true,
   "context": {
     "user": "Practitioner/example",
     "patientId": "Patient/example-rec-11-opioid-trigger-with-benzo",
     "encounterId": "Encounter/example-rec-11-opioid-trigger-with-benzo-context",
-    "draftOrders":
-    {
+    "draftOrders": {
       "resourceType": "MedicationRequest",
       "id": "example-rec-11-opioid-trigger-with-benzo-context",
+      "extension": [
+        {
+          "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+          "extension": [
+            {
+              "url": "dateLastUpdated",
+              "valueDateTime": "2022-04-28"
+            },
+            {
+              "url": "frequency",
+              "valueDuration": {
+                "value": 30.0,
+                "unit": "days",
+                "system": "http://unitsofmeasure.org",
+                "code": "d"
+              }
+            }
+          ]
+        }
+      ],
       "status": "active",
       "intent": "order",
       "category": {
@@ -36,14 +54,7 @@
       "context": {
         "reference": "Encounter/example-rec-11-opioid-trigger-with-benzo-context"
       },
-      "_authoredOn": {
-        "extension": [
-          {
-            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-            "valueString": "Today()"
-          }
-        ]
-      },
+      "authoredOn": "2022-04-28",
       "dosageInstruction": [
         {
           "timing": {
@@ -64,12 +75,8 @@
       ],
       "dispenseRequest": {
         "validityPeriod": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-            }
-          ]
+          "start": "2022-04-28",
+          "end": "2022-07-28"
         },
         "numberOfRepeatsAllowed": 3,
         "expectedSupplyDuration": {
@@ -82,7 +89,7 @@
     }
   },
   "prefetch": {
-  	"item1": {
+    "item1": {
       "response": {
         "status": "200 OK"
       },
@@ -100,20 +107,44 @@
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "example-rec-11-opioid-trigger-with-benzo-prefetch",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "status": "active",
         "intent": "order",
         "category": {
-          "coding": [{
-            "system": "http://hl7.org/fhir/medication-request-category",
-            "code": "community"
-          }]
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/medication-request-category",
+              "code": "community"
+            }
+          ]
         },
         "medicationCodeableConcept": {
-          "coding": [{
-            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-            "code": "1298088",
-            "display": "Flurazepam Hydrochloride 15 MG Oral Capsule"
-          }]
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1298088",
+              "display": "Flurazepam Hydrochloride 15 MG Oral Capsule"
+            }
+          ]
         },
         "subject": {
           "reference": "Patient/example-rec-11-opioid-trigger-with-benzo"
@@ -121,32 +152,27 @@
         "context": {
           "reference": "Encounter/example-rec-11-opioid-trigger-with-benzo-prefetch"
         },
-        "_authoredOn": {
-          "extension": [{
-            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-            "valueString": "Today() - 28 days"
-          }]
-        },
-        "dosageInstruction": [{
-          "timing": {
-            "repeat": {
-              "frequency": 1,
-              "period": 1.0,
-              "periodUnit": "d"
+        "authoredOn": "2022-03-31",
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "doseQuantity": {
+              "value": 1.0,
+              "unit": "capsule"
             }
-          },
-          "asNeededBoolean": false,
-          "doseQuantity": {
-            "value": 1.0,
-            "unit": "capsule"
           }
-        }],
+        ],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [{
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 28 days }, end: FHIR.dateTime { value: Today() + 3 months } }"
-            }]
+            "start": "2022-03-31",
+            "end": "2022-07-28"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
@@ -165,15 +191,33 @@
       "resource": {
         "resourceType": "Encounter",
         "id": "example-rec-11-opioid-trigger-with-benzo-prefetch",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "status": "finished",
         "subject": {
           "reference": "Patient/example-rec-11-opioid-trigger-with-benzo"
         },
         "period": {
-          "extension": [{
-            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-            "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 28 days }, end: FHIR.dateTime { value: Today() - 28 days } }"
-          }]
+          "start": "2022-03-31",
+          "end": "2022-03-31"
         }
       }
     }

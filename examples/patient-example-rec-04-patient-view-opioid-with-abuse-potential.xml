@@ -1,5 +1,18 @@
 <Patient xmlns="http://hl7.org/fhir">
-   <id value="example-rec-04-patient-view-opioid-with-abuse-potential"/>
-   <gender value="male"/>
-   <birthDate value="1982-01-07"/>
+    <id value="example-rec-04-patient-view-opioid-with-abuse-potential"/>
+    <extension url ="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+        <extension url="dateLastUpdated">
+            <valueDateTime value="2022-04-28"/>
+        </extension>
+        <extension url="frequency">
+            <valueDuration>
+                <value value="30.0"/>
+                <unit value="days"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="d"/>
+            </valueDuration>
+        </extension>
+    </extension>
+    <gender value="male"/>
+    <birthDate value="1982-01-07"/>
 </Patient>

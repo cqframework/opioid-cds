@@ -1,8 +1,7 @@
 {
   "hookInstance": "49192bd1-f7f3-4bdd-bc5f-997dd59a950a",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://cqf-ruler.localhost:8080/fhir",
   "hook": "patient-view",
-  "applyCql": true,
   "context": {
     "user": "Practitioner/example",
     "patientId": "Patient/example-rec12pv-diagnosis-no-treatment",
@@ -27,6 +26,26 @@
       "resource": {
         "resourceType": "Condition",
         "id": "example-rec12pv-diagnosis-no-treatment",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "clinicalStatus": "active",
         "category": [
           {
@@ -57,14 +76,7 @@
         "subject": {
           "reference": "Patient/example-rec12pv-diagnosis-no-treatment"
         },
-        "_assertedDate": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "Today() - 30 days"
-            }
-          ]
-        }
+        "assertedDate": "2022-03-31"
       }
     },
     "item3": null
