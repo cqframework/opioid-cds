@@ -5,6 +5,7 @@
         <fullUrl value="http://localhost:8080/fhir/Patient/example-rec-04-patient-view-new-patient"/>
         <resource>
             <Patient xmlns="http://hl7.org/fhir">
+                <id value="example-rec-04-patient-view-new-patient"/>
                 <extension>
                     <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
                     <extension>
@@ -12,8 +13,8 @@
                         <valueDateTime value="2022-04-28"/>
                     </extension>
                     <extension>
-                        <url value="frequency"/>"
-                        <valueDuration>": {
+                        <url value="frequency"/>
+                        <valueDuration>
                             <value value="30.0"/>
                             <unit value="days"/>
                             <system value="http://unitsofmeasure.org"/>
@@ -21,7 +22,6 @@
                         </valueDuration>
                     </extension>
                 </extension>
-                <id value="example-rec-04-patient-view-new-patient"/>
                 <gender value="male"/>
                 <birthDate value="1982-01-07"/>
             </Patient>
@@ -36,6 +36,7 @@
                 value="http://localhost:8080/fhir/Encounter/example-rec-04-patient-view-new-patient-context"/>
         <resource>
             <Encounter xmlns="http://hl7.org/fhir">
+                <id value="example-rec-04-patient-view-new-patient-context"/>
                 <extension>
                     <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
                     <extension>
@@ -43,8 +44,8 @@
                         <valueDateTime value="2022-04-28"/>
                     </extension>
                     <extension>
-                        <url value="frequency"/>"
-                        <valueDuration>": {
+                        <url value="frequency"/>
+                        <valueDuration>
                             <value value="30.0"/>
                             <unit value="days"/>
                             <system value="http://unitsofmeasure.org"/>
@@ -52,14 +53,13 @@
                         </valueDuration>
                     </extension>
                 </extension>
-                <id value="example-rec-04-patient-view-new-patient-context"/>
                 <status value="finished"/>
                 <subject>
                     <reference value="Patient/example-rec-04-patient-view-new-patient"/>
                 </subject>
                 <period>
-                    <start>2021-04-28</start>
-                    <end>2022-04-28</end>
+                    <start value="2021-04-28"/>
+                    <end value="2022-04-28"/>
                 </period>
             </Encounter>
         </resource>

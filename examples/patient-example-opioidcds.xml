@@ -1,13 +1,14 @@
 <Patient xmlns="http://hl7.org/fhir">
+    <id value="example-opioidcds"/>
     <extension>
-        <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"
+        <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
         <extension>
             <url value="dateLastUpdated"/>
             <valueDateTime value="2022-04-28"/>
         </extension>
         <extension>
-            <url value="frequency"/>"
-            <valueDuration>": {
+            <url value="frequency"/>
+            <valueDuration>
                 <value value="30.0"/>
                 <unit value="days"/>
                 <system value="http://unitsofmeasure.org"/>
@@ -15,7 +16,6 @@
             </valueDuration>
         </extension>
     </extension>
-    <id value="example-opioidcds"/>
     <name>
         <family value="example"/>
         <given value="opioidcds"/>

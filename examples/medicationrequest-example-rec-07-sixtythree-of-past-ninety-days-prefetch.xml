@@ -1,10 +1,12 @@
 <MedicationRequest xmlns="http://hl7.org/fhir">
+    <id value="example-rec-07-sixtythree-of-past-ninety-days-prefetch"/>
     <extension>
         <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
-        <extension url="dateLastUpdated">
+        <extension>
+            <url value="dateLastUpdated"/>
             <valueDateTime value="2022-04-28"/>
         </extension>
-        <extension url="frequency">
+        <extension><url value="frequency"/>
             <valueDuration>
                 <value value="30.0"/>
                 <unit value="days"/>
@@ -13,7 +15,6 @@
             </valueDuration>
         </extension>
     </extension>
-    <id value="example-rec-07-sixtythree-of-past-ninety-days-prefetch"/>
     <status value="active"/>
     <intent value="order"/>
     <category>
@@ -52,8 +53,8 @@
     </dosageInstruction>
     <dispenseRequest>
         <validityPeriod>
-            <start>2022-01-28</start>
-            <end>2022-04-28</end>
+            <start value="2022-01-28"/>
+            <end value="2022-04-28"/>
         </validityPeriod>
         <numberOfRepeatsAllowed value="1"/>
         <expectedSupplyDuration>

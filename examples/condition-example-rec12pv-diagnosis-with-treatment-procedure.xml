@@ -1,4 +1,5 @@
 <Condition xmlns="http://hl7.org/fhir">
+    <id value="example-rec12pv-diagnosis-with-treatment-procedure"/>
     <extension>
         <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
         <extension>
@@ -6,8 +7,8 @@
             <valueDateTime value="2022-04-28"/>
         </extension>
         <extension>
-            <url value="frequency"/>"
-            <valueDuration>": {
+            <url value="frequency"/>
+            <valueDuration>
                 <value value="30.0"/>
                 <unit value="days"/>
                 <system value="http://unitsofmeasure.org"/>
@@ -15,7 +16,6 @@
             </valueDuration>
         </extension>
     </extension>
-    <id value="example-rec12pv-diagnosis-with-treatment-procedure"/>
     <clinicalStatus value="active"/>
     <code>
         <coding>

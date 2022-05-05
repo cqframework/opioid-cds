@@ -2,10 +2,11 @@
     <id value="example-rec-11-benzo-trigger-with-opioid-prefetch"/>
     <extension>
         <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
-        <extension url="dateLastUpdated">
+        <extension>
+            <url value="dateLastUpdated"/>
             <valueDateTime value="2022-04-28"/>
         </extension>
-        <extension url="frequency">
+        <extension><url value="frequency"/>
             <valueDuration>
                 <value value="30.0"/>
                 <unit value="days"/>
@@ -52,8 +53,8 @@
     </dosageInstruction>
     <dispenseRequest>
         <validityPeriod>
-            <start>2022-03-31</start>
-            <end>2022-07-28</end>
+            <start value="2022-03-31"/>
+            <end value="2022-07-28"/>
         </validityPeriod>
         <numberOfRepeatsAllowed value="3"/>
         <expectedSupplyDuration>

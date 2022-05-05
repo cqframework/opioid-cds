@@ -5,6 +5,7 @@
         <fullUrl value="http://localhost:8080/fhir/Patient/example-rec-08-on-naloxone"/>
         <resource>
             <Patient xmlns="http://hl7.org/fhir">
+                <id value="example-rec-08-on-naloxone"/>
                 <extension>
                     <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
                     <extension>
@@ -12,8 +13,8 @@
                         <valueDateTime value="2022-04-28"/>
                     </extension>
                     <extension>
-                        <url value="frequency"/>"
-                        <valueDuration>": {
+                        <url value="frequency"/>
+                        <valueDuration>
                             <value value="30.0"/>
                             <unit value="days"/>
                             <system value="http://unitsofmeasure.org"/>
@@ -21,7 +22,6 @@
                         </valueDuration>
                     </extension>
                 </extension>
-                <id value="example-rec-08-on-naloxone"/>
                 <gender value="female"/>
                 <birthDate value="1982-01-07"/>
             </Patient>
@@ -35,6 +35,7 @@
         <fullUrl value="http://localhost:8080/fhir/Encounter/example-rec-08-on-naloxone-context"/>
         <resource>
             <Encounter xmlns="http://hl7.org/fhir">
+                <id value="example-rec-08-on-naloxone-context"/>
                 <extension>
                     <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
                     <extension>
@@ -42,8 +43,8 @@
                         <valueDateTime value="2022-04-28"/>
                     </extension>
                     <extension>
-                        <url value="frequency"/>"
-                        <valueDuration>": {
+                        <url value="frequency"/>
+                        <valueDuration>
                             <value value="30.0"/>
                             <unit value="days"/>
                             <system value="http://unitsofmeasure.org"/>
@@ -51,14 +52,13 @@
                         </valueDuration>
                     </extension>
                 </extension>
-                <id value="example-rec-08-on-naloxone-context"/>
                 <status value="finished"/>
                 <subject>
                     <reference value="Patient/example-rec-08-on-naloxone"/>
                 </subject>
                 <validityPeriod>
-                    <start>2024-04-28</start>
-                    <end>2022-04-28</end>
+                    <start value="2024-04-28"/>
+                    <end value="2022-04-28"/>
                 </validityPeriod>
             </Encounter>
         </resource>
