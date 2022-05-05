@@ -1,7 +1,8 @@
 <MedicationRequest xmlns="http://hl7.org/fhir"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://hl7.org/fhir ..\schema\medicationrequest.xsd">
-    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+    <extension>
+        <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
         <extension url="dateLastUpdated">
             <valueDateTime value="2022-04-28"/>
         </extension>

@@ -1,6 +1,7 @@
 <MedicationRequest xmlns="http://hl7.org/fhir">
     <id value="example-rec-11-benzo-trigger-with-opioid-prefetch"/>
-    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+    <extension>
+        <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
         <extension url="dateLastUpdated">
             <valueDateTime value="2022-04-28"/>
         </extension>

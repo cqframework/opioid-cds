@@ -1,5 +1,6 @@
 <Encounter xmlns="http://hl7.org/fhir">
-    <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+    <extension>
+        <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
         <extension url="dateLastUpdated">
             <valueDateTime value="2022-04-22"/>
         </extension>
@@ -12,13 +13,13 @@
             </valueDuration>
         </extension>
     </extension>
-   <id value="example-rec-04-not-long-acting-opioid-context"/>
-   <status value="finished"/>
-   <subject>
-      <reference value="Patient/example-rec-04-not-long-acting-opioid"/>
-   </subject>
-<period>
-    <start>"2022-04-28"</start>
-    <end>"2022-04-28"</end>
-</period>
+    <id value="example-rec-04-not-long-acting-opioid-context"/>
+    <status value="finished"/>
+    <subject>
+        <reference value="Patient/example-rec-04-not-long-acting-opioid"/>
+    </subject>
+    <period>
+        <start>"2022-04-28"</start>
+        <end>"2022-04-28"</end>
+    </period>
 </Encounter>
