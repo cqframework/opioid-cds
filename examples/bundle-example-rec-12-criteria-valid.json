@@ -28,11 +28,11 @@
             ]
           }
         ],
-        "birthDate": "2002-04-28",
-        "request": {
-          "method": "PUT",
-          "url": "Patient/example-rec-12-criteria-valid"
-        }
+        "birthDate": "2002-04-28"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/example-rec-12-criteria-valid"
       }
     },
     {

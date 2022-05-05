@@ -6,14 +6,11 @@
         <resource>
             <Patient xmlns="http://hl7.org/fhir">
                 <id value="example-rec-07-risk-assessment"/>
-                <extension>
-                    <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
-                    <extension>
-                        <url value="dateLastUpdated"/>
+                <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+                    <extension url ="dateLastUpdated">
                         <valueDateTime value="2022-04-28"/>
                     </extension>
-                    <extension>
-                        <url value="frequency"/>
+                    <extension url="frequency">
                         <valueDuration>
                             <value value="30.0"/>
                             <unit value="days"/>
@@ -36,14 +33,11 @@
         <resource>
             <Encounter xmlns="http://hl7.org/fhir">
                 <id value="example-rec-07-risk-assessment-context"/>
-                <extension>
-                    <url value="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller"/>
-                    <extension>
-                        <url value="dateLastUpdated"/>
+                <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+                    <extension url ="dateLastUpdated">
                         <valueDateTime value="2022-04-28"/>
                     </extension>
-                    <extension>
-                        <url value="frequency"/>
+                    <extension url="frequency">
                         <valueDuration>
                             <value value="30.0"/>
                             <unit value="days"/>
@@ -56,10 +50,10 @@
                 <subject>
                     <reference value="Patient/example-rec-07-risk-assessment"/>
                 </subject>
-                <validityPeriod>
-                    <start value="2024-04-28"/>
+                <period>
+                    <start value="2022-04-28"/>
                     <end value="2022-04-28"/>
-                </validityPeriod>
+                </period>
 
             </Encounter>
         </resource>
