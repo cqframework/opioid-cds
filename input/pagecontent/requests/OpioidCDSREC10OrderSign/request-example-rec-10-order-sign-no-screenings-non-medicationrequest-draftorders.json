@@ -1,6 +1,6 @@
 {
   "hookInstance": "c2522428-1181-11ec-90bf-450207e71723",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://cqf-ruler.localhost:8080/fhir",
   "hook": "order-sign",
   "context": {
     "patientId": "Patient/example-rec-10-no-screenings",

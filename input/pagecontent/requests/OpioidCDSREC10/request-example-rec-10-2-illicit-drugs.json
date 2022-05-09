@@ -1,8 +1,7 @@
 {
   "hookInstance": "31c74cfc-747c-4afc-82e4-bdd3b7a0a58c",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://cqf-ruler.localhost:8080/fhir",
   "hook": "order-select",
-  "applyCql": true,
   "context": {
     "userId": "Practitioner/example",
     "patientId": "Patient/example-rec-10-2-illicit-drugs",
@@ -13,6 +12,26 @@
     "draftOrders": {
       "resourceType": "MedicationRequest",
       "id": "example-rec-10-2-illicit-drugs-context",
+      "extension": [
+        {
+          "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+          "extension": [
+            {
+              "url": "dateLastUpdated",
+              "valueDateTime": "2022-04-28"
+            },
+            {
+              "url": "frequency",
+              "valueDuration": {
+                "value": 30.0,
+                "unit": "days",
+                "system": "http://unitsofmeasure.org",
+                "code": "d"
+              }
+            }
+          ]
+        }
+      ],
       "status": "active",
       "intent": "order",
       "category": {
@@ -38,14 +57,7 @@
       "encounter": {
         "reference": "Encounter/example-rec-10-2-illicit-drugs-context"
       },
-      "_authoredOn": {
-        "extension": [
-          {
-            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-            "valueString": "Today()"
-          }
-        ]
-      },
+      "authoredOn": "2022-04-28",
       "dosageInstruction": [
         {
           "timing": {
@@ -67,16 +79,9 @@
         }
       ],
       "dispenseRequest": {
-        "_validityPeriod": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            }
-          ]
+        "validityPeriod": {
+          "start": "2022-04-28",
+          "end": "2022-07-28"
         },
         "numberOfRepeatsAllowed": 3,
         "expectedSupplyDuration": {
@@ -111,6 +116,26 @@
             "resource": {
               "resourceType": "Observation",
               "id": "example-rec-10-2-illicit-drugs-prefetch",
+              "extension": [
+                {
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+                  "extension": [
+                    {
+                      "url": "dateLastUpdated",
+                      "valueDateTime": "2022-04-28"
+                    },
+                    {
+                      "url": "frequency",
+                      "valueDuration": {
+                        "value": 30.0,
+                        "unit": "days",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                      }
+                    }
+                  ]
+                }
+              ],
               "status": "final",
               "category": {
                 "coding": [
@@ -145,10 +170,31 @@
                 }
               ]
             }
-          },{
+          },
+          {
             "resource": {
               "resourceType": "Observation",
               "id": "example-rec-10-2-illicit-drugs-prefetch",
+              "extension": [
+                {
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+                  "extension": [
+                    {
+                      "url": "dateLastUpdated",
+                      "valueDateTime": "2022-04-28"
+                    },
+                    {
+                      "url": "frequency",
+                      "valueDuration": {
+                        "value": 30.0,
+                        "unit": "days",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                      }
+                    }
+                  ]
+                }
+              ],
               "status": "final",
               "category": {
                 "coding": [
@@ -189,6 +235,26 @@
             "resource": {
               "resourceType": "Observation",
               "id": "example-rec-10-2-illicit-drugs-prefetch",
+              "extension": [
+                {
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+                  "extension": [
+                    {
+                      "url": "dateLastUpdated",
+                      "valueDateTime": "2022-04-28"
+                    },
+                    {
+                      "url": "frequency",
+                      "valueDuration": {
+                        "value": 30.0,
+                        "unit": "days",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                      }
+                    }
+                  ]
+                }
+              ],
               "status": "final",
               "category": {
                 "coding": [
@@ -228,6 +294,26 @@
             "resource": {
               "resourceType": "Observation",
               "id": "example-rec-10-2-illicit-drugs-prefetch",
+              "extension": [
+                {
+                  "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+                  "extension": [
+                    {
+                      "url": "dateLastUpdated",
+                      "valueDateTime": "2022-04-28"
+                    },
+                    {
+                      "url": "frequency",
+                      "valueDuration": {
+                        "value": 30.0,
+                        "unit": "days",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "d"
+                      }
+                    }
+                  ]
+                }
+              ],
               "status": "final",
               "category": {
                 "coding": [
@@ -273,20 +359,33 @@
       "resource": {
         "resourceType": "Encounter",
         "id": "example-rec-10-2-illicit-drugs-prefetch",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "status": "finished",
         "subject": {
           "reference": "Patient/example-rec-10-2-illicit-drugs"
         },
-        "_period": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() - 90 days } }"
-              }
-            }
-          ]
+        "period": {
+          "start": "2022-01-28",
+          "end": "2022-01-28"
         }
       }
     },
@@ -303,6 +402,26 @@
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "example-rec-10-2-illicit-drugs-prefetch",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "status": "active",
         "intent": "order",
         "category": {
@@ -328,14 +447,7 @@
         "encounter": {
           "reference": "Encounter/example-rec-10-2-illicit-drugs-prefetch"
         },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "Today() - 90 days"
-            }
-          ]
-        },
+        "authoredOn": "2022-01-28",
         "dosageInstruction": [
           {
             "timing": {
@@ -357,16 +469,9 @@
           }
         ],
         "dispenseRequest": {
-          "_validityPeriod": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-                "valueExpression": {
-                  "language": "text/cql",
-                  "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() - 90 days }, end: FHIR.dateTime { value: Today() } }"
-                }
-              }
-            ]
+          "validityPeriod": {
+            "start": "2022-01-28",
+            "end": "2022-04-28"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {

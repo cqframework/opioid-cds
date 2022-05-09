@@ -6,7 +6,7 @@
   "title": "Limited life expectancy conditions",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-29T11:44:37-06:00",
+  "date": "2022-05-09T13:05:12-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -52,8 +52,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "7d36e32a-160a-4768-83ed-962996c67a8c",
-    "timestamp": "2022-03-29T11:44:37-06:00",
+    "identifier": "33f6abc2-cf36-40b3-8b7d-3499cd3a5d20",
+    "timestamp": "2022-05-09T13:05:12-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

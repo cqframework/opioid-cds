@@ -1,29 +1,34 @@
 <Procedure xmlns="http://hl7.org/fhir">
-   <id value="example-rec-07-risk-assessment-prefetch"/>
-   <status value="completed"/>
-   <code>
-      <coding>
-         <system value="http://snomed.info/sct"/>
-         <code value="268525008"/>
-         <display value="High risk drug monitoring (regime/therapy)"/>
-      </coding>
-   </code>
-   <subject>
-      <reference value="Patient/example-rec-07-risk-assessment"/>
-   </subject>
-   <context>
-      <reference value="Encounter/example-rec-07-risk-assessment-prefetch"/>
-   </context>
-   <performedPeriod>
-      <start>
-         <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
-            <extension url="language">
-              <valueUri value="text/cql" />
-            </extension>
-            <extension url="expression">
-              <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 2 weeks }, end: FHIR.dateTime { value: Today() - 2 weeks } }"/>
-            </extension>
-         </extension>
-      </start>
-   </performedPeriod>
+    <id value="example-rec-07-risk-assessment-prefetch"/>
+    <extension url ="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+        <extension url="dateLastUpdated">
+            <valueDateTime value="2022-04-28"/>
+        </extension>
+        <extension url="frequency">
+            <valueDuration>
+                <value value="30.0"/>
+                <unit value="days"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="d"/>
+            </valueDuration>
+        </extension>
+    </extension>
+    <status value="completed"/>
+    <code>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="268525008"/>
+            <display value="High risk drug monitoring (regime/therapy)"/>
+        </coding>
+    </code>
+    <subject>
+        <reference value="Patient/example-rec-07-risk-assessment"/>
+    </subject>
+    <context>
+        <reference value="Encounter/example-rec-07-risk-assessment-prefetch"/>
+    </context>
+    <performedPeriod>
+        <start value="2022-04-14"/>
+        <end value="2022-04-14"/>
+    </performedPeriod>
 </Procedure>

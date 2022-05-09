@@ -736,7 +736,7 @@
       "base": "PlanDefinition-opioidcds-08.html"
     },
     "PlanDefinition/opioidcds-08-order-sign": {
-      "source": "plandefinition-OpioidCDSREC08-order-sign.json",
+      "source": "plandefinition-OpioidCDSREC08OrderSign.json",
       "base": "PlanDefinition-opioidcds-08-order-sign.html"
     },
     "PlanDefinition/opioidcds-10": {
@@ -812,6 +812,14 @@
       "source": "valueset-extended-release-opioid-with-ambulatory-misuse-potential.json",
       "base": "ValueSet-extended-release-opioid-with-ambulatory-misuse-potential.html"
     },
+    "ValueSet/fentanyl-type-medications": {
+      "source": "valueset-fentanyl-type-medications.json",
+      "base": "ValueSet-fentanyl-type-medications.html"
+    },
+    "ValueSet/fentanyl-type-urine-drug-screening-tests": {
+      "source": "valueset-fentanyl-type-urine-drug-screening-tests.json",
+      "base": "ValueSet-fentanyl-type-urine-drug-screening-tests.html"
+    },
     "ValueSet/hospice-disposition": {
       "source": "valueset-hospice-disposition.json",
       "base": "ValueSet-hospice-disposition.html"
@@ -844,9 +852,9 @@
       "source": "valueset-non-opioid-drug-urine-screening.json",
       "base": "ValueSet-non-opioid-drug-urine-screening.html"
     },
-    "ValueSet/non-synthetic-opioids": {
-      "source": "valueset-non-synthetic-opioids.json",
-      "base": "ValueSet-non-synthetic-opioids.html"
+    "ValueSet/non-synthetic-opioid-medications": {
+      "source": "valueset-non-synthetic-opioid-medications.json",
+      "base": "ValueSet-non-synthetic-opioid-medications.html"
     },
     "ValueSet/office-visit": {
       "source": "valueset-office-visit.json",
@@ -962,7 +970,7 @@
     },
     "StructureDefinition/dataDateRoller": {
       "defns": "dataDateRoller-definitions.html",
-      "base": "dataDataRoller.html",
+      "base": "dataDateRoller.html",
       "source": "structuredefinition-data-date-roller-extension.json"
     }
   }
