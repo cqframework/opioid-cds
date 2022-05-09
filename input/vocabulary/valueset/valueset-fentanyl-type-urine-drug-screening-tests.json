@@ -6,7 +6,7 @@
   "title": "Fentanyl-type urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2022-04-25T10:57:51-06:00",
+  "date": "2022-05-09T13:05:12-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -49,8 +49,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "322d1b7e-ea99-4ac4-9be5-cf1c3efb283d",
-    "timestamp": "2022-04-25T10:57:51-06:00",
+    "identifier": "0f5ed264-07fb-4308-9c18-9a1c837e014d",
+    "timestamp": "2022-05-09T13:05:12-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.72",

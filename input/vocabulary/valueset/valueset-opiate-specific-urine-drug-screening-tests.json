@@ -6,7 +6,7 @@
   "title": "Opiate specific urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-29T11:44:38-06:00",
+  "date": "2022-05-09T13:05:12-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -25,191 +25,191 @@
   "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "d47efeca-3edb-4297-a978-d8aac213f521",
-    "timestamp": "2022-03-29T11:44:38-06:00",
+    "identifier": "50b378f4-4f1b-44f5-bd3a-36c207c73c49",
+    "timestamp": "2022-05-09T13:05:12-06:00",
     "contains": [ {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "3508-9",
       "display": "Codeine [Mass/volume] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "16250-3",
       "display": "Codeine [Mass/volume] in Urine by Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "70206-8",
       "display": "Codeine [Moles/volume] in Urine by Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "3507-1",
       "display": "Codeine [Presence] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "16197-6",
       "display": "Codeine [Presence] in Urine by Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "13641-6",
       "display": "Codeine [Presence] in Urine by SAMHSA confirm method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19411-8",
       "display": "Codeine [Presence] in Urine by Screen method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19414-2",
       "display": "Codeine cutoff [Mass/volume] in Urine for Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19413-4",
       "display": "Codeine cutoff [Mass/volume] in Urine for Screen method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "51739-1",
       "display": "Codeine Free [Mass/volume] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "89310-7",
       "display": "Codeine-6-glucuronide [Presence] in Urine by Screen method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "58391-4",
       "display": "Codeine/Creatinine [Mass Ratio] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "21050-0",
       "display": "Deprecated Acetylmorphine [Mass/volume] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "27073-6",
       "display": "Deprecated acetylmorphine [Presence] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19594-1",
       "display": "Deprecated Monoacetylmorphine [Mass/volume] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "14845-2",
       "display": "Deprecated Monoacetylmorphine [Presence] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "3829-9",
       "display": "Morphine Free [Mass/volume] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "20550-0",
       "display": "Morphine Free [Mass/volume] in Urine by Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "3828-1",
       "display": "Morphine Free [Presence] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19602-2",
       "display": "Morphine Free [Presence] in Urine by Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19601-4",
       "display": "Morphine Free [Presence] in Urine by Screen method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19604-8",
       "display": "Morphine Free cutoff [Mass/volume] in Urine for Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19603-0",
       "display": "Morphine Free cutoff [Mass/volume] in Urine for Screen method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "3832-3",
       "display": "Morphine [Mass/time] in 24 hour Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "3831-5",
       "display": "Morphine [Mass/volume] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "78768-9",
       "display": "Morphine [Mass/volume] in Urine -- adjusted for lean body mass+urine creatinine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "16251-1",
       "display": "Morphine [Mass/volume] in Urine by Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "70210-0",
       "display": "Morphine [Moles/volume] in Urine by Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "3830-7",
       "display": "Morphine [Presence] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "16196-8",
       "display": "Morphine [Presence] in Urine by Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "13648-1",
       "display": "Morphine [Presence] in Urine by SAMHSA confirm method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19597-4",
       "display": "Morphine [Presence] in Urine by Screen method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "78861-2",
       "display": "Morphine [Z-score] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19600-6",
       "display": "Morphine cutoff [Mass/volume] in Urine for Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19599-0",
       "display": "Morphine cutoff [Mass/volume] in Urine for Screen method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "89308-1",
       "display": "Morphine-6-Glucuronide [Presence] in Urine by Screen method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "58392-2",
       "display": "Morphine/Creatinine [Mass Ratio] in Urine"
     } ]
