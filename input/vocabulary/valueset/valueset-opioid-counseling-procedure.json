@@ -6,7 +6,7 @@
   "title": "Opioid counseling procedure",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:17-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -34,8 +34,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "05604446-cacb-45c0-a623-7d89e299b08e",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "96dad4da-28d2-4ef1-b342-7a63236abc47",
+    "timestamp": "2022-05-09T13:05:17-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

@@ -6,7 +6,7 @@
   "title": "Non-opioid drug urine screening",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:13-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -150,8 +150,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "df46da59-be6b-4fbf-86a9-c64a1da7af50",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "fc2136f6-f7b6-4a15-887c-a66e3af32517",
+    "timestamp": "2022-05-09T13:05:13-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.68",

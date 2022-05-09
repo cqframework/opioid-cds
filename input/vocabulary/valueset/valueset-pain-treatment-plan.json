@@ -6,7 +6,7 @@
   "title": "Pain treatment plan",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:17-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -33,8 +33,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "2a3723f5-37de-43e3-b532-7c084674c7ce",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "d33b82ad-dbb6-4731-9f60-0c40c319889d",
+    "timestamp": "2022-05-09T13:05:17-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.72",

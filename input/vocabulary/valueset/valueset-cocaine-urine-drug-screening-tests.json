@@ -6,7 +6,7 @@
   "title": "Cocaine urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:12-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -25,8 +25,8 @@
   "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "1f9e33be-6c26-4c6d-afa7-588d63f85bc2",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "10271ad6-a47b-454d-8528-58a5878cc9cf",
+    "timestamp": "2022-05-09T13:05:12-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.72",

@@ -6,7 +6,7 @@
   "title": "Non-synthetic opioid medications",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:12-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -24,8 +24,8 @@
   } ],
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "5b745461-581a-4c8b-b614-97a7d1118364",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "a8050318-25ff-498b-bcf2-5a6fbc8d00b1",
+    "timestamp": "2022-05-09T13:05:12-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "version": "04-Apr-2022",

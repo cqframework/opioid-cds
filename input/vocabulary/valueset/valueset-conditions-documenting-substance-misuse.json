@@ -6,7 +6,7 @@
   "title": "Conditions documenting substance misuse",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:13-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -24,9 +24,320 @@
   } ],
   "purpose": "Identification of patients that have a documented substance misuse condition now or in the past when considering opioid therapy.",
   "copyright": "© CDC 2016+.",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "191816009"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "228366006"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "66214007"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "417284009"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "441668002"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "226034001"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "228427002"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "191939002"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "361055000"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "191928000"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "280985006"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "280982009"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "231459008"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "280983004"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "110281001"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "719848005"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "191816009"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "363101005"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "715431002"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "724713006"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "91388009"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "=",
+        "value": "390867000"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "296036006"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "296177007"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "295809003"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "295960003"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "=",
+        "value": "708079007"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "1149408002"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "242253008"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "Z71.4"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "Z71.5"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "filter": [ {
+        "property": "concept",
+        "op": "descendent-of",
+        "value": "F55"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "F10-F19"
+      } ]
+    } ],
+    "exclude": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "56294008"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "282100009"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "712542001"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "1149223009"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "62014003"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "filter": [ {
+        "property": "concept",
+        "op": "is-a",
+        "value": "F17"
+      } ]
+    } ]
+  },
   "expansion": {
-    "identifier": "f5d7acf2-f3a4-46f7-a913-053dd5baadf8",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "553f4356-698e-4b0f-8d9f-97a2a5eb10f9",
+    "timestamp": "2022-05-09T13:05:17-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

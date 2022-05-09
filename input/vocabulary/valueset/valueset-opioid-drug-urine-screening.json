@@ -6,7 +6,7 @@
   "title": "Opioid drug urine screening",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:12-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -97,8 +97,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "b2abb115-a3a1-41ce-ab15-c662578ee1e9",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "c75c8c1a-c4b5-4e94-babc-fa4b20a2a26b",
+    "timestamp": "2022-05-09T13:05:12-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.68",

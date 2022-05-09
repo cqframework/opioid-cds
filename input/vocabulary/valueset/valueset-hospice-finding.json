@@ -6,7 +6,7 @@
   "title": "Hospice Finding",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:12-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -68,8 +68,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "40e6ad12-b7df-40d7-990e-2456c2201526",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "0f20c606-4275-405a-b441-b1de4fe61b36",
+    "timestamp": "2022-05-09T13:05:12-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

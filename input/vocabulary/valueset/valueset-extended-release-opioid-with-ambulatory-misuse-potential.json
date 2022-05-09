@@ -6,7 +6,7 @@
   "title": "Extended release opioid with ambulatory misuse potential",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:13-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -25,8 +25,8 @@
   "purpose": "Identify medication orders for long-acting opioids",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "f55d1722-240e-418f-8ff7-0a97e2bffec5",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "6c63cc58-4c7b-4ea9-a87c-bcab62d168b4",
+    "timestamp": "2022-05-09T13:05:13-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "version": "04-Apr-2022",

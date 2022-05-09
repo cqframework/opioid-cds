@@ -6,7 +6,7 @@
   "title": "Opioid misuse assessment procedure",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:17-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -34,8 +34,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "12489bbe-24fe-4d11-b1e3-872f0e1e5056",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "0c43b478-48c7-4b7f-b97a-c99d7daa5743",
+    "timestamp": "2022-05-09T13:05:17-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

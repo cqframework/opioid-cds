@@ -6,7 +6,7 @@
   "title": "benzodiazepine medications",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:17-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -25,8 +25,8 @@
   "purpose": "Benzodiazepine medications for opioid management",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "072883ec-7b6d-4a68-88f9-4186975fd510",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "3681d4a4-e8f5-49bc-9920-724c5fe36589",
+    "timestamp": "2022-05-09T13:05:17-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "version": "04-Apr-2022",

@@ -6,7 +6,7 @@
   "title": "Buprenorphine and Methadone medications",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:12-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -116,8 +116,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "affe4979-2c1c-48df-96cc-f422b6f1b95a",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "a8621f37-93ef-4d61-9710-bab382e1ab8f",
+    "timestamp": "2022-05-09T13:05:12-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "version": "04-Apr-2022",

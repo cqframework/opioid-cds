@@ -6,7 +6,7 @@
   "title": "Pain management procedure",
   "status": "active",
   "experimental": true,
-  "date": "2022-05-09T10:28:30-06:00",
+  "date": "2022-05-09T13:05:12-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -34,8 +34,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "38f989f0-2025-4c12-88ef-888fbd2ea38d",
-    "timestamp": "2022-05-09T10:28:30-06:00",
+    "identifier": "454ee085-95c8-40e5-a05e-2f888bd21957",
+    "timestamp": "2022-05-09T13:05:12-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",
