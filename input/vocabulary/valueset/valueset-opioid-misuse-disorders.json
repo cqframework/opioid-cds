@@ -6,7 +6,7 @@
   "title": "Opioid misuse disorders",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-29T11:44:38-06:00",
+  "date": "2022-05-09T10:28:30-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -83,8 +83,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "42f9e164-7129-477a-b934-ae242c3a0779",
-    "timestamp": "2022-03-29T11:44:38-06:00",
+    "identifier": "fdf47991-5617-4bc2-9548-9e4e9aac587c",
+    "timestamp": "2022-05-09T10:28:30-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

@@ -6,7 +6,7 @@
   "title": "PDMP review procedure",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-29T11:44:38-06:00",
+  "date": "2022-05-09T10:28:30-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -34,8 +34,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "6afc44e4-d167-4990-b260-946e0fded927",
-    "timestamp": "2022-03-29T11:44:38-06:00",
+    "identifier": "a29978a6-ef8a-4ed7-9650-c37c494844bb",
+    "timestamp": "2022-05-09T10:28:30-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

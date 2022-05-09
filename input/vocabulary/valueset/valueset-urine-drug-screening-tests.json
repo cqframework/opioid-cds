@@ -6,7 +6,7 @@
   "title": "Urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-29T11:44:38-06:00",
+  "date": "2022-05-09T10:28:30-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -32,8 +32,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "05568c66-8484-417b-9904-c5562e418de9",
-    "timestamp": "2022-03-29T11:44:38-06:00",
+    "identifier": "1efebc28-b127-4d13-9be1-84201bdb3c72",
+    "timestamp": "2022-05-09T10:28:30-06:00",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.68",

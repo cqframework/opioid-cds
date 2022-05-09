@@ -6,7 +6,7 @@
   "title": "General opiate urine drug screening tests",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-29T11:44:37-06:00",
+  "date": "2022-05-09T10:28:30-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -25,116 +25,116 @@
   "purpose": "Identification of urine drug tests where results can be used when considering pain management therapy",
   "copyright": "© CDC 2016+.",
   "expansion": {
-    "identifier": "1aa55094-3175-416e-bc1a-94b68ed8e9b7",
-    "timestamp": "2022-03-29T11:44:37-06:00",
+    "identifier": "16b0cb0e-0e1e-4a20-8005-9f088b5edbd2",
+    "timestamp": "2022-05-09T10:28:30-06:00",
     "contains": [ {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "5707-5",
       "display": "Deprecated Opiates [Identifier] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "5706-7",
       "display": "Opiates [Identifier] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "8220-6",
       "display": "Opiates [Mass/volume] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "17384-9",
       "display": "Opiates [Mass/volume] in Urine by Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "70150-8",
       "display": "Opiates [Mass/volume] in Urine by Screen method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "52952-9",
       "display": "Opiates [Moles/volume] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "3879-4",
       "display": "Opiates [Presence] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "18390-5",
       "display": "Opiates [Presence] in Urine by Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "8221-4",
       "display": "Opiates [Presence] in Urine by SAMHSA confirm method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "8222-2",
       "display": "Opiates [Presence] in Urine by SAMHSA screen method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19295-5",
       "display": "Opiates [Presence] in Urine by Screen method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "21431-2",
       "display": "Opiates [Presence] in Urine by Screen method >2000 ng/mL"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "70151-6",
       "display": "Opiates [Presence] in Urine by Screen method >300 ng/mL"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19302-9",
       "display": "Opiates confirm method [Identifier] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19138-7",
       "display": "Opiates cutoff [Mass/volume] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19300-3",
       "display": "Opiates cutoff [Mass/volume] in Urine for Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19299-7",
       "display": "Opiates cutoff [Mass/volume] in Urine for Screen method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19298-9",
       "display": "Opiates positive [Identifier] in Urine by Confirmatory method"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19301-1",
       "display": "Opiates screen method [Identifier] in Urine"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19297-1",
       "display": "Opiates tested for in Urine by Screen method Narrative"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "19296-3",
       "display": "Opiates tested for in Urine by Screen method Nominal"
     }, {
       "system": "http://loinc.org",
-      "version": "2.69",
+      "version": "2.72",
       "code": "41465-6",
       "display": "Opiates/Creatinine [Mass Ratio] in Urine"
     } ]
