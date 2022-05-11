@@ -234,7 +234,7 @@ define "Encounters with Cancer Diagnosis During Encounter Period":
           with "Active Cancer Diagnoses" CancerDiagnosis
           such that EndsWith(EncounterDiagnosis.condition.reference, CancerDiagnosis.id)
       )
-      and exists (
+      or exists (
         Encounter.participant EncounterParticipant
           where EncounterParticipant.type in Common."Oncology specialty designations (NUCC)"
             or (
