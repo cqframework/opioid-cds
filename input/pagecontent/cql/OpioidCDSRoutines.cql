@@ -231,24 +231,24 @@ define "Encounters with Cancer Diagnosis During Encounter Period":
     where date from Encounter.period."start".value in day of "Encounter Period"
       and
         (
-            exists (
+          exists (
             Encounter.diagnosis EncounterDiagnosis
               with "Active Cancer Diagnoses" CancerDiagnosis
               such that EndsWith(EncounterDiagnosis.condition.reference, CancerDiagnosis.id)
           )
-          or exists (
-            Encounter.participant EncounterParticipant
-              where EncounterParticipant.type in Common."Oncology specialty designations (NUCC)"
-                or (
-                  if (Config."Active Cancer Treatment PractitionerRole Specialty Is Enabled") then
-                    exists (
-                      "Oncologist Practitioner Roles" PractitionerRole
-                        where EndsWith(EncounterParticipant.individual.reference, PractitionerRole.id)
-                    )
-                  else
-                    false
-                )
-          )
+            or exists (
+              Encounter.participant EncounterParticipant
+                where EncounterParticipant.type in Common."Oncology specialty designations (NUCC)"
+                  or (
+                    if (Config."Active Cancer Treatment PractitionerRole Specialty Is Enabled") then
+                      exists (
+                        "Oncologist Practitioner Roles" PractitionerRole
+                          where EndsWith(EncounterParticipant.individual.reference, PractitionerRole.id)
+                      )
+                    else
+                      false
+                  )
+            )
         )
 
 define "Number of Enounters with Cancer Diagnosis During Encounter Period":
