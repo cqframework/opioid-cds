@@ -1,17 +1,24 @@
 <Encounter xmlns="http://hl7.org/fhir">
-   <id value="example-rec-04-not-long-acting-opioid-prefetch"/>
-   <status value="finished"/>
-   <subject>
-      <reference value="Patient/example-rec-04-not-long-acting-opioid"/>
-   </subject>
-   <period>
-      <extension url="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query">
-         <extension url="language">
-           <valueUri value="text/cql" />
-         </extension>
-         <extension url="expression">
-           <valueString value="FHIR.Period { start: FHIR.dateTime { value: Today() - 4 months }, end: FHIR.dateTime { value: Today() - 4 months } }"/>
-         </extension>
-      </extension>
-   </period>
+    <id value="example-rec-04-not-long-acting-opioid-prefetch"/>
+    <extension url ="http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller">
+        <extension url="dateLastUpdated">
+            <valueDateTime value="2022-04-22"/>
+        </extension>
+        <extension url="frequency">
+            <valueDuration>
+                <value value="30.0"/>
+                <unit value="days"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="d"/>
+            </valueDuration>
+        </extension>
+    </extension>
+    <status value="finished"/>
+    <subject>
+        <reference value="Patient/example-rec-04-not-long-acting-opioid"/>
+    </subject>
+    <period>
+        <start value="2021-12-28"/>
+        <end value="2021-12-28"/>
+    </period>
 </Encounter>

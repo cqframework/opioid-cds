@@ -1,85 +1,92 @@
 {
   "hookInstance": "1bf95787-c6eb-42c5-aacd-405803921024",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://cqf-ruler.localhost:8080/fhir",
   "hook": "order-select",
   "user": "Practitioner/example",
-  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-04-opioid-with-abuse-potential",
     "encounterId": "Encounter/example-rec-04-opioid-with-abuse-potential-context",
-    "draftOrders":
-      {
-        "resourceType": "MedicationRequest",
-        "id": "example-rec-04-opioid-with-abuse-potential-context",
-        "status": "active",
-        "intent": "order",
-        "category": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/medication-request-category",
-              "code": "community"
-            }
-          ]
-        },
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "1049502",
-              "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "Patient/example-rec-04-opioid-with-abuse-potential"
-        },
-        "context": {
-          "reference": "Encounter/example-rec-04-opioid-with-abuse-potential-context"
-        },
-        "_authoredOn": {
+    "draftOrders": {
+      "resourceType": "MedicationRequest",
+      "id": "example-rec-04-opioid-with-abuse-potential-context",
+      "extension": [
+        {
+          "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
           "extension": [
             {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "Today()"
+              "url": "dateLastUpdated",
+              "valueDateTime": "2022-04-28"
+            },
+            {
+              "url": "frequency",
+              "valueDuration": {
+                "value": 30.0,
+                "unit": "days",
+                "system": "http://unitsofmeasure.org",
+                "code": "d"
+              }
             }
           ]
-        },
-        "dosageInstruction": [
+        }
+      ],
+      "status": "active",
+      "intent": "order",
+      "category": {
+        "coding": [
           {
-            "timing": {
-              "repeat": {
-                "frequency": 1,
-                "period": 3.0,
-                "periodUnit": "d"
-              }
-            },
-            "asNeededBoolean": false,
-            "doseQuantity": {
-              "value": 1.0,
-              "unit": "patch",
-				      "system": "http://hl7.org/fhir/v3/orderableDrugForm",
-				      "code": "PATCH"
-            }
+            "system": "http://hl7.org/fhir/medication-request-category",
+            "code": "community"
           }
-        ],
-        "dispenseRequest": {
-          "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+        ]
+      },
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "1049502",
+            "display": "12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
+          }
+        ]
+      },
+      "subject": {
+        "reference": "Patient/example-rec-04-opioid-with-abuse-potential"
+      },
+      "context": {
+        "reference": "Encounter/example-rec-04-opioid-with-abuse-potential-context"
+      },
+      "authoredOn": "2022-04-28",
+      "dosageInstruction": [
+        {
+          "timing": {
+            "repeat": {
+              "frequency": 1,
+              "period": 3.0,
+              "periodUnit": "d"
+            }
           },
-          "numberOfRepeatsAllowed": 3,
-          "expectedSupplyDuration": {
-            "value": 30.0,
-            "unit": "days",
-            "system": "http://unitsofmeasure.org",
-            "code": "d"
+          "asNeededBoolean": false,
+          "doseQuantity": {
+            "value": 1.0,
+            "unit": "patch",
+            "system": "http://hl7.org/fhir/v3/orderableDrugForm",
+            "code": "PATCH"
           }
         }
+      ],
+      "dispenseRequest": {
+        "validityPeriod": {
+          "start": "2022-04-28",
+          "end": "2022-07-28"
+        },
+        "numberOfRepeatsAllowed": 3,
+        "expectedSupplyDuration": {
+          "value": 30.0,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        }
       }
+    }
   },
   "prefetch": {
     "item1": {
@@ -89,6 +96,26 @@
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "example-rec-04-opioid-with-abuse-potential-prefetch",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "status": "active",
         "intent": "order",
         "category": {
@@ -114,14 +141,7 @@
         "context": {
           "reference": "Encounter/example-rec-04-opioid-with-abuse-potential-prefetch"
         },
-        "_authoredOn": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "Today() - 14 days"
-            }
-          ]
-        },
+        "authoredOn": "2022-04-14",
         "dosageInstruction": [
           {
             "timing": {
@@ -135,19 +155,15 @@
             "doseQuantity": {
               "value": 1.0,
               "unit": "patch",
-				      "system": "http://hl7.org/fhir/v3/orderableDrugForm",
-				      "code": "PATCH"
+              "system": "http://hl7.org/fhir/v3/orderableDrugForm",
+              "code": "PATCH"
             }
           }
         ],
         "dispenseRequest": {
           "validityPeriod": {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-                "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() + 3 months } }"
-              }
-            ]
+            "start": "2022-04-14",
+            "end": "2022-07-28"
           },
           "numberOfRepeatsAllowed": 3,
           "expectedSupplyDuration": {
@@ -166,17 +182,33 @@
       "resource": {
         "resourceType": "Encounter",
         "id": "example-rec-04-opioid-with-abuse-potential-prefetch",
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
+              }
+            ]
+          }
+        ],
         "status": "finished",
         "subject": {
           "reference": "Patient/example-rec-04-opioid-with-abuse-potential"
         },
         "period": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() - 14 days }, end: FHIR.dateTime { value: Today() - 14 days } }"
-            }
-          ]
+          "start": "2022-04-14",
+          "end": "2022-04-14"
         }
       }
     },

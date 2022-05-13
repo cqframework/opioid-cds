@@ -6,7 +6,7 @@
   "title": "PDMP data reviewed finding",
   "status": "active",
   "experimental": true,
-  "date": "2022-03-29T11:44:38-06:00",
+  "date": "2022-05-09T13:05:17-06:00",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "contact": [ {
     "name": "MD Partners, Inc.",
@@ -34,8 +34,8 @@
     } ]
   },
   "expansion": {
-    "identifier": "8de16f91-ed30-4ec1-8a8b-7fa7525a4a99",
-    "timestamp": "2022-03-29T11:44:38-06:00",
+    "identifier": "1a239b64-fa9b-410d-aecf-708b5ec88bd0",
+    "timestamp": "2022-05-09T13:05:17-06:00",
     "contains": [ {
       "system": "http://snomed.info/sct",
       "version": "http://snomed.info/sct/731000124108/version/20210901",

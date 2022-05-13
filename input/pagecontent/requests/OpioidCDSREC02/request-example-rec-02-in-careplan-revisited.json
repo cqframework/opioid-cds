@@ -2,7 +2,6 @@
   "hookInstance": "2c7a36a1-1e82-4608-87be-fc13f730ec49",
   "fhirServer": "http://localhost:8080/cqf-ruler-r4/fhir",
   "hook": "order-select",
-  "applyCql": true,
   "context": {
     "userId": "Practitioner/example",
     "patientId": "Patient/example-rec-02-true-make-recommendations",
@@ -16,17 +15,27 @@
       "resource": {
         "resourceType": "Patient",
         "id": "example-rec-02-true-make-recommendations",
-        "_birthDate": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today() - 20 years"
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+            "extension": [
+              {
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
+                }
               }
-            }
-          ]
-        }
+            ]
+          }
+        ],
+        "birthDate": "2002-04-28"
       }
     },
     "item2": {
@@ -36,35 +45,35 @@
       "resource": {
         "resourceType": "CarePlan",
         "id": "1446d540-3b44-4af9-934b-3a694d8abffc",
-        "meta": {
-          "_lastUpdated": {
+        "extension": [
+          {
+            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
             "extension": [
               {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-                "valueExpression": {
-                  "language": "text/cql",
-                  "expression": "Today() - 120 days"
+                "url": "dateLastUpdated",
+                "valueDateTime": "2022-04-28"
+              },
+              {
+                "url": "frequency",
+                "valueDuration": {
+                  "value": 30.0,
+                  "unit": "days",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "d"
                 }
               }
             ]
           }
+        ],
+        "meta": {
+          "lastUpdated": "2021-12-29"
         },
         "status": "active",
         "intent": "plan",
         "subject": {
           "reference": "Patient/example-rec-02-true-make-recommendations"
         },
-        "_created": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
-              "valueExpression": {
-                "language": "text/cql",
-                "expression": "Today() - 150 days"
-              }
-            }
-          ]
-        },
+        "created": "2021-11-29",
         "author": {
           "reference": "Practitioner/example"
         }

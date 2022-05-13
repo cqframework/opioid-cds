@@ -1,15 +1,34 @@
 {
   "hookInstance": "3a2ff17f-4d50-43a0-a409-20d7686b90ea",
-  "fhirServer": "http://localhost:8080/cqf-ruler-dstu3/fhir",
+  "fhirServer": "http://cqf-ruler.localhost:8080/fhir",
   "hook": "order-select",
   "user": "Practitioner/example",
-  "applyCql": true,
   "context": {
     "patientId": "Patient/example-rec-04-new-patient",
     "encounterId": "Encounter/example-rec-04-new-patient-context",
     "draftOrders": {
       "resourceType": "MedicationRequest",
       "id": "example-rec-04-new-patient-context",
+      "extension": [
+        {
+          "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/dataDateRoller",
+          "extension": [
+            {
+              "url": "dateLastUpdated",
+              "valueDateTime": "2022-04-28"
+            },
+            {
+              "url": "frequency",
+              "valueDuration": {
+                "value": 30.0,
+                "unit": "days",
+                "system": "http://unitsofmeasure.org",
+                "code": "d"
+              }
+            }
+          ]
+        }
+      ],
       "status": "active",
       "intent": "order",
       "category": {
@@ -35,14 +54,7 @@
       "context": {
         "reference": "Encounter/example-rec-04-new-patient-context"
       },
-      "_authoredOn": {
-        "extension": [
-          {
-            "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-            "valueString": "Today()"
-          }
-        ]
-      },
+      "authoredOn": "2022-04-28",
       "dosageInstruction": [
         {
           "timing": {
@@ -63,13 +75,8 @@
       ],
       "dispenseRequest": {
         "validityPeriod": {
-          "extension": [
-            {
-              "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
-              "valueString": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
-            }
-          ]
-        },
+          "start": "2022-04-28",
+          "end": "2022-07-28" },
         "numberOfRepeatsAllowed": 3,
         "expectedSupplyDuration": {
           "value": 30.0,

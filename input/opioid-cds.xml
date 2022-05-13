@@ -18,12 +18,6 @@
                 <reference value="Bundle/opioid-cds-terminology"/>
             </sourceReference>
         </resource>
-        <resource>
-            <example value="true"/>
-            <sourceReference>
-                <reference value="Bundle/quickstart-medications-bundle"/>
-            </sourceReference>
-        </resource>
         <!-- <resource>
             <example value="true"/>
             <sourceReference>
@@ -1197,7 +1191,7 @@
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #8 Order Sign"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #8 Order Sign"/>
             <sourceReference>
-                <reference value="PlanDefinition/OpioidCDSREC08OrderSign"/>
+                <reference value="PlanDefinition/opioidcds-08-order-sign"/>
             </sourceReference>
         </resource>
         <resource>
@@ -1397,6 +1391,22 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Fentanyl-type Medication"/>
+            <description value="Fentanyl medication codes"/>
+            <sourceReference>
+                <reference value="ValueSet/fentanyl-type-medications"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="ValueSet - CDC Opioid Prescribing Guidelines Fentanyl-type Drug Urine Screening"/>
+            <description value="Urine analysis for fentanyl-type drugs"/>
+            <sourceReference>
+                <reference value="ValueSet/fentanyl-type-urine-drug-screening-tests"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="ValueSet - CDC Opioid Prescribing Guidelines Naloxone Medication"/>
             <description value="Naloxone medication codes"/>
             <sourceReference>
@@ -1416,7 +1426,7 @@
             <name value="ValueSet - CDC Opioid Prescribing Guidelines non-synthetic opioid clinical drugs"/>
             <description value="Non-synthetic opioid clinical drugs"/>
             <sourceReference>
-                <reference value="ValueSet/non-synthetic-opioids"/>
+                <reference value="ValueSet/non-synthetic-opioid-medications"/>
             </sourceReference>
         </resource>
         <resource>
