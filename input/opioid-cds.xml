@@ -1156,6 +1156,30 @@
         <!-- PlanDefinition -->
         <resource>
             <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #1"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #1"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-01"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #2"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #2"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-02"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #3"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #3"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-03"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #4"/>
             <sourceReference>

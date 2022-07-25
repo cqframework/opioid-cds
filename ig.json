@@ -715,6 +715,18 @@
       "source": "HelloWorld.json",
       "base": "PlanDefinition-HelloWorld.html"
     },
+    "PlanDefinition/opioidcds-01": {
+      "source": "plandefinition-OpioidCDSREC01.json",
+      "base": "PlanDefinition-opioidcds-01.html"
+    },
+    "PlanDefinition/opioidcds-02": {
+      "source": "plandefinition-OpioidCDSREC02.json",
+      "base": "PlanDefinition-opioidcds-02.html"
+    },
+    "PlanDefinition/opioidcds-03": {
+      "source": "plandefinition-OpioidCDSREC03.json",
+      "base": "PlanDefinition-opioidcds-03.html"
+    },
     "PlanDefinition/opioidcds-04": {
       "source": "plandefinition-OpioidCDSREC04.json",
       "base": "PlanDefinition-opioidcds-04.html"

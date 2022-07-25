@@ -1,0 +1,147 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "opioidcds-01",
+  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-01",
+  "version": "1.2.3",
+  "name": "PlanDefinition_Recommendation_1",
+  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #1",
+  "type": {
+    "coding": [ {
+      "system": "http://hl7.org/fhir/plan-definition-type",
+      "code": "eca-rule",
+      "display": "ECA Rule"
+    } ]
+  },
+  "status": "draft",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "description": "Nonpharmacologic therapy and nonopioid pharmacologic therapy are preferred for chronic pain.",
+  "purpose": "CDC's Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.",
+  "usage": "Clinicians should consider opioid therapy only if expected benefits for both pain and function are anticipated to outweigh risks to the patient.",
+  "useContext": [ {
+    "code": {
+      "system": "http://hl7.org/fhir/usage-context-type",
+      "code": "focus",
+      "display": "Clinical Focus"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "182888003",
+        "display": "Medication requested (situation)"
+      } ]
+    }
+  }, {
+    "code": {
+      "system": "http://hl7.org/fhir/usage-context-type",
+      "code": "focus",
+      "display": "Clinical Focus"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "82423001",
+        "display": "Chronic pain (finding)"
+      } ]
+    }
+  } ],
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US",
+      "display": "United States of America"
+    } ]
+  } ],
+  "topic": [ {
+    "text": "Opioid Prescribing"
+  } ],
+  "contributor": [
+    {
+      "type": "author",
+      "name": "Kensaku Kawamoto, MD, PhD, MHS"
+    },
+    {
+      "type": "author",
+      "name": "Bryn Rhodes"
+    },
+    {
+      "type": "author",
+      "name": "Floyd Eisenberg, MD, MPH"
+    },
+    {
+      "type": "author",
+      "name": "Robert McClure, MD, MPH"
+    }
+  ],
+  "copyright": "© CDC 2016+.",
+  "library": [
+    {
+      "reference": "Library/OpioidCDSREC01"
+    }
+  ],
+  "action": [ {
+    "title": "Current Order is for Opioid With Ambulatory Misuse Potential.",
+    "description": "Checking if the trigger prescription meets the inclusion criteria for recommendation #1 workflow.",
+    "documentation": [ {
+      "type": "documentation",
+      "document": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation",
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "http://hl7.org/fhir/recommendation-strength",
+              "code": "strong",
+              "display": "Strong"
+            } ]
+          }
+        }, {
+          "url": "http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence",
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "http://hl7.org/fhir/evidence-quality",
+              "code": "low",
+              "display": "Low quality"
+            } ]
+          }
+        } ],
+        "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
+        "title": "CDC guideline for prescribing opioids for chronic pain"
+      }
+    } ],
+    "triggerDefinition": [ {
+      "type": "named-event",
+      "eventName": "order-sign"
+    } ],
+    "condition": [ {
+      "kind": "applicability",
+      "description": "Check whether the current Order is for Opioid With Ambulatory Misuse Potential.",
+      "language": "text/cql",
+      "expression": "Is Recommendation Applicable?"
+    } ],
+    "groupingBehavior": "visual-group",
+    "selectionBehavior": "any",
+    "dynamicValue": [ {
+      "path": "action.title",
+      "language": "text/cql",
+      "expression": "Get Summary"
+    }, {
+      "path": "action.description",
+      "language": "text/cql",
+      "expression": "Get Detail"
+    }, {
+      "path": "activity.extension",
+      "language": "text/cql",
+      "expression": "Get Indicator"
+    } ],
+    "action": [ {
+      "description": "Document reason for opioid use"
+    }, {
+      "description": "Attempted alternate therapy; snooze 3 months"
+    }, {
+      "description": "N/A - see comment; snooze 3 months"
+    }, {
+      "description": "Select from order set for alternative therapies"
+    }, {
+      "description": "Remove triggering medication"
+    } ]
+  } ]
+}
