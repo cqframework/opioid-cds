@@ -8,18 +8,9 @@
 {% include container-start.html %}
 
 <!-- ============CONTENT CONTENT=============== -->
-<link href="assets/css/accordions.css" rel="stylesheet" />
-
-<ul id="markdown-toc">
-  <li><a href="#rec12" id="markdown-toc-rec11">Recommendation #12 - Evidence-based Treatment for Patients with Opioid Use Disorder</a></li>
-  <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
-  <li><a href="#content" id="markdown-toc-content">Content</a></li>
-</ul>
 
 <a name="rec12"> </a>
-
-<h2><span class="sectioncount">26</span> Recommendation #12 - Evidence-based Treatment for Patients with Opioid Use Disorder <a href="recommendation-12.html#rec12" title="link to here" class="self-link"><img src="target.png" width="20"
-      class="self-link" height="20" /></a></h2>
+<h2><span class="sectioncount">24.0.0</span> Recommendation #12 - Evidence-based Treatment for Patients with Opioid Use Disorder <a href="recommendation-12.html#rec12" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h2>
 
 <p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#12_Clinicians_should_offer_or_arrange" target="_blank">Recommendation #12:</a></p>
 <p>
@@ -27,20 +18,32 @@
     buprenorphine or methadone in combination with behavioral therapies)for patients with opioid use disorder
     <em>(recommendation category: A, evidence type: 2)</em>.</strong>
 </p>
-<details open>
-  <summary>
-    <h3>Functional Description</h3>
+
+<div class="toc-container">
+  <p class="toc-title">Contents</p>
+  <ul id="toc-list">
+    <li><a href="#functional-description">Functional Description</a></li>
+    <li><a href="#content">Content</a></li>
+    <li><a href="#example-data-requests">Example Data/Requests</a></li>
+  </ul>
+</div>
+
+<details class="tree-nav__item is-expandable" open>
+  <a name="functional-description"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">24.1.0</span> Functional Description <a href="recommendation-12.html#functional-description" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
 
-  <a name="funcdesc"> </a>
   {% include recommendation12-functional-description.html %}
 
   <p></p>
   <img src="assets/images/Recommendation12-flow.png" style="max-width: 100%;" />
   <p></p>
-  <img src="assets/images/Recommendation12-Definitions.png" style="max-width: 100%;" />
+  {% include recommendation12-data-elements.html %}
+  <p></p>
 
-  <h4>Rationale for Medication-Assisted Treatment or Behavioral Therapy</h4>
+  <a name="rationale"> </a>
+  <h4><span class="sectioncount">24.1.1</span> Rationale for Medication-Assisted Treatment or Behavioral Therapy <a href="recommendation-12.html#rationale" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h4>
   <table class="list" style="margin-top: 2em; margin-bottom: 2em">
     <thead>
       <tr>
@@ -64,13 +67,13 @@
         <td>
           <ul>
             <li>Evidence of positive result from opioid use disorder evaluation tool</li>
-            <li>Timing – within 90 days</li>
+            <li>Timing - within 90 days</li>
           </ul>
         </td>
         <td>
           <ul>
-            <li>Value set for opioid use disorder evaluation tool(s) – LOINC pan</li>
-            <li>Result options for such opioid use disorder evaluation tool(s) – perhaps LOINC normative responses that differentiate positive from negative results.</li>
+            <li>Value set for opioid use disorder evaluation tool(s) - LOINC pan</li>
+            <li>Result options for such opioid use disorder evaluation tool(s) - perhaps LOINC normative responses that differentiate positive from negative results.</li>
             <!--QUESTION TO CDC: Do opioid use disorder evaluation tools exist and, if so, how can we be sure we have a comprehensive list of such tools (represented by LOINC), and determine what represents a positive result from each?-->
             <li>Consider this element a FUTURE option</li>
           </ul>
@@ -80,14 +83,14 @@
         <td>Opioid metabolites in urine drug screening</td>
         <td>
           <ul>
-            <li>Urine drug screening tests – need to evaluate ALL urine screening tests and not just the first one found performed in last 90 days</li>
+            <li>Urine drug screening tests - need to evaluate ALL urine screening tests and not just the first one found performed in last 90 days</li>
             <li>Evidence of positive result from screening tests</li>
           </ul>
         </td>
         <td>
           <ul>
             <li>Urine drug screening tests (perhaps a LOINC panel)</li>
-            <!--QUESTION TO CDC: What represents a positive result for each screening test including what might be a false positive, a cross-reactant or a false negative – perhaps consider LOINC normative responses or something else?-->
+            <!--QUESTION TO CDC: What represents a positive result for each screening test including what might be a false positive, a cross-reactant or a false negative - perhaps consider LOINC normative responses or something else?-->
             <li>Consider this element a FUTURE option</li>
           </ul>
         </td>
@@ -113,18 +116,16 @@
   </table>
 </details>
 <p></p>
-
-<details>
-  <summary>
-    <h3 class="title">Content</h3>
-  </summary>
-
+<details class="tree-nav__item is-expandable">
   <a name="content"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">24.2.0</span> Content <a href="recommendation-12.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
 
   <!-- <h4>Artifact Package</h4>
   <p>The <a href="Bundle-OpioidCDSREC12PatientView-bundle.html" title="link to here" class="self-link">Recommendation 12 Patient View Artifact Package</a> is a FHIR Bundle resource containing the following artifacts that formalize the description of the logic and behavior defined by this recommendation:</p> -->
 
-  <p></p>
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
 
   <table class="list">
     <thead>
@@ -149,16 +150,12 @@
     </tbody>
   </table>
 </details>
-
 <p></p>
-
-<!-- Example Data/Requests -->
-
-<details>
-  <summary>
-    <h3 class="title">Example Data/Requests - patient-view hook</h3>
+<details class="tree-nav__item is-expandable">
+  <a name="example-data-requests"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">24.3.0</span> Example Data/Requests <a href="recommendation-12.html#example-data-requests" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
-  <a name="exampledatarequests-patient-view"> </a>
   <table class="grid">
     <thead>
       <tr>
@@ -177,7 +174,7 @@
         <td><a href="responses/OpioidCDSREC12PatientView/response-example-rec-12-in-criteria-met.json">Response JSON</a></td>
       </tr>
       <tr>
-        <td class="col-7">(patient-view) Patient is 18 or older. Patient has not been diagnosed with opioid misuse disorder in the past 90 days. The patient will be excluded and no message will be triggered – an empty set of cards will be returned.
+        <td class="col-7">(patient-view) Patient is 18 or older. Patient has not been diagnosed with opioid misuse disorder in the past 90 days. The patient will be excluded and no message will be triggered - an empty set of cards will be returned.
         </td>
         <td><a href="Bundle-example-rec-12-criteria-invalid.html">Test Bundle</a></td>
         <td><a href="requests/OpioidCDSREC12PatientView/request-example-rec-12-patient-view-out-opioid-misuse.json">Request JSON</a></td>

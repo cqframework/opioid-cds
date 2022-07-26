@@ -1,0 +1,23 @@
+<table id="dataElements">
+  {% include data-elements-intro.html %}
+  {% include data-elements-headers.html %}
+  <tr>
+    <td>Order exists for opioid analgesics with ambulatory misuse potential?</td>
+    <td>Yes</td>
+    <td>Trigger based on an existing prescription (order) for opioid analgesics with ambulatory misuse potential</td>
+    <td>Opioid analgesics with ambulatory misuse potential</td>
+  </tr>
+  <tr>
+    <td>Order for benzodiazepine medications?</td>
+    <td>Yes</td>
+    <td>Trigger based on patient view, then search for an existing prescription (order) for opioids or benzodiazepines in the relevant value sets</td>
+    <td>Benzodiazepine medications</td>
+  </tr>
+  {% include data-elements-opioid-review-useful.html %}
+  <tr>
+    <td>Receiving both opioid with ambulatory use potential and benzodiazepine?</td>
+    <td>Yes</td>
+    <td>Existing prescriptions for both an opioid and a prescription for benzodiazepine</td>
+    <td>Opioid analgesics with ambulatory misuse potential <br />Benzodiazepine medications</td>
+  </tr>
+</table>

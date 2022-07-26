@@ -739,6 +739,10 @@
       "source": "plandefinition-OpioidCDSREC05.json",
       "base": "PlanDefinition-opioidcds-05.html"
     },
+    "PlanDefinition/opioidcds-06": {
+      "source": "plandefinition-OpioidCDSREC06.json",
+      "base": "PlanDefinition-opioidcds-06.html"
+    },
     "PlanDefinition/opioidcds-07": {
       "source": "plandefinition-OpioidCDSREC07.json",
       "base": "PlanDefinition-opioidcds-07.html"
@@ -750,6 +754,10 @@
     "PlanDefinition/opioidcds-08-order-sign": {
       "source": "plandefinition-OpioidCDSREC08OrderSign.json",
       "base": "PlanDefinition-opioidcds-08-order-sign.html"
+    },
+    "PlanDefinition/opioidcds-09": {
+      "source": "plandefinition-OpioidCDSREC09.json",
+      "base": "PlanDefinition-opioidcds-09.html"
     },
     "PlanDefinition/opioidcds-10": {
       "source": "plandefinition-OpioidCDSREC10.json",

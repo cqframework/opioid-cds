@@ -8,17 +8,9 @@
 {% include container-start.html %}
 
 <!-- ============CONTENT CONTENT=============== -->
-<link href="assets/css/accordions.css" rel="stylesheet" />
-
-
-<ul id="markdown-toc">
-  <li><a href="#rec08" id="markdown-toc-rec08">Recommendation #8 - Naloxone Consideration</a></li>
-  <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
-  <li><a href="#content" id="markdown-toc-content">Content</a></li>
-</ul>
 
 <a name="rec08"> </a>
-<h2><span class="sectioncount">8.9.0</span> Recommendation #8 - Naloxone Consideration <a href="recommendation-08.html#rec08" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h2>
+<h2><span class="sectioncount">18.0.0</span> Recommendation #8 - Naloxone Consideration <a href="recommendation-08.html#rec08" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h2>
 
 <p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#8_starting_periodically_during_continuation" target="_blank">Recommendation #8:</a></p>
 <p>
@@ -29,42 +21,58 @@
     (≥50 MME/day), or concurrent benzodiazepine use, are present <em>(recommendation category: A, evidence type: 4)</em>.</strong>
 </p>
 
-<details open>
-  <a name="funcdesc"> </a>
-  <summary>
-    <h3><span class="sectioncount">8.9.1</span> Functional Description <a href="recommendation-08.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+<div class="toc-container">
+  <p class="toc-title">Contents</p>
+  <ul id="toc-list">
+    <li><a href="#functional-description">Functional Description</a></li>
+    <li><a href="#for-chronic-pain">For Chronic Pain</a></li>
+    <li><a href="#opioid-review-useful">Opioid Review Useful</a></li>
+    <li><a href="#content">Content</a></li>
+    <li><a href="#example-data-requests">Example Data/Requests</a></li>
+  </ul>
+</div>
+
+<details class="tree-nav__item is-expandable" open>
+  <a name="functional-description"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">18.1.0</span> Functional Description <a href="recommendation-08.html#functional-description" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
 
   {% include recommendation08-functional-description.html %}
 
   <p></p>
-
   <img src="assets/images/Recommendation08-flow.png" style="max-width: 100%;" />
-  <img src="assets/images/Recommendation08-Definitions.png" style="max-width: 100%;" />
+  <p></p>
+  {% include recommendation08-data-elements.html %}
+
 </details>
 <p></p>
-<details>
-  <summary>
-    <h3 class="title">For Chronic Pain</h3>
+<details class="tree-nav__item is-expandable">
+  <a name="for-chronic-pain"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">18.2.0</span> For Chronic Pain <a href="recommendation-08.html#for-chronic-pain" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
   {% include for-chronic-pain-definitions.html %}
 </details>
 <p></p>
-<details>
-  <summary>
-    <h3 class="title">Opioid Review Useful</h3>
+<details class="tree-nav__item is-expandable">
+  <a name="opioid-review-useful"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">18.3.0</span> Opioid Review Useful <a href="recommendation-08.html#opioid-review-useful" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
   {% include opioid-review-useful-definitions.html %}
 </details>
 <p></p>
-<details>
+<details class="tree-nav__item is-expandable">
   <a name="content"> </a>
-  <summary>
-    <h3><span class="sectioncount">8.9.2</span> Content <a href="recommendation-08.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">18.4.0</span> Content <a href="recommendation-08.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
 
   <!-- <h4>Artifact Package</h4>
   <p>The <a href="Bundle-OpioidCDSREC08-bundle.html" title="link to here" class="self-link">Recommendation 8 Artifact Package</a> is a FHIR Bundle resource containing the following artifacts that formalize the description of the logic and behavior defined by this recommendation:</p> -->
+
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
 
   <table class="list">
     <thead>
@@ -89,38 +97,52 @@
     </tbody>
   </table>
 </details>
-
 <p></p>
-
-<!-- Example Data/Requests -->
-<details>
-  <summary>
-    <h3>Example Data/ Requests</h3>
-      </summary>
-      <p>ToDo</p>
-   <a name="exampledatarequests"> </a>
+<details class="tree-nav__item is-expandable">
+  <summary class="tree-nav__item-title">
+    <a name="example-data-requests"> </a>
+    <h3><span class="sectioncount">18.5.0</span> Example Data/Requests <a href="recommendation-08.html#example-data-requests" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
   <table class="grid">
     <thead>
       <tr>
-        <th>Description</th>
-        <th>Bundle</th>
-        <th>CDS Hooks Request</th>
-        <th>Expected Response</th>
+        <th>Description</th><th>Bundle</th><th>CDS Hooks Request</th><th>Expected Response</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="col-7">ToDo</td>
-         <td><a href="Bundle-example-rec-08-mme-greater-than-fifty.html">Test Bundle</a></td>
-         <td><a href="requests/OpioidCDSREC08/request-example-rec-08-mme-greater-than-fifty.json">Request JSON</a></td>
-         <td><a href="responses/OpioidCDSREC08/response-example-rec-08-mme-greater-than-fifty.json">Response JSON</a></td>
-       </tr>
-       <tr>
-         <td class="col-7">ToDo</td>
-         <td><a href="Bundle-example-rec-08-mme-less-than-fifty.html">Test Bundle</a></td>
-         <td><a href="requests/OpioidCDSREC08/request-example-rec-08-mme-less-than-fifty.json">Request JSON</a></td>
-         <td><a href="responses/OpioidCDSREC08/response-example-rec-08-mme-less-than-fifty.json">Response JSON</a></td>
-       </tr>
+        <td class="col-7">Patient is 18 or older. Patient has been prescribed 72 HR Fentanyl 0.075 MG/HR Transdermal System (RXNorm 197696) 1 patch per 10 days for 30 days. This will trigger the message "Incorporate into the management plan strategies to mitigate risk; including considering offering naloxone when factors that increase risk for opioid overdose are present." Consider offering naloxone given following risk factor(s) for opioid overdose: Average MME (54.000000 'mg/d') >= 50 mg/day.</td>
+        <td><a href="Bundle-example-rec-08-mme-greater-than-fifty.html">Test Bundle</a></td>
+        <td><a href="requests/OpioidCDSREC08/request-example-rec-08-mme-greater-than-fifty.json">Request JSON</a></td>
+        <td><a href="responses/OpioidCDSREC08/response-example-rec-08-mme-greater-than-fifty.json">Response JSON</a></td>
+      </tr>
+      <tr>
+        <td class="col-7">Patient is 18 or older. Patient has been prescribed 72 HR Fentanyl 0.075 MG/HR Transdermal System (RXNorm 197696) 1 patch per 12 days for 30 days. The patient will be excluded and no message will be triggered - an empty set of cards will be returned.</td>
+        <td><a href="Bundle-example-rec-08-mme-less-than-fifty.html">Test Bundle</a></td>
+        <td><a href="requests/OpioidCDSREC08/request-example-rec-08-mme-less-than-fifty.json">Request JSON</a></td>
+        <td><a href="responses/OpioidCDSREC08/response-example-rec-08-mme-less-than-fifty.json">Response JSON</a></td>
+      </tr>
+      <tr>
+        <td class="col-7">Patient is 18 or older. Patient has been prescribed 72 HR Fentanyl 0.075 MG/HR Transdermal System (RXNorm 197696) 1 patch per 12 days for 30 days. Patient has also been prescribed Temazepam 20 MG Oral Tablet (RXNorm 104693) 1 tablet per 1 day for 30 days. This will trigger the message “Incorporate into the management plan strategies to mitigate risk; including considering offering naloxone when factors that increase risk for opioid overdose are present. Consider offering naloxone given following risk factor(s) for opioid overdose: concurrent use of benzodiazepine.</td>
+        <td><a href="Bundle-example-rec-08-on-benzodiazepine.html">Test Bundle</a></td>
+        <td><a href="requests/OpioidCDSREC08/request-example-rec-08-on-benzodiazepine.json">Request JSON</a></td>
+        <td><a href="responses/OpioidCDSREC08/response-example-rec-08-on-benzodiazepine.json">Response JSON</a></td>
+      </tr>
+      <tr>
+        <td class="col-7">Patient is 18 or older. Patient has been prescribed 72 HR Fentanyl 0.075 MG/HR Transdermal System (RXNorm 197696) 1 patch per 12 days for 30 days. Patient has also been prescribed Naloxone Hydrochloride 0.02 MG/ML Injectable Solution (RXNorm 1191212) 1ml per 1 day for 30 days. The patient will be excluded and no message will be triggered - an empty set of cards will be returned.</td>
+        <td><a href="Bundle-example-rec-08-on-naloxone.html">Test Bundle</a></td>
+        <td><a href="requests/OpioidCDSREC08/request-example-rec-08-on-naloxone.json">Request JSON</a></td>
+        <td><a href="responses/OpioidCDSREC08/response-example-rec-08-on-naloxone.json">Response JSON</a></td>
+      </tr>
+      <tr>
+        <td class="col-7">Patient is 18 or older. Patient has been prescribed 72 HR Fentanyl 0.075 MG/HR Transdermal System (RXNorm 197696) 1 patch per 12 days for 30 days. This will trigger the message "Incorporate into the management plan strategies to mitigate risk; including considering offering naloxone when factors that increase risk for opioid overdose are present" Consider offering naloxone given following risk factor(s) for opioid overdose: history of alcohol or drug abuse.</td>
+        <td><a href="Bundle-example-rec-08-substance-abuse.html">Test Bundle</a></td>
+        <td><a href="requests/OpioidCDSREC08/request-example-rec-08-substance-abuse.json">Request JSON</a></td>
+        <td><a href="responses/OpioidCDSREC08/response-example-rec-08-substance-abuse.json">Response JSON</a></td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
 <!-- ==============END CONTENT END CONTENT=================== -->
 

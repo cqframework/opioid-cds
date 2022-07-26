@@ -1204,6 +1204,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #6"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #6"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-06"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #7"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #7"/>
             <sourceReference>
@@ -1216,6 +1224,14 @@
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #8"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-08"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #9"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #9"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-09"/>
             </sourceReference>
         </resource>
         <resource>
