@@ -8,6 +8,12 @@
     <experimental value="false"/>
     <date value="2017-02-06"/>
     <publisher value="Centers for Disease Control and Prevention (CDC)"/>
+    <contact>
+      <telecom>
+        <system value="url"/>
+        <value value="https://www.cdc.gov"/>
+      </telecom>
+    </contact>
     <description value="Opioid Prescribing Support Implementation Guide"/>
     <fhirVersion value="3.0.2"/>
     <package>
