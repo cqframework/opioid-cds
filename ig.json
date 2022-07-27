@@ -27,6 +27,7 @@
     "output": "output",
     "txCache" : "input-cache/txcache",
     "qa": "qa",
+    "liquid": "input/templates",
     "specification": "http://hl7.org/fhir/STU3/"
   },
   "defaults": {
@@ -40,6 +41,13 @@
       "template-defns": "instance-template-definitions.html"
     }
   },
+  "dependencyList": [
+    {
+      "name" : "CQFMeasures",
+      "location" : "http://hl7.org/fhir/us/cqfmeasures",
+      "version" : "3.0.0"
+    }
+  ],
   "logging": ["init", "progress", "context", "html", "tx"],
   "extraTemplates": [
     "mappings"
@@ -715,52 +723,72 @@
       "source": "HelloWorld.json",
       "base": "PlanDefinition-HelloWorld.html"
     },
+    "PlanDefinition/opioidcds-01": {
+      "source": "opioidcds-01.json",
+      "base": "PlanDefinition-opioidcds-01.html"
+    },
+    "PlanDefinition/opioidcds-02": {
+      "source": "opioidcds-02.json",
+      "base": "PlanDefinition-opioidcds-02.html"
+    },
+    "PlanDefinition/opioidcds-03": {
+      "source": "opioidcds-03.json",
+      "base": "PlanDefinition-opioidcds-03.html"
+    },
     "PlanDefinition/opioidcds-04": {
-      "source": "plandefinition-OpioidCDSREC04.json",
+      "source": "opioidcds-04.json",
       "base": "PlanDefinition-opioidcds-04.html"
     },
     "PlanDefinition/opioidcds-04-patient-view": {
-      "source": "plandefinition-OpioidCDSREC04PatientView.json",
+      "source": "opioidcds-04-patient-view.json",
       "base": "PlanDefinition-opioidcds-04-patient-view.html"
     },
     "PlanDefinition/opioidcds-05": {
-      "source": "plandefinition-OpioidCDSREC05.json",
+      "source": "opioidcds-05.json",
       "base": "PlanDefinition-opioidcds-05.html"
     },
+    "PlanDefinition/opioidcds-06": {
+      "source": "opioidcds-06.json",
+      "base": "PlanDefinition-opioidcds-06.html"
+    },
     "PlanDefinition/opioidcds-07": {
-      "source": "plandefinition-OpioidCDSREC07.json",
+      "source": "opioidcds-07.json",
       "base": "PlanDefinition-opioidcds-07.html"
     },
     "PlanDefinition/opioidcds-08": {
-      "source": "plandefinition-OpioidCDSREC08.json",
+      "source": "opioidcds-08.json",
       "base": "PlanDefinition-opioidcds-08.html"
     },
     "PlanDefinition/opioidcds-08-order-sign": {
-      "source": "plandefinition-OpioidCDSREC08OrderSign.json",
+      "source": "opioidcds-08-order-sign.json",
       "base": "PlanDefinition-opioidcds-08-order-sign.html"
     },
+    "PlanDefinition/opioidcds-09": {
+      "source": "opioidcds-09.json",
+      "base": "PlanDefinition-opioidcds-09.html"
+    },
     "PlanDefinition/opioidcds-10": {
-      "source": "plandefinition-OpioidCDSREC10.json",
+      "source": "opioidcds-10.json",
       "base": "PlanDefinition-opioidcds-10.html"
     },
     "PlanDefinition/opioidcds-10-order-sign": {
-      "source": "plandefinition-OpioidCDSREC10OrderSign.json",
+      "source": "opioidcds-10-order-sign.json",
       "base": "PlanDefinition-opioidcds-10-order-sign.html"
     },
     "PlanDefinition/opioidcds-10-patient-view": {
-      "source": "plandefinition-OpioidCDSREC10PatientView.json",
+      "source": "opioidcds-10-patient-view.json",
       "base": "PlanDefinition-opioidcds-10-patient-view.html"
     },
     "PlanDefinition/opioidcds-11": {
-      "source": "plandefinition-OpioidCDSREC11.json",
+      "source": "opioidcds-11.json",
       "base": "PlanDefinition-opioidcds-11.html"
     },
     "PlanDefinition/opioidcds-11-patient-view": {
-      "source": "plandefinition-OpioidCDSREC11PatientView.json",
+      "source": "opioidcds-11-patient-view.json",
       "base": "PlanDefinition-opioidcds-11-patient-view.html"
     },
     "PlanDefinition/opioidcds-12-patient-view": {
-      "source": "plandefinition-OpioidCDSREC12PatientView.json",
+      "source": "opioidcds-12-patient-view.json",
       "base": "PlanDefinition-opioidcds-12-patient-view.html"
     },
 

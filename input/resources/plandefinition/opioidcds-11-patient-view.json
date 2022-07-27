@@ -1,0 +1,358 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "opioidcds-11-patient-view",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC11PatientView"
+    }, {
+      "url": "name",
+      "valueString": "Get Summary"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Get Summary\":\n  if \"Is Recommendation Applicable?\"\n    then 'Patient has active prescriptions for opioid pain medication and benzodiazepines'\n  else null"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 0
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSCommon"
+    }, {
+      "url": "name",
+      "valueString": "Active Ambulatory Benzodiazepine Rx"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Active Ambulatory Benzodiazepine Rx\":\n  (\n    [MedicationRequest: status in \"Active MedicationRequest\"] MR\n      where date from MR.authoredOn 2 years or less on or before Today()\n        and MR.medication is Reference or MR.medication in \"Benzodiazepine medications\"\n        and MR.category in \"Community\"\n  ) Rx\n    let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]\n    where not(Rx.medication is Reference) or Med.code in \"Benzodiazepine medications\"\n      return\n        MedicationRequest {\n          id: Rx.id,\n          status: Rx.status,\n          intent: Rx.intent,\n          category: Rx.category,\n          medication: if Rx.medication is Reference then First(Med.code) else Rx.medication as CodeableConcept,\n          subject: Rx.subject,\n          recorder: Rx.recorder,\n          dosageInstruction: Rx.dosageInstruction,\n          dispenseRequest: Rx.dispenseRequest\n        }"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 1
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSCommon"
+    }, {
+      "url": "name",
+      "valueString": "Active Ambulatory Opioid Rx"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Active Ambulatory Opioid Rx\":\n  (\n    [MedicationRequest: status in \"Active MedicationRequest\"] MR\n      where date from MR.authoredOn 2 years or less on or before Today()\n        and MR.medication is Reference or MR.medication in \"Opioid analgesics with ambulatory misuse potential\"\n        and MR.category in \"Community\"\n  ) Rx\n    let Med: [Medication: id in (Last(Split((Rx.medication as FHIR.Reference).reference, '/')))]\n    where not(Rx.medication is Reference) or Med.code in \"Opioid analgesics with ambulatory misuse potential\"\n      return\n        MedicationRequest {\n          id: Rx.id,\n          status: Rx.status,\n          intent: Rx.intent,\n          category: Rx.category,\n          medication: if Rx.medication is Reference then First(Med.code) else Rx.medication as CodeableConcept,\n          subject: Rx.subject,\n          recorder: Rx.recorder,\n          dosageInstruction: Rx.dosageInstruction,\n          dispenseRequest: Rx.dispenseRequest\n        }"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 2
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC11PatientView"
+    }, {
+      "url": "name",
+      "valueString": "Patient Age Less Than 18"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Patient Age Less Than 18\":\n  if (Config.\"Age Less than 18 Years Is Enabled\") then\n    AgeInYearsAt(Today()) < 18\n  else\n    false"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 3
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSCommon"
+    }, {
+      "url": "name",
+      "valueString": "US Core-Categorized Conditions"
+    }, {
+      "url": "statement",
+      "valueString": "// 3. Medications indicating end of life\n    /* or exists (\n      \"Medications Indicating End of Life\"\n    ) */\ndefine \"US Core-Categorized Conditions\":\n  [Condition: category in \"Encounter Diagnosis Condition Category\"]\n    union [Condition: category in \"Problem List Condition Category\"]\n    union [Condition: category in \"US Core Health Concern Condition Category\"]"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 4
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSRoutines"
+    }, {
+      "url": "name",
+      "valueString": "Conditions Indicating End Of Life Present"
+    }, {
+      "url": "statement",
+      "valueString": "/* define \"Patient Age Less Than 18\":\n  if (Config.\"Age Less than 18 Years Is Enabled\") then\n    AgeInYearsAt(Today()) < 18\n  else\n    false */\ndefine \"Conditions Indicating End Of Life Present\":\n  exists (\n    Common.\"US Core-Categorized Conditions\" LLEC\n      where LLEC.code in Common.\"Limited life expectancy conditions\"\n        and LLEC.clinicalStatus in Common.\"Active Condition\"\n  )"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 5
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSRoutines"
+    }, {
+      "url": "name",
+      "valueString": "Is Active Cancer Treatment?"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Is Active Cancer Treatment?\":\n  if (Config.\"Active Cancer Treatment Encounters Condition Is Enabled\") then\n    \"Has Two or More Encounters with Cancer Diagnosis During Encounter Period\"\n  else\n    false"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 6
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSRoutines"
+    }, {
+      "url": "name",
+      "valueString": "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present"
+    }, {
+      "url": "statement",
+      "valueString": "// NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest\n/* define \"Order For Palliative Care In Past 90 Days\":\n  exists (\n    [ProcedureRequest: Common.\"Therapies indicating end of life care\"] SR\n      where SR.status in { 'active', 'completed'}\n        and SR.intent != null\n        and FHIRHelpers.ToDateTime(SR.authoredOn) during day of \"Palliative Care Lookback Period\"\n  ) */\ndefine \"Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present\":\n  if (Config.\"End-Stage Disease Criteria Enabled\") then\n    exists (\n      Common.\"US Core-Categorized Conditions\" EOLC\n        where EOLC.code in Common.\"Conditions likely terminal for opioid prescribing\"\n          and EOLC.clinicalStatus in Common.\"Active Condition\"\n    )\n  else\n    false"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 7
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSRoutines"
+    }, {
+      "url": "name",
+      "valueString": "Is Opioid Review Useful?"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Is Opioid Review Useful?\":\n  /* not \"Patient Age Less Than 18\" */\n    not \"Conditions Indicating End Of Life Present\"\n      /* and not \"Order For Palliative Care In Past 90 Days\" */\n      and not \"Is Active Cancer Treatment?\"\n      and not \"Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 8
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC11PatientView"
+    }, {
+      "url": "name",
+      "valueString": "Inclusion Criteria"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Inclusion Criteria\":\n  (\n    exists (Common.\"Active Ambulatory Benzodiazepine Rx\")\n      and exists (Common.\"Active Ambulatory Opioid Rx\")\n  )\n    and not \"Patient Age Less Than 18\"\n    and Routines.\"Is Opioid Review Useful?\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 9
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC11PatientView"
+    }, {
+      "url": "name",
+      "valueString": "Exclusion Criteria"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Exclusion Criteria\":\n  false"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 10
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC11PatientView"
+    }, {
+      "url": "name",
+      "valueString": "Is Recommendation Applicable?"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Is Recommendation Applicable?\":\n  \"Inclusion Criteria\"\n    and not \"Exclusion Criteria\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 11
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC11PatientView"
+    }, {
+      "url": "name",
+      "valueString": "Get Detail"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Get Detail\":\n  if \"Is Recommendation Applicable?\"\n    then 'Avoid prescribing opioid pain medication and benzodiazepines concurrently whenever possible'\n  else null"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 12
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC11PatientView"
+    }, {
+      "url": "name",
+      "valueString": "Get Indicator"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Get Indicator\":\n  if \"Is Recommendation Applicable?\"\n    then 'warning'\n  else null"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 13
+    } ]
+  } ],
+  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-11-patient-view",
+  "version": "1.2.3",
+  "name": "PlanDefinition_Recommendation_11_Patient_View",
+  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 (patient-view)",
+  "type": {
+    "coding": [ {
+      "system": "http://hl7.org/fhir/plan-definition-type",
+      "code": "eca-rule",
+      "display": "ECA Rule"
+    } ]
+  },
+  "status": "draft",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "description": "Concurrently prescribing opioid medications with benzodiazepines increases the risk of harm for the patient.",
+  "purpose": "CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.",
+  "usage": "Clinicians should avoid prescribing opioid pain medication and benzodiazepines concurrently whenever possible.",
+  "useContext": [ {
+    "code": {
+      "system": "http://hl7.org/fhir/usage-context-type",
+      "code": "focus",
+      "display": "Clinical Focus"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "182888003",
+        "display": "Medication requested (situation)"
+      } ]
+    }
+  }, {
+    "code": {
+      "system": "http://hl7.org/fhir/usage-context-type",
+      "code": "focus",
+      "display": "Clinical Focus"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "82423001",
+        "display": "Chronic pain (finding)"
+      } ]
+    }
+  } ],
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US",
+      "display": "United States of America"
+    } ]
+  } ],
+  "topic": [ {
+    "text": "Opioid Prescribing"
+  } ],
+  "contributor": [ {
+    "type": "author",
+    "name": "Kensaku Kawamoto, MD, PhD, MHS"
+  }, {
+    "type": "author",
+    "name": "Bryn Rhodes"
+  }, {
+    "type": "author",
+    "name": "Floyd Eisenberg, MD, MPH"
+  }, {
+    "type": "author",
+    "name": "Robert McClure, MD, MPH"
+  } ],
+  "copyright": "© CDC 2016+.",
+  "library": [ {
+    "reference": "Library/OpioidCDSREC11PatientView"
+  } ],
+  "action": [ {
+    "triggerDefinition": [ {
+      "type": "named-event",
+      "eventName": "patient-view"
+    } ],
+    "condition": [ {
+      "kind": "applicability",
+      "language": "text/cql",
+      "expression": "Inclusion Criteria"
+    } ],
+    "action": [ {
+      "title": "Existing patient has concurrent opioid and benzodiazepine prescriptions.",
+      "description": "Checking if the trigger prescription meets the inclusion criteria for recommendation #11 workflow.",
+      "documentation": [ {
+        "type": "documentation",
+        "document": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation",
+            "valueCodeableConcept": {
+              "coding": [ {
+                "system": "http://hl7.org/fhir/recommendation-strength",
+                "code": "strong",
+                "display": "Strong"
+              } ]
+            }
+          }, {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence",
+            "valueCodeableConcept": {
+              "coding": [ {
+                "system": "http://hl7.org/fhir/evidence-quality",
+                "code": "low",
+                "display": "Low quality"
+              } ]
+            }
+          } ],
+          "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
+          "title": "CDC guideline for prescribing opioids for chronic pain"
+        }
+      } ],
+      "triggerDefinition": [ {
+        "type": "named-event",
+        "eventName": "patient-view"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "description": "Check whether the existing patient is using opioids concurrently with benzodiazepines.",
+        "language": "text/cql",
+        "expression": "Is Recommendation Applicable?"
+      } ],
+      "groupingBehavior": "visual-group",
+      "selectionBehavior": "any",
+      "dynamicValue": [ {
+        "path": "action.description",
+        "language": "text/cql",
+        "expression": "Get Detail"
+      }, {
+        "path": "action.title",
+        "language": "text/cql",
+        "expression": "Get Summary"
+      }, {
+        "path": "action.extension",
+        "language": "text/cql",
+        "expression": "Get Indicator"
+      } ],
+      "action": [ {
+        "description": "Will revise"
+      }, {
+        "description": "Risk of overdose carefully considered and outweighed by benefit; snooze 3 mo"
+      }, {
+        "description": "N/A - see comment; snooze 3 mo"
+      } ]
+    } ]
+  } ]
+}

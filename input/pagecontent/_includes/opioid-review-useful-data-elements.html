@@ -1,0 +1,33 @@
+<table id="dataElements">
+  {% include data-elements-headers.html %}
+  <tr>
+    <td>Age &lt; 18 years?</td>
+    <td>No</td>
+    <td>Calculate age from date of birth; exclude patients with age less than 18 years at the time of the prescription</td>
+    <td>Date of birth</td>
+  </tr>
+  <tr>
+    <td>Limited life expectancy conditions present?</td>
+    <td>No</td>
+    <td>Look for documented findings consistent with those listed in the limited life expectancy value set (terminal illness, bad prognosis, pre-terminal)</td>
+    <td>Limited life expectancy conditions</td>
+  </tr>
+  <tr>
+    <td>Order for therapies indicating end of life care in past 90 days?</td>
+    <td>No</td>
+    <td>Look for patients with an existing order for therapies indicating end of life care written within past 90 days</td>
+    <td>Therapies indicating end of life care</td>
+  </tr>
+  <tr>
+    <td>Active cancer treatment?</td>
+    <td>No</td>
+    <td>See Active Cancer Treatment sub-routine</td>
+    <td>See Active Cancer Treatment sub-routine</td>
+  </tr>
+  <tr>
+    <td>Conditions Likely Terminal for opioid prescribing present?</td>
+    <td>No</td>
+    <td>Look for patients with <em>active</em> conditions in the value set end-of-life-conditions</td>
+    <td>Conditions likely terminal for opioid prescribing</td>
+  </tr>
+</table>

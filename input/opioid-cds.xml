@@ -993,6 +993,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="Library - Opioid CDS Common Config"/>
+            <description value="Opioid Management Decision Support Logic Common Config"/>
+            <sourceReference>
+                <reference value="Library/OpioidCDSCommonConfig"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="Library - Opioid CDS Routines"/>
             <description value="Opioid Management Decision Support Logic Routines"/>
             <sourceReference>
@@ -1148,6 +1156,30 @@
         <!-- PlanDefinition -->
         <resource>
             <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #1"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #1"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-01"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #2"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #2"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-02"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #3"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #3"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-03"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #4"/>
             <sourceReference>
@@ -1172,6 +1204,14 @@
         </resource>
         <resource>
             <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #6"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #6"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-06"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
             <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #7"/>
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #7"/>
             <sourceReference>
@@ -1184,6 +1224,14 @@
             <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #8"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-08"/>
+            </sourceReference>
+        </resource>
+        <resource>
+            <example value="true"/>
+            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #9"/>
+            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #9"/>
+            <sourceReference>
+                <reference value="PlanDefinition/opioidcds-09"/>
             </sourceReference>
         </resource>
         <resource>
