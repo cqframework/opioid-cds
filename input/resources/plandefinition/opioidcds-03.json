@@ -1,0 +1,459 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "opioidcds-03",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC02"
+    }, {
+      "url": "name",
+      "valueString": "Get Summary"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Get Summary\":\n  if \"Is Recommendation Applicable?\"\n    then 'Recommend creation, review or update of opioid treatment plan'\n  else null"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 0
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC02"
+    }, {
+      "url": "name",
+      "valueString": "Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions\":\n  ( Common.\"Is Opioid Analgesic with Ambulatory Misuse Potential?\"( ContextPrescriptions ) ) AmbulatoryOpioidPrescription\n    where Routines.\"Is Chronic Pain Prescription?\"( AmbulatoryOpioidPrescription )"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 1
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC02"
+    }, {
+      "url": "name",
+      "valueString": "Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential\":\n  exists( \"Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions\" )"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 2
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSRoutines"
+    }, {
+      "url": "name",
+      "valueString": "Has Opioid RX with Ambulatory Abuse Potential In Past 90 Days"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Has Opioid RX with Ambulatory Abuse Potential In Past 90 Days\":\n  if (Config.\"Opioid Naive Prescription Condition Is Enabled\") then\n    exists (\"Opioid RX with Ambulatory Abuse Potential In Past 90 Days\")\n  else\n    false"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 3
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSRoutines"
+    }, {
+      "url": "name",
+      "valueString": "Has Opioid Dispense with Ambulatory Abuse Potential In Past 90 Days"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Has Opioid Dispense with Ambulatory Abuse Potential In Past 90 Days\":\n  if (Config.\"Opioid Naive Dispense Condition Is Enabled\") then\n    exists (\"Opioid Dispense with Ambulatory Abuse Potential In Past 90 Days\")\n  else\n    false"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 4
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSRoutines"
+    }, {
+      "url": "name",
+      "valueString": "Is Opioid Naive?"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Is Opioid Naive?\":\n  not (\"Has Opioid RX with Ambulatory Abuse Potential In Past 90 Days\")\n  /* and not (\"Has Report sof Opioid with Ambulatory Care Abuse Potential Reported in Past 90 Days\") */\n  and not (\"Has Opioid Dispense with Ambulatory Abuse Potential In Past 90 Days\")"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 5
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC02"
+    }, {
+      "url": "name",
+      "valueString": "Patient Age Less Than 18"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Patient Age Less Than 18\":\n  if (Config.\"Age Less than 18 Years Is Enabled\") then\n    AgeInYearsAt(Today()) < 18\n  else\n    false"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 6
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSCommon"
+    }, {
+      "url": "name",
+      "valueString": "US Core-Categorized Conditions"
+    }, {
+      "url": "statement",
+      "valueString": "// 3. Medications indicating end of life\n    /* or exists (\n      \"Medications Indicating End of Life\"\n    ) */\ndefine \"US Core-Categorized Conditions\":\n  [Condition: category in \"Encounter Diagnosis Condition Category\"]\n    union [Condition: category in \"Problem List Condition Category\"]\n    union [Condition: category in \"US Core Health Concern Condition Category\"]"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 7
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSRoutines"
+    }, {
+      "url": "name",
+      "valueString": "Conditions Indicating End Of Life Present"
+    }, {
+      "url": "statement",
+      "valueString": "/* define \"Patient Age Less Than 18\":\n  if (Config.\"Age Less than 18 Years Is Enabled\") then\n    AgeInYearsAt(Today()) < 18\n  else\n    false */\ndefine \"Conditions Indicating End Of Life Present\":\n  exists (\n    Common.\"US Core-Categorized Conditions\" LLEC\n      where LLEC.code in Common.\"Limited life expectancy conditions\"\n        and LLEC.clinicalStatus in Common.\"Active Condition\"\n  )"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 8
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSRoutines"
+    }, {
+      "url": "name",
+      "valueString": "Is Active Cancer Treatment?"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Is Active Cancer Treatment?\":\n  if (Config.\"Active Cancer Treatment Encounters Condition Is Enabled\") then\n    \"Has Two or More Encounters with Cancer Diagnosis During Encounter Period\"\n  else\n    false"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 9
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSRoutines"
+    }, {
+      "url": "name",
+      "valueString": "Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present"
+    }, {
+      "url": "statement",
+      "valueString": "// NOTE: Disabled due to FHIR.AllTypes not supporting ProcedureRequest\n/* define \"Order For Palliative Care In Past 90 Days\":\n  exists (\n    [ProcedureRequest: Common.\"Therapies indicating end of life care\"] SR\n      where SR.status in { 'active', 'completed'}\n        and SR.intent != null\n        and FHIRHelpers.ToDateTime(SR.authoredOn) during day of \"Palliative Care Lookback Period\"\n  ) */\ndefine \"Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present\":\n  if (Config.\"End-Stage Disease Criteria Enabled\") then\n    exists (\n      Common.\"US Core-Categorized Conditions\" EOLC\n        where EOLC.code in Common.\"Conditions likely terminal for opioid prescribing\"\n          and EOLC.clinicalStatus in Common.\"Active Condition\"\n    )\n  else\n    false"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 10
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSRoutines"
+    }, {
+      "url": "name",
+      "valueString": "Is Opioid Review Useful?"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Is Opioid Review Useful?\":\n  /* not \"Patient Age Less Than 18\" */\n    not \"Conditions Indicating End Of Life Present\"\n      /* and not \"Order For Palliative Care In Past 90 Days\" */\n      and not \"Is Active Cancer Treatment?\"\n      and not \"Conditions Including Cancer To Exclude Opioid Management Indicating End-Stage Disease Present\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 11
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSCommonConfig"
+    }, {
+      "url": "name",
+      "valueString": "Opioid Treatment Plan Verification Enabled"
+    }, {
+      "url": "statement",
+      "valueString": "// Recommendation 2\ndefine \"Opioid Treatment Plan Verification Enabled\":\n  true"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 12
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC02"
+    }, {
+      "url": "name",
+      "valueString": "Treatment Plan Lookback Period"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Treatment Plan Lookback Period\":\n  Interval[Today() - 90 days, Today()]"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 13
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC02"
+    }, {
+      "url": "name",
+      "valueString": "Opioid Treatment Plan Creation or Update in Past 90 Days"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Opioid Treatment Plan Creation or Update in Past 90 Days\":\n  [CarePlan: category in Common.\"Pain treatment plan\"] PainTreatmentPlan\n    where PainTreatmentPlan.status in { 'active', 'completed' }\n      and (\n        start of PainTreatmentPlan.period during day of \"Treatment Plan Lookback Period\"\n          or PainTreatmentPlan.meta.lastUpdated during day of \"Treatment Plan Lookback Period\"\n      )\n      and exists(\n        \"Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions\".recorder Recorder\n          with PainTreatmentPlan.author Author\n          such that Recorder ~ Author\n      )"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 14
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC02"
+    }, {
+      "url": "name",
+      "valueString": "Had Opioid Treatment Plan Reviewed in Past 90 Days"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Had Opioid Treatment Plan Reviewed in Past 90 Days\":\n  exists (\n    [Procedure: Common.\"Pain management procedure\"] PainManagementProcedure\n      where PainManagementProcedure.performed during day of \"Treatment Plan Lookback Period\"\n        and exists (\n          PainManagementProcedure.performer Performer\n            with \"Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions\" ChronicPainScript\n            such that Performer.actor ~ ChronicPainScript.recorder\n        )\n  )"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 15
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC02"
+    }, {
+      "url": "name",
+      "valueString": "No Opioid Treatment Plan Created, was Edited or Reviewed in Past 90 Days?"
+    }, {
+      "url": "statement",
+      "valueString": "define \"No Opioid Treatment Plan Created, was Edited or Reviewed in Past 90 Days?\":\n  Config.\"Opioid Treatment Plan Verification Enabled\"\n    and not (\n      exists ( \"Opioid Treatment Plan Creation or Update in Past 90 Days\" )\n        or \"Had Opioid Treatment Plan Reviewed in Past 90 Days\"\n    )"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 16
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC02"
+    }, {
+      "url": "name",
+      "valueString": "Inclusion Criteria"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Inclusion Criteria\":\n  \"Patient Is Being Prescribed Opioid Analgesic with Ambulatory Misuse Potential\"\n    and Routines.\"Is Opioid Naive?\"\n    and not \"Patient Age Less Than 18\"\n    and Routines.\"Is Opioid Review Useful?\"\n    and \"No Opioid Treatment Plan Created, was Edited or Reviewed in Past 90 Days?\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 17
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC02"
+    }, {
+      "url": "name",
+      "valueString": "Is Recommendation Applicable?"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Is Recommendation Applicable?\":\n  \"Inclusion Criteria\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 18
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC02"
+    }, {
+      "url": "name",
+      "valueString": "Get Detail"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Get Detail\":\n  if \"Is Recommendation Applicable?\"\n    then 'Medication requests(s): '\n      + Combine((\"Chronic Pain Opioid Analgesic with Ambulatory Misuse Potential Prescriptions\" M\n          return Coalesce(M.medication.text, '<Unable to determine medication name>')), ', ')\n  else null"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 19
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "OpioidCDSREC02"
+    }, {
+      "url": "name",
+      "valueString": "Get Indicator"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Get Indicator\":\n  if \"Is Recommendation Applicable?\"\n    then 'warning'\n  else null"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 20
+    } ]
+  } ],
+  "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-03",
+  "version": "1.2.3",
+  "name": "PlanDefinition_Recommendation_3",
+  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #3",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule",
+      "display": "ECA Rule"
+    } ]
+  },
+  "status": "draft",
+  "publisher": "Centers for Disease Control and Prevention (CDC)",
+  "description": "Before starting and periodically during opioid therapy, clinicians should discuss with patients known risks and realistic benefits of opioid therapy and patient and clinician responsibilities for managing therapy.",
+  "purpose": "CDC's Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.",
+  "usage": "Before starting and periodically during opioid therapy, clinicians should discuss with patients known risks and realistic benefits of opioid therapy and patient and clinician responsibilities for managing therapy.",
+  "useContext": [ {
+    "code": {
+      "system": "http://hl7.org/fhir/usage-context-type",
+      "code": "focus",
+      "display": "Clinical Focus"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "182888003",
+        "display": "Medication requested (situation)"
+      } ]
+    }
+  }, {
+    "code": {
+      "system": "http://hl7.org/fhir/usage-context-type",
+      "code": "focus",
+      "display": "Clinical Focus"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "82423001",
+        "display": "Chronic pain (finding)"
+      } ]
+    }
+  } ],
+  "jurisdiction": [ {
+    "coding": [ {
+      "system": "urn:iso:std:iso:3166",
+      "code": "US",
+      "display": "United States of America"
+    } ]
+  } ],
+  "topic": [ {
+    "text": "Opioid Prescribing"
+  } ],
+  "contributor": [ {
+    "type": "author",
+    "name": "Kensaku Kawamoto, MD, PhD, MHS"
+  }, {
+    "type": "author",
+    "name": "Bryn Rhodes"
+  }, {
+    "type": "author",
+    "name": "Floyd Eisenberg, MD, MPH"
+  }, {
+    "type": "author",
+    "name": "Robert McClure, MD, MPH"
+  } ],
+  "copyright": "© CDC 2016+.",
+  "relatedArtifact": [ {
+    "type": "documentation",
+    "display": "CDC guideline for prescribing opioids for chronic pain",
+    "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
+  } ],
+  "library": [ {
+    "reference": "Library/OpioidCDSREC02"
+  } ],
+  "action": [ {
+    "title": "Current Order is for Extended release opioid with ambulatory abuse potential.",
+    "description": "Checking if the trigger prescription meets the inclusion criteria for recommendation #3 workflow.",
+    "documentation": [ {
+      "type": "documentation",
+      "document": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/cqif-strengthOfRecommendation",
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "http://hl7.org/fhir/recommendation-strength",
+              "code": "strong",
+              "display": "Strong"
+            } ]
+          }
+        }, {
+          "url": "http://hl7.org/fhir/StructureDefinition/cqif-qualityOfEvidence",
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "http://hl7.org/fhir/evidence-quality",
+              "code": "low",
+              "display": "Low quality"
+            } ]
+          }
+        } ],
+        "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
+        "title": "CDC guideline for prescribing opioids for chronic pain"
+      }
+    } ],
+    "triggerDefinition": [ {
+      "type": "named-event",
+      "eventName": "order-sign"
+    } ],
+    "condition": [ {
+      "kind": "applicability",
+      "description": "Check whether the current Order is for Extended release opioid with ambulatory abuse potential.",
+      "language": "text/cql",
+      "expression": "Is Recommendation Applicable?"
+    } ],
+    "groupingBehavior": "visual-group",
+    "selectionBehavior": "any",
+    "dynamicValue": [ {
+      "path": "action.title",
+      "language": "text/cql",
+      "expression": "Get Summary"
+    }, {
+      "path": "action.description",
+      "language": "text/cql",
+      "expression": "Get Detail"
+    }, {
+      "path": "activity.extension",
+      "language": "text/cql",
+      "expression": "Get Indicator"
+    } ],
+    "action": [ {
+      "description": "Order counseling"
+    }, {
+      "description": "Document that counseling provided"
+    }, {
+      "description": "Document the reason for not counseling; snooze 3 months"
+    }, {
+      "description": "N/A - see comment; snooze 3 months"
+    } ]
+  } ]
+}
