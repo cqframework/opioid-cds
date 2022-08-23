@@ -1,0 +1,210 @@
+#segment-footer > .container {
+    background-color: #105EAB;
+  }
+  .navbar-inverse {
+    background-color: #105EAB;
+  }
+  #hl7-nav {
+    line-height: 50px;
+    float: left;
+    margin-top: 16px;
+    color: #808080;
+  }
+  #hl7-nav a {
+    color: inherit;
+  }
+  #hl7-logo {
+    float: left;
+    margin-left: 6px;
+  }
+  #hl7-search {
+    line-height: 50px;
+    float: right;
+    margin-top: 16px;
+    color: maroon;
+  }
+  #hl7-search a {
+    color: inherit;
+  }
+  #fhir-nav {
+    line-height: 50px;
+    float: right;
+    margin-top: 16px;
+    color: #808080;
+  }
+  #fhir-logo {
+    float: right;
+    margin-left: 6px;
+  }
+  
+  /* 
+    Styles specific to this IG
+  */
+  
+  /*
+  Dropdown style
+  */
+  
+  summary {
+    display: block;
+    cursor: pointer;
+    outline: 0; 
+  }
+  
+  summary::-webkit-details-marker {
+      display: none;
+    }
+  
+  .tree-nav__item {
+    display: block;
+    position: relative;
+  }
+  .tree-nav__item.is-expandable::before {
+    content: "";
+    height: 100%;
+    left: 0.8rem;
+    position: absolute;
+    top: 2.4rem;
+    height: calc(100% - 2.4rem);
+  }
+  .tree-nav__item .tree-nav__item {
+    margin-left: 2.4rem;
+  }
+  .tree-nav__item.is-expandable[open] > .tree-nav__item-title::before {
+    font-family: "Glyphicons Halflings";
+    transform: rotate(90deg);
+  }
+  .tree-nav__item.is-expandable > .tree-nav__item-title {
+    padding-left: 2.4rem;
+  }
+  .tree-nav__item.is-expandable > .tree-nav__item-title::before {
+    position: absolute;
+    will-change: transform;
+    transition: transform 300ms ease;
+    font-family: "Glyphicons Halflings";
+    font-size: 1.5rem;
+    content: "\276f";
+    left: 0;
+    display: inline-block;
+    width: 1.6rem;
+    text-align: center;
+  }
+  
+  .tree-nav__item-title {
+    cursor: pointer;
+    display: block;
+    outline: 0;
+    font-size: 1.5rem;
+    line-height: 3.2rem;
+  }
+  .tree-nav__item-title .icon {
+    display: inline;
+    padding-left: 1.6rem;
+    margin-right: 0.8rem;
+    color: #666;
+    font-size: 1.4rem;
+    position: relative;
+  }
+  .tree-nav__item-title .icon::before {
+    top: 0;
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 1.6rem;
+    text-align: center;
+  }
+  
+  .tree-nav__item-title::-webkit-details-marker {
+    display: none;
+  }
+  
+  /* 
+  Ensure footer stays where it should
+  */
+  
+  html {
+    min-height: 100vh;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+  
+  #segment-footer {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    min-width: 100%;
+  }
+  
+  #segment-content {
+    padding-bottom: 40px;
+  }
+  
+  /* 
+  Table of contents styles
+  */
+  
+  .toc-container {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    display: table;
+    font-size: 95%;
+    margin-bottom: 1em;
+    padding: 20px;
+    width: auto;
+  }
+  
+  .toc-title {
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .toc-container li, .toc-container ul, .toc-container ul li{
+    list-style: outside none none !important;
+    padding: 0 0 0 0 !important;
+  }
+  
+  /*
+  Data Elements table style
+  */
+  
+  #dataElements {
+    border-collapse: collapse;
+    min-width: 100%;
+  }
+  
+  #dataElements td, #dataElements th {
+    border: 1px solid #ddd !important;
+    padding: 8px;
+  }
+  
+  #dataElements tr:nth-child(even){
+    background-color: #f2f2f2;
+  }
+  
+  #dataElements tr:hover {
+    background-color: #ddd;
+  }
+  
+  #dataElements th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #105eab !important;
+    color: white;
+  }
+  
+  #dataElements caption {
+    font-family: verdana;
+    font-size: 12px;
+    text-align: left;
+    padding-left: 10px;
+    background-color: #f2f2f2;
+  }
+  
+  #multipleVariation {
+    background-color: #f2f2f2 !important;
+    border: 1px solid #ddd !important;
+    padding: 5px !important;
+  }

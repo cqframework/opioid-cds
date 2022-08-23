@@ -43,9 +43,13 @@ body {
   background-color: #ffffff;
   position: relative;
   padding-top: 0;
+  height: initial !important;
 }
 .segment {
   position: relative;
+}
+#segment-content {
+  padding-bottom: 40px;
 }
 .segment > .container {
   background-color: #ffffff;
@@ -59,13 +63,22 @@ body {
 }
 #segment-footer {
   background-color: #707070;
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  min-width: 100%;
 }
 #segment-footer > .container {
   background-color: #105EAB;
   color: #ffffff;
+  max-height: 40px;
 }
 #segment-footer > .container .inner-wrapper {
-  padding: 11px 20px;
+  padding: 4px 20px;
+  max-height: 40px;
+}
+#segment-footer > .container .inner-wrapper > p {
+  padding: 0;
 }
 #segment-post-footer {
   background-color: #f5f5f5;
@@ -73,6 +86,13 @@ body {
 #segment-post-footer > .container {
   background-color: #e6e6e6;
   min-height: 90px;
+}
+
+:root {
+
+  --publish-box-bg-color: yellow; /* 15. Publish box background color */
+  --publish-box-border: 1px solid #0A0008; /* 16.  Publish box border definition */
+
 }
 /*
 @media (max-width: 767px) {
@@ -170,6 +190,9 @@ body {
   padding-left: 0px;
   padding-right: 0px;
   margin-bottom: 0;
+}
+.navbar-nav > li {
+  margin: 0;
 }
 .navbar .nav > li > a {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -379,29 +402,8 @@ a.to-top {
 ----------------------------------------------------------------------------------------*/
 /* D-I-D AREA
 ----------------------------------------------------------------------------------------*/
-
-#markdown-toc {
-}
-
-#markdown-toc::before {
-  content: 'Contents';
-  font-size: 1.5em;
-}
-
-
-ul#markdown-toc {
-  font-size: .6em;
-  list-style: none;
-  margin: 4px;
-  padding: 4px;
-  float: right;
-  z-index: 10;
-  width: 150px;
-  background-color: #f5f5f5;
-  border: 1px solid #f5f5f5;
-  border-radius: 5px;
-}
-
-#markdown-toc li{
-  font-size: 1em;
+#publish-box {
+  background-color: var(--publish-box-bg-color);
+  border: var(--publish-box-border);
+  padding: 5px;
 }

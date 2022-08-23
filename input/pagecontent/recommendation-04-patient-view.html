@@ -1,0 +1,158 @@
+---
+# jekyll header
+---
+{% include header.html %}
+
+<!-- ============BreadCrumb=============== -->
+
+{% include container-start.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
+
+<a name="rec04-patient-view"> </a>
+<h2><span class="sectioncount">14.0.0</span> Recommendation #4 Patient View Variation - Opioid Immediate Release Form When Starting Opioid Therapy <a href="recommendation-04-patient-view.html#rec04-patient-view" title="link to here" class="self-link"><img src="target.png" width="20"class="self-link" height="20" /></a></h2>
+
+<p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#4_When_starting_opioid_therapy" target="_blank">Recommendation #4:</a></p>
+<p>
+  <strong>When starting opioid therapy for chronic pain, clinicians should prescribe immediate-release opioids
+    instead of extended-release/long-acting (ER/LA) opioids <em>(recommendation category: A, evidence type: 4)</em>.</strong>
+</p>
+
+{% include multiple-variation-note.html %}
+
+<ul class="nav nav-tabs">
+  <li><a href="recommendation-04-order-sign.html">Order Sign</a></li>
+  <li class="active"><a href="#">Patient View</a></li>
+</ul>
+
+<div class="toc-container">
+  <p class="toc-title">Contents</p>
+  <ul id="toc-list">
+    <li><a href="#functional-description">Functional Description</a></li>
+    <li><a href="#opioid-review-useful">Opioid Review Useful</a></li>
+    <li><a href="#opioid-naive">Opioid Naive</a></li>
+    <li><a href="#content">Content</a></li>
+    <li><a href="#example-data-requests">Example Data/Requests</a></li>
+  </ul>
+</div>
+
+<details class="tree-nav__item is-expandable" open>
+  <a name="functional-description"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">14.1.0</span> Functional Description <a href="recommendation-04-patient-view.html#functional-description" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
+
+  {% include recommendation04-functional-description.html %}
+
+  <p></p>
+
+  <img src="assets/images/Recommendation04-patient-view-flow.png" style="max-width: 100%;" />
+  <p></p>
+  {% include recommendation04-data-elements-patient-view.html %}
+</details>
+<a href="PlanDefinition-opioidcds-04-patient-view.html#effective-data-requirements">Effective Data Requirements</a>
+<p></p>
+<details class="tree-nav__item is-expandable">
+  <a name="opioid-review-useful"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">14.2.0</span> Opioid Review Useful <a href="recommendation-04-patient-view.html#opioid-review-useful" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
+  {% include opioid-review-useful-definitions.html %}
+</details>
+<p></p>
+<details class="tree-nav__item is-expandable">
+  <a name="opioid-naive"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">14.3.0</span> Opioid Naive <a href="recommendation-04-patient-view.html#opioid-naive" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
+  {% include opioid-naive-definitions.html %}
+</details>
+
+<p></p>
+
+<details class="tree-nav__item is-expandable">
+  <a name="content"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">14.4.0</span> Content <a href="recommendation-04-patient-view.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
+
+  <!-- <h4>Artifact Package</h4>
+  <p>The <a href="Bundle-OpioidCDSREC04-bundle.html" title="link to here" class="self-link">Recommendation 4 Artifact Package</a> is a FHIR Bundle resource containing the following artifacts that formalize the description of the logic and behavior defined by this recommendation:</p> -->
+
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
+
+  <table class="list">
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <tr><td><a href="PlanDefinition-opioidcds-04-patient-view.html">CDC Opioid Prescribing Guideline Recommendation #4 Patient View</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #4 Patient View</td></tr>
+        <tr><td><a href="Library-OpioidCDSREC04PatientView.html">Recommendation #4 Patient View - prescribe immediate-release opioids instead of extended-release/long-acting (ER/LA) opioids</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>Defines the data requirements to support evaluation of recommendation #4 Patient View</td></tr>
+      </tr>
+      <tr>
+        <td><a href="Library-OpioidCDSREC04.html">Recommendation #4 - prescribe immediate-release opioids instead of extended-release/long-acting (ER/LA) opioids</a></td>
+        <td><a href="{{site.data.fhir.path}}library.html">Library</a></td>
+        <td>Defines the data requirements to support evaluation of recommendation #4</td>
+      </tr>
+      {% include common-libraries.html %}
+    </tbody>
+  </table>
+</details>
+
+<p></p>
+
+<details class="tree-nav__item is-expandable">
+  <a name="example-data-requests"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">14.5.0</span> Example Data/Requests <a href="recommendation-04-patient-view.html#example-data-requests" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+  </summary>
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Bundle</th>
+        <th>CDS Hooks Request</th>
+        <th>Expected Response</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-7">Patient is 18 years or older and has a Medication Request authored "Today" for 12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet which is an "Extended Release Opioid with Ambulatory Abuse Potential." Additionally, the patient has a previous encounter within the past 12 months. This will result in a recommendation message: "Recommend use of immediate-release opioids instead of extended release/long acting opioids when starting patient on opioids."</td>
+          <td><a href="Bundle-example-rec-04-patient-view-long-acting-opioid.html">Test Bundle</a></td>
+          <td><a href="requests/OpioidCDSREC04PatientView/request-example-rec-04-patient-view-long-acting-opioid.json">Request JSON</a></td>
+          <td><a href="responses/OpioidCDSREC04PatientView/response-example-rec-04-patient-view-long-acting-opioid.json">Response JSON</a></td>
+       </tr>
+       <tr>
+         <td class="col-7">Patient is 18 years or older and has a Medication Request authored "Today" for 12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet which is an "Extended Release Opioid with Ambulatory Abuse Potential. The patient does not have a previous encounter within the past 12 months and will not result in any recommendation messages.</td>
+         <td><a href="Bundle-example-rec-04-patient-view-new-patient.html">Test Bundle</a></td>
+         <td><a href="requests/OpioidCDSREC04PatientView/request-example-rec-04-patient-view-new-patient.json">Request JSON</a></td>
+         <td><a href="responses/OpioidCDSREC04PatientView/response-example-rec-04-patient-view-new-patient.json">Response JSON</a></td>
+       </tr>
+       <tr>
+         <td class="col-7">Patient is 18 years or older and has a Medication Request authored 4 months prior to today for 12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet which is an "Extended Release Opioid with Ambulatory Abuse Potential. Additionally, the patient has a Medication Request authored "Today" for Buprenorphine 2 MG / Naloxone 0.5 MG Oral Strip which is not an "Extended Release Opioid…" This will not result in any recommendation messages.</td>
+         <td><a href="Bundle-example-rec-04-patient-view-not-long-acting-opioid.html">Test Bundle</a></td>
+         <td><a href="requests/OpioidCDSREC04PatientView/request-example-rec-04-patient-view-not-long-acting-opioid.json">Request JSON</a></td>
+         <td><a href="responses/OpioidCDSREC04PatientView/response-example-rec-04-patient-view-not-long-acting-opioid.json">Response JSON</a></td>
+       </tr>
+       <tr>
+         <td class="col-7">Patient is 18 years or older and has a 2 Medication Requests authored "Today" and 14 days prior to today, respectively, for 12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet which is an "Extended Release Opioid with Ambulatory Abuse Potential. Patient also has a previous encounter within the past 12 months but will not result in any recommendation messages as the patient is excluded by having a prior extended release opioid Medication Request within the preceding 91 days.</td>
+         <td><a href="Bundle-example-rec-04-patient-view-opioid-with-abuse-potential.html">Test Bundle</a></td>
+         <td><a href="requests/OpioidCDSREC04PatientView/request-example-rec-04-patient-view-opioid-with-abuse-potential.json">Request JSON</a></td>
+         <td><a href="responses/OpioidCDSREC04PatientView/response-example-rec-04-patient-view-opioid-with-abuse-potential.json">Response JSON</a></td>
+       </tr>
+     </tbody>
+   </table>
+ </details>
+
+
+
+<!-- ==============END CONTENT END CONTENT=================== -->
+
+{% include container-end.html %}
+
+{% include footer.html %}

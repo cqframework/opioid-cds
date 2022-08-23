@@ -1,0 +1,26 @@
+<table id="dataElements">
+  {% include data-elements-intro.html %}
+  {% include data-elements-headers.html %}
+  {% include data-elements-chronic-pain.html %}
+  {% include data-elements-opioid-review-useful.html %}
+  <tr>
+    <td>Calculate MME for prescription + active opioids</td>
+    <td>N/A</td>
+    <td>Current calculation uses known order (prescription) data. Note - for as needed (PRN) medication, the daily 
+      dose assumes the maximum dose the patient may take any given day if a range is present. Ideally, dispensed data 
+      could be used to determine the medication dispensed to the patient</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>MME&ge;50?</td>
+    <td>Yes</td>
+    <td>MME result is &ge; 50</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>MME&ge;90?</td>
+    <td>Yes</td>
+    <td>MME result is &ge; 90</td>
+    <td></td>
+  </tr>
+</table>

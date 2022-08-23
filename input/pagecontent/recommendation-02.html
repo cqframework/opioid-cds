@@ -8,65 +8,78 @@
 {% include container-start.html %}
 
 <!-- ============CONTENT CONTENT=============== -->
-<link href="assets/css/accordions.css" rel="stylesheet" />
-
-<ul id="markdown-toc">
-  <li><a href="#rec02" id="markdown-toc-rec02">Recommendation #2 - Opioid Therapy Goals Discussion</a></li>
-  <li><a href="#funcdesc" id="markdown-toc-funcdesc">Functional Description</a></li>
-  <li><a href="#content" id="markdown-toc-content">Content</a></li>
-</ul>
 
 <a name="rec02"> </a>
-<h2><span class="sectioncount">16</span> Recommendation #2 - Opioid Therapy Goals Discussion <a href="recommendation-12.html#rec12" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h2>
+<h2><span class="sectioncount">11.0.0</span> Recommendation #2 - Opioid Therapy Goals Discussion <a href="recommendation-02.html#rec02" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h2>
 <p><a href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm#2_Before_starting_opioid_therapy" target="_blank">Recommendation #2:</a></p>
 <p>
   <strong>Before starting opioid therapy for chronic pain, clinicians should establish treatment goals with all patients, including realistic goals for pain and function, and should consider how opioid therapy will be discontinued if benefits do not
     outweigh risks. Clinicians should continue opioid therapy only if there is clinically meaningful improvement in pain and function that outweighs risks to patient safety (recommendation category: A, evidence type: 4).</strong>
 </p>
-<details open>
-  <a name="funcdesc"> </a>
-  <summary>
-    <h3><span class="sectioncount">16</span> Functional Description <a href="recommendation-02.html#funcdesc" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
+
+<div class="toc-container">
+  <p class="toc-title">Contents</p>
+  <ul id="toc-list">
+    <li><a href="#functional-description">Functional Description</a></li>
+    <li><a href="#for-chronic-pain">For Chronic Pain</a></li>
+    <li><a href="#opioid-review-useful">Opioid Review Useful</a></li>
+    <li><a href="#opioid-naive">Opioid Naive</a></li>
+    <li><a href="#content">Content</a></li>
+    <!-- <li><a href="#example-data-requests">Example Data/Requests</a></li> -->
+  </ul>
+</div>
+
+<details class="tree-nav__item is-expandable" open>
+  <a name="functional-description"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">11.1.0</span> Functional Description <a href="recommendation-02.html#functional-description" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
+
   {% include recommendation02-functional-description.html %}
+
   <p></p>
   <img src="assets/images/Recommendation02-flow.png" style="max-width: 100%;" />
   <p></p>
-  <img src="assets/images/Recommendation02-Definitions.png" style="max-width: 100%;" />
+  {% include recommendation02-data-elements.html %}
+
 </details>
+<a href="PlanDefinition-opioidcds-02.html#effective-data-requirements">Effective Data Requirements</a>
 <p></p>
-<details>
-  <summary>
-    <h3>For Chronic Pain</h3>
+<details class="tree-nav__item is-expandable">
+  <a name="for-chronic-pain"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">11.2.0</span> For Chronic Pain <a href="recommendation-02.html#for-chronic-pain" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
   {% include for-chronic-pain-definitions.html %}
 </details>
 <p></p>
-<details>
-  <summary>
-    <h3>Opioid Review Useful</h3>
+<details class="tree-nav__item is-expandable">
+  <a name="opioid-review-useful"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">11.3.0</span> Opioid Review Useful <a href="recommendation-02.html#opioid-review-useful" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
   {% include opioid-review-useful-definitions.html %}
 </details>
 <p></p>
-<details>
-  <summary>
-    <h3>Opioid Naive Definitions</h3>
+<details class="tree-nav__item is-expandable">
+  <a name="opioid-naive"> </a>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">11.4.0</span> Opioid Naive Definitions <a href="recommendation-02.html#opioid-naive" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
   {% include opioid-naive-definitions.html %}
 </details>
 <p></p>
-<details>
+<details class="tree-nav__item is-expandable">
   <a name="content"> </a>
-  <summary>
-    <h3>Content</h3>
+  <summary class="tree-nav__item-title">
+    <h3><span class="sectioncount">11.5.0</span> Content <a href="recommendation-02.html#content" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20" /></a></h3>
   </summary>
 
   <!-- <h4>Artifact Package</h4> -->
   <!-- Commented out for now to avoid qa errors in publishing
     <p>The <a href="Bundle-OpioidCDSREC02-bundle.html" title="link to here" class="self-link">Recommendation 2 Artifact Package</a> is a FHIR Bundle resource containing the following artifacts that formalize the description of the logic and behavior defined by this recommendation:</p>
   -->
-  <p></p>
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
 
   <table class="list">
     <thead>
@@ -77,18 +90,17 @@
       </tr>
     </thead>
     <tbody>
-      <!-- <tr>
+      <tr>
         <td><a href="PlanDefinition-opioidcds-02.html">CDC Opioid Prescribing Guideline Recommendation #2</a></td>
         <td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td>
         <td>Event-Condition-Action rule that implements behavior for CDC Opioid Prescribing Guideline Recommendation #2</td>
-      </tr> -->
+      </tr>
       <tr>
         <td><a href="Library-OpioidCDSREC02.html">Recommendation #2 - Opioid Therapy Goals Discussion</a></td>
         <td><a href="{{site.data.fhir.path}}library.html">Library</a></td>
         <td>Defines the data requirements to support evaluation of recommendation #2</td>
       </tr>
       {% include common-libraries.html %}
-      {% include routines-library-table-row.html %}
     </tbody>
   </table>
 </details>
@@ -96,8 +108,8 @@
 
 <!-- Example Data/Requests -->
 <!--
-<details>
-  <summary>
+<details class="tree-nav__item is-expandable">
+  <summary class="tree-nav__item-title">
     <h3>Example Data/Requests</h3>
   </summary>
    <a name="exampledatarequests"> </a>
