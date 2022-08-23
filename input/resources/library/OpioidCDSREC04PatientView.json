@@ -188,26 +188,6 @@
   "dataRequirement": [ {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "mustSupport": [ "code", "status.value", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Encounter"
-    } ],
-    "type": "Encounter",
-    "mustSupport": [ "period.start", "period", "status.value", "status" ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Patient"
     } ],
     "type": "Patient"
@@ -217,7 +197,7 @@
       "valueCode": "MedicationRequest"
     } ],
     "type": "MedicationRequest",
-    "mustSupport": [ "recorder", "dosageInstruction", "authoredOn", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
+    "mustSupport": [ "status", "authoredOn", "medication", "category", "medication.reference", "id", "intent", "subject", "recorder", "dosageInstruction", "dispenseRequest" ],
     "codeFilter": [ {
       "path": "status",
       "valueSetReference": {
@@ -240,7 +220,7 @@
       "valueCode": "MedicationRequest"
     } ],
     "type": "MedicationRequest",
-    "mustSupport": [ "recorder", "dosageInstruction", "authoredOn", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
+    "mustSupport": [ "status", "authoredOn", "medication", "category", "medication.reference", "id", "intent", "subject", "recorder", "dosageInstruction", "dispenseRequest" ],
     "codeFilter": [ {
       "path": "status",
       "valueSetReference": {
@@ -286,6 +266,26 @@
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-us-core-health-concern-category"
       }
     } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "mustSupport": [ "code", "status", "status.value" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter",
+    "mustSupport": [ "period", "period.start", "status", "status.value" ]
   } ],
   "content": [ {
     "contentType": "text/cql",

@@ -188,12 +188,44 @@
   "dataRequirement": [ {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Patient"
+    } ],
+    "type": "Patient"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Medication"
     } ],
     "type": "Medication",
     "mustSupport": [ "id" ],
     "codeFilter": [ {
       "path": "id"
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "mustSupport": [ "code", "status", "performed" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
+      }
     } ]
   }, {
     "extension": [ {
@@ -234,38 +266,6 @@
         "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/condition-us-core-health-concern-category"
       }
     } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "mustSupport": [ "code", "performed", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-review-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/pdmp-data-reviewed-finding"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Patient"
-    } ],
-    "type": "Patient"
   } ],
   "content": [ {
     "contentType": "text/cql",

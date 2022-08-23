@@ -228,6 +228,12 @@
   "dataRequirement": [ {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Patient"
+    } ],
+    "type": "Patient"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Condition"
     } ],
     "type": "Condition",
@@ -270,7 +276,33 @@
       "valueCode": "Encounter"
     } ],
     "type": "Encounter",
-    "mustSupport": [ "period.start", "period", "diagnosis", "type", "period.start.value", "participant" ],
+    "mustSupport": [ "type" ],
+    "codeFilter": [ {
+      "path": "type",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/office-visit"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "PractitionerRole"
+    } ],
+    "type": "PractitionerRole",
+    "mustSupport": [ "specialty" ],
+    "codeFilter": [ {
+      "path": "specialty",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/oncology-specialty-designations"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter",
+    "mustSupport": [ "type", "period", "period.start", "period.start.value", "diagnosis", "participant" ],
     "codeFilter": [ {
       "path": "type",
       "valueSetReference": {
@@ -283,7 +315,7 @@
       "valueCode": "MedicationRequest"
     } ],
     "type": "MedicationRequest",
-    "mustSupport": [ "recorder", "dosageInstruction", "authoredOn", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
+    "mustSupport": [ "status", "authoredOn", "medication", "category", "medication.reference", "id", "intent", "subject", "recorder", "dosageInstruction", "dispenseRequest" ],
     "codeFilter": [ {
       "path": "status",
       "valueSetReference": {
@@ -306,7 +338,7 @@
       "valueCode": "MedicationRequest"
     } ],
     "type": "MedicationRequest",
-    "mustSupport": [ "recorder", "dosageInstruction", "authoredOn", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
+    "mustSupport": [ "status", "authoredOn", "medication", "category", "medication.reference", "id", "intent", "subject", "recorder", "dosageInstruction", "dispenseRequest" ],
     "codeFilter": [ {
       "path": "status",
       "valueSetReference": {
@@ -316,23 +348,10 @@
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "PractitionerRole"
-    } ],
-    "type": "PractitionerRole",
-    "mustSupport": [ "specialty" ],
-    "codeFilter": [ {
-      "path": "specialty",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/oncology-specialty-designations"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "MedicationDispense"
     } ],
     "type": "MedicationDispense",
-    "mustSupport": [ "whenHandedOver", "medication", "status" ],
+    "mustSupport": [ "medication", "whenHandedOver", "status" ],
     "codeFilter": [ {
       "path": "medication",
       "valueSetReference": {
@@ -342,29 +361,10 @@
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Patient"
-    } ],
-    "type": "Patient"
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Encounter"
     } ],
     "type": "Encounter",
-    "mustSupport": [ "type" ],
-    "codeFilter": [ {
-      "path": "type",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/office-visit"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Encounter"
-    } ],
-    "type": "Encounter",
-    "mustSupport": [ "period.start", "period", "diagnosis", "type", "period.start.value", "participant" ],
+    "mustSupport": [ "type", "period", "period.start", "period.start.value", "diagnosis", "participant" ],
     "codeFilter": [ {
       "path": "type",
       "valueSetReference": {

@@ -251,43 +251,16 @@
   "dataRequirement": [ {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
+      "valueCode": "Patient"
     } ],
-    "type": "Observation",
-    "mustSupport": [ "category" ],
-    "codeFilter": [ {
-      "path": "category",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Procedure"
-    } ],
-    "type": "Procedure",
-    "mustSupport": [ "code", "status.value", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Encounter"
-    } ],
-    "type": "Encounter",
-    "mustSupport": [ "period.start", "period", "status.value", "status" ]
+    "type": "Patient"
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "MedicationRequest"
     } ],
     "type": "MedicationRequest",
-    "mustSupport": [ "recorder", "dosageInstruction", "authoredOn", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
+    "mustSupport": [ "status", "authoredOn", "medication", "category", "medication.reference", "id", "intent", "subject", "recorder", "dosageInstruction", "dispenseRequest" ],
     "codeFilter": [ {
       "path": "status",
       "valueSetReference": {
@@ -310,7 +283,7 @@
       "valueCode": "MedicationRequest"
     } ],
     "type": "MedicationRequest",
-    "mustSupport": [ "recorder", "dosageInstruction", "authoredOn", "dispenseRequest", "subject", "medication.reference", "medication", "id", "category", "intent", "status" ],
+    "mustSupport": [ "status", "authoredOn", "medication", "category", "medication.reference", "id", "intent", "subject", "recorder", "dosageInstruction", "dispenseRequest" ],
     "codeFilter": [ {
       "path": "status",
       "valueSetReference": {
@@ -362,7 +335,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "code", "category" ],
+    "mustSupport": [ "category" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -375,7 +348,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "code", "category" ],
+    "mustSupport": [ "category", "code" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -388,26 +361,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "code", "category" ],
-    "codeFilter": [ {
-      "path": "category",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Patient"
-    } ],
-    "type": "Patient"
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "mustSupport": [ "code", "category" ],
+    "mustSupport": [ "category", "code" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -420,7 +374,40 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "code", "category" ],
+    "mustSupport": [ "category", "code" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Procedure"
+    } ],
+    "type": "Procedure",
+    "mustSupport": [ "code", "status", "status.value" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/hospice-procedure"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Encounter"
+    } ],
+    "type": "Encounter",
+    "mustSupport": [ "period", "period.start", "status", "status.value" ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "category", "code" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -433,7 +420,20 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "code", "category" ],
+    "mustSupport": [ "category", "code" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "category", "code" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
