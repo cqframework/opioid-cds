@@ -13,7 +13,7 @@
             <description value="Total morphine milligram equivalent (MME) is 179.99999820mg/d. Taper to less than 50."/>
             <documentation>
                 <type value="documentation"/>
-                <display value="CDC guideline for prescribing opioids for chronic pain"/>
+                <display value="CDC 2016 Guideline for prescribing opioids for chronic pain"/>
                 <url value="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"/>
             </documentation>
             <documentation>

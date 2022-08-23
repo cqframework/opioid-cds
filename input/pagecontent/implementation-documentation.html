@@ -10,10 +10,10 @@
 <!-- ============CONTENT CONTENT=============== -->
 
 <a name="developer"> </a>
-<h2><span class="sectioncount">7.4.0</span> CDC Opioid Prescribing Guideline - Implementation Documentation <a href="implementation-documentation.html#developer" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
+<h2><span class="sectioncount">7.4.0</span> CDC 2016 Opioid Prescribing Guideline - Implementation Documentation <a href="implementation-documentation.html#developer" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
 
 <p>
-    This documentation is provided as a resource for developers interested in implementing the CDC opioid prescribing guidelines.
+    This documentation is provided as a resource for developers interested in implementing the CDC 2016 Opioid prescribing Guideline.
     It is assumed that the developer will have a basic understanding of CQL, FHIR, a FHIR API (like HAPI), and the CDS Hooks API.
 </p>
 
@@ -46,7 +46,7 @@
 </p>
 
 <p>
-    The following flowchart provides a summary of the operations required to implement the Opioid Guidelines:
+    The following flowchart provides a summary of the operations required to implement the Opioid Guideline:
 </p>
 
 <img src="assets/images/OpioidGuidanceFlowchart.png">
@@ -54,7 +54,7 @@
 <p></p>
 
 <p>
-    As depicted in the flowchart, the Opioid Guidelines are triggered by a CDS Hooks request issued by the EHR. More precisely, the request would be triggered by a user within the EHR authoring a new prescription for a medication containing opioid ingredients. In a production environment, this request would be in real-time, which carries performance requirements that will be discussed later in this documentation.
+    As depicted in the flowchart, the Opioid Guideline is triggered by a CDS Hooks request issued by the EHR. More precisely, the request would be triggered by a user within the EHR authoring a new prescription for a medication containing opioid ingredients. In a production environment, this request would be in real-time, which carries performance requirements that will be discussed later in this documentation.
 </p>
 
 <div class="example">
@@ -215,7 +215,7 @@
 <h4 class="self-link-parent"><span class="sectioncount">7.4.5.1</span> MedicationOrder to MedicationRequest <a href="implementation-documentation.html#dstu2todstu3" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>
-  Regarding the Opioid Guidelines order-select service, the conversion from DSTU2 to STU3 is rather simple. The medicationCodeableConcept, status, and dosageInstruction are the only attributes that are accessed in this service. Therefore, they are the only attributes that need to be converted. However, depth of conversion is implementation-specific. For example, if your implementation returns a suggestion, which is a modified resource that conforms to certain requirements, then you would want to convert all the attributes to prevent data loss. If your service is returning info cards on the other hand, then attributes that aren't used by the service can be excluded.
+  Regarding the Opioid Guideline order-select service, the conversion from DSTU2 to STU3 is rather simple. The medicationCodeableConcept, status, and dosageInstruction are the only attributes that are accessed in this service. Therefore, they are the only attributes that need to be converted. However, depth of conversion is implementation-specific. For example, if your implementation returns a suggestion, which is a modified resource that conforms to certain requirements, then you would want to convert all the attributes to prevent data loss. If your service is returning info cards on the other hand, then attributes that aren't used by the service can be excluded.
 </p>
 
 <p>For example, take the following MedicationOrder:</p>
@@ -406,14 +406,14 @@
 <h4 class="self-link-parent"><span class="sectioncount">7.4.6.1</span> $apply Parameters <a href="implementation-documentation.html#applyparams" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>
-  Most of the standard $apply parameters will not be used. In fact the only standard parameter that will be used for the opioid guidelines is the required patient ID parameter. In addition, the PlanDefinition that this implementation applies needs access to the context and prefetch resources from the CDS Hooks request. Therefore, this particular instance of the $apply operation will need to add an additional "context" parameter. The additional context parameter will be represented as a parameter of parameters.
+  Most of the standard $apply parameters will not be used. In fact the only standard parameter that will be used for the opioid guideline is the required patient ID parameter. In addition, the PlanDefinition that this implementation applies needs access to the context and prefetch resources from the CDS Hooks request. Therefore, this particular instance of the $apply operation will need to add an additional "context" parameter. The additional context parameter will be represented as a parameter of parameters.
 </p>
 
 <a name="applyop"> </a>
 <h4 class="self-link-parent"><span class="sectioncount">7.4.6.2</span> $apply Operation <a href="implementation-documentation.html#applyop" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h4>
 
 <p>
-  The $apply operation, in general, applies a PlanDefinition to a specific context. In the context of the CDC Opioid Guidelines, the application of the PlanDefinition is depicted in the following diagram:
+  The $apply operation, in general, applies a PlanDefinition to a specific context. In the context of the CDC 2016 Opioid Guideline, the application of the PlanDefinition is depicted in the following diagram:
 </p>
 
 <img src="assets/images/CDC_Opioid_Guidelines_$apply_flowchart.png">
@@ -421,7 +421,7 @@
 <p></p>
 
 <p>
-  As shown in the flowchart, the $apply operation begins by parsing the input parameters. Then the <a href="Library-OpioidCDSREC05.json.html">CDC Opioid Guidelines library</a> is serialized into a library object. The next step is to resolve data providers for FHIR STU3 and OMTK. OMTK, or Opioid Management Terminology Knowledge, is a library that provides MME conversion factors and terminology information for the opioid medications. The OMTK data provider endpoint is an Access database and is NOT a FHIR data provider. The next step is to walk through the specified PlanDefinition actions, checking for applicability and an expression reference in the condition. If the PlanDefinition condition is applicable and has an expression reference, set the library "Orders" parameter to the list of MedictionRequest resources (context and prefetch) and evaluate the expression. If the expression evaluates to true, the context prescription violates the opioid guidelines by exceeding the suggested MME and a warning should be returned to the author. If the expression evaluates to false, then the presription is in accordance with the opioid guidelines. No matter the outcome of the expression, a CarePlan resource must be constructed and returned, which is left to the developer to format (see the example link above for an example).
+  As shown in the flowchart, the $apply operation begins by parsing the input parameters. Then the <a href="Library-OpioidCDSREC05.json.html">CDC 2016 Opioid Guideline library</a> is serialized into a library object. The next step is to resolve data providers for FHIR STU3 and OMTK. OMTK, or Opioid Management Terminology Knowledge, is a library that provides MME conversion factors and terminology information for the opioid medications. The OMTK data provider endpoint is an Access database and is NOT a FHIR data provider. The next step is to walk through the specified PlanDefinition actions, checking for applicability and an expression reference in the condition. If the PlanDefinition condition is applicable and has an expression reference, set the library "Orders" parameter to the list of MedictionRequest resources (context and prefetch) and evaluate the expression. If the expression evaluates to true, the context prescription violates the opioid guidelines by exceeding the suggested MME and a warning should be returned to the author. If the expression evaluates to false, then the presription is in accordance with the opioid guidelines. No matter the outcome of the expression, a CarePlan resource must be constructed and returned, which is left to the developer to format (see the example link above for an example).
 </p>
 
 <a name="transform"> </a>
@@ -453,7 +453,7 @@
   ],
   "note": [
     {
-      "id": "CDC guideline for prescribing opioids for chronic pain",
+      "id": "CDC 2016 Guideline for prescribing opioids for chronic pain",
       "text": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
     },
     {
@@ -476,7 +476,7 @@
   "indicator": "warning",
   "links": [
     {
-      "label": "CDC guideline for prescribing opioids for chronic pain",
+      "label": "CDC 2016 Guideline for prescribing opioids for chronic pain",
       "type": "absolute",
       "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
     },

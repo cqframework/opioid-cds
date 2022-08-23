@@ -4,7 +4,7 @@
   "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion",
   "version": "0.0.1",
   "name": "valueset-inclusion",
-  "title": "CDC Opioid Guidance Inclusion Extension",
+  "title": "CDC 2016 Opioid Guidance Inclusion Extension",
   "status": "draft",
   "description": "Describes the inclusion criteria for the ValueSet.",
   "jurisdiction": [
@@ -40,7 +40,7 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "CDC Opioid Guidance Inclusion Extension",
+        "short": "CDC 2016 Opioid Guidance Inclusion Extension",
         "definition": "Describes the inclusion criteria for the ValueSet.",
         "min": 0,
         "max": "1",
@@ -233,7 +233,7 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "CDC Opioid Guidance Inclusion Extension",
+        "short": "CDC 2016 Opioid Guidance Inclusion Extension",
         "definition": "Describes the inclusion criteria for the ValueSet.",
         "min": 0,
         "max": "1",

@@ -2,7 +2,7 @@
   "resourceType": "CodeSystem",
   "id": "opioidcds-indicator",
   "url": "http://fhir.org/guides/cdc/opioid-cds/CodeSystem/opioidcds-indicator",
-  "name": "CDC Opioid Indicator",
+  "name": "CDC 2016 Opioid Indicator",
   "status": "draft",
   "experimental": false,
   "description": "Indicates the urgency/importance of what this RequestGroup action conveys",

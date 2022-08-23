@@ -18,7 +18,7 @@
     } ]
   },
   "publisher": "Centers for Disease Control and Prevention (CDC)",
-  "description": "Opioid Decision Support Logic for use in implementing CDC Opioid Prescribing Guidelines.",
+  "description": "Opioid Decision Support Logic for use in implementing CDC 2016 Opioid Prescribing Guideline.",
   "purpose": "This library works in concert with the OMTK logic library to provide decision support for Morphine Milligram Equivalence calculations and dynamic value resolution.",
   "usage": "This library is to notify the prescriber/user whether the current prescription exceeds the recommended MME.",
   "useContext": [ {
@@ -58,7 +58,7 @@
   "copyright": "© CDC 2016+.",
   "relatedArtifact": [ {
     "type": "documentation",
-    "display": "CDC guideline for prescribing opioids for chronic pain",
+    "display": "CDC 2016 Guideline for prescribing opioids for chronic pain",
     "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm"
   }, {
     "type": "depends-on",

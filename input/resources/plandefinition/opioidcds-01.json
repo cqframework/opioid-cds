@@ -260,7 +260,7 @@
   "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-01",
   "version": "1.2.3",
   "name": "PlanDefinition_Recommendation_1",
-  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #1",
+  "title": "PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #1",
   "type": {
     "coding": [ {
       "system": "http://hl7.org/fhir/plan-definition-type",
@@ -353,7 +353,7 @@
           }
         } ],
         "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
-        "title": "CDC guideline for prescribing opioids for chronic pain"
+        "title": "CDC 2016 Guideline for prescribing opioids for chronic pain"
       }
     } ],
     "triggerDefinition": [ {

@@ -4,7 +4,7 @@
   "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-requestgroup-action-indicator",
   "version": "0.0.1",
   "name": "action-indicator",
-  "title": "CDC Opioid Indicator Extension",
+  "title": "CDC 2016 Opioid Indicator Extension",
   "status": "draft",
   "experimental": false,
   "publisher": "Centers for Disease Control and Prevention",

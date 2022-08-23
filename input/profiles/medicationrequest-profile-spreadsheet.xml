@@ -1086,7 +1086,7 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="69">
     <Cell ss:StyleID="s74"><Data ss:Type="String">description</Data></Cell>
-    <Cell ss:StyleID="s78"><Data ss:Type="String">Profile of MedicationRequest for use with CDC Opioid Prescribing Guidelines</Data></Cell>
+    <Cell ss:StyleID="s78"><Data ss:Type="String">Profile of MedicationRequest for use with CDC 2016 Opioid Prescribing Guideline</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">status</Data></Cell>
@@ -1309,7 +1309,7 @@
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s97"><Data ss:Type="String">Profile of medication prescription, indicating which elements must be supported for use in CDC Opioid Prescribing Guideline recommendations</Data><NamedCell
+    <Cell ss:StyleID="s97"><Data ss:Type="String">Profile of medication prescription, indicating which elements must be supported for use in CDC 2016 Opioid Prescribing Guideline recommendations</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s98"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><NamedCell ss:Name="_FilterDatabase"/></Cell>

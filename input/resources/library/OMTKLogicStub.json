@@ -19,7 +19,7 @@
     } ]
   },
   "publisher": "Centers for Disease Control and Prevention (CDC)",
-  "description": "Opioid Management Terminology Knowledge Base Logic for use in implementing CDC Opioid Prescribing Guidelines.",
+  "description": "Opioid Management Terminology Knowledge Base Logic for use in implementing CDC 2016 Opioid Prescribing Guideline.",
   "purpose": "This library normalizes units to UCUM units, identifies the conversion factor for the given ingredient, identifies the non-surgical opioid ingredients and their strengths that make up a drug identified by the given rxNormCode, calculates daily dose for a specific ingredient based on the ingredient strength, dose form, dose quantity, and daily frequency, calculates daily frequency given frequency within a period, and calculates the Morphine Milligram Equivalency (MME) for a given prescription.",
   "usage": "This library is used to gather information about an opioid prescription necessary to offer opioid management guidance for a patient.",
   "useContext": [ {

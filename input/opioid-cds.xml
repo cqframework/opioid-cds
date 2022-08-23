@@ -885,7 +885,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="CodeSystem - CDC Opioid Prescribing Guidelines Indicator"/>
+            <name value="CodeSystem - CDC 2016 Opioid Prescribing Guideline Indicator"/>
             <description value="System of codes that indicate the urgency/importance of the action"/>
             <sourceReference>
                 <reference value="CodeSystem/opioidcds-indicator"/>
@@ -1136,7 +1136,7 @@
 
         <resource>
             <example value="true"/>
-            <name value="MedicationRequest - CDC Opioid Prescribing Guideline Recommendation #5"/>
+            <name value="MedicationRequest - CDC 2016 Opioid Prescribing Guideline Recommendation #5"/>
             <description value="Fentanyl transdermal patch prescription"/>
             <sourceReference>
                 <reference value="MedicationRequest/example-opioidcds"/>
@@ -1144,7 +1144,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="Observation - CDC Opioid Prescribing Guideline Recommendation #10"/>
+            <name value="Observation - CDC 2016 Opioid Prescribing Guideline Recommendation #10"/>
             <description value="Observation for illicit drugs"/>
             <sourceReference>
                 <reference value="Observation/example-opioidcds"/>
@@ -1152,7 +1152,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="Patient - CDC Opioid Prescribing Guidelines"/>
+            <name value="Patient - CDC 2016 Opioid Prescribing Guideline"/>
             <description value="Basic test patient"/>
             <sourceReference>
                 <reference value="Patient/example-opioidcds"/>
@@ -1162,136 +1162,136 @@
         <!-- PlanDefinition -->
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #1"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #1"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #1"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #1"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-01"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #2"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #2"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #2"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #2"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-02"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #3"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #3"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #3"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #3"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-03"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #4"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #4"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #4"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-04"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #4 Patient View"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #4 Patient View"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #4 Patient View"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #4 Patient View"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-04-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #5"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #5"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #5"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-05"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #6"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #6"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #6"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #6"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-06"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #7"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #7"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #7"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #7"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-07"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #8"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #8"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #8"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #8"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-08"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #9"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #9"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #9"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #9"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-09"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #8 Order Sign"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #8 Order Sign"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #8 Order Sign"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #8 Order Sign"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-08-order-sign"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #10"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #10"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-10"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 Order Sign"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10 Order Sign"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #10 Order Sign"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #10 Order Sign"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-10-order-sign"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #10 Patient View"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #10 Patient View"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #10 Patient View"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #10 Patient View"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-10-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #11"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #11"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #11"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-11"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #11 Patient View"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #11 Patient View"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #11 Patient View"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #11 Patient View"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-11-patient-view"/>
             </sourceReference>
         </resource>
         <resource>
             <example value="true"/>
-            <name value="PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #12 Patient View"/>
-            <description value="PlanDefinition implementing CDC Opioid Prescribing Support Guideline Recommendation #12 Patient View"/>
+            <name value="PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #12 Patient View"/>
+            <description value="PlanDefinition implementing CDC 2016 Opioid Prescribing Support Guideline Recommendation #12 Patient View"/>
             <sourceReference>
                 <reference value="PlanDefinition/opioidcds-12-patient-view"/>
             </sourceReference>
@@ -1299,7 +1299,7 @@
 
         <resource>
             <example value="true"/>
-            <name value="RequestGroup - CDC Opioid Prescribing Guideline Example for Recommendation #5"/>
+            <name value="RequestGroup - CDC 2016 Opioid Prescribing Guideline Example for Recommendation #5"/>
             <description value="RequestGroup referenced by CarePlan with information necessary to construct CDS Cards"/>
             <sourceReference>
                 <reference value="RequestGroup/example-opioidcds"/>
@@ -1309,7 +1309,7 @@
         <!-- ValueSets  -->
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Benzodiazepine Medication"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Benzodiazepine Medication"/>
             <description value="Benzodiazepine medication codes"/>
             <sourceReference>
                 <reference value="ValueSet/benzodiazepine-medications"/>
@@ -1317,7 +1317,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Buprenorphine and Methadone Medication"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Buprenorphine and Methadone Medication"/>
             <description value="Buprenorphine and Methadone medication codes"/>
             <sourceReference>
                 <reference value="ValueSet/buprenorphine-and-methadone-medications"/>
@@ -1325,7 +1325,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Malignant Cancer Conditions"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Malignant Cancer Conditions"/>
             <description value="Malignant cancer Condition codes"/>
             <sourceReference>
                 <reference value="ValueSet/cdc-malignant-cancer-conditions"/>
@@ -1341,7 +1341,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Documenting Substance Misuse"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Conditions Documenting Substance Misuse"/>
             <description value="Conditions that indicate problematic misuse of a substance other than tobacco"/>
             <sourceReference>
                 <reference value="ValueSet/conditions-documenting-substance-misuse"/>
@@ -1373,7 +1373,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Likely Terminal for Opioid Prescribing"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Conditions Likely Terminal for Opioid Prescribing"/>
             <description value="Condition that are likely terminal for opioid prescribing codes"/>
             <sourceReference>
                 <reference value="ValueSet/conditions-likely-terminal-for-opioid-prescribing"/>
@@ -1381,7 +1381,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Encounter Diagnosis Category"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Conditions Encounter Diagnosis Category"/>
             <description value="Encounter Diagnosis Condition Category"/>
             <sourceReference>
                 <reference value="ValueSet/condition-category-encounter-diagnosis"/>
@@ -1389,7 +1389,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Conditions Problem List Category"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Conditions Problem List Category"/>
             <description value="Problem List Condition Category"/>
             <sourceReference>
                 <reference value="ValueSet/condition-problem-list-category"/>
@@ -1405,7 +1405,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Extended Release Opioid with Ambulatory Misuse Potential Medications"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Extended Release Opioid with Ambulatory Misuse Potential Medications"/>
             <description value="Opioid with ambulatory misuse potential medication codes"/>
             <sourceReference>
                 <reference value="ValueSet/extended-release-opioid-with-ambulatory-misuse-potential"/>
@@ -1413,7 +1413,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Hospice Disposition"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Hospice Disposition"/>
             <description value="Hospice disposition codes"/>
             <sourceReference>
                 <reference value="ValueSet/hospice-disposition"/>
@@ -1421,7 +1421,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Hospice Finding"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Hospice Finding"/>
             <description value="Hospice finding codes"/>
             <sourceReference>
                 <reference value="ValueSet/hospice-finding"/>
@@ -1429,7 +1429,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Hospice Procedure"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Hospice Procedure"/>
             <description value="Hospice procedure codes"/>
             <sourceReference>
                 <reference value="ValueSet/hospice-procedure"/>
@@ -1437,7 +1437,7 @@
         </resource>
          <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Limited Life Expectancy Conditions"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Limited Life Expectancy Conditions"/>
             <description value="Limited life expectancy condition codes"/>
             <sourceReference>
                 <reference value="ValueSet/limited-life-expectancy-conditions"/>
@@ -1445,7 +1445,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Fentanyl-type Medication"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Fentanyl-type Medication"/>
             <description value="Fentanyl medication codes"/>
             <sourceReference>
                 <reference value="ValueSet/fentanyl-type-medications"/>
@@ -1453,7 +1453,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Fentanyl-type Drug Urine Screening"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Fentanyl-type Drug Urine Screening"/>
             <description value="Urine analysis for fentanyl-type drugs"/>
             <sourceReference>
                 <reference value="ValueSet/fentanyl-type-urine-drug-screening-tests"/>
@@ -1461,7 +1461,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Naloxone Medication"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Naloxone Medication"/>
             <description value="Naloxone medication codes"/>
             <sourceReference>
                 <reference value="ValueSet/naloxone-medications"/>
@@ -1469,7 +1469,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Non Opioid Drug Urine Screening"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Non Opioid Drug Urine Screening"/>
             <description value="Urine analysis for non opioid drugs"/>
             <sourceReference>
                 <reference value="ValueSet/non-opioid-drug-urine-screening"/>
@@ -1477,7 +1477,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines non-synthetic opioid clinical drugs"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline non-synthetic opioid clinical drugs"/>
             <description value="Non-synthetic opioid clinical drugs"/>
             <sourceReference>
                 <reference value="ValueSet/non-synthetic-opioid-medications"/>
@@ -1501,7 +1501,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Office Visit"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Office Visit"/>
             <description value="Office visit codes"/>
             <sourceReference>
                 <reference value="ValueSet/office-visit"/>
@@ -1509,7 +1509,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Oncology Specialty Designation"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Oncology Specialty Designation"/>
             <description value="Oncology specialty designation codes"/>
             <sourceReference>
                 <reference value="ValueSet/oncology-specialty-designations"/>
@@ -1517,7 +1517,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Analgesics with Ambulatory Misuse Potential"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Opioid Analgesics with Ambulatory Misuse Potential"/>
             <description value="Opioid analgesics with ambulatory misuse potential codes"/>
             <sourceReference>
                 <reference value="ValueSet/opioid-analgesics-with-ambulatory-misuse-potential"/>
@@ -1525,7 +1525,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Counseling Procedure"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Opioid Counseling Procedure"/>
             <description value="Opioid counseling procedure codes"/>
             <sourceReference>
                 <reference value="ValueSet/opioid-counseling-procedure"/>
@@ -1533,7 +1533,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Urine Screening"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Opioid Urine Screening"/>
             <description value="Urine analysis for opioids"/>
             <sourceReference>
                 <reference value="ValueSet/opioid-drug-urine-screening"/>
@@ -1541,7 +1541,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Misuse Assessment Procedure"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Opioid Misuse Assessment Procedure"/>
             <description value="Opioid misuse assessment procedure codes"/>
             <sourceReference>
                 <reference value="ValueSet/opioid-misuse-assessment-procedure"/>
@@ -1549,7 +1549,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Opioid Misuse Disorders"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Opioid Misuse Disorders"/>
             <description value="Opioid misuse disorder codes"/>
             <sourceReference>
                 <reference value="ValueSet/opioid-misuse-disorders"/>
@@ -1557,7 +1557,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Pain Management Procedures"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Pain Management Procedures"/>
             <description value="Pain management procedure codes"/>
             <sourceReference>
                 <reference value="ValueSet/pain-management-procedure"/>
@@ -1565,7 +1565,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Pain Treatment Plan"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Pain Treatment Plan"/>
             <description value="Pain treatment plan codes"/>
             <sourceReference>
                 <reference value="ValueSet/pain-treatment-plan"/>
@@ -1573,7 +1573,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines PDMP Data Reviewed Finding"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline PDMP Data Reviewed Finding"/>
             <description value="PDMP data reviewed finding codes"/>
             <sourceReference>
                 <reference value="ValueSet/pdmp-data-reviewed-finding"/>
@@ -1581,7 +1581,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines PDMP Review Procedure"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline PDMP Review Procedure"/>
             <description value="PDMP review procedure codes"/>
             <sourceReference>
                 <reference value="ValueSet/pdmp-review-procedure"/>
@@ -1597,7 +1597,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Substance Misuse Behavioral Counseling"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Substance Misuse Behavioral Counseling"/>
             <description value="Substance misuse behavioral counseling codes"/>
             <sourceReference>
                 <reference value="ValueSet/substance-misuse-behavioral-counseling"/>
@@ -1605,7 +1605,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Therapies Indicating End of Life Care"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Therapies Indicating End of Life Care"/>
             <description value="Therapies indication end of life care codes"/>
             <sourceReference>
                 <reference value="ValueSet/therapies-indicating-end-of-life-care"/>
@@ -1613,7 +1613,7 @@
         </resource>
         <resource>
             <example value="true"/>
-            <name value="ValueSet - CDC Opioid Prescribing Guidelines Urine drug screening tests"/>
+            <name value="ValueSet - CDC 2016 Opioid Prescribing Guideline Urine drug screening tests"/>
             <description value="Individual tests and panels of tests of urine for drugs of misuse"/>
             <sourceReference>
                 <reference value="ValueSet/urine-drug-screening-tests"/>
