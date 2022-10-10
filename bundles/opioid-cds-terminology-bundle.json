@@ -10863,7 +10863,7 @@
           "code": "US"
         } ]
       } ],
-      "purpose": "Initially created to identify conditions for exclusions in CDC Opioid guidelines",
+      "purpose": "Initially created to identify conditions for exclusions in CDC 2016 Opioid Guideline",
       "copyright": "© CDC 2016+.",
       "compose": {
         "include": [ {
@@ -33640,7 +33640,7 @@
       "resourceType": "CodeSystem",
       "id": "opioidcds-indicator",
       "url": "http://fhir.org/guides/cdc/opioid-cds/CodeSystem/opioidcds-indicator",
-      "name": "CDC Opioid Indicator",
+      "name": "CDC 2016 Opioid Indicator",
       "status": "draft",
       "experimental": false,
       "description": "Indicates the urgency/importance of what this RequestGroup action conveys",
@@ -34655,7 +34655,7 @@
           "code": "US"
         } ]
       } ],
-      "purpose": "Conditions for exclusions in CDC Opioid guidelines",
+      "purpose": "Conditions for exclusions in CDC 2016 Opioid Guideline",
       "copyright": "© CDC 2016+.",
       "compose": {
         "include": [ {
@@ -39845,7 +39845,7 @@
           "code": "US"
         } ]
       } ],
-      "purpose": "Conditions for exclusions in CDC Opioid guidelines",
+      "purpose": "Conditions for exclusions in CDC 2016 Opioid Guideline",
       "copyright": "© CDC 2016+.",
       "compose": {
         "include": [ {

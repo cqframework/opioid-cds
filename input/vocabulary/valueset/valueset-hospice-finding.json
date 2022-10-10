@@ -22,7 +22,7 @@
       "code": "US"
     } ]
   } ],
-  "purpose": "Initially created to identify conditions for exclusions in CDC Opioid guidelines",
+  "purpose": "Initially created to identify conditions for exclusions in CDC 2016 Opioid Guideline",
   "copyright": "© CDC 2016+.",
   "compose": {
     "include": [ {

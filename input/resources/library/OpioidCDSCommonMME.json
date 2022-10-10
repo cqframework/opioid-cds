@@ -14,7 +14,7 @@
     } ]
   },
   "publisher": "Centers for Disease Control and Prevention (CDC)",
-  "description": "Common Opioid Decision Support Logic for use in implementing CDC Opioid Prescribing Guidelines.",
+  "description": "Common Opioid Decision Support Logic for use in implementing CDC 2016 Opioid Prescribing Guideline.",
   "purpose": "This library contains common logic for MME calculations.",
   "usage": "This library is used for decision support for opioid guideline recommendations when applying PlanDefinitions.",
   "useContext": [ {

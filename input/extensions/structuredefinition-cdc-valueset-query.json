@@ -4,7 +4,7 @@
   "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-query",
   "version": "0.0.1",
   "name": "valueset-query",
-  "title": "CDC Opioid Guidance Query Extension",
+  "title": "CDC 2016 Opioid Guidance Query Extension",
   "status": "draft",
   "description": "Captures the narrative, language, and expression query elements necessary to build valueset from CodeSystem",
   "jurisdiction": [
@@ -45,7 +45,7 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "CDC Opioid Guidance Query Extension",
+        "short": "CDC 2016 Opioid Guidance Query Extension",
         "definition": "Captures the narrative, language, and expression query elements necessary to build valueset from CodeSystem",
         "min": 0,
         "max": "1",
@@ -1538,7 +1538,7 @@
       {
         "id": "Extension",
         "path": "Extension",
-        "short": "CDC Opioid Guidance Query Extension",
+        "short": "CDC 2016 Opioid Guidance Query Extension",
         "definition": "Captures the narrative, language, and expression query elements necessary to build valueset from CodeSystem",
         "min": 0,
         "max": "1",

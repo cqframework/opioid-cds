@@ -230,7 +230,7 @@
   "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-05",
   "version": "1.2.3",
   "name": "PlanDefinition_Recommendation_5",
-  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #5",
+  "title": "PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #5",
   "type": {
     "coding": [ {
       "system": "http://hl7.org/fhir/plan-definition-type",
@@ -241,7 +241,7 @@
   "status": "draft",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "description": "When opioids are started, providers should prescribe the lowest effective dosage.",
-  "purpose": "CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.",
+  "purpose": "CDC’s 2016 Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.",
   "usage": "Providers should use caution when prescribing opioids at any dosage, should carefully reassess evidence of individual benefits and risks when considering increasing dosage to ≥50 morphine milligram equivalents (MME)/day, and should avoid increasing dosage to ≥90 MME/day or carefully justify a decision to titrate dosage to >90 MME/day",
   "useContext": [ {
     "code": {
@@ -328,7 +328,7 @@
           }
         } ],
         "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
-        "title": "CDC guideline for prescribing opioids for chronic pain"
+        "title": "CDC 2016 Guideline for prescribing opioids for chronic pain"
       }
     } ],
     "triggerDefinition": [ {

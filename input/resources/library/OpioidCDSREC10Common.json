@@ -379,10 +379,94 @@
   "dataRequirement": [ {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Patient"
+    } ],
+    "type": "Patient"
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Observation"
     } ],
     "type": "Observation",
     "mustSupport": [ "category" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "category", "code", "value", "effective" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "category", "code", "value", "effective" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "category", "code", "value", "effective" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "category", "code", "value", "effective" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "category", "code", "value", "effective" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "category", "code" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -431,120 +515,10 @@
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
-    "codeFilter": [ {
-      "path": "category",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
-    "codeFilter": [ {
-      "path": "category",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
-    "codeFilter": [ {
-      "path": "category",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "mustSupport": [ "code", "category" ],
-    "codeFilter": [ {
-      "path": "category",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
-    "codeFilter": [ {
-      "path": "category",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
-    "codeFilter": [ {
-      "path": "category",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
-    "codeFilter": [ {
-      "path": "category",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Patient"
-    } ],
-    "type": "Patient"
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
-      "valueCode": "Observation"
-    } ],
-    "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
-    "codeFilter": [ {
-      "path": "category",
-      "valueSetReference": {
-        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
-      }
-    } ]
-  }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Procedure"
     } ],
     "type": "Procedure",
-    "mustSupport": [ "code", "status.value", "status" ],
+    "mustSupport": [ "code", "status", "status.value" ],
     "codeFilter": [ {
       "path": "code",
       "valueSetReference": {
@@ -557,14 +531,14 @@
       "valueCode": "Encounter"
     } ],
     "type": "Encounter",
-    "mustSupport": [ "period.start", "period", "status.value", "status" ]
+    "mustSupport": [ "period", "period.start", "status", "status.value" ]
   }, {
     "extension": [ {
       "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -577,7 +551,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -590,7 +564,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -603,7 +577,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -616,7 +590,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -629,7 +603,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -642,7 +616,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -655,7 +629,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -668,7 +642,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -681,7 +655,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -694,7 +668,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -707,7 +681,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "code", "category" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -720,7 +694,7 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {
@@ -733,7 +707,33 @@
       "valueCode": "Observation"
     } ],
     "type": "Observation",
-    "mustSupport": [ "effective", "code", "category", "value" ],
+    "mustSupport": [ "category", "code", "value", "effective" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "category", "code", "value", "effective" ],
+    "codeFilter": [ {
+      "path": "category",
+      "valueSetReference": {
+        "reference": "http://fhir.org/guides/cdc/opioid-cds/ValueSet/observation-category-laboratory"
+      }
+    } ]
+  }, {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/original-resource-name",
+      "valueCode": "Observation"
+    } ],
+    "type": "Observation",
+    "mustSupport": [ "category", "code" ],
     "codeFilter": [ {
       "path": "category",
       "valueSetReference": {

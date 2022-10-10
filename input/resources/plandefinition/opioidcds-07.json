@@ -335,7 +335,7 @@
   "url": "http://fhir.org/guides/cdc/opioid-cds/PlanDefinition/opioidcds-07",
   "version": "1.2.3",
   "name": "PlanDefinition_Recommendation_7",
-  "title": "PlanDefinition - CDC Opioid Prescribing Guideline Recommendation #7",
+  "title": "PlanDefinition - CDC 2016 Opioid Prescribing Guideline Recommendation #7",
   "type": {
     "coding": [ {
       "system": "http://hl7.org/fhir/plan-definition-type",
@@ -346,7 +346,7 @@
   "status": "draft",
   "publisher": "Centers for Disease Control and Prevention (CDC)",
   "description": "Clinicians should evaluate benefits and harms with patients within 1 to 4 weeks of starting opioid therapy for chronic pain or of dose escalation. Clinicians should evaluate benefits and harms of continued therapy with patients every 3 months or more frequently.",
-  "purpose": "CDC’s Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.",
+  "purpose": "CDC’s 2016 Guideline for Prescribing Opioids for Chronic Pain is intended to improve communication between providers and patients about the risks and benefits of opioid therapy for chronic pain, improve the safety and effectiveness of pain treatment, and reduce the risks associated with long-term opioid therapy, including opioid use disorder and overdose. The Guideline is not intended for patients who are in active cancer treatment, palliative care, or end-of-life care.",
   "usage": "If benefits do not outweigh harms of continued opioid therapy, clinicians should optimize other therapies and work with patients to taper opioids to lower dosages or to taper and discontinue opioids.",
   "useContext": [ {
     "code": {
@@ -429,7 +429,7 @@
           }
         } ],
         "url": "https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fmmwr%2Fvolumes%2F65%2Frr%2Frr6501e1er.htm",
-        "title": "CDC guideline for prescribing opioids for chronic pain"
+        "title": "CDC 2016 guideline for prescribing opioids for chronic pain"
       }
     } ],
     "triggerDefinition": [ {
